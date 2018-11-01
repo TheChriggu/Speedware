@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://lila.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 386.998, 540.256 )
+
+[node name="LaserRot" type="Sprite"]
+
+self_modulate = Color( 0.814373, 0.0407867, 0.949219, 0.762431 )
+position = Vector2( -25.1205, -677.495 )
+scale = Vector2( 0.891595, 7.8364 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+position = Vector2( 47313.9, 920.172 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( -47308.5, -919.517 )
+scale = Vector2( 0.35672, 0.178771 )
+shape = SubResource( 1 )
+
+

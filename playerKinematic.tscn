@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://playerKinematic.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Char.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -94,7 +94,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 0.447479, 0.00390625, 1 ) ]
 }
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 5
@@ -111,6 +111,8 @@ isGreen = true
 [node name="sprite" type="Sprite" parent="." index="0"]
 
 modulate = Color( 1, 0.447479, 0.00390625, 1 )
+position = Vector2( -0.802444, 1.22659 )
+scale = Vector2( 0.0951051, 0.0963492 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 

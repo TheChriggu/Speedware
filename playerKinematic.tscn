@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://playerKinematic.gd" type="Script" id=1]
-[ext_resource path="res://Char.png" type="Texture" id=2]
+[ext_resource path="res://Char_Yellow.png" type="Texture" id=2]
+[ext_resource path="res://Char_Purple.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,7 +16,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:modulate")
+tracks/0/path = NodePath(".:collision_layer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -23,11 +24,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0.804688, 0, 1, 1 ) ]
+"update": 1,
+"values": [ 6 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:collision_layer")
+tracks/1/path = NodePath(".:collision_mask")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,7 +40,7 @@ tracks/1/keys = {
 "values": [ 6 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:collision_mask")
+tracks/2/path = NodePath("sprite:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -48,7 +49,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ ExtResource( 3 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -82,7 +83,7 @@ tracks/1/keys = {
 "values": [ 5 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("sprite:modulate")
+tracks/2/path = NodePath("sprite:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -90,11 +91,11 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 0.447479, 0.00390625, 1 ) ]
+"update": 1,
+"values": [ ExtResource( 2 ) ]
 }
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 5
@@ -110,7 +111,6 @@ isGreen = true
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 1, 0.447479, 0.00390625, 1 )
 position = Vector2( -0.802444, 1.22659 )
 scale = Vector2( 0.0951051, 0.0963492 )
 texture = ExtResource( 2 )

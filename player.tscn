@@ -408,7 +408,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="camera" type="Camera2D" parent="." index="2"]
 
-position = Vector2( 146.634, -3.01126 )
+position = Vector2( 283.471, -7.89832 )
 anchor_mode = 1
 rotating = false
 current = true

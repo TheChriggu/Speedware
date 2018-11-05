@@ -305,11 +305,11 @@ polygon = PoolVector2Array( 32, -24, 32, 24, -32, 24, -32, -24 )
 
 [node name="platform_edge" type="Sprite" parent="." index="15"]
 
-editor/display_folded = true
 position = Vector2( 64, 256 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 192, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
 
 [node name="collision" type="StaticBody2D" parent="platform_edge" index="0"]
 

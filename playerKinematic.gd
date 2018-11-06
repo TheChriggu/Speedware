@@ -11,6 +11,7 @@ export var WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
 export var JUMP_SPEED = 600
 export var JUMP_MAX_AIRBORNE_TIME = 0.2
+
 #var max_jump_velocity = -720
 #var min_jump_velocity = -150
 
@@ -20,7 +21,7 @@ const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 var velocity = Vector2()
 #Time the player can jump after leaving an edge
-export var on_air_time = 3 
+export var on_air_time = 6
 var jumping = false
 
 var prev_jump_pressed = false
@@ -33,7 +34,19 @@ func SwitchColor():
 		$AnimationPlayer.play("SwitchPurpleToOrange")
 	else:
 		$AnimationPlayer.play("SwitchOrangeToPurple")
-		
+
+
+
+
+
+func jump():
+    velocity.y = -JUMP_SPEED
+	
+func jump_cut():
+    if velocity.y < -200:
+        velocity.y = -200
+
+	
 func _physics_process(delta):
 	# Create forces
 	var force = Vector2(0, GRAVITY)
@@ -41,6 +54,15 @@ func _physics_process(delta):
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_pressed("jump")
+	
+	if Input.is_action_just_pressed("jump") && velocity.y < -500:
+		velocity.y = -500
+		jump()
+
+
+
+	if Input.is_action_just_released("jump"):
+		jump_cut()
 	
 	
 	var stop = true

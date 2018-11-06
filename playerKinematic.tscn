@@ -206,7 +206,7 @@ WALK_MAX_SPEED = 1500
 JUMP_SPEED = 600
 JUMP_MAX_AIRBORNE_TIME = 0.2
 SLIDE_STOP_VELOCITY = 9.0
-on_air_time = 3
+on_air_time = 6
 isGreen = true
 
 [node name="Particles2D" type="Particles2D" parent="." index="0"]

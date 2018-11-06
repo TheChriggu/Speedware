@@ -19,6 +19,7 @@ __meta__ = {
 
 position = Vector2( 116.981, 343.78 )
 JUMP_SPEED = 600
+on_air_time = 6
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
@@ -183,7 +184,6 @@ scale = Vector2( 1.04583, 0.192689 )
 [node name="PauseMenu" type="CanvasLayer" parent="." index="3"]
 
 pause_mode = 2
-editor/display_folded = true
 layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0

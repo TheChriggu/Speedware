@@ -4,11 +4,17 @@
 
 [node name="Node" type="Node"]
 
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
 [node name="floor" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
 
 [node name="collision" type="StaticBody2D" parent="floor" index="0"]
 
@@ -24,18 +30,18 @@ bounce = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor/collision" index="0"]
 
-position = Vector2( -0.600002, 0 )
-scale = Vector2( 0.988281, 1 )
+position = Vector2( 0.722587, 0 )
+scale = Vector2( 1.01411, 1 )
 build_mode = 0
 polygon = PoolVector2Array( 32, -24, 32, 32, -32, 32, -32, -24 )
 
 [node name="edge" type="Sprite" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 64, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
 
 [node name="collision" type="StaticBody2D" parent="edge" index="0"]
 

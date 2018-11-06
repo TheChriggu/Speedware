@@ -22,6 +22,7 @@ var jumping = false
 var prev_jump_pressed = false
 export var isGreen = true
 
+
 func SwitchColor():
 	isGreen = not isGreen
 	if isGreen:
@@ -37,7 +38,6 @@ func _physics_process(delta):
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_pressed("jump")
 	var GreenForm = true
-	
 	
 	var stop = true
 	

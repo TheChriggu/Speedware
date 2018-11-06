@@ -13,7 +13,7 @@ modulate = Color( 1, 0.526978, 0.0234375, 0.458588 )
 position = Vector2( -6.90323, 68.7214 )
 scale = Vector2( 0.0178728, 0.182998 )
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 

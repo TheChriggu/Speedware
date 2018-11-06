@@ -12,13 +12,13 @@ export var WALK_MIN_SPEED = 10
 export var WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
 export var JUMP_SPEED = 200
-const JUMP_MAX_AIRBORNE_TIME = 0.2
+export var JUMP_MAX_AIRBORNE_TIME = 0.2
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 var velocity = Vector2()
-var on_air_time = 100
+export var on_air_time = 300
 var jumping = false
 
 var prev_jump_pressed = false

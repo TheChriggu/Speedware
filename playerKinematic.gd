@@ -9,20 +9,24 @@ export var WALK_FORCE = 600
 export var WALK_MIN_SPEED = 10
 export var WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
-export var JUMP_SPEED = 200
+export var JUMP_SPEED = 600
 export var JUMP_MAX_AIRBORNE_TIME = 0.2
+#var max_jump_velocity = -720
+#var min_jump_velocity = -150
 
-const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
+
+export var SLIDE_STOP_VELOCITY = 9.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 var velocity = Vector2()
-export var on_air_time = 200
+#Time the player can jump after leaving an edge
+export var on_air_time = 3 
 var jumping = false
 
 var prev_jump_pressed = false
 export var isGreen = true
 
-
+#Colorswitch Mechanic
 func SwitchColor():
 	isGreen = not isGreen
 	if isGreen:
@@ -37,7 +41,7 @@ func _physics_process(delta):
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_pressed("jump")
-	var GreenForm = true
+	
 	
 	var stop = true
 	
@@ -75,14 +79,15 @@ func _physics_process(delta):
 		jumping = false
 	
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping:
-		# Jump must also be allowed to happen if the character left the floor a little bit ago.
-		# Makes controls more snappy.
+		#Player can jump, even after leaving the Edge for some time
 		velocity.y = -JUMP_SPEED
 		jumping = true
-	
+		
+	#if event.is_action_released("jump") && velocity.y < -500:
+	#	velocity.y = -500
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
 	
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("switchColor"):
 			SwitchColor()

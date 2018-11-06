@@ -191,7 +191,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 0.703125, 0, 1 ) ]
 }
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 5
@@ -203,9 +203,10 @@ GRAVITY = 2000.0
 WALK_FORCE = 700
 WALK_MIN_SPEED = 300
 WALK_MAX_SPEED = 1500
-JUMP_SPEED = 800
+JUMP_SPEED = 600
 JUMP_MAX_AIRBORNE_TIME = 0.2
-on_air_time = 200
+SLIDE_STOP_VELOCITY = 9.0
+on_air_time = 3
 isGreen = true
 
 [node name="Particles2D" type="Particles2D" parent="." index="0"]

@@ -6,13 +6,14 @@
 
 [node name="floor" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 
 [node name="collision" type="StaticBody2D" parent="floor" index="0"]
 
+position = Vector2( -1, 0 )
+scale = Vector2( 0.96875, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -23,6 +24,8 @@ bounce = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor/collision" index="0"]
 
+position = Vector2( -0.600002, 0 )
+scale = Vector2( 0.988281, 1 )
 build_mode = 0
 polygon = PoolVector2Array( 32, -24, 32, 32, -32, 32, -32, -24 )
 

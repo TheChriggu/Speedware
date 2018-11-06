@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-# This demo shows how to build a kinematic controller.
-
 # Member variables
 export var GRAVITY = 500.0 # pixels/second/second
 
@@ -18,7 +16,7 @@ const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 var velocity = Vector2()
-export var on_air_time = 300
+export var on_air_time = 200
 var jumping = false
 
 var prev_jump_pressed = false
@@ -47,10 +45,12 @@ func _physics_process(delta):
 		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
 			stop = false
+			
 	elif walk_right:
 		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
 			force.x += WALK_FORCE
 			stop = false
+			
 	
 	if stop:
 		var vsign = sign(velocity.x)
@@ -79,6 +79,7 @@ func _physics_process(delta):
 		# Makes controls more snappy.
 		velocity.y = -JUMP_SPEED
 		jumping = true
+	
 	
 	on_air_time += delta
 	prev_jump_pressed = jump

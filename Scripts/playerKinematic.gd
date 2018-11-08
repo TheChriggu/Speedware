@@ -1,9 +1,8 @@
 extends KinematicBody2D
+#This is the Script for the Character
 
-# Member variables
+#Variables
 export var GRAVITY = 500.0 # pixels/second/second
-
-# Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
 export var WALK_FORCE = 600
 export var WALK_MIN_SPEED = 10
@@ -12,15 +11,11 @@ const STOP_FORCE = 1300
 export var JUMP_SPEED = 600
 export var JUMP_MAX_AIRBORNE_TIME = 0.2
 
-#var max_jump_velocity = -720
-#var min_jump_velocity = -150
-
-
 export var SLIDE_STOP_VELOCITY = 9.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 var velocity = Vector2()
-#Time the player can jump after leaving an edge
+#Time the player can jump after leaving an edge (Double click for double jump mechanic~)
 export var on_air_time = 6
 var jumping = false
 
@@ -35,36 +30,27 @@ func SwitchColor():
 	else:
 		$AnimationPlayer.play("SwitchOrangeToPurple")
 
-
-
-
-
+#Jump() and jump_cut() are for the "Mario-like"-jump Height controls (MLJ=Mario-like Jump)
 func jump():
     velocity.y = -JUMP_SPEED
-	
 func jump_cut():
     if velocity.y < -200:
         velocity.y = -200
 
-	
 func _physics_process(delta):
-	# Create forces
+	#basic Player movement
 	var force = Vector2(0, GRAVITY)
-	
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
 	var jump = Input.is_action_pressed("jump")
-	
+	#MLJ
 	if Input.is_action_just_pressed("jump") && velocity.y < -500:
 		velocity.y = -500
 		jump()
-
-
-
+	#MLJ
 	if Input.is_action_just_released("jump"):
 		jump_cut()
-	
-	
+
 	var stop = true
 	
 	if walk_left:
@@ -104,12 +90,10 @@ func _physics_process(delta):
 		#Player can jump, even after leaving the Edge for some time
 		velocity.y = -JUMP_SPEED
 		jumping = true
-		
-	#if event.is_action_released("jump") && velocity.y < -500:
-	#	velocity.y = -500
+
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
-	
+	#Colorswitch Mechanic
 	if Input.is_action_just_pressed("switchColor"):
 			SwitchColor()

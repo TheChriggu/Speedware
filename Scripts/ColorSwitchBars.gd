@@ -1,5 +1,5 @@
 extends NinePatchRect
-
+#This Script is used for the Bars at the Screenedges to indicate which color the Player has right now
 export var isGreen = true
 
 func SwitchColor():

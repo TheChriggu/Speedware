@@ -4,9 +4,6 @@
 [ext_resource path="res://Scripts/ColorSwitchBars.gd" type="Script" id=2]
 [ext_resource path="res://Images/Purple_Background.png" type="Texture" id=3]
 
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "SwitchToBlue"
@@ -255,7 +252,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 1 ) ]
 }
 
-[node name="ColorBar" type="CanvasLayer"]
+[node name="ColorBar" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )

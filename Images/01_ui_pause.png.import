@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Orange_Background.jpg-e59192f2423861b4627ae8e4e098b620.stex"
+path="res://.import/01_ui_pause.png-a84ea75a86c54537d21ac37b5d71ea9d.stex"
 
 [deps]
 
-source_file="res://Orange_Background.jpg"
-dest_files=[ "res://.import/Orange_Background.jpg-e59192f2423861b4627ae8e4e098b620.stex" ]
+source_file="res://Images/01_ui_pause.png"
+dest_files=[ "res://.import/01_ui_pause.png-a84ea75a86c54537d21ac37b5d71ea9d.stex" ]
 
 [params]
 

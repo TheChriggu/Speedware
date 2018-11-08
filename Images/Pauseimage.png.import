@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Black_Background.png-616e7542b01607d040c0f78de26b5905.stex"
+path="res://.import/Pauseimage.png-1066f6165232c08734819f15b1b3c062.stex"
 
 [deps]
 
-source_file="res://Black_Background.png"
-dest_files=[ "res://.import/Black_Background.png-616e7542b01607d040c0f78de26b5905.stex" ]
+source_file="res://Images/Pauseimage.png"
+dest_files=[ "res://.import/Pauseimage.png-1066f6165232c08734819f15b1b3c062.stex" ]
 
 [params]
 

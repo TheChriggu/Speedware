@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="LaserLabsv1"
-run/main_scene="res://MainTestScene.tscn"
+run/main_scene="res://Scenes/MainTestScene.tscn"
 config/icon="res://icon.png"
 
 [display]

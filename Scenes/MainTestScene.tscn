@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://playerKinematic.tscn" type="PackedScene" id=1]
-[ext_resource path="res://tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://LaserOrange.tscn" type="PackedScene" id=3]
-[ext_resource path="res://LaserPurple.tscn" type="PackedScene" id=4]
-[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/playerKinematic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TileSetPlaceholder.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/LaserOrange.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/LaserPurple.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=5]
 
 [node name="stage" type="Node"]
 
@@ -40,8 +40,6 @@ tile_data = PoolIntArray( -196611, -1610612726, 0, -196610, -1610612726, 0, -196
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Lasers" type="Node2D" parent="." index="2"]
-
-editor/display_folded = true
 
 [node name="LaserGruen" parent="Lasers" index="0" instance=ExtResource( 3 )]
 

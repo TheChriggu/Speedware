@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Char_Purple.png-3a3100fb01b37093b3d993bedf67728f.stex"
+path="res://.import/tiles_demo.png-65891cafbdfb1ab09d86f6e318b3740a.stex"
 
 [deps]
 
-source_file="res://Char_Purple.png"
-dest_files=[ "res://.import/Char_Purple.png-3a3100fb01b37093b3d993bedf67728f.stex" ]
+source_file="res://Images/tiles_demo.png"
+dest_files=[ "res://.import/tiles_demo.png-65891cafbdfb1ab09d86f6e318b3740a.stex" ]
 
 [params]
 

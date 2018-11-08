@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/StickmanWhite_Spritesheet.png-7f65d02880ad0e6239febb1838c39b66.stex"
+path="res://.import/Char.png-501af5e8c16b59a62d561a40057ecd4a.stex"
 
 [deps]
 
-source_file="res://StickmanWhite_Spritesheet.png"
-dest_files=[ "res://.import/StickmanWhite_Spritesheet.png-7f65d02880ad0e6239febb1838c39b66.stex" ]
+source_file="res://Images/Char.png"
+dest_files=[ "res://.import/Char.png-501af5e8c16b59a62d561a40057ecd4a.stex" ]
 
 [params]
 

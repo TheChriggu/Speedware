@@ -1,8 +1,11 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Orange_Background.jpg" type="Texture" id=1]
-[ext_resource path="res://ColorSwitchBars.gd" type="Script" id=2]
-[ext_resource path="res://Purple_Background.png" type="Texture" id=3]
+[ext_resource path="res://Images/Orange_Background.jpg" type="Texture" id=1]
+[ext_resource path="res://Scripts/ColorSwitchBars.gd" type="Script" id=2]
+[ext_resource path="res://Images/Purple_Background.png" type="Texture" id=3]
+
+
+
 
 [sub_resource type="Animation" id=1]
 

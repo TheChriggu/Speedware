@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Char_Yellow.png-3974b74202d3b09e8aa0594537b6be35.stex"
+path="res://.import/Purple_Background.png-7ab479dac6ff7e964ffbb01882564fbb.stex"
 
 [deps]
 
-source_file="res://Char_Yellow.png"
-dest_files=[ "res://.import/Char_Yellow.png-3974b74202d3b09e8aa0594537b6be35.stex" ]
+source_file="res://Images/Purple_Background.png"
+dest_files=[ "res://.import/Purple_Background.png-7ab479dac6ff7e964ffbb01882564fbb.stex" ]
 
 [params]
 

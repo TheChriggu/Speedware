@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://tiles_demo.png" type="Texture" id=1]
+[ext_resource path="res://Images/tiles_demo.png" type="Texture" id=1]
 
 [node name="Node" type="Node"]
 
@@ -37,6 +37,7 @@ polygon = PoolVector2Array( 32, -24, 32, 32, -32, 32, -32, -24 )
 
 [node name="edge" type="Sprite" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 64, 0 )
 texture = ExtResource( 1 )
 region_enabled = true

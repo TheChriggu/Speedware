@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grey_Background.jpg-077c59536109d365e713afce12204350.stex"
+path="res://.import/Orange_Background.jpg-91ebb0226b56e788ec08e9ff42bcf0d8.stex"
 
 [deps]
 
-source_file="res://Grey_Background.jpg"
-dest_files=[ "res://.import/Grey_Background.jpg-077c59536109d365e713afce12204350.stex" ]
+source_file="res://Images/Orange_Background.jpg"
+dest_files=[ "res://.import/Orange_Background.jpg-91ebb0226b56e788ec08e9ff42bcf0d8.stex" ]
 
 [params]
 

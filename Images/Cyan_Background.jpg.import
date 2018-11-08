@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/01_ui_pause.png-50ec7e8126e98f3e386f45b4ec78f2b4.stex"
+path="res://.import/Cyan_Background.jpg-1243686ed1460ab74d48d2cdd7c9bc2b.stex"
 
 [deps]
 
-source_file="res://01_ui_pause.png"
-dest_files=[ "res://.import/01_ui_pause.png-50ec7e8126e98f3e386f45b4ec78f2b4.stex" ]
+source_file="res://Images/Cyan_Background.jpg"
+dest_files=[ "res://.import/Cyan_Background.jpg-1243686ed1460ab74d48d2cdd7c9bc2b.stex" ]
 
 [params]
 

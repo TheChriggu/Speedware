@@ -2,21 +2,24 @@ extends KinematicBody2D
 #This is the Script for the Character
 
 #Variables
-export var GRAVITY = 500.0 # pixels/second/second
+export var GRAVITY = 500.0 #pixels/second/second
 const FLOOR_ANGLE_TOLERANCE = 40
+#Movementspeed
 export var WALK_FORCE = 600
+#Minimum Speed to move the Char
 export var WALK_MIN_SPEED = 10
+#Maximum Speed for the Char
 export var WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
 export var JUMP_SPEED = 600
-export var JUMP_MAX_AIRBORNE_TIME = 0.2
+#Time the player can jump after leaving an edge (Double click for double jump mechanic~)
+export var JUMP_MAX_AIRBORNE_TIME = 0.001
 
 export var SLIDE_STOP_VELOCITY = 9.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 var velocity = Vector2()
-#Time the player can jump after leaving an edge (Double click for double jump mechanic~)
-export var on_air_time = 6
+export var on_air_time = 2
 var jumping = false
 
 var prev_jump_pressed = false

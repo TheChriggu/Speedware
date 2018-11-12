@@ -21,6 +21,8 @@ _sections_unfolded = [ "Material", "Offset", "Visibility" ]
 
 [node name="Lasers" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="LaserBlau" parent="Lasers" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 7016.54, -20.5853 )
@@ -257,6 +259,7 @@ GRAVITY = 3300.0
 WALK_FORCE = 1500
 WALK_MAX_SPEED = 1000
 JUMP_SPEED = 1300
+on_air_time = 2
 
 [node name="ColorBar" parent="." index="4" instance=ExtResource( 6 )]
 

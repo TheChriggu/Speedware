@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/ColorBar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=7]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 _sections_unfolded = [ "Pause" ]
 
@@ -259,7 +259,6 @@ GRAVITY = 3300.0
 WALK_FORCE = 1500
 WALK_MAX_SPEED = 1000
 JUMP_SPEED = 1300
-on_air_time = 2
 
 [node name="ColorBar" parent="." index="4" instance=ExtResource( 6 )]
 

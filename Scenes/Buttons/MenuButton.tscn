@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Fonts/Custom_Font_Custom_Size.tres" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/MenuButton.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Custom_Font_Custom_Size.tres" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 48
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Start Game" type="Button" index="0"]
+[node name="Start Game" type="Button"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -32,7 +33,9 @@ shortcut = null
 group = null
 flat = true
 align = 1
+script = ExtResource( 1 )
 _sections_unfolded = [ "Rect" ]
+scene_to_load = "res://Scenes/Levels/level_physicsTest_01_Chris.tscn"
 
 [node name="Label" type="Label" parent="." index="0"]
 

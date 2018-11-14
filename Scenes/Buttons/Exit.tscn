@@ -4,10 +4,4 @@
 
 [node name="Exit" instance=ExtResource( 1 )]
 
-rect_min_size = Vector2( 0, 0 )
-
-[node name="Label" parent="." index="0"]
-
-text = "Exit"
-
 

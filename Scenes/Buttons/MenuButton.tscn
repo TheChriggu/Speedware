@@ -35,7 +35,7 @@ flat = true
 align = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect" ]
-scene_to_load = "res://Scenes/Levels/level_physicsTest_01_Chris.tscn"
+scene_to_load = null
 
 [node name="Label" type="Label" parent="." index="0"]
 
@@ -58,5 +58,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[connection signal="pressed" from="." to="." method="_on_Start_Game_pressed"]
 
 

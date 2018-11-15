@@ -1,10 +1,15 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://White_Background.jpg" type="Texture" id=1]
-[ext_resource path="res://LaserPurple.tscn" type="PackedScene" id=2]
-[ext_resource path="res://LaserOrange.tscn" type="PackedScene" id=3]
-[ext_resource path="res://tileset.tres" type="TileSet" id=4]
-[ext_resource path="res://playerKinematic.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Images/White_Background.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/LaserPurple.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/LaserOrange.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TileSetPlaceholder.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/playerKinematic.tscn" type="PackedScene" id=5]
+
+
+
+
+
 
 [node name="Node" type="Node" index="0"]
 

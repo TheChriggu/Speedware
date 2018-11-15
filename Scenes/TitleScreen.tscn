@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Images/icon.png" type="Texture" id=1]
 [ext_resource path="res://Images/Char_Yellow.png" type="Texture" id=2]
@@ -7,11 +7,12 @@
 [ext_resource path="res://Scenes/Buttons/ContinueButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Levels/KonstantinsTest.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Buttons/OptionsButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Buttons/Chat_Logs.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Levels/TestLevel_Jonas.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=11]
-[ext_resource path="res://Scenes/Buttons/FadeIn.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Options.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Buttons/Chat_Logs.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Levels/TestLevel_Jonas.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Scenes/Buttons/FadeIn.tscn" type="PackedScene" id=13]
 
 [node name="TitleScreen" type="Control" index="0"]
 
@@ -152,16 +153,16 @@ scene_to_load = ExtResource( 6 )
 margin_top = 302.0
 margin_right = 797.0
 margin_bottom = 362.0
-scene_to_load = null
+scene_to_load = ExtResource( 8 )
 
-[node name="Chat_Logs" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 8 )]
+[node name="Chat_Logs" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 9 )]
 
 margin_top = 422.0
 margin_right = 797.0
 margin_bottom = 482.0
-scene_to_load = ExtResource( 9 )
+scene_to_load = ExtResource( 10 )
 
-[node name="Exit" parent="Menu/CenterRow/Buttons" index="4" instance=ExtResource( 10 )]
+[node name="Exit" parent="Menu/CenterRow/Buttons" index="4" instance=ExtResource( 11 )]
 
 margin_top = 542.0
 margin_right = 797.0
@@ -182,7 +183,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 12 )
 text = "
 Lazer Labs
 "
@@ -191,7 +192,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="FadeIn" parent="." index="1" instance=ExtResource( 12 )]
+[node name="FadeIn" parent="." index="1" instance=ExtResource( 13 )]
 
 visible = false
 

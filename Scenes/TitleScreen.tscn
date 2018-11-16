@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Buttons/MenuButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Levels/Prototype_MS02_Ver01_Konstantin_S.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Buttons/ContinueButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Levels/KonstantinsTest.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Levels/level_physicsTest_01_Chris.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Buttons/OptionsButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Options.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Buttons/Chat_Logs.tscn" type="PackedScene" id=9]
@@ -13,7 +13,7 @@
 [ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=12]
 
-[node name="TitleScreen" type="Control" index="0"]
+[node name="TitleScreen" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0

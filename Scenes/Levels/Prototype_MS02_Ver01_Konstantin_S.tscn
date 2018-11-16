@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Images/White_Background.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/LaserPurple.tscn" type="PackedScene" id=2]
@@ -7,6 +7,17 @@
 [ext_resource path="res://Scenes/playerKinematic.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/ColorBar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/GameTimer.gd" type="Script" id=8]
+[ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Scripts/TimerTestScript.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 35
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 9 )
+_sections_unfolded = [ "Font" ]
 
 [node name="World" type="Node" index="0"]
 
@@ -20,6 +31,8 @@ texture = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Offset", "Visibility" ]
 
 [node name="Lasers" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="LaserBlau" parent="Lasers" index="0" instance=ExtResource( 2 )]
 
@@ -298,10 +311,43 @@ WALK_FORCE = 1500
 WALK_MAX_SPEED = 1000
 JUMP_SPEED = 1200
 SLIDE_STOP_VELOCITY = 20.0
-on_air_time = 2
 
 [node name="ColorBar" parent="." index="4" instance=ExtResource( 6 )]
 
 [node name="PauseMenu" parent="." index="5" instance=ExtResource( 7 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
+
+layer = 3
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="CanvasLayer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 939.0
+margin_top = 9.0
+margin_right = 1100.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 10 )
 
 

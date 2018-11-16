@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Images/icon.png" type="Texture" id=1]
+[ext_resource path="res://Images/Speedware_Logo_01_BryanPrintz.png" type="Texture" id=1]
 [ext_resource path="res://Images/Char_Yellow.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Buttons/MenuButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Levels/level_physicsTest_01_Chris.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Levels/Prototype_MS02_Ver01_Konstantin_S.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Buttons/ContinueButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Levels/KonstantinsTest.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Buttons/OptionsButton.tscn" type="PackedScene" id=7]
@@ -12,10 +12,10 @@
 [ext_resource path="res://Scenes/Chatlogs.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=12]
-[ext_resource path="res://Scenes/Buttons/FadeIn.tscn" type="PackedScene" id=13]
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" index="0"]
 
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -26,9 +26,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Pause" ]
 
 [node name="Menu" type="VBoxContainer" parent="." index="0"]
 
+pause_mode = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -44,16 +46,17 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "Pause" ]
 
 [node name="Logo" type="TextureRect" parent="Menu" index="0"]
 
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1598.0
-margin_bottom = 64.0
+margin_bottom = 39.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -62,16 +65,18 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 1 )
 stretch_mode = 4
+_sections_unfolded = [ "Pause" ]
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu" index="1"]
 
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 68.0
+margin_top = 43.0
 margin_right = 1598.0
-margin_bottom = 733.0
+margin_bottom = 708.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -79,10 +84,11 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
 alignment = 0
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Pause", "Size Flags" ]
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow" index="0"]
 
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -96,6 +102,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 use_top_left = false
+_sections_unfolded = [ "Pause" ]
 
 [node name="Characters" type="TextureRect" parent="Menu/CenterRow/CenterContainer" index="0"]
 
@@ -117,6 +124,7 @@ stretch_mode = 0
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow" index="1"]
 
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -132,41 +140,51 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 60
 alignment = 1
-_sections_unfolded = [ "Margin", "Size Flags", "custom_constants" ]
+_sections_unfolded = [ "Margin", "Pause", "Size Flags", "custom_constants" ]
 
 [node name="Start Game" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 3 )]
 
+pause_mode = 2
 margin_top = 62.0
 margin_right = 797.0
 margin_bottom = 122.0
+_sections_unfolded = [ "Pause", "Rect" ]
 scene_to_load = ExtResource( 4 )
 
 [node name="Continue" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 5 )]
 
+pause_mode = 2
 margin_top = 182.0
 margin_right = 797.0
 margin_bottom = 242.0
+_sections_unfolded = [ "Pause", "Rect" ]
 scene_to_load = ExtResource( 6 )
 
 [node name="Options" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 7 )]
 
+pause_mode = 2
 margin_top = 302.0
 margin_right = 797.0
 margin_bottom = 362.0
+_sections_unfolded = [ "Pause", "Rect" ]
 scene_to_load = ExtResource( 8 )
 
 [node name="Chat_Logs" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 9 )]
 
+pause_mode = 2
 margin_top = 422.0
 margin_right = 797.0
 margin_bottom = 482.0
+_sections_unfolded = [ "Pause", "Rect" ]
 scene_to_load = ExtResource( 10 )
 
 [node name="Exit" parent="Menu/CenterRow/Buttons" index="4" instance=ExtResource( 11 )]
 
+pause_mode = 2
 margin_top = 542.0
 margin_right = 797.0
 margin_bottom = 602.0
+_sections_unfolded = [ "Pause", "Rect" ]
 
 [node name="VersionLabel" type="Label" parent="Menu" index="2"]
 
@@ -174,7 +192,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 737.0
+margin_top = 712.0
 margin_right = 1598.0
 margin_bottom = 861.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -184,16 +202,11 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 12 )
-text = "
-Lazer Labs
+text = "by Lazer Labs
 "
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
-
-[node name="FadeIn" parent="." index="1" instance=ExtResource( 13 )]
-
-visible = false
 
 

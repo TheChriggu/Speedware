@@ -9,12 +9,12 @@
 [ext_resource path="res://Scenes/Buttons/OptionsButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Options.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Buttons/Chat_Logs.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Levels/TestLevel_Jonas.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Chatlogs.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=12]
 [ext_resource path="res://Scenes/Buttons/FadeIn.tscn" type="PackedScene" id=13]
 
-[node name="TitleScreen" type="Control" index="0"]
+[node name="TitleScreen" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0

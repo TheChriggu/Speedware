@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Images/Char_Yellow.png" type="Texture" id=2]
 [ext_resource path="res://Images/Char_Purple.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/CameraFocalPoint.gd" type="Script" id=4]
+[ext_resource path="res://Images/Crosshair.png" type="Texture" id=5]
 
 [sub_resource type="ParticlesMaterial" id=1]
 
@@ -50,7 +52,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:position")
+tracks/0/path = NodePath("Camera Focal Point/Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -69,7 +71,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:position")
+tracks/0/path = NodePath("Camera Focal Point/Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -296,9 +298,27 @@ anims/SwitchOrangeToPurple = SubResource( 4 )
 anims/SwitchPurpleToOrange = SubResource( 5 )
 blend_times = [  ]
 
-[node name="Camera2D" type="Camera2D" parent="." index="5"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="5"]
 
-position = Vector2( 348.886, -4.50546 )
+build_mode = 0
+polygon = PoolVector2Array( 2.07212, -19.3885, -8.86555, -7.34184, -10.4012, -4.66935, -11.7252, -5.41411, -12.6631, -6.40713, -13.8768, -6.9588, -13.9885, -10.2932, -12.5214, -11.8519, -10.3049, -18.3457, -8.55, -23.9087, -5.86774, -24.0665, -1.61598, -24.5796, -0.843632, -25.1589, 2.60434, -25.683, 2.90776, -26.0967, 5.44546, -26.3726, 6.63156, -26.4001, 10.4877, -24.2835, 13.0326, -24.7814, 12.5925, -27.8532, 9.57747, -28.9728, 18.9835, -30.8761, 21.1626, -29.9106, 22.5326, -28.3265, 23.0383, -27.0143, 22.4591, -23.456, 22.4315, -21.7183, 22.1005, -21.4424, 21.0523, -21.8562, 20.5282, -20.0908, 20.0869, -18.9875, 18.6525, -18.8495, 16.6947, -20.2798, 16.6947, -17.7553, 18.7458, -16.0197, 19.377, -13.653, 21.7437, -12.233, 23.3215, -8.4463, 25.6882, -10.1819, 26.6348, -14.4419, 29.3171, -15.3886, 31.0527, -12.7063, 31.0527, -9.07742, 27.4237, -8.28852, 23.1637, -2.60846, 14.1702, -10.3396, 3.59902, -4.97515, 10.2258, 6.06942, 10.5413, 10.4872, 7.70129, 14.4317, -7.91888, 19.1651, -12.6523, 24.8452, -16.439, 24.8452, -11.39, 15.694, -8.23444, 16.4829, -1.6077, 11.2761, 0.127876, 8.12055, 3.28346, 7.33165, -3.81661, 3.07161, -11.8634, 10.0139, -16.439, 10.9606, -16.5967, 13.9584, -27.4835, 23.7407, -30.1658, 33.0497, -32.3747, 33.0497, -32.5325, 22.9518, -28.588, 20.4273, -22.2768, 8.27833, -18.3323, 7.64721, -15.9656, 3.22939, -11.6425, -1.1938, -8.23444, -9.70853, -4.49781, -19.9303 )
+
+[node name="Camera Focal Point" type="Node2D" parent="." index="6"]
+
+script = ExtResource( 4 )
+MAX_CAM_DISTANCE = 500
+MAX_CAM_SPEED = 5
+
+[node name="Crosshair" type="Sprite" parent="Camera Focal Point" index="0"]
+
+visible = false
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="Camera Focal Point" index="1"]
+
+offset = Vector2( 100, 0 )
 anchor_mode = 1
 rotating = true
 current = true
@@ -311,20 +331,16 @@ limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = false
-smoothing_speed = 5.0
+smoothing_speed = 0.0
 offset_v = 0.0
 offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
 editor_draw_screen = true
 editor_draw_limits = false
-editor_draw_drag_margin = false
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="6"]
-
-build_mode = 0
-polygon = PoolVector2Array( 2.07212, -19.3885, -8.86555, -7.34184, -10.4012, -4.66935, -11.7252, -5.41411, -12.6631, -6.40713, -13.8768, -6.9588, -13.9885, -10.2932, -12.5214, -11.8519, -10.3049, -18.3457, -8.55, -23.9087, -5.86774, -24.0665, -1.61598, -24.5796, -0.843632, -25.1589, 2.60434, -25.683, 2.90776, -26.0967, 5.44546, -26.3726, 6.63156, -26.4001, 10.4877, -24.2835, 13.0326, -24.7814, 12.5925, -27.8532, 9.57747, -28.9728, 18.9835, -30.8761, 21.1626, -29.9106, 22.5326, -28.3265, 23.0383, -27.0143, 22.4591, -23.456, 22.4315, -21.7183, 22.1005, -21.4424, 21.0523, -21.8562, 20.5282, -20.0908, 20.0869, -18.9875, 18.6525, -18.8495, 16.6947, -20.2798, 16.6947, -17.7553, 18.7458, -16.0197, 19.377, -13.653, 21.7437, -12.233, 23.3215, -8.4463, 25.6882, -10.1819, 26.6348, -14.4419, 29.3171, -15.3886, 31.0527, -12.7063, 31.0527, -9.07742, 27.4237, -8.28852, 23.1637, -2.60846, 14.1702, -10.3396, 3.59902, -4.97515, 10.2258, 6.06942, 10.5413, 10.4872, 7.70129, 14.4317, -7.91888, 19.1651, -12.6523, 24.8452, -16.439, 24.8452, -11.39, 15.694, -8.23444, 16.4829, -1.6077, 11.2761, 0.127876, 8.12055, 3.28346, 7.33165, -3.81661, 3.07161, -11.8634, 10.0139, -16.439, 10.9606, -16.5967, 13.9584, -27.4835, 23.7407, -30.1658, 33.0497, -32.3747, 33.0497, -32.5325, 22.9518, -28.588, 20.4273, -22.2768, 8.27833, -18.3323, 7.64721, -15.9656, 3.22939, -11.6425, -1.1938, -8.23444, -9.70853, -4.49781, -19.9303 )
+editor_draw_drag_margin = true
+_sections_unfolded = [ "Drag Margin", "Editor", "Offset", "Smoothing", "Transform" ]
 
 

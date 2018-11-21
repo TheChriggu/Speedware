@@ -13,7 +13,7 @@
 [ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=12]
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0

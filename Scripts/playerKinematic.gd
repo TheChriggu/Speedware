@@ -15,6 +15,7 @@ export var JUMP_SPEED = 600
 #Time the player can jump after leaving an edge (Double click for double jump mechanic~)
 export var JUMP_MAX_AIRBORNE_TIME = 0.001
 
+
 export var SLIDE_STOP_VELOCITY = 9.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
@@ -22,8 +23,21 @@ var velocity = Vector2()
 export var on_air_time = 2
 var jumping = false
 
+
+
 var prev_jump_pressed = false
 export var isGreen = true
+
+#Camera Variables
+export var MAX_CAM_DISTANCE_H = 500 #how far away the camera can get from the player horizontally
+export var MAX_CAM_SPEED = 5 #maximal speed of camera movement
+var verticalPosition = 0
+var last_offset = Vector2 (0,0) #previous position of the camera
+signal newCameraOffsetH #emit, once a new horizontal camera offset has been calculated
+signal newCameraOffsetV #emit, once a new vertical camera offset has been calculated
+signal newSpeed #emit once every frame
+var fixedCamera = false
+
 
 #Colorswitch Mechanic
 func SwitchColor():
@@ -78,7 +92,9 @@ func _physics_process(delta):
 		velocity.x = vlen * vsign
 	
 	# Integrate forces to velocity
-	velocity += force * delta	
+	velocity += force * delta
+	
+	
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
@@ -100,3 +116,44 @@ func _physics_process(delta):
 	#Colorswitch Mechanic
 	if Input.is_action_just_pressed("switchColor"):
 			SwitchColor()
+
+
+
+
+#Camera calculation
+func _process(delta):
+	#emit the current speed for camera offset calculation.
+	#signal is received by AverageSpeedClculator
+	emit_signal("newSpeed", velocity)
+	if fixedCamera:
+		emit_signal("newCameraOffsetV", verticalPosition-position.y)
+	else:
+		emit_signal("newCameraOffsetV", 0)
+
+#once the average of the past speeds has been calculated, calculate the new camera offset
+func _on_AverageSpeedCalculator_averageSpeed(speed):
+	#offset is proportional to current movement speed/max speed
+	var next_offset_h = MAX_CAM_DISTANCE_H*speed.x/WALK_MAX_SPEED
+	
+	#if camera speed is too high (new position is further away than allowed), set the camera to max speed
+	if (next_offset_h - last_offset.x) > MAX_CAM_SPEED: #when moving to the right
+		next_offset_h = last_offset.x + MAX_CAM_SPEED
+	elif (next_offset_h - last_offset.x) < -MAX_CAM_SPEED: #when moving to the left
+		next_offset_h = last_offset.x - MAX_CAM_SPEED
+	last_offset.x = next_offset_h
+	
+	
+	#set the camera
+	emit_signal("newCameraOffsetH", next_offset_h)
+
+
+func _on_CamColliders_newFixedCamera(newPosition):
+	print("newCamAreaEntered")
+	verticalPosition = newPosition
+	fixedCamera = true
+	#emit_signal("newCameraOffsetV", verticalPosition-position.y)
+	pass # replace with function body
+
+func _on_CamColliders_newFreeCamera():
+	fixedCamera = false
+	pass # replace with function body

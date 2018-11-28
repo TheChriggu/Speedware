@@ -30,13 +30,14 @@ export var isGreen = true
 
 #Camera Variables
 export var MAX_CAM_DISTANCE_H = 500 #how far away the camera can get from the player horizontally
-export var MAX_CAM_SPEED = 5 #maximal speed of camera movement
-var verticalPosition = 0
-var last_offset = Vector2 (0,0) #previous position of the camera
-signal newCameraOffsetH #emit, once a new horizontal camera offset has been calculated
-signal newCameraOffsetV #emit, once a new vertical camera offset has been calculated
-signal newSpeed #emit once every frame
-var fixedCamera = false
+export var MAX_CAM_SPEED_H = 5 #maximal speed of horizontal camera movement
+export var MAX_CAM_SPEED_V = 5 #maximal speed of vertical camera movement
+var vertical_anchor = 0 #the height offset in regards to the player, to which the camera is anchored
+var last_offset = Vector2 (0,0) #previous offset of the camera
+signal newCameraOffsetH #emit once a new horizontal camera offset has been calculated
+signal newCameraOffsetV #emit once a new vertical camera offset has been calculated
+signal newSpeed #emit once every frame to calculate the speed for the camera
+var fixedCamera = false #bool to track weather the camera is currently fixed to an anchor or following the players vertical movement
 
 
 #Colorswitch Mechanic
@@ -122,38 +123,57 @@ func _physics_process(delta):
 
 #Camera calculation
 func _process(delta):
-	#emit the current speed for camera offset calculation.
-	#signal is received by AverageSpeedClculator
+	
+	#calculate new average speed once every frame
 	emit_signal("newSpeed", velocity)
+	
+	#vertical cam offset calculation
+	#vertical cam position
+	var next_offset_v #vertical offset of the camera
+	
+	#set new camera offset, to the anchor if camera is free, otherwise follow the player
 	if fixedCamera:
-		emit_signal("newCameraOffsetV", verticalPosition-position.y)
+		next_offset_v = vertical_anchor-position.y #camera offset in relation to the player
 	else:
-		emit_signal("newCameraOffsetV", 0)
+		next_offset_v = 0
+		
+	#if camera speed is too high (new position is further away than allowed), set the camera to max speed
+	if (next_offset_v - last_offset.y) > MAX_CAM_SPEED_V: #when moving downwards
+		next_offset_v = last_offset.y + MAX_CAM_SPEED_V
+	elif (next_offset_v - last_offset.y) < -MAX_CAM_SPEED_V: #when moving upwards
+		next_offset_v = last_offset.y - MAX_CAM_SPEED_V
+	last_offset.y = next_offset_v
+	
+	#send new offset to camera
+	emit_signal("newCameraOffsetV", next_offset_v)
 
+
+#horizontal cam position, dependant on the players speed
 #once the average of the past speeds has been calculated, calculate the new camera offset
 func _on_AverageSpeedCalculator_averageSpeed(speed):
 	#offset is proportional to current movement speed/max speed
 	var next_offset_h = MAX_CAM_DISTANCE_H*speed.x/WALK_MAX_SPEED
 	
 	#if camera speed is too high (new position is further away than allowed), set the camera to max speed
-	if (next_offset_h - last_offset.x) > MAX_CAM_SPEED: #when moving to the right
-		next_offset_h = last_offset.x + MAX_CAM_SPEED
-	elif (next_offset_h - last_offset.x) < -MAX_CAM_SPEED: #when moving to the left
-		next_offset_h = last_offset.x - MAX_CAM_SPEED
+	if (next_offset_h - last_offset.x) > MAX_CAM_SPEED_H: #when moving to the right
+		next_offset_h = last_offset.x + MAX_CAM_SPEED_H
+	elif (next_offset_h - last_offset.x) < -MAX_CAM_SPEED_H: #when moving to the left
+		next_offset_h = last_offset.x - MAX_CAM_SPEED_H
 	last_offset.x = next_offset_h
 	
 	
-	#set the camera
+	#send new offset to camera
 	emit_signal("newCameraOffsetH", next_offset_h)
 
 
-func _on_CamColliders_newFixedCamera(newPosition):
+#if collider was set to fix the camera to a certain hight
+func _on_CamCollider_newFixedCamera(colliderPosition):
 	print("newCamAreaEntered")
-	verticalPosition = newPosition
+	vertical_anchor = colliderPosition
 	fixedCamera = true
-	#emit_signal("newCameraOffsetV", verticalPosition-position.y)
-	pass # replace with function body
 
-func _on_CamColliders_newFreeCamera():
+#if collider was set to remove the camera from an anchor
+func _on_CamCollider_newFreeCamera():
+	print("newCamArea2Entered")
 	fixedCamera = false
 	pass # replace with function body

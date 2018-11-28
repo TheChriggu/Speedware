@@ -192,7 +192,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 0.703125, 0, 1 ) ]
 }
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 6

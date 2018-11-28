@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Images/White_Background.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/LaserPurple.tscn" type="PackedScene" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Scenes/playerKinematic.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/ColorBar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/CamCollider.tscn" type="PackedScene" id=8]
 
-[node name="World" type="Node"]
+[node name="World" type="Node" index="0"]
 
 _sections_unfolded = [ "Pause" ]
 
@@ -232,7 +233,7 @@ _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 [node name="TileMap" type="TileMap" parent="." index="2"]
 
-position = Vector2( -182.29, 36.7301 )
+position = Vector2( -190, 35 )
 mode = 0
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 64, 64 )
@@ -254,14 +255,109 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="player" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 98.0228, 4.87675 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 GRAVITY = 3300.0
-WALK_FORCE = 1500
-WALK_MAX_SPEED = 1000
 JUMP_SPEED = 1300
+MAX_CAM_SPEED_H = 5
+MAX_CAM_SPEED_V = 5
 
 [node name="ColorBar" parent="." index="4" instance=ExtResource( 6 )]
 
 [node name="PauseMenu" parent="." index="5" instance=ExtResource( 7 )]
+
+[node name="Cam Colliders" type="Node2D" parent="." index="6"]
+
+[node name="CamCollider" parent="Cam Colliders" index="0" instance=ExtResource( 8 )]
+
+[node name="CamCollider2" parent="Cam Colliders" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 9038.42, -112.71 )
+
+[node name="CamCollider7" parent="Cam Colliders" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 9777.1, -115.43 )
+
+[node name="CamCollider8" parent="Cam Colliders" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 9812.47, -171.205 )
+
+[node name="CamCollider9" parent="Cam Colliders" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( 11501.1, -214.067 )
+scale = Vector2( 0.99054, 1.57303 )
+
+[node name="CamCollider10" parent="Cam Colliders" index="5" instance=ExtResource( 8 )]
+
+position = Vector2( 11535, -128.825 )
+scale = Vector2( 0.99054, 2.91202 )
+FIXED_CAMERA = false
+
+[node name="CamCollider3" parent="Cam Colliders" index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 10061.4, 32.8499 )
+
+[node name="CamCollider11" parent="Cam Colliders" index="7" instance=ExtResource( 8 )]
+
+position = Vector2( 10061.4, 32.8499 )
+
+[node name="CamCollider4" parent="Cam Colliders" index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 9779.82, 91.3457 )
+
+[node name="CamCollider5" parent="Cam Colliders" index="9" instance=ExtResource( 8 )]
+
+position = Vector2( 9816.55, 64.576 )
+scale = Vector2( 0.99054, 1.43879 )
+FIXED_CAMERA = false
+
+[node name="CamCollider6" parent="Cam Colliders" index="10" instance=ExtResource( 8 )]
+
+position = Vector2( 11497.6, 59.3141 )
+scale = Vector2( 0.99054, 1.29186 )
+FIXED_CAMERA = false
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider2" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider2" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider7" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider7" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider8" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider8" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider9" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider9" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider10" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider10" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider3" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider3" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider11" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider11" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider4" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider4" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider5" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider5" to="player" method="_on_CamCollider_newFreeCamera"]
+
+[connection signal="newFixedCamera" from="Cam Colliders/CamCollider6" to="player" method="_on_CamCollider_newFixedCamera"]
+
+[connection signal="newFreeCamera" from="Cam Colliders/CamCollider6" to="player" method="_on_CamCollider_newFreeCamera"]
 
 

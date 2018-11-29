@@ -4,7 +4,7 @@ var previous_speeds = [] #array of the previous 20 player speeds
 signal averageSpeed #signal to send once the new average is calculated
 
 
-func _on_player_newSpeed(speed):
+func addNew(speed):
 	#add new value at the back of the array and remove the first
 	previous_speeds.append(speed)
 	if (previous_speeds.size() > 20):

@@ -124,8 +124,8 @@ func _physics_process(delta):
 #Camera calculation
 func _process(delta):
 	
-	#calculate new average speed once every frame
-	emit_signal("newSpeed", velocity)
+	#calculate new average speed once every frame. Initializes horizontal camera offset calculation
+	$AverageSpeedCalculator.addNew(velocity)
 	
 	#vertical cam offset calculation
 	#vertical cam position
@@ -145,7 +145,7 @@ func _process(delta):
 	last_offset.y = next_offset_v
 	
 	#send new offset to camera
-	emit_signal("newCameraOffsetV", next_offset_v)
+	$CameraFocalPoint.setVertical(next_offset_v)
 
 
 #horizontal cam position, dependant on the players speed
@@ -163,17 +163,15 @@ func _on_AverageSpeedCalculator_averageSpeed(speed):
 	
 	
 	#send new offset to camera
-	emit_signal("newCameraOffsetH", next_offset_h)
+	$CameraFocalPoint.setHorizontal(next_offset_h)
 
 
 #if collider was set to fix the camera to a certain hight
 func _on_CamCollider_newFixedCamera(colliderPosition):
-	print("newCamAreaEntered")
 	vertical_anchor = colliderPosition
 	fixedCamera = true
 
 #if collider was set to remove the camera from an anchor
 func _on_CamCollider_newFreeCamera():
-	print("newCamArea2Entered")
 	fixedCamera = false
 	pass # replace with function body

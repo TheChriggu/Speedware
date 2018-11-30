@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tileset Test/TilesetSpeedWare.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/playerKinematic.tscn" type="PackedScene" id=2]
+
+[node name="Node" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+position = Vector2( 296.953, -11.0803 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 0, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 7
+collision_mask = 7
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 1, 0, 327679, 1610612736, 0, 262144, 1610612736, 0, 262145, 1610612736, 0, 262146, 1610612736, 0, 262147, 1610612736, 0, 262148, 1610612736, 0, 262149, 1610612736, 0, 262150, 1610612736, 0, 262151, 1610612736, 0, 262152, 1610612736, 0, 262153, 1610612736, 0, 262154, 1610612736, 0, 262155, -1610612736, 0, 393215, 2, 0, 327691, -1610612736, 0, 393227, -1610612736, 0, 786443, 0, 0, 786445, 0, 0, 786447, 0, 0, 786449, 1, 0, 917519, 0, 0, 917521, 1, 0 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="player" parent="TileMap" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 102.28, 198.583 )
+collision_layer = 7
+collision_mask = 7
+
+

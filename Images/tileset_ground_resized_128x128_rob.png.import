@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Green_Background.jpg-523fb4b861411ce9fac01c0a4874713d.stex"
+path="res://.import/tileset_ground_resized_128x128_rob.png-8a22e273e4d025dcd79a5d5304d48f01.stex"
 
 [deps]
 
-source_file="res://Images/Green_Background.jpg"
-dest_files=[ "res://.import/Green_Background.jpg-523fb4b861411ce9fac01c0a4874713d.stex" ]
+source_file="res://Images/tileset_ground_resized_128x128_rob.png"
+dest_files=[ "res://.import/tileset_ground_resized_128x128_rob.png-8a22e273e4d025dcd79a5d5304d48f01.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -25,5 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -306,11 +306,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="player" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 98.0228, 4.87675 )
-GRAVITY = 3000.0
-WALK_FORCE = 1500
-WALK_MAX_SPEED = 1000
-JUMP_SPEED = 1200
-SLIDE_STOP_VELOCITY = 20.0
 
 [node name="ColorBar" parent="." index="4" instance=ExtResource( 6 )]
 

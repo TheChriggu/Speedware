@@ -17,7 +17,7 @@ export var JUMP_MAX_AIRBORNE_TIME = 0.001
 
 export var SLIDE_STOP_VELOCITY = 9.0 # one pixel/second
 const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
-
+var jump_cut_velocity = 200 #Value used for the jump() and jump_cut() function
 var velocity = Vector2()
 export var on_air_time = 2
 var jumping = false
@@ -37,8 +37,8 @@ func SwitchColor():
 func jump():
     velocity.y = -JUMP_SPEED
 func jump_cut():
-    if velocity.y < -200:
-        velocity.y = -200
+    if velocity.y < -jump_cut_velocity:
+        velocity.y = -jump_cut_velocity
 
 func _physics_process(delta):
 	#basic Player movement

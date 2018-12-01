@@ -45,8 +45,12 @@ func SwitchColor():
 	isGreen = not isGreen
 	if isGreen:
 		$AnimationPlayer.play("SwitchPurpleToOrange")
+		$Sprite/TrailEffect/AnimationPlayer.play("ColorSwitch_Purple_to_Yellow")
+		$Sprite/TrailEffect/AnimationPlayer.play("NumberSwitch_Number_one")
 	else:
 		$AnimationPlayer.play("SwitchOrangeToPurple")
+		$Sprite/TrailEffect/AnimationPlayer.play("ColorSwitch_Yellow_to_Purple")
+		$Sprite/TrailEffect/AnimationPlayer.play("NumberSwitch_Number_zero")
 
 #Jump() and jump_cut() are for the "Mario-like"-jump Height controls (MLJ=Mario-like Jump)
 func jump():

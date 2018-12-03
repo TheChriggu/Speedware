@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Images/Speedware_Logo_01_BryanPrintz.png" type="Texture" id=1]
 [ext_resource path="res://Images/Character_Sprite_Yellow.png" type="Texture" id=2]
@@ -6,14 +6,16 @@
 [ext_resource path="res://Scenes/Levels/Prototype_MS02_Ver01_Konstantin_S.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Buttons/ContinueButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Levels/level_physicsTest_01_Chris.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Buttons/OptionsButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Options.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Buttons/Level Selection.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Level Selection.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Buttons/Chat_Logs.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Chatlogs.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Scenes/Buttons/OptionsButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Options.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=14]
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -154,31 +156,39 @@ scene_to_load = ExtResource( 4 )
 [node name="Continue" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 5 )]
 
 pause_mode = 2
+visible = false
 margin_top = 120.0
 margin_right = 797.0
 margin_bottom = 180.0
 _sections_unfolded = [ "Pause", "Rect" ]
 scene_to_load = ExtResource( 6 )
 
-[node name="Options" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 7 )]
+[node name="Level Selection" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 7 )]
+
+margin_top = 120.0
+margin_right = 797.0
+margin_bottom = 180.0
+scene_to_load = ExtResource( 8 )
+
+[node name="Chat_Logs" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 9 )]
 
 pause_mode = 2
 margin_top = 240.0
 margin_right = 797.0
 margin_bottom = 300.0
 _sections_unfolded = [ "Pause", "Rect" ]
-scene_to_load = ExtResource( 8 )
+scene_to_load = ExtResource( 10 )
 
-[node name="Chat_Logs" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 9 )]
+[node name="Options" parent="Menu/CenterRow/Buttons" index="4" instance=ExtResource( 11 )]
 
 pause_mode = 2
 margin_top = 360.0
 margin_right = 797.0
 margin_bottom = 420.0
 _sections_unfolded = [ "Pause", "Rect" ]
-scene_to_load = ExtResource( 10 )
+scene_to_load = ExtResource( 12 )
 
-[node name="Exit" parent="Menu/CenterRow/Buttons" index="4" instance=ExtResource( 11 )]
+[node name="Exit" parent="Menu/CenterRow/Buttons" index="5" instance=ExtResource( 13 )]
 
 pause_mode = 2
 margin_top = 480.0
@@ -201,7 +211,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 12 )
+custom_fonts/font = ExtResource( 14 )
 text = "by Lazer Labs
 "
 percent_visible = 1.0

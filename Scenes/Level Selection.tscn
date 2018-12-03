@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Images/ui_level_idea.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Buttons/LevelSelection/LevelButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Levels/Prototype_MS02_Ver01_Konstantin_S.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Images/Star_Empty.png" type="Texture" id=5]
+[ext_resource path="res://Images/Star_Filled.png" type="Texture" id=6]
+
+[node name="Level Selection" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+show_behind_parent = true
+position = Vector2( 966.681, 563.329 )
+scale = Vector2( 0.949762, 0.751308 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Return_to_Menu" parent="." index="1" instance=ExtResource( 2 )]
+
+margin_left = -14.0
+margin_top = 463.0
+margin_right = -14.0
+margin_bottom = 463.0
+
+[node name="ButtonGroup" type="Control" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ButtonLevel1" parent="ButtonGroup" index="0" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+margin_left = 1544.0
+margin_top = 640.0
+margin_right = 1634.0
+margin_bottom = 712.0
+level_to_load = ExtResource( 4 )
+
+[node name="Star1" parent="ButtonGroup/ButtonLevel1" index="0"]
+
+texture = ExtResource( 5 )
+
+[node name="Label" parent="ButtonGroup/ButtonLevel1" index="3"]
+
+text = "Best Time: -"
+
+[node name="ButtonLevel2" parent="ButtonGroup" index="1" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+margin_left = 729.0
+margin_top = 268.0
+margin_right = 819.0
+margin_bottom = 340.0
+level_to_load = ExtResource( 4 )
+
+[node name="Star2" parent="ButtonGroup/ButtonLevel2" index="1"]
+
+texture = ExtResource( 6 )
+
+[node name="Star3" parent="ButtonGroup/ButtonLevel2" index="2"]
+
+texture = ExtResource( 6 )
+
+[node name="Label" parent="ButtonGroup/ButtonLevel2" index="3"]
+
+text = "Best Time: 39.00"
+
+[node name="ButtonLevel3" parent="ButtonGroup" index="2" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+margin_left = 1277.0
+margin_top = 263.0
+margin_right = 1367.0
+margin_bottom = 335.0
+level_to_load = ExtResource( 4 )
+
+[node name="Star2" parent="ButtonGroup/ButtonLevel3" index="1"]
+
+texture = ExtResource( 6 )
+
+[node name="Label" parent="ButtonGroup/ButtonLevel3" index="3"]
+
+text = "Best Time: 41.00"
+
+[node name="ButtonLevel4" parent="ButtonGroup" index="3" instance=ExtResource( 3 )]
+
+margin_left = 470.0
+margin_top = 625.0
+margin_right = 560.0
+margin_bottom = 697.0
+level_to_load = ExtResource( 4 )
+
+[connection signal="pressed" from="ButtonGroup/ButtonLevel1" to="ButtonGroup" method="_on_ButtonLevel1_pressed"]
+
+
+[editable path="ButtonGroup/ButtonLevel1"]
+[editable path="ButtonGroup/ButtonLevel2"]
+[editable path="ButtonGroup/ButtonLevel3"]

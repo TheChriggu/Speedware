@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Images/decoration_background_mandy.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/LaserPurple.tscn" type="PackedScene" id=2]
@@ -6,20 +6,64 @@
 [ext_resource path="res://TileSetPlaceholder.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/playerKinematic.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/ColorBar.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scripts/GameTimer.gd" type="Script" id=8]
-[ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Scripts/TimerTestScript.gd" type="Script" id=10]
+[ext_resource path="res://Images/62835-floppy-disk-icon.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/GameTimer.gd" type="Script" id=9]
+[ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Scripts/TimerTestScript.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Levels/Collectible.gd" type="Script" id=12]
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 15.5215
+height = 88.7789
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 35
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 9 )
+font_data = ExtResource( 10 )
 _sections_unfolded = [ "Font" ]
 
-[node name="World" type="Node"]
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 33.5225, 32.437 )
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "Dispair"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../ColorBar/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "1/1" ]
+}
+
+[node name="World" type="Node" index="0"]
 
 _sections_unfolded = [ "Pause" ]
 
@@ -329,18 +373,65 @@ position = Vector2( 894.117, 502.879 )
 scale = Vector2( 1.98797, 1.98797 )
 texture = ExtResource( 1 )
 
+[node name="Area2D" type="Area2D" parent="player" index="6"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D" index="0"]
+
+position = Vector2( 2.37827, -3.5674 )
+shape = SubResource( 3 )
+
 [node name="ColorBar" parent="." index="4" instance=ExtResource( 6 )]
 
-[node name="PauseMenu" parent="." index="5" instance=ExtResource( 7 )]
+editor/display_folded = true
+
+[node name="Label" type="Label" parent="ColorBar" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1822.0
+margin_top = 64.0
+margin_right = 1862.0
+margin_bottom = 78.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+text = "0/1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Sprite" type="Sprite" parent="ColorBar" index="5"]
+
+position = Vector2( 1778.26, 77.987 )
+scale = Vector2( 0.0511833, 0.0511833 )
+texture = ExtResource( 7 )
+
+[node name="PauseMenu" parent="." index="5" instance=ExtResource( 8 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
 
+editor/display_folded = true
 layer = 3
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="CanvasLayer" index="0"]
 
@@ -365,6 +456,44 @@ custom_constants/shadow_offset_y = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 10 )
+script = ExtResource( 11 )
+
+[node name="Collectible" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 10552.9, 47.8608 )
+scale = Vector2( 0.0853503, 0.0820428 )
+texture = ExtResource( 7 )
+script = ExtResource( 12 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="StaticBody2D" type="Area2D" parent="Collectible" index="0"]
+
+position = Vector2( -2.71875, -7.9599 )
+scale = Vector2( 14.6461, 14.8676 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectible/StaticBody2D" index="0"]
+
+position = Vector2( 0.21875, 0.61573 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collectible" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Dispair = SubResource( 4 )
+blend_times = [  ]
+
+[connection signal="area_entered" from="Collectible/StaticBody2D" to="Collectible" method="_on_StaticBody2D_area_entered"]
 
 

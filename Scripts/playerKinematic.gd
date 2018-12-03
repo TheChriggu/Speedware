@@ -121,6 +121,9 @@ func _physics_process(delta):
 	#Colorswitch Mechanic
 	if Input.is_action_just_pressed("switchColor"):
 			SwitchColor()
+	
+	if Input.is_action_just_pressed("Restart"):
+		get_tree().reload_current_scene()
 
 
 

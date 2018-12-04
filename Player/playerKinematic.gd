@@ -42,10 +42,12 @@ func SwitchColor():
 		$AnimationPlayer.play("SwitchPurpleToOrange")
 		$Sprite/TrailEffect/AnimationPlayer.play("ColorSwitch_Purple_to_Yellow")
 		$Sprite/TrailEffect/AnimationPlayer.play("NumberSwitch_Number_one")
+		$ColorswitchSound.playing = true
 	else:
 		$AnimationPlayer.play("SwitchOrangeToPurple")
 		$Sprite/TrailEffect/AnimationPlayer.play("ColorSwitch_Yellow_to_Purple")
 		$Sprite/TrailEffect/AnimationPlayer.play("NumberSwitch_Number_zero")
+		$ColorswitchSound.playing = true
 
 #Jump() and jump_cut() are for the "Mario-like"-jump Height controls (MLJ=Mario-like Jump)
 func jump():
@@ -68,7 +70,7 @@ func _physics_process(delta):
 	if Input.is_action_just_released("jump"):
 		jump_cut()
 	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene
+		get_tree().reload_current_scene()
 
 	var stop = true
 	
@@ -118,6 +120,8 @@ func _physics_process(delta):
 	#Colorswitch Mechanic
 	if Input.is_action_just_pressed("switchColor"):
 			SwitchColor()
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
 
 
 

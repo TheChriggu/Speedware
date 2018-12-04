@@ -7,4 +7,4 @@ func setHorizontal(offset):
 
 #set the vertical camera position
 func setVertical(offset):
-	position.y  = offset
+	global_position.y  = offset

@@ -140,9 +140,9 @@ func _process(delta):
 	
 	#set new camera offset, to the anchor if camera is free, otherwise follow the player
 	if fixedCamera:
-		next_offset_v = vertical_anchor-position.y #camera offset in relation to the player
+		next_offset_v = vertical_anchor #camera offset in relation to the player
 	else:
-		next_offset_v = 0
+		next_offset_v = position.y
 		
 	#if camera speed is too high (new position is further away than allowed), set the camera to max speed
 	if (next_offset_v - last_offset.y) > MAX_CAM_SPEED_V: #when moving downwards
@@ -181,4 +181,3 @@ func _on_CamCollider_newFixedCamera(colliderPosition):
 #if collider was set to remove the camera from an anchor
 func _on_CamCollider_newFreeCamera():
 	fixedCamera = false
-	pass # replace with function body

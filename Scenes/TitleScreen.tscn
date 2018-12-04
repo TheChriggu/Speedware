@@ -15,7 +15,7 @@
 [ext_resource path="res://Scenes/Options.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=14]
 
-[node name="TitleScreen" type="Control" index="0"]
+[node name="TitleScreen" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0

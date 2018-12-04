@@ -139,12 +139,13 @@ height = 83.2394
 [node name="player" type="KinematicBody2D"]
 
 position = Vector2( -1.66478, 7.61046 )
+scale = Vector2( 0.6, 0.6 )
 input_pickable = false
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 GRAVITY = 3000.0
 WALK_FORCE = 1500
 WALK_MIN_SPEED = 300
@@ -161,8 +162,10 @@ MAX_CAM_SPEED_V = 5
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 2.24448, -4.91766 )
+rotation = 0.436332
 scale = Vector2( 0.218893, 0.218893 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="TrailEffect" parent="Sprite" index="0" instance=ExtResource( 3 )]
 
@@ -228,7 +231,9 @@ script = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
 
 position = Vector2( 2.62791, -6.313 )
+rotation = 0.436332
 shape = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="newCameraOffsetH" from="." to="CameraFocalPoint" method="_on_player_newCameraOffsetH"]
 

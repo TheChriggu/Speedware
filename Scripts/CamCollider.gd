@@ -10,6 +10,6 @@ signal newFreeCamera
 #if player hits the collider, send a signal for the camera
 func _on_CamCollider_body_entered(body):
 	if FIXED_CAMERA:
-		emit_signal("newFixedCamera", position.y)
+		emit_signal("newFixedCamera", global_position.y)
 	else:
 		emit_signal("newFreeCamera")

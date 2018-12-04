@@ -351,6 +351,20 @@ _sections_unfolded = [ "Transform" ]
 [node name="player" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 96.7024, 32.6047 )
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+
+[node name="Sprite" parent="player" index="0"]
+
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="CameraFocalPoint" parent="player" index="2"]
+
+editor/display_folded = true
+
+[node name="CollisionShape2D" parent="player" index="4"]
+
+z_index = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="player" index="5"]
 
@@ -383,6 +397,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D" index="0"]
 
@@ -460,7 +475,6 @@ script = ExtResource( 11 )
 
 [node name="Collectible" type="Sprite" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( 10552.9, 47.8608 )
 scale = Vector2( 0.0853503, 0.0820428 )
 texture = ExtResource( 7 )
@@ -497,3 +511,4 @@ blend_times = [  ]
 [connection signal="area_entered" from="Collectible/StaticBody2D" to="Collectible" method="_on_StaticBody2D_area_entered"]
 
 
+[editable path="player"]

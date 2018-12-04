@@ -1,10 +1,15 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://TileSetPlaceholder.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/LaserPurple.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/LaserOrange.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/playerKinematic.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/ColorBar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Tileset/TileSetPlaceholder.tres" type="TileSet" id=1]
+[ext_resource path="res://Datastrings/LaserPurple.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Datastrings/LaserOrange.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/ColorBar.tscn" type="PackedScene" id=5]
+
+
+
+
+
 
 [node name="TestLevel_Jonas" type="Node" index="0"]
 

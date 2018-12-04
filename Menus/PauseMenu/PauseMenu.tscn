@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/PauseMenu_return_to_Title.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=2]
+[ext_resource path="res://Menus/PauseMenu/01_ui_pause.png" type="Texture" id=3]
+
+
+[node name="PauseMenu" type="CanvasLayer"]
+
+pause_mode = 2
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Pause" type="Control" parent="." index="0"]
+
+pause_mode = 2
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 2 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="ColorRect" type="ColorRect" parent="Pause" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.651922 )
+
+[node name="Sprite" type="Sprite" parent="Pause" index="1"]
+
+position = Vector2( 1038.86, 793.693 )
+texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="Pause" index="2"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 853.0
+margin_top = 690.0
+margin_right = 1113.0
+margin_bottom = 782.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Exit to Main Menu"
+flat = false
+align = 1
+_sections_unfolded = [ "Pause" ]
+
+[connection signal="tree_exited" from="." to="." method="_on_PauseMenu_tree_exited"]
+
+[connection signal="pressed" from="Pause/Button" to="." method="_on_Button_pressed"]
+
+

@@ -1,15 +1,22 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Images/decoration_background_mandy.jpg" type="Texture" id=1]
-[ext_resource path="res://Scenes/LaserPurple.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/LaserOrange.tscn" type="PackedScene" id=3]
-[ext_resource path="res://TileSetPlaceholder.tres" type="TileSet" id=4]
-[ext_resource path="res://Scenes/playerKinematic.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/ColorBar.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Environment/decoration_background_mandy.jpg" type="Texture" id=1]
+[ext_resource path="res://Datastrings/LaserPurple.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Datastrings/LaserOrange.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tileset/TileSetPlaceholder.tres" type="TileSet" id=4]
+[ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/ColorBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Menus/PauseMenu/PauseMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/GameTimer.gd" type="Script" id=8]
 [ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Scripts/TimerTestScript.gd" type="Script" id=10]
+
+
+
+
+
+
+
 
 [sub_resource type="DynamicFont" id=1]
 

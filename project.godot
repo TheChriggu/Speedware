@@ -11,8 +11,8 @@ config_version=3
 [application]
 
 config/name="Speedware"
-run/main_scene="res://Scenes/TitleScreen.tscn"
-config/icon="res://Images/Game_Icon.png"
+run/main_scene="res://Menus/Startmenu/TitleScreen.tscn"
+config/icon="res://Game_Icon.png"
 
 [display]
 

@@ -1,15 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tileset/TileSetPlaceholder.tres" type="TileSet" id=1]
 [ext_resource path="res://Datastrings/LaserPurple.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Datastrings/LaserOrange.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Player/ColorBar.tscn" type="PackedScene" id=5]
-
-
-
-
-
 
 [node name="TestLevel_Jonas" type="Node" index="0"]
 
@@ -36,6 +30,8 @@ tile_data = PoolIntArray( -262072, 536870922, 0, -196536, 536870922, 0, 196652, 
 _sections_unfolded = [ "Cell", "Collision", "Transform", "Visibility" ]
 
 [node name="Lasers" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="LaserRot" parent="Lasers" index="0" instance=ExtResource( 2 )]
 
@@ -197,7 +193,5 @@ WALK_MIN_SPEED = 400
 WALK_MAX_SPEED = 950
 JUMP_SPEED = 800
 SLIDE_STOP_VELOCITY = 1.0
-
-[node name="ColorBar" parent="." index="3" instance=ExtResource( 5 )]
 
 

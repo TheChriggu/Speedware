@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/return_to_title.gd" type="Script" id=1]
+[ext_resource path="res://Menus/return_to_title.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=2]
+
 
 [node name="NewGame" type="Control"]
 

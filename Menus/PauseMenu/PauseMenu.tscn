@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/PauseMenu_return_to_Title.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Pause.gd" type="Script" id=2]
+[ext_resource path="res://Menus/PauseMenu/PauseMenu_return_to_Title.gd" type="Script" id=1]
+[ext_resource path="res://Menus/PauseMenu/Pause.gd" type="Script" id=2]
 [ext_resource path="res://Menus/PauseMenu/01_ui_pause.png" type="Texture" id=3]
+
+
 
 
 [node name="PauseMenu" type="CanvasLayer"]

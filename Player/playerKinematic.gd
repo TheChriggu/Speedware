@@ -2,28 +2,23 @@ extends KinematicBody2D
 #This is the Script for the Character
 
 #Variables
-export var GRAVITY = 500.0 #pixels/second/second
-const FLOOR_ANGLE_TOLERANCE = 40
+export var GRAVITY = 3000.0 #pixels/second/second
 #Movementspeed
-export var WALK_FORCE = 600
+export var WALK_FORCE = 1500
 #Minimum Speed to move the Char
-export var WALK_MIN_SPEED = 10
+export var WALK_MIN_SPEED = 300
 #Maximum Speed for the Char
-export var WALK_MAX_SPEED = 200
-const STOP_FORCE = 1300
-export var JUMP_SPEED = 600
+export var WALK_MAX_SPEED = 1000
+export var STOP_FORCE = 1300
+export var JUMP_SPEED = 1200
 #Time the player can jump after leaving an edge (Double click for double jump mechanic~)
 export var JUMP_MAX_AIRBORNE_TIME = 0.001
 
-
-export var SLIDE_STOP_VELOCITY = 9.0 # one pixel/second
-const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
+export var SLIDE_STOP_VELOCITY = 20.0 # one pixel/second
 var jump_cut_velocity = 200 #Value used for the jump() and jump_cut() function
 var velocity = Vector2()
-export var on_air_time = 2
+export var ON_AIR_TIME = 2
 var jumping = false
-
-
 
 var prev_jump_pressed = false
 export var isGreen = true
@@ -104,26 +99,23 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	if is_on_floor():
-		on_air_time = 0
+		ON_AIR_TIME = 0
 		
 	if jumping and velocity.y > 0:
 		# If falling, no longer jumping
 		jumping = false
 	
-	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping:
+	if ON_AIR_TIME < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping:
 		#Player can jump, even after leaving the Edge for some time
 		velocity.y = -JUMP_SPEED
 		jumping = true
 
 	
-	on_air_time += delta
+	ON_AIR_TIME += delta
 	prev_jump_pressed = jump
 	#Colorswitch Mechanic
 	if Input.is_action_just_pressed("switchColor"):
 			SwitchColor()
-	
-	if Input.is_action_just_pressed("Restart"):
-		get_tree().reload_current_scene()
 
 
 

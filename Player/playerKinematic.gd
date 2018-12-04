@@ -67,6 +67,8 @@ func _physics_process(delta):
 	#MLJ
 	if Input.is_action_just_released("jump"):
 		jump_cut()
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene
 
 	var stop = true
 	
@@ -122,7 +124,6 @@ func _physics_process(delta):
 
 #Camera calculation
 func _process(delta):
-	
 	#calculate new average speed once every frame. Initializes horizontal camera offset calculation
 	$AverageSpeedCalculator.addNew(velocity)
 	

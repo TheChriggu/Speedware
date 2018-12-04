@@ -199,7 +199,7 @@ custom_solver_bias = 0.0
 radius = 18.8167
 height = 3.51901
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 position = Vector2( -1.66478, 7.61046 )
 input_pickable = false
@@ -307,7 +307,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="TopColorTriangle" type="Sprite" parent="ColorIndicator" index="0"]
 
-visible = false
 modulate = Color( 0.729412, 0.168627, 0.756863, 1 )
 position = Vector2( 112.319, 192.71 )
 rotation = 1.57065

@@ -353,8 +353,4 @@ _sections_unfolded = [ "Pause" ]
 
 position = Vector2( 35900.8, 1331.75 )
 
-[node name="FinishArea2" parent="." index="10" instance=ExtResource( 11 )]
-
-position = Vector2( 701.626, 24.7269 )
-
 

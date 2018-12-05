@@ -1,15 +1,16 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
-[ext_resource path="res://Player/Character_Sprite_Yellow.png" type="Texture" id=2]
+[ext_resource path="res://Player/Character_Sprite_Purple.png" type="Texture" id=2]
 [ext_resource path="res://Player/Particles/TrailEffect/trail_particles.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Camera/CameraFocalPoint.gd" type="Script" id=4]
 [ext_resource path="res://Camera/Crosshair.png" type="Texture" id=5]
 [ext_resource path="res://Camera/AverageSpeedCalculator.gd" type="Script" id=6]
 [ext_resource path="res://Player/ColorTriangle.png" type="Texture" id=7]
-[ext_resource path="res://Environment/decoration_background_mandy.jpg" type="Texture" id=8]
-[ext_resource path="res://Sounds/DBZ Instant Transmission Sound effect.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Player/Character_Sprite_Purple.png" type="Texture" id=10]
+[ext_resource path="res://Player/PlayerCornerParticleImage.png" type="Texture" id=8]
+[ext_resource path="res://Environment/decoration_background_mandy.jpg" type="Texture" id=9]
+[ext_resource path="res://Sounds/DBZ Instant Transmission Sound effect.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Player/Character_Sprite_Yellow.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -17,53 +18,61 @@ custom_solver_bias = 0.0
 radius = 14.4681
 height = 83.2394
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0.797688, 1 )
+colors = PoolColorArray( 0.828125, 0, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=4]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 90.0
+flatness = 0.0
+gravity = Vector3( 0, 45, 45 )
+initial_velocity = 15.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 23.0
+angle_random = 1.0
+scale = 0.3
+scale_random = 1.0
+color_ramp = SubResource( 3 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Animation", "Color", "Hue Variation", "Resource", "Scale" ]
+
+[sub_resource type="CapsuleShape2D" id=5]
 
 custom_solver_bias = 0.0
 radius = 18.8167
 height = 3.51901
-
-[sub_resource type="Animation" id=3]
-
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -3.80823, 180.044 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 328.35, 1.85498 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-
-length = 1.0
-loop = false
-step = 0.1
 
 [sub_resource type="Animation" id=6]
 
@@ -86,7 +95,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=7]
 
 length = 1.0
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:rotation_degrees")
@@ -194,7 +203,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("ColorIndicator/BottomColorTriangle:modulate")
@@ -219,6 +228,30 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 0.729412, 0.168627, 0.756863, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorIndicator/CornerParticles:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ColorIndicator/CornerParticles:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -260,7 +293,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("ColorIndicator/TopColorTriangle:modulate")
@@ -286,14 +319,38 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Color( 0.85098, 0.737255, 0.188235, 1 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorIndicator/CornerParticles:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ColorIndicator/CornerParticles:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="player" type="KinematicBody2D"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
 input_pickable = false
-collision_layer = 5
-collision_mask = 5
+collision_layer = 6
+collision_mask = 6
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -375,7 +432,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ColorIndicator" type="CanvasLayer" parent="." index="4"]
 
-editor/display_folded = true
 layer = 99
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -400,6 +456,202 @@ scale = Vector2( 0.376306, 0.376306 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
+[node name="CornerParticles" type="Node2D" parent="ColorIndicator" index="2"]
+
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Particles2D2" type="Particles2D" parent="ColorIndicator/CornerParticles" index="0"]
+
+position = Vector2( 156.672, 107.304 )
+rotation = -0.588854
+emitting = true
+amount = 20
+lifetime = 3.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 3.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 8 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="Particles2D9" type="Particles2D" parent="ColorIndicator/CornerParticles" index="1"]
+
+position = Vector2( 220.645, 42.8764 )
+rotation = -0.670551
+emitting = true
+amount = 20
+lifetime = 3.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 3.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 8 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="Particles2D3" type="Particles2D" parent="ColorIndicator/CornerParticles" index="2"]
+
+position = Vector2( 99.181, 190.827 )
+rotation = -0.618432
+emitting = true
+amount = 20
+lifetime = 3.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 3.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 8 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="Particles2D4" type="Particles2D" parent="ColorIndicator/CornerParticles" index="3"]
+
+position = Vector2( 41.6091, 260.019 )
+rotation = -0.580867
+emitting = true
+amount = 20
+lifetime = 3.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 3.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 8 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="Particles2D5" type="Particles2D" parent="ColorIndicator/CornerParticles" index="4"]
+
+position = Vector2( 1708.94, 1062.45 )
+rotation = 2.53316
+emitting = true
+amount = 35
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 2.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 8 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="Particles2D6" type="Particles2D" parent="ColorIndicator/CornerParticles" index="5"]
+
+position = Vector2( 1751.12, 998.512 )
+rotation = 2.53316
+emitting = true
+amount = 35
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 2.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 8 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="Particles2D7" type="Particles2D" parent="ColorIndicator/CornerParticles" index="6"]
+
+position = Vector2( 1815.05, 927.773 )
+rotation = 2.53316
+emitting = true
+amount = 35
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 2.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 8 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="Particles2D8" type="Particles2D" parent="ColorIndicator/CornerParticles" index="7"]
+
+position = Vector2( 1870.83, 843.429 )
+rotation = 2.53316
+emitting = true
+amount = 35
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 2.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 8 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="5"]
 
 editor/display_folded = true
@@ -419,7 +671,7 @@ scroll_ignore_camera_zoom = true
 
 position = Vector2( 1021.55, 536.4 )
 scale = Vector2( 2.23689, 2.23689 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="Area2D" type="Area2D" parent="." index="6"]
 
@@ -436,14 +688,13 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 position = Vector2( 1.43764, -3.96852 )
-rotation = -0.20944
 scale = Vector2( 1, 3.10013 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="ColorswitchSound" type="AudioStreamPlayer" parent="." index="7"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -458,9 +709,6 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/CameraFall = SubResource( 3 )
-anims/CameraNormal = SubResource( 4 )
-anims/ColorBar = SubResource( 5 )
 anims/Move_Left = SubResource( 6 )
 anims/Move_Right = SubResource( 7 )
 anims/Move_Stop = SubResource( 8 )

@@ -79,13 +79,11 @@ func _physics_process(delta):
 	
 	
 	if walk_left:
-		$AnimationPlayer.play("Move_Left")
 		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
 			stop = false
 			
 	elif walk_right:
-		$AnimationPlayer.play("Move_Right")
 		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
 			force.x += WALK_FORCE
 			stop = false

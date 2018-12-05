@@ -1,10 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Particles/TrailEffect/mat_particle_purple.tres" type="Material" id=1]
-[ext_resource path="res://Player/Particles/TrailEffect/zero_white.png" type="Texture" id=2]
+[ext_resource path="res://Player/Particles/TrailEffect/one_white.png" type="Texture" id=2]
 [ext_resource path="res://Player/Particles/TrailEffect/mat_particle_orange.tres" type="Material" id=3]
-[ext_resource path="res://Player/Particles/TrailEffect/one_white.png" type="Texture" id=4]
-
+[ext_resource path="res://Player/Particles/TrailEffect/zero_white.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -83,7 +82,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -101,10 +100,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]

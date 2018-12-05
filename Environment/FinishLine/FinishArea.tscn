@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Environment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Environment/FinishLine/Finishline_Image.png" type="Texture" id=2]
 [ext_resource path="res://Environment/FinishLine/Finish Line - Mario Kart Wii.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Environment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -223,7 +224,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="FinishArea" type="Node2D"]
+[node name="FinishArea" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
@@ -1320,16 +1321,14 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="9"]
+[node name="LinePassedSoundEffect" type="AudioStreamPlayer" parent="." index="9"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
+mix_target = 0
 bus = "Master"
-area_mask = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="10"]
 
@@ -1357,12 +1356,26 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/line_spacing = 0
 text = "Level Finished"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Visibility", "custom_fonts" ]
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="LinePassedMusic" type="AudioStreamPlayer" parent="." index="12"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "LinePassedSong"
 
 [connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
+
+[connection signal="finished" from="LinePassedSoundEffect" to="." method="_on_LinePassedSoundEffect_finished"]
 
 

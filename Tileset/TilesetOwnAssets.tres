@@ -15,7 +15,7 @@ points = PoolVector2Array( -62.9081, -62.2079, 62.2032, -62.2079, 63.2787, 60.03
 [sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
-points = PoolVector2Array( -62.9081, -62.2079, 62.2032, -62.2079, 63.2787, 60.0355, -62.5496, 60.7525 )
+points = PoolVector2Array( -63.0744, -61.5371, 61.8692, -61.1497, 63.2787, 60.0355, -62.5496, 60.7525 )
 
 [resource]
 
@@ -23,42 +23,42 @@ points = PoolVector2Array( -62.9081, -62.2079, 62.2032, -62.2079, 63.2787, 60.03
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 56, 94, 126, 124 )
+0/region = Rect2( 55, 92, 129, 130 )
 0/is_autotile = false
-0/occluder_offset = Vector2( 63.125, 62 )
-0/navigation_offset = Vector2( 63.125, 62 )
+0/occluder_offset = Vector2( 64.5, 65 )
+0/navigation_offset = Vector2( 64.5, 65 )
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 63.125, 62 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 64.5, 65 )
 } ]
 1/name = "Sprite2"
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 347, 92, 126, 126 )
+1/region = Rect2( 347, 90, 129, 128 )
 1/is_autotile = false
-1/occluder_offset = Vector2( 63.25, 63.25 )
-1/navigation_offset = Vector2( 63.25, 63.25 )
+1/occluder_offset = Vector2( 64.5, 64.2615 )
+1/navigation_offset = Vector2( 64.5, 64.2615 )
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 63.25, 63.25 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 64.5, 64.2615 )
 } ]
 2/name = "Sprite3"
 2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 509, 92, 124, 124 )
+2/region = Rect2( 507, 90, 129, 129 )
 2/is_autotile = false
-2/occluder_offset = Vector2( 62, 62 )
-2/navigation_offset = Vector2( 62, 62 )
+2/occluder_offset = Vector2( 64.5, 64.5 )
+2/navigation_offset = Vector2( 64.5, 64.5 )
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 62, 62 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 64.5, 64.5 )
 } ]
 

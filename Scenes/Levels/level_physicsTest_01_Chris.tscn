@@ -268,8 +268,8 @@ JUMP_SPEED = 1300
 
 [node name="ForwardLookingCamera" parent="." index="5" instance=ExtResource( 9 )]
 
+editor/display_folded = true
 position = Vector2( -1.19209e-007, 4.76837e-007 )
-scale = Vector2( 1, 1 )
 MAX_CAM_SPEED_H = 10
 MAX_CAM_SPEED_V = 10
 

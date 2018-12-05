@@ -50,7 +50,8 @@ func jump_cut():
         velocity.y = -jump_cut_velocity
 
 func moveRight():
-	$AnimationPlayer.play("Move_Right")
+	pass
+	#$AnimationPlayer.play("Move_Right")
 func _physics_process(delta):
 	#basic Player movement
 	var force = Vector2(0, GRAVITY)
@@ -72,13 +73,14 @@ func _physics_process(delta):
 	
 	
 	if walk_left:
-		$AnimationPlayer.play("Move_Left")
+		lean_left()
 		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
 			stop = false
 			
 	elif walk_right:
-		$AnimationPlayer.play("Move_Right")
+		lean_right()
+		#$AnimationPlayer.play("Move_Right")
 		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
 			force.x += WALK_FORCE
 			stop = false
@@ -125,4 +127,21 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 
+var is_leaning_left = false
+var is_leaning_right = false
 
+func lean_left():
+	if is_leaning_right:
+		$AnimationPlayer.play("Move_Stop")
+		is_leaning_right = false
+	if !is_leaning_left:
+		$AnimationPlayer.play("Move_Left")
+		is_leaning_left = true
+
+func lean_right():
+	if is_leaning_left:
+		$AnimationPlayer.play("Move_Stop")
+		is_leaning_left = false
+	if !is_leaning_right:
+		$AnimationPlayer.play("Move_Right")
+		is_leaning_right = true

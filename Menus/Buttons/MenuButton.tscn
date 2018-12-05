@@ -3,7 +3,6 @@
 [ext_resource path="res://Menus/Startmenu/MenuButton.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Size.tres" type="DynamicFontData" id=2]
 
-
 [sub_resource type="DynamicFont" id=1]
 
 size = 48
@@ -18,9 +17,12 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1598.0
-margin_bottom = 20.0
+margin_left = -53.0
+margin_top = -22.0
+margin_right = 1545.0
+margin_bottom = 38.0
 rect_min_size = Vector2( 360, 60 )
+rect_scale = Vector2( 1.4, 1.4 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -59,6 +61,10 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+
+[connection signal="mouse_entered" from="." to="." method="_on_Start_Game_mouse_entered"]
+
+[connection signal="mouse_exited" from="." to="." method="_on_Start_Game_mouse_exited"]
 
 [connection signal="pressed" from="." to="." method="_on_Start_Game_pressed"]
 

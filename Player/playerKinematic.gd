@@ -49,6 +49,8 @@ func jump_cut():
     if velocity.y < -jump_cut_velocity:
         velocity.y = -jump_cut_velocity
 
+func moveRight():
+	$AnimationPlayer.play("Move_Right")
 func _physics_process(delta):
 	#basic Player movement
 	var force = Vector2(0, GRAVITY)
@@ -64,15 +66,19 @@ func _physics_process(delta):
 		jump_cut()
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
-
 	var stop = true
 	
+	
+	
+	
 	if walk_left:
+		$AnimationPlayer.play("Move_Left")
 		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
 			stop = false
 			
 	elif walk_right:
+		$AnimationPlayer.play("Move_Right")
 		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
 			force.x += WALK_FORCE
 			stop = false
@@ -81,12 +87,15 @@ func _physics_process(delta):
 	if stop:
 		var vsign = sign(velocity.x)
 		var vlen = abs(velocity.x)
-		
 		vlen -= STOP_FORCE * delta
 		if vlen < 0:
 			vlen = 0
 		
 		velocity.x = vlen * vsign
+	
+	
+	
+	
 	
 	# Integrate forces to velocity
 	velocity += force *delta

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Levels/Prototype_MS02_Ver01_Konstantin_S.gd" type="Script" id=1]
 [ext_resource path="res://Datastrings/LaserPurple.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Menus/PauseMenu/PauseMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Environment/UI/CollectiblesCollected.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sounds/Stereo Sayan 3D.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Environment/FinishLine/FinishArea.tscn" type="PackedScene" id=11]
 
 [node name="World" type="Node"]
 
@@ -299,11 +300,11 @@ position = Vector2( 10458.2, 66.7131 )
 
 [node name="Collectible2" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 3151.68, 119.492 )
+position = Vector2( 35502, 1083.4 )
 
 [node name="Collectible3" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 1159.44, 50.6639 )
+position = Vector2( 30702.8, 641.824 )
 
 [node name="Collectible4" parent="." index="6" instance=ExtResource( 6 )]
 
@@ -340,5 +341,9 @@ autoplay = false
 mix_target = 0
 bus = "Music"
 _sections_unfolded = [ "Pause" ]
+
+[node name="FinishArea" parent="." index="9" instance=ExtResource( 11 )]
+
+position = Vector2( 35900.8, 1331.75 )
 
 

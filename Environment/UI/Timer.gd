@@ -6,4 +6,4 @@ func _process(delta):
 	CurrentTimer+= delta
 
 func PrintCurrentTime():
-	return CurrentTimer
+	return stepify(CurrentTimer, 0.01)

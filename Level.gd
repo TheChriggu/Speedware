@@ -1,7 +1,6 @@
 extends Node
 
 func _ready():
-	$BackgroundMusic.playing = true
 	$ForwardLookingCamera.WALK_MAX_SPEED = $player.WALK_MAX_SPEED
 
 func _physics_process(delta):

@@ -21,7 +21,7 @@ export var ON_AIR_TIME = 2
 var jumping = false
 
 var prev_jump_pressed = false
-export var isGreen = true
+export var isGreen = false
 
 signal switched_color_to_purple
 signal switched_color_to_orange

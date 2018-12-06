@@ -360,7 +360,7 @@ JUMP_SPEED = 1200
 JUMP_MAX_AIRBORNE_TIME = 0.001
 SLIDE_STOP_VELOCITY = 20.0
 ON_AIR_TIME = 2
-isGreen = true
+isGreen = false
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

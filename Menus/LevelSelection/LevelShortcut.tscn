@@ -113,7 +113,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="LevelShortcut" type="Node2D"]
+[node name="LevelShortcut" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]

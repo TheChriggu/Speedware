@@ -17,7 +17,7 @@ height = 83.2394
 
 [sub_resource type="Gradient" id=2]
 
-offsets = PoolRealArray( 0.797688, 1 )
+offsets = PoolRealArray( 0.277457, 0.878613 )
 colors = PoolColorArray( 0.828125, 0, 1, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture" id=3]
@@ -63,7 +63,7 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Angle", "Animation", "Color", "Hue Variation", "Resource", "Scale" ]
+_sections_unfolded = [ "Angle", "Animation", "Color", "Hue Variation", "Orbit Velocity", "Resource", "Scale" ]
 
 [sub_resource type="CapsuleShape2D" id=5]
 
@@ -366,6 +366,7 @@ isGreen = true
 
 editor/display_folded = true
 position = Vector2( 2.24448, -4.91766 )
+rotation = 0.436332
 scale = Vector2( 0.218893, 0.218893 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
@@ -379,12 +380,14 @@ scale = Vector2( 1.7508, 1.7508 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 2.62791, -6.313 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ColorIndicator" type="CanvasLayer" parent="." index="2"]
 
+editor/display_folded = true
 layer = 99
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -412,11 +415,12 @@ _sections_unfolded = [ "Visibility" ]
 [node name="CornerParticles" type="Node2D" parent="ColorIndicator" index="2"]
 
 editor/display_folded = true
+visible = false
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Particles2D2" type="Particles2D" parent="ColorIndicator/CornerParticles" index="0"]
 
-position = Vector2( 156.672, 107.304 )
+position = Vector2( 163.892, 121.744 )
 rotation = -0.588854
 emitting = true
 amount = 20
@@ -440,7 +444,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
 [node name="Particles2D9" type="Particles2D" parent="ColorIndicator/CornerParticles" index="1"]
 
-position = Vector2( 220.645, 42.8764 )
+position = Vector2( 243.207, 21.2163 )
 rotation = -0.670551
 emitting = true
 amount = 20
@@ -464,7 +468,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
 [node name="Particles2D3" type="Particles2D" parent="ColorIndicator/CornerParticles" index="2"]
 
-position = Vector2( 99.181, 190.827 )
+position = Vector2( 83.8384, 211.584 )
 rotation = -0.618432
 emitting = true
 amount = 20
@@ -488,7 +492,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
 [node name="Particles2D4" type="Particles2D" parent="ColorIndicator/CornerParticles" index="3"]
 
-position = Vector2( 41.6091, 260.019 )
+position = Vector2( 24.4615, 302.437 )
 rotation = -0.580867
 emitting = true
 amount = 20
@@ -512,14 +516,14 @@ _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
 [node name="Particles2D5" type="Particles2D" parent="ColorIndicator/CornerParticles" index="4"]
 
-position = Vector2( 1708.94, 1062.45 )
-rotation = 2.53316
+position = Vector2( 1676.77, 1059.68 )
+rotation = 2.37063
 emitting = true
-amount = 35
-lifetime = 2.0
+amount = 20
+lifetime = 3.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 2.0
+speed_scale = 3.0
 explosiveness = 0.0
 randomness = 1.0
 fixed_fps = 0
@@ -536,13 +540,13 @@ _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
 [node name="Particles2D6" type="Particles2D" parent="ColorIndicator/CornerParticles" index="5"]
 
-position = Vector2( 1751.12, 998.512 )
-rotation = 2.53316
+position = Vector2( 1745.15, 968.34 )
+rotation = 2.48505
 emitting = true
-amount = 35
-lifetime = 2.0
+amount = 20
+lifetime = 3.0
 one_shot = false
-preprocess = 0.0
+preprocess = 3.0
 speed_scale = 2.0
 explosiveness = 0.0
 randomness = 1.0
@@ -560,14 +564,14 @@ _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
 [node name="Particles2D7" type="Particles2D" parent="ColorIndicator/CornerParticles" index="6"]
 
-position = Vector2( 1815.05, 927.773 )
-rotation = 2.53316
+position = Vector2( 1818.75, 891.66 )
+rotation = 2.41535
 emitting = true
-amount = 35
-lifetime = 2.0
+amount = 20
+lifetime = 3.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 2.0
+speed_scale = 3.0
 explosiveness = 0.0
 randomness = 1.0
 fixed_fps = 0
@@ -584,14 +588,14 @@ _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
 [node name="Particles2D8" type="Particles2D" parent="ColorIndicator/CornerParticles" index="7"]
 
-position = Vector2( 1870.83, 843.429 )
-rotation = 2.53316
+position = Vector2( 1898.44, 805.085 )
+rotation = 2.50279
 emitting = true
-amount = 35
-lifetime = 2.0
+amount = 20
+lifetime = 3.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 2.0
+speed_scale = 3.0
 explosiveness = 0.0
 randomness = 1.0
 fixed_fps = 0

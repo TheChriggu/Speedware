@@ -8,7 +8,7 @@
 
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 56.75, 94.5115, 126.25, 124 )
+region_rect = Rect2( 55, 92, 129, 130 )
 _sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite" index="0"]
@@ -31,7 +31,7 @@ polygon = PoolVector2Array( -62.9081, -62.2079, 62.2032, -62.2079, 63.2787, 60.0
 position = Vector2( 162.035, 0.358486 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 347, 92.023, 126.5, 126.5 )
+region_rect = Rect2( 347, 90, 129, 128.523 )
 _sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2" index="0"]
@@ -54,7 +54,7 @@ polygon = PoolVector2Array( -62.9081, -62.2079, 62.2032, -62.2079, 63.2787, 60.0
 position = Vector2( 309.053, -3.31696 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 509.5, 92.023, 124, 124 )
+region_rect = Rect2( 507, 90, 129, 129 )
 _sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite3" index="0"]
@@ -70,6 +70,6 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite3/StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -62.9081, -62.2079, 62.2032, -62.2079, 63.2787, 60.0355, -62.5496, 60.7525 )
+polygon = PoolVector2Array( -63.0744, -61.5371, 61.8692, -61.1497, 63.2787, 60.0355, -62.5496, 60.7525 )
 
 

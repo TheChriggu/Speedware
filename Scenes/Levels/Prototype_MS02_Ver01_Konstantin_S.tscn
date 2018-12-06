@@ -364,6 +364,7 @@ MAX_CAM_SPEED_V = 10
 
 [node name="HeadCamCollider" type="Node2D" parent="ForwardLookingCamera" index="2"]
 
+visible = false
 position = Vector2( 72.1542, 20.63 )
 scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 14 )

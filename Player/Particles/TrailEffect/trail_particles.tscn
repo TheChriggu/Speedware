@@ -105,6 +105,7 @@ tracks/0/keys = {
 
 [node name="Node2D" type="Node2D"]
 
+editor/display_folded = true
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 

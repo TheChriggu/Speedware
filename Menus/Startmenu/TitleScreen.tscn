@@ -318,7 +318,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 240 ) ]
 }
 
-[node name="TitleScreen" type="Control" index="0"]
+[node name="TitleScreen" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -571,8 +571,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
-text = "by Lazer Labs
-"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

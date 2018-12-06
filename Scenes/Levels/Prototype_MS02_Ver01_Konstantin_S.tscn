@@ -12,7 +12,7 @@
 [ext_resource path="res://Sounds/Stereo Sayan 3D.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Environment/FinishLine/FinishArea.tscn" type="PackedScene" id=11]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -351,6 +351,6 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="FinishArea" parent="." index="9" instance=ExtResource( 11 )]
 
-position = Vector2( 35900.8, 1331.75 )
+position = Vector2( 35907, 1253.83 )
 
 

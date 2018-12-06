@@ -370,7 +370,9 @@ MAX_CAM_SPEED_V = 5
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 2.24448, -4.91766 )
+rotation = 0.436332
 scale = Vector2( 0.218893, 0.218893 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
@@ -432,6 +434,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ColorIndicator" type="CanvasLayer" parent="." index="4"]
 
+editor/display_folded = true
 layer = 99
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -458,6 +461,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="CornerParticles" type="Node2D" parent="ColorIndicator" index="2"]
 
+editor/display_folded = true
 visible = false
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 

@@ -4,6 +4,11 @@
 
 [node name="Chatlogs" instance=ExtResource( 1 )]
 
+margin_left = 10.0
+margin_top = -83.0
+margin_right = 10.0
+margin_bottom = -83.0
+
 [node name="CenterContainer" parent="." index="0"]
 
 editor/display_folded = true

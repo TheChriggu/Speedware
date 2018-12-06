@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tileset/tileset_ground_resized_128x128_rob.png" type="Texture" id=1]
+
+[node name="TilesetOwnassets" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 55, 92, 129, 130 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -62.9081, -62.2079, 62.2032, -62.2079, 63.2787, 60.0355, -62.5496, 60.7525 )
+
+[node name="Sprite2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 162.035, 0.358486 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 347, 90, 129, 128.523 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -62.9081, -62.2079, 62.2032, -62.2079, 63.2787, 60.0355, -62.5496, 60.7525 )
+
+[node name="Sprite3" type="Sprite" parent="." index="2"]
+
+position = Vector2( 309.053, -3.31696 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 507, 90, 129, 129 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite3/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -63.0744, -61.5371, 61.8692, -61.1497, 63.2787, 60.0355, -62.5496, 60.7525 )
+
+

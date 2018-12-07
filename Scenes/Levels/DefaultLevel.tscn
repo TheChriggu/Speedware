@@ -17,8 +17,7 @@ script = ExtResource( 1 )
 
 [node name="Lasers" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-position = Vector2( 464.5, -397.878 )
+position = Vector2( 453.14, -400.15 )
 script = ExtResource( 2 )
 
 [node name="LaserOrange" parent="Lasers" index="0" instance=ExtResource( 3 )]
@@ -52,6 +51,8 @@ _sections_unfolded = [ "Collision", "Material", "Pause", "Visibility" ]
 
 [node name="player" parent="." index="2" instance=ExtResource( 6 )]
 
+collision_layer = 14
+
 [node name="PauseMenu" parent="." index="3" instance=ExtResource( 7 )]
 
 [node name="ForwardLookingCamera" parent="." index="4" instance=ExtResource( 8 )]
@@ -66,14 +67,14 @@ CURRENT_ANCHOR = 0
 
 [node name="CamCollider" parent="ForwardLookingCamera/HeadCamCollider" index="0" instance=ExtResource( 10 )]
 
-position = Vector2( 367.629, 555.989 )
-scale = Vector2( 1, 9.17887 )
+position = Vector2( 1338.48, -186.5 )
+collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="CamCollider2" parent="ForwardLookingCamera/HeadCamCollider" index="1" instance=ExtResource( 10 )]
 
-position = Vector2( 1226.79, 263.093 )
-scale = Vector2( 1, 9.17887 )
+position = Vector2( 1203.92, -201.41 )
+collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]

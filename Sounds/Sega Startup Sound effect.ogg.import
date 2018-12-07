@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sega Startup Sound effect.ogg-ed9ee7424e094fc5583cce5a89c12382.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Sega Startup Sound effect.ogg"
+dest_files=[ "res://.import/Sega Startup Sound effect.ogg-ed9ee7424e094fc5583cce5a89c12382.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

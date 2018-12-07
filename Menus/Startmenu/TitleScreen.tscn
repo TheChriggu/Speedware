@@ -583,7 +583,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
 [connection signal="mouse_entered" from="Menu/CenterRow/Buttons/Start Game" to="Menu/CenterRow/Buttons" method="_on_Start_Game_mouse_entered"]
 

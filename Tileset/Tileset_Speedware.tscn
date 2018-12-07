@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Tileset/tileset_ground_resized_128x128_mandy.png" type="Texture" id=1]
 
-[node name="Tileset_Speedware" type="Node" index="0"]
+[node name="Tileset_Speedware" type="Node"]
 
 [node name="leveltile_middle" type="Sprite" parent="." index="0"]
 

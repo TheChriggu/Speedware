@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tileset/tileset_ground_resized_128x128_mandy.png" type="Texture" id=1]
+
+[node name="Tileset_Speedware" type="Node" index="0"]
+
+[node name="leveltile_middle" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 56, 94, 128, 128 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="leveltile_middle" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_middle/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -64.2475, -64.1217, -64.0329, 63.5881, 64.1062, 63.8027, 63.8915, -63.9071 )
+
+[node name="leveltile_edge" type="Sprite" parent="." index="1"]
+
+position = Vector2( 143.481, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 213, 94, 128, 128 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="leveltile_edge" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_edge/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -64.2475, -64.1217, -64.0329, 63.5881, 64.1062, 63.8027, 63.8915, -63.9071 )
+
+[node name="leveltile_side" type="Sprite" parent="." index="2"]
+
+position = Vector2( 308.802, 1.46302 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 370, 94, 128, 128 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="leveltile_side" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_side/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -64.2475, -64.1217, -64.0329, 63.5881, 64.1062, 63.8027, 63.8915, -63.9071 )
+
+[node name="leveltile_ramp" type="Sprite" parent="." index="3"]
+
+position = Vector2( 454.129, 1.9507 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 525, 94, 128, 128 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="leveltile_ramp" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_ramp/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -64.274, -63.2916, -63.7983, 63.9455, 64.1523, 63.7077 )
+
+

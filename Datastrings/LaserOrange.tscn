@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 31.6384, 32.7385 )
+extents = Vector2( 129.505, 96.9845 )
 
 [sub_resource type="Animation" id=2]
 
@@ -56,8 +56,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
-position = Vector2( -0.421598, -1.70066 )
-scale = Vector2( 4.06595, 2.98629 )
 input_pickable = false
 collision_layer = 2
 collision_mask = 2

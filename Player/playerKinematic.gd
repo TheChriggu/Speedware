@@ -31,14 +31,10 @@ func SwitchColor():
 	isGreen = not isGreen
 	if isGreen:
 		$AnimationPlayer.play("SwitchPurpleToOrange")
-		$Sprite/TrailEffect/AnimationPlayer.play("ColorSwitch_Purple_to_Yellow")
-		$Sprite/TrailEffect/AnimationPlayer.play("NumberSwitch_Number_one")
 		$ColorswitchSound.playing = true
 		emit_signal("switched_color_to_orange")
 	else:
 		$AnimationPlayer.play("SwitchOrangeToPurple")
-		$Sprite/TrailEffect/AnimationPlayer.play("ColorSwitch_Yellow_to_Purple")
-		$Sprite/TrailEffect/AnimationPlayer.play("NumberSwitch_Number_zero")
 		$ColorswitchSound.playing = true
 		emit_signal("switched_color_to_purple")
 

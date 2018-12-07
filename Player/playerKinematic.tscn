@@ -179,7 +179,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 14 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:collision_mask")
@@ -293,7 +293,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 13 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:collision_mask")

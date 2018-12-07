@@ -318,7 +318,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 240 ) ]
 }
 
-[node name="TitleScreen" type="Control" index="0"]
+[node name="TitleScreen" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0

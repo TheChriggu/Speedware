@@ -68,10 +68,10 @@ func _physics_process(delta):
 	var stop = true
 	
 	if speedboost:
-		WALK_MAX_SPEED = WALK_MAX_SPEED + (WALK_FORCE/2)
-		force.x += WALK_FORCE
-	if speedboostOff:
-		WALK_MAX_SPEED = 1000
+		$AnimationPlayer.play("speedboost")
+#		force.x += WALK_FORCE
+#	if speedboostOff:
+#		WALK_MAX_SPEED = 1000
 	
 	if walk_left:
 		lean_left()

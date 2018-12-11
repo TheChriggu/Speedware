@@ -53,6 +53,8 @@ func _physics_process(delta):
 	var force = Vector2(0, GRAVITY)
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
+	var speedboost = Input.is_action_just_pressed("speedboost")
+	var speedboostOff = Input.is_action_just_pressed("speedboostOff")
 	var jump = Input.is_action_pressed("jump")
 	#MLJ
 	if Input.is_action_just_pressed("jump") && velocity.y < -500:
@@ -65,8 +67,11 @@ func _physics_process(delta):
 		get_tree().reload_current_scene()
 	var stop = true
 	
-	
-	
+	if speedboost:
+		WALK_MAX_SPEED = WALK_MAX_SPEED + (WALK_FORCE/2)
+		force.x += WALK_FORCE
+	if speedboostOff:
+		WALK_MAX_SPEED = 1000
 	
 	if walk_left:
 		lean_left()

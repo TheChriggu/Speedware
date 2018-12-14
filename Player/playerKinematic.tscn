@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/Character_Sprite_Purple.png" type="Texture" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://Images/one_white.png" type="Texture" id=6]
 [ext_resource path="res://Player/ColorTriangle.png" type="Texture" id=7]
 [ext_resource path="res://Player/PlayerCornerParticleImage.png" type="Texture" id=8]
-[ext_resource path="res://Environment/decoration_background_mandy.jpg" type="Texture" id=9]
+[ext_resource path="res://Images/backgroundalpha_rob.png" type="Texture" id=9]
 [ext_resource path="res://Sounds/FinishedChrisSwitch.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Player/Character_Sprite_Yellow.png" type="Texture" id=11]
 
@@ -68,13 +68,67 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Animation", "Color", "Hue Variation", "Orbit Velocity", "Resource", "Scale" ]
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="Curve" id=5]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0.000667211, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.498422, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.999333, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+
+flags = 4
+width = 2048
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1980, 1080, 0 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 6 )
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = true
+_sections_unfolded = [ "Animation", "Emission Shape", "Scale" ]
+
+[sub_resource type="CapsuleShape2D" id=8]
 
 custom_solver_bias = 0.0
 radius = 18.8167
 height = 3.51901
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=9]
 
 length = 0.8
 loop = false
@@ -92,7 +146,7 @@ tracks/0/keys = {
 "values": [ 0.0, -12.0, -19.0, -25.0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=10]
 
 length = 1.0
 loop = false
@@ -110,7 +164,7 @@ tracks/0/keys = {
 "values": [ 0.0, 12.0, 19.0, 25.0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=11]
 
 length = 1.0
 loop = false
@@ -164,7 +218,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=12]
 
 length = 1.0
 loop = false
@@ -278,7 +332,7 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=13]
 
 length = 1.0
 loop = false
@@ -392,9 +446,8 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=14]
 
-resource_name = "speedboost"
 length = 1.0
 loop = false
 step = 0.1
@@ -423,7 +476,7 @@ tracks/1/keys = {
 "values": [ 1900, 1500 ]
 }
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
@@ -747,13 +800,50 @@ scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground" index="0"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 0.2, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1980, 1080 )
+_sections_unfolded = [ "Motion", "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
 show_behind_parent = true
-position = Vector2( 1021.55, 536.4 )
-scale = Vector2( 2.23689, 2.23689 )
 texture = ExtResource( 9 )
-_sections_unfolded = [ "Visibility" ]
+centered = false
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+
+motion_scale = Vector2( 0.2, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1980, 1080 )
+_sections_unfolded = [ "Motion", "Transform", "Visibility" ]
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+
+modulate = Color( 0, 0, 0, 0.613255 )
+self_modulate = Color( 1, 1, 1, 0.381216 )
+emitting = true
+amount = 30
+lifetime = 5.0
+one_shot = false
+preprocess = 10.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 1000, 1000 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 7 )
+texture = ExtResource( 4 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="6"]
 
@@ -771,7 +861,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 1.43764, -3.96852 )
 scale = Vector2( 1, 3.10013 )
-shape = SubResource( 5 )
+shape = SubResource( 8 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="ColorswitchSound" type="AudioStreamPlayer" parent="." index="7"]
@@ -791,12 +881,12 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Move_Left = SubResource( 6 )
-anims/Move_Right = SubResource( 7 )
-anims/Move_Stop = SubResource( 8 )
-anims/SwitchOrangeToPurple = SubResource( 9 )
-anims/SwitchPurpleToOrange = SubResource( 10 )
-anims/speedboost = SubResource( 11 )
+anims/Move_Left = SubResource( 9 )
+anims/Move_Right = SubResource( 10 )
+anims/Move_Stop = SubResource( 11 )
+anims/SwitchOrangeToPurple = SubResource( 12 )
+anims/SwitchPurpleToOrange = SubResource( 13 )
+anims/speedboost = SubResource( 14 )
 blend_times = [  ]
 
 

@@ -24,7 +24,7 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_middle/StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -64.2475, -64.1217, -64.0329, 63.5881, 64.1062, 63.8027, 63.8915, -63.9071 )
+polygon = PoolVector2Array( -67, -63, 67, -63, 67, 63, -67, 63 )
 
 [node name="leveltile_edge" type="Sprite" parent="." index="1"]
 

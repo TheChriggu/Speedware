@@ -29,11 +29,11 @@ collision_mask = 7
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 3, 0, 327689, 3, 0, 393226, 3, 0, 458763, 3, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 1, 0, 589840, 2, 0, 655376, 2, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0 )
-_sections_unfolded = [ "Cell", "Collision" ]
+_sections_unfolded = [ "Cell", "Collision", "Transform", "Z Index" ]
 
 [node name="player" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 396.786, 227.707 )
+position = Vector2( 240.863, 172.459 )
 
 [node name="ForwardLookingCamera" parent="." index="2" instance=ExtResource( 4 )]
 

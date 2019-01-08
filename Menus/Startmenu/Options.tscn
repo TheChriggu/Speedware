@@ -6,7 +6,7 @@
 [ext_resource path="res://Menus/Return_to_Menu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sounds/DBZ Instant Transmission Sound effect.ogg" type="AudioStream" id=5]
 
-[node name="Options" type="Node"]
+[node name="Options" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -45,11 +45,11 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
-min_value = 0.0
-max_value = 100.0
+min_value = -80.0
+max_value = 24.0
 step = 25.0
 page = 0.0
-value = 50.0
+value = 0.0
 exp_edit = false
 rounded = false
 editable = true

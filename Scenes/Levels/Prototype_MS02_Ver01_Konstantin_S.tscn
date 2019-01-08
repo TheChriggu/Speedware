@@ -17,7 +17,7 @@
 [ext_resource path="res://Camera/CamCollider.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Sounds/RobertSpeedware2.ogg" type="AudioStream" id=16]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]

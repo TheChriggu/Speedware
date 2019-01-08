@@ -5,7 +5,7 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = PoolVector2Array( 63.8915, -63.9071, 64.1062, 63.8027, -64.0329, 63.5881, -64.2475, -64.1217 )
+points = PoolVector2Array( -67, -63, 67, -63, 67, 63, -67, 63 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 

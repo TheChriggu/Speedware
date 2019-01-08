@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Tileset/tileset_ground_resized_128x128_mandy.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 60.0923, 61.4859 )
 
 [node name="Tileset_Speedware" type="Node"]
 
@@ -9,7 +14,7 @@
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 56, 94, 128, 128 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Animation", "Offset", "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="leveltile_middle" index="0"]
 
@@ -21,10 +26,9 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_middle/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leveltile_middle/StaticBody2D" index="0"]
 
-build_mode = 0
-polygon = PoolVector2Array( -64.2475, -64.1217, -64.0329, 63.5881, 64.1062, 63.8027, 63.8915, -63.9071 )
+shape = SubResource( 1 )
 
 [node name="leveltile_edge" type="Sprite" parent="." index="1"]
 

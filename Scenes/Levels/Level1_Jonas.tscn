@@ -11,7 +11,7 @@
 [ext_resource path="res://Camera/ForwardLookingCamera.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Levels/Head Cam Colliders.gd" type="Script" id=10]
 
-[node name="Level1_Jonas" type="Node"]
+[node name="Level1_Jonas" type="Node" index="0"]
 
 script = ExtResource( 1 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Levels/Prototype_MS02_Ver01_Konstantin_S.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Levels/Lasers.gd" type="Script" id=2]
@@ -16,8 +16,58 @@
 [ext_resource path="res://Scenes/Levels/Head Cam Colliders.gd" type="Script" id=14]
 [ext_resource path="res://Camera/CamCollider.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Sounds/RobertSpeedware2.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Environment/Speedboost/Speedicon.png" type="Texture" id=17]
+[ext_resource path="res://Environment/Speedboost/Speedboost.gd" type="Script" id=18]
 
-[node name="World" type="Node"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 112.534, 113.315 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "SpeedboostCollected"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Area2D:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Area2D:collision_mask")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[node name="World" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -316,7 +366,7 @@ position = Vector2( 30702.8, 641.824 )
 
 [node name="Collectible4" parent="." index="6" instance=ExtResource( 7 )]
 
-position = Vector2( 766.321, 60.9642 )
+position = Vector2( 3969.41, 109.213 )
 
 [node name="UI" type="CanvasLayer" parent="." index="7"]
 
@@ -359,6 +409,7 @@ position = Vector2( 35907, 1253.83 )
 
 [node name="ForwardLookingCamera" parent="." index="10" instance=ExtResource( 13 )]
 
+editor/display_folded = true
 MAX_CAM_SPEED_H = 10
 MAX_CAM_SPEED_V = 10
 
@@ -386,6 +437,42 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="Speedboost" type="Sprite" parent="." index="12"]
+
+position = Vector2( 776.714, 44.7581 )
+scale = Vector2( 0.35092, 0.35092 )
+texture = ExtResource( 17 )
+script = ExtResource( 18 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Area2D" type="Area2D" parent="Speedboost" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Speedboost/Area2D" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Speedboost" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/SpeedboostCollected = SubResource( 2 )
+blend_times = [  ]
+
 [connection signal="switched_color_to_orange" from="player" to="." method="_on_player_switched_color_to_orange"]
 
 [connection signal="switched_color_to_purple" from="player" to="." method="_on_player_switched_color_to_purple"]
@@ -395,5 +482,7 @@ bus = "Master"
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
 
 [connection signal="finished" from="PreSoundMusic" to="." method="_on_PreSoundMusic_finished"]
+
+[connection signal="area_entered" from="Speedboost/Area2D" to="Speedboost" method="_on_Area2D_area_entered"]
 
 

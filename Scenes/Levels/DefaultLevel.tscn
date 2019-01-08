@@ -60,6 +60,7 @@ collision_layer = 14
 
 [node name="ForwardLookingCamera" parent="." index="4" instance=ExtResource( 8 )]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="HeadCamCollider" type="Node2D" parent="ForwardLookingCamera" index="2"]
@@ -87,6 +88,8 @@ FIXED_CAMERA = false
 [node name="Speedboost" parent="Speedboosters" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( 1483.11, 133.058 )
+NEW_MAX_SPEED = 1800
+NEW_MAX_FORCE = 1900
 
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
 

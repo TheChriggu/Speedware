@@ -11,7 +11,7 @@
 [ext_resource path="res://Camera/ForwardLookingCamera.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Levels/Head Cam Colliders.gd" type="Script" id=10]
 
-[node name="Level1_Jonas" type="Node" index="0"]
+[node name="Level1_Jonas" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -46,7 +46,6 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Transform", "Visibility
 [node name="player" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -354.085, -86.9076 )
-GRAVITY = 2500.0
 
 [node name="Lasers" type="Node2D" parent="." index="3"]
 

@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Speedware"
-run/main_scene="res://Menus/Startmenu/TitleScreen.tscn"
+run/main_scene="res://Scenes/LaserLabsIntro.tscn"
 config/icon="res://Game_Icon.png"
 
 [display]
@@ -80,5 +80,5 @@ anim_right=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"reso
 
 [rendering]
 
-environment/default_clear_color=Color( 0.539063, 0.505371, 0.505371, 1 )
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

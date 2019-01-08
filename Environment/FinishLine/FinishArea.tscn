@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Environment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Environment/FinishLine/Finishline_Image.png" type="Texture" id=2]
-[ext_resource path="res://Environment/FinishLine/Finish Line - Mario Kart Wii.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/FinishingSound.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Environment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=5]
 

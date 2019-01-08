@@ -9,7 +9,7 @@
 [ext_resource path="res://Player/ColorTriangle.png" type="Texture" id=7]
 [ext_resource path="res://Player/PlayerCornerParticleImage.png" type="Texture" id=8]
 [ext_resource path="res://Environment/decoration_background_mandy.jpg" type="Texture" id=9]
-[ext_resource path="res://Sounds/DBZ Instant Transmission Sound effect.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/FinishedChrisSwitch.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Player/Character_Sprite_Yellow.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -750,7 +750,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Character"
+bus = "Master"
 _sections_unfolded = [ "Pause" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]

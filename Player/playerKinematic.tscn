@@ -564,6 +564,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 
 [node name="ColorIndicator" type="CanvasLayer" parent="." index="4"]
 
+editor/display_folded = true
 layer = 99
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -788,6 +789,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="5"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -847,6 +849,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 [node name="Area2D" type="Area2D" parent="." index="6"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

@@ -50,14 +50,36 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 0 ]
 }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+}, {
+"args": [  ],
+"method": "start"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
 
-[node name="Speedboost" type="Sprite"]
+[node name="Speedboost" type="Sprite" index="0"]
 
 position = Vector2( 776.714, 44.7581 )
 scale = Vector2( 0.35092, 0.35092 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
+NEW_MAX_SPEED = 5000
+NEW_MAX_FORCE = 5000
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 

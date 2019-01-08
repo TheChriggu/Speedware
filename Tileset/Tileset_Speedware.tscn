@@ -4,6 +4,10 @@
 
 [node name="Tileset_Speedware" type="Node"]
 
+__meta__ = {
+"_edit_horizontal_guides_": [ -63.0461, 62.9899 ]
+}
+
 [node name="leveltile_middle" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 1 )
@@ -23,12 +27,13 @@ bounce = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_middle/StaticBody2D" index="0"]
 
+position = Vector2( -0.291977, 0 )
 build_mode = 0
 polygon = PoolVector2Array( -67, -63, 67, -63, 67, 63, -67, 63 )
 
 [node name="leveltile_edge" type="Sprite" parent="." index="1"]
 
-position = Vector2( 143.481, 0 )
+position = Vector2( 150, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 213, 94, 128, 128 )
@@ -46,9 +51,9 @@ bounce = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_edge/StaticBody2D" index="0"]
 
-position = Vector2( 1.46301, 0.0475464 )
+position = Vector2( -3.29283, 0.0347672 )
 build_mode = 0
-polygon = PoolVector2Array( -64, -64, -64, 64, 64.1062, 63.8027, 64, -64 )
+polygon = PoolVector2Array( -61.993, -61.9035, 63.4769, -61.545, 60.9675, 60.34, -62.7099, 61.057 )
 
 [node name="leveltile_side" type="Sprite" parent="." index="2"]
 
@@ -70,6 +75,7 @@ bounce = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_side/StaticBody2D" index="0"]
 
+position = Vector2( -0.583984, 0.291993 )
 build_mode = 0
 polygon = PoolVector2Array( -64, -64, -64, 64, 64, 64, 64, -64 )
 

@@ -118,66 +118,75 @@ position = Vector2( 66.6215, 488.558 )
 
 [node name="Speedboost" parent="Speedboosters" index="0" instance=ExtResource( 12 )]
 
-position = Vector2( 1369.54, 272.44 )
-NEW_MAX_SPEED = 3000
-NEW_MAX_FORCE = 4000
+position = Vector2( 1799.44, 266.469 )
+rotation = -0.748746
+SPEED = 2000
 
 [node name="Speedboost2" parent="Speedboosters" index="1" instance=ExtResource( 12 )]
 
 position = Vector2( 3209.66, -195.111 )
-NEW_MAX_SPEED = 3000
-NEW_MAX_FORCE = 4000
 
 [node name="Speedboost3" parent="Speedboosters" index="2" instance=ExtResource( 12 )]
 
 position = Vector2( 3951.66, 540.421 )
-NEW_MAX_SPEED = 3000
-NEW_MAX_FORCE = 4000
 
 [node name="Speedboost5" parent="Speedboosters" index="3" instance=ExtResource( 12 )]
 
 position = Vector2( 3403.95, 131.487 )
-NEW_MAX_SPEED = 3000
-NEW_MAX_FORCE = 4000
 
 [node name="Speedboost4" parent="Speedboosters" index="4" instance=ExtResource( 12 )]
 
 position = Vector2( 4553.38, -111.15 )
-NEW_MAX_SPEED = 3000
-NEW_MAX_FORCE = 4000
+
+[node name="Speedboost6" parent="Speedboosters" index="5" instance=ExtResource( 12 )]
+
+position = Vector2( 5259.13, 106.432 )
+rotation = -0.705113
+
+[node name="Speedboost7" parent="Speedboosters" index="6" instance=ExtResource( 12 )]
+
+position = Vector2( 5264.7, -164.151 )
+rotation = -0.705113
+
+[node name="Speedboost8" parent="Speedboosters" index="7" instance=ExtResource( 12 )]
+
+position = Vector2( 5515.76, 0.43045 )
+rotation = -2.45219
 
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
 
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider2" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
 
-[connection signal="speedboost_mid" from="Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_mid"]
-
 [connection signal="speedboost_start" from="Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_stop"]
-
-[connection signal="speedboost_mid" from="Speedboosters/Speedboost2" to="." method="_on_Speedboost_speedboost_mid"]
 
 [connection signal="speedboost_start" from="Speedboosters/Speedboost2" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Speedboosters/Speedboost2" to="." method="_on_Speedboost_speedboost_stop"]
 
-[connection signal="speedboost_mid" from="Speedboosters/Speedboost3" to="." method="_on_Speedboost_speedboost_mid"]
-
 [connection signal="speedboost_start" from="Speedboosters/Speedboost3" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Speedboosters/Speedboost3" to="." method="_on_Speedboost_speedboost_stop"]
-
-[connection signal="speedboost_mid" from="Speedboosters/Speedboost5" to="." method="_on_Speedboost_speedboost_mid"]
 
 [connection signal="speedboost_start" from="Speedboosters/Speedboost5" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Speedboosters/Speedboost5" to="." method="_on_Speedboost_speedboost_stop"]
 
-[connection signal="speedboost_mid" from="Speedboosters/Speedboost4" to="." method="_on_Speedboost_speedboost_mid"]
-
 [connection signal="speedboost_start" from="Speedboosters/Speedboost4" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Speedboosters/Speedboost4" to="." method="_on_Speedboost_speedboost_stop"]
+
+[connection signal="speedboost_start" from="Speedboosters/Speedboost6" to="." method="_on_Speedboost_speedboost_start"]
+
+[connection signal="speedboost_stop" from="Speedboosters/Speedboost6" to="." method="_on_Speedboost_speedboost_stop"]
+
+[connection signal="speedboost_start" from="Speedboosters/Speedboost7" to="." method="_on_Speedboost_speedboost_start"]
+
+[connection signal="speedboost_stop" from="Speedboosters/Speedboost7" to="." method="_on_Speedboost_speedboost_stop"]
+
+[connection signal="speedboost_start" from="Speedboosters/Speedboost8" to="." method="_on_Speedboost_speedboost_start"]
+
+[connection signal="speedboost_stop" from="Speedboosters/Speedboost8" to="." method="_on_Speedboost_speedboost_stop"]
 
 

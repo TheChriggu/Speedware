@@ -18,18 +18,9 @@ func _on_player_switched_color_to_orange():
 func _on_player_switched_color_to_purple():
 	$Lasers.switch_to_purple()
 
-func _on_Speedboost_speedboost_start(new_max_speed, new_max_force):
-	$player.WALK_MAX_SPEED = new_max_speed
-	$player.WALK_FORCE = new_max_force
-	$ForwardLookingCamera.WALK_MAX_SPEED = new_max_speed
+func _on_Speedboost_speedboost_start(speed):
+	$player.velocity = speed
 	player_is_in_speed_boost = true
 
-func _on_Speedboost_speedboost_mid():
-	pass
-#	player_is_in_speed_boost = false
-
-func _on_Speedboost_speedboost_stop(new_max_speed, new_max_force):
-	$player.WALK_MAX_SPEED = new_max_speed
-	$player.WALK_FORCE = new_max_force
-	$ForwardLookingCamera.WALK_MAX_SPEED = new_max_speed
+func _on_Speedboost_speedboost_stop():
 	player_is_in_speed_boost = false

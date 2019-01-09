@@ -10,6 +10,7 @@ signal speedboost_mid
 signal speedboost_stop
 
 func _on_Area2D_area_entered(area):
+	print("Speedboost: area2D entered")
 	$AnimationPlayer.play("SpeedboostCollected")
 
 func start():

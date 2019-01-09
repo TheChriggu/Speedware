@@ -18,7 +18,7 @@
 [ext_resource path="res://Sounds/RobertSpeedware2.ogg" type="AudioStream" id=16]
 [ext_resource path="res://Environment/Speedboost/Speedboost.tscn" type="PackedScene" id=17]
 
-[node name="World" type="Node"]
+[node name="World" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -399,5 +399,7 @@ bus = "Master"
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
 
 [connection signal="finished" from="PreSoundMusic" to="." method="_on_PreSoundMusic_finished"]
+
+[connection signal="speedboost_mid" from="Speedboost" to="." method="_on_Speedboost_speedboost_mid"]
 
 

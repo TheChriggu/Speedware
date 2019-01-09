@@ -13,7 +13,7 @@
 [ext_resource path="res://Datastrings/LaserPurple.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Environment/Speedboost/Speedboost.tscn" type="PackedScene" id=12]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -38,7 +38,6 @@ color = Color( 1, 1, 1, 1 )
 [node name="player" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( -1.66479, 12.6455 )
-collision_layer = 14
 
 [node name="TileMap" type="TileMap" parent="." index="2"]
 

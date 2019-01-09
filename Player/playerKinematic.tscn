@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
-[ext_resource path="res://Player/Character_Sprite_Purple.png" type="Texture" id=2]
+[ext_resource path="res://Images/Character_Runing Pose_violet_nadim.png" type="Texture" id=2]
 [ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=3]
 [ext_resource path="res://Images/zero_white.png" type="Texture" id=4]
 [ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=5]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Player/PlayerCornerParticleImage.png" type="Texture" id=8]
 [ext_resource path="res://Images/backgroundalpha_rob.png" type="Texture" id=9]
 [ext_resource path="res://Sounds/FinishedChrisSwitch.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Player/Character_Sprite_Yellow.png" type="Texture" id=11]
+[ext_resource path="res://Images/Character_Runing Pose_gelb_nadim.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -476,12 +476,12 @@ tracks/1/keys = {
 "values": [ 1900, 1500 ]
 }
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
 input_pickable = false
-collision_layer = 6
+collision_layer = 14
 collision_mask = 6
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
@@ -499,9 +499,9 @@ isGreen = false
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 2.24448, -4.91766 )
-rotation = -0.436332
-scale = Vector2( 0.218893, 0.218893 )
+position = Vector2( -16.6392, -2.79172 )
+rotation = -0.0577902
+scale = Vector2( 0.140811, 0.140811 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -572,6 +572,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="TopColorTriangle" type="Sprite" parent="ColorIndicator" index="0"]
 
+visible = false
 modulate = Color( 0.729412, 0.168627, 0.756863, 1 )
 position = Vector2( 112.319, 192.71 )
 rotation = 1.57065

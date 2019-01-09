@@ -26,6 +26,7 @@ export var isGreen = false
 signal switched_color_to_purple
 signal switched_color_to_orange
 
+
 #Colorswitch Mechanic
 func SwitchColor():
 	isGreen = not isGreen
@@ -127,6 +128,7 @@ func _physics_process(delta):
 			SwitchColor()
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
+	
 
 var is_leaning_left = false
 var is_leaning_right = false

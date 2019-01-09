@@ -3,7 +3,6 @@ extends Node
 var player_is_in_speed_boost = false
 
 func _ready():
-	##TODO: Set old max speed and old max force in Speedbooster
 	$ForwardLookingCamera.WALK_MAX_SPEED = $player.WALK_MAX_SPEED
 
 func _physics_process(delta):
@@ -24,3 +23,14 @@ func _on_Speedboost_speedboost_start(speed):
 
 func _on_Speedboost_speedboost_stop():
 	player_is_in_speed_boost = false
+
+var is_in_fullspeed_mode = false
+func _process(delta):
+	if $player.velocity.x >= $player.WALK_MAX_SPEED - 100 && !is_in_fullspeed_mode:
+		$AnimationPlayer.play("Fullspeed Mode")
+		is_in_fullspeed_mode = true
+	
+	if $player.velocity.x < $player.WALK_MAX_SPEED - 100 && is_in_fullspeed_mode:
+		$AnimationPlayer.stop()
+		$AnimationPlayer.play("Fullspeed Mode Stop")
+		is_in_fullspeed_mode = false

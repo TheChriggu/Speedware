@@ -21,7 +21,7 @@ tracks/0/path = NodePath("Area2D:collision_layer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -33,91 +33,84 @@ tracks/1/path = NodePath("Area2D:collision_mask")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ring2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"values": [ {
-"args": [  ],
-"method": "start"
-}, {
-"args": [  ],
-"method": "start"
-}, {
-"args": [  ],
-"method": "stop"
-} ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Ring2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Ring1:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("Ring1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("Ring2:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/path = NodePath("Ring2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0.1, 0.3, 0.5 ),
 "transitions": PoolRealArray( 2.77224, 2.77224, 2.77224 ),
 "update": 0,
 "values": [ Vector2( 40, 0 ), Vector2( 70, 0 ), Vector2( 100, 0 ) ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Ring1:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/path = NodePath("Ring1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0.1, 0.3, 0.5, 0.7, 0.9 ),
 "transitions": PoolRealArray( 2.77224, 2.77224, 2.77224, 2.77224, 2.77224 ),
 "update": 0,
 "values": [ Vector2( 30, 0 ), Vector2( 60, 0 ), Vector2( 90, 0 ), Vector2( 120, 0 ), Vector2( 190, 0 ) ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
 
-[node name="Speedboost" type="Sprite" index="0"]
+[node name="Speedboost" type="Sprite"]
 
 position = Vector2( 776.714, 44.7581 )
 scale = Vector2( 0.35092, 0.35092 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Visibility" ]
-NEW_MAX_SPEED = 5000
-NEW_MAX_FORCE = 5000
+_sections_unfolded = [ "Transform", "Visibility" ]
+SPEED = 1800
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
@@ -126,8 +119,8 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 0
-collision_mask = 0
+collision_layer = 3
+collision_mask = 3
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -152,14 +145,14 @@ blend_times = [  ]
 [node name="Ring2" type="Sprite" parent="." index="2"]
 
 visible = false
-position = Vector2( 40, 0 )
+position = Vector2( 40.0123, 0 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Ring1" type="Sprite" parent="." index="3"]
 
 visible = false
-position = Vector2( 30, 0 )
+position = Vector2( 30.0123, 0 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 

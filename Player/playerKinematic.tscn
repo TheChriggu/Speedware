@@ -476,7 +476,7 @@ tracks/1/keys = {
 "values": [ 1900, 1500 ]
 }
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
@@ -804,7 +804,7 @@ scroll_ignore_camera_zoom = true
 
 motion_scale = Vector2( 0.2, 0.2 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1980, 1080 )
+motion_mirroring = Vector2( 1920, 1080 )
 _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
@@ -818,7 +818,7 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility
 
 motion_scale = Vector2( 0.2, 0.2 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1980, 1080 )
+motion_mirroring = Vector2( 1920, 1080 )
 _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Particles2D" type="Particles2D" parent="ParallaxBackground/ParallaxLayer2" index="0"]

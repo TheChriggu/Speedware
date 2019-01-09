@@ -139,6 +139,21 @@ position = Vector2( 3403.95, 131.487 )
 
 position = Vector2( 4553.38, -111.15 )
 
+[node name="Speedboost6" parent="Speedboosters" index="5" instance=ExtResource( 12 )]
+
+position = Vector2( 5259.13, 106.432 )
+rotation = -0.705113
+
+[node name="Speedboost7" parent="Speedboosters" index="6" instance=ExtResource( 12 )]
+
+position = Vector2( 5264.7, -164.151 )
+rotation = -0.705113
+
+[node name="Speedboost8" parent="Speedboosters" index="7" instance=ExtResource( 12 )]
+
+position = Vector2( 5515.76, 0.43045 )
+rotation = -2.45219
+
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
 
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider2" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
@@ -162,5 +177,17 @@ position = Vector2( 4553.38, -111.15 )
 [connection signal="speedboost_start" from="Speedboosters/Speedboost4" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Speedboosters/Speedboost4" to="." method="_on_Speedboost_speedboost_stop"]
+
+[connection signal="speedboost_start" from="Speedboosters/Speedboost6" to="." method="_on_Speedboost_speedboost_start"]
+
+[connection signal="speedboost_stop" from="Speedboosters/Speedboost6" to="." method="_on_Speedboost_speedboost_stop"]
+
+[connection signal="speedboost_start" from="Speedboosters/Speedboost7" to="." method="_on_Speedboost_speedboost_start"]
+
+[connection signal="speedboost_stop" from="Speedboosters/Speedboost7" to="." method="_on_Speedboost_speedboost_stop"]
+
+[connection signal="speedboost_start" from="Speedboosters/Speedboost8" to="." method="_on_Speedboost_speedboost_start"]
+
+[connection signal="speedboost_stop" from="Speedboosters/Speedboost8" to="." method="_on_Speedboost_speedboost_stop"]
 
 

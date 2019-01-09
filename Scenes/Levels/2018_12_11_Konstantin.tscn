@@ -99,6 +99,11 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 position = Vector2( 4115.1, 1585.46 )
 
+[node name="Area2D" parent="Speedboost" index="0"]
+
+collision_layer = 7
+collision_mask = 3
+
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
 
 [connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider2" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
@@ -110,3 +115,4 @@ position = Vector2( 4115.1, 1585.46 )
 [connection signal="speedboost_stop" from="Speedboost" to="." method="_on_Speedboost_speedboost_stop"]
 
 
+[editable path="Speedboost"]

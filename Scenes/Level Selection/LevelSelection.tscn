@@ -8,10 +8,6 @@
 [ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=7]
 
-
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "Mouse_Hover"
@@ -342,7 +338,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="LevelSelection" type="Node" index="0"]
+[node name="LevelSelection" type="Node"]
 
 script = ExtResource( 1 )
 

@@ -80,8 +80,10 @@ script = ExtResource( 2 )
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 4 )]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
+CAM_MAX_DISTANCE_H = 150
+CAM_MAX_SPEED_H = 10
+CAM_MAX_SPEED_V = 100
 
 [node name="HeadCamCollider" type="Node2D" parent="Player/ForwardLookingCamera" index="2"]
 

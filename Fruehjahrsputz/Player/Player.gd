@@ -7,9 +7,9 @@ func _ready():
 
 func _physics_process(delta):
 	if isInSpeedboost:
-		$ForwardLookingCamera.update_camera_speed_boost($player.position, $player.velocity)
+		$ForwardLookingCamera.UpdateCameraSpeedBoost($player.position, $player.velocity)
 	else:
-		$ForwardLookingCamera.update_camera($player.position, $player.velocity)
+		$ForwardLookingCamera.UpdateCamera($player.position, $player.velocity)
 
 func SwitchColorToOrange():
 	pass

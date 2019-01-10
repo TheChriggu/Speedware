@@ -1,73 +1,72 @@
 extends Node2D
 
 #Camera Variables
-export var MAX_CAM_DISTANCE_H = 500 #how far away the camera can get from the player horizontally
-export var MAX_CAM_SPEED_H = 5 #maximal speed of horizontal camera movement
-export var MAX_CAM_SPEED_V = 5 #maximal speed of vertical camera movement
-var vertical_anchor = 0 #the height offset in regards to the player, to which the camera is anchored
-var last_offset = Vector2 (0,0) #previous offset of the camera
+export var CAM_MAX_DISTANCE_H = 500 #how far away the camera can get from the player horizontally
+export var CAM_MAX_SPEED_H = 5 #maximal speed of horizontal camera movement
+export var CAM_MAX_SPEED_V = 5 #maximal speed of vertical camera movement
+var lastOffset = Vector2 (0,0) #previous offset of the camera
 var fixedCamera = false #bool to track weather the camera is currently fixed to an anchor or following the players vertical movement
 
 var WALK_MAX_SPEED = 0
 
 #Regular camera calculation
-func update_camera(player_position, velocity):
-	$AverageSpeedCalculation.addNew(velocity)
+func UpdateCamera(playerPosition, velocity):
+	$AverageSpeedCalculation.AddNew(velocity)
 	
 	#offset is proportional to current movement speed/max speed
-	var next_offset_h = MAX_CAM_DISTANCE_H*$AverageSpeedCalculation.average().x/WALK_MAX_SPEED
-	next_offset_h = clampSpeed(next_offset_h, last_offset.x, MAX_CAM_SPEED_H)
-	last_offset.x = next_offset_h
+	var nextOffsetH = CAM_MAX_DISTANCE_H*$AverageSpeedCalculation.Average().x/WALK_MAX_SPEED
+	nextOffsetH = ClampSpeed(nextOffsetH, lastOffset.x, CAM_MAX_SPEED_H)
+	lastOffset.x = nextOffsetH
 	
 	#send new offset to camera
-	$FocalPoint.setHorizontal(player_position.x + next_offset_h)
+	$FocalPoint.SetHorizontal(playerPosition.x + nextOffsetH)
 	
 	#vertical cam offset calculation
 	#vertical cam position
-	var next_offset_v #vertical offset of the camera
+	var nextOffsetV #vertical offset of the camera
 	#set new camera offset, to the anchor if camera is free, otherwise follow the player
 	if $HeadCamCollider.FIXED_CAMERA:
-		next_offset_v = $HeadCamCollider.CURRENT_ANCHOR #camera offset in relation to the player
+		nextOffsetV = $HeadCamCollider.CURRENT_ANCHOR #camera offset in relation to the player
 	else:
-		next_offset_v = player_position.y
+		nextOffsetV = playerPosition.y
 		
-	next_offset_v = clampSpeed(next_offset_v, last_offset.y, MAX_CAM_SPEED_V)
-	last_offset.y = next_offset_v
+	nextOffsetV = ClampSpeed(nextOffsetV, lastOffset.y, CAM_MAX_SPEED_V)
+	lastOffset.y = nextOffsetV
 	
 	#send new offset to camera
-	$FocalPoint.setVertical(next_offset_v)
+	$FocalPoint.SetVertical(nextOffsetV)
 
 #Camera calculation during speed boost
-func update_camera_speed_boost(player_position, velocity):
-	$AverageSpeedCalculation.addNew(velocity)
+func UpdateCameraSpeedBoost(playerPosition, velocity):
+	$AverageSpeedCalculation.AddNew(velocity)
 	
 	#offset is proportional to current movement speed/max speed
-	var next_offset_h = -MAX_CAM_DISTANCE_H*$AverageSpeedCalculation.average().x/WALK_MAX_SPEED
-	next_offset_h = clampSpeed(next_offset_h, last_offset.x, MAX_CAM_SPEED_H)
-	last_offset.x = next_offset_h
+	var nextOffsetH = -CAM_MAX_DISTANCE_H*$AverageSpeedCalculation.Average().x/WALK_MAX_SPEED
+	nextOffsetH = ClampSpeed(nextOffsetH, lastOffset.x, CAM_MAX_SPEED_H)
+	lastOffset.x = nextOffsetH
 	
 	#send new offset to camera
-	$FocalPoint.setHorizontal(player_position.x + next_offset_h)
+	$FocalPoint.SetHorizontal(playerPosition.x + nextOffsetH)
 	
 	#vertical cam offset calculation
 	#vertical cam position
-	var next_offset_v #vertical offset of the camera
+	var nextOffsetV #vertical offset of the camera
 	#set new camera offset, to the anchor if camera is free, otherwise follow the player
 	if $HeadCamCollider.FIXED_CAMERA:
-		next_offset_v = $HeadCamCollider.CURRENT_ANCHOR #camera offset in relation to the player
+		nextOffsetV = $HeadCamCollider.CURRENT_ANCHOR #camera offset in relation to the player
 	else:
-		next_offset_v = player_position.y
+		nextOffsetV = playerPosition.y
 		
-	next_offset_v = clampSpeed(next_offset_v, last_offset.y, MAX_CAM_SPEED_V)
-	last_offset.y = next_offset_v
+	nextOffsetV = ClampSpeed(nextOffsetV, lastOffset.y, CAM_MAX_SPEED_V)
+	lastOffset.y = nextOffsetV
 	
 	#send new offset to camera
-	$FocalPoint.setVertical(next_offset_v)
+	$FocalPoint.SetVertical(nextOffsetV)
 	
-func clampSpeed(var next_position, var last_offset, var max_speed):
+func ClampSpeed(var nextPosition, var lastOffset, var maxSpeed):
 	#if camera speed is too high (new position is further away than allowed), set the camera to max speed
-	if (next_position - last_offset) > max_speed: #when moving downwards
-		next_position = last_offset + max_speed
-	elif (next_position - last_offset) < -max_speed: #when moving upwards
-		next_position = last_offset - max_speed
-	return next_position
+	if (nextPosition - lastOffset) > maxSpeed: #when moving downwards
+		nextPosition = lastOffset + maxSpeed
+	elif (nextPosition - lastOffset) < -maxSpeed: #when moving upwards
+		nextPosition = lastOffset - maxSpeed
+	return nextPosition

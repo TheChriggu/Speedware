@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Star_Empty.png-c69869d3fad331f8dcdbbee58fa32066.stex"
+path="res://.import/backgroundalpha_rob.png-9050ba60c324f5e1ea900ff65be231f8.stex"
 
 [deps]
 
-source_file="res://Images/Star_Empty.png"
-dest_files=[ "res://.import/Star_Empty.png-c69869d3fad331f8dcdbbee58fa32066.stex" ]
+source_file="res://Fruehjahrsputz/Everything/UI/Parallax Background/backgroundalpha_rob.png"
+dest_files=[ "res://.import/backgroundalpha_rob.png-9050ba60c324f5e1ea900ff65be231f8.stex" ]
 
 [params]
 

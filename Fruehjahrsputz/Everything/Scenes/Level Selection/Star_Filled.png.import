@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ui_level_idea.jpg-175f886b7f406b8affb42098f13f2221.stex"
+path="res://.import/Star_Filled.png-c5e1a0af177e2435e6c38e6e53905c0c.stex"
 
 [deps]
 
-source_file="res://Images/ui_level_idea.jpg"
-dest_files=[ "res://.import/ui_level_idea.jpg-175f886b7f406b8affb42098f13f2221.stex" ]
+source_file="res://Fruehjahrsputz/Everything/Scenes/Level Selection/Star_Filled.png"
+dest_files=[ "res://.import/Star_Filled.png-c5e1a0af177e2435e6c38e6e53905c0c.stex" ]
 
 [params]
 

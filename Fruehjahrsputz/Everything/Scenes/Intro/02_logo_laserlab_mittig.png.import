@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/zero_white.png-eacc6ad6ecab607c5a08b60e21bcb901.stex"
+path="res://.import/02_logo_laserlab_mittig.png-1848432bf5cd3b3bdb62a143971b52ee.stex"
 
 [deps]
 
-source_file="res://Images/zero_white.png"
-dest_files=[ "res://.import/zero_white.png-eacc6ad6ecab607c5a08b60e21bcb901.stex" ]
+source_file="res://Fruehjahrsputz/Everything/Scenes/Intro/02_logo_laserlab_mittig.png"
+dest_files=[ "res://.import/02_logo_laserlab_mittig.png-1848432bf5cd3b3bdb62a143971b52ee.stex" ]
 
 [params]
 

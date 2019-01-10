@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/one_white.png-64d71776fbb5ba60d0fb4fe4864adb02.stex"
+path="res://.import/Star_Empty.png-04030001ad75ecc8292998ab88e6886e.stex"
 
 [deps]
 
-source_file="res://Images/one_white.png"
-dest_files=[ "res://.import/one_white.png-64d71776fbb5ba60d0fb4fe4864adb02.stex" ]
+source_file="res://Fruehjahrsputz/Everything/Scenes/Level Selection/Star_Empty.png"
+dest_files=[ "res://.import/Star_Empty.png-04030001ad75ecc8292998ab88e6886e.stex" ]
 
 [params]
 

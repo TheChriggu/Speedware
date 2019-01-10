@@ -3,11 +3,13 @@
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/Character_Runing Pose_violet_nadim.png" type="Texture" id=2]
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/Particles/playerKinematic1.tres" type="Material" id=3]
-[ext_resource path="res://Images/zero_white.png" type="Texture" id=4]
+[ext_resource path="res://Fruehjahrsputz/Everything/Player/Particles/TrailEffect/zero_white.png" type="Texture" id=4]
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/Particles/playerKinematic2.tres" type="Material" id=5]
-[ext_resource path="res://Images/one_white.png" type="Texture" id=6]
+[ext_resource path="res://Fruehjahrsputz/Everything/Player/Particles/TrailEffect/one_white.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/FinishedChrisSwitch.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/Character_Runing Pose_gelb_nadim.png" type="Texture" id=8]
+
+
 
 
 

@@ -9,12 +9,6 @@
 [ext_resource path="res://Sounds/FinishedChrisSwitch.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/Character_Runing Pose_gelb_nadim.png" type="Texture" id=8]
 
-
-
-
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -65,7 +59,7 @@ tracks/0/keys = {
 "values": [ 0.0, 12.0, 19.0, 25.0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 length = 1.0
 loop = false
@@ -131,7 +125,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 length = 1.0
 loop = false
@@ -197,7 +191,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
@@ -280,7 +274,6 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 
 editor/display_folded = true
 position = Vector2( -3.19009, -4.38425 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -321,8 +314,8 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/LeanLeft = SubResource( 3 )
 anims/LeanRight = SubResource( 4 )
-anims/SwitchOrangeToPurple = SubResource( 6 )
-anims/SwitchPurpleToOrange = SubResource( 7 )
+anims/SwitchOrangeToPurple = SubResource( 5 )
+anims/SwitchPurpleToOrange = SubResource( 6 )
 blend_times = [  ]
 
 

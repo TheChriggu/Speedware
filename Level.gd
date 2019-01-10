@@ -25,12 +25,12 @@ func _on_Speedboost_speedboost_stop():
 	player_is_in_speed_boost = false
 
 var is_in_fullspeed_mode = false
-func _process(delta):
-	if $player.velocity.x >= $player.WALK_MAX_SPEED - 100 && !is_in_fullspeed_mode:
-		$AnimationPlayer.play("Fullspeed Mode")
-		is_in_fullspeed_mode = true
+#func _process(delta):
+#	if $player.velocity.x >= $player.WALK_MAX_SPEED - 100 && !is_in_fullspeed_mode:
+#		$AnimationPlayer.play("Fullspeed Mode")
+#		is_in_fullspeed_mode = true
 	
-	if $player.velocity.x < $player.WALK_MAX_SPEED - 100 && is_in_fullspeed_mode:
-		$AnimationPlayer.stop()
-		$AnimationPlayer.play("Fullspeed Mode Stop")
-		is_in_fullspeed_mode = false
+#	if $player.velocity.x < $player.WALK_MAX_SPEED - 100 && is_in_fullspeed_mode:
+#		$AnimationPlayer.stop()
+#		$AnimationPlayer.play("Fullspeed Mode Stop")
+#		is_in_fullspeed_mode = false

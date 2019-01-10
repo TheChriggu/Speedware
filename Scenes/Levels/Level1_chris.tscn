@@ -63,7 +63,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -168,8 +168,6 @@ position = Vector2( 66.6215, 488.558 )
 
 [node name="Speedboosters" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="Speedboost" parent="Speedboosters" index="0" instance=ExtResource( 12 )]
 
 position = Vector2( 1799.44, 266.469 )
@@ -206,6 +204,10 @@ rotation = -0.705113
 
 position = Vector2( 5515.76, 0.43045 )
 rotation = -2.45219
+
+[node name="Speedboost9" parent="Speedboosters" index="8" instance=ExtResource( 12 )]
+
+position = Vector2( 6829.38, 69.9893 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
 
@@ -273,5 +275,9 @@ _sections_unfolded = [ "Visibility" ]
 [connection signal="speedboost_start" from="Speedboosters/Speedboost8" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Speedboosters/Speedboost8" to="." method="_on_Speedboost_speedboost_stop"]
+
+[connection signal="speedboost_start" from="Speedboosters/Speedboost9" to="." method="_on_Speedboost_speedboost_start"]
+
+[connection signal="speedboost_stop" from="Speedboosters/Speedboost9" to="." method="_on_Speedboost_speedboost_stop"]
 
 

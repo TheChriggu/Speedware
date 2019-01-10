@@ -1,7 +1,7 @@
 extends Node2D
 
-var horizontal_distance = 500
-var vertical_distance = 200
+var horizontal_distance = 400
+var vertical_distance = 50
 
 #set the horizontal camera position
 func setHorizontal(offset):

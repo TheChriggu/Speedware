@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Enviroment/Datastrings/OrangeStrong.png" type="Texture" id=1]
 [ext_resource path="res://Enviroment/Datastrings/LaserOrange.gd" type="Script" id=2]
 [ext_resource path="res://Enviroment/Datastrings/OrangeWeak.png" type="Texture" id=3]
-
+[ext_resource path="res://Enviroment/Datastrings/OrangeParticles2D.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 
-[node name="LaserGruen" type="Sprite"]
+[node name="LaserOrange" type="Sprite"]
 
 modulate = Color( 1, 0.526978, 0.0234375, 0.458588 )
 texture = ExtResource( 1 )
@@ -81,5 +81,7 @@ playback_speed = 1.0
 anims/SwitchOrangeToPurple = SubResource( 2 )
 anims/SwitchPurpleToOrange = SubResource( 3 )
 blend_times = [  ]
+
+[node name="Particles2D" parent="." index="2" instance=ExtResource( 4 )]
 
 

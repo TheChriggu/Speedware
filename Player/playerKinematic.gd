@@ -8,6 +8,7 @@ export var WALK_MAX_SPEED = 1000 #Maximum speed at which the character moves
 export var STOP_FORCE = 1300 #Level of friction, which slows the player down
 export var JUMP_SPEED = 1200 #Speed to which the players vertical velocity gets set on a jump. Influences jump height
 export var JUMP_MAX_AIRBORNE_TIME = 0.001 #Time the player can jump after leaving an edge (Double click for double jump mechanic~)
+export var FULSPEED_LEEWAY = 100 #Value around the max walk speed, at which movement is still considered to be full speed
 
 var jumpCutVelocity = 200 #vertical speed, which the jump cannot go over
 var velocity = Vector2() #Vector containing the horizontal & vertical player speed
@@ -18,6 +19,8 @@ export var IS_ORANGE = false #Boolean to track, if the player ic currently orang
 
 signal switched_color_to_purple #signal to send if the player has switched his color to orange
 signal switched_color_to_orange #signal to send if the player has switched his color to purple
+signal is_at_fullspeed #signal to send, if the player is moving at full speed
+signal is_not_at_fullspeed #signal to send if player is not at full speed
 
 var isLeaningLeft = false
 var isLeaningRight = false
@@ -44,6 +47,8 @@ func HorizontalMovement(delta):
 	
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+	CheckFulspeed()
 
 func VerticalMovement(delta):
 	if is_on_floor():
@@ -124,3 +129,9 @@ func SwitchColor():
 		$AnimationPlayer.play("SwitchOrangeToPurple")
 		$ColorswitchSound.playing = true
 		emit_signal("switched_color_to_purple")
+
+func CheckFulspeed():
+	if velocity.x >= WALK_MAX_SPEED - FULSPEED_LEEWAY:
+		emit_signal("is_at_fullspeed")
+	else:
+		emit_signal("is_not_at_fullspeed")

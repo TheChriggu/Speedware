@@ -191,7 +191,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
@@ -208,6 +208,7 @@ WALK_MAX_SPEED = 1000
 STOP_FORCE = 1300
 JUMP_SPEED = 1200
 JUMP_MAX_AIRBORNE_TIME = 0.001
+FULSPEED_LEEWAY = 100
 onAirTime = 0
 IS_ORANGE = false
 
@@ -219,14 +220,7 @@ scale = Vector2( 0.140811, 0.140811 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-editor/display_folded = true
-position = Vector2( -3.19009, -4.38425 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Particles2DPurpleZero" type="Particles2D" parent="." index="2"]
+[node name="Particles2DPurpleZero" type="Particles2D" parent="." index="1"]
 
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
@@ -251,7 +245,7 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="Particles2DOrangeOne" type="Particles2D" parent="." index="3"]
+[node name="Particles2DOrangeOne" type="Particles2D" parent="." index="2"]
 
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
@@ -276,6 +270,14 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( -3.19009, -4.38425 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Area2D" type="Area2D" parent="." index="4"]
 
 editor/display_folded = true
@@ -286,7 +288,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 

@@ -3,10 +3,11 @@
 [ext_resource path="res://Fruehjahrsputz/Everything/Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Fruehjahrsputz/Everything/Scenes/Level Selection/ui_level_idea.jpg" type="Texture" id=2]
 [ext_resource path="res://Fruehjahrsputz/Everything/Scenes/Level Selection/LevelShortcut.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Levels/Prototype_MS02_Ver01_Konstantin_S.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fruehjahrsputz/Everything/Levels/Prototype_MS02_Ver01_Konstantin_S.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Fruehjahrsputz/Everything/Scenes/Level Selection/Star_Empty.png" type="Texture" id=5]
 [ext_resource path="res://Menus/Return_to_Menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=7]
+
 
 [sub_resource type="Animation" id=1]
 

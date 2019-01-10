@@ -1,11 +1,11 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Level.gd" type="Script" id=1]
+[ext_resource path="res://Fruehjahrsputz/Everything/Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://Fruehjahrsputz/Everything/Undecided/White_Background.jpg" type="Texture" id=2]
 [ext_resource path="res://Fruehjahrsputz/Player/Player.gd" type="Script" id=3]
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/playerKinematic.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Fruehjahrsputz/Everything/Camera/ForwardLookingCamera.tscn" type="PackedScene" id=5]
-[ext_resource path="res://HeadCamCollider.gd" type="Script" id=6]
+[ext_resource path="res://Fruehjahrsputz/Everything/Camera/HeadCamCollider.gd" type="Script" id=6]
 [ext_resource path="res://Fruehjahrsputz/Everything/Camera/CamCollider.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fruehjahrsputz/UI/ParallaxBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Fruehjahrsputz/UI/UI.gd" type="Script" id=9]
@@ -21,6 +21,8 @@
 [ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=21]
+
+
 
 [node name="Level" type="Node" index="0"]
 

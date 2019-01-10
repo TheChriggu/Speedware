@@ -1,10 +1,10 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Level.gd" type="Script" id=1]
+[ext_resource path="res://Fruehjahrsputz/Everything/Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://Fruehjahrsputz/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/playerKinematic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fruehjahrsputz/Everything/Camera/ForwardLookingCamera.tscn" type="PackedScene" id=4]
-[ext_resource path="res://HeadCamCollider.gd" type="Script" id=5]
+[ext_resource path="res://Fruehjahrsputz/Everything/Camera/HeadCamCollider.gd" type="Script" id=5]
 [ext_resource path="res://Fruehjahrsputz/Everything/Camera/CamCollider.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Fruehjahrsputz/UI/ParallaxBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fruehjahrsputz/Level/Level.gd" type="Script" id=8]
@@ -21,12 +21,13 @@
 [ext_resource path="res://Fruehjahrsputz/Everything/UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Fruehjahrsputz/Everything/UI/Timer/Timer.tscn" type="PackedScene" id=20]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="Player" type="Node" parent="." index="0"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 3 )]
@@ -88,12 +89,15 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="1"]
 
+editor/display_folded = true
+
 [node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( 1483.11, 133.058 )
 
 [node name="Lasers" type="Node2D" parent="Level" index="2"]
 
+editor/display_folded = true
 position = Vector2( 453.14, -400.15 )
 script = ExtResource( 11 )
 
@@ -106,6 +110,8 @@ position = Vector2( 381.223, 501.512 )
 position = Vector2( 66.6215, 488.558 )
 
 [node name="Collectibles" type="Node2D" parent="Level" index="3"]
+
+editor/display_folded = true
 
 [node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 14 )]
 

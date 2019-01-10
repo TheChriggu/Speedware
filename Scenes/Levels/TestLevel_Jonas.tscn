@@ -1,9 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tileset/TileSetPlaceholder.tres" type="TileSet" id=1]
-[ext_resource path="res://Datastrings/LaserPurple.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Datastrings/LaserOrange.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fruehjahrsputz/Everything/Player/playerKinematic.tscn" type="PackedScene" id=4]
+
+
 
 [node name="TestLevel_Jonas" type="Node" index="0"]
 

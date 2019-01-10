@@ -2,9 +2,11 @@
 
 [ext_resource path="res://Scenes/Levels/level_physicsTest_01_Chris.gd" type="Script" id=1]
 [ext_resource path="res://Tileset/Tileset_Speedware.tres" type="TileSet" id=2]
-[ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Camera/ForwardLookingCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fruehjahrsputz/Everything/Player/playerKinematic.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fruehjahrsputz/Everything/Camera/ForwardLookingCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Levels/Head Cam Colliders.gd" type="Script" id=5]
+
+
 
 [node name="TilesetTestLevel" type="Node"]
 

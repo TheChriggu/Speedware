@@ -3,7 +3,7 @@
 [ext_resource path="res://Menus/Startmenu/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Menus/Startmenu/Speedware_Logo_01_BryanPrintz.png" type="Texture" id=3]
-[ext_resource path="res://Player/Character_Sprite_Yellow.png" type="Texture" id=4]
+[ext_resource path="res://Fruehjahrsputz/Everything/Undecided/Character_Sprite_Yellow.png" type="Texture" id=4]
 [ext_resource path="res://Menus/Startmenu/Buttons.gd" type="Script" id=5]
 [ext_resource path="res://Menus/Buttons/MenuButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Menus/Buttons/ContinueButton.tscn" type="PackedScene" id=7]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Menus/Buttons/Chat_Logs.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Menus/Buttons/ExitButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=12]
+
 
 [sub_resource type="Animation" id=1]
 

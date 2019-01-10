@@ -2,23 +2,23 @@
 
 [ext_resource path="res://Scenes/Levels/Prototype_MS02_Ver01_Konstantin_S.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Levels/Lasers.gd" type="Script" id=2]
-[ext_resource path="res://Datastrings/LaserPurple.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Datastrings/LaserOrange.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tileset/TileSetPlaceholder.tres" type="TileSet" id=5]
-[ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Environment/UI/Collectible.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Fruehjahrsputz/Everything/Player/playerKinematic.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Environment/UI/Timer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Menus/PauseMenu/PauseMenu.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Environment/UI/CollectiblesCollected.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Fruehjahrsputz/Everything/UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sounds/Noisia - Machine Gun (Official Video).ogg" type="AudioStream" id=11]
-[ext_resource path="res://Environment/FinishLine/FinishArea.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Camera/ForwardLookingCamera.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Fruehjahrsputz/Everything/Camera/ForwardLookingCamera.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Levels/Head Cam Colliders.gd" type="Script" id=14]
-[ext_resource path="res://Camera/CamCollider.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Fruehjahrsputz/Everything/Camera/CamCollider.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Sounds/RobertSpeedware2.ogg" type="AudioStream" id=16]
-[ext_resource path="res://Environment/Speedboost/Speedboost.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=17]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -361,8 +361,6 @@ position = Vector2( 35907, 1253.83 )
 [node name="ForwardLookingCamera" parent="." index="10" instance=ExtResource( 13 )]
 
 editor/display_folded = true
-MAX_CAM_SPEED_H = 10
-MAX_CAM_SPEED_V = 10
 
 [node name="HeadCamCollider" type="Node2D" parent="ForwardLookingCamera" index="2"]
 
@@ -394,12 +392,6 @@ bus = "Master"
 
 [connection signal="switched_color_to_purple" from="player" to="." method="_on_player_switched_color_to_purple"]
 
-[connection signal="finishLinePassed" from="FinishArea" to="UI/Timer" method="_on_FinishArea_finishLinePassed"]
-
-[connection signal="newCamera" from="ForwardLookingCamera/HeadCamCollider/CamCollider" to="ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_newCamera"]
-
 [connection signal="finished" from="PreSoundMusic" to="." method="_on_PreSoundMusic_finished"]
-
-[connection signal="speedboost_mid" from="Speedboost" to="." method="_on_Speedboost_speedboost_mid"]
 
 

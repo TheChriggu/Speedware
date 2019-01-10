@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Finish Line - Mario Kart Wii.ogg-ad58527fca3d79ccd897330436f291d0.oggstr"
+
+[deps]
+
+source_file="res://Fruehjahrsputz/Everything/Enviroment/FinishLine/Finish Line - Mario Kart Wii.ogg"
+dest_files=[ "res://.import/Finish Line - Mario Kart Wii.ogg-ad58527fca3d79ccd897330436f291d0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

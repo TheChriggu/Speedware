@@ -1,39 +1,31 @@
 extends VBoxContainer
 
 func _on_Start_Game_mouse_entered():
-	$AnimationPlayer.play("NewGame_Mouse_Hover")
+	$AnimationPlayer.play("NewGameMouseHover")
 
 func _on_Start_Game_mouse_exited():
-	$AnimationPlayer.play("NewGame_Mouse_Hover_Down")
+	$AnimationPlayer.play("NewGameMouseHoverDown")
 
 func _on_LevelSelectionButton_mouse_entered():
-	$AnimationPlayer.play("LevelSelection_Mouse_Hover")
-
+	$AnimationPlayer.play("LevelSelectionMouseHover")
 
 func _on_LevelSelectionButton_mouse_exited():
-	$AnimationPlayer.play("LevelSelection_Mouse_Hover_Down")
-
+	$AnimationPlayer.play("LevelSelectionMouseHoverDown")
 
 func _on_Options_mouse_entered():
-	$AnimationPlayer.play("Option_Mouse_Hover")
-
+	$AnimationPlayer.play("OptionMouseHover")
 
 func _on_Options_mouse_exited():
-	$AnimationPlayer.play("Option_Mouse_Hover_Down")
-
-
-
+	$AnimationPlayer.play("OptionMouseHoverDown")
 
 func _on_Chat_Logs_mouse_entered():
-	$AnimationPlayer.play("ChatLogs_Mouse_Hover")
+	$AnimationPlayer.play("ChatLogsMouseHover")
 
 func _on_Chat_Logs_mouse_exited():
-	$AnimationPlayer.play("ChatLogs_Mouse_Hover_Down")
-
+	$AnimationPlayer.play("ChatLogsMouseHoverDown")
 
 func _on_Exit_mouse_entered():
-	$AnimationPlayer.play("Exit_Mouse_Hover")
-
+	$AnimationPlayer.play("ExitMouseHover")
 
 func _on_Exit_mouse_exited():
-	$AnimationPlayer.play("Exit_Mouse_Hover_Down")
+	$AnimationPlayer.play("ExitMouseHoverDown")

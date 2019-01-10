@@ -4,10 +4,7 @@
 [ext_resource path="res://Menus/PauseMenu/Pause.gd" type="Script" id=2]
 [ext_resource path="res://Menus/PauseMenu/01_ui_pause.png" type="Texture" id=3]
 
-
-
-
-[node name="PauseMenu" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 2

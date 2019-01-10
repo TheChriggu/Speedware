@@ -1,9 +1,9 @@
 extends Node2D
 
-func switch_to_purple():
+func SwitchToPurple():
 	for laser in get_children():
-		laser.switch_to_purple()
+		laser.switchToPurple()
 
-func switch_to_orange():
+func SwitchToOrange():
 		for laser in get_children():
-			laser.switch_to_orange()
+			laser.SwitchToOrange()

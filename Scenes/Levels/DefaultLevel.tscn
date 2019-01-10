@@ -110,6 +110,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Level" type="Node" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="0"]
@@ -136,8 +137,6 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="1"]
 
-editor/display_folded = true
-
 [node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( 1483.11, 133.058 )
@@ -157,7 +156,6 @@ position = Vector2( 66.6215, 488.558 )
 
 [node name="UI" type="Node" parent="." index="2"]
 
-editor/display_folded = true
 script = ExtResource( 14 )
 
 [node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 15 )]
@@ -166,6 +164,7 @@ script = ExtResource( 14 )
 
 [node name="FullspeedMode" type="ColorRect" parent="UI" index="2"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0

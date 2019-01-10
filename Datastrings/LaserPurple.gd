@@ -1,7 +1,7 @@
 extends Sprite
 
-func switch_to_purple():
+func SwitchToPurple():
 	$AnimationPlayer.play("SwitchOrangeToPurple")
 
-func switch_to_orange():
+func SwitchToOrange():
 	$AnimationPlayer.play("SwitchPurpleToOrange")

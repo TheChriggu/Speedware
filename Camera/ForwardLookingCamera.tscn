@@ -4,7 +4,6 @@
 [ext_resource path="res://Camera/FocalPoint.gd" type="Script" id=2]
 [ext_resource path="res://Camera/AverageSpeedCalculation.gd" type="Script" id=3]
 
-
 [node name="ForwardLookingCamera" type="Node2D"]
 
 script = ExtResource( 1 )
@@ -15,6 +14,8 @@ CAM_MAX_SPEED_V = 5
 [node name="FocalPoint" type="Node2D" parent="." index="0"]
 
 script = ExtResource( 2 )
+HORIZONTAL_OFFSET = 300
+VERTICAL_OFFSET = 100
 
 [node name="Camera2D" type="Camera2D" parent="FocalPoint" index="0"]
 

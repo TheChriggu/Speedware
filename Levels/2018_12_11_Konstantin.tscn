@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://Undecided/White_Background.jpg" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 [ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=4]
@@ -14,14 +14,16 @@
 [ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=12]
 [ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=13]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Tileset/Tileset_Speedware.tres" type="TileSet" id=15]
-[ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=16]
-[ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=15]
+[ext_resource path="res://Tileset/Tileset_Speedware.tres" type="TileSet" id=16]
+[ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=17]
+[ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=22]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -34,17 +36,22 @@ texture = ExtResource( 2 )
 
 [node name="Player" type="Node" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 4 )]
 
 editor/display_folded = true
-position = Vector2( 2793.91, 1623.84 )
+position = Vector2( -393.723, -424.837 )
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 position = Vector2( -8.36853, 0 )
 _sections_unfolded = [ "Transform" ]
+CAM_MAX_DISTANCE_H = 150
+CAM_MAX_SPEED_H = 10
+CAM_MAX_SPEED_V = 100
 
 [node name="HeadCamCollider" type="Node2D" parent="Player/ForwardLookingCamera" index="2"]
 
@@ -86,13 +93,13 @@ editor/display_folded = true
 
 [node name="Level" type="Node" parent="." index="3"]
 
-script = ExtResource( 1 )
+script = ExtResource( 15 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
 mode = 0
-tile_set = ExtResource( 15 )
+tile_set = ExtResource( 16 )
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -114,13 +121,13 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 453.14, -400.15 )
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
-[node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 17 )]
+[node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 18 )]
 
 position = Vector2( 2066.09, -251.655 )
 
-[node name="LaserBlau" parent="Level/Lasers" index="1" instance=ExtResource( 18 )]
+[node name="LaserBlau" parent="Level/Lasers" index="1" instance=ExtResource( 19 )]
 
 position = Vector2( 2507.44, -261.82 )
 
@@ -128,15 +135,22 @@ position = Vector2( 2507.44, -261.82 )
 
 editor/display_folded = true
 
-[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 19 )]
+[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 20 )]
 
 position = Vector2( 4115.1, 1585.46 )
 
 [node name="Collectibles" type="Node2D" parent="Level" index="3"]
 
-[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 20 )]
+editor/display_folded = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 21 )]
 
 position = Vector2( 2968.64, 1603.36 )
+
+[node name="FinishArea" parent="Level" index="4" instance=ExtResource( 22 )]
+
+position = Vector2( 26040.5, 4011.94 )
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 

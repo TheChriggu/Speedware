@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Camera/ForwardLookingCamera.tscn" type="PackedScene" id=4]
@@ -20,14 +20,6 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=18]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=19]
 [ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=20]
-
-
-
-
-
-
-
-
 
 [node name="Level" type="Node"]
 
@@ -54,7 +46,6 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="Player" type="Node" parent="." index="1"]
 
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 3 )]
@@ -89,6 +80,7 @@ FIXED_CAMERA = false
 
 [node name="Level" type="Node" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="0"]

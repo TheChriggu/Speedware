@@ -3,8 +3,6 @@
 [ext_resource path="res://Scenes/Main Menu/MenuButton.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Size.tres" type="DynamicFontData" id=2]
 
-
-
 [sub_resource type="DynamicFont" id=1]
 
 size = 48
@@ -13,7 +11,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Start Game" type="Button" index="0"]
+[node name="Start Game" type="Button"]
 
 anchor_left = 0.0
 anchor_top = 0.0

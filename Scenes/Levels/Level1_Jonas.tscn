@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Levels/Level1_Jonas.gd" type="Script" id=1]
-[ext_resource path="res://Environment/White_Background.jpg" type="Texture" id=2]
+[ext_resource path="res://Fruehjahrsputz/Everything/Undecided/White_Background.jpg" type="Texture" id=2]
 [ext_resource path="res://Tileset/Tileset_Speedware.tres" type="TileSet" id=3]
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/playerKinematic.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Levels/Lasers.gd" type="Script" id=5]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Fruehjahrsputz/Everything/Camera/ForwardLookingCamera.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Levels/Head Cam Colliders.gd" type="Script" id=10]
+
 
 [node name="Level1_Jonas" type="Node"]
 

@@ -7,7 +7,7 @@
 [ext_resource path="res://Tileset/TileSetPlaceholder.tres" type="TileSet" id=5]
 [ext_resource path="res://Fruehjahrsputz/Everything/Player/playerKinematic.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Environment/UI/Timer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Fruehjahrsputz/Everything/UI/Timer/Timer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Menus/PauseMenu/PauseMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Fruehjahrsputz/Everything/UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Sounds/Noisia - Machine Gun (Official Video).ogg" type="AudioStream" id=11]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Fruehjahrsputz/Everything/Camera/CamCollider.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Sounds/RobertSpeedware2.ogg" type="AudioStream" id=16]
 [ext_resource path="res://Fruehjahrsputz/Everything/Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=17]
+
 
 [node name="World" type="Node"]
 

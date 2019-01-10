@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/White_Background.jpg-6234398dcf90b715b50d66850985b338.stex"
+path="res://.import/White_Background.jpg-dd739eb024504ca83433420683c1602b.stex"
 
 [deps]
 
-source_file="res://Environment/White_Background.jpg"
-dest_files=[ "res://.import/White_Background.jpg-6234398dcf90b715b50d66850985b338.stex" ]
+source_file="res://Fruehjahrsputz/Everything/Undecided/White_Background.jpg"
+dest_files=[ "res://.import/White_Background.jpg-dd739eb024504ca83433420683c1602b.stex" ]
 
 [params]
 

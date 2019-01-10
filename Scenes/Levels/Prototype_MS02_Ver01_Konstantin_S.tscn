@@ -322,7 +322,6 @@ position = Vector2( 3969.41, 109.213 )
 [node name="UI" type="CanvasLayer" parent="." index="7"]
 
 pause_mode = 2
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -340,8 +339,6 @@ _sections_unfolded = [ "Pause" ]
 [node name="CollectiblesCollected" parent="UI" index="2" groups=[
 "Persist",
 ] instance=ExtResource( 10 )]
-
-CollectiblesInThisLevel = 4
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." index="8"]
 

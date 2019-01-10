@@ -1,12 +1,12 @@
 extends Label
 
-export var MaxCollectibles = 0
-var CurrentCollectibles = 0
+export var maxCollectibles = 0
+var currentCollectibles = 0
 
 func _ready():
-	MaxCollectibles = get_parent().CollectiblesInLevel()
-	text = str(CurrentCollectibles, " / ", MaxCollectibles)
+	maxCollectibles = get_parent().CollectiblesInLevel()
+	text = str(currentCollectibles, " / ", maxCollectibles)
 
 func _process(delta):
-	var CurrentCollectibles = get_parent().PrintCurrentCollectible()
-	text = str(CurrentCollectibles, " / ", MaxCollectibles)
+	var currentCollectibles = get_parent().PrintCurrentCollectible()
+	text = str(currentCollectibles, " / ", maxCollectibles)

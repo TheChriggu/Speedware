@@ -12,7 +12,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
-CollectiblesInThisLevel = 3
+COLLECTIBLES_IN_THIS_LEVEL = 3
 
 [node name="Label" type="Label" parent="." index="0"]
 
@@ -34,7 +34,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 2 )
-MaxCollectibles = 0
+maxCollectibles = 0
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 

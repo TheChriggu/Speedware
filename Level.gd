@@ -22,3 +22,7 @@ func _on_player_is_at_fullspeed():
 
 func _on_player_is_not_at_fullspeed():
 	$UI.StopFullspeedMode()
+
+
+func _on_Collectible_collected():
+	$UI.CollectibleCollected()

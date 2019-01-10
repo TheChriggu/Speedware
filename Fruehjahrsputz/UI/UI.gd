@@ -17,3 +17,6 @@ func RunFullspeedMode():
 
 func StopFullspeedMode():
 	$FullspeedMode.isInFullspeedMode = false
+
+func CollectibleCollected():
+	$CollectiblesCollected.CollectibleCollected()

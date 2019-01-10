@@ -1,13 +1,13 @@
 extends CanvasLayer
 
-var CurrentCollectibles = 0
-export var CollectiblesInThisLevel = 3
+var currentCollectibles = 0
+export var COLLECTIBLES_IN_THIS_LEVEL = 3
 
-func CollectiblesCollected():
-	CurrentCollectibles = CurrentCollectibles + 1
+func CollectibleCollected():
+	currentCollectibles = currentCollectibles + 1
 
 func PrintCurrentCollectible():
-	return CurrentCollectibles
+	return currentCollectibles
 
 func CollectiblesInLevel():
-	return CollectiblesInThisLevel
+	return COLLECTIBLES_IN_THIS_LEVEL

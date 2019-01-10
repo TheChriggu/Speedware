@@ -1,19 +1,19 @@
 extends Node2D
 
-var previous_speeds = [] #array of the previous 20 player speeds
+var previousSpeeds = [] #array of the previous 20 player speeds
 
 
-func addNew(speed):
+func AddNew(speed):
 	#add new value at the back of the array and remove the first
-	previous_speeds.append(speed)
-	if (previous_speeds.size() > 20):
-		previous_speeds.pop_front()
+	previousSpeeds.append(speed)
+	if (previousSpeeds.size() > 20):
+		previousSpeeds.pop_front()
 
 #function which calculates the average value of the current previous_speeds array
-func average():
-	var new_speed = Vector2(0,0)
+func Average():
+	var newSpeed = Vector2(0,0)
 	#sum
-	for i in range (previous_speeds.size()):
-		new_speed += previous_speeds[i]
+	for i in range (previousSpeeds.size()):
+		newSpeed += previousSpeeds[i]
 	#average
-	return(new_speed / previous_speeds.size())
+	return(newSpeed / previousSpeeds.size())

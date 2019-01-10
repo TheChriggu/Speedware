@@ -5,7 +5,6 @@ export var CURRENT_ANCHOR = 0
 
 
 
-func _on_CamCollider_newCamera(anchor, fixed):
-	print("on camcollider new camera")
+func _on_CamCollider_new_camera(anchor, fixed):
 	CURRENT_ANCHOR = anchor
 	FIXED_CAMERA = fixed

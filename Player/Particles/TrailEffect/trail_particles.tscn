@@ -5,6 +5,8 @@
 [ext_resource path="res://Player/Particles/TrailEffect/mat_particle_orange.tres" type="Material" id=3]
 [ext_resource path="res://Player/Particles/TrailEffect/zero_white.png" type="Texture" id=4]
 
+
+
 [sub_resource type="Animation" id=1]
 
 resource_name = "ColorSwitch_Purple_to_Yellow"

@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Enviroment/Speedboost/3. Ring.png" type="Texture" id=1]
 [ext_resource path="res://Enviroment/Speedboost/Speedboost.gd" type="Script" id=2]
-[ext_resource path="res://Enviroment/Speedboost/AnimationPlayer.gd" type="Script" id=3]
-[ext_resource path="res://Enviroment/Speedboost/2. Ring.png" type="Texture" id=4]
-[ext_resource path="res://Enviroment/Speedboost/1. Ring.png" type="Texture" id=5]
+[ext_resource path="res://Enviroment/Speedboost/2. Ring.png" type="Texture" id=3]
+[ext_resource path="res://Enviroment/Speedboost/1. Ring.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -148,7 +147,7 @@ tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
-tracks/6/enabled = true
+tracks/6/enabled = false
 tracks/6/keys = {
 "times": PoolRealArray( 1.5 ),
 "transitions": PoolRealArray( 1 ),
@@ -200,20 +199,29 @@ anims/SpeedboostCloses = SubResource( 2 )
 anims/SpeedboostCollected = SubResource( 3 )
 next/SpeedboostCollected = "SpeedboostCloses"
 blend_times = [  ]
-script = ExtResource( 3 )
 
 [node name="Ring2" type="Sprite" parent="." index="2"]
 
 position = Vector2( 100, 0 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Ring1" type="Sprite" parent="." index="3"]
 
 position = Vector2( 190, 0 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
+[node name="Timer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+_sections_unfolded = [ "Pause" ]
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

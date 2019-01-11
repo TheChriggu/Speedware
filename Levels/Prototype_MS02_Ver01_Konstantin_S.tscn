@@ -24,7 +24,7 @@
 [ext_resource path="res://Sounds/RobertSpeedware2.ogg" type="AudioStream" id=22]
 [ext_resource path="res://Sounds/Noisia - Machine Gun (Official Video).ogg" type="AudioStream" id=23]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]

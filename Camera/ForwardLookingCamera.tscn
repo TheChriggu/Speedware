@@ -7,9 +7,6 @@
 [node name="ForwardLookingCamera" type="Node2D"]
 
 script = ExtResource( 1 )
-CAM_MAX_DISTANCE_H = 500
-CAM_MAX_SPEED_H = 5
-CAM_MAX_SPEED_V = 5
 
 [node name="FocalPoint" type="Node2D" parent="." index="0"]
 

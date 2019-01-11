@@ -1,9 +1,9 @@
 extends Node2D
 
 #Camera Variables
-export var CAM_MAX_DISTANCE_H = 500 #how far away the camera can get from the player horizontally
-export var CAM_MAX_SPEED_H = 5 #maximal speed of horizontal camera movement
-export var CAM_MAX_SPEED_V = 5 #maximal speed of vertical camera movement
+var CAM_MAX_DISTANCE_H = 150 #how far away the camera can get from the player horizontally
+var CAM_MAX_SPEED_H = 15 #maximal speed of horizontal camera movement
+var CAM_MAX_SPEED_V = 100 #maximal speed of vertical camera movement
 var lastOffset = Vector2 (0,0) #previous offset of the camera
 var fixedCamera = false #bool to track weather the camera is currently fixed to an anchor or following the players vertical movement
 

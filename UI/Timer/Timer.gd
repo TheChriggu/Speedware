@@ -9,5 +9,5 @@ func _process(delta):
 func PrintCurrentTime():
 	return stepify(CurrentTimer, 0.01)
 
-func _on_FinishArea_finishLinePassed():
+func FinishLinePassed():
 	set_process(false)

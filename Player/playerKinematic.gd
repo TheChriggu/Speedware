@@ -25,9 +25,15 @@ signal is_not_at_fullspeed #signal to send if player is not at full speed
 var isLeaningLeft = false
 var isLeaningRight = false
 
+var isInSpeedboost = false
+
 func _physics_process(delta):
-	HorizontalMovement(delta)
-	VerticalMovement(delta)
+	#during speedboost controls are disabled and friction is not applied
+	if not isInSpeedboost:
+		HorizontalMovement(delta)
+		VerticalMovement(delta)
+	else:
+		SpeedboostMovement(delta)
 	UIInteraction()
 
 func HorizontalMovement(delta):
@@ -48,7 +54,7 @@ func HorizontalMovement(delta):
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
-	CheckFulspeed()
+	CheckFullspeed()
 
 func VerticalMovement(delta):
 	if is_on_floor():
@@ -58,6 +64,22 @@ func VerticalMovement(delta):
 		onAirTime += delta
 	
 	Jump()
+
+func SpeedboostMovement(delta):
+	if velocity.x > 0:
+		LeanRight()
+	elif velocity.x < 0:
+		LeanLeft()
+	
+	
+	var force = Vector2(0, GRAVITY)
+	# Integrate forces to velocity
+	velocity += force *delta
+	
+	# Integrate velocity into motion and move
+	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+	CheckFullspeed()
 
 func LeftForce():
 	if Input.is_action_pressed("move_left"):
@@ -130,7 +152,7 @@ func SwitchColor():
 		$ColorswitchSound.playing = true
 		emit_signal("switched_color_to_purple")
 
-func CheckFulspeed():
+func CheckFullspeed():
 	if velocity.x >= WALK_MAX_SPEED - FULSPEED_LEEWAY:
 		emit_signal("is_at_fullspeed")
 	else:

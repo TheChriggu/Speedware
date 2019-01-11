@@ -19,7 +19,9 @@ func SwitchColorToPurple():
 
 func SpeedboostStart(speed):
 	$player.velocity = speed
+	$player.isInSpeedboost = true
 	isInSpeedboost = true
 
 func SpeedboostStop():
+	$player.isInSpeedboost = false
 	isInSpeedboost = false

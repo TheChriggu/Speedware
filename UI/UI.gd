@@ -20,3 +20,6 @@ func StopFullspeedMode():
 
 func CollectibleCollected():
 	$CollectiblesCollected.CollectibleCollected()
+
+func FinishLinePassed():
+	$Timer.FinishLinePassed()

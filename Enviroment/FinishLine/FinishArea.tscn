@@ -6,7 +6,6 @@
 [ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=5]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0

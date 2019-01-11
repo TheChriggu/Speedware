@@ -49,9 +49,6 @@ position = Vector2( -393.723, -424.837 )
 editor/display_folded = true
 position = Vector2( -8.36853, 0 )
 _sections_unfolded = [ "Transform" ]
-CAM_MAX_DISTANCE_H = 150
-CAM_MAX_SPEED_H = 10
-CAM_MAX_SPEED_V = 100
 
 [node name="HeadCamCollider" type="Node2D" parent="Player/ForwardLookingCamera" index="2"]
 
@@ -133,8 +130,6 @@ position = Vector2( 2507.44, -261.82 )
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="2"]
 
-editor/display_folded = true
-
 [node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 20 )]
 
 position = Vector2( 4115.1, 1585.46 )
@@ -165,5 +160,7 @@ position = Vector2( 26040.5, 4011.94 )
 [connection signal="speedboost_stop" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_stop"]
 
 [connection signal="collected" from="Level/Collectibles/Collectible" to="." method="_on_Collectible_collected"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 

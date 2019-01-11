@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Datastrings/BlueWeak.png" type="Texture" id=1]
+[ext_resource path="res://Datastrings/Speedware_Laser_Purple_Inactive_Bryan.png" type="Texture" id=1]
 [ext_resource path="res://Datastrings/LaserPurple.gd" type="Script" id=2]
-[ext_resource path="res://Datastrings/BlueStrong.png" type="Texture" id=3]
+[ext_resource path="res://Datastrings/Speedware_Laser_Purple_Bryan.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 129.551, 96.9814 )
+extents = Vector2( 66.4974, 537.218 )
 
 [sub_resource type="Animation" id=2]
 
@@ -49,13 +49,14 @@ tracks/0/keys = {
 
 [node name="LaserRot" type="Sprite"]
 
-self_modulate = Color( 0.814373, 0.0407867, 0.949219, 1 )
+position = Vector2( 360.006, 10.0701 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
+position = Vector2( -369.876, 20.5486 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -67,6 +68,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
+position = Vector2( 16.7045, -18.04 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

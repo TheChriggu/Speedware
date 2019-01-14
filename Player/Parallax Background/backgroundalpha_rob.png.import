@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backgroundalpha_rob.png-eb2af9d7cb9a4b65f807214293918a3e.stex"
+path="res://.import/backgroundalpha_rob.png-b183a2351605a2b1f5742a52ff0b13e8.stex"
 
 [deps]
 
-source_file="res://UI/Parallax Background/backgroundalpha_rob.png"
-dest_files=[ "res://.import/backgroundalpha_rob.png-eb2af9d7cb9a4b65f807214293918a3e.stex" ]
+source_file="res://Player/Parallax Background/backgroundalpha_rob.png"
+dest_files=[ "res://.import/backgroundalpha_rob.png-b183a2351605a2b1f5742a52ff0b13e8.stex" ]
 
 [params]
 

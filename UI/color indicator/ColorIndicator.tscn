@@ -4,11 +4,6 @@
 [ext_resource path="res://UI/color indicator/ColorTriangle.png" type="Texture" id=2]
 [ext_resource path="res://UI/color indicator/PlayerCornerParticleImage.png" type="Texture" id=3]
 
-
-
-
-
-
 [sub_resource type="Gradient" id=1]
 
 offsets = PoolRealArray( 0.277457, 0.878613 )
@@ -106,7 +101,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.847059, 0.737255, 0.184314, 1 ) ]
+"values": [ Color( 0.847059, 0.184314, 0.184314, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("BottomColorTriangle:modulate")
@@ -118,7 +113,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.847059, 0.737255, 0.184314, 1 ) ]
+"values": [ Color( 0.847059, 0.184314, 0.184314, 1 ) ]
 }
 
 [node name="ColorIndicator" type="CanvasLayer"]

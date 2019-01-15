@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Tileset/tileset_ground_resized_128x128_01_Bryan.png" type="Texture" id=1]
+[ext_resource path="res://Tileset/Tileset_Bryan_Big.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 

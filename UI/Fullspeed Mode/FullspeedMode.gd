@@ -11,11 +11,11 @@ func _process(delta):
 
 func Start():
 	if !isPlayingAnimation:
-		$AnimationPlayer.play("FullspeedMode")
+		#$AnimationPlayer.play("FullspeedMode")
 		isPlayingAnimation = true
 
 func Stop():
 	if isPlayingAnimation:
-		$AnimationPlayer.stop()
-		$AnimationPlayer.play("StopFullspeedMode")
+		#$AnimationPlayer.stop()
+		#$AnimationPlayer.play("StopFullspeedMode")
 		isPlayingAnimation = false

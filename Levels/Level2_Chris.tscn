@@ -22,7 +22,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=20]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=21]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -31,6 +31,8 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 3 )]
+
+FULLSPEED_MAX_SPEED = 1500
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 4 )]
 

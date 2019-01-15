@@ -4,11 +4,13 @@ extends KinematicBody2D
 export var GRAVITY = 3000.0 #pixels/second/second
 export var WALK_FORCE = 1500 #Movement accelleration
 export var WALK_MIN_SPEED = 300 #Minimum speed at which the character moves
-export var WALK_MAX_SPEED = 1000 #Maximum speed at which the character moves
+export var WALK_MAX_SPEED = 1000 #Maximum speed at which to which character speeds up to quickly
+export var FULLSPEED_MAX_SPEED = 1500 #Max speed player can reach at all
 export var STOP_FORCE = 1300 #Level of friction, which slows the player down
 export var JUMP_SPEED = 1200 #Speed to which the players vertical velocity gets set on a jump. Influences jump height
 export var JUMP_MAX_AIRBORNE_TIME = 0.001 #Time the player can jump after leaving an edge (Double click for double jump mechanic~)
 export var FULSPEED_LEEWAY = 100 #Value around the max walk speed, at which movement is still considered to be full speed
+export var FULLSPEED_FORCE = 100 #force at which the character increases his velocity after reaching WALK_MAX_SPEED
 
 var jumpCutVelocity = 200 #vertical speed, which the jump cannot go over
 var velocity = Vector2() #Vector containing the horizontal & vertical player speed
@@ -26,6 +28,7 @@ var isLeaningLeft = false
 var isLeaningRight = false
 
 var isInSpeedboost = false
+var isAtFullspeed = false
 
 func _physics_process(delta):
 	#during speedboost controls are disabled and friction is not applied
@@ -85,6 +88,8 @@ func LeftForce():
 	if Input.is_action_pressed("move_left"):
 		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
 			return -WALK_FORCE
+		elif velocity.x <= WALK_MAX_SPEED and velocity.x > -FULLSPEED_MAX_SPEED:
+			return -FULLSPEED_FORCE
 	
 	return 0
 
@@ -92,6 +97,8 @@ func RightForce():
 	if Input.is_action_pressed("move_right"):
 		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
 			return WALK_FORCE
+		elif velocity.x >= -WALK_MAX_SPEED and velocity.x < FULLSPEED_MAX_SPEED:
+			return FULLSPEED_FORCE
 	
 	return 0
 
@@ -154,6 +161,8 @@ func SwitchColor():
 
 func CheckFullspeed():
 	if velocity.x >= WALK_MAX_SPEED - FULSPEED_LEEWAY:
+		isAtFullspeed = true
 		emit_signal("is_at_fullspeed")
 	else:
+		isAtFullspeed = false
 		emit_signal("is_not_at_fullspeed")

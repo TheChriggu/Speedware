@@ -23,7 +23,7 @@
 [ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=22]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 

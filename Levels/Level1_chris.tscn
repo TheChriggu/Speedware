@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -7,22 +7,23 @@
 [ext_resource path="res://Camera/HeadCamCollider.gd" type="Script" id=5]
 [ext_resource path="res://Camera/CamCollider.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player/ParallaxBackground.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Levels/Level.gd" type="Script" id=8]
-[ext_resource path="res://Tileset/Tileset_Bryan.tres" type="TileSet" id=9]
-[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=12]
-[ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=15]
-[ext_resource path="res://UI/UI.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=17]
-[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=18]
-[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=19]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=20]
-[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Sounds/Background Music/BackgroundMusic.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=9]
+[ext_resource path="res://Tileset/Tileset_Bryan.tres" type="TileSet" id=10]
+[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=13]
+[ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=16]
+[ext_resource path="res://UI/UI.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=18]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=19]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=20]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=21]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=22]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -79,15 +80,17 @@ FIXED_CAMERA = false
 
 [node name="ParallaxBackground" parent="Player" index="2" instance=ExtResource( 7 )]
 
+[node name="BackgroundMusic" parent="Player" index="3" instance=ExtResource( 8 )]
+
 [node name="Level" type="Node" parent="." index="2"]
 
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
 mode = 0
-tile_set = ExtResource( 9 )
+tile_set = ExtResource( 10 )
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -109,39 +112,39 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 
 editor/display_folded = true
 
-[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 10 )]
+[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( 1799.44, 266.469 )
 rotation = -0.748746
 SPEED = 2000
 
-[node name="Speedboost2" parent="Level/Speedboosters" index="1" instance=ExtResource( 10 )]
+[node name="Speedboost2" parent="Level/Speedboosters" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( 3209.66, -195.111 )
 
-[node name="Speedboost3" parent="Level/Speedboosters" index="2" instance=ExtResource( 10 )]
+[node name="Speedboost3" parent="Level/Speedboosters" index="2" instance=ExtResource( 11 )]
 
 position = Vector2( 3951.66, 540.421 )
 
-[node name="Speedboost5" parent="Level/Speedboosters" index="3" instance=ExtResource( 10 )]
+[node name="Speedboost5" parent="Level/Speedboosters" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 3403.95, 131.487 )
 
-[node name="Speedboost4" parent="Level/Speedboosters" index="4" instance=ExtResource( 10 )]
+[node name="Speedboost4" parent="Level/Speedboosters" index="4" instance=ExtResource( 11 )]
 
 position = Vector2( 4553.38, -111.15 )
 
-[node name="Speedboost6" parent="Level/Speedboosters" index="5" instance=ExtResource( 10 )]
+[node name="Speedboost6" parent="Level/Speedboosters" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( 5259.13, 106.432 )
 rotation = -0.705113
 
-[node name="Speedboost7" parent="Level/Speedboosters" index="6" instance=ExtResource( 10 )]
+[node name="Speedboost7" parent="Level/Speedboosters" index="6" instance=ExtResource( 11 )]
 
 position = Vector2( 5264.7, -164.151 )
 rotation = -0.705113
 
-[node name="Speedboost8" parent="Level/Speedboosters" index="7" instance=ExtResource( 10 )]
+[node name="Speedboost8" parent="Level/Speedboosters" index="7" instance=ExtResource( 11 )]
 
 position = Vector2( 5515.76, 0.43045 )
 rotation = -2.45219
@@ -151,42 +154,42 @@ rotation = -2.45219
 editor/display_folded = true
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 11 )]
+[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 12 )]
 
 position = Vector2( 5868.91, -436.919 )
 
 [node name="Lasers" type="Node2D" parent="Level" index="3"]
 
 position = Vector2( 453.14, -400.15 )
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
-[node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 13 )]
+[node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 3513.45, 108.972 )
 scale = Vector2( 0.112375, 1 )
 
-[node name="LaserBlau" parent="Level/Lasers" index="1" instance=ExtResource( 14 )]
+[node name="LaserBlau" parent="Level/Lasers" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 66.6215, 488.558 )
 
-[node name="FinishArea" parent="Level" index="4" instance=ExtResource( 15 )]
+[node name="FinishArea" parent="Level" index="4" instance=ExtResource( 16 )]
 
 position = Vector2( 9641.37, 175.937 )
 
 [node name="UI" type="Node" parent="." index="3"]
 
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
-[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 17 )]
+[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 18 )]
 
-[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 18 )]
+[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 19 )]
 
-[node name="CollectiblesCollected" parent="UI" index="2" instance=ExtResource( 19 )]
+[node name="CollectiblesCollected" parent="UI" index="2" instance=ExtResource( 20 )]
 
-[node name="Timer" parent="UI" index="3" instance=ExtResource( 20 )]
+[node name="Timer" parent="UI" index="3" instance=ExtResource( 21 )]
 
-[node name="FullspeedMode" parent="UI" index="4" instance=ExtResource( 21 )]
+[node name="FullspeedMode" parent="UI" index="4" instance=ExtResource( 22 )]
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 

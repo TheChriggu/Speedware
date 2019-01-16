@@ -23,3 +23,6 @@ func CollectibleCollected():
 
 func FinishLinePassed():
 	$Timer.FinishLinePassed()
+
+func MusicBeat():
+	$FullspeedMode.MusicBeat()

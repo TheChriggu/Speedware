@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -7,22 +7,23 @@
 [ext_resource path="res://Camera/HeadCamCollider.gd" type="Script" id=5]
 [ext_resource path="res://Camera/CamCollider.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player/ParallaxBackground.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Levels/Level.gd" type="Script" id=8]
-[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Tileset/Tileset_Bryan.tres" type="TileSet" id=10]
-[ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=11]
-[ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=15]
-[ext_resource path="res://UI/UI.gd" type="Script" id=16]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=18]
-[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=19]
-[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=20]
-[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Sounds/RobertSpeedware2.ogg" type="AudioStream" id=22]
-[ext_resource path="res://Sounds/Noisia - Machine Gun (Official Video).ogg" type="AudioStream" id=23]
+[ext_resource path="res://Sounds/Background Music/BackgroundMusic.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=9]
+[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Tileset/Tileset_Bryan.tres" type="TileSet" id=11]
+[ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=12]
+[ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=16]
+[ext_resource path="res://UI/UI.gd" type="Script" id=17]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=20]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=21]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Sounds/RobertSpeedware2.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Sounds/Noisia - Machine Gun (Official Video).ogg" type="AudioStream" id=24]
 
 [node name="World" type="Node"]
 
@@ -57,11 +58,13 @@ FIXED_CAMERA = false
 
 [node name="ParallaxBackground" parent="Player" index="2" instance=ExtResource( 7 )]
 
+[node name="BackgroundMusic" parent="Player" index="3" instance=ExtResource( 8 )]
+
 [node name="Level" type="Node" parent="." index="1"]
 
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
-[node name="FinishArea" parent="Level" index="0" instance=ExtResource( 9 )]
+[node name="FinishArea" parent="Level" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( 35907, 1253.83 )
 
@@ -69,7 +72,7 @@ position = Vector2( 35907, 1253.83 )
 
 position = Vector2( -182.29, 36.7301 )
 mode = 0
-tile_set = ExtResource( 10 )
+tile_set = ExtResource( 11 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -90,249 +93,249 @@ _sections_unfolded = [ "Transform" ]
 [node name="Lasers" type="Node2D" parent="Level" index="2"]
 
 editor/display_folded = true
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
-[node name="LaserBlau" parent="Level/Lasers" index="0" instance=ExtResource( 12 )]
+[node name="LaserBlau" parent="Level/Lasers" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 30664.6, 681.067 )
 rotation = 1.5708
 scale = Vector2( 0.05, 1.97275 )
 
-[node name="LaserBlau2" parent="Level/Lasers" index="1" instance=ExtResource( 12 )]
+[node name="LaserBlau2" parent="Level/Lasers" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 32274.9, 1054.69 )
 scale = Vector2( 0.05, 2.75187 )
 
-[node name="LaserBlau12" parent="Level/Lasers" index="2" instance=ExtResource( 12 )]
+[node name="LaserBlau12" parent="Level/Lasers" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 33647, 1044.62 )
 scale = Vector2( 0.05, 2.75187 )
 
-[node name="LaserBlau13" parent="Level/Lasers" index="3" instance=ExtResource( 12 )]
+[node name="LaserBlau13" parent="Level/Lasers" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 33853.4, 1042.1 )
 scale = Vector2( 0.05, 2.75187 )
 
-[node name="LaserBlau14" parent="Level/Lasers" index="4" instance=ExtResource( 12 )]
+[node name="LaserBlau14" parent="Level/Lasers" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 35034.5, 1001.6 )
 scale = Vector2( 0.05, 1.83593 )
 
-[node name="LaserBlau15" parent="Level/Lasers" index="5" instance=ExtResource( 12 )]
+[node name="LaserBlau15" parent="Level/Lasers" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 35101.1, 970.881 )
 scale = Vector2( 0.05, 1.80641 )
 
-[node name="LaserBlau3" parent="Level/Lasers" index="6" instance=ExtResource( 12 )]
+[node name="LaserBlau3" parent="Level/Lasers" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 10351.5, 61.4178 )
 scale = Vector2( 0.05, 1.30603 )
 
-[node name="LaserBlau5" parent="Level/Lasers" index="7" instance=ExtResource( 12 )]
+[node name="LaserBlau5" parent="Level/Lasers" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 11288.8, -220.497 )
 scale = Vector2( 0.05, 1.34392 )
 
-[node name="LaserBlau4" parent="Level/Lasers" index="8" instance=ExtResource( 12 )]
+[node name="LaserBlau4" parent="Level/Lasers" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 11119.7, 68.374 )
 scale = Vector2( 0.05, 1.24918 )
 
-[node name="LaserBlau6" parent="Level/Lasers" index="9" instance=ExtResource( 12 )]
+[node name="LaserBlau6" parent="Level/Lasers" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 19178.9, 12.9887 )
 scale = Vector2( 0.05, 1.89457 )
 
-[node name="LaserBlau7" parent="Level/Lasers" index="10" instance=ExtResource( 12 )]
+[node name="LaserBlau7" parent="Level/Lasers" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 19621.9, 3.98874 )
 scale = Vector2( 0.05, 1.89457 )
 
-[node name="LaserBlau8" parent="Level/Lasers" index="11" instance=ExtResource( 12 )]
+[node name="LaserBlau8" parent="Level/Lasers" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 20335.9, -278.651 )
 scale = Vector2( 0.05, 2.79068 )
 
-[node name="LaserBlau9" parent="Level/Lasers" index="12" instance=ExtResource( 12 )]
+[node name="LaserBlau9" parent="Level/Lasers" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 23846.5, 389.2 )
 rotation = 1.5708
 scale = Vector2( 0.05, 3.82255 )
 
-[node name="LaserBlau10" parent="Level/Lasers" index="13" instance=ExtResource( 12 )]
+[node name="LaserBlau10" parent="Level/Lasers" index="13" instance=ExtResource( 13 )]
 
 position = Vector2( 25696.6, 325.262 )
 rotation = 1.5708
 scale = Vector2( 0.05, 3.82255 )
 
-[node name="LaserBlau11" parent="Level/Lasers" index="14" instance=ExtResource( 12 )]
+[node name="LaserBlau11" parent="Level/Lasers" index="14" instance=ExtResource( 13 )]
 
 position = Vector2( 27550.8, 73.5932 )
 rotation = 1.5708
 scale = Vector2( 0.05, 3.82255 )
 
-[node name="LaserRot" parent="Level/Lasers" index="15" instance=ExtResource( 13 )]
+[node name="LaserRot" parent="Level/Lasers" index="15" instance=ExtResource( 14 )]
 
 position = Vector2( 29984.1, 115.27 )
 scale = Vector2( 0.0787162, 2.74648 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot2" parent="Level/Lasers" index="16" instance=ExtResource( 13 )]
+[node name="LaserRot2" parent="Level/Lasers" index="16" instance=ExtResource( 14 )]
 
 position = Vector2( 33298.2, 1058.87 )
 scale = Vector2( 0.0577657, 2.03356 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot25" parent="Level/Lasers" index="17" instance=ExtResource( 13 )]
+[node name="LaserRot25" parent="Level/Lasers" index="17" instance=ExtResource( 14 )]
 
 position = Vector2( 34256.1, 1060.48 )
 scale = Vector2( 0.0443243, 1.38157 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot26" parent="Level/Lasers" index="18" instance=ExtResource( 13 )]
+[node name="LaserRot26" parent="Level/Lasers" index="18" instance=ExtResource( 14 )]
 
 position = Vector2( 35363.4, 959.718 )
 scale = Vector2( 0.0559556, 1.83912 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot27" parent="Level/Lasers" index="19" instance=ExtResource( 13 )]
+[node name="LaserRot27" parent="Level/Lasers" index="19" instance=ExtResource( 14 )]
 
 position = Vector2( 35298.2, 947.916 )
 scale = Vector2( 0.0730888, 1.83912 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot3" parent="Level/Lasers" index="20" instance=ExtResource( 13 )]
+[node name="LaserRot3" parent="Level/Lasers" index="20" instance=ExtResource( 14 )]
 
 position = Vector2( 10735.9, 35.9144 )
 scale = Vector2( 0.0431322, 0.765348 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot5" parent="Level/Lasers" index="21" instance=ExtResource( 13 )]
+[node name="LaserRot5" parent="Level/Lasers" index="21" instance=ExtResource( 14 )]
 
 position = Vector2( 10734.8, -217.457 )
 scale = Vector2( 0.0345898, 1.41075 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot4" parent="Level/Lasers" index="22" instance=ExtResource( 13 )]
+[node name="LaserRot4" parent="Level/Lasers" index="22" instance=ExtResource( 14 )]
 
 position = Vector2( 11503.5, 35.38 )
 scale = Vector2( 0.047418, 0.691097 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot6" parent="Level/Lasers" index="23" instance=ExtResource( 13 )]
+[node name="LaserRot6" parent="Level/Lasers" index="23" instance=ExtResource( 14 )]
 
 position = Vector2( 13553.1, 42.5665 )
 scale = Vector2( 0.0388562, 1.44502 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot7" parent="Level/Lasers" index="24" instance=ExtResource( 13 )]
+[node name="LaserRot7" parent="Level/Lasers" index="24" instance=ExtResource( 14 )]
 
 position = Vector2( 14189.9, 9.96086 )
 scale = Vector2( 0.0637548, 1.73208 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot8" parent="Level/Lasers" index="25" instance=ExtResource( 13 )]
+[node name="LaserRot8" parent="Level/Lasers" index="25" instance=ExtResource( 14 )]
 
 position = Vector2( 16118.3, -87.3064 )
 scale = Vector2( 0.0702075, 1.42053 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot9" parent="Level/Lasers" index="26" instance=ExtResource( 13 )]
+[node name="LaserRot9" parent="Level/Lasers" index="26" instance=ExtResource( 14 )]
 
 position = Vector2( 16930.1, -124.394 )
 scale = Vector2( 0.0702075, 1.05894 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot10" parent="Level/Lasers" index="27" instance=ExtResource( 13 )]
+[node name="LaserRot10" parent="Level/Lasers" index="27" instance=ExtResource( 14 )]
 
 position = Vector2( 17703.8, -88.4844 )
 scale = Vector2( 0.0729151, 0.757614 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot11" parent="Level/Lasers" index="28" instance=ExtResource( 13 )]
+[node name="LaserRot11" parent="Level/Lasers" index="28" instance=ExtResource( 14 )]
 
 position = Vector2( 18734.3, -85.7641 )
 scale = Vector2( 0.0637693, 0.85566 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot13" parent="Level/Lasers" index="29" instance=ExtResource( 13 )]
+[node name="LaserRot13" parent="Level/Lasers" index="29" instance=ExtResource( 14 )]
 
 position = Vector2( 21091.9, -312.131 )
 scale = Vector2( -0.0587548, 2.48807 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot14" parent="Level/Lasers" index="30" instance=ExtResource( 13 )]
+[node name="LaserRot14" parent="Level/Lasers" index="30" instance=ExtResource( 14 )]
 
 position = Vector2( 29507.9, 373.558 )
 rotation = 1.5708
 scale = Vector2( 0.0776026, 4.07217 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot15" parent="Level/Lasers" index="31" instance=ExtResource( 13 )]
+[node name="LaserRot15" parent="Level/Lasers" index="31" instance=ExtResource( 14 )]
 
 position = Vector2( 22632.8, -182.648 )
 scale = Vector2( 0.121805, 3.79668 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot16" parent="Level/Lasers" index="32" instance=ExtResource( 13 )]
+[node name="LaserRot16" parent="Level/Lasers" index="32" instance=ExtResource( 14 )]
 
 position = Vector2( 27963.8, -112.969 )
 scale = Vector2( 0.0698567, 1.59618 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot21" parent="Level/Lasers" index="33" instance=ExtResource( 13 )]
+[node name="LaserRot21" parent="Level/Lasers" index="33" instance=ExtResource( 14 )]
 
 position = Vector2( 28058.4, -228.238 )
 scale = Vector2( 0.077751, 2.16717 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot22" parent="Level/Lasers" index="34" instance=ExtResource( 13 )]
+[node name="LaserRot22" parent="Level/Lasers" index="34" instance=ExtResource( 14 )]
 
 position = Vector2( 28171.8, -292.875 )
 scale = Vector2( 0.0754151, 2.14122 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot23" parent="Level/Lasers" index="35" instance=ExtResource( 13 )]
+[node name="LaserRot23" parent="Level/Lasers" index="35" instance=ExtResource( 14 )]
 
 position = Vector2( 28291.8, -230.707 )
 scale = Vector2( 0.0948456, 2.29694 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot24" parent="Level/Lasers" index="36" instance=ExtResource( 13 )]
+[node name="LaserRot24" parent="Level/Lasers" index="36" instance=ExtResource( 14 )]
 
 position = Vector2( 28395.9, -97.1415 )
 scale = Vector2( 0.0874898, 1.55725 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot12" parent="Level/Lasers" index="37" instance=ExtResource( 13 )]
+[node name="LaserRot12" parent="Level/Lasers" index="37" instance=ExtResource( 14 )]
 
 position = Vector2( 20712.8, -12.3902 )
 rotation = 1.5708
 scale = Vector2( 0.100625, 3.66531 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot17" parent="Level/Lasers" index="38" instance=ExtResource( 13 )]
+[node name="LaserRot17" parent="Level/Lasers" index="38" instance=ExtResource( 14 )]
 
 position = Vector2( 21822.3, 210.612 )
 rotation = 1.5708
 scale = Vector2( 0.0905229, 7.46107 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot18" parent="Level/Lasers" index="39" instance=ExtResource( 13 )]
+[node name="LaserRot18" parent="Level/Lasers" index="39" instance=ExtResource( 14 )]
 
 position = Vector2( 23074.9, 385.169 )
 rotation = 1.5708
 scale = Vector2( 0.06203, 3.77962 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot19" parent="Level/Lasers" index="40" instance=ExtResource( 13 )]
+[node name="LaserRot19" parent="Level/Lasers" index="40" instance=ExtResource( 14 )]
 
 position = Vector2( 24805.2, 394.167 )
 rotation = 1.5708
 scale = Vector2( 0.0787815, 3.77963 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="LaserRot20" parent="Level/Lasers" index="41" instance=ExtResource( 13 )]
+[node name="LaserRot20" parent="Level/Lasers" index="41" instance=ExtResource( 14 )]
 
 position = Vector2( 26601.6, 189.434 )
 rotation = 1.5708
@@ -343,37 +346,37 @@ _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 editor/display_folded = true
 
-[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 14 )]
+[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 15 )]
 
 [node name="Collectibles" type="Node2D" parent="Level" index="4"]
 
 editor/display_folded = true
 
-[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 15 )]
+[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 16 )]
 
 position = Vector2( 1166.7, 5.15478 )
 
 [node name="UI" type="Node" parent="." index="2"]
 
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
-[node name="Timer" parent="UI" index="0" instance=ExtResource( 17 )]
+[node name="Timer" parent="UI" index="0" instance=ExtResource( 18 )]
 
 pause_mode = 1
 _sections_unfolded = [ "Pause" ]
 
-[node name="PauseMenu" parent="UI" index="1" instance=ExtResource( 18 )]
+[node name="PauseMenu" parent="UI" index="1" instance=ExtResource( 19 )]
 
-[node name="CollectiblesCollected" parent="UI" index="2" instance=ExtResource( 19 )]
+[node name="CollectiblesCollected" parent="UI" index="2" instance=ExtResource( 20 )]
 
-[node name="ColorIndicator" parent="UI" index="3" instance=ExtResource( 20 )]
+[node name="ColorIndicator" parent="UI" index="3" instance=ExtResource( 21 )]
 
-[node name="FullspeedMode" parent="UI" index="4" instance=ExtResource( 21 )]
+[node name="FullspeedMode" parent="UI" index="4" instance=ExtResource( 22 )]
 
 [node name="PreSoundMusic" type="AudioStreamPlayer" parent="." index="3"]
 
-stream = ExtResource( 22 )
+stream = ExtResource( 23 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -383,12 +386,12 @@ bus = "Master"
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." index="4"]
 
 pause_mode = 1
-stream = ExtResource( 23 )
+stream = ExtResource( 24 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Music"
+bus = "Master"
 _sections_unfolded = [ "Pause" ]
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]

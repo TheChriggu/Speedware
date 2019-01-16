@@ -11,11 +11,17 @@ func _process(delta):
 
 func Start():
 	if !isPlayingAnimation:
-		#$AnimationPlayer.play("FullspeedMode")
+		$ColorChange.play("FullspeedMode")
 		isPlayingAnimation = true
 
 func Stop():
 	if isPlayingAnimation:
-		#$AnimationPlayer.stop()
-		#$AnimationPlayer.play("StopFullspeedMode")
+		$ColorChange.stop()
 		isPlayingAnimation = false
+		$ColorChange.play("StopFullspeedMode")
+
+var oddBeat = false
+func MusicBeat():
+	oddBeat = !oddBeat
+	if oddBeat && isPlayingAnimation:
+		$Visibility.play("MusicBeat")

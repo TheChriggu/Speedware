@@ -29,3 +29,7 @@ func _on_Collectible_collected():
 
 func _on_FinishArea_finish_line_passed():
 	$UI.FinishLinePassed()
+
+
+func _on_BackgroundMusic_drum_beat():
+	$UI.MusicBeat()

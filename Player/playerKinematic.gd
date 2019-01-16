@@ -86,18 +86,18 @@ func SpeedboostMovement(delta):
 
 func LeftForce():
 	if Input.is_action_pressed("move_left"):
-		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
+		if velocity.x > -WALK_MAX_SPEED:
 			return -WALK_FORCE
-		elif velocity.x <= WALK_MAX_SPEED and velocity.x > -FULLSPEED_MAX_SPEED:
+		elif velocity.x > -FULLSPEED_MAX_SPEED:
 			return -FULLSPEED_FORCE
 	
 	return 0
 
 func RightForce():
 	if Input.is_action_pressed("move_right"):
-		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
+		if velocity.x < WALK_MAX_SPEED:
 			return WALK_FORCE
-		elif velocity.x >= -WALK_MAX_SPEED and velocity.x < FULLSPEED_MAX_SPEED:
+		elif velocity.x < FULLSPEED_MAX_SPEED:
 			return FULLSPEED_FORCE
 	
 	return 0

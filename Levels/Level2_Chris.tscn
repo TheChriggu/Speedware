@@ -48,7 +48,6 @@ color = Color( 1, 1, 1, 1 )
 
 [node name="Player" type="Node" parent="." index="1"]
 
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 3 )]
@@ -85,6 +84,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Level" type="Node" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="0"]

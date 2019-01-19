@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=6 format=2]
 
-[ext_resource path="res://Tileset/Tileset_Bryan_Big.png" type="Texture" id=1]
+[ext_resource path="res://Tileset/tileset_mandy_reworked.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,12 +15,12 @@ extents = Vector2( 62.9268, 62.8266 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 63.6353, 62.8349 )
+extents = Vector2( 63.6353, 60.4574 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
-points = PoolVector2Array( 64.5947, 64.0985, -63.8364, 63.7111, -64.2238, -63.1704 )
+points = PoolVector2Array( -61.353, -60.8976, 68.647, 69.1024, -61.353, 69.1024 )
 
 [resource]
 
@@ -36,7 +36,7 @@ points = PoolVector2Array( 64.5947, 64.0985, -63.8364, 63.7111, -64.2238, -63.17
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 64, 64 )
+"shape_transform": Transform2D( 1, 0, 0, 1.01, 64, 64 )
 } ]
 1/name = "Edge_Tile"
 1/texture = ExtResource( 1 )
@@ -50,7 +50,7 @@ points = PoolVector2Array( 64.5947, 64.0985, -63.8364, 63.7111, -64.2238, -63.17
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 64.25, 64 )
+"shape_transform": Transform2D( 1.01, 0, 0, 1.01, 64.25, 64 )
 } ]
 2/name = "Down_Tile"
 2/texture = ExtResource( 1 )
@@ -64,7 +64,7 @@ points = PoolVector2Array( 64.5947, 64.0985, -63.8364, 63.7111, -64.2238, -63.17
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 64, 64 )
+"shape_transform": Transform2D( 1, 0, 0, 1.05, 64, 64 )
 } ]
 3/name = "Sprite2"
 3/texture = ExtResource( 1 )
@@ -78,6 +78,6 @@ points = PoolVector2Array( 64.5947, 64.0985, -63.8364, 63.7111, -64.2238, -63.17
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 64.5, 64.375 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 61.147, 59.4774 )
 } ]
 

@@ -17,14 +17,14 @@
 
 [node name="tilefloor_middle_01" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 32, 32 )
 texture = ExtResource( 1 )
+region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Offset", "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="tilefloor_middle_01" index="0"]
 
-position = Vector2( -31.9925, 32.0032 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -32,6 +32,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tilefloor_middle_01/StaticBody2D" index="0"]
 

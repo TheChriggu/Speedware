@@ -14,7 +14,7 @@
 [ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Tileset/Tileset_Speedware.tres" type="TileSet" id=15]
+[ext_resource path="res://Tileset/Tileset_Bryan.tres" type="TileSet" id=15]
 [ext_resource path="res://UI/UI.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=17]
 [ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=18]
@@ -22,7 +22,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=20]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=21]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -86,6 +86,7 @@ SPEED = 3200
 
 [node name="Lasers" type="Node2D" parent="Level" index="1"]
 
+editor/display_folded = true
 position = Vector2( 1565.01, -1227.41 )
 script = ExtResource( 11 )
 

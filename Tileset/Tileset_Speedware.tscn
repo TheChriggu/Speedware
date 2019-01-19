@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Tileset/tileset_ground_resized_128x128_mandy.png" type="Texture" id=1]
+[ext_resource path="res://Tileset/tileset_mandy_reworked.png" type="Texture" id=1]
 
 [node name="Tileset_Speedware" type="Node"]
 

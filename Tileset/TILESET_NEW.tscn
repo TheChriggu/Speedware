@@ -13,14 +13,14 @@
 [ext_resource path="res://Tileset/leveltile_platform_left_mandy.png" type="Texture" id=11]
 [ext_resource path="res://Tileset/leveltile_platform_right_mandy.png" type="Texture" id=12]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="tilefloor_middle_01" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 32, 32 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="tilefloor_middle_01" index="0"]
 
@@ -38,6 +38,7 @@ bounce = 0.0
 position = Vector2( 31.9925, -32.0032 )
 build_mode = 0
 polygon = PoolVector2Array( -32.007, -31.9481, -31.9607, 32.1214, 31.9336, 32.1699, 31.9992, -32.007 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="leveltile-middle-02" type="Sprite" parent="." index="1"]
 
@@ -45,7 +46,7 @@ editor/display_folded = true
 position = Vector2( 96, 32 )
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 64, 64 )
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="leveltile-middle-02" index="0"]
 
@@ -70,6 +71,7 @@ editor/display_folded = true
 position = Vector2( 160, 32 )
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="leveltile-middle-03" index="0"]
 
@@ -116,6 +118,7 @@ editor/display_folded = true
 position = Vector2( 32, 96 )
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region", "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="leveltile-edge-right" index="0"]
 

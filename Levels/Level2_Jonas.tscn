@@ -22,7 +22,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=20]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=21]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -74,6 +74,7 @@ script = ExtResource( 8 )
 
 [node name="Lasers" type="Node2D" parent="Level" index="0"]
 
+editor/display_folded = true
 position = Vector2( 453.14, -400.15 )
 script = ExtResource( 9 )
 
@@ -207,6 +208,8 @@ _sections_unfolded = [ "Animation", "Material", "Offset", "Transform", "Visibili
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="1"]
 
+editor/display_folded = true
+
 [node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 12 )]
 
 position = Vector2( 16697, 1861.77 )
@@ -242,10 +245,9 @@ SPEED = 2000
 [node name="TileMap" type="TileMap" parent="Level" index="2"]
 
 position = Vector2( 5.64454, -2.1582 )
-scale = Vector2( 0.5, 0.5 )
 mode = 0
 tile_set = ExtResource( 13 )
-cell_size = Vector2( 128, 128 )
+cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2

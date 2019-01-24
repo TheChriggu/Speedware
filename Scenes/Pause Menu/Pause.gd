@@ -7,3 +7,4 @@ func _input(event):
 		var newPauseState = not get_tree().paused
 		get_tree().paused = newPauseState
 		visible = newPauseState
+		$"Button".grab_focus()

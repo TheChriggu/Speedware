@@ -34,11 +34,10 @@ func _physics_process(delta):
 	#during speedboost controls are disabled and friction is not applied
 	if not isInSpeedboost:
 		HorizontalMovement(delta)
-		VerticalMovement(delta)
 	else:
 		SpeedboostMovement(delta)
 	UIInteraction()
-
+	VerticalMovement(delta)
 func HorizontalMovement(delta):
 	var force = Vector2(0, GRAVITY) #Vector containing the forces which get applied to the player every frame
 	force.x = LeftForce() + RightForce() #calculate horizontal forces

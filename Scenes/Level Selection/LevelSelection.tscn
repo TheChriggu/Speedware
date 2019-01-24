@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/ui_level_idea.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/Level Selection/LevelShortcut.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Prototype_MS02_Ver01_Konstantin_S.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Level Selection/Star_Empty.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Level Selection/Level01_ProggerArt_Button.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Level Selection/Level01_ProggerArt_Button_Hovered.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Level Selection/Star_Empty.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/BackToMenuInfo.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -338,7 +341,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="LevelSelection" type="Node" index="0"]
+[node name="LevelSelection" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -351,14 +354,16 @@ texture = ExtResource( 2 )
 [node name="LevelShortcut" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 367.666, 726.894 )
-_sections_unfolded = [ "Pause" ]
+_sections_unfolded = [ "Pause", "Visibility" ]
 scene_to_load = ExtResource( 4 )
 
 [node name="Button" parent="LevelShortcut" index="0"]
 
 focus_next = NodePath("../../LevelShortcut2/Button")
 focus_previous = NodePath("../../LevelShortcut4/Button")
-_sections_unfolded = [ "Focus", "Visibility" ]
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 6 )
+_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
 [node name="LevelShortcut2" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -369,11 +374,13 @@ scene_to_load = ExtResource( 4 )
 
 focus_next = NodePath("../../LevelShortcut3/Button")
 focus_previous = NodePath("../../LevelShortcut/Button")
-_sections_unfolded = [ "Focus", "Visibility" ]
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 6 )
+_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
 [node name="Sprite3" parent="LevelShortcut2" index="3"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
 [node name="Label" parent="LevelShortcut2" index="4"]
 
@@ -393,15 +400,17 @@ scene_to_load = ExtResource( 4 )
 
 focus_next = NodePath("../../LevelShortcut4/Button")
 focus_previous = NodePath("../../LevelShortcut2/Button")
-_sections_unfolded = [ "Focus", "Visibility" ]
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 6 )
+_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
 [node name="Sprite2" parent="LevelShortcut3" index="2"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
 [node name="Sprite3" parent="LevelShortcut3" index="3"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
 [node name="Label" parent="LevelShortcut3" index="4"]
 
@@ -425,19 +434,21 @@ margin_right = 57.0
 margin_bottom = 53.0
 focus_next = NodePath("../../Return_to_Menu")
 focus_previous = NodePath("../../LevelShortcut3/Button")
-_sections_unfolded = [ "Focus", "Visibility" ]
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 6 )
+_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
 [node name="Sprite" parent="LevelShortcut4" index="1"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
 [node name="Sprite2" parent="LevelShortcut4" index="2"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
 [node name="Sprite3" parent="LevelShortcut4" index="3"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
 [node name="Label" parent="LevelShortcut4" index="4"]
 
@@ -448,7 +459,7 @@ text = "Best Time: -"
 anims/Mouse_Hover = SubResource( 5 )
 anims/Mouse_Hover_Down = SubResource( 6 )
 
-[node name="Return_to_Menu" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Return_to_Menu" parent="." index="5" instance=ExtResource( 8 )]
 
 show_behind_parent = true
 anchor_left = 0.5
@@ -462,12 +473,16 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 9 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="BackToMenuInfo" parent="." index="7" instance=ExtResource( 10 )]
+
+position = Vector2( 1609.65, 1024.01 )
 
 
 [editable path="LevelShortcut"]

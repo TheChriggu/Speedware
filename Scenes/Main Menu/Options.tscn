@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Main Menu/Options.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Main Menu/ui_options_idea.jpg" type="Texture" id=2]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sounds/DBZ Instant Transmission Sound effect.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/BackToMenuInfo.tscn" type="PackedScene" id=6]
 
 [node name="Options" type="Node"]
 
@@ -111,6 +112,10 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="BackToMenuInfo" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 1603.03, 1038.53 )
 
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_MusicSlider_value_changed"]
 

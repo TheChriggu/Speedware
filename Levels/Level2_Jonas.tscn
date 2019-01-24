@@ -51,7 +51,7 @@ script = ExtResource( 2 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 31149.3, 3983.41 )
+position = Vector2( -227.321, 70.9761 )
 FULLSPEED_FORCE = 75
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 4 )]

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/leveltile_laser_middle_blue_mandy.png-05f712b3590458aa1fe3ebf3a4560f63.stex"
+path="res://.import/tileset_mandy_reworked.png-9923a11c9d0d8287cebc2e8e72b84c25.stex"
 
 [deps]
 
-source_file="res://Tileset/leveltile_laser_middle_blue_mandy.png"
-dest_files=[ "res://.import/leveltile_laser_middle_blue_mandy.png-05f712b3590458aa1fe3ebf3a4560f63.stex" ]
+source_file="res://Tileset/tileset_mandy_reworked.png"
+dest_files=[ "res://.import/tileset_mandy_reworked.png-9923a11c9d0d8287cebc2e8e72b84c25.stex" ]
 
 [params]
 

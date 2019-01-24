@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BlueWeak.png-c4858b95ac3eba5c78317a1f4e5de991.stex"
+path="res://.import/leveltile_laser_middle_blue_mandy.png-b33a1d8a4bf103e23a94b3bb09ac97d9.stex"
 
 [deps]
 
-source_file="res://Enviroment/Datastrings/BlueWeak.png"
-dest_files=[ "res://.import/BlueWeak.png-c4858b95ac3eba5c78317a1f4e5de991.stex" ]
+source_file="res://Enviroment/Datastrings/leveltile_laser_middle_blue_mandy.png"
+dest_files=[ "res://.import/leveltile_laser_middle_blue_mandy.png-b33a1d8a4bf103e23a94b3bb09ac97d9.stex" ]
 
 [params]
 

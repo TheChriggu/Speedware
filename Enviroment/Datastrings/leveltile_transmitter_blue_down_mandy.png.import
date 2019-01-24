@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OrangeStrong.png-e9f881b83e370a2a6426a46fd925bddd.stex"
+path="res://.import/leveltile_transmitter_blue_down_mandy.png-9cffef29db9fe268d0a56a15f00870a2.stex"
 
 [deps]
 
-source_file="res://Enviroment/Datastrings/OrangeStrong.png"
-dest_files=[ "res://.import/OrangeStrong.png-e9f881b83e370a2a6426a46fd925bddd.stex" ]
+source_file="res://Enviroment/Datastrings/leveltile_transmitter_blue_down_mandy.png"
+dest_files=[ "res://.import/leveltile_transmitter_blue_down_mandy.png-9cffef29db9fe268d0a56a15f00870a2.stex" ]
 
 [params]
 

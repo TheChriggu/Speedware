@@ -81,19 +81,17 @@ script = ExtResource( 10 )
 
 [node name="Lasers" type="Node2D" parent="Level" index="0"]
 
-editor/display_folded = true
-position = Vector2( 608.767, -64.3236 )
+position = Vector2( 801.231, -101.336 )
 script = ExtResource( 11 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 12 )]
 
-position = Vector2( 27726.4, 4173.69 )
-scale = Vector2( 0.0976336, 3.29508 )
+position = Vector2( 14812.1, 1959.66 )
 
 [node name="LaserOrange2" parent="Level/Lasers" index="1" instance=ExtResource( 12 )]
 
 position = Vector2( 10548.7, 1965.21 )
-scale = Vector2( 0.0976336, 3.29508 )
 
 [node name="LaserOrange3" parent="Level/Lasers" index="2" instance=ExtResource( 12 )]
 

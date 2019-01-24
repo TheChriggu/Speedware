@@ -338,7 +338,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="LevelSelection" type="Node"]
+[node name="LevelSelection" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -350,16 +350,26 @@ texture = ExtResource( 2 )
 
 [node name="LevelShortcut" parent="." index="1" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 position = Vector2( 367.666, 726.894 )
-_sections_unfolded = [ "Pause", "Visibility" ]
+_sections_unfolded = [ "Pause" ]
 scene_to_load = ExtResource( 4 )
+
+[node name="Button" parent="LevelShortcut" index="0"]
+
+focus_next = NodePath("../../LevelShortcut2/Button")
+focus_previous = NodePath("../../LevelShortcut4/Button")
+_sections_unfolded = [ "Focus", "Visibility" ]
 
 [node name="LevelShortcut2" parent="." index="2" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 position = Vector2( 662.203, 255.495 )
 scene_to_load = ExtResource( 4 )
+
+[node name="Button" parent="LevelShortcut2" index="0"]
+
+focus_next = NodePath("../../LevelShortcut3/Button")
+focus_previous = NodePath("../../LevelShortcut/Button")
+_sections_unfolded = [ "Focus", "Visibility" ]
 
 [node name="Sprite3" parent="LevelShortcut2" index="3"]
 
@@ -376,9 +386,14 @@ anims/Mouse_Hover_Down = SubResource( 2 )
 
 [node name="LevelShortcut3" parent="." index="3" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 position = Vector2( 1268.15, 253.988 )
 scene_to_load = ExtResource( 4 )
+
+[node name="Button" parent="LevelShortcut3" index="0"]
+
+focus_next = NodePath("../../LevelShortcut4/Button")
+focus_previous = NodePath("../../LevelShortcut2/Button")
+_sections_unfolded = [ "Focus", "Visibility" ]
 
 [node name="Sprite2" parent="LevelShortcut3" index="2"]
 
@@ -399,7 +414,6 @@ anims/Mouse_Hover_Down = SubResource( 4 )
 
 [node name="LevelShortcut4" parent="." index="4" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 position = Vector2( 1557.51, 744.829 )
 scene_to_load = ExtResource( 4 )
 
@@ -409,6 +423,9 @@ margin_left = -55.0
 margin_top = -44.0
 margin_right = 57.0
 margin_bottom = 53.0
+focus_next = NodePath("../../Return_to_Menu")
+focus_previous = NodePath("../../LevelShortcut3/Button")
+_sections_unfolded = [ "Focus", "Visibility" ]
 
 [node name="Sprite" parent="LevelShortcut4" index="1"]
 
@@ -450,7 +467,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Music"
+bus = "Master"
 
 
 [editable path="LevelShortcut"]

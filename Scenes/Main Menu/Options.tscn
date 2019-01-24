@@ -25,7 +25,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Music"
+bus = "Master"
 
 [node name="MusicSlider" type="HSlider" parent="." index="2"]
 
@@ -39,6 +39,8 @@ margin_right = 1106.0
 margin_bottom = 454.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_next = NodePath("../SFXSlider")
+focus_previous = NodePath("../Return_to_Menu")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -56,6 +58,7 @@ editable = true
 tick_count = 1
 ticks_on_borders = false
 focus_mode = 2
+_sections_unfolded = [ "Focus" ]
 
 [node name="SFXSlider" type="HSlider" parent="." index="3"]
 
@@ -69,6 +72,8 @@ margin_right = 1098.0
 margin_bottom = 637.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_next = NodePath("../Return_to_Menu")
+focus_previous = NodePath("../MusicSlider")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -86,6 +91,7 @@ editable = true
 tick_count = 1
 ticks_on_borders = false
 focus_mode = 2
+_sections_unfolded = [ "Focus" ]
 
 [node name="Return_to_Menu" parent="." index="4" instance=ExtResource( 4 )]
 
@@ -93,6 +99,9 @@ margin_left = 910.0
 margin_top = 1020.0
 margin_right = 910.0
 margin_bottom = 1020.0
+focus_next = NodePath("../MusicSlider")
+focus_previous = NodePath("../SFXSlider")
+_sections_unfolded = [ "Focus", "Mouse" ]
 
 [node name="SFXExample" type="AudioStreamPlayer" parent="." index="5"]
 

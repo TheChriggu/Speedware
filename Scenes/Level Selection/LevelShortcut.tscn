@@ -3,9 +3,6 @@
 [ext_resource path="res://Scenes/Level Selection/LevelShortcut.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=2]
 
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "Mouse_Hover"
@@ -122,7 +119,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
 scene_to_load = null
 
-[node name="Button" type="Button" parent="." index="0"]
+[node name="Button" type="TextureButton" parent="." index="0"]
 
 modulate = Color( 1, 1, 1, 0.160196 )
 anchor_left = 0.0
@@ -144,8 +141,6 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-flat = false
-align = 1
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]

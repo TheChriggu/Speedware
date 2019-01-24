@@ -8,9 +8,9 @@ func _on_Start_Game_pressed():
 	
 
 
-func _on_Start_Game_focus_entered():
-	$AnimationPlayer.play("ButtonHovered")
+#func _on_Start_Game_focus_entered():
+#	$AnimationPlayer.play("ButtonHovered")
 
 
-func _on_Start_Game_focus_exited():
-	$AnimationPlayer.play("ButtonNotHovered")
+#func _on_Start_Game_focus_exited():
+#	$AnimationPlayer.play("ButtonNotHovered")

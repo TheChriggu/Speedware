@@ -1,39 +1,25 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Main Menu/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Scenes/Main Menu/Speedware_Logo_01_BryanPrintz.png" type="Texture" id=3]
-[ext_resource path="res://Player/Character_Runing Pose_gelb_nadim.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Main Menu/Buttons.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Buttons/MenuButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Main Menu/Test_Button_Normal.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Main Menu/Test_Button_Hovered.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/Main Menu/MenuButton.gd" type="Script" id=9]
-[ext_resource path="res://Levels/Prototype_MS02_Ver01_Konstantin_S.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Fonts/Custom_Font_Custom_Size.tres" type="DynamicFontData" id=11]
-[ext_resource path="res://Scenes/Buttons/LevelSelectionButton.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Level Selection/LevelSelection.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Buttons/OptionsButton.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Main Menu/Test_Button_Options_Normal.png" type="Texture" id=15]
-[ext_resource path="res://Scenes/Main Menu/Test_Button_Options_Hovered.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/Main Menu/Options.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Buttons/Chat_Logs.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Main Menu/Test_Button_Chatlogs_Normal.png" type="Texture" id=19]
-[ext_resource path="res://Scenes/Main Menu/Test_Button_Chatlogs_Hovered.png" type="Texture" id=20]
-[ext_resource path="res://Scenes/Main Menu/Chatlogs.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/ExitButton.gd" type="Script" id=23]
-[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=24]
+[ext_resource path="res://Scenes/Main Menu/Buttons.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Buttons/MenuButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Main Menu/MenuButtons/start_game.png" type="Texture" id=5]
+[ext_resource path="res://Levels/Level1_Jonas.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Main Menu/MenuButtons/start_game_hoover.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Level Selection/LevelSelection.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Main Menu/Chatlogs.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Main Menu/Options.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player/Character_Runing Pose_gelb_nadim.png" type="Texture" id=12]
+[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=13]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="StreamTexture" id=1]
 
-size = 48
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 11 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+flags = 4
+load_path = "res://.import/start_game_hoover.png-88829bb28037bd3d8d5911f5be108dd9.stex"
 
-[node name="TitleScreen" type="Control" index="0"]
+[node name="TitleScreen" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -52,14 +38,10 @@ _sections_unfolded = [ "Pause" ]
 [node name="Menu" type="VBoxContainer" parent="." index="0"]
 
 pause_mode = 2
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -799.0
-margin_top = -430.5
-margin_right = 799.0
-margin_bottom = 430.5
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -75,7 +57,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1598.0
+margin_right = 1920.0
 margin_bottom = 32.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -90,28 +72,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Logo" type="TextureRect" parent="Menu" index="1"]
-
-pause_mode = 2
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 36.0
-margin_right = 1598.0
-margin_bottom = 75.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 3 )
-stretch_mode = 4
-_sections_unfolded = [ "Pause" ]
-
-[node name="CenterRow" type="HBoxContainer" parent="Menu" index="2"]
+[node name="CenterRow" type="HBoxContainer" parent="Menu" index="1"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -119,7 +80,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 36.0
-margin_right = 1598.0
+margin_right = 1920.0
 margin_bottom = 1036.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -130,14 +91,95 @@ size_flags_vertical = 3
 alignment = 0
 _sections_unfolded = [ "Pause", "Size Flags" ]
 
-[node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow" index="0"]
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1000.0
+margin_right = 916.0
+margin_bottom = 1000.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 60
+alignment = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Anchor", "Pause", "Size Flags", "custom_constants" ]
+
+[node name="StartGame" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 4 )]
+
+editor/display_folded = true
+margin_left = 0.0
+margin_top = 5.0
+margin_right = 916.0
+margin_bottom = 155.0
+rect_scale = Vector2( 1, 1 )
+texture_normal = ExtResource( 5 )
+texture_focused = SubResource( 1 )
+sceneToLoad = ExtResource( 6 )
+
+[node name="LevelSelection" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 4 )]
+
+margin_left = 0.0
+margin_top = 215.0
+margin_right = 916.0
+margin_bottom = 365.0
+rect_scale = Vector2( 1, 1 )
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 7 )
+sceneToLoad = ExtResource( 8 )
+
+[node name="Chatlogs" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 4 )]
+
+margin_left = 0.0
+margin_top = 425.0
+margin_right = 916.0
+margin_bottom = 575.0
+rect_scale = Vector2( 1, 1 )
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 7 )
+sceneToLoad = ExtResource( 9 )
+
+[node name="Options" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 4 )]
+
+margin_left = 0.0
+margin_top = 635.0
+margin_right = 916.0
+margin_bottom = 785.0
+rect_scale = Vector2( 1, 1 )
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 7 )
+sceneToLoad = ExtResource( 10 )
+
+[node name="Exit" parent="Menu/CenterRow/Buttons" index="4" instance=ExtResource( 11 )]
+
+pause_mode = 2
+margin_left = 0.0
+margin_top = 845.0
+margin_right = 916.0
+margin_bottom = 995.0
+rect_scale = Vector2( 1, 1 )
+focus_neighbour_bottom = NodePath("../Start Game")
+focus_next = NodePath("../Continue")
+focus_previous = NodePath("../Chat_Logs")
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 7 )
+_sections_unfolded = [ "Focus", "Pause", "Rect", "Textures" ]
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow" index="1"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 920.0
+margin_right = 1920.0
 margin_bottom = 1000.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -162,214 +204,18 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 12 )
 stretch_mode = 0
 
-[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow" index="1"]
-
-pause_mode = 2
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 1004.0
-margin_right = 1598.0
-margin_bottom = 1000.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 60
-alignment = 1
-script = ExtResource( 5 )
-_sections_unfolded = [ "Margin", "Pause", "Size Flags", "custom_constants" ]
-
-[node name="Start Game" type="TextureButton" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 6 )]
-
-pause_mode = 2
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 100.0
-margin_right = 594.0
-margin_bottom = 212.0
-rect_min_size = Vector2( 360, 60 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_next = NodePath("../LevelSelectionButton")
-focus_previous = NodePath(".")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 8 )
-texture_focused = ExtResource( 8 )
-script = ExtResource( 9 )
-_sections_unfolded = [ "Focus", "Pause", "Textures" ]
-sceneToLoad = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="Menu/CenterRow/Buttons/Start Game" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 5
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
-
-[node name="LevelSelectionButton" type="TextureButton" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 12 )]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 272.0
-margin_right = 594.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 360, 60 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_next = NodePath("../Options")
-focus_previous = NodePath(".")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 8 )
-texture_focused = ExtResource( 8 )
-script = ExtResource( 9 )
-_sections_unfolded = [ "Focus", "Rect", "Textures" ]
-sceneToLoad = ExtResource( 13 )
-
-[node name="Options" type="TextureButton" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 14 )]
-
-pause_mode = 2
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 444.0
-margin_right = 594.0
-margin_bottom = 556.0
-rect_min_size = Vector2( 360, 60 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_next = NodePath("../Chat_Logs")
-focus_previous = NodePath(".")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 15 )
-texture_hover = ExtResource( 16 )
-texture_focused = ExtResource( 16 )
-script = ExtResource( 9 )
-_sections_unfolded = [ "Focus", "Pause", "Rect", "Textures" ]
-sceneToLoad = ExtResource( 17 )
-
-[node name="Chat_Logs" type="TextureButton" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 18 )]
-
-pause_mode = 2
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 616.0
-margin_right = 594.0
-margin_bottom = 728.0
-rect_min_size = Vector2( 360, 60 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_next = NodePath("../Exit")
-focus_previous = NodePath("../Options")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 19 )
-texture_hover = ExtResource( 20 )
-texture_focused = ExtResource( 20 )
-script = ExtResource( 9 )
-_sections_unfolded = [ "Focus", "Pause", "Rect", "Textures" ]
-sceneToLoad = ExtResource( 21 )
-
-[node name="Exit" type="TextureButton" parent="Menu/CenterRow/Buttons" index="4" instance=ExtResource( 22 )]
-
-pause_mode = 2
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 788.0
-margin_right = 594.0
-margin_bottom = 900.0
-rect_min_size = Vector2( 360, 60 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_next = NodePath("../Continue")
-focus_previous = NodePath("../Chat_Logs")
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 8 )
-texture_focused = ExtResource( 8 )
-script = ExtResource( 23 )
-_sections_unfolded = [ "Focus", "Pause", "Textures" ]
-
-[node name="VersionLabel" type="Label" parent="Menu" index="3"]
+[node name="VersionLabel" type="Label" parent="Menu" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 1040.0
-margin_right = 1598.0
-margin_bottom = 1072.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -384,42 +230,15 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="StartMenuMusic" type="AudioStreamPlayer" parent="." index="1"]
 
-stream = ExtResource( 24 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/Start Game" to="Menu/CenterRow/Buttons" method="_on_Start_Game_mouse_entered"]
-
-[connection signal="mouse_exited" from="Menu/CenterRow/Buttons/Start Game" to="Menu/CenterRow/Buttons" method="_on_Start_Game_mouse_exited"]
-
-[connection signal="pressed" from="Menu/CenterRow/Buttons/Start Game" to="Menu/CenterRow/Buttons/Start Game" method="_on_Start_Game_pressed"]
-
-[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/LevelSelectionButton" to="Menu/CenterRow/Buttons" method="_on_LevelSelectionButton_mouse_entered"]
-
-[connection signal="mouse_exited" from="Menu/CenterRow/Buttons/LevelSelectionButton" to="Menu/CenterRow/Buttons" method="_on_LevelSelectionButton_mouse_exited"]
-
-[connection signal="pressed" from="Menu/CenterRow/Buttons/LevelSelectionButton" to="Menu/CenterRow/Buttons/LevelSelectionButton" method="_on_Start_Game_pressed"]
-
-[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/Options" to="Menu/CenterRow/Buttons" method="_on_Options_mouse_entered"]
-
-[connection signal="mouse_exited" from="Menu/CenterRow/Buttons/Options" to="Menu/CenterRow/Buttons" method="_on_Options_mouse_exited"]
-
-[connection signal="pressed" from="Menu/CenterRow/Buttons/Options" to="Menu/CenterRow/Buttons/Options" method="_on_Start_Game_pressed"]
-
-[connection signal="mouse_entered" from="Menu/CenterRow/Buttons/Chat_Logs" to="Menu/CenterRow/Buttons" method="_on_Chat_Logs_mouse_entered"]
-
-[connection signal="mouse_exited" from="Menu/CenterRow/Buttons/Chat_Logs" to="Menu/CenterRow/Buttons" method="_on_Chat_Logs_mouse_exited"]
-
-[connection signal="pressed" from="Menu/CenterRow/Buttons/Chat_Logs" to="Menu/CenterRow/Buttons/Chat_Logs" method="_on_Start_Game_pressed"]
-
 [connection signal="mouse_entered" from="Menu/CenterRow/Buttons/Exit" to="Menu/CenterRow/Buttons" method="_on_Exit_mouse_entered"]
 
 [connection signal="mouse_exited" from="Menu/CenterRow/Buttons/Exit" to="Menu/CenterRow/Buttons" method="_on_Exit_mouse_exited"]
 
-[connection signal="pressed" from="Menu/CenterRow/Buttons/Exit" to="Menu/CenterRow/Buttons/Exit" method="_on_Exit_pressed"]
 
-
-[editable path="Menu/CenterRow/Buttons/Start Game"]

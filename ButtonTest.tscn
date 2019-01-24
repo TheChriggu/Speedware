@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ButtonTest.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Buttons/MenuButton.tscn" type="PackedScene" id=2]
+
+[node name="ButtonTest" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="Start Game" parent="." index="0" instance=ExtResource( 2 )]
+
+margin_left = 680.0
+margin_top = 116.0
+margin_right = 1270.0
+margin_bottom = 228.0
+focus_next = NodePath("../Start Game2")
+focus_previous = NodePath("../Start Game3")
+_sections_unfolded = [ "Focus", "Rect", "Textures" ]
+
+[node name="Start Game2" parent="." index="1" instance=ExtResource( 2 )]
+
+margin_left = 691.0
+margin_top = 353.0
+margin_right = 1281.0
+margin_bottom = 465.0
+focus_next = NodePath("../Start Game3")
+focus_previous = NodePath("../Start Game")
+_sections_unfolded = [ "Focus", "Rect", "Textures" ]
+
+[node name="Start Game3" parent="." index="2" instance=ExtResource( 2 )]
+
+margin_left = 693.0
+margin_top = 593.0
+margin_right = 1283.0
+margin_bottom = 705.0
+focus_next = NodePath("../Start Game")
+focus_previous = NodePath("../Start Game2")
+_sections_unfolded = [ "Focus", "Rect", "Textures" ]
+
+

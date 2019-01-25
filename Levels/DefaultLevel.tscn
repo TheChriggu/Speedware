@@ -9,13 +9,13 @@
 [ext_resource path="res://Player/ParallaxBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sounds/Background Music/BackgroundMusic.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=9]
-[ext_resource path="res://Tileset/Tileset_Bryan.tres" type="TileSet" id=10]
-[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=12]
-[ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=11]
+[ext_resource path="res://Enviroment/Datastrings/Laser_0.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=16]
 [ext_resource path="res://UI/UI.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=18]
 [ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=19]
@@ -29,6 +29,7 @@ script = ExtResource( 1 )
 
 [node name="Player" type="Node" parent="." index="0"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 3 )]
@@ -66,15 +67,55 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Level" type="Node" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 9 )
 
-[node name="TileMap" type="TileMap" parent="Level" index="0"]
+[node name="Speedboosters" type="Node2D" parent="Level" index="0"]
+
+editor/display_folded = true
+position = Vector2( -803.782, 886.093 )
+
+[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 1483.11, 133.058 )
+SPEED = 4000
+LENGTH = 10.0
+
+[node name="Lasers" type="Node2D" parent="Level" index="1"]
+
+editor/display_folded = true
+position = Vector2( 1457.38, -2001.32 )
+script = ExtResource( 11 )
+
+[node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 12 )]
+
+position = Vector2( -1117.42, 3012.6 )
+
+[node name="LaserBlau" parent="Level/Lasers" index="1" instance=ExtResource( 13 )]
+
+position = Vector2( -1391.11, 3042.76 )
+
+[node name="Collectibles" type="Node2D" parent="Level" index="2"]
+
+editor/display_folded = true
+position = Vector2( 660.131, -1882.08 )
+
+[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 14 )]
+
+position = Vector2( 1200.44, 107.52 )
+scale = Vector2( 0.0348979, 0.0470226 )
+
+[node name="FinishArea" parent="Level" index="3" instance=ExtResource( 15 )]
+
+visible = false
+position = Vector2( 3805.09, 77.8135 )
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
 
 position = Vector2( -884.856, 952.646 )
-scale = Vector2( 0.5, 0.5 )
 mode = 0
-tile_set = ExtResource( 10 )
-cell_size = Vector2( 128, 128 )
+tile_set = ExtResource( 16 )
+cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
@@ -91,46 +132,7 @@ format = 1
 tile_data = PoolIntArray( -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -131065, 0, 0, -131059, 0, 0, -131058, 0, 0, -65529, 0, 0, -65523, 1610612739, 0, -65522, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 196633, 0, 0, 196634, 0, 0, 196635, 0, 0, 196636, 0, 0, 196637, 0, 0, 196638, 0, 0, 196639, 0, 0, 196640, 0, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 196644, 0, 0, 196645, 0, 0, 196646, 0, 0, 196647, 0, 0, 196648, 0, 0, 196649, 0, 0, 196650, 0, 0, 196651, 0, 0, 196652, 0, 0, 196653, 0, 0, 196654, 0, 0, 196655, 0, 0, 196656, 0, 0, 196657, 0, 0, 196658, 0, 0, 196659, 0, 0, 196660, 0, 0, 196661, 0, 0, 196662, 0, 0, 196663, 0, 0, 196664, 0, 0, 196665, 0, 0, 196666, 0, 0, 196667, 0, 0, 196668, 0, 0, 196669, 0, 0, 196670, 0, 0, 196671, 0, 0, 196672, 0, 0, 196673, 0, 0, 196674, 0, 0, 196675, 0, 0, 196676, 0, 0, 196677, 0, 0, 196678, 0, 0, 196679, 0, 0, 196680, 0, 0, 196681, 0, 0, 196682, 0, 0, 196683, 0, 0, 196684, 0, 0, 196685, 0, 0, 196686, 0, 0, 196687, 0, 0, 196688, 0, 0, 196689, 0, 0, 196690, 0, 0, 196691, 0, 0, 196692, 0, 0, 196693, 0, 0, 196694, 0, 0, 196695, 0, 0, 196696, 0, 0, 196697, 0, 0, 196698, 0, 0, 196699, 0, 0, 196700, 0, 0, 196701, 0, 0, 196702, 0, 0, 196703, 0, 0, 262160, 0, 0, 262162, 0, 0, 262164, 0, 0, 262166, 0, 0, 262168, 0, 0, 262170, 0, 0, 262172, 0, 0, 262174, 0, 0, 262176, 0, 0, 262178, 0, 0, 262180, 0, 0, 262182, 0, 0, 262184, 0, 0, 262186, 0, 0, 262188, 0, 0, 262190, 0, 0, 262192, 0, 0, 262194, 0, 0, 262196, 0, 0, 262198, 0, 0, 262200, 0, 0, 262202, 0, 0, 262204, 0, 0, 262206, 0, 0, 262208, 0, 0, 262210, 0, 0, 262212, 0, 0, 262214, 0, 0, 262216, 0, 0, 262218, 0, 0, 262220, 0, 0, 262222, 0, 0, 262224, 0, 0, 262226, 0, 0, 262228, 0, 0, 262230, 0, 0, 262232, 0, 0, 262234, 0, 0, 262236, 0, 0, 262238, 0, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "Visibility" ]
 
-[node name="Speedboosters" type="Node2D" parent="Level" index="1"]
-
-position = Vector2( -803.782, 886.093 )
-
-[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 11 )]
-
-position = Vector2( 1483.11, 133.058 )
-SPEED = 4000
-LENGTH = 10.0
-
-[node name="Lasers" type="Node2D" parent="Level" index="2"]
-
-editor/display_folded = true
-position = Vector2( 1457.38, -2001.32 )
-script = ExtResource( 12 )
-
-[node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 13 )]
-
-position = Vector2( 381.223, 501.512 )
-
-[node name="LaserBlau" parent="Level/Lasers" index="1" instance=ExtResource( 14 )]
-
-position = Vector2( 66.6215, 488.558 )
-
-[node name="Collectibles" type="Node2D" parent="Level" index="3"]
-
-editor/display_folded = true
-position = Vector2( 660.131, -1882.08 )
-
-[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 15 )]
-
-position = Vector2( 1200.44, 107.52 )
-scale = Vector2( 0.0348979, 0.0470226 )
-
-[node name="FinishArea" parent="Level" index="4" instance=ExtResource( 16 )]
-
-visible = false
-position = Vector2( 3805.09, 77.8135 )
-
-[node name="UI" type="Node" parent="." index="2"]
+[node name="UI" type="Node" parent="." index="3"]
 
 editor/display_folded = true
 script = ExtResource( 17 )

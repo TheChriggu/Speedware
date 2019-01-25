@@ -1,7 +1,7 @@
 extends Node
 
-func SwitchColorToOrange():
-	$Lasers.SwitchToOrange()
+#func SwitchColorToOrange():
+#	$Lasers.SwitchToOrange()
 
-func SwitchColorToPurple():
-	$Lasers.SwitchToPurple()
+#func SwitchColorToPurple():
+#	$Lasers.SwitchToPurple()

@@ -10,8 +10,8 @@
 [ext_resource path="res://Levels/Level.gd" type="Script" id=8]
 [ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=10]
-[ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enviroment/Datastrings/Laser_0.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Tileset/Tileset_Bryan.tres" type="TileSet" id=15]
@@ -21,6 +21,8 @@
 [ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=19]
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=20]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=21]
+
+
 
 [node name="Level" type="Node" index="0"]
 

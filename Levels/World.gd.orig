@@ -34,12 +34,18 @@ func _on_FinishArea_finish_line_passed():
 func _on_BackgroundMusic_drum_beat():
 	$UI.MusicBeat()
 
-func _on_Lasers_laser_entered():
-	$Player.LaserEntered()
 
-func _on_Lasers_laser_exited():
-	$Player.LaserExited()
+func _on_LaserOrange_coloredAreaEntered():
+	$Player.ColoredAreaEntered()
 
 
-func _on_LaserOrange_laser_entered():
+func _on_LaserOrange_coloredAreaExited():
+	$Player.ColoredAreaExited()
+
+
+func _on_LaserBlau_coloredAreaEntered():
+	pass # replace with function body
+
+
+func _on_LaserBlau_coloredAreaExited():
 	pass # replace with function body

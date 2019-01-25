@@ -1,4 +1,4 @@
-extends Node2D
+extends Sprite
 
 signal laser_entered
 signal laser_exited
@@ -11,14 +11,8 @@ signal laser_exited
 #		for laser in get_children():
 #			laser.SwitchToOrange()
 
-func _on_LaserOrange_laser_entered():
+func _on_Area2D_body_entered(body):
 	emit_signal("laser_entered")
 
-func _on_LaserOrange_laser_exited():
-	emit_signal("laser_exited")
-
-func _on_LaserBlau_laser_entered():
-	emit_signal("laser_entered")
-
-func _on_LaserBlau_laser_exited():
+func _on_Area2D_body_exited(body):
 	emit_signal("laser_exited")

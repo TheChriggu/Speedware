@@ -32,8 +32,8 @@ func SpeedboostStop():
 	$player.isInSpeedboost = false
 	isInSpeedboost = false
 
-func LaserEntered():
-	$player.isSwitchColorEnabled = false
+func ColoredAreaEntered():
+	$player.switchColorEnabled = false
 
-func LaserExited():
-	$player.isSwitchColorEnabled = true
+func ColoredAreaExited():
+	$player.switchColorEnabled = true

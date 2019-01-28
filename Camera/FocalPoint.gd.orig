@@ -1,12 +1,7 @@
 extends Node2D
 
-<<<<<<< working copy
 export var HORIZONTAL_OFFSET = 400
 export var VERTICAL_OFFSET = 100
-=======
-var horizontal_distance = 400
-var vertical_distance = 50
->>>>>>> merge rev
 
 #set the horizontal camera position
 func SetHorizontal(offset):

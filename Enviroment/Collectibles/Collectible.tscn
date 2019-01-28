@@ -88,6 +88,9 @@ blend_times = [  ]
 
 [node name="Particles2D_POI" parent="." index="2" instance=ExtResource( 3 )]
 
+position = Vector2( 0, 0 )
+scale = Vector2( 40.497, 41.0895 )
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 
 

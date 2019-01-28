@@ -15,7 +15,7 @@ light_mode = 2
 custom_solver_bias = 0.0
 extents = Vector2( 13.8698, 524.021 )
 
-[node name="LaserBlau" type="Sprite"]
+[node name="LaserBlau" type="Sprite" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
@@ -32,9 +32,9 @@ emitting = true
 amount = 200
 lifetime = 5.2
 one_shot = false
-preprocess = 0.0
+preprocess = 6.0
 speed_scale = 3.0
-explosiveness = 0.0
+explosiveness = 0.1
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true

@@ -5,7 +5,7 @@
 [ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=3]
 [ext_resource path="res://Enviroment/Datastrings/spark particle.png" type="Texture" id=4]
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=1]
 
 render_priority = 0
 blend_mode = 1
@@ -56,7 +56,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Gravity" ]
 
-[node name="LaserOrange" type="Sprite"]
+[node name="LaserOrange" type="Sprite" index="0"]
 
 modulate = Color( 1, 1, 1, 0.933686 )
 position = Vector2( 6.37469, 1.599 )
@@ -68,16 +68,16 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="PartikelOrange" type="Particles2D" parent="." index="0"]
 
 modulate = Color( 1, 0.634277, 0.164063, 1 )
-material = SubResource( 4 )
+material = SubResource( 1 )
 position = Vector2( -0.602844, -264.212 )
 rotation = 1.5708
 emitting = true
 amount = 200
 lifetime = 5.2
 one_shot = false
-preprocess = 0.0
+preprocess = 6.0
 speed_scale = 3.0
-explosiveness = 0.0
+explosiveness = 0.1
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true

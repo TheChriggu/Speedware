@@ -12,7 +12,7 @@ script = ExtResource( 1 )
 
 script = ExtResource( 2 )
 HORIZONTAL_OFFSET = 300
-VERTICAL_OFFSET = 100
+VERTICAL_OFFSET = 150
 
 [node name="Camera2D" type="Camera2D" parent="FocalPoint" index="0"]
 

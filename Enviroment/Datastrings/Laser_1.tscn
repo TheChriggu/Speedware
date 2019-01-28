@@ -17,6 +17,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
+visible = false
 position = Vector2( -10.0298, 3.81154 )
 input_pickable = false
 collision_layer = 1
@@ -29,8 +30,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
-position = Vector2( 10.0237, -2.32687 )
-scale = Vector2( 1, 0.468951 )
+position = Vector2( 10.0203, -3.76127 )
+scale = Vector2( 1.15314, 0.488552 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -49,8 +50,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( -0.00610065, 1.48467 )
-scale = Vector2( 1, 0.468951 )
+position = Vector2( 0.00539927, -0.0580463 )
+scale = Vector2( 1.15709, 0.488552 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

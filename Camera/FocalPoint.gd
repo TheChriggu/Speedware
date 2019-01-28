@@ -1,7 +1,7 @@
 extends Node2D
 
-export var HORIZONTAL_OFFSET = 400
-export var VERTICAL_OFFSET = 100
+export var HORIZONTAL_OFFSET = 700
+export var VERTICAL_OFFSET = 150
 
 #set the horizontal camera position
 func SetHorizontal(offset):

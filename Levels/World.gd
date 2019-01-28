@@ -1,12 +1,12 @@
 extends Node
 
-#func _on_player_switched_color_to_orange():
+func _on_player_switched_color_to_orange():
 #	$Level.SwitchColorToOrange()
-#	$UI.SwitchColorToOrange()
+	$UI.SwitchColorToOrange()
 
-#func _on_player_switched_color_to_purple():
+func _on_player_switched_color_to_purple():
 #	$Level.SwitchColorToPurple()
-#	$UI.SwitchColorToPurple()
+	$UI.SwitchColorToPurple()
 
 func _on_Speedboost_speedboost_start(speed):
 	$Player.SpeedboostStart(speed)
@@ -39,7 +39,3 @@ func _on_Lasers_laser_entered():
 
 func _on_Lasers_laser_exited():
 	$Player.LaserExited()
-
-
-func _on_LaserOrange_laser_entered():
-	pass # replace with function body

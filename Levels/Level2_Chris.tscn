@@ -23,8 +23,6 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=21]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=22]
 
-
-
 [node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
@@ -86,15 +84,13 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Level" type="Node" parent="." index="2"]
 
-editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="0"]
 
-scale = Vector2( 0.5, 0.5 )
 mode = 0
 tile_set = ExtResource( 10 )
-cell_size = Vector2( 128, 128 )
+cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2

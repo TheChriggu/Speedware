@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 35.6451, 525.409 )
+extents = Vector2( 12.3827, 525.409 )
 
 [sub_resource type="ParticlesMaterial" id=2]
 

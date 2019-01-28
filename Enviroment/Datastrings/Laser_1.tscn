@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6.94383, 262.048 )
+extents = Vector2( 2.40036, 262.048 )
 
 [node name="LaserBlau" type="Sprite"]
 
@@ -35,7 +35,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
-visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

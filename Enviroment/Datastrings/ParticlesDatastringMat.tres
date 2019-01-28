@@ -2,8 +2,8 @@
 
 [sub_resource type="Gradient" id=1]
 
-offsets = PoolRealArray( 0, 0.136095, 0.313609, 0.514793, 0.763314, 1 )
-colors = PoolColorArray( 0.0625, 0.0509033, 0.0234375, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1 )
+offsets = PoolRealArray( 0, 0.136095, 0.331361, 0.514793, 0.763314, 1 )
+colors = PoolColorArray( 0.65625, 0.65625, 0.65625, 1, 1, 1, 1, 1, 0.730469, 0.730469, 0.730469, 1, 1, 1, 1, 1, 0.871094, 0.871094, 0.871094, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 
@@ -37,7 +37,7 @@ spread = 0.0
 flatness = 0.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 100.0
-initial_velocity_random = 0.5
+initial_velocity_random = 0.3
 angular_velocity = -8.32259e-041
 angular_velocity_random = 0.0
 orbit_velocity = 0.0

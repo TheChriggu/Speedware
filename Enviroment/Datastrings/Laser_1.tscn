@@ -1,23 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Enviroment/Datastrings/leveltile_laser_middle_blue_mandy.png" type="Texture" id=1]
+[ext_resource path="res://Enviroment/Datastrings/sprite_laser_yellow_mandy.png" type="Texture" id=1]
 [ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.8698, 524.021 )
+extents = Vector2( 6.94383, 262.048 )
 
 [node name="LaserBlau" type="Sprite"]
 
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
 
-visible = false
 position = Vector2( -10.0298, 3.81154 )
 input_pickable = false
 collision_layer = 1
@@ -37,6 +35,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

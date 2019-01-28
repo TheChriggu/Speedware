@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Enviroment/Datastrings/leveltile_laser_middle_red_mandy.png" type="Texture" id=1]
+[ext_resource path="res://Enviroment/Datastrings/sprite_laser_pink_mandy.png" type="Texture" id=1]
 [ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=2]
 [ext_resource path="res://Enviroment/Datastrings/spark particle.png" type="Texture" id=3]
 
@@ -92,7 +92,6 @@ _sections_unfolded = [ "Gravity" ]
 
 modulate = Color( 1, 1, 1, 0.933686 )
 position = Vector2( 6.37469, 1.599 )
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -110,16 +109,17 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
-position = Vector2( -0.0207637, -0.00502753 )
-scale = Vector2( 0.449265, 0.487215 )
+position = Vector2( -0.00930237, -0.00925079 )
+scale = Vector2( 0.223682, 0.243634 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Particles2D" type="Particles2D" parent="StaticBody2D" index="1"]
 
 modulate = Color( 0.878906, 0.0961304, 0.0961304, 1 )
-position = Vector2( 11.6256, -262.937 )
+position = Vector2( 6.48508, -127.119 )
 rotation = 1.55334
+scale = Vector2( 0.5, 0.5 )
 emitting = true
 amount = 50
 lifetime = 20.0
@@ -181,8 +181,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( -0.0474606, -0.00489497 )
-scale = Vector2( 0.448457, 0.487246 )
+position = Vector2( 0.0200297, 0.0029996 )
+scale = Vector2( 0.225078, 0.243618 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

@@ -76,7 +76,6 @@ script = ExtResource( 9 )
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="0"]
 
-editor/display_folded = true
 position = Vector2( -803.782, 886.093 )
 
 [node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 10 )]
@@ -99,11 +98,13 @@ LENGTH = 0.5
 
 [node name="Lasers" type="Node2D" parent="Level" index="1"]
 
+editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 11 )
 
 [node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 12 )]
 
+editor/display_folded = true
 position = Vector2( -1326.76, 3251.21 )
 rotation = -1.5708
 

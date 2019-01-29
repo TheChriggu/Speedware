@@ -22,7 +22,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=20]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=21]
 
-[node name="Level1_konstantin" type="Node" index="0"]
+[node name="Level1_konstantin" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -504,7 +504,6 @@ position = Vector2( 12849.6, 1180.89 )
 
 [node name="Speedbooster" type="Node2D" parent="Level" index="1"]
 
-editor/display_folded = true
 position = Vector2( -2.03027, -6.92725 )
 _sections_unfolded = [ "Transform" ]
 
@@ -512,45 +511,40 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 26350.6, 3968.26 )
 SPEED = 2000
+LENGTH = 0.5
 
-[node name="Speedboost3" parent="Level/Speedbooster" index="1" instance=ExtResource( 12 )]
+[node name="Speedboost5" parent="Level/Speedbooster" index="1" instance=ExtResource( 12 )]
 
-position = Vector2( 28640.2, 3947.14 )
+position = Vector2( 28571.2, 3975.17 )
 SPEED = 2200
 LENGTH = 0.5
 
-[node name="Speedboost5" parent="Level/Speedbooster" index="2" instance=ExtResource( 12 )]
-
-position = Vector2( 29026.6, 3947.77 )
-SPEED = 2400
-LENGTH = 1.0
-
-[node name="Speedboost6" parent="Level/Speedbooster" index="3" instance=ExtResource( 12 )]
+[node name="Speedboost6" parent="Level/Speedbooster" index="2" instance=ExtResource( 12 )]
 
 position = Vector2( 17189.3, 2821.6 )
 SPEED = 2200
 LENGTH = 0.25
 
-[node name="Speedboost7" parent="Level/Speedbooster" index="4" instance=ExtResource( 12 )]
+[node name="Speedboost7" parent="Level/Speedbooster" index="3" instance=ExtResource( 12 )]
 
 position = Vector2( 34549.1, 3966.83 )
 SPEED = 3800
 LENGTH = 5.0
 
-[node name="Speedboost8" parent="Level/Speedbooster" index="5" instance=ExtResource( 12 )]
+[node name="Speedboost8" parent="Level/Speedbooster" index="4" instance=ExtResource( 12 )]
 
 position = Vector2( 36692.1, 3540.77 )
 rotation = -2.35359
 SPEED = 3200
 LENGTH = 5.0
 
-[node name="Speedboost10" parent="Level/Speedbooster" index="6" instance=ExtResource( 12 )]
+[node name="Speedboost10" parent="Level/Speedbooster" index="5" instance=ExtResource( 12 )]
 
 position = Vector2( 33613.3, 3199.38 )
 SPEED = 4000
 LENGTH = 5.0
 
-[node name="Speedboost9" parent="Level/Speedbooster" index="7" instance=ExtResource( 12 )]
+[node name="Speedboost9" parent="Level/Speedbooster" index="6" instance=ExtResource( 12 )]
 
 position = Vector2( 34688.4, 3200.63 )
 SPEED = 5400
@@ -591,7 +585,6 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform" ]
 
 [node name="UI" type="Node" parent="." index="2"]
 
-editor/display_folded = true
 script = ExtResource( 16 )
 
 [node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 17 )]
@@ -603,6 +596,8 @@ editor/display_folded = true
 [node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 19 )]
 
 [node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 20 )]
+
+COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [node name="Timer" parent="UI" index="4" instance=ExtResource( 21 )]
 
@@ -617,10 +612,6 @@ editor/display_folded = true
 [connection signal="speedboost_start" from="Level/Speedbooster/Speedboost2" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Level/Speedbooster/Speedboost2" to="." method="_on_Speedboost_speedboost_stop"]
-
-[connection signal="speedboost_start" from="Level/Speedbooster/Speedboost3" to="." method="_on_Speedboost_speedboost_start"]
-
-[connection signal="speedboost_stop" from="Level/Speedbooster/Speedboost3" to="." method="_on_Speedboost_speedboost_stop"]
 
 [connection signal="speedboost_start" from="Level/Speedbooster/Speedboost5" to="." method="_on_Speedboost_speedboost_start"]
 

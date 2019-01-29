@@ -1,17 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Tileset/tileset_ground_resized_128x128_mandy.png" type="Texture" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 63.7077, 63.1462 )
+[ext_resource path="res://Tileset/tileset_mandy_reworked.png" type="Texture" id=1]
 
 [node name="Tileset_Speedware" type="Node"]
-
-__meta__ = {
-"_edit_horizontal_guides_": [ -63.0461, 62.9899 ]
-}
 
 [node name="leveltile_middle" type="Sprite" parent="." index="0"]
 
@@ -32,13 +23,12 @@ bounce = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_middle/StaticBody2D" index="0"]
 
-position = Vector2( -0.291977, 0 )
 build_mode = 0
-polygon = PoolVector2Array( -67, -63, 59.949, -62.9249, 60.3075, 61.8279, -67, 63 )
+polygon = PoolVector2Array( -64.2475, -64.1217, -64.0329, 63.5881, 64.1062, 63.8027, 63.8915, -63.9071 )
 
 [node name="leveltile_edge" type="Sprite" parent="." index="1"]
 
-position = Vector2( 150, 0 )
+position = Vector2( 143.481, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 213, 94, 128, 128 )
@@ -54,9 +44,10 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="leveltile_edge/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_edge/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
+build_mode = 0
+polygon = PoolVector2Array( -64.2475, -64.1217, -64.0329, 63.5881, 64.1062, 63.8027, 63.8915, -63.9071 )
 
 [node name="leveltile_side" type="Sprite" parent="." index="2"]
 
@@ -78,9 +69,8 @@ bounce = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="leveltile_side/StaticBody2D" index="0"]
 
-position = Vector2( -0.583984, 0.291993 )
 build_mode = 0
-polygon = PoolVector2Array( -64, -64, -64, 64, 64, 64, 64, -64 )
+polygon = PoolVector2Array( -64.2475, -64.1217, -64.0329, 63.5881, 64.1062, 63.8027, 63.8915, -63.9071 )
 
 [node name="leveltile_ramp" type="Sprite" parent="." index="3"]
 

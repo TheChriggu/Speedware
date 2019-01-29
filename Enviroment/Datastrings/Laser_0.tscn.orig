@@ -1,0 +1,286 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Enviroment/Datastrings/sprite_laser_pink_mandy.png" type="Texture" id=1]
+[ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=2]
+[ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=3]
+[ext_resource path="res://Enviroment/Datastrings/spark particle.png" type="Texture" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="Environment" id=2]
+
+background_mode = 4
+background_sky_custom_fov = 0.0
+background_color = Color( 0, 0, 0, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 0, 0, 0, 1 )
+ambient_light_energy = 1.0
+ambient_light_sky_contribution = 1.0
+fog_enabled = false
+fog_color = Color( 0.5, 0.6, 0.7, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 10.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = true
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 0
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = true
+adjustment_enabled = false
+adjustment_brightness = 1.0
+adjustment_contrast = 1.0
+adjustment_saturation = 1.0
+_sections_unfolded = [ "Background", "Glow" ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.3827, 525.409 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 3
+emission_point_count = 1
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 100, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Gravity" ]
+
+[node name="LaserOrange" type="Sprite" index="0"]
+
+modulate = Color( 1, 1, 1, 0.933686 )
+position = Vector2( 6.37469, 1.599 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="PartikelOrange" type="Particles2D" parent="." index="0"]
+
+modulate = Color( 1, 0.634277, 0.164063, 1 )
+material = SubResource( 1 )
+position = Vector2( -0.602844, -264.212 )
+rotation = 1.5708
+emitting = true
+amount = 200
+lifetime = 5.2
+one_shot = false
+preprocess = 6.0
+speed_scale = 3.0
+explosiveness = 0.1
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = ExtResource( 3 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="PartikelOrange" index="0"]
+
+environment = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+<<<<<<< working copy
+position = Vector2( -0.00930237, -0.00925079 )
+scale = Vector2( 0.223682, 0.243634 )
+shape = SubResource( 1 )
+=======
+position = Vector2( -1.52527, -0.0428543 )
+scale = Vector2( 0.377114, 0.490001 )
+shape = SubResource( 3 )
+>>>>>>> merge rev
+_sections_unfolded = [ "Transform" ]
+
+<<<<<<< working copy
+[node name="Particles2D" type="Particles2D" parent="StaticBody2D" index="1"]
+
+modulate = Color( 0.878906, 0.0961304, 0.0961304, 1 )
+position = Vector2( 6.48508, -127.119 )
+rotation = 1.55334
+scale = Vector2( 0.5, 0.5 )
+emitting = true
+amount = 50
+lifetime = 20.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 2 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+
+[node name="Particles2D" type="Particles2D" parent="." index="1"]
+=======
+[node name="Particles2D" type="Particles2D" parent="." index="2"]
+>>>>>>> merge rev
+
+visible = false
+modulate = Color( 1, 0, 0.234375, 1 )
+self_modulate = Color( 0.984375, 0.0576782, 0.0576782, 1 )
+position = Vector2( -5.25983, -263.578 )
+emitting = true
+amount = 6
+lifetime = 4.2
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 4 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Time", "Visibility" ]
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 16
+collision_mask = 16
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
+
+<<<<<<< working copy
+position = Vector2( 0.0200297, 0.0029996 )
+scale = Vector2( 0.225078, 0.243618 )
+shape = SubResource( 1 )
+=======
+position = Vector2( -1.52527, -0.0428543 )
+scale = Vector2( 0.377114, 0.490001 )
+shape = SubResource( 3 )
+>>>>>>> merge rev
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+
+

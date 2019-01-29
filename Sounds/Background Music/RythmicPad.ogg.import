@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/RythmicPad.ogg-02808e603171c01b1ff8c7a5c3f45467.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Background Music/RythmicPad.ogg"
+dest_files=[ "res://.import/RythmicPad.ogg-02808e603171c01b1ff8c7a5c3f45467.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

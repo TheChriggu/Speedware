@@ -1,9 +1,20 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=2]
+[gd_resource type="AudioBusLayout" load_steps=3 format=2]
 
-[sub_resource type="AudioEffectAmplify" id=1]
+[sub_resource type="AudioEffectHighPassFilter" id=1]
 
-resource_name = "Amplify"
-volume_db = 0.0
+resource_name = "HighPassFilter"
+cutoff_hz = 2000.0
+resonance = 0.5
+gain = 1.0
+db = 0
+
+[sub_resource type="AudioEffectLowPassFilter" id=2]
+
+resource_name = "LowPassFilter"
+cutoff_hz = 2000.0
+resonance = 0.5
+gain = 1.0
+db = 0
 
 [resource]
 
@@ -11,32 +22,34 @@ bus/0/name = "Master"
 bus/0/solo = false
 bus/0/mute = false
 bus/0/bypass_fx = false
-bus/0/volume_db = 1.7
+bus/0/volume_db = 0.0
 bus/0/send = ""
-bus/1/name = "Music"
+bus/0/effect/0/effect = SubResource( 1 )
+bus/0/effect/0/enabled = false
+bus/1/name = "4ToFloorSynth"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -17.8
+bus/1/volume_db = -12.2
 bus/1/send = "Master"
-bus/1/effect/0/effect = SubResource( 1 )
-bus/1/effect/0/enabled = true
-bus/2/name = "Character"
+bus/1/effect/0/effect = SubResource( 2 )
+bus/1/effect/0/enabled = false
+bus/2/name = "Bass"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = -14.1
+bus/2/volume_db = -70.8
 bus/2/send = "Master"
-bus/3/name = "Environment"
+bus/3/name = "Drums"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = -27.1
+bus/3/volume_db = -70.7
 bus/3/send = "Master"
-bus/4/name = "LinePassedSong"
+bus/4/name = "RythmicPad"
 bus/4/solo = false
 bus/4/mute = false
 bus/4/bypass_fx = false
-bus/4/volume_db = 2.6
+bus/4/volume_db = -20.6
 bus/4/send = "Master"
 

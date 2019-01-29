@@ -1,12 +1,12 @@
 extends Node2D
 
-var horizontal_distance = 500
-var vertical_distance = 200
+export var HORIZONTAL_OFFSET = 700
+export var VERTICAL_OFFSET = 150
 
 #set the horizontal camera position
-func setHorizontal(offset):
-	global_position.x = offset + horizontal_distance
+func SetHorizontal(offset):
+	global_position.x = offset + HORIZONTAL_OFFSET
 
 #set the vertical camera position
-func setVertical(offset):
-	global_position.y  = offset - vertical_distance
+func SetVertical(offset):
+	global_position.y  = offset - VERTICAL_OFFSET

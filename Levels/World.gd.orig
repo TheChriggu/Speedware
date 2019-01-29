@@ -1,0 +1,51 @@
+extends Node
+
+#func _on_player_switched_color_to_orange():
+#	$Level.SwitchColorToOrange()
+#	$UI.SwitchColorToOrange()
+
+#func _on_player_switched_color_to_purple():
+#	$Level.SwitchColorToPurple()
+#	$UI.SwitchColorToPurple()
+
+func _on_Speedboost_speedboost_start(speed):
+	$Player.SpeedboostStart(speed)
+	$UI.SpeedboostStart()
+
+func _on_Speedboost_speedboost_stop():
+	$Player.SpeedboostStop()
+	$UI.SpeedboostStop()
+
+func _on_player_is_at_fullspeed():
+	$UI.RunFullspeedMode()
+
+
+func _on_player_is_not_at_fullspeed():
+	$UI.StopFullspeedMode()
+
+
+func _on_Collectible_collected():
+	$UI.CollectibleCollected()
+
+func _on_FinishArea_finish_line_passed():
+	$UI.FinishLinePassed()
+
+
+func _on_BackgroundMusic_drum_beat():
+	$UI.MusicBeat()
+
+
+func _on_LaserOrange_coloredAreaEntered():
+	$Player.ColoredAreaEntered()
+
+
+func _on_LaserOrange_coloredAreaExited():
+	$Player.ColoredAreaExited()
+
+
+func _on_LaserBlau_coloredAreaEntered():
+	pass # replace with function body
+
+
+func _on_LaserBlau_coloredAreaExited():
+	pass # replace with function body

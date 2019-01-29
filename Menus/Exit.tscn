@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Menus/Startmenu/Options.tscn" type="PackedScene" id=1]
-
-
-
-[node name="Exit" instance=ExtResource( 1 )]
-
-

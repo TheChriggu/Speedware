@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Speedware"
-run/main_scene="res://Scenes/LaserLabsIntro.tscn"
+run/main_scene="res://Scenes/Intro/LaserLabsIntro.tscn"
 config/icon="res://Game_Icon.png"
 
 [display]
@@ -84,5 +84,5 @@ speedboostOff=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_n
 
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.53125, 0.0145264, 0.196187, 1 )
 environment/default_environment="res://default_env.tres"

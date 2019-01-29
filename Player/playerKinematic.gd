@@ -40,6 +40,7 @@ func _physics_process(delta):
 		SpeedboostMovement(delta)
 	UIInteraction()
 	VerticalMovement(delta)
+		
 func HorizontalMovement(delta):
 	var force = Vector2(0, GRAVITY) #Vector containing the forces which get applied to the player every frame
 	force.x = LeftForce() + RightForce() #calculate horizontal forces
@@ -63,7 +64,6 @@ func HorizontalMovement(delta):
 func VerticalMovement(delta):
 	if is_on_floor():
 		onAirTime = 0
-		
 	else:
 		onAirTime += delta
 	
@@ -115,6 +115,8 @@ func ApplyFriction(delta):
 func Jump():
 	if Input.is_action_just_pressed("jump") and not isJumping and onAirTime < JUMP_MAX_AIRBORNE_TIME:
 		#Player can jump, even after leaving the Edge for some time
+		$AnimationPlayer.play("JumpTakeoffAnimation")
+		$VFX.play("JumpAnimation")
 		velocity.y = -JUMP_SPEED
 		isJumping = true
 		
@@ -123,6 +125,7 @@ func Jump():
 	
 	if isJumping and velocity.y > 0:
 		isJumping = false
+		$VFX.play("JumpAnimation")
 
 #Cut the jump, when a certain speed is reached
 func JumpCut():

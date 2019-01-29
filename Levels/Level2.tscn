@@ -22,7 +22,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=20]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=21]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -65,6 +65,7 @@ SPEED = 2000
 
 [node name="Lasers" type="Node2D" parent="Level" index="1"]
 
+editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 10 )
 
@@ -174,13 +175,12 @@ position = Vector2( 42629.3, 4488.28 )
 
 [node name="Collectibles" type="Node2D" parent="Level" index="2"]
 
-editor/display_folded = true
 position = Vector2( 660.131, -1882.08 )
 
 [node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 13 )]
 
-position = Vector2( 44890.2, 4433.9 )
-scale = Vector2( 0.0348979, 0.0470226 )
+position = Vector2( 44893.5, 4447.39 )
+scale = Vector2( 0.184618, 0.158513 )
 
 [node name="FinishArea" parent="Level" index="3" instance=ExtResource( 14 )]
 
@@ -210,7 +210,6 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 
 [node name="UI" type="Node" parent="." index="2"]
 
-editor/display_folded = true
 script = ExtResource( 16 )
 
 [node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 17 )]

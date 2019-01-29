@@ -1,15 +1,18 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/ui_level_idea.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/Level Selection/LevelShortcut.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Prototype_MS02_Ver01_Konstantin_S.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Level1_konstantin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Level Selection/Level01_ProggerArt_Button.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Level Selection/Level01_ProggerArt_Button_Hovered.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/Level Selection/Star_Empty.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Scenes/BackToMenuInfo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Level Selection/Star_Empty.png" type="Texture" id=8]
+[ext_resource path="res://Levels/Level2_konstantin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Level4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/BackToMenuInfo.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -341,7 +344,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="LevelSelection" type="Node"]
+[node name="LevelSelection" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -353,6 +356,7 @@ texture = ExtResource( 2 )
 
 [node name="LevelShortcut" parent="." index="1" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 367.666, 726.894 )
 _sections_unfolded = [ "Pause", "Visibility" ]
 scene_to_load = ExtResource( 4 )
@@ -368,8 +372,9 @@ texture_focused = ExtResource( 6 )
 
 [node name="LevelShortcut2" parent="." index="2" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 662.203, 255.495 )
-scene_to_load = ExtResource( 4 )
+scene_to_load = ExtResource( 7 )
 
 [node name="Button" parent="LevelShortcut2" index="0"]
 
@@ -382,7 +387,7 @@ texture_focused = ExtResource( 6 )
 
 [node name="Sprite3" parent="LevelShortcut2" index="3"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Label" parent="LevelShortcut2" index="4"]
 
@@ -395,8 +400,9 @@ anims/Mouse_Hover_Down = SubResource( 2 )
 
 [node name="LevelShortcut3" parent="." index="3" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 1268.15, 253.988 )
-scene_to_load = ExtResource( 4 )
+scene_to_load = ExtResource( 9 )
 
 [node name="Button" parent="LevelShortcut3" index="0"]
 
@@ -409,11 +415,11 @@ texture_focused = ExtResource( 6 )
 
 [node name="Sprite2" parent="LevelShortcut3" index="2"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Sprite3" parent="LevelShortcut3" index="3"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Label" parent="LevelShortcut3" index="4"]
 
@@ -426,8 +432,9 @@ anims/Mouse_Hover_Down = SubResource( 4 )
 
 [node name="LevelShortcut4" parent="." index="4" instance=ExtResource( 3 )]
 
+editor/display_folded = true
 position = Vector2( 1557.51, 744.829 )
-scene_to_load = ExtResource( 4 )
+scene_to_load = ExtResource( 10 )
 
 [node name="Button" parent="LevelShortcut4" index="0"]
 
@@ -444,15 +451,15 @@ texture_focused = ExtResource( 6 )
 
 [node name="Sprite" parent="LevelShortcut4" index="1"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Sprite2" parent="LevelShortcut4" index="2"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Sprite3" parent="LevelShortcut4" index="3"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Label" parent="LevelShortcut4" index="4"]
 
@@ -463,7 +470,7 @@ text = "Best Time: -"
 anims/Mouse_Hover = SubResource( 5 )
 anims/Mouse_Hover_Down = SubResource( 6 )
 
-[node name="Return_to_Menu" parent="." index="5" instance=ExtResource( 8 )]
+[node name="Return_to_Menu" parent="." index="5" instance=ExtResource( 11 )]
 
 show_behind_parent = true
 anchor_left = 0.5
@@ -477,14 +484,14 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="BackToMenuInfo" parent="." index="7" instance=ExtResource( 10 )]
+[node name="BackToMenuInfo" parent="." index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 1609.65, 1024.01 )
 

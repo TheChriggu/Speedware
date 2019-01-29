@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Enviroment/Collectibles/Collectible_Icon_Floppy_Disk.png" type="Texture" id=1]
+[ext_resource path="res://Player/PlaceholderMandy.png" type="Texture" id=1]
 [ext_resource path="res://Enviroment/Collectibles/Collectible.gd" type="Script" id=2]
 [ext_resource path="res://Enviroment/Collectibles/Particles2D_POI.tscn" type="PackedScene" id=3]
 
@@ -52,15 +52,17 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[node name="Collectible" type="Sprite"]
+[node name="Collectible" type="Sprite" index="0"]
 
-position = Vector2( 0.602753, 2.18532 )
-scale = Vector2( 0.0348979, 0.0348979 )
+position = Vector2( 1.41251, -6.83555 )
+scale = Vector2( 0.423991, 0.423991 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
+position = Vector2( 2.01803, 0.743531 )
+scale = Vector2( 0.976765, 0.976765 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -74,6 +76,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
+position = Vector2( 3.81189, -0.587795 )
+scale = Vector2( 0.233098, 0.233098 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
@@ -88,7 +92,6 @@ blend_times = [  ]
 
 [node name="Particles2D_POI" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 0, 0 )
 scale = Vector2( 40.497, 41.0895 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

@@ -75,6 +75,8 @@ func SpeedboostMovement(delta):
 		LeanRight()
 	elif velocity.x < 0:
 		LeanLeft()
+	else:
+		isInSpeedboost = false
 	
 	
 	var force = Vector2(0, GRAVITY)

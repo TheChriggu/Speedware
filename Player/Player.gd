@@ -11,12 +11,6 @@ func _physics_process(delta):
 	else:
 		$ForwardLookingCamera.UpdateCamera($player.position, $player.velocity)
 
-#func _process(delta):
-#	if $player.velocity.x >= $player.WALK_MAX_SPEED:
-#		$BackgroundMusic.playerMaxSpeedReached = true
-#	else:
-#		$BackgroundMusic.playerMaxSpeedReached = false
-
 func SwitchColorToOrange():
 	pass
 

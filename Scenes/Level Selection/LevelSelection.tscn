@@ -359,11 +359,12 @@ scene_to_load = ExtResource( 4 )
 
 [node name="Button" parent="LevelShortcut" index="0"]
 
-focus_next = NodePath("../../LevelShortcut2/Button")
-focus_previous = NodePath("../../LevelShortcut4/Button")
+focus_neighbour_left = NodePath("../../LevelShortcut4/Button")
+focus_neighbour_top = NodePath("../../LevelShortcut2/Button")
+focus_neighbour_right = NodePath("../../LevelShortcut2/Button")
+focus_neighbour_bottom = NodePath("../../LevelShortcut2/Button")
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
-_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
 [node name="LevelShortcut2" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -372,11 +373,12 @@ scene_to_load = ExtResource( 4 )
 
 [node name="Button" parent="LevelShortcut2" index="0"]
 
-focus_next = NodePath("../../LevelShortcut3/Button")
-focus_previous = NodePath("../../LevelShortcut/Button")
+focus_neighbour_left = NodePath("../../LevelShortcut/Button")
+focus_neighbour_top = NodePath("../../LevelShortcut3/Button")
+focus_neighbour_right = NodePath("../../LevelShortcut3/Button")
+focus_neighbour_bottom = NodePath("../../LevelShortcut3/Button")
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
-_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
 [node name="Sprite3" parent="LevelShortcut2" index="3"]
 
@@ -398,11 +400,12 @@ scene_to_load = ExtResource( 4 )
 
 [node name="Button" parent="LevelShortcut3" index="0"]
 
-focus_next = NodePath("../../LevelShortcut4/Button")
-focus_previous = NodePath("../../LevelShortcut2/Button")
+focus_neighbour_left = NodePath("../../LevelShortcut2/Button")
+focus_neighbour_top = NodePath("../../LevelShortcut2/Button")
+focus_neighbour_right = NodePath("../../LevelShortcut4/Button")
+focus_neighbour_bottom = NodePath("../../LevelShortcut4/Button")
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
-_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
 [node name="Sprite2" parent="LevelShortcut3" index="2"]
 
@@ -432,11 +435,12 @@ margin_left = -55.0
 margin_top = -44.0
 margin_right = 57.0
 margin_bottom = 53.0
-focus_next = NodePath("../../Return_to_Menu")
-focus_previous = NodePath("../../LevelShortcut3/Button")
+focus_neighbour_left = NodePath("../../LevelShortcut3/Button")
+focus_neighbour_top = NodePath("../../LevelShortcut3/Button")
+focus_neighbour_right = NodePath("../../LevelShortcut/Button")
+focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
-_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
 [node name="Sprite" parent="LevelShortcut4" index="1"]
 

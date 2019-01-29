@@ -116,8 +116,11 @@ margin_top = 5.0
 margin_right = 916.0
 margin_bottom = 155.0
 rect_scale = Vector2( 1, 1 )
+focus_neighbour_top = NodePath("../Exit")
+focus_neighbour_bottom = NodePath("../LevelSelection")
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
+_sections_unfolded = [ "Focus", "Rect", "Textures" ]
 sceneToLoad = ExtResource( 7 )
 
 [node name="LevelSelection" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 4 )]
@@ -127,8 +130,11 @@ margin_top = 215.0
 margin_right = 916.0
 margin_bottom = 365.0
 rect_scale = Vector2( 1, 1 )
+focus_neighbour_top = NodePath("../StartGame")
+focus_neighbour_bottom = NodePath("../Chatlogs")
 texture_normal = ExtResource( 8 )
 texture_focused = ExtResource( 6 )
+_sections_unfolded = [ "Focus", "Rect", "Textures" ]
 sceneToLoad = ExtResource( 9 )
 
 [node name="Chatlogs" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 4 )]
@@ -138,8 +144,11 @@ margin_top = 425.0
 margin_right = 916.0
 margin_bottom = 575.0
 rect_scale = Vector2( 1, 1 )
+focus_neighbour_top = NodePath("../LevelSelection")
+focus_neighbour_bottom = NodePath("../Options")
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
+_sections_unfolded = [ "Focus", "Rect", "Textures" ]
 sceneToLoad = ExtResource( 10 )
 
 [node name="Options" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 4 )]
@@ -149,8 +158,11 @@ margin_top = 635.0
 margin_right = 916.0
 margin_bottom = 785.0
 rect_scale = Vector2( 1, 1 )
+focus_neighbour_top = NodePath("../Chatlogs")
+focus_neighbour_bottom = NodePath("../Exit")
 texture_normal = ExtResource( 11 )
 texture_focused = ExtResource( 6 )
+_sections_unfolded = [ "Focus", "Rect", "Textures" ]
 sceneToLoad = ExtResource( 12 )
 
 [node name="Exit" parent="Menu/CenterRow/Buttons" index="4" instance=ExtResource( 13 )]
@@ -161,9 +173,8 @@ margin_top = 845.0
 margin_right = 916.0
 margin_bottom = 995.0
 rect_scale = Vector2( 1, 1 )
-focus_neighbour_bottom = NodePath("../Start Game")
-focus_next = NodePath("../Continue")
-focus_previous = NodePath("../Chat_Logs")
+focus_neighbour_top = NodePath("../Options")
+focus_neighbour_bottom = NodePath("../StartGame")
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
 _sections_unfolded = [ "Focus", "Pause", "Rect", "Textures" ]

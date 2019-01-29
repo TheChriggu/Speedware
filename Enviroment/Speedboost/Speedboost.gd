@@ -11,8 +11,7 @@ func _ready():
 
 func _on_Area2D_area_entered(area):
 	#stop a previous animation from playing before starting this one
-	$AnimationPlayer.stop()
-	$AnimationPlayer.play("SpeedboostCollected")
+	
 	$Timer.start()
 	emit_signal("speedboost_start", Vector2(SPEED, 0).rotated(rotation))
 

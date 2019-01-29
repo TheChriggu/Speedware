@@ -12,8 +12,8 @@
 [ext_resource path="res://Tileset/Tileset_Bryan.tres" type="TileSet" id=10]
 [ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=12]
-[ext_resource path="res://Enviroment/Datastrings/LaserOrange.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Enviroment/Datastrings/LaserPurple.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Enviroment/Datastrings/Laser_0.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=16]
 [ext_resource path="res://UI/UI.gd" type="Script" id=17]
@@ -84,15 +84,13 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Level" type="Node" parent="." index="2"]
 
-editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="0"]
 
-scale = Vector2( 0.5, 0.5 )
 mode = 0
 tile_set = ExtResource( 10 )
-cell_size = Vector2( 128, 128 )
+cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2

@@ -1,11 +1,11 @@
 extends Node
 
 func _on_player_switched_color_to_orange():
-	$Level.SwitchColorToOrange()
+#	$Level.SwitchColorToOrange()
 	$UI.SwitchColorToOrange()
 
 func _on_player_switched_color_to_purple():
-	$Level.SwitchColorToPurple()
+#	$Level.SwitchColorToPurple()
 	$UI.SwitchColorToPurple()
 
 func _on_Speedboost_speedboost_start(speed):
@@ -33,3 +33,9 @@ func _on_FinishArea_finish_line_passed():
 
 func _on_BackgroundMusic_drum_beat():
 	$UI.MusicBeat()
+
+func _on_Lasers_laser_entered():
+	$Player.LaserEntered()
+
+func _on_Lasers_laser_exited():
+	$Player.LaserExited()

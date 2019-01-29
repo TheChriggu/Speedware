@@ -30,6 +30,8 @@ var isLeaningRight = false
 var isInSpeedboost = false
 var isAtFullspeed = false
 
+var isSwitchColorEnabled = true
+
 func _physics_process(delta):
 	#during speedboost controls are disabled and friction is not applied
 	if not isInSpeedboost:
@@ -143,7 +145,7 @@ func UIInteraction():
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
 	
-	if Input.is_action_just_pressed("switchColor"):
+	if Input.is_action_just_pressed("switchColor") && isSwitchColorEnabled:
 			SwitchColor()
 
 #Colorswitch Mechanic

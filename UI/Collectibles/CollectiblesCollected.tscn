@@ -2,8 +2,7 @@
 
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.gd" type="Script" id=1]
 [ext_resource path="res://UI/Collectibles/CollectiblesLabel.gd" type="Script" id=2]
-[ext_resource path="res://Enviroment/Collectibles/Collectible_Icon_Floppy_Disk.png" type="Texture" id=3]
-
+[ext_resource path="res://Player/PlaceholderMichelle.png" type="Texture" id=3]
 
 [node name="CollectiblesCollected" type="CanvasLayer"]
 
@@ -39,8 +38,8 @@ maxCollectibles = 0
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 1822.88, 28.5602 )
-scale = Vector2( 0.0456378, 0.0456378 )
+position = Vector2( 1815.27, 19.4181 )
+scale = Vector2( 0.135281, 0.135281 )
 texture = ExtResource( 3 )
 
 

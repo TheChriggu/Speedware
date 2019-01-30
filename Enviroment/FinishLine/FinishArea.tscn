@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/FinishLine/Finishline_Image.png" type="Texture" id=2]
-[ext_resource path="res://Sounds/FinishingSound.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=5]
+[ext_resource path="res://Player/PlaceholderRob.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/FinishingSound.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -66,7 +67,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ParticleGroup2:visible")
+tracks/4/path = NodePath("ParticleGroup/ParticleGroup2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -78,7 +79,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("ParticleGroup3:visible")
+tracks/5/path = NodePath("ParticleGroup/ParticleGroup3:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -90,24 +91,12 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("ParticleGroup4:visible")
+tracks/6/path = NodePath("ParticleGroup/ParticleGroup4:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("ParticleGroup5:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -140,7 +129,7 @@ initial_velocity = 1.0
 initial_velocity_random = 0.0
 angular_velocity = 0.0
 angular_velocity_random = 0.0
-orbit_velocity = 0.3
+orbit_velocity = -0.1
 orbit_velocity_random = 0.0
 linear_accel = 0.0
 linear_accel_random = 0.0
@@ -190,7 +179,7 @@ initial_velocity = 1.0
 initial_velocity_random = 0.0
 angular_velocity = 0.0
 angular_velocity_random = 0.0
-orbit_velocity = -0.3
+orbit_velocity = 0.1
 orbit_velocity_random = 0.0
 linear_accel = 0.0
 linear_accel_random = 0.0
@@ -219,10 +208,10 @@ _sections_unfolded = [ "Angle", "Color", "Gravity", "Orbit Velocity", "Scale", "
 size = 150
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="FinishArea" type="Node2D"]
+[node name="FinishArea" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
@@ -266,20 +255,21 @@ blend_times = [  ]
 
 [node name="ParticleGroup" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 visible = false
+position = Vector2( -1.36035, -69.3789 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Particles2D6" type="Particles2D" parent="ParticleGroup" index="0"]
 
-position = Vector2( 5.60115, 132.112 )
-rotation = 2.75521
+position = Vector2( 0.609772, 104.097 )
+rotation = 0.138621
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
+lifetime = 3.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 3.0
+speed_scale = 10.0
 explosiveness = 0.0
 randomness = 1.0
 fixed_fps = 0
@@ -288,91 +278,20 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 5 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D7" type="Particles2D" parent="ParticleGroup" index="1"]
+[node name="Particles2D3" type="Particles2D" parent="ParticleGroup" index="1"]
 
-position = Vector2( 6.6766, 117.055 )
-rotation = 2.75521
+position = Vector2( 28.626, 105.25 )
+rotation = 0.0732476
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D8" type="Particles2D" parent="ParticleGroup" index="2"]
-
-position = Vector2( 6.67662, 101.64 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D9" type="Particles2D" parent="ParticleGroup" index="3"]
-
-position = Vector2( 8.46907, 92.6784 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D3" type="Particles2D" parent="ParticleGroup" index="4"]
-
-position = Vector2( 21.6708, 92.7885 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
+lifetime = 4.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 3.0
@@ -384,101 +303,29 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 8 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D4" type="Particles2D" parent="ParticleGroup" index="5"]
-
-position = Vector2( 24.5826, 102.818 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D5" type="Particles2D" parent="ParticleGroup" index="6"]
-
-position = Vector2( 22.3179, 118.024 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D10" type="Particles2D" parent="ParticleGroup" index="7"]
-
-position = Vector2( 21.3473, 133.877 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="ParticleGroup2" type="Node2D" parent="." index="3"]
+[node name="ParticleGroup2" type="Node2D" parent="ParticleGroup" index="2"]
 
 editor/display_folded = true
-visible = false
-position = Vector2( -4, -139 )
+position = Vector2( -1.47987, -504.314 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Particles2D6" type="Particles2D" parent="ParticleGroup2" index="0"]
+[node name="Particles2D6" type="Particles2D" parent="ParticleGroup/ParticleGroup2" index="0"]
 
-position = Vector2( 5.60115, 132.112 )
-rotation = 2.75521
+position = Vector2( 0.609772, 104.097 )
+rotation = 0.138621
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
+lifetime = 3.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 3.0
+speed_scale = 10.0
 explosiveness = 0.0
 randomness = 1.0
 fixed_fps = 0
@@ -487,91 +334,20 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 5 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D7" type="Particles2D" parent="ParticleGroup2" index="1"]
+[node name="Particles2D3" type="Particles2D" parent="ParticleGroup/ParticleGroup2" index="1"]
 
-position = Vector2( 6.6766, 117.055 )
-rotation = 2.75521
+position = Vector2( 28.626, 105.25 )
+rotation = 0.0732476
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D8" type="Particles2D" parent="ParticleGroup2" index="2"]
-
-position = Vector2( 6.67662, 101.64 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D9" type="Particles2D" parent="ParticleGroup2" index="3"]
-
-position = Vector2( 8.46907, 92.6784 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D3" type="Particles2D" parent="ParticleGroup2" index="4"]
-
-position = Vector2( 21.6708, 92.7885 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
+lifetime = 4.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 3.0
@@ -583,101 +359,29 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 8 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D4" type="Particles2D" parent="ParticleGroup2" index="5"]
-
-position = Vector2( 24.5826, 102.818 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D5" type="Particles2D" parent="ParticleGroup2" index="6"]
-
-position = Vector2( 22.3179, 118.024 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D10" type="Particles2D" parent="ParticleGroup2" index="7"]
-
-position = Vector2( 21.3473, 133.877 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="ParticleGroup3" type="Node2D" parent="." index="4"]
+[node name="ParticleGroup3" type="Node2D" parent="ParticleGroup" index="3"]
 
 editor/display_folded = true
-visible = false
-position = Vector2( -8.10107, -278.437 )
+position = Vector2( -4.27769, -374.129 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Particles2D6" type="Particles2D" parent="ParticleGroup3" index="0"]
+[node name="Particles2D6" type="Particles2D" parent="ParticleGroup/ParticleGroup3" index="0"]
 
-position = Vector2( 5.60115, 132.112 )
-rotation = 2.75521
+position = Vector2( 0.609772, 104.097 )
+rotation = 0.138621
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
+lifetime = 3.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 3.0
+speed_scale = 10.0
 explosiveness = 0.0
 randomness = 1.0
 fixed_fps = 0
@@ -686,91 +390,20 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 5 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D7" type="Particles2D" parent="ParticleGroup3" index="1"]
+[node name="Particles2D3" type="Particles2D" parent="ParticleGroup/ParticleGroup3" index="1"]
 
-position = Vector2( 6.6766, 117.055 )
-rotation = 2.75521
+position = Vector2( 28.626, 105.25 )
+rotation = 0.0732476
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D8" type="Particles2D" parent="ParticleGroup3" index="2"]
-
-position = Vector2( 6.67662, 101.64 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D9" type="Particles2D" parent="ParticleGroup3" index="3"]
-
-position = Vector2( 8.46907, 92.6784 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D3" type="Particles2D" parent="ParticleGroup3" index="4"]
-
-position = Vector2( 21.6708, 92.7885 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
+lifetime = 4.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 3.0
@@ -782,101 +415,29 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 8 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D4" type="Particles2D" parent="ParticleGroup3" index="5"]
-
-position = Vector2( 24.5826, 102.818 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D5" type="Particles2D" parent="ParticleGroup3" index="6"]
-
-position = Vector2( 22.3179, 118.024 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D10" type="Particles2D" parent="ParticleGroup3" index="7"]
-
-position = Vector2( 21.3473, 133.877 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="ParticleGroup4" type="Node2D" parent="." index="5"]
+[node name="ParticleGroup4" type="Node2D" parent="ParticleGroup" index="4"]
 
 editor/display_folded = true
-visible = false
-position = Vector2( -1.94946, -413.772 )
+position = Vector2( 2.45705, -245.971 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Particles2D6" type="Particles2D" parent="ParticleGroup4" index="0"]
+[node name="Particles2D6" type="Particles2D" parent="ParticleGroup/ParticleGroup4" index="0"]
 
-position = Vector2( 5.60115, 132.112 )
-rotation = 2.75521
+position = Vector2( 0.609772, 104.097 )
+rotation = 0.138621
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
+lifetime = 3.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 3.0
+speed_scale = 10.0
 explosiveness = 0.0
 randomness = 1.0
 fixed_fps = 0
@@ -885,91 +446,20 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 5 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D7" type="Particles2D" parent="ParticleGroup4" index="1"]
+[node name="Particles2D3" type="Particles2D" parent="ParticleGroup/ParticleGroup4" index="1"]
 
-position = Vector2( 6.6766, 117.055 )
-rotation = 2.75521
+position = Vector2( 28.626, 105.25 )
+rotation = 0.0732476
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D8" type="Particles2D" parent="ParticleGroup4" index="2"]
-
-position = Vector2( 6.67662, 101.64 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D9" type="Particles2D" parent="ParticleGroup4" index="3"]
-
-position = Vector2( 8.46907, 92.6784 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D3" type="Particles2D" parent="ParticleGroup4" index="4"]
-
-position = Vector2( 21.6708, 92.7885 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
+lifetime = 4.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 3.0
@@ -981,101 +471,29 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 8 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D4" type="Particles2D" parent="ParticleGroup4" index="5"]
-
-position = Vector2( 24.5826, 102.818 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D5" type="Particles2D" parent="ParticleGroup4" index="6"]
-
-position = Vector2( 22.3179, 118.024 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D10" type="Particles2D" parent="ParticleGroup4" index="7"]
-
-position = Vector2( 21.3473, 133.877 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="ParticleGroup5" type="Node2D" parent="." index="6"]
+[node name="ParticleGroup5" type="Node2D" parent="ParticleGroup" index="5"]
 
 editor/display_folded = true
-visible = false
-position = Vector2( 6.25281, -571.664 )
+position = Vector2( -3.44664, -142.3 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Particles2D6" type="Particles2D" parent="ParticleGroup5" index="0"]
+[node name="Particles2D6" type="Particles2D" parent="ParticleGroup/ParticleGroup5" index="0"]
 
-position = Vector2( 5.60115, 132.112 )
-rotation = 2.75521
+position = Vector2( 0.609772, 104.097 )
+rotation = 0.138621
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
+lifetime = 3.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 3.0
+speed_scale = 10.0
 explosiveness = 0.0
 randomness = 1.0
 fixed_fps = 0
@@ -1084,91 +502,20 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 5 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D7" type="Particles2D" parent="ParticleGroup5" index="1"]
+[node name="Particles2D3" type="Particles2D" parent="ParticleGroup/ParticleGroup5" index="1"]
 
-position = Vector2( 6.6766, 117.055 )
-rotation = 2.75521
+position = Vector2( 28.626, 105.25 )
+rotation = 0.0732476
+scale = Vector2( 0.05, 0.05 )
 emitting = true
 amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D8" type="Particles2D" parent="ParticleGroup5" index="2"]
-
-position = Vector2( 6.67662, 101.64 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D9" type="Particles2D" parent="ParticleGroup5" index="3"]
-
-position = Vector2( 8.46907, 92.6784 )
-rotation = 2.75521
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 5 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
-
-[node name="Particles2D3" type="Particles2D" parent="ParticleGroup5" index="4"]
-
-position = Vector2( 21.6708, 92.7885 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
+lifetime = 4.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 3.0
@@ -1180,94 +527,22 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 8 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Particles2D4" type="Particles2D" parent="ParticleGroup5" index="5"]
+[node name="LinePassedSoundEffect" type="AudioStreamPlayer" parent="." index="3"]
 
-position = Vector2( 24.5826, 102.818 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D5" type="Particles2D" parent="ParticleGroup5" index="6"]
-
-position = Vector2( 22.3179, 118.024 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="Particles2D10" type="Particles2D" parent="ParticleGroup5" index="7"]
-
-position = Vector2( 21.3473, 133.877 )
-rotation = -2.83825
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 8 )
-texture = null
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
-
-[node name="LinePassedSoundEffect" type="AudioStreamPlayer" parent="." index="7"]
-
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="8"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
 
 layer = 99
 offset = Vector2( 0, 0 )
@@ -1275,7 +550,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Label" type="Label" parent="." index="9"]
+[node name="Label" type="Label" parent="." index="5"]
 
 visible = false
 anchor_left = 0.0
@@ -1302,14 +577,14 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="LinePassedMusic" type="AudioStreamPlayer" parent="." index="10"]
+[node name="LinePassedMusic" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "LinePassedSong"
+bus = "Master"
 
 [connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
 

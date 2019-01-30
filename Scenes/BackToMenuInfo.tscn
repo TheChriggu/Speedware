@@ -4,13 +4,36 @@
 [ext_resource path="res://Scenes/Buttons/Xbox_button_B.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/Custom_Font_Custom_Credits.tres" type="DynamicFont" id=3]
 
-[node name="BackToMenuInfo" type="Node2D"]
+[node name="BackToMenuInfo" type="Button"]
 
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -83.0
+margin_top = -66.0
+margin_right = 322.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="BButtonTexture" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0.592102, -0.0895119 )
+position = Vector2( 36.5921, 41.9105 )
 scale = Vector2( 0.0392268, 0.0392268 )
 texture = ExtResource( 2 )
 
@@ -20,10 +43,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 43.0
-margin_top = -17.0
-margin_right = 297.0
-margin_bottom = 15.0
+margin_left = 83.0
+margin_top = 27.0
+margin_right = 337.0
+margin_bottom = 59.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -36,5 +59,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="pressed" from="." to="." method="_on_BackToMenuInfo_pressed"]
+
+[connection signal="toggled" from="." to="." method="_on_BackToMenuInfo_toggled"]
 
 

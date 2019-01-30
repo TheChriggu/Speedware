@@ -9,12 +9,13 @@
 [ext_resource path="res://Levels/Level1_Jonas.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Main Menu/MenuButtons/level_selection.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Main Menu/Chatlogs.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Main Menu/Chatlogs/Chatlogs.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Main Menu/MenuButtons/options.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Main Menu/Options.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Player/Character_Runing Pose_gelb_nadim.png" type="Texture" id=14]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=15]
+
 
 [node name="TitleScreen" type="Control"]
 

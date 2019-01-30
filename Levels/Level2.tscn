@@ -23,7 +23,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=21]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=22]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -33,6 +33,7 @@ environment = ExtResource( 2 )
 
 [node name="Player" type="Node" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 4 )]
@@ -56,6 +57,7 @@ CURRENT_ANCHOR = 0
 
 [node name="Level" type="Node" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="0"]
@@ -70,6 +72,7 @@ SPEED = 2000
 
 [node name="Lasers" type="Node2D" parent="Level" index="1"]
 
+editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 11 )
 
@@ -179,6 +182,7 @@ position = Vector2( 42629.3, 4488.28 )
 
 [node name="Collectibles" type="Node2D" parent="Level" index="2"]
 
+editor/display_folded = true
 position = Vector2( 660.131, -1882.08 )
 
 [node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 14 )]

@@ -1,13 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Main Menu/Options.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Main Menu/ui_options_idea.jpg" type="Texture" id=2]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sounds/DBZ Instant Transmission Sound effect.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Scenes/BackToMenuInfo.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sounds/DBZ Instant Transmission Sound effect.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/BackToMenuInfo.tscn" type="PackedScene" id=5]
 
-[node name="Options" type="Node"]
+[node name="Options" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -98,28 +97,21 @@ ticks_on_borders = false
 focus_mode = 2
 _sections_unfolded = [ "Focus" ]
 
-[node name="Return_to_Menu" parent="." index="4" instance=ExtResource( 4 )]
+[node name="SFXExample" type="AudioStreamPlayer" parent="." index="4"]
 
-margin_left = 910.0
-margin_top = 1020.0
-margin_right = 910.0
-margin_bottom = 1020.0
-focus_next = NodePath("../MusicSlider")
-focus_previous = NodePath("../SFXSlider")
-_sections_unfolded = [ "Focus", "Mouse" ]
-
-[node name="SFXExample" type="AudioStreamPlayer" parent="." index="5"]
-
-stream = ExtResource( 5 )
+stream = ExtResource( 4 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="BackToMenuInfo" parent="." index="6" instance=ExtResource( 6 )]
+[node name="BackToMenuInfo" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 1603.03, 1038.53 )
+margin_left = 1469.0
+margin_top = 966.0
+margin_right = 1874.0
+margin_bottom = 1052.0
 
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_MusicSlider_value_changed"]
 

@@ -60,18 +60,17 @@ script = ExtResource( 9 )
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="0"]
 
-editor/display_folded = true
 position = Vector2( -803.782, 886.093 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 10 )]
 
-position = Vector2( 1465.49, -335.204 )
+position = Vector2( 1341.01, 140.215 )
+scale = Vector2( 0.40684, 0.40684 )
 SPEED = 2000
 
 [node name="Lasers" type="Node2D" parent="Level" index="1"]
 
-editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 11 )
 
@@ -181,13 +180,13 @@ position = Vector2( 42629.3, 4488.28 )
 
 [node name="Collectibles" type="Node2D" parent="Level" index="2"]
 
-editor/display_folded = true
 position = Vector2( 660.131, -1882.08 )
 
 [node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 14 )]
 
-position = Vector2( 44890.2, 4433.9 )
-scale = Vector2( 0.0348979, 0.0470226 )
+position = Vector2( 44867.4, 4395.28 )
+scale = Vector2( 0.05, 0.05 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="FinishArea" parent="Level" index="3" instance=ExtResource( 15 )]
 

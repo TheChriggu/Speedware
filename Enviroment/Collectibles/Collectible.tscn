@@ -52,12 +52,13 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[node name="Collectible" type="Sprite" index="0"]
+[node name="Collectible" type="Sprite"]
 
 position = Vector2( 1.41251, -6.83555 )
 scale = Vector2( 0.423991, 0.423991 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 

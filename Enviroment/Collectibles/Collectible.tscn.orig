@@ -54,13 +54,15 @@ tracks/2/keys = {
 
 [node name="Collectible" type="Sprite"]
 
-position = Vector2( 0.602753, 2.18532 )
-scale = Vector2( 0.0348979, 0.0348979 )
+position = Vector2( 27.53, 19.282 )
+scale = Vector2( 0.37298, 0.37298 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
+position = Vector2( -10.7022, -5.88482 )
+scale = Vector2( 3.84902, 3.84902 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -74,6 +76,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
+position = Vector2( 3.81189, -0.587795 )
+scale = Vector2( 0.233098, 0.233098 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
@@ -88,8 +92,8 @@ blend_times = [  ]
 
 [node name="Particles2D_POI" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -2.17244, 2.81785 )
-scale = Vector2( 29.987, 30.4257 )
+position = Vector2( 8.58307e-006, 0 )
+scale = Vector2( 40.497, 41.0895 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 

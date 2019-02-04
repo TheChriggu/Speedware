@@ -257,7 +257,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="FinishArea" type="Node2D" index="0"]
+[node name="FinishArea" type="Node2D"]
 
 pause_mode = 2
 script = ExtResource( 1 )

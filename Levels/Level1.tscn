@@ -22,7 +22,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=20]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=21]
 
-[node name="Level1_konstantin" type="Node"]
+[node name="Level1_konstantin" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -556,7 +556,8 @@ position = Vector2( 19682.8, 2601.41 )
 
 [node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 13 )]
 
-position = Vector2( -35.0977, 25.8279 )
+position = Vector2( -151.02, 164.067 )
+scale = Vector2( 0.10843, 0.10843 )
 
 [node name="FinishArea" parent="Level" index="3" instance=ExtResource( 14 )]
 

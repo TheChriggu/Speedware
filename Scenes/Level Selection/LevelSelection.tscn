@@ -1005,7 +1005,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="LevelSelection" type="Node" index="0"]
+[node name="LevelSelection" type="Node"]
 
 script = ExtResource( 1 )
 

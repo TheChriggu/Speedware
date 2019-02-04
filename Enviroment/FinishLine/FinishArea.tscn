@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/FinishLine/Finishline_Image.png" type="Texture" id=2]
@@ -6,6 +6,18 @@
 [ext_resource path="res://Sounds/FinishingSound.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=6]
+[ext_resource path="res://Enviroment/FinishLine/FinishLinePassedPopup.png" type="Texture" id=7]
+[ext_resource path="res://Enviroment/FinishLine/MenuButtonUnhovered.png" type="Texture" id=8]
+[ext_resource path="res://Enviroment/FinishLine/MenuButtonHovered.png" type="Texture" id=9]
+[ext_resource path="res://Enviroment/FinishLine/BackToMenuButton.gd" type="Script" id=10]
+[ext_resource path="res://Enviroment/FinishLine/NextLevelUnhovered.png" type="Texture" id=11]
+[ext_resource path="res://Enviroment/FinishLine/NextLevelHovered.png" type="Texture" id=12]
+[ext_resource path="res://Enviroment/FinishLine/NextLevelButton.gd" type="Script" id=13]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelUnhovered.png" type="Texture" id=14]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=15]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=16]
+[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=17]
+[ext_resource path="res://Enviroment/FinishLine/ChatlogFinishPlaceholder.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -101,6 +113,32 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Popup/Control:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("Popup/Control/PopupBackground/NextLevel")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "popupOpen"
+} ]
 }
 
 [sub_resource type="Gradient" id=3]
@@ -211,10 +249,22 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="FinishArea" type="Node2D"]
+[sub_resource type="DynamicFont" id=10]
 
+size = 25
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[node name="FinishArea" type="Node2D" index="0"]
+
+pause_mode = 2
 script = ExtResource( 1 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -261,6 +311,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Particles2D6" type="Particles2D" parent="ParticleGroup" index="0"]
 
+visible = false
 position = Vector2( 0.609772, 104.097 )
 rotation = 0.138621
 scale = Vector2( 0.05, 0.05 )
@@ -286,6 +337,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="Particles2D3" type="Particles2D" parent="ParticleGroup" index="1"]
 
+visible = false
 position = Vector2( 28.626, 105.25 )
 rotation = 0.0732476
 scale = Vector2( 0.05, 0.05 )
@@ -312,6 +364,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 [node name="ParticleGroup2" type="Node2D" parent="ParticleGroup" index="2"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( -1.47987, -504.314 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -368,6 +421,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 [node name="ParticleGroup3" type="Node2D" parent="ParticleGroup" index="3"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( -4.27769, -374.129 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -424,6 +478,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 [node name="ParticleGroup4" type="Node2D" parent="ParticleGroup" index="4"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( 2.45705, -245.971 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -480,6 +535,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 [node name="ParticleGroup5" type="Node2D" parent="ParticleGroup" index="5"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( -3.44664, -142.3 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -586,8 +642,166 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="Popup" type="CanvasLayer" parent="." index="7"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Control" type="Control" parent="Popup" index="0"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Visibility" ]
+
+[node name="PopupBackground" type="Sprite" parent="Popup/Control" index="0"]
+
+position = Vector2( -61.5314, 13.257 )
+scale = Vector2( 1.94104, 1.94104 )
+texture = ExtResource( 7 )
+
+[node name="BackToMenu" type="TextureButton" parent="Popup/Control/PopupBackground" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -44.0
+margin_top = 43.0
+margin_right = 31.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_left = NodePath("../ReplayLevel")
+focus_neighbour_right = NodePath("../NextLevel")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_focused = ExtResource( 9 )
+script = ExtResource( 10 )
+_sections_unfolded = [ "Focus", "Textures" ]
+
+[node name="NextLevel" type="TextureButton" parent="Popup/Control/PopupBackground" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 111.0
+margin_top = 33.0
+margin_right = 186.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_left = NodePath("../BackToMenu")
+focus_neighbour_right = NodePath("../ReplayLevel")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 11 )
+texture_focused = ExtResource( 12 )
+script = ExtResource( 13 )
+_sections_unfolded = [ "Focus", "Textures" ]
+scene_to_load = null
+
+[node name="ReplayLevel" type="TextureButton" parent="Popup/Control/PopupBackground" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -189.0
+margin_top = 38.0
+margin_right = -114.0
+margin_bottom = 117.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_left = NodePath("../NextLevel")
+focus_neighbour_right = NodePath("../BackToMenu")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 14 )
+texture_focused = ExtResource( 15 )
+script = ExtResource( 16 )
+_sections_unfolded = [ "Focus", "Textures" ]
+
+[node name="Time" type="Label" parent="Popup/Control/PopupBackground" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -91.0
+margin_top = -66.0
+margin_right = 61.0
+margin_bottom = -17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 17 )
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+FinishTime = 0
+
+[node name="ChatlogPlaceholder" type="Sprite" parent="Popup/Control" index="1"]
+
+position = Vector2( 557.034, 12.4219 )
+scale = Vector2( 1.15124, 1.15124 )
+texture = ExtResource( 18 )
+
 [connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
 
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
+
 [connection signal="finished" from="LinePassedSoundEffect" to="." method="_on_LinePassedSoundEffect_finished"]
+
+[connection signal="pressed" from="Popup/Control/PopupBackground/BackToMenu" to="Popup/Control/PopupBackground/BackToMenu" method="_on_BackToMenu_pressed"]
+
+[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
+
+[connection signal="pressed" from="Popup/Control/PopupBackground/ReplayLevel" to="Popup/Control/PopupBackground/ReplayLevel" method="_on_ReplayLevel_pressed"]
 
 

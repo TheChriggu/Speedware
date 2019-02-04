@@ -11,3 +11,8 @@ func PrintCurrentTime():
 
 func FinishLinePassed():
 	set_process(false)
+	SetFinishTime()
+
+func SetFinishTime():
+	var FinishTime = CurrentTimer
+	return FinishTime

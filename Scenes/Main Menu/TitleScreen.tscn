@@ -13,11 +13,10 @@
 [ext_resource path="res://Scenes/Main Menu/MenuButtons/options.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Main Menu/Options.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Buttons/ExitButton.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Player/Character_Runing Pose_gelb_nadim.png" type="Texture" id=14]
+[ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=14]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=15]
 
-
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -79,7 +78,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 36.0
 margin_right = 1920.0
-margin_bottom = 1036.0
+margin_bottom = 1026.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -96,8 +95,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 916.0
-margin_bottom = 1000.0
+margin_right = 958.0
+margin_bottom = 990.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -113,9 +112,9 @@ _sections_unfolded = [ "Anchor", "Pause", "Size Flags", "custom_constants" ]
 
 editor/display_folded = true
 margin_left = 0.0
-margin_top = 5.0
-margin_right = 916.0
-margin_bottom = 155.0
+margin_top = 0.0
+margin_right = 958.0
+margin_bottom = 150.0
 rect_scale = Vector2( 1, 1 )
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../LevelSelection")
@@ -127,9 +126,9 @@ sceneToLoad = ExtResource( 7 )
 [node name="LevelSelection" parent="Menu/CenterRow/Buttons" index="1" instance=ExtResource( 4 )]
 
 margin_left = 0.0
-margin_top = 215.0
-margin_right = 916.0
-margin_bottom = 365.0
+margin_top = 210.0
+margin_right = 958.0
+margin_bottom = 360.0
 rect_scale = Vector2( 1, 1 )
 focus_neighbour_top = NodePath("../StartGame")
 focus_neighbour_bottom = NodePath("../Chatlogs")
@@ -141,9 +140,9 @@ sceneToLoad = ExtResource( 9 )
 [node name="Chatlogs" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 4 )]
 
 margin_left = 0.0
-margin_top = 425.0
-margin_right = 916.0
-margin_bottom = 575.0
+margin_top = 420.0
+margin_right = 958.0
+margin_bottom = 570.0
 rect_scale = Vector2( 1, 1 )
 focus_neighbour_top = NodePath("../LevelSelection")
 focus_neighbour_bottom = NodePath("../Options")
@@ -155,9 +154,9 @@ sceneToLoad = ExtResource( 10 )
 [node name="Options" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 4 )]
 
 margin_left = 0.0
-margin_top = 635.0
-margin_right = 916.0
-margin_bottom = 785.0
+margin_top = 630.0
+margin_right = 958.0
+margin_bottom = 780.0
 rect_scale = Vector2( 1, 1 )
 focus_neighbour_top = NodePath("../Chatlogs")
 focus_neighbour_bottom = NodePath("../Exit")
@@ -170,9 +169,9 @@ sceneToLoad = ExtResource( 12 )
 
 pause_mode = 2
 margin_left = 0.0
-margin_top = 845.0
-margin_right = 916.0
-margin_bottom = 995.0
+margin_top = 840.0
+margin_right = 958.0
+margin_bottom = 990.0
 rect_scale = Vector2( 1, 1 )
 focus_neighbour_top = NodePath("../Options")
 focus_neighbour_bottom = NodePath("../StartGame")
@@ -187,9 +186,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 920.0
+margin_left = 962.0
 margin_right = 1920.0
-margin_bottom = 1000.0
+margin_bottom = 990.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -205,8 +204,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1000.0
-margin_bottom = 1000.0
+margin_left = 398.0
+margin_top = 359.0
+margin_right = 559.0
+margin_bottom = 630.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -222,7 +223,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 1040.0
+margin_top = 1030.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 0, 0 )

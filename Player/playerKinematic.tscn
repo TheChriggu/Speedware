@@ -582,6 +582,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Particles2DPurpleZero" type="Particles2D" parent="." index="1"]
 
+pause_mode = 2
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
@@ -603,10 +604,11 @@ texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 [node name="Particles2DOrangeOne" type="Particles2D" parent="." index="2"]
 
+pause_mode = 2
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
@@ -628,7 +630,7 @@ texture = ExtResource( 6 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 

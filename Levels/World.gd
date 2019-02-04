@@ -28,8 +28,8 @@ func _on_Collectible_collected():
 	$UI.CollectibleCollected()
 
 func _on_FinishArea_finish_line_passed():
+	get_tree().paused = true
 	$UI.FinishLinePassed()
-
 
 func _on_BackgroundMusic_drum_beat():
 	$UI.MusicBeat()

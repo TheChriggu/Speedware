@@ -1393,10 +1393,10 @@ bus = "Master"
 
 [node name="BackToMenuInfo" parent="." index="13" instance=ExtResource( 14 )]
 
-margin_left = 1384.0
-margin_top = 1010.0
-margin_right = 1789.0
-margin_bottom = 1096.0
+margin_left = 1394.0
+margin_top = 987.0
+margin_right = 1799.0
+margin_bottom = 1073.0
 
 
 [editable path="LevelShortcut"]

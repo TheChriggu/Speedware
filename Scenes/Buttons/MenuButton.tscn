@@ -4,9 +4,7 @@
 [ext_resource path="res://Scenes/Main Menu/MenuButtons/Test_Button_Hovered.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Main Menu/MenuButton.gd" type="Script" id=3]
 
-
-
-[node name="Start Game" type="TextureButton"]
+[node name="Start Game" type="TextureButton" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -34,10 +32,6 @@ texture_focused = ExtResource( 2 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Rect", "Textures" ]
 sceneToLoad = null
-
-[connection signal="focus_entered" from="." to="." method="_on_Start_Game_focus_entered"]
-
-[connection signal="focus_exited" from="." to="." method="_on_Start_Game_focus_exited"]
 
 [connection signal="pressed" from="." to="." method="_on_Start_Game_pressed"]
 

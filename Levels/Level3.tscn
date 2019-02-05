@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
@@ -16,15 +16,16 @@
 [ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=17]
-[ext_resource path="res://UI/UI.gd" type="Script" id=18]
-[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=19]
-[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=20]
-[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=21]
-[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Levels/Level4.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=18]
+[ext_resource path="res://UI/UI.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=20]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=21]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=22]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=23]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=24]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -79,6 +80,7 @@ script = ExtResource( 10 )
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="0"]
 
+editor/display_folded = true
 position = Vector2( -803.782, 886.093 )
 
 [node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 11 )]
@@ -603,12 +605,13 @@ scale = Vector2( 0.0348979, 0.0470226 )
 [node name="FinishArea" parent="Level" index="3" instance=ExtResource( 16 )]
 
 position = Vector2( 91437.4, 18167.3 )
+scene_to_load = ExtResource( 17 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="4"]
 
 position = Vector2( -884.856, 952.646 )
 mode = 0
-tile_set = ExtResource( 17 )
+tile_set = ExtResource( 18 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -629,19 +632,19 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 [node name="UI" type="Node" parent="." index="3"]
 
 editor/display_folded = true
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
-[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 19 )]
+[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 20 )]
 
-[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 20 )]
+[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 21 )]
 
-[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 21 )]
+[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 22 )]
 
-[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 22 )]
+[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 23 )]
 
 COLLECTIBLES_IN_THIS_LEVEL = 1
 
-[node name="Timer" parent="UI" index="4" instance=ExtResource( 23 )]
+[node name="Timer" parent="UI" index="4" instance=ExtResource( 24 )]
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 

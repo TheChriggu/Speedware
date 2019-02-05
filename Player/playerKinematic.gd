@@ -35,10 +35,12 @@ var isSwitchColorEnabled = true
 func _physics_process(delta):
 	#during speedboost controls are disabled and friction is not applied
 	if not isInSpeedboost:
+		BoostTrailOff()
 		HorizontalMovement(delta)
 		VerticalMovement(delta)
 	else:
 		SpeedboostMovement(delta)
+		BoostTrailOn()
 	UIInteraction()
 
 		
@@ -77,7 +79,6 @@ func SpeedboostMovement(delta):
 		LeanLeft()
 	else:
 		isInSpeedboost = false
-	
 	
 	var force = Vector2(0, GRAVITY)
 	# Integrate forces to velocity
@@ -173,3 +174,11 @@ func CheckFullspeed():
 	else:
 		isAtFullspeed = false
 		emit_signal("is_not_at_fullspeed")
+
+#ParcticlesIfBoosted
+func BoostTrailOn():
+	$Sprite/ParticlesIfBoosted.emitting = true
+
+func BoostTrailOff():
+	$Sprite/ParticlesIfBoosted.emitting = false
+	

@@ -76,6 +76,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Time", "Trans
 
 [node name="Particles2D" type="Particles2D" parent="." index="0"]
 
+pause_mode = 2
 light_mask = 4
 material = SubResource( 2 )
 emitting = true
@@ -96,10 +97,11 @@ texture = ExtResource( 1 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 [node name="Particles2D2" type="Particles2D" parent="." index="1"]
 
+pause_mode = 2
 light_mask = 4
 emitting = true
 amount = 200
@@ -119,6 +121,6 @@ texture = ExtResource( 1 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 

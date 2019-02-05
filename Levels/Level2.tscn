@@ -56,10 +56,12 @@ CURRENT_ANCHOR = 0
 
 [node name="Level" type="Node" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="0"]
 
+editor/display_folded = true
 position = Vector2( -803.782, 886.093 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
@@ -71,6 +73,7 @@ SPEED = 2000
 
 [node name="Lasers" type="Node2D" parent="Level" index="1"]
 
+editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 11 )
 
@@ -180,6 +183,7 @@ position = Vector2( 42629.3, 4488.28 )
 
 [node name="Collectibles" type="Node2D" parent="Level" index="2"]
 
+editor/display_folded = true
 position = Vector2( 660.131, -1882.08 )
 
 [node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 14 )]

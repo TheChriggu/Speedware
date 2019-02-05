@@ -1,13 +1,13 @@
 [gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
-[ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=2]
-[ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=3]
-[ext_resource path="res://Player/Particles/TrailEffect/zero_white.png" type="Texture" id=4]
-[ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=5]
-[ext_resource path="res://Player/Particles/TrailEffect/one_white.png" type="Texture" id=6]
-[ext_resource path="res://Sounds/FinishedChrisSwitch.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Player/charakter_orange_sprite.png" type="Texture" id=8]
+[ext_resource path="res://Player/charakter_orange_sprite.png" type="Texture" id=2]
+[ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=3]
+[ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=4]
+[ext_resource path="res://Player/Particles/TrailEffect/zero_white.png" type="Texture" id=5]
+[ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=6]
+[ext_resource path="res://Player/Particles/TrailEffect/one_white.png" type="Texture" id=7]
+[ext_resource path="res://Sounds/FinishedChrisSwitch.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Player/FlamesAnimationPlaceholder.png" type="Texture" id=9]
 [ext_resource path="res://Player/SwitcheffectExplosion.tscn" type="PackedScene" id=10]
 
@@ -397,7 +397,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Particles2DPurpleZero:emitting")
@@ -437,7 +437,21 @@ tracks/5/keys = {
 "method": "FireParticles"
 }, {
 "args": [  ],
-"method": "StopParticles"
+"method": "StopaParticles"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("SwitcheffectExplosion")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "OrangeToPurple"
 } ]
 }
 
@@ -480,7 +494,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Particles2DOrangeOne:emitting")
@@ -521,6 +535,20 @@ tracks/5/keys = {
 }, {
 "args": [  ],
 "method": "StopParticles"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("SwitcheffectExplosion")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "PurpleToOrange"
 } ]
 }
 
@@ -644,13 +672,13 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Animation", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
 input_pickable = false
-collision_layer = 30
-collision_mask = 6
+collision_layer = 29
+collision_mask = 5
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
@@ -677,11 +705,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ParticlesIfBoosted" type="Particles2D" parent="Sprite" index="0"]
 
-self_modulate = Color( 0.0213165, 0.496094, 0.37369, 1 )
+self_modulate = Color( 0, 0.1875, 0.13916, 0.745882 )
 show_behind_parent = true
 rotation = 2.98023e-008
 emitting = true
-amount = 20
+amount = 30
 lifetime = 2.0
 one_shot = false
 preprocess = 0.0
@@ -694,7 +722,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 1
 process_material = SubResource( 3 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -705,9 +733,9 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
-emitting = true
+emitting = false
 amount = 200
-lifetime = 10.0
+lifetime = 15.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 10.0
@@ -718,8 +746,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 3 )
-texture = ExtResource( 4 )
+process_material = ExtResource( 4 )
+texture = ExtResource( 5 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -727,11 +755,12 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 
 [node name="Particles2DOrangeOne" type="Particles2D" parent="." index="2"]
 
+show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
-emitting = false
+emitting = true
 amount = 200
-lifetime = 10.0
+lifetime = 15.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 10.0
@@ -742,8 +771,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 5 )
-texture = ExtResource( 6 )
+process_material = ExtResource( 6 )
+texture = ExtResource( 7 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -776,7 +805,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="ColorswitchSound" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 8 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

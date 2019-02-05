@@ -35,7 +35,7 @@ flags = 4
 gradient = SubResource( 4 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=8]
+[sub_resource type="ParticlesMaterial" id=6]
 
 render_priority = 0
 trail_divisor = 2
@@ -76,7 +76,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread", "Trail" ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 112.534, 113.315 )
@@ -108,7 +108,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 8 )
+process_material = SubResource( 6 )
 texture = ExtResource( 2 )
 normal_map = null
 h_frames = 1
@@ -133,7 +133,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 8 )
+process_material = SubResource( 6 )
 texture = ExtResource( 2 )
 normal_map = null
 h_frames = 1
@@ -158,7 +158,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 8 )
+process_material = SubResource( 6 )
 texture = ExtResource( 2 )
 normal_map = null
 h_frames = 1
@@ -167,6 +167,7 @@ _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Tran
 
 [node name="Area2D" type="Area2D" parent="." index="3"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -182,7 +183,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -1.45703, 8.23422 )
 scale = Vector2( 0.18561, 3.08041 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ring2" type="Sprite" parent="." index="4"]

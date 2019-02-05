@@ -9,6 +9,6 @@ func StopParticles():
 	$Particles2D.emitting = false
 
 func OrangeToPurple():
-	$Particles2D.self_modulate = Color ( 242, 1, 179)
+	$Particles2D.process_material = load("res://Player/Particles/PurpleSwitcheffectExplosion.tres")
 func PurpleToOrange():
-	$Particles2D.self_modulate = Color (253, 152, 0)
+	$Particles2D.process_material = load("res://Player/Particles/OrangeSwitcheffectExplosion.tres")

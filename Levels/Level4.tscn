@@ -28,7 +28,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=26]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=27]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -1102,6 +1102,7 @@ texture = ExtResource( 17 )
 
 [node name="Collectibles" type="Node2D" parent="Level" index="2"]
 
+editor/display_folded = true
 position = Vector2( 660.131, -1865.08 )
 
 [node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 18 )]
@@ -1117,9 +1118,6 @@ scale = Vector2( 0.0348979, 0.0470226 )
 [node name="FinishArea" parent="Level" index="3" instance=ExtResource( 19 )]
 
 position = Vector2( 49314.8, 1968.68 )
-
-[node name="NextLevel" parent="Level/FinishArea/Popup/Control/PopupBackground" index="1"]
-
 scene_to_load = ExtResource( 20 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="4"]
@@ -1720,4 +1718,3 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 
-[editable path="Level/FinishArea"]

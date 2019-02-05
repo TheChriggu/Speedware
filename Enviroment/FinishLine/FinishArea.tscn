@@ -798,9 +798,9 @@ texture = ExtResource( 17 )
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/BackToMenu" to="Popup/Control/PopupBackground/BackToMenu" method="_on_BackToMenu_pressed"]
 
-[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
-
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
+
+[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/ReplayLevel" to="Popup/Control/PopupBackground/ReplayLevel" method="_on_ReplayLevel_pressed"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/FinishLine/Finishline_Image.png" type="Texture" id=2]
@@ -12,12 +12,11 @@
 [ext_resource path="res://Enviroment/FinishLine/BackToMenuButton.gd" type="Script" id=10]
 [ext_resource path="res://Enviroment/FinishLine/NextLevelUnhovered.png" type="Texture" id=11]
 [ext_resource path="res://Enviroment/FinishLine/NextLevelHovered.png" type="Texture" id=12]
-[ext_resource path="res://Enviroment/FinishLine/NextLevelButton.gd" type="Script" id=13]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelUnhovered.png" type="Texture" id=14]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=15]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=16]
-[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=17]
-[ext_resource path="res://Enviroment/FinishLine/ChatlogFinishPlaceholder.png" type="Texture" id=18]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelUnhovered.png" type="Texture" id=13]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=14]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=15]
+[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=16]
+[ext_resource path="res://Enviroment/FinishLine/ChatlogFinishPlaceholder.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -265,6 +264,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
+scene_to_load = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -728,9 +728,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 11 )
 texture_focused = ExtResource( 12 )
-script = ExtResource( 13 )
 _sections_unfolded = [ "Focus", "Textures" ]
-scene_to_load = null
 
 [node name="ReplayLevel" type="TextureButton" parent="Popup/Control/PopupBackground" index="2"]
 
@@ -755,9 +753,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 14 )
-texture_focused = ExtResource( 15 )
-script = ExtResource( 16 )
+texture_normal = ExtResource( 13 )
+texture_focused = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Focus", "Textures" ]
 
 [node name="Time" type="Label" parent="Popup/Control/PopupBackground" index="3"]
@@ -782,7 +780,7 @@ text = "Time"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 FinishTime = 0
 
@@ -790,7 +788,7 @@ FinishTime = 0
 
 position = Vector2( 557.034, 12.4219 )
 scale = Vector2( 1.15124, 1.15124 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
 
@@ -801,6 +799,8 @@ texture = ExtResource( 18 )
 [connection signal="pressed" from="Popup/Control/PopupBackground/BackToMenu" to="Popup/Control/PopupBackground/BackToMenu" method="_on_BackToMenu_pressed"]
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
+
+[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/ReplayLevel" to="Popup/Control/PopupBackground/ReplayLevel" method="_on_ReplayLevel_pressed"]
 

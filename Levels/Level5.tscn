@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -14,16 +14,17 @@
 [ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=15]
-[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=16]
-[ext_resource path="res://UI/UI.gd" type="Script" id=17]
-[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=18]
-[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=19]
-[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=20]
-[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=21]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Levels/Level7.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=16]
+[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=17]
+[ext_resource path="res://UI/UI.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=20]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=21]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -33,7 +34,7 @@ script = ExtResource( 2 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 32961.9, 9902.7 )
+position = Vector2( -227.125, 994.361 )
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 4 )]
 
@@ -70,6 +71,7 @@ script = ExtResource( 9 )
 
 [node name="Lasers" type="Node2D" parent="Level" index="0"]
 
+editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 10 )
 
@@ -272,14 +274,14 @@ scale = Vector2( 0.3, 0.3 )
 
 [node name="FinishArea" parent="Level" index="2" instance=ExtResource( 14 )]
 
-visible = false
-position = Vector2( 3805.09, 77.8135 )
+position = Vector2( 59369.8, 19274.4 )
+scene_to_load = ExtResource( 15 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 
 position = Vector2( -884.856, 952.646 )
 mode = 0
-tile_set = ExtResource( 15 )
+tile_set = ExtResource( 16 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -299,36 +301,37 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="4"]
 
+editor/display_folded = true
 position = Vector2( -803.782, 886.093 )
 
-[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 16 )]
+[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 17 )]
 
 position = Vector2( 12557, 2609.82 )
 rotation = 0.785398
 SPEED = 4000
 LENGTH = 0.25
 
-[node name="Speedboost2" parent="Level/Speedboosters" index="1" instance=ExtResource( 16 )]
+[node name="Speedboost2" parent="Level/Speedboosters" index="1" instance=ExtResource( 17 )]
 
 position = Vector2( 35400.2, 9911.21 )
 rotation = 4.08029
 SPEED = 4000
 LENGTH = 0.25
 
-[node name="Speedboost3" parent="Level/Speedboosters" index="2" instance=ExtResource( 16 )]
+[node name="Speedboost3" parent="Level/Speedboosters" index="2" instance=ExtResource( 17 )]
 
 position = Vector2( 34438.3, 8995.46 )
 rotation = 5.49779
 SPEED = 3300
 LENGTH = 0.25
 
-[node name="Speedboost4" parent="Level/Speedboosters" index="3" instance=ExtResource( 16 )]
+[node name="Speedboost4" parent="Level/Speedboosters" index="3" instance=ExtResource( 17 )]
 
 position = Vector2( 46741.5, 11727 )
 SPEED = 4000
 LENGTH = 0.25
 
-[node name="Speedboost5" parent="Level/Speedboosters" index="4" instance=ExtResource( 16 )]
+[node name="Speedboost5" parent="Level/Speedboosters" index="4" instance=ExtResource( 17 )]
 
 position = Vector2( 55794.3, 18378.8 )
 SPEED = 4000
@@ -336,19 +339,19 @@ LENGTH = 0.25
 
 [node name="UI" type="Node" parent="." index="2"]
 
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 
-[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 18 )]
+[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 19 )]
 
-[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 19 )]
+[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 20 )]
 
-[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 20 )]
+[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 21 )]
 
-[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 21 )]
+[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 22 )]
 
 COLLECTIBLES_IN_THIS_LEVEL = 1
 
-[node name="Timer" parent="UI" index="4" instance=ExtResource( 22 )]
+[node name="Timer" parent="UI" index="4" instance=ExtResource( 23 )]
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 
@@ -366,9 +369,9 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [connection signal="laser_exited" from="Level/Lasers" to="." method="_on_Lasers_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
-
 [connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 

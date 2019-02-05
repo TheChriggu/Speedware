@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=2]
@@ -8,21 +8,22 @@
 [ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=9]
-[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=10]
-[ext_resource path="res://UI/UI.gd" type="Script" id=11]
-[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=12]
-[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=13]
-[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=14]
-[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=15]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Player/Player.gd" type="Script" id=17]
-[ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Camera/ForwardLookingCamera.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Camera/HeadCamCollider.gd" type="Script" id=20]
-[ext_resource path="res://Camera/CamCollider.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Player/ParallaxBackground.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Sounds/Background Music/BackgroundMusic.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=10]
+[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/UI.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=15]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=16]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Player/Player.gd" type="Script" id=18]
+[ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Camera/ForwardLookingCamera.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Camera/HeadCamCollider.gd" type="Script" id=21]
+[ext_resource path="res://Camera/CamCollider.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Player/ParallaxBackground.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Sounds/Background Music/BackgroundMusic.tscn" type="PackedScene" id=24]
 
 [node name="Level" type="Node" index="0"]
 
@@ -2092,14 +2093,14 @@ scale = Vector2( 0.0348979, 0.0470226 )
 
 [node name="FinishArea" parent="Level" index="2" instance=ExtResource( 8 )]
 
-visible = false
-position = Vector2( 3805.09, 77.8135 )
+position = Vector2( 39220, 1299.46 )
+scene_to_load = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 
 position = Vector2( -884.856, 952.646 )
 mode = 0
-tile_set = ExtResource( 9 )
+tile_set = ExtResource( 10 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -2121,14 +2122,14 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 
 position = Vector2( -803.782, 886.093 )
 
-[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 10 )]
+[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( 39146.4, 572.242 )
 rotation = -0.785398
 SPEED = 4000
 LENGTH = 10.0
 
-[node name="Speedboost2" parent="Level/Speedboosters" index="1" instance=ExtResource( 10 )]
+[node name="Speedboost2" parent="Level/Speedboosters" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( 38997.8, 203.922 )
 rotation = 25.1327
@@ -2138,55 +2139,55 @@ LENGTH = 10.0
 [node name="UI" type="Node" parent="." index="2"]
 
 editor/display_folded = true
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
-[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 12 )]
+[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 13 )]
 
-[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 13 )]
+[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 14 )]
 
-[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 14 )]
+[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 15 )]
 
-[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 15 )]
+[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 16 )]
 
 COLLECTIBLES_IN_THIS_LEVEL = 1
 
-[node name="Timer" parent="UI" index="4" instance=ExtResource( 16 )]
+[node name="Timer" parent="UI" index="4" instance=ExtResource( 17 )]
 
 [node name="Player" type="Node" parent="." index="3"]
 
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 
-[node name="player" parent="Player" index="0" instance=ExtResource( 18 )]
+[node name="player" parent="Player" index="0" instance=ExtResource( 19 )]
 
-position = Vector2( 33674.5, 1099.63 )
+position = Vector2( -217.563, 1079.51 )
 
-[node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 19 )]
+[node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 20 )]
 
 _sections_unfolded = [ "Transform" ]
 
 [node name="HeadCamCollider" type="Node2D" parent="Player/ForwardLookingCamera" index="2"]
 
-script = ExtResource( 20 )
+script = ExtResource( 21 )
 FIXED_CAMERA = false
 CURRENT_ANCHOR = 0
 
-[node name="CamCollider" parent="Player/ForwardLookingCamera/HeadCamCollider" index="0" instance=ExtResource( 21 )]
+[node name="CamCollider" parent="Player/ForwardLookingCamera/HeadCamCollider" index="0" instance=ExtResource( 22 )]
 
 position = Vector2( 1338.48, -186.5 )
 collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 FIXED_CAMERA = false
 
-[node name="CamCollider2" parent="Player/ForwardLookingCamera/HeadCamCollider" index="1" instance=ExtResource( 21 )]
+[node name="CamCollider2" parent="Player/ForwardLookingCamera/HeadCamCollider" index="1" instance=ExtResource( 22 )]
 
 position = Vector2( 1603.49, -284.107 )
 scale = Vector2( 1.29804, 1 )
 collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
-[node name="ParallaxBackground" parent="Player" index="2" instance=ExtResource( 22 )]
+[node name="ParallaxBackground" parent="Player" index="2" instance=ExtResource( 23 )]
 
-[node name="BackgroundMusic" parent="Player" index="3" instance=ExtResource( 23 )]
+[node name="BackgroundMusic" parent="Player" index="3" instance=ExtResource( 24 )]
 
 [connection signal="laser_entered" from="Level/Lasers" to="." method="_on_Lasers_laser_entered"]
 

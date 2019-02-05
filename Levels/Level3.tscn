@@ -25,7 +25,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=23]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=24]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -39,11 +39,12 @@ environment = ExtResource( 2 )
 
 [node name="Player" type="Node" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 81081.2, 18203.6 )
+position = Vector2( -224.437, 1068.25 )
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 5 )]
 
@@ -76,6 +77,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Level" type="Node" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="0"]

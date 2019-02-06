@@ -15,7 +15,7 @@ light_mode = 2
 custom_solver_bias = 0.0
 extents = Vector2( 2.16841, 273.185 )
 
-[node name="LaserBlau" type="Sprite" index="0"]
+[node name="LaserBlau" type="Sprite"]
 
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
@@ -25,16 +25,16 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 modulate = Color( 0.949371, 0.0742188, 1, 1 )
 material = SubResource( 1 )
-position = Vector2( 1.26051, -136.474 )
+position = Vector2( -0.0336337, -128.046 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 emitting = true
 amount = 200
-lifetime = 5.2
+lifetime = 5.13
 one_shot = false
 preprocess = 6.0
-speed_scale = 3.0
-explosiveness = 0.1
+speed_scale = 6.0
+explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
@@ -48,7 +48,34 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+[node name="PartikelPurple2" type="Particles2D" parent="." index="1"]
+
+modulate = Color( 0.949371, 0.0742188, 1, 1 )
+material = SubResource( 1 )
+position = Vector2( -0.0336337, -128.046 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+emitting = true
+amount = 200
+lifetime = 5.13
+one_shot = false
+preprocess = 6.0
+speed_scale = 5.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = ExtResource( 3 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
 position = Vector2( -10.0298, 3.81154 )
 input_pickable = false
@@ -67,7 +94,7 @@ scale = Vector2( 3.55962, 0.468951 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="2"]
+[node name="Area2D" type="Area2D" parent="." index="3"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

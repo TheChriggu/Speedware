@@ -5,7 +5,7 @@
 [ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=3]
 [ext_resource path="res://Enviroment/Datastrings/spark particle.png" type="Texture" id=4]
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id=4]
 
 render_priority = 0
 blend_mode = 1
@@ -62,22 +62,22 @@ modulate = Color( 1, 1, 1, 0.933686 )
 position = Vector2( 6.37469, 1.599 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="PartikelOrange" type="Particles2D" parent="." index="0"]
 
-modulate = Color( 1, 0.634277, 0.164063, 1 )
-material = SubResource( 1 )
-position = Vector2( -0.602821, -134.212 )
+modulate = Color( 1, 0.692382, 0.296875, 1 )
+material = SubResource( 4 )
+position = Vector2( 0.255738, -128.651 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 emitting = true
 amount = 200
-lifetime = 5.2
+lifetime = 5.13
 one_shot = false
 preprocess = 6.0
-speed_scale = 3.0
-explosiveness = 0.1
+speed_scale = 6.0
+explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
@@ -91,7 +91,34 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+[node name="PartikelOrange2" type="Particles2D" parent="." index="1"]
+
+modulate = Color( 1, 0.642822, 0.183594, 1 )
+material = SubResource( 4 )
+position = Vector2( 0.255738, -128.651 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+emitting = true
+amount = 200
+lifetime = 5.13
+one_shot = false
+preprocess = 6.0
+speed_scale = 5.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = ExtResource( 3 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
 input_pickable = false
 collision_layer = 2
@@ -109,7 +136,7 @@ scale = Vector2( 0.377114, 0.490001 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Particles2D" type="Particles2D" parent="." index="2"]
+[node name="Particles2D" type="Particles2D" parent="." index="3"]
 
 visible = false
 modulate = Color( 1, 0, 0.234375, 1 )
@@ -135,7 +162,7 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Time", "Visibility" ]
 
-[node name="Area2D" type="Area2D" parent="." index="3"]
+[node name="Area2D" type="Area2D" parent="." index="4"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

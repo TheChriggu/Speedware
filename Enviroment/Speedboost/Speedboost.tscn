@@ -84,7 +84,7 @@ extents = Vector2( 112.534, 113.315 )
 [node name="Speedboost" type="Sprite"]
 
 position = Vector2( 776.714, 44.7581 )
-scale = Vector2( 9.0068, 9.0068 )
+scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 SPEED = 1800

@@ -1,13 +1,13 @@
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
-[ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=2]
+[ext_resource path="res://Player/character_rendering_violet.png" type="Texture" id=2]
 [ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=3]
 [ext_resource path="res://Player/Particles/TrailEffect/zero_white.png" type="Texture" id=4]
 [ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=5]
 [ext_resource path="res://Player/Particles/TrailEffect/one_white.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/FinishedChrisSwitch.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Player/charakter_orange_sprite.png" type="Texture" id=8]
+[ext_resource path="res://Player/character_rendering_orange.png" type="Texture" id=8]
 [ext_resource path="res://Player/FlamesAnimationPlaceholder.png" type="Texture" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -574,9 +574,9 @@ IS_ORANGE = false
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -3.19598, -2.79172 )
+position = Vector2( 3.82557, -1.63696 )
 rotation = 1.03076
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.126828, 0.126828 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 

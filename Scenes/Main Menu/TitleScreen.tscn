@@ -23,7 +23,7 @@
 [ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=21]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=22]
 
-[node name="TitleScreen" type="Control" index="0"]
+[node name="TitleScreen" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0

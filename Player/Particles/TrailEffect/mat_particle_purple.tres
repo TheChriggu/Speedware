@@ -1,17 +1,30 @@
-[gd_resource type="ParticlesMaterial" format=2]
+[gd_resource type="ParticlesMaterial" load_steps=3 format=2]
+
+[sub_resource type="Curve" id=1]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.787152, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+
+flags = 4
+width = 2048
+curve = SubResource( 1 )
 
 [resource]
 
 render_priority = 0
 trail_divisor = 1
 emission_shape = 2
-emission_box_extents = Vector3( 1, 1, 1 )
+emission_box_extents = Vector3( 5, 0, 0 )
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
 spread = 0.0
 flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
+gravity = Vector3( 0, -3, 0 )
 initial_velocity = 0.0
 initial_velocity_random = 0.0
 angular_velocity = -4.30479e-042
@@ -30,7 +43,8 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.1
 scale_random = 0.08
-color = Color( 0.858521, 0.046875, 1, 1 )
+scale_curve = SubResource( 2 )
+color = Color( 1, 0.729767, 0.0117188, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0

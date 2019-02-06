@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Enviroment/Speedboost/Speedboost.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/Speedboost/speedboostarrowsprite.png" type="Texture" id=2]
@@ -16,7 +16,7 @@ light_mode = 0
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 0.0273438 ), 0.0, 0.0, 0, 0, Vector2( 0.287106, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.650922, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.0273438 ), 0.0, 0.0, 0, 0, Vector2( 0.483646, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.841159, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=3]
 
@@ -27,7 +27,7 @@ curve = SubResource( 2 )
 [sub_resource type="Gradient" id=4]
 
 offsets = PoolRealArray( 0, 1 )
-colors = PoolColorArray( 0.0514984, 0.292969, 0.123185, 1, 0, 0.996094, 0.412445, 1 )
+colors = PoolColorArray( 0, 0.921875, 0.77063, 1, 0, 0.996094, 0.412445, 1 )
 
 [sub_resource type="GradientTexture" id=5]
 
@@ -35,27 +35,12 @@ flags = 4
 gradient = SubResource( 4 )
 width = 2048
 
-[sub_resource type="Curve" id=6]
-
-min_value = 0.0
-max_value = 1.0
-bake_resolution = 100
-_data = [ Vector2( 0.00786383, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=7]
-
-flags = 4
-width = 2048
-curve = SubResource( 6 )
-
-[sub_resource type="ParticlesMaterial" id=8]
+[sub_resource type="ParticlesMaterial" id=6]
 
 render_priority = 0
-trail_divisor = 1
-trail_size_modifier = SubResource( 7 )
+trail_divisor = 2
 trail_color_modifier = SubResource( 5 )
-emission_shape = 1
-emission_sphere_radius = 100.0
+emission_shape = 0
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
@@ -78,10 +63,10 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 0.1
+scale = 0.33
 scale_random = 0.0
 scale_curve = SubResource( 3 )
-color = Color( 0.274749, 1, 0.0429688, 1 )
+color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -91,27 +76,27 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread", "Trail" ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 112.534, 113.315 )
 
-[node name="Speedboost" type="Sprite" index="0"]
+[node name="Speedboost" type="Sprite"]
 
 position = Vector2( 776.714, 44.7581 )
-scale = Vector2( 0.35092, 0.35092 )
+scale = Vector2( 9.0068, 9.0068 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 SPEED = 1800
 LENGTH = 1.5
 
 [node name="Particles2D" type="Particles2D" parent="." index="0"]
 
 material = SubResource( 1 )
-position = Vector2( 92.4271, 8.23421 )
+position = Vector2( -10.3909, -37.4009 )
 scale = Vector2( 3, 3 )
 emitting = true
-amount = 100
+amount = 3
 lifetime = 1.0
 one_shot = false
 preprocess = 0.0
@@ -123,15 +108,66 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 8 )
+process_material = SubResource( 6 )
 texture = ExtResource( 2 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="Area2D" type="Area2D" parent="." index="1"]
+[node name="Particles2D2" type="Particles2D" parent="." index="1"]
 
+material = SubResource( 1 )
+position = Vector2( 152.864, 78.2135 )
+scale = Vector2( 3, 3 )
+emitting = true
+amount = 3
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 6 )
+texture = ExtResource( 2 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="Particles2D3" type="Particles2D" parent="." index="2"]
+
+material = SubResource( 1 )
+position = Vector2( -9.88024, 187.705 )
+scale = Vector2( 3, 3 )
+emitting = true
+amount = 3
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 6 )
+texture = ExtResource( 2 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -147,24 +183,24 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -1.45703, 8.23422 )
 scale = Vector2( 0.18561, 3.08041 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Ring2" type="Sprite" parent="." index="2"]
+[node name="Ring2" type="Sprite" parent="." index="4"]
 
 visible = false
 position = Vector2( 100, 0 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Ring1" type="Sprite" parent="." index="3"]
+[node name="Ring1" type="Sprite" parent="." index="5"]
 
 visible = false
 position = Vector2( 190, 0 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Timer" type="Timer" parent="." index="4"]
+[node name="Timer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 1.0

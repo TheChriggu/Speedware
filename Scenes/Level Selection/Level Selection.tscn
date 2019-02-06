@@ -7,13 +7,6 @@
 [ext_resource path="res://Scenes/Level Selection/Star_Empty.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=6]
 
-
-
-
-
-
-
-
 [node name="Level Selection" type="Node"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]

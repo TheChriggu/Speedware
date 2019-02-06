@@ -5,8 +5,6 @@
 [ext_resource path="res://Player/Particles/TrailEffect/mat_particle_orange.tres" type="Material" id=3]
 [ext_resource path="res://Player/Particles/TrailEffect/zero_white.png" type="Texture" id=4]
 
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "ColorSwitch_Purple_to_Yellow"
@@ -107,20 +105,19 @@ tracks/0/keys = {
 
 [node name="Node2D" type="Node2D"]
 
-editor/display_folded = true
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
 [node name="Particles2D" type="Particles2D" parent="." index="0"]
 
-position = Vector2( 4.80345, 0.00578095 )
+position = Vector2( 1.14636, -3.18195 )
 scale = Vector2( 4, 4 )
 emitting = true
-amount = 30
+amount = 200
 lifetime = 3.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 1.5
+speed_scale = 5.0
 explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0

@@ -1,0 +1,835 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Levels/World.gd" type="Script" id=1]
+[ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
+[ext_resource path="res://Player/Player.gd" type="Script" id=3]
+[ext_resource path="res://Player/playerKinematic.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Camera/ForwardLookingCamera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Camera/HeadCamCollider.gd" type="Script" id=6]
+[ext_resource path="res://Camera/CamCollider.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player/ParallaxBackground.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sounds/Background Music/BackgroundMusic.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=10]
+[ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=11]
+[ext_resource path="res://Enviroment/Datastrings/Laser_0.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=16]
+[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=17]
+[ext_resource path="res://UI/UI.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=20]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=21]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
+
+[node name="Level" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+
+environment = ExtResource( 2 )
+
+[node name="Player" type="Node" parent="." index="1"]
+
+editor/display_folded = true
+script = ExtResource( 3 )
+
+[node name="player" parent="Player" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( -234.614, 1065.2 )
+
+[node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 5 )]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="HeadCamCollider" type="Node2D" parent="Player/ForwardLookingCamera" index="2"]
+
+script = ExtResource( 6 )
+FIXED_CAMERA = false
+CURRENT_ANCHOR = 0
+
+[node name="CamCollider" parent="Player/ForwardLookingCamera/HeadCamCollider" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( -599.781, -376.112 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+FIXED_CAMERA = false
+
+[node name="CamCollider2" parent="Player/ForwardLookingCamera/HeadCamCollider" index="1" instance=ExtResource( 7 )]
+
+position = Vector2( -468.201, -389.447 )
+scale = Vector2( 1.29804, 1 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="ParallaxBackground" parent="Player" index="2" instance=ExtResource( 8 )]
+
+[node name="BackgroundMusic" parent="Player" index="3" instance=ExtResource( 9 )]
+
+[node name="Level" type="Node" parent="." index="2"]
+
+script = ExtResource( 10 )
+
+[node name="Lasers" type="Node2D" parent="Level" index="0"]
+
+editor/display_folded = true
+position = Vector2( 1457.38, -2001.32 )
+script = ExtResource( 11 )
+
+[node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 12 )]
+
+position = Vector2( 3436.9, 3213.56 )
+
+[node name="LaserOrange6" parent="Level/Lasers" index="1" instance=ExtResource( 12 )]
+
+position = Vector2( 3436.9, 2957.56 )
+
+[node name="LaserOrange2" parent="Level/Lasers" index="2" instance=ExtResource( 12 )]
+
+position = Vector2( 1707.36, 2246.49 )
+
+[node name="LaserOrange7" parent="Level/Lasers" index="3" instance=ExtResource( 12 )]
+
+position = Vector2( 1707.36, 1990.49 )
+
+[node name="LaserOrange3" parent="Level/Lasers" index="4" instance=ExtResource( 12 )]
+
+position = Vector2( 8921.99, 3154.2 )
+rotation = 1.5708
+
+[node name="LaserOrange8" parent="Level/Lasers" index="5" instance=ExtResource( 12 )]
+
+position = Vector2( 9177.99, 3154.2 )
+rotation = 1.5708
+
+[node name="LaserOrange9" parent="Level/Lasers" index="6" instance=ExtResource( 12 )]
+
+position = Vector2( 9433.99, 3154.2 )
+rotation = 1.5708
+
+[node name="LaserOrange10" parent="Level/Lasers" index="7" instance=ExtResource( 12 )]
+
+position = Vector2( 9689.99, 3154.2 )
+rotation = 1.5708
+
+[node name="LaserOrange11" parent="Level/Lasers" index="8" instance=ExtResource( 12 )]
+
+position = Vector2( 9945.99, 3154.2 )
+rotation = 1.5708
+
+[node name="LaserOrange4" parent="Level/Lasers" index="9" instance=ExtResource( 12 )]
+
+position = Vector2( 9765.82, 3020.42 )
+
+[node name="LaserOrange5" parent="Level/Lasers" index="10" instance=ExtResource( 12 )]
+
+position = Vector2( 12519.3, 3019.92 )
+
+[node name="LaserOrange12" parent="Level/Lasers" index="11" instance=ExtResource( 12 )]
+
+position = Vector2( 14159.7, 3019.92 )
+
+[node name="LaserOrange13" parent="Level/Lasers" index="12" instance=ExtResource( 12 )]
+
+position = Vector2( 6425.93, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange32" parent="Level/Lasers" index="13" instance=ExtResource( 12 )]
+
+position = Vector2( 10522, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange24" parent="Level/Lasers" index="14" instance=ExtResource( 12 )]
+
+position = Vector2( 8473.96, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange41" parent="Level/Lasers" index="15" instance=ExtResource( 12 )]
+
+position = Vector2( 12570, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange20" parent="Level/Lasers" index="16" instance=ExtResource( 12 )]
+
+position = Vector2( 7449.93, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange43" parent="Level/Lasers" index="17" instance=ExtResource( 12 )]
+
+position = Vector2( 11546, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange28" parent="Level/Lasers" index="18" instance=ExtResource( 12 )]
+
+position = Vector2( 9497.96, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange39" parent="Level/Lasers" index="19" instance=ExtResource( 12 )]
+
+position = Vector2( 13594, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange14" parent="Level/Lasers" index="20" instance=ExtResource( 12 )]
+
+position = Vector2( 6681.93, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange31" parent="Level/Lasers" index="21" instance=ExtResource( 12 )]
+
+position = Vector2( 10778, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange23" parent="Level/Lasers" index="22" instance=ExtResource( 12 )]
+
+position = Vector2( 8729.96, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange36" parent="Level/Lasers" index="23" instance=ExtResource( 12 )]
+
+position = Vector2( 12826, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange19" parent="Level/Lasers" index="24" instance=ExtResource( 12 )]
+
+position = Vector2( 7705.93, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange38" parent="Level/Lasers" index="25" instance=ExtResource( 12 )]
+
+position = Vector2( 11802, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange27" parent="Level/Lasers" index="26" instance=ExtResource( 12 )]
+
+position = Vector2( 9753.96, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange42" parent="Level/Lasers" index="27" instance=ExtResource( 12 )]
+
+position = Vector2( 13850, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange16" parent="Level/Lasers" index="28" instance=ExtResource( 12 )]
+
+position = Vector2( 6937.93, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange29" parent="Level/Lasers" index="29" instance=ExtResource( 12 )]
+
+position = Vector2( 11034, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange21" parent="Level/Lasers" index="30" instance=ExtResource( 12 )]
+
+position = Vector2( 8985.96, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange33" parent="Level/Lasers" index="31" instance=ExtResource( 12 )]
+
+position = Vector2( 13082, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange17" parent="Level/Lasers" index="32" instance=ExtResource( 12 )]
+
+position = Vector2( 7961.93, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange35" parent="Level/Lasers" index="33" instance=ExtResource( 12 )]
+
+position = Vector2( 12058, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange25" parent="Level/Lasers" index="34" instance=ExtResource( 12 )]
+
+position = Vector2( 10010, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange44" parent="Level/Lasers" index="35" instance=ExtResource( 12 )]
+
+position = Vector2( 14106, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange15" parent="Level/Lasers" index="36" instance=ExtResource( 12 )]
+
+position = Vector2( 7193.93, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange30" parent="Level/Lasers" index="37" instance=ExtResource( 12 )]
+
+position = Vector2( 11290, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange22" parent="Level/Lasers" index="38" instance=ExtResource( 12 )]
+
+position = Vector2( 9241.96, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange18" parent="Level/Lasers" index="39" instance=ExtResource( 12 )]
+
+position = Vector2( 8217.93, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange26" parent="Level/Lasers" index="40" instance=ExtResource( 12 )]
+
+position = Vector2( 10266, 4561.96 )
+rotation = 1.5708
+
+[node name="LaserOrange34" parent="Level/Lasers" index="41" instance=ExtResource( 12 )]
+
+position = Vector2( 13338, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange37" parent="Level/Lasers" index="42" instance=ExtResource( 12 )]
+
+position = Vector2( 12314, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange40" parent="Level/Lasers" index="43" instance=ExtResource( 12 )]
+
+position = Vector2( 14362, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserOrange45" parent="Level/Lasers" index="44" instance=ExtResource( 12 )]
+
+position = Vector2( 14617.9, 4561.97 )
+rotation = 1.5708
+
+[node name="LaserBlau" parent="Level/Lasers" index="45" instance=ExtResource( 13 )]
+
+position = Vector2( -1391.11, 3042.76 )
+
+[node name="LaserBlau2" parent="Level/Lasers" index="46" instance=ExtResource( 13 )]
+
+position = Vector2( 1305.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau7" parent="Level/Lasers" index="47" instance=ExtResource( 13 )]
+
+position = Vector2( 1561.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau9" parent="Level/Lasers" index="48" instance=ExtResource( 13 )]
+
+position = Vector2( 1817.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau8" parent="Level/Lasers" index="49" instance=ExtResource( 13 )]
+
+position = Vector2( 2073.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau10" parent="Level/Lasers" index="50" instance=ExtResource( 13 )]
+
+position = Vector2( 2329.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau11" parent="Level/Lasers" index="51" instance=ExtResource( 13 )]
+
+position = Vector2( 2585.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau12" parent="Level/Lasers" index="52" instance=ExtResource( 13 )]
+
+position = Vector2( 2841.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau15" parent="Level/Lasers" index="53" instance=ExtResource( 13 )]
+
+position = Vector2( 3097.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau13" parent="Level/Lasers" index="54" instance=ExtResource( 13 )]
+
+position = Vector2( 3353.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau14" parent="Level/Lasers" index="55" instance=ExtResource( 13 )]
+
+position = Vector2( 3609.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau16" parent="Level/Lasers" index="56" instance=ExtResource( 13 )]
+
+position = Vector2( 3865.92, 3154.29 )
+rotation = 1.5708
+
+[node name="LaserBlau3" parent="Level/Lasers" index="57" instance=ExtResource( 13 )]
+
+position = Vector2( 1889.72, 3211.19 )
+
+[node name="LaserBlau17" parent="Level/Lasers" index="58" instance=ExtResource( 13 )]
+
+position = Vector2( 1889.72, 2955.19 )
+
+[node name="LaserBlau4" parent="Level/Lasers" index="59" instance=ExtResource( 13 )]
+
+position = Vector2( 6425.53, 3279.06 )
+rotation = 1.5708
+
+[node name="LaserBlau18" parent="Level/Lasers" index="60" instance=ExtResource( 13 )]
+
+position = Vector2( 6681.53, 3279.06 )
+rotation = 1.5708
+
+[node name="LaserBlau19" parent="Level/Lasers" index="61" instance=ExtResource( 13 )]
+
+position = Vector2( 6937.53, 3279.06 )
+rotation = 1.5708
+
+[node name="LaserBlau20" parent="Level/Lasers" index="62" instance=ExtResource( 13 )]
+
+position = Vector2( 7073.41, 3019.63 )
+
+[node name="LaserBlau21" parent="Level/Lasers" index="63" instance=ExtResource( 13 )]
+
+position = Vector2( 9098.13, 3019.63 )
+
+[node name="LaserBlau5" parent="Level/Lasers" index="64" instance=ExtResource( 13 )]
+
+position = Vector2( 12185.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau22" parent="Level/Lasers" index="65" instance=ExtResource( 13 )]
+
+position = Vector2( 12441.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau23" parent="Level/Lasers" index="66" instance=ExtResource( 13 )]
+
+position = Vector2( 12697.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau24" parent="Level/Lasers" index="67" instance=ExtResource( 13 )]
+
+position = Vector2( 12953.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau26" parent="Level/Lasers" index="68" instance=ExtResource( 13 )]
+
+position = Vector2( 13209.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau25" parent="Level/Lasers" index="69" instance=ExtResource( 13 )]
+
+position = Vector2( 13465.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau28" parent="Level/Lasers" index="70" instance=ExtResource( 13 )]
+
+position = Vector2( 13721.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau27" parent="Level/Lasers" index="71" instance=ExtResource( 13 )]
+
+position = Vector2( 13977.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau30" parent="Level/Lasers" index="72" instance=ExtResource( 13 )]
+
+position = Vector2( 14233.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau29" parent="Level/Lasers" index="73" instance=ExtResource( 13 )]
+
+position = Vector2( 14489.8, 3154.04 )
+rotation = 1.5708
+
+[node name="LaserBlau6" parent="Level/Lasers" index="74" instance=ExtResource( 13 )]
+
+position = Vector2( 13394, 3017.87 )
+
+[node name="Collectibles" type="Node2D" parent="Level" index="1"]
+
+editor/display_folded = true
+position = Vector2( 660.131, -1882.08 )
+
+[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 14 )]
+
+position = Vector2( 1200.44, 107.52 )
+scale = Vector2( 0.0348979, 0.0470226 )
+
+[node name="FinishArea" parent="Level" index="2" instance=ExtResource( 15 )]
+
+position = Vector2( 2066.13, -360.306 )
+
+[node name="TileMap" type="TileMap" parent="Level" index="3"]
+
+position = Vector2( -884.856, 952.646 )
+mode = 0
+tile_set = ExtResource( 16 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 4
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -131065, 0, 0, -131059, 0, 0, -131058, 0, 0, -65529, 0, 0, -65523, 1610612739, 0, -65522, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 196633, 0, 0, 196634, 0, 0, 196635, 0, 0, 196636, 0, 0, 196637, 0, 0, 196638, 0, 0, 196639, 0, 0, 196640, 0, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 196644, 0, 0, 196645, 0, 0, 196646, 0, 0, 196647, 0, 0, 196648, 0, 0, 196649, 0, 0, 196650, 0, 0, 196651, 0, 0, 196652, 0, 0, 196653, 0, 0, 196654, 0, 0, 196655, 0, 0, 196656, 0, 0, 196657, 0, 0, 196658, 0, 0, 196659, 0, 0, 196660, 0, 0, 196661, 0, 0, 196662, 4, 0, 196707, 5, 0, 196708, 0, 0, 196709, 0, 0, 196710, 0, 0, 196711, 0, 0, 196712, 0, 0, 196713, 0, 0, 196714, 0, 0, 196715, 0, 0, 196716, 0, 0, 196717, 0, 0, 196718, 0, 0, 196719, 0, 0, 196720, 0, 0, 196721, 0, 0, 196722, 0, 0, 196723, 0, 0, 196724, 0, 0, 196725, 0, 0, 196726, 0, 0, 196727, 0, 0, 196728, 0, 0, 196729, 0, 0, 196730, 0, 0, 196731, 0, 0, 196732, 0, 0, 196733, 0, 0, 196734, 0, 0, 196735, 0, 0, 196736, 0, 0, 196737, 0, 0, 196738, 0, 0, 196739, 0, 0, 196740, 0, 0, 196741, 0, 0, 196742, 4, 0, 196755, 5, 0, 196756, 0, 0, 196757, 0, 0, 196758, 0, 0, 196759, 0, 0, 196760, 0, 0, 196761, 0, 0, 196762, 0, 0, 196763, 0, 0, 196764, 0, 0, 196765, 0, 0, 196766, 0, 0, 196767, 0, 0, 196768, 0, 0, 196769, 0, 0, 196770, 0, 0, 196771, 0, 0, 196772, 0, 0, 196773, 0, 0, 196774, 0, 0, 196775, 0, 0, 196776, 0, 0, 196777, 0, 0, 196778, 0, 0, 196779, 0, 0, 196780, 0, 0, 196781, 4, 0, 196802, 5, 0, 196803, 0, 0, 196804, 0, 0, 196805, 0, 0, 196806, 0, 0, 196807, 0, 0, 196808, 0, 0, 196809, 0, 0, 196810, 0, 0, 196811, 0, 0, 196812, 0, 0, 196813, 0, 0, 196814, 0, 0, 196815, 0, 0, 196816, 0, 0, 196817, 0, 0, 196818, 0, 0, 196819, 0, 0, 196820, 0, 0, 196821, 0, 0, 196822, 0, 0, 196823, 0, 0, 196824, 0, 0, 196825, 0, 0, 196826, 0, 0, 196827, 0, 0, 196828, 0, 0, 196829, 0, 0, 196830, 0, 0, 196831, 0, 0, 196832, 4, 0, 196873, 5, 0, 196874, 0, 0, 196875, 0, 0, 196876, 0, 0, 196877, 0, 0, 196878, 0, 0, 196879, 0, 0, 196880, 0, 0, 196881, 0, 0, 196882, 0, 0, 196883, 0, 0, 196884, 0, 0, 196885, 0, 0, 196886, 0, 0, 196887, 0, 0, 196888, 0, 0, 196889, 0, 0, 196890, 0, 0, 196891, 0, 0, 196892, 0, 0, 196893, 0, 0, 196894, 0, 0, 196895, 0, 0, 196896, 0, 0, 196897, 0, 0, 196898, 0, 0, 196899, 0, 0, 196900, 0, 0, 196901, 4, 0, 196902, 7, 0, 262198, 6, 0, 262243, 6, 0, 262278, 6, 0, 262291, 6, 0, 262292, 6, 0, 262293, 6, 0, 262294, 6, 0, 262295, 6, 0, 262296, 6, 0, 262297, 6, 0, 262298, 6, 0, 262299, 6, 0, 262300, 6, 0, 262301, 6, 0, 262302, 6, 0, 262303, 6, 0, 262304, 6, 0, 262305, 6, 0, 262306, 6, 0, 262307, 6, 0, 262308, 6, 0, 262309, 6, 0, 262310, 6, 0, 262311, 6, 0, 262312, 6, 0, 262313, 6, 0, 262314, 6, 0, 262315, 6, 0, 262316, 6, 0, 262317, 6, 0, 262338, 6, 0, 262339, 6, 0, 262340, 6, 0, 262341, 6, 0, 262342, 6, 0, 262343, 6, 0, 262344, 6, 0, 262345, 6, 0, 262346, 6, 0, 262347, 6, 0, 262348, 6, 0, 262349, 6, 0, 262350, 6, 0, 262351, 6, 0, 262352, 6, 0, 262353, 6, 0, 262354, 6, 0, 262355, 6, 0, 262356, 6, 0, 262357, 6, 0, 262358, 6, 0, 262359, 6, 0, 262360, 6, 0, 262361, 6, 0, 262362, 6, 0, 262363, 6, 0, 262364, 6, 0, 262365, 6, 0, 262366, 6, 0, 262367, 6, 0, 262368, 6, 0, 262409, 6, 0, 262410, 6, 0, 262411, 6, 0, 262412, 6, 0, 262413, 6, 0, 262414, 6, 0, 262415, 6, 0, 262416, 6, 0, 262417, 6, 0, 262418, 6, 0, 262419, 6, 0, 262420, 6, 0, 262421, 6, 0, 262422, 6, 0, 262423, 6, 0, 262424, 6, 0, 262425, 6, 0, 262426, 6, 0, 262427, 6, 0, 262428, 6, 0, 262429, 6, 0, 262430, 6, 0, 262431, 6, 0, 262432, 6, 0, 262433, 6, 0, 262434, 6, 0, 262435, 6, 0, 262436, 6, 0, 262437, 6, 0, 262439, 7, 0, 327734, 6, 0, 327779, 6, 0, 327814, 6, 0, 327827, 6, 0, 327828, 6, 0, 327829, 6, 0, 327830, 6, 0, 327831, 6, 0, 327832, 6, 0, 327833, 6, 0, 327834, 6, 0, 327835, 6, 0, 327836, 6, 0, 327837, 6, 0, 327838, 6, 0, 327839, 6, 0, 327840, 6, 0, 327841, 6, 0, 327842, 6, 0, 327843, 6, 0, 327844, 6, 0, 327845, 6, 0, 327846, 6, 0, 327847, 6, 0, 327848, 6, 0, 327849, 6, 0, 327850, 6, 0, 327851, 6, 0, 327852, 6, 0, 327853, 6, 0, 327874, 6, 0, 327875, 6, 0, 327876, 6, 0, 327877, 6, 0, 327878, 6, 0, 327879, 6, 0, 327880, 6, 0, 327881, 6, 0, 327882, 6, 0, 327883, 6, 0, 327884, 6, 0, 327885, 6, 0, 327886, 6, 0, 327887, 6, 0, 327888, 6, 0, 327889, 6, 0, 327890, 6, 0, 327891, 6, 0, 327892, 6, 0, 327893, 6, 0, 327894, 6, 0, 327895, 6, 0, 327896, 6, 0, 327897, 6, 0, 327898, 6, 0, 327899, 6, 0, 327900, 6, 0, 327901, 6, 0, 327902, 6, 0, 327903, 6, 0, 327904, 6, 0, 327945, 6, 0, 327946, 6, 0, 327947, 6, 0, 327948, 6, 0, 327949, 6, 0, 327950, 6, 0, 327951, 6, 0, 327952, 6, 0, 327953, 6, 0, 327954, 6, 0, 327955, 6, 0, 327956, 6, 0, 327957, 6, 0, 327958, 6, 0, 327959, 6, 0, 327960, 6, 0, 327961, 6, 0, 327962, 6, 0, 327963, 6, 0, 327964, 6, 0, 327965, 6, 0, 327966, 6, 0, 327967, 6, 0, 327968, 6, 0, 327969, 6, 0, 327970, 6, 0, 327971, 6, 0, 327972, 6, 0, 327973, 6, 0, 327976, 7, 0, 393270, 6, 0, 393271, 5, 0, 393272, 0, 0, 393273, 0, 0, 393274, 0, 0, 393275, 0, 0, 393276, 0, 0, 393277, 0, 0, 393278, 0, 0, 393279, 0, 0, 393280, 0, 0, 393281, 0, 0, 393282, 0, 0, 393283, 0, 0, 393284, 0, 0, 393285, 0, 0, 393286, 0, 0, 393287, 0, 0, 393288, 0, 0, 393289, 0, 0, 393290, 0, 0, 393291, 0, 0, 393292, 0, 0, 393293, 0, 0, 393294, 0, 0, 393295, 0, 0, 393296, 0, 0, 393297, 0, 0, 393298, 0, 0, 393299, 0, 0, 393300, 0, 0, 393301, 0, 0, 393302, 0, 0, 393303, 0, 0, 393304, 0, 0, 393305, 0, 0, 393306, 0, 0, 393307, 0, 0, 393308, 0, 0, 393309, 0, 0, 393310, 0, 0, 393311, 0, 0, 393312, 0, 0, 393313, 0, 0, 393314, 4, 0, 393315, 6, 0, 393350, 6, 0, 393363, 6, 0, 393364, 6, 0, 393365, 6, 0, 393366, 6, 0, 393367, 6, 0, 393368, 6, 0, 393369, 6, 0, 393370, 6, 0, 393371, 6, 0, 393372, 6, 0, 393373, 6, 0, 393374, 6, 0, 393375, 6, 0, 393376, 6, 0, 393377, 6, 0, 393378, 6, 0, 393379, 6, 0, 393380, 6, 0, 393381, 6, 0, 393382, 6, 0, 393383, 6, 0, 393384, 6, 0, 393385, 6, 0, 393386, 6, 0, 393387, 6, 0, 393388, 6, 0, 393389, 6, 0, 393410, 6, 0, 393411, 6, 0, 393412, 6, 0, 393413, 6, 0, 393414, 6, 0, 393415, 6, 0, 393416, 6, 0, 393417, 6, 0, 393418, 6, 0, 393419, 6, 0, 393420, 6, 0, 393421, 6, 0, 393422, 6, 0, 393423, 6, 0, 393424, 6, 0, 393425, 6, 0, 393426, 6, 0, 393427, 6, 0, 393428, 6, 0, 393429, 6, 0, 393430, 6, 0, 393431, 6, 0, 393432, 6, 0, 393433, 6, 0, 393434, 6, 0, 393435, 6, 0, 393436, 6, 0, 393437, 6, 0, 393438, 6, 0, 393439, 6, 0, 393440, 6, 0, 393481, 6, 0, 393482, 6, 0, 393483, 6, 0, 393484, 6, 0, 393485, 6, 0, 393486, 6, 0, 393487, 6, 0, 393488, 6, 0, 393489, 6, 0, 393490, 6, 0, 393491, 6, 0, 393492, 6, 0, 393493, 6, 0, 393494, 6, 0, 393495, 6, 0, 393496, 6, 0, 393497, 6, 0, 393498, 6, 0, 393499, 6, 0, 393500, 6, 0, 393501, 6, 0, 393502, 6, 0, 393503, 6, 0, 393504, 6, 0, 393505, 6, 0, 393506, 6, 0, 393507, 6, 0, 393508, 6, 0, 393509, 6, 0, 393513, 7, 0, 458886, 6, 0, 458899, 6, 0, 458900, 6, 0, 458901, 6, 0, 458902, 6, 0, 458903, 6, 0, 458904, 6, 0, 458905, 6, 0, 458906, 6, 0, 458907, 6, 0, 458908, 6, 0, 458909, 6, 0, 458910, 6, 0, 458911, 6, 0, 458912, 6, 0, 458913, 6, 0, 458914, 6, 0, 458915, 6, 0, 458916, 6, 0, 458917, 6, 0, 458918, 6, 0, 458919, 6, 0, 458920, 6, 0, 458921, 6, 0, 458922, 6, 0, 458923, 6, 0, 458924, 6, 0, 458925, 6, 0, 458946, 6, 0, 458947, 6, 0, 458948, 6, 0, 458949, 6, 0, 458950, 6, 0, 458951, 6, 0, 458952, 6, 0, 458953, 6, 0, 458954, 6, 0, 458955, 6, 0, 458956, 6, 0, 458957, 6, 0, 458958, 6, 0, 458959, 6, 0, 458960, 6, 0, 458961, 6, 0, 458962, 6, 0, 458963, 6, 0, 458964, 6, 0, 458965, 6, 0, 458966, 6, 0, 458967, 6, 0, 458968, 6, 0, 458969, 6, 0, 458970, 6, 0, 458971, 6, 0, 458972, 6, 0, 458973, 6, 0, 458974, 6, 0, 458975, 6, 0, 458976, 6, 0, 459017, 6, 0, 459018, 6, 0, 459019, 6, 0, 459020, 6, 0, 459021, 6, 0, 459022, 6, 0, 459023, 6, 0, 459024, 6, 0, 459025, 6, 0, 459026, 6, 0, 459027, 6, 0, 459028, 6, 0, 459029, 6, 0, 459030, 6, 0, 459031, 6, 0, 459032, 6, 0, 459033, 6, 0, 459034, 6, 0, 459035, 6, 0, 459036, 6, 0, 459037, 6, 0, 459038, 6, 0, 459039, 6, 0, 459040, 6, 0, 459041, 6, 0, 459042, 6, 0, 459043, 6, 0, 459044, 6, 0, 459045, 6, 0, 459050, 7, 0, 524422, 6, 0, 524435, 6, 0, 524436, 6, 0, 524437, 6, 0, 524438, 6, 0, 524439, 6, 0, 524440, 6, 0, 524441, 6, 0, 524442, 6, 0, 524443, 6, 0, 524444, 6, 0, 524445, 6, 0, 524446, 6, 0, 524447, 6, 0, 524448, 6, 0, 524449, 6, 0, 524450, 6, 0, 524451, 6, 0, 524452, 6, 0, 524453, 6, 0, 524454, 6, 0, 524455, 6, 0, 524456, 6, 0, 524457, 6, 0, 524458, 6, 0, 524459, 6, 0, 524460, 6, 0, 524461, 6, 0, 524482, 6, 0, 524483, 6, 0, 524484, 6, 0, 524485, 6, 0, 524486, 6, 0, 524487, 6, 0, 524488, 6, 0, 524489, 6, 0, 524490, 6, 0, 524491, 6, 0, 524492, 6, 0, 524493, 6, 0, 524494, 6, 0, 524495, 6, 0, 524496, 6, 0, 524497, 6, 0, 524498, 6, 0, 524499, 6, 0, 524500, 6, 0, 524501, 6, 0, 524502, 6, 0, 524503, 6, 0, 524504, 6, 0, 524505, 6, 0, 524506, 6, 0, 524507, 6, 0, 524508, 6, 0, 524509, 6, 0, 524510, 6, 0, 524511, 6, 0, 524512, 6, 0, 524553, 6, 0, 524554, 6, 0, 524555, 6, 0, 524556, 6, 0, 524557, 6, 0, 524558, 6, 0, 524559, 6, 0, 524560, 6, 0, 524561, 6, 0, 524562, 6, 0, 524563, 6, 0, 524564, 6, 0, 524565, 6, 0, 524566, 6, 0, 524567, 6, 0, 524568, 6, 0, 524569, 6, 0, 524570, 6, 0, 524571, 6, 0, 524572, 6, 0, 524573, 6, 0, 524574, 6, 0, 524575, 6, 0, 524576, 6, 0, 524577, 6, 0, 524578, 6, 0, 524579, 6, 0, 524580, 6, 0, 524581, 6, 0, 524587, 7, 0, 589958, 6, 0, 589971, 6, 0, 589972, 6, 0, 589973, 6, 0, 589974, 6, 0, 589975, 6, 0, 589976, 6, 0, 589977, 6, 0, 589978, 6, 0, 589979, 6, 0, 589980, 6, 0, 589981, 6, 0, 589982, 6, 0, 589983, 6, 0, 589984, 6, 0, 589985, 6, 0, 589986, 6, 0, 589987, 6, 0, 589988, 6, 0, 589989, 6, 0, 589990, 6, 0, 589991, 6, 0, 589992, 6, 0, 589993, 6, 0, 589994, 6, 0, 589995, 6, 0, 589996, 6, 0, 589997, 6, 0, 590018, 6, 0, 590019, 6, 0, 590020, 6, 0, 590021, 6, 0, 590022, 6, 0, 590023, 6, 0, 590024, 6, 0, 590025, 6, 0, 590026, 6, 0, 590027, 6, 0, 590028, 6, 0, 590029, 6, 0, 590030, 6, 0, 590031, 6, 0, 590032, 6, 0, 590033, 6, 0, 590034, 6, 0, 590035, 6, 0, 590036, 6, 0, 590037, 6, 0, 590038, 6, 0, 590039, 6, 0, 590040, 6, 0, 590041, 6, 0, 590042, 6, 0, 590043, 6, 0, 590044, 6, 0, 590045, 6, 0, 590046, 6, 0, 590047, 6, 0, 590048, 6, 0, 590089, 1610612743, 0, 590124, 7, 0, 655494, 6, 0, 655626, 1610612743, 0, 655661, 7, 0, 721030, 6, 0, 721163, 1610612743, 0, 721198, 7, 0, 786566, 6, 0, 786700, 1610612743, 0, 786735, 7, 0, 852102, 6, 0, 852237, 1610612743, 0, 852272, 7, 0, 917638, 6, 0, 917774, 1610612743, 0, 917809, 7, 0, 983174, 6, 0, 983311, 1610612743, 0, 983346, 7, 0, 1048710, 6, 0, 1048848, 1610612743, 0, 1048883, 7, 0, 1114246, 6, 0, 1114385, 1610612743, 0, 1114420, 7, 0, 1179782, 6, 0, 1179922, 1610612743, 0, 1179957, 7, 0, 1245318, 6, 0, 1245459, 1610612743, 0, 1245494, 7, 0, 1310854, 6, 0, 1310996, 1610612743, 0, 1310997, 6, 0, 1310998, 6, 0, 1310999, 6, 0, 1311000, 6, 0, 1311001, 6, 0, 1311002, 6, 0, 1311003, 6, 0, 1311004, 6, 0, 1311005, 6, 0, 1311006, 6, 0, 1311007, 6, 0, 1311008, 6, 0, 1311031, 7, 0, 1376390, 6, 0, 1376533, 1610612743, 0, 1376534, 6, 0, 1376535, 6, 0, 1376536, 6, 0, 1376537, 6, 0, 1376538, 6, 0, 1376539, 6, 0, 1376540, 6, 0, 1376541, 6, 0, 1376542, 6, 0, 1376543, 6, 0, 1376544, 6, 0, 1376545, 6, 0, 1376546, 6, 0, 1376547, 6, 0, 1376548, 6, 0, 1376549, 6, 0, 1376550, 6, 0, 1376551, 6, 0, 1376552, 6, 0, 1376553, 6, 0, 1376554, 6, 0, 1376555, 6, 0, 1376556, 6, 0, 1376557, 6, 0, 1376558, 6, 0, 1376559, 6, 0, 1376560, 6, 0, 1376561, 6, 0, 1376562, 6, 0, 1376563, 6, 0, 1376564, 6, 0, 1376565, 6, 0, 1376566, 6, 0, 1376567, 6, 0, 1376568, 7, 0, 1441926, 6, 0, 1507462, 6, 0, 1572998, 6, 0, 1638534, 6, 0, 1638535, 7, 0, 1638667, 5, 0, 1638668, 0, 0, 1638669, 0, 0, 1638670, 0, 0, 1638671, 0, 0, 1638672, 0, 0, 1638673, 0, 0, 1638674, 0, 0, 1638675, 0, 0, 1638676, 0, 0, 1638677, 0, 0, 1638678, 0, 0, 1638679, 0, 0, 1638680, 0, 0, 1638681, 0, 0, 1638682, 0, 0, 1638683, 0, 0, 1638684, 0, 0, 1638685, 0, 0, 1638686, 0, 0, 1638687, 0, 0, 1638688, 0, 0, 1638689, 0, 0, 1638690, 0, 0, 1638691, 0, 0, 1638692, 0, 0, 1638693, 0, 0, 1638694, 0, 0, 1638695, 0, 0, 1638696, 0, 0, 1638697, 0, 0, 1638698, 0, 0, 1638699, 0, 0, 1638700, 0, 0, 1638701, 0, 0, 1638702, 0, 0, 1638703, 0, 0, 1638704, 0, 0, 1638705, 0, 0, 1638706, 0, 0, 1638707, 0, 0, 1638708, 0, 0, 1638709, 0, 0, 1638710, 0, 0, 1638711, 0, 0, 1638712, 4, 0, 1638713, 7, 0, 1704070, 6, 0, 1704071, 6, 0, 1704072, 7, 0, 1704203, 6, 0, 1704204, 6, 0, 1704205, 6, 0, 1704206, 6, 0, 1704207, 6, 0, 1704208, 6, 0, 1704209, 6, 0, 1704210, 6, 0, 1704211, 6, 0, 1704212, 6, 0, 1704213, 6, 0, 1704214, 6, 0, 1704215, 6, 0, 1704216, 6, 0, 1704217, 6, 0, 1704218, 6, 0, 1704219, 6, 0, 1704220, 6, 0, 1704221, 6, 0, 1704222, 6, 0, 1704223, 6, 0, 1704224, 6, 0, 1704225, 6, 0, 1704226, 6, 0, 1704227, 6, 0, 1704228, 6, 0, 1704229, 6, 0, 1704230, 6, 0, 1704231, 6, 0, 1704232, 6, 0, 1704233, 6, 0, 1704234, 6, 0, 1704235, 6, 0, 1704236, 6, 0, 1704237, 6, 0, 1704238, 6, 0, 1704239, 6, 0, 1704240, 6, 0, 1704241, 6, 0, 1704242, 6, 0, 1704243, 6, 0, 1704244, 6, 0, 1704245, 6, 0, 1704246, 6, 0, 1704247, 6, 0, 1704248, 6, 0, 1704249, 6, 0, 1704250, 7, 0, 1769606, 6, 0, 1769607, 6, 0, 1769608, 6, 0, 1769609, 7, 0, 1769739, 6, 0, 1769740, 6, 0, 1769741, 6, 0, 1769742, 6, 0, 1769743, 6, 0, 1769744, 6, 0, 1769745, 6, 0, 1769746, 6, 0, 1769747, 6, 0, 1769748, 6, 0, 1769749, 6, 0, 1769750, 6, 0, 1769751, 6, 0, 1769752, 6, 0, 1769753, 6, 0, 1769754, 6, 0, 1769755, 6, 0, 1769756, 6, 0, 1769757, 6, 0, 1769758, 6, 0, 1769759, 6, 0, 1769760, 6, 0, 1769761, 6, 0, 1769762, 6, 0, 1769763, 6, 0, 1769764, 6, 0, 1769765, 6, 0, 1769766, 6, 0, 1769767, 6, 0, 1769768, 6, 0, 1769769, 6, 0, 1769770, 6, 0, 1769771, 6, 0, 1769772, 6, 0, 1769773, 6, 0, 1769774, 6, 0, 1769775, 6, 0, 1769776, 6, 0, 1769777, 6, 0, 1769778, 6, 0, 1769779, 6, 0, 1769780, 6, 0, 1769781, 6, 0, 1769782, 6, 0, 1769783, 6, 0, 1769784, 6, 0, 1769785, 6, 0, 1769786, 6, 0, 1769787, 7, 0, 1835142, 6, 0, 1835143, 6, 0, 1835144, 6, 0, 1835145, 6, 0, 1835146, 7, 0, 1835275, 6, 0, 1835276, 6, 0, 1835277, 6, 0, 1835278, 6, 0, 1835279, 6, 0, 1835280, 6, 0, 1835281, 6, 0, 1835282, 6, 0, 1835283, 6, 0, 1835284, 6, 0, 1835285, 6, 0, 1835286, 6, 0, 1835287, 6, 0, 1835288, 6, 0, 1835289, 6, 0, 1835290, 6, 0, 1835291, 6, 0, 1835292, 6, 0, 1835293, 6, 0, 1835294, 6, 0, 1835295, 6, 0, 1835296, 6, 0, 1835297, 6, 0, 1835298, 6, 0, 1835299, 6, 0, 1835300, 6, 0, 1835301, 6, 0, 1835302, 6, 0, 1835303, 6, 0, 1835304, 6, 0, 1835305, 6, 0, 1835306, 6, 0, 1835307, 6, 0, 1835308, 6, 0, 1835309, 6, 0, 1835310, 6, 0, 1835311, 6, 0, 1835312, 6, 0, 1835313, 6, 0, 1835314, 6, 0, 1835315, 6, 0, 1835316, 6, 0, 1835317, 6, 0, 1835318, 6, 0, 1835319, 6, 0, 1835320, 6, 0, 1835321, 6, 0, 1835322, 6, 0, 1835323, 6, 0, 1835324, 7, 0, 1900678, 6, 0, 1900679, 6, 0, 1900680, 6, 0, 1900681, 6, 0, 1900682, 6, 0, 1900683, 7, 0, 1900811, 6, 0, 1900812, 6, 0, 1900813, 6, 0, 1900814, 6, 0, 1900815, 6, 0, 1900816, 6, 0, 1900817, 6, 0, 1900818, 6, 0, 1900819, 6, 0, 1900820, 6, 0, 1900821, 6, 0, 1900822, 6, 0, 1900823, 6, 0, 1900824, 6, 0, 1900825, 6, 0, 1900826, 6, 0, 1900827, 6, 0, 1900828, 6, 0, 1900829, 6, 0, 1900830, 6, 0, 1900831, 6, 0, 1900832, 6, 0, 1900833, 6, 0, 1900834, 6, 0, 1900835, 6, 0, 1900836, 6, 0, 1900837, 6, 0, 1900838, 6, 0, 1900839, 6, 0, 1900840, 6, 0, 1900841, 6, 0, 1900842, 6, 0, 1900843, 6, 0, 1900844, 6, 0, 1900845, 6, 0, 1900846, 6, 0, 1900847, 6, 0, 1900848, 6, 0, 1900849, 6, 0, 1900850, 6, 0, 1900851, 6, 0, 1900852, 6, 0, 1900853, 6, 0, 1900854, 6, 0, 1900855, 6, 0, 1900856, 6, 0, 1900857, 6, 0, 1900858, 6, 0, 1900859, 6, 0, 1900860, 6, 0, 1900861, 7, 0, 1966214, 6, 0, 1966215, 6, 0, 1966216, 6, 0, 1966217, 6, 0, 1966218, 6, 0, 1966219, 6, 0, 1966220, 7, 0, 1966347, 6, 0, 1966348, 6, 0, 1966349, 6, 0, 1966350, 6, 0, 1966351, 6, 0, 1966352, 6, 0, 1966353, 6, 0, 1966354, 6, 0, 1966355, 6, 0, 1966356, 6, 0, 1966357, 6, 0, 1966358, 6, 0, 1966359, 6, 0, 1966360, 6, 0, 1966361, 6, 0, 1966362, 6, 0, 1966363, 6, 0, 1966364, 6, 0, 1966365, 6, 0, 1966366, 6, 0, 1966367, 6, 0, 1966368, 6, 0, 1966369, 6, 0, 1966370, 6, 0, 1966371, 6, 0, 1966372, 6, 0, 1966373, 6, 0, 1966374, 6, 0, 1966375, 6, 0, 1966376, 6, 0, 1966377, 6, 0, 1966378, 6, 0, 1966379, 6, 0, 1966380, 6, 0, 1966381, 6, 0, 1966382, 6, 0, 1966383, 6, 0, 1966384, 6, 0, 1966385, 6, 0, 1966386, 6, 0, 1966387, 6, 0, 1966388, 6, 0, 1966389, 6, 0, 1966390, 6, 0, 1966391, 6, 0, 1966392, 6, 0, 1966393, 6, 0, 1966394, 6, 0, 1966395, 6, 0, 1966396, 6, 0, 1966397, 6, 0, 1966398, 7, 0, 2031750, 6, 0, 2031751, 6, 0, 2031752, 6, 0, 2031753, 6, 0, 2031754, 6, 0, 2031755, 6, 0, 2031756, 6, 0, 2031757, 7, 0, 2097286, 6, 0, 2097287, 6, 0, 2097288, 6, 0, 2097289, 6, 0, 2097290, 6, 0, 2097291, 6, 0, 2097292, 6, 0, 2097293, 6, 0, 2097294, 7, 0, 2162822, 6, 0, 2162823, 6, 0, 2162824, 6, 0, 2162825, 6, 0, 2162826, 6, 0, 2162827, 6, 0, 2162828, 6, 0, 2162829, 6, 0, 2162830, 6, 0, 2162831, 7, 0, 2228358, 6, 0, 2228359, 6, 0, 2228360, 6, 0, 2228361, 6, 0, 2228362, 6, 0, 2228363, 6, 0, 2228364, 6, 0, 2228365, 6, 0, 2228366, 6, 0, 2228367, 6, 0, 2228368, 7, 0, 2293894, 6, 0, 2293895, 6, 0, 2293896, 6, 0, 2293897, 6, 0, 2293898, 6, 0, 2293899, 6, 0, 2293900, 6, 0, 2293901, 6, 0, 2293902, 6, 0, 2293903, 6, 0, 2293904, 6, 0, 2293905, 7, 0, 2359430, 6, 0, 2359431, 6, 0, 2359432, 6, 0, 2359433, 6, 0, 2359434, 6, 0, 2359435, 6, 0, 2359436, 6, 0, 2359437, 6, 0, 2359438, 6, 0, 2359439, 6, 0, 2359440, 6, 0, 2359441, 6, 0, 2359442, 7, 0, 2424966, 6, 0, 2424967, 6, 0, 2424968, 6, 0, 2424969, 6, 0, 2424970, 6, 0, 2424971, 6, 0, 2424972, 6, 0, 2424973, 6, 0, 2424974, 6, 0, 2424975, 6, 0, 2424976, 6, 0, 2424977, 6, 0, 2424978, 6, 0, 2424979, 5, 0, 2424980, 0, 0, 2424981, 0, 0, 2424982, 0, 0, 2424983, 0, 0, 2424984, 0, 0, 2424985, 0, 0, 2424986, 0, 0, 2424987, 0, 0, 2424988, 0, 0, 2424989, 0, 0, 2424990, 0, 0, 2424991, 0, 0, 2424992, 0, 0, 2424993, 0, 0, 2424994, 0, 0, 2424995, 0, 0, 2424996, 0, 0, 2424997, 0, 0, 2424998, 4, 0, 2425012, 5, 0, 2425013, 0, 0, 2425014, 0, 0, 2425015, 0, 0, 2425016, 0, 0, 2425017, 0, 0, 2425018, 0, 0, 2425019, 0, 0, 2425020, 0, 0, 2425021, 0, 0, 2425022, 0, 0, 2425023, 0, 0, 2425024, 0, 0, 2425025, 0, 0, 2425026, 4, 0, 2425040, 5, 0, 2425041, 0, 0, 2425042, 0, 0, 2425043, 0, 0, 2425044, 0, 0, 2425045, 0, 0, 2425046, 0, 0, 2425047, 0, 0, 2425048, 0, 0, 2425049, 0, 0, 2425050, 0, 0, 2425051, 0, 0, 2425052, 0, 0, 2425053, 0, 0, 2425054, 0, 0, 2425055, 0, 0, 2425056, 0, 0, 2425057, 4, 0, 2425071, 5, 0, 2425072, 0, 0, 2425073, 0, 0, 2425074, 0, 0, 2425075, 0, 0, 2425076, 0, 0, 2425077, 0, 0, 2425078, 0, 0, 2425079, 0, 0, 2425080, 0, 0, 2425081, 0, 0, 2425082, 0, 0, 2425083, 0, 0, 2425084, 0, 0, 2425085, 0, 0, 2425086, 0, 0, 2425087, 4, 0, 2425110, 5, 0, 2425111, 0, 0, 2425112, 0, 0, 2425113, 0, 0, 2425114, 0, 0, 2425115, 0, 0, 2425116, 0, 0, 2425117, 0, 0, 2425118, 0, 0, 2425119, 0, 0, 2425120, 0, 0, 2425121, 0, 0, 2425122, 0, 0, 2425123, 0, 0, 2425124, 0, 0, 2425125, 0, 0, 2425126, 0, 0, 2425127, 0, 0, 2425128, 0, 0, 2490534, 6, 0, 2490548, 6, 0, 2490562, 6, 0, 2490576, 6, 0, 2490593, 6, 0, 2490607, 6, 0, 2490623, 6, 0, 2490646, 6, 0, 2556070, 6, 0, 2556084, 6, 0, 2556098, 6, 0, 2556112, 6, 0, 2556129, 6, 0, 2556143, 6, 0, 2556159, 6, 0, 2556182, 6, 0, 2621606, 6, 0, 2621607, 5, 0, 2621608, 0, 0, 2621609, 0, 0, 2621610, 0, 0, 2621611, 0, 0, 2621612, 0, 0, 2621613, 0, 0, 2621614, 0, 0, 2621615, 0, 0, 2621616, 0, 0, 2621617, 0, 0, 2621618, 0, 0, 2621619, 4, 0, 2621620, 6, 0, 2621634, 6, 0, 2621635, 5, 0, 2621636, 0, 0, 2621637, 0, 0, 2621638, 0, 0, 2621639, 0, 0, 2621640, 0, 0, 2621641, 0, 0, 2621642, 0, 0, 2621643, 0, 0, 2621644, 0, 0, 2621645, 0, 0, 2621646, 0, 0, 2621647, 4, 0, 2621648, 6, 0, 2621665, 6, 0, 2621666, 5, 0, 2621667, 0, 0, 2621668, 0, 0, 2621669, 0, 0, 2621670, 0, 0, 2621671, 0, 0, 2621672, 0, 0, 2621673, 0, 0, 2621674, 0, 0, 2621675, 0, 0, 2621676, 0, 0, 2621677, 0, 0, 2621678, 4, 0, 2621679, 6, 0, 2621695, 6, 0, 2621696, 5, 0, 2621697, 0, 0, 2621698, 0, 0, 2621699, 0, 0, 2621700, 0, 0, 2621701, 0, 0, 2621702, 0, 0, 2621703, 0, 0, 2621704, 0, 0, 2621705, 0, 0, 2621706, 0, 0, 2621707, 0, 0, 2621708, 0, 0, 2621709, 0, 0, 2621710, 0, 0, 2621711, 0, 0, 2621712, 0, 0, 2621713, 0, 0, 2621714, 0, 0, 2621715, 0, 0, 2621716, 0, 0, 2621717, 4, 0, 2621718, 6, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "Visibility" ]
+
+[node name="Speedboosters" type="Node2D" parent="Level" index="4"]
+
+position = Vector2( -803.782, 886.093 )
+
+[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 17 )]
+
+position = Vector2( 3040.14, -533.298 )
+SPEED = 4000
+LENGTH = 10.0
+
+[node name="UI" type="Node" parent="." index="3"]
+
+editor/display_folded = true
+script = ExtResource( 18 )
+
+[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 19 )]
+
+[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 20 )]
+
+[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 21 )]
+
+[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 22 )]
+
+COLLECTIBLES_IN_THIS_LEVEL = 1
+
+[node name="Timer" parent="UI" index="4" instance=ExtResource( 23 )]
+
+[connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
+
+[connection signal="is_not_at_fullspeed" from="Player/player" to="." method="_on_player_is_not_at_fullspeed"]
+
+[connection signal="switched_color_to_orange" from="Player/player" to="." method="_on_player_switched_color_to_orange"]
+
+[connection signal="switched_color_to_purple" from="Player/player" to="." method="_on_player_switched_color_to_purple"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider2" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="laser_entered" from="Level/Lasers" to="." method="_on_Lasers_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers" to="." method="_on_Lasers_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange6" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange6" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange6" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange2" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange2" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange7" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange7" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange3" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange3" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange8" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange8" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange9" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange9" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange10" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange10" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange11" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange11" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange4" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange4" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange5" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange5" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange12" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange12" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange13" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange13" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange32" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange32" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange24" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange24" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange41" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange41" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange20" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange20" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange43" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange43" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange28" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange28" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange39" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange39" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange14" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange14" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange31" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange31" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange23" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange23" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange36" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange36" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange19" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange19" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange38" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange38" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange27" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange27" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange42" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange42" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange16" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange16" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange29" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange29" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange21" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange21" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange33" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange33" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange17" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange17" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange35" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange35" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange25" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange25" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange44" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange44" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange15" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange15" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange30" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange30" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange22" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange22" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange18" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange18" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange26" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange26" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange34" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange34" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange37" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange37" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange40" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange40" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange45" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserOrange45" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau2" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau2" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau7" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau7" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau9" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau9" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau8" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau8" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau10" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau10" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau11" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau11" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau12" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau12" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau15" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau15" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau13" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau13" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau14" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau14" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau16" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau16" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau3" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau3" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau17" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau17" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau4" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau4" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau18" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau18" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau19" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau19" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau20" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau20" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau21" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau21" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau5" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau5" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau22" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau22" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau23" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau23" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau24" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau24" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau26" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau26" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau25" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau25" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau28" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau28" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau27" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau27" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau30" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau30" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau29" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau29" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau6" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau6" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="collected" from="Level/Collectibles/Collectible" to="." method="_on_Collectible_collected"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="speedboost_start" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_start"]
+
+[connection signal="speedboost_stop" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_stop"]
+
+

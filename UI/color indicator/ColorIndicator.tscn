@@ -116,7 +116,7 @@ tracks/1/keys = {
 "values": [ Color( 0.984375, 0.624337, 0.00384521, 1 ) ]
 }
 
-[node name="ColorIndicator" type="CanvasLayer" index="0"]
+[node name="ColorIndicator" type="CanvasLayer"]
 
 layer = 99
 offset = Vector2( 0, 0 )
@@ -127,6 +127,7 @@ script = ExtResource( 1 )
 
 [node name="TopColorTriangle" type="Sprite" parent="." index="0"]
 
+visible = false
 modulate = Color( 0.729412, 0.168627, 0.756863, 1 )
 position = Vector2( 112.319, 192.71 )
 rotation = 1.57065
@@ -136,6 +137,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="BottomColorTriangle" type="Sprite" parent="." index="1"]
 
+visible = false
 modulate = Color( 0.729412, 0.168627, 0.756863, 1 )
 position = Vector2( 1805.33, 894.423 )
 rotation = 4.70446

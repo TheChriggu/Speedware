@@ -1,40 +1,48 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Enviroment/Datastrings/sprite_laser_yellow_mandy.png" type="Texture" id=1]
-[ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=2]
+[ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=1]
+[ext_resource path="res://Enviroment/Datastrings/sprite_laser_yellow_mandy.png" type="Texture" id=2]
 [ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=3]
-[ext_resource path="res://Enviroment/Datastrings/spark particle.png" type="Texture" id=4]
+[ext_resource path="res://Enviroment/Datastrings/SpotWhite.png" type="Texture" id=4]
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=1]
 
 render_priority = 0
 blend_mode = 1
 light_mode = 2
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="Curve" id=2]
 
-custom_solver_bias = 0.0
-extents = Vector2( 20.5513, 261.082 )
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.145508 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="CurveTexture" id=3]
+
+flags = 4
+width = 2048
+curve = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
 
 render_priority = 0
-trail_divisor = 1
-emission_shape = 3
-emission_point_count = 1
+trail_divisor = 10
+trail_size_modifier = SubResource( 3 )
+emission_shape = 0
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
-spread = 45.0
+spread = 0.0
 flatness = 0.0
-gravity = Vector3( 0, 100, 0 )
-initial_velocity = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.0
 initial_velocity_random = 0.0
 angular_velocity = 0.0
 angular_velocity_random = 0.0
-orbit_velocity = 0.0
+orbit_velocity = 0.1
 orbit_velocity_random = 0.0
-linear_accel = 0.0
+linear_accel = 10.0
 linear_accel_random = 0.0
 radial_accel = 0.0
 radial_accel_random = 0.0
@@ -44,7 +52,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 1.0
+scale = 0.1
 scale_random = 0.0
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
@@ -54,29 +62,41 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Gravity" ]
+_sections_unfolded = [ "Angular Velocity", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
 
-[node name="LaserOrange" type="Sprite"]
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 20.5513, 261.082 )
+
+[node name="LaserOrange" type="Sprite" index="0"]
 
 modulate = Color( 1, 1, 1, 0.933686 )
 position = Vector2( 6.37469, 1.599 )
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="PartikelOrange" type="Particles2D" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 1, 0.692382, 0.296875, 1 )
-material = SubResource( 4 )
-position = Vector2( 0.255738, -128.651 )
+pause_mode = 2
+visible = false
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Material", "Offset", "Pause", "Transform", "Visibility" ]
+
+[node name="PartikelOrange" type="Particles2D" parent="." index="1"]
+
+modulate = Color( 1, 0.624022, 0.140625, 1 )
+self_modulate = Color( 0.109375, 0.109375, 0.109375, 1 )
+material = SubResource( 1 )
+position = Vector2( -0.571694, -131.893 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.5, 0.177489 )
 emitting = true
 amount = 200
 lifetime = 5.13
 one_shot = false
 preprocess = 6.0
-speed_scale = 6.0
+speed_scale = 8.0
 explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
@@ -85,25 +105,26 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = ExtResource( 3 )
-texture = null
+texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
 
-[node name="PartikelOrange2" type="Particles2D" parent="." index="1"]
+[node name="PartikelOrange2" type="Particles2D" parent="." index="2"]
 
+visible = false
 modulate = Color( 1, 0.642822, 0.183594, 1 )
-material = SubResource( 4 )
-position = Vector2( 0.255738, -128.651 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+material = SubResource( 1 )
+position = Vector2( 11.349, -135.987 )
+rotation = -1.62316
+scale = Vector2( 0.553587, 0.553587 )
 emitting = true
 amount = 200
-lifetime = 5.13
+lifetime = 55.0
 one_shot = false
-preprocess = 6.0
-speed_scale = 5.0
+preprocess = 100.0
+speed_scale = 8.0
 explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
@@ -111,15 +132,16 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = ExtResource( 3 )
-texture = null
+process_material = SubResource( 4 )
+texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
 
+visible = false
 input_pickable = false
 collision_layer = 2
 collision_mask = 2
@@ -133,34 +155,8 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 
 position = Vector2( -0.0633063, -0.115953 )
 scale = Vector2( 0.377114, 0.490001 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
-
-[node name="Particles2D" type="Particles2D" parent="." index="3"]
-
-visible = false
-modulate = Color( 1, 0, 0.234375, 1 )
-self_modulate = Color( 0.984375, 0.0576782, 0.0576782, 1 )
-position = Vector2( -5.25983, -263.578 )
-emitting = true
-amount = 6
-lifetime = 4.2
-one_shot = false
-preprocess = 0.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
-process_material = SubResource( 3 )
-texture = ExtResource( 4 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="4"]
 
@@ -179,7 +175,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -0.064731, -0.115953 )
 scale = Vector2( 0.0546227, 0.490001 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -202,9 +202,9 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [connection signal="laser_exited" from="Level/Lasers" to="." method="_on_Lasers_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
-
 [connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Enviroment/Datastrings/sprite_laser_pink_mandy.png" type="Texture" id=1]
-[ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=2]
-[ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=3]
+[ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=1]
+[ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=2]
+[ext_resource path="res://Enviroment/Datastrings/SpotWhite.png" type="Texture" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -17,23 +17,23 @@ extents = Vector2( 2.16841, 273.185 )
 
 [node name="LaserBlau" type="Sprite"]
 
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="PartikelPurple" type="Particles2D" parent="." index="0"]
 
 modulate = Color( 0.949371, 0.0742188, 1, 1 )
+self_modulate = Color( 0.117188, 0.117188, 0.117188, 1 )
 material = SubResource( 1 )
 position = Vector2( -0.0336337, -128.046 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.5, 0.177489 )
 emitting = true
 amount = 200
 lifetime = 5.13
 one_shot = false
 preprocess = 6.0
-speed_scale = 6.0
+speed_scale = 8.0
 explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
@@ -41,8 +41,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = ExtResource( 3 )
-texture = null
+process_material = ExtResource( 2 )
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -50,6 +50,7 @@ _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Tran
 
 [node name="PartikelPurple2" type="Particles2D" parent="." index="1"]
 
+visible = false
 modulate = Color( 0.949371, 0.0742188, 1, 1 )
 material = SubResource( 1 )
 position = Vector2( -0.0336337, -128.046 )
@@ -68,7 +69,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = ExtResource( 3 )
+process_material = ExtResource( 2 )
 texture = null
 normal_map = null
 h_frames = 1

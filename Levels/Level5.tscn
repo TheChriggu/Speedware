@@ -250,7 +250,7 @@ position = Vector2( 26977.7, 10982.8 )
 
 [node name="LaserBlau12" parent="Level/Lasers" index="40" instance=ExtResource( 13 )]
 
-position = Vector2( 31512.9, 12882.9 )
+position = Vector2( 31512.9, 12890.9 )
 rotation = 1.5708
 
 [node name="LaserBlau13" parent="Level/Lasers" index="41" instance=ExtResource( 13 )]
@@ -378,75 +378,73 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
-
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
 [connection signal="laser_entered" from="Level/Lasers/LaserOrange2" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange2" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange3" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange3" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange3" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange6" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange6" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange6" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange7" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange7" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange7" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange13" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange13" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange13" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange14" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange14" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange14" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange15" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange15" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange15" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange18" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange18" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange18" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange20" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange20" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange20" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange17" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange17" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange17" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange19" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange19" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange19" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange16" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange16" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange16" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange8" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange8" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange8" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange9" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange9" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange9" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange10" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange10" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange10" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange11" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange11" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange11" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange12" to="." method="_on_LaserOrange_laser_entered"]
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange12" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange12" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 

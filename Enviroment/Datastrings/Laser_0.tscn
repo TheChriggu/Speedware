@@ -69,7 +69,7 @@ _sections_unfolded = [ "Angular Velocity", "Gravity", "Initial Velocity", "Linea
 custom_solver_bias = 0.0
 extents = Vector2( 20.5513, 261.082 )
 
-[node name="LaserOrange" type="Sprite" index="0"]
+[node name="LaserOrange" type="Sprite"]
 
 modulate = Color( 1, 1, 1, 0.933686 )
 position = Vector2( 6.37469, 1.599 )
@@ -101,7 +101,7 @@ explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
+visibility_rect = Rect2( -1088, -668, 2176, 1336 )
 local_coords = true
 draw_order = 0
 process_material = ExtResource( 3 )
@@ -109,7 +109,7 @@ texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
 
 [node name="PartikelOrange2" type="Particles2D" parent="." index="2"]
 
@@ -141,7 +141,6 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
 
-visible = false
 input_pickable = false
 collision_layer = 2
 collision_mask = 2

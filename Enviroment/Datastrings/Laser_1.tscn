@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=1]
-[ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=2]
-[ext_resource path="res://Enviroment/Datastrings/SpotWhite.png" type="Texture" id=3]
+[ext_resource path="res://Enviroment/Datastrings/LaserLight.png" type="Texture" id=2]
+[ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=3]
+[ext_resource path="res://Enviroment/Datastrings/SpotWhite.png" type="Texture" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -20,7 +21,31 @@ extents = Vector2( 2.16841, 273.185 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="PartikelPurple" type="Particles2D" parent="." index="0"]
+[node name="Light2D" type="Light2D" parent="." index="0"]
+
+enabled = true
+editor_only = false
+texture = ExtResource( 2 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+
+[node name="PartikelPurple" type="Particles2D" parent="Light2D" index="0"]
 
 modulate = Color( 0.949371, 0.0742188, 1, 1 )
 self_modulate = Color( 0.117188, 0.117188, 0.117188, 1 )
@@ -41,8 +66,8 @@ fract_delta = true
 visibility_rect = Rect2( -1088, -665, 2176, 1336 )
 local_coords = true
 draw_order = 0
-process_material = ExtResource( 2 )
-texture = ExtResource( 3 )
+process_material = ExtResource( 3 )
+texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -69,7 +94,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = ExtResource( 2 )
+process_material = ExtResource( 3 )
 texture = null
 normal_map = null
 h_frames = 1
@@ -78,6 +103,7 @@ _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Tran
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
+visible = false
 position = Vector2( -10.0298, 3.81154 )
 input_pickable = false
 collision_layer = 1

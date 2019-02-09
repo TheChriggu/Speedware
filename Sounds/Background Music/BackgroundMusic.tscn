@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sounds/Background Music/BackgroundMusic.gd" type="Script" id=1]
-[ext_resource path="res://Sounds/Background Music/4ToFloorSynth.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Sounds/Background Music/Bass.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Sounds/Background Music/Drumbeat.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Sounds/Background Music/RythmicPad.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/Background Music/Speedware_Basic_Layer_Bass.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/Background Music/Speedware_Layer_2.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Background Music/Speedware_Layer_3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Background Music/Speedware_Basic_Layer_Drums.ogg" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -51,49 +51,11 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="BackgroundMusic" type="Node2D"]
+[node name="BackgroundMusic" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="FourToFloorSynth" type="AudioStreamPlayer" parent="." index="0"]
-
-stream = ExtResource( 2 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "4ToFloorSynth"
-_sections_unfolded = [ "Pause" ]
-
-[node name="Bass" type="AudioStreamPlayer" parent="." index="1"]
-
-stream = ExtResource( 3 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Bass"
-
-[node name="Drums" type="AudioStreamPlayer" parent="." index="2"]
-
-stream = ExtResource( 4 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Drums"
-
-[node name="RythmicPad" type="AudioStreamPlayer" parent="." index="3"]
-
-stream = ExtResource( 5 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "RythmicPad"
-_sections_unfolded = [ "Pause" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -102,5 +64,50 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/OnBeat = SubResource( 1 )
 blend_times = [  ]
+
+[node name="Speedware_Basic_Layer_Bass" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Bass"
+
+[node name="Speedware_Layer_2" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Layer2"
+
+[node name="Speedware_Layer_3" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Layer3"
+
+[node name="Speedware_Basic_Layer_Drums" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Drums"
+
+[node name="Wait" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="Wait" to="." method="_on_Wait_timeout"]
 
 

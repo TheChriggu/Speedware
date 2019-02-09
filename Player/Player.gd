@@ -31,3 +31,9 @@ func LaserEntered():
 
 func LaserExited():
 	$player.isSwitchColorEnabled = true
+
+func _on_player_is_at_fullspeed():
+	$BackgroundMusic.isAtFullspeed = true
+
+func _on_player_is_not_at_fullspeed():
+	$BackgroundMusic.isAtFullspeed = false

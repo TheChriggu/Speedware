@@ -1,38 +1,56 @@
 extends Node2D
 
-var currentPlayerSpeed = 100
-var playerMaxSpeedReached = true
+var isAtFullspeed = false
 var drumsAtFullVolume = false
 var bassAtFullVolume = false
-var drumsSilent
+var layer2Playing = true
+var layer3AtFullVolume = false
+var waitTimeFinished = false
 
 signal drum_beat
 
 func _ready():
-	$FourToFloorSynth.playing = true
-	$Bass.playing = true
-	$Drums.playing = true
-	$RythmicPad.playing = true
-	$AnimationPlayer.play("OnBeat")
+	$Speedware_Layer_2.playing = true
+	$Speedware_Layer_2.volume_db = 70
+	$Speedware_Layer_3.playing = true
+	$Speedware_Layer_3.volume_db = 0
+	$Speedware_Basic_Layer_Bass.playing = true
+	$Speedware_Basic_Layer_Drums.playing = true
+#	$AnimationPlayer.play("OnBeat")
 
 func _process(delta):
-	if playerMaxSpeedReached:
+	if isAtFullspeed:
 		if !bassAtFullVolume:
-			$Bass.volume_db += 0.5
-			if $Bass.volume_db >= 60:
+			$Speedware_Basic_Layer_Bass.volume_db += 0.5
+			if $Speedware_Basic_Layer_Bass.volume_db >= 60:
 				bassAtFullVolume = true
 		elif!drumsAtFullVolume:
-			$Drums.volume_db += 0.5
-			if $Drums.volume_db >= 65:
+			$Speedware_Basic_Layer_Drums.volume_db += 0.5
+			if $Speedware_Basic_Layer_Drums.volume_db >= 65:
 				drumsAtFullVolume = true
-
+				$Wait.start()
+		elif layer2Playing && waitTimeFinished:
+			$Speedware_Layer_2.volume_db -= 0.5
+			$Speedware_Layer_3.volume_db = 65 - $Speedware_Layer_2.volume_db
+			if $Speedware_Layer_2.volume_db <= 0:
+				layer2Playing = false
+				waitTimeFinished = false
 	else:
-		if $Drums.volume_db > 0:
-			$Drums.volume_db -= 0.5
+		if !layer2Playing:
+			$Speedware_Layer_2.volume_db += 0.5
+			$Speedware_Layer_3.volume_db = 65 - $Speedware_Layer_2.volume_db
+			if $Speedware_Layer_2.volume_db <= 0:
+				layer2Playing = true
+		elif $Speedware_Basic_Layer_Drums.volume_db > 0:
+			$Speedware_Basic_Layer_Drums.volume_db -= 0.5
 			drumsAtFullVolume = false
-		elif $Bass.volume_db > 0:
-			$Bass.volume_db -= 0.1
+		elif $Speedware_Basic_Layer_Bass.volume_db > 0:
+			$Speedware_Basic_Layer_Bass.volume_db -= 0.1
 			bassAtFullVolume = false
 
 func Beat():
 	emit_signal("drum_beat")
+
+
+func _on_Wait_timeout():
+	waitTimeFinished = true

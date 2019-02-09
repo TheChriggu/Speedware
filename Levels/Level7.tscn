@@ -1818,12 +1818,12 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [node name="Player" type="Node" parent="." index="4"]
 
-editor/display_folded = true
 script = ExtResource( 19 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 20 )]
 
 position = Vector2( -180.375, 1160.96 )
+FULSPEED_LEEWAY = 900
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 21 )]
 

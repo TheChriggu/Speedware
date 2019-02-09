@@ -21,7 +21,7 @@ func _ready():
 func _process(delta):
 	if isAtFullspeed:
 		if !bassAtFullVolume:
-			$Speedware_Basic_Layer_Bass.volume_db += 0.5
+			$Speedware_Basic_Layer_Bass.volume_db += 1
 			if $Speedware_Basic_Layer_Bass.volume_db >= 60:
 				bassAtFullVolume = true
 		elif!drumsAtFullVolume:
@@ -41,12 +41,15 @@ func _process(delta):
 			$Speedware_Layer_3.volume_db = 65 - $Speedware_Layer_2.volume_db
 			if $Speedware_Layer_2.volume_db >= 70:
 				layer2Playing = true
-		elif $Speedware_Basic_Layer_Drums.volume_db > 0:
+				$Wait.start()
+		elif $Speedware_Basic_Layer_Drums.volume_db > 0 && waitTimeFinished:
 			$Speedware_Basic_Layer_Drums.volume_db -= 0.5
 			drumsAtFullVolume = false
 		elif $Speedware_Basic_Layer_Bass.volume_db > 0:
-			$Speedware_Basic_Layer_Bass.volume_db -= 0.1
+			$Speedware_Basic_Layer_Bass.volume_db -= 0.5
 			bassAtFullVolume = false
+			waitTimeFinished = false
+			
 
 func Beat():
 	emit_signal("drum_beat")

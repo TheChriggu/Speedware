@@ -24,7 +24,7 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
 
-[node name="Level1_konstantin" type="Node"]
+[node name="Level1_konstantin" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -66,6 +66,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 position = Vector2( -443.37, -394.117 )
 WALK_MAX_SPEED = 1100
+FULSPEED_LEEWAY = 1000
 
 [node name="ParallaxBackground" parent="Player" index="2" instance=ExtResource( 8 )]
 
@@ -522,7 +523,11 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 
+[connection signal="is_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_at_fullspeed"]
+
 [connection signal="is_not_at_fullspeed" from="Player/player" to="." method="_on_player_is_not_at_fullspeed"]
+
+[connection signal="is_not_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_not_at_fullspeed"]
 
 [connection signal="switched_color_to_orange" from="Player/player" to="." method="_on_player_switched_color_to_orange"]
 

@@ -51,7 +51,7 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="BackgroundMusic" type="Node2D" index="0"]
+[node name="BackgroundMusic" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -104,7 +104,7 @@ bus = "Drums"
 [node name="Wait" type="Timer" parent="." index="5"]
 
 process_mode = 1
-wait_time = 5.0
+wait_time = 2.0
 one_shot = false
 autostart = false
 

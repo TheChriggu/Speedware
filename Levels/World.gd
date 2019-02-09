@@ -18,10 +18,12 @@ func _on_Speedboost_speedboost_stop():
 
 func _on_player_is_at_fullspeed():
 	$UI.RunFullspeedMode()
+	$Player.PlayerIsAtFullspeed()
 
 
 func _on_player_is_not_at_fullspeed():
 	$UI.StopFullspeedMode()
+	$Player.PlayerIsNotAtFullspeed()
 
 
 func _on_Collectible_collected():

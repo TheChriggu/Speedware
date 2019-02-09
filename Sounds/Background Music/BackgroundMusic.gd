@@ -39,7 +39,7 @@ func _process(delta):
 		if !layer2Playing:
 			$Speedware_Layer_2.volume_db += 0.5
 			$Speedware_Layer_3.volume_db = 65 - $Speedware_Layer_2.volume_db
-			if $Speedware_Layer_2.volume_db <= 0:
+			if $Speedware_Layer_2.volume_db >= 70:
 				layer2Playing = true
 		elif $Speedware_Basic_Layer_Drums.volume_db > 0:
 			$Speedware_Basic_Layer_Drums.volume_db -= 0.5

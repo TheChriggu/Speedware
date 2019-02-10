@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sounds/Background Music/BackgroundMusic.gd" type="Script" id=1]
 [ext_resource path="res://Sounds/Background Music/Speedware_Basic_Layer_Bass.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Sounds/Background Music/Speedware_Layer_2.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Sounds/Background Music/Speedware_Layer_3.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Sounds/Background Music/Speedware_Basic_Layer_Drums.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/Background Music/Timer.gd" type="Script" id=6]
+[ext_resource path="res://Sounds/Background Music/FullspeedTracker.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
 
@@ -51,7 +53,7 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="BackgroundMusic" type="Node2D"]
+[node name="BackgroundMusic" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -108,6 +110,23 @@ wait_time = 2.0
 one_shot = false
 autostart = false
 
+[node name="Timer" type="Node2D" parent="." index="6"]
+
+script = ExtResource( 6 )
+
+[node name="FullspeedTracker" type="Node2D" parent="." index="7"]
+
+script = ExtResource( 7 )
+
+[node name="Timer2" type="Timer" parent="FullspeedTracker" index="0"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = true
+
 [connection signal="timeout" from="Wait" to="." method="_on_Wait_timeout"]
+
+[connection signal="timeout" from="FullspeedTracker/Timer2" to="FullspeedTracker" method="_on_Timer2_timeout"]
 
 

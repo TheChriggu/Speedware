@@ -42,7 +42,7 @@ func _physics_process(delta):
 		SpeedboostMovement(delta)
 		BoostTrailOn()
 	
-			VerticalMovement(delta)
+	VerticalMovement(delta)
 	UIInteraction()
 
 		

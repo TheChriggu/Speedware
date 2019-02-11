@@ -23,7 +23,7 @@
 [ext_resource path="res://Player/character_rendering_orange.png" type="Texture" id=21]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=22]
 
-[node name="TitleScreen" type="Control" index="0"]
+[node name="TitleScreen" type="Control"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -118,10 +118,11 @@ _sections_unfolded = [ "Anchor", "Pause", "Size Flags", "custom_constants" ]
 [node name="StartGame" parent="Menu/CenterRow/Buttons" index="0" instance=ExtResource( 4 )]
 
 editor/display_folded = true
+visible = false
 margin_left = 0.0
-margin_top = 68.0
+margin_top = 173.0
 margin_right = 958.0
-margin_bottom = 218.0
+margin_bottom = 323.0
 rect_scale = Vector2( 1, 1 )
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../LevelSelection")
@@ -149,6 +150,7 @@ sceneToLoad = ExtResource( 11 )
 
 [node name="Chatlogs" parent="Menu/CenterRow/Buttons" index="2" instance=ExtResource( 4 )]
 
+visible = false
 margin_left = 0.0
 margin_top = 488.0
 margin_right = 958.0
@@ -165,9 +167,9 @@ sceneToLoad = ExtResource( 14 )
 [node name="Options" parent="Menu/CenterRow/Buttons" index="3" instance=ExtResource( 4 )]
 
 margin_left = 0.0
-margin_top = 698.0
+margin_top = 488.0
 margin_right = 958.0
-margin_bottom = 848.0
+margin_bottom = 638.0
 rect_scale = Vector2( 1, 1 )
 focus_neighbour_top = NodePath("../Chatlogs")
 focus_neighbour_bottom = NodePath("../Exit")
@@ -181,9 +183,9 @@ sceneToLoad = ExtResource( 17 )
 
 pause_mode = 2
 margin_left = 0.0
-margin_top = 908.0
+margin_top = 698.0
 margin_right = 958.0
-margin_bottom = 1058.0
+margin_bottom = 848.0
 rect_scale = Vector2( 1, 1 )
 focus_neighbour_top = NodePath("../Options")
 focus_neighbour_bottom = NodePath("../StartGame")

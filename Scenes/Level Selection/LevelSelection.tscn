@@ -1008,7 +1008,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="LevelSelection" type="Node"]
+[node name="LevelSelection" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -1023,6 +1023,7 @@ texture = ExtResource( 2 )
 editor/display_folded = true
 position = Vector2( 186.404, 812.294 )
 scene_to_load = ExtResource( 4 )
+LevelNumber = "01"
 
 [node name="Button" parent="LevelShortcut" index="0"]
 
@@ -1037,10 +1038,6 @@ texture_focused = ExtResource( 6 )
 
 texture = ExtResource( 7 )
 
-[node name="Label" parent="LevelShortcut" index="4"]
-
-text = "Best Time: 35.64"
-
 [node name="AnimationPlayer" parent="LevelShortcut" index="5"]
 
 anims/Mouse_Hover = SubResource( 1 )
@@ -1051,6 +1048,7 @@ anims/Mouse_Hover_Down = SubResource( 2 )
 editor/display_folded = true
 position = Vector2( 214.374, 142.583 )
 scene_to_load = ExtResource( 8 )
+LevelNumber = "02"
 
 [node name="Button" parent="LevelShortcut2" index="0"]
 
@@ -1068,10 +1066,6 @@ texture = ExtResource( 7 )
 [node name="Sprite3" parent="LevelShortcut2" index="3"]
 
 texture = ExtResource( 7 )
-
-[node name="Label" parent="LevelShortcut2" index="4"]
-
-text = "Best Time: 54.33"
 
 [node name="AnimationPlayer" parent="LevelShortcut2" index="5"]
 
@@ -1109,10 +1103,6 @@ texture = ExtResource( 7 )
 
 texture = ExtResource( 7 )
 
-[node name="Label" parent="LevelShortcut3" index="4"]
-
-text = "Best Time: -"
-
 [node name="AnimationPlayer" parent="LevelShortcut3" index="5"]
 
 anims/Mouse_Hover = SubResource( 5 )
@@ -1148,10 +1138,6 @@ texture = ExtResource( 7 )
 [node name="Sprite3" parent="LevelShortcut4" index="3"]
 
 texture = ExtResource( 7 )
-
-[node name="Label" parent="LevelShortcut4" index="4"]
-
-text = "Best Time: -"
 
 [node name="AnimationPlayer" parent="LevelShortcut4" index="5"]
 
@@ -1189,10 +1175,6 @@ texture = ExtResource( 7 )
 
 texture = ExtResource( 7 )
 
-[node name="Label" parent="LevelShortcut5" index="4"]
-
-text = "Best Time: -"
-
 [node name="AnimationPlayer" parent="LevelShortcut5" index="5"]
 
 anims/Mouse_Hover = SubResource( 9 )
@@ -1228,10 +1210,6 @@ texture = ExtResource( 7 )
 [node name="Sprite3" parent="LevelShortcut6" index="3"]
 
 texture = ExtResource( 7 )
-
-[node name="Label" parent="LevelShortcut6" index="4"]
-
-text = "Best Time: -"
 
 [node name="AnimationPlayer" parent="LevelShortcut6" index="5"]
 
@@ -1269,10 +1247,6 @@ texture = ExtResource( 7 )
 
 texture = ExtResource( 7 )
 
-[node name="Label" parent="LevelShortcut7" index="4"]
-
-text = "Best Time: -"
-
 [node name="AnimationPlayer" parent="LevelShortcut7" index="5"]
 
 anims/Mouse_Hover = SubResource( 13 )
@@ -1309,10 +1283,6 @@ texture = ExtResource( 7 )
 
 texture = ExtResource( 7 )
 
-[node name="Label" parent="LevelShortcut8" index="4"]
-
-text = "Best Time: -"
-
 [node name="AnimationPlayer" parent="LevelShortcut8" index="5"]
 
 anims/Mouse_Hover = SubResource( 15 )
@@ -1348,10 +1318,6 @@ texture = ExtResource( 7 )
 [node name="Sprite3" parent="LevelShortcut9" index="3"]
 
 texture = ExtResource( 7 )
-
-[node name="Label" parent="LevelShortcut9" index="4"]
-
-text = "Best Time: -"
 
 [node name="AnimationPlayer" parent="LevelShortcut9" index="5"]
 

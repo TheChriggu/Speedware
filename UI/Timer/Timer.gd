@@ -1,5 +1,13 @@
 extends CanvasLayer
 
+
+const timeSection = "Time"
+
+var config = ConfigFile.new()
+
+
+
+
 var CurrentTimer = 0.01
 
 func _ready():
@@ -14,7 +22,17 @@ func PrintCurrentTime():
 
 func FinishLinePassed():
 	set_process(false)
-	SetFinishTime()
+	
+	var time = SetFinishTime()
+	config.load("user://settings.cfg")
+	var previousTime = int(config.get_value(timeSection,$LevelNumber.text,0))
+	
+	if time < previousTime:
+		setTime(time)
+	config.save("user://settings.cfg")
+
+func setTime(value):
+	config.set_value(timeSection,$LevelNumber.text,value)
 
 func SetFinishTime():
 	var FinishTime = CurrentTimer

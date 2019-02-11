@@ -964,7 +964,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 [node name="Particles2D" type="Particles2D" parent="." index="10"]
 
 modulate = Color( 0.988235, 0.345098, 0, 1 )
-position = Vector2( -78.343, 55.456 )
+position = Vector2( -42.5441, 56.8069 )
 rotation = 3.6466
 emitting = true
 amount = 100
@@ -989,7 +989,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 [node name="Particles2D2" type="Particles2D" parent="." index="11"]
 
 modulate = Color( 0.988281, 0.347443, 0, 1 )
-position = Vector2( -34.6053, 84.4768 )
+position = Vector2( -0.832717, 75.0205 )
 rotation = 3.41571
 emitting = true
 amount = 100

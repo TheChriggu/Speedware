@@ -10,7 +10,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
+tracks/0/path = NodePath("BestTime:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -65,7 +65,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
+tracks/0/path = NodePath("BestTime:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -118,6 +118,7 @@ tracks/3/keys = {
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
 scene_to_load = null
+LevelNumber = ""
 
 [node name="Button" type="TextureButton" parent="." index="0"]
 
@@ -164,9 +165,8 @@ position = Vector2( 61.6123, -81.6923 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Label" type="Label" parent="." index="4"]
+[node name="BestTime" type="Label" parent="." index="4"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

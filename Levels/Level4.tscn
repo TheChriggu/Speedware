@@ -1156,7 +1156,7 @@ script = ExtResource( 23 )
 
 [node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 27 )]
 
-COLLECTIBLES_IN_THIS_LEVEL = 1
+COLLECTIBLES_IN_THIS_LEVEL = 2
 
 [node name="Timer" parent="UI" index="4" instance=ExtResource( 28 )]
 
@@ -1720,12 +1720,12 @@ text = "04"
 
 [connection signal="collected" from="Level/Collectibles/Collectible2" to="." method="_on_Collectible_collected"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

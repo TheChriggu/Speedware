@@ -1,15 +1,22 @@
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var config = ConfigFile.new()
+var newScore = 13214564
+
+var Section = "Score"
+var key = "Map1"
+const Path = "user://settings.cfg"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	
+	config.load("user://settings.cfg")
+	
+	var oldScore = int(config.get_value(Section,key,0))
+	
+	if newScore > oldScore:
+		setScore(newScore)
+	
+	config.save(Path)
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func setScore(value):
+	config.set_value(Section,key,value)

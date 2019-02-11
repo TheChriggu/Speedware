@@ -6,7 +6,7 @@
 [ext_resource path="res://Enviroment/Collectibles/Collectible_Icon_Floppy_Disk.png" type="Texture" id=4]
 [ext_resource path="res://IngameSubtitle.tres" type="DynamicFont" id=5]
 
-[node name="CollectiblesCollected" type="CanvasLayer" index="0"]
+[node name="CollectiblesCollected" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -43,7 +43,7 @@ maxCollectibles = 1
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 1703.89, 92.5966 )
+position = Vector2( 1715.77, 92.5966 )
 scale = Vector2( 0.0587474, 0.0552675 )
 texture = ExtResource( 4 )
 

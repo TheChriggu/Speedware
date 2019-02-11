@@ -103,7 +103,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.433594, 0.420044, 0.420044, 0.657451 )
+color = Color( 0.449219, 0.435181, 0.435181, 0.497216 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]

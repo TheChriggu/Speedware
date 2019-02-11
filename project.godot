@@ -12,7 +12,7 @@ config_version=3
 
 config/name="Speedware"
 run/main_scene="res://Scenes/Intro/LaserLabsIntro.tscn"
-config/icon="res://Game_Icon.png"
+config/icon="res://Speedware_Icon_placeholder.PNG"
 
 [display]
 

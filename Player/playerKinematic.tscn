@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/character_rendering_violet.png" type="Texture" id=2]
@@ -82,35 +82,17 @@ custom_solver_bias = 0.0
 radius = 18.8167
 height = 51.5164
 
+[sub_resource type="Animation" id=6]
+
+length = 1.0
+loop = false
+step = 0.1
+
 [sub_resource type="Animation" id=7]
 
 length = 1.0
 loop = false
 step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:WALK_FORCE")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:GRAVITY")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=8]
 
@@ -124,57 +106,13 @@ length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=22]
-
-resource_name = "FinishLinePassedCharFreeze"
-length = 2.0
-loop = false
-step = 0.1
-
 [sub_resource type="Animation" id=10]
 
-resource_name = "GameStartTimerOver"
 length = 1.0
 loop = false
 step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:WALK_FORCE")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1500 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:GRAVITY")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 3000.0 ]
-}
 
 [sub_resource type="Animation" id=11]
-
-length = 1.0
-loop = false
-step = 0.1
-
-[sub_resource type="Animation" id=12]
-
-length = 1.0
-loop = false
-step = 0.1
-
-[sub_resource type="Animation" id=13]
 
 length = 0.8
 loop = false
@@ -288,7 +226,7 @@ tracks/8/keys = {
 "values": [ -168.573, -168.573, -168.573 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=12]
 
 length = 1.0
 loop = false
@@ -426,7 +364,7 @@ tracks/10/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=13]
 
 length = 1.0
 loop = false
@@ -520,7 +458,7 @@ tracks/6/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=14]
 
 length = 1.0
 loop = false
@@ -614,7 +552,7 @@ tracks/6/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=15]
 
 length = 1.0
 loop = false
@@ -644,7 +582,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="ParticlesMaterial" id=18]
+[sub_resource type="ParticlesMaterial" id=16]
 
 render_priority = 0
 trail_divisor = 1
@@ -683,22 +621,22 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Flags", "Gravity", "Initial Velocity", "Orbit Velocity", "Scale", "Spread", "Trail" ]
 
-[sub_resource type="Gradient" id=19]
+[sub_resource type="Gradient" id=17]
 
 offsets = PoolRealArray( 0, 1 )
 colors = PoolColorArray( 0.947662, 1, 0.0429688, 1, 0.964844, 0.048996, 0.048996, 1 )
 
-[sub_resource type="GradientTexture" id=20]
+[sub_resource type="GradientTexture" id=18]
 
 flags = 4
-gradient = SubResource( 19 )
+gradient = SubResource( 17 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=21]
+[sub_resource type="ParticlesMaterial" id=19]
 
 render_priority = 0
 trail_divisor = 2
-trail_color_modifier = SubResource( 20 )
+trail_color_modifier = SubResource( 18 )
 emission_shape = 0
 flag_align_y = false
 flag_rotate_y = false
@@ -734,7 +672,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Animation", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
@@ -793,6 +731,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 [node name="Particles2DPurpleZero" type="Particles2D" parent="." index="1"]
 
 pause_mode = 2
+visible = false
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
@@ -819,6 +758,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="Particles2DOrangeOne" type="Particles2D" parent="." index="2"]
 
 pause_mode = 2
+visible = false
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
@@ -884,17 +824,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/CharacterGameStartAnimation = SubResource( 7 )
-anims/CharacterLevelEndAnimation = SubResource( 8 )
-anims/DatastringCrossAnimation = SubResource( 9 )
-anims/FinishLinePassedCharFreeze = SubResource( 22 )
-anims/GameStartTimerOver = SubResource( 10 )
-anims/IdleAnimation = SubResource( 11 )
-anims/JumpTakeoffAnimation = SubResource( 12 )
-anims/LeanLeft = SubResource( 13 )
-anims/LeanRight = SubResource( 14 )
-anims/SwitchOrangeToPurple = SubResource( 15 )
-anims/SwitchPurpleToOrange = SubResource( 16 )
+anims/CharacterGameStartAnimation = SubResource( 6 )
+anims/CharacterLevelEndAnimation = SubResource( 7 )
+anims/DatastringCrossAnimation = SubResource( 8 )
+anims/IdleAnimation = SubResource( 9 )
+anims/JumpTakeoffAnimation = SubResource( 10 )
+anims/LeanLeft = SubResource( 11 )
+anims/LeanRight = SubResource( 12 )
+anims/SwitchOrangeToPurple = SubResource( 13 )
+anims/SwitchPurpleToOrange = SubResource( 14 )
 blend_times = [  ]
 
 [node name="VFX" type="AnimationPlayer" parent="." index="7"]
@@ -904,7 +842,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/JumpAnimation = SubResource( 17 )
+anims/JumpAnimation = SubResource( 15 )
 blend_times = [  ]
 
 [node name="JumpAnimationParticles" type="Particles2D" parent="." index="8"]
@@ -927,7 +865,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 18 )
+process_material = SubResource( 16 )
 texture = ExtResource( 10 )
 normal_map = null
 h_frames = 1
@@ -954,7 +892,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 18 )
+process_material = SubResource( 16 )
 texture = ExtResource( 10 )
 normal_map = null
 h_frames = 1
@@ -963,6 +901,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 
 [node name="Particles2D" type="Particles2D" parent="." index="10"]
 
+visible = false
 modulate = Color( 0.988235, 0.345098, 0, 1 )
 position = Vector2( -78.343, 55.456 )
 rotation = 3.6466
@@ -979,7 +918,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 21 )
+process_material = SubResource( 19 )
 texture = null
 normal_map = null
 h_frames = 1
@@ -988,6 +927,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 
 [node name="Particles2D2" type="Particles2D" parent="." index="11"]
 
+visible = false
 modulate = Color( 0.988281, 0.347443, 0, 1 )
 position = Vector2( -34.6053, 84.4768 )
 rotation = 3.41571
@@ -1004,7 +944,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 21 )
+process_material = SubResource( 19 )
 texture = null
 normal_map = null
 h_frames = 1
@@ -1073,7 +1013,5 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 

@@ -731,6 +731,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 [node name="Particles2DPurpleZero" type="Particles2D" parent="." index="1"]
 
 pause_mode = 2
+visible = false
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
@@ -757,6 +758,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="Particles2DOrangeOne" type="Particles2D" parent="." index="2"]
 
 pause_mode = 2
+visible = false
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
@@ -899,6 +901,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 
 [node name="Particles2D" type="Particles2D" parent="." index="10"]
 
+visible = false
 modulate = Color( 0.988235, 0.345098, 0, 1 )
 position = Vector2( -78.343, 55.456 )
 rotation = 3.6466
@@ -924,6 +927,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 
 [node name="Particles2D2" type="Particles2D" parent="." index="11"]
 
+visible = false
 modulate = Color( 0.988281, 0.347443, 0, 1 )
 position = Vector2( -34.6053, 84.4768 )
 rotation = 3.41571

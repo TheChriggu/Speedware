@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/character_rendering_violet.png" type="Texture" id=2]
@@ -11,6 +11,11 @@
 [ext_resource path="res://Player/character_rendering_orange.png" type="Texture" id=9]
 [ext_resource path="res://Player/FlamesAnimationPlaceholder.png" type="Texture" id=10]
 [ext_resource path="res://Player/SwitcheffectExplosion.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player/SFX.gd" type="Script" id=12]
+[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToOrange.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToPurple.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnFloor.wav" type="AudioStream" id=16]
 
 [sub_resource type="Curve" id=1]
 
@@ -667,7 +672,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Animation", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
@@ -946,5 +951,63 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 
 show_behind_parent = true
 position = Vector2( 3.04739, 1.2499 )
+
+[node name="SFX" type="Node2D" parent="." index="13"]
+
+script = ExtResource( 12 )
+
+[node name="JumpOff" type="AudioStreamPlayer" parent="SFX" index="0"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="SwitchColorToOrange" type="AudioStreamPlayer" parent="SFX" index="1"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="SwitchColorToPurple" type="AudioStreamPlayer" parent="SFX" index="2"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="SFX" index="3"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="SFX" index="4"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="SFX" index="5"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

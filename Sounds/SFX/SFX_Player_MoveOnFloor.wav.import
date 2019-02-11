@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Player_MoveOnFloor.wav-48dc1d03ff77fa609d82ca5d98578cd8.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/SFX_Player_MoveOnFloor.wav"
+dest_files=[ "res://.import/SFX_Player_MoveOnFloor.wav-48dc1d03ff77fa609d82ca5d98578cd8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

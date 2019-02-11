@@ -188,8 +188,6 @@ func BoostTrailOff():
 
 func _on_GameStartTimer_GameStartTimerEnd():
 	$AnimationPlayer.play("GameStartTimerOver")
-	isJumping = true
 
 func _ready():
 	$AnimationPlayer.play("CharacterGameStartAnimation")
-	isJumping = false

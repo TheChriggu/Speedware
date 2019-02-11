@@ -364,8 +364,8 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
-
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="." method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

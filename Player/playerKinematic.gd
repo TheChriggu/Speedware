@@ -52,7 +52,8 @@ func HorizontalMovement(delta):
 	
 	#if forces are applying, play their animtaions, otherwise apply friction
 	if force.x > 0:
-		LeanRight()
+		#LeanRight()
+		$CharacterSprites.Run()
 	elif force.x < 0:
 		LeanLeft()
 	else:

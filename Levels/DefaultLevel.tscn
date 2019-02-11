@@ -38,7 +38,7 @@ script = ExtResource( 3 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( -234.614, 1065.2 )
+position = Vector2( 288.276, 538.213 )
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 5 )]
 
@@ -183,14 +183,6 @@ script = ExtResource( 18 )
 COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [node name="Timer" parent="UI" index="4" instance=ExtResource( 23 )]
-
-[connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
-
-[connection signal="is_not_at_fullspeed" from="Player/player" to="." method="_on_player_is_not_at_fullspeed"]
-
-[connection signal="switched_color_to_orange" from="Player/player" to="." method="_on_player_switched_color_to_orange"]
-
-[connection signal="switched_color_to_purple" from="Player/player" to="." method="_on_player_switched_color_to_purple"]
 
 [connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
 

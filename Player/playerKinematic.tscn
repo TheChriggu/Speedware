@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/character_rendering_violet.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToOrange.wav" type="AudioStream" id=14]
 [ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToPurple.wav" type="AudioStream" id=15]
 [ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnFloor.wav" type="AudioStream" id=16]
+[ext_resource path="res://Player/Player Animation/Run.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Curve" id=1]
 
@@ -672,7 +673,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Animation", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
@@ -697,6 +698,8 @@ IS_ORANGE = false
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
+visible = false
 position = Vector2( 3.82557, -1.63696 )
 rotation = 0.377236
 scale = Vector2( 0.126828, 0.126828 )
@@ -783,13 +786,13 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
 editor/display_folded = true
-position = Vector2( -3.19009, -4.38425 )
+position = Vector2( -29.3849, 68.9611 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="4"]
 
-editor/display_folded = true
+position = Vector2( -25.4464, 85.3201 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -954,6 +957,7 @@ position = Vector2( 3.04739, 1.2499 )
 
 [node name="SFX" type="Node2D" parent="." index="13"]
 
+editor/display_folded = true
 script = ExtResource( 12 )
 
 [node name="JumpOff" type="AudioStreamPlayer" parent="SFX" index="0"]
@@ -1009,5 +1013,10 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="CharacterSprites" parent="." index="14" instance=ExtResource( 17 )]
+
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
 
 

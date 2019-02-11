@@ -23,6 +23,7 @@ signal switched_color_to_purple #signal to send if the player has switched his c
 signal switched_color_to_orange #signal to send if the player has switched his color to purple
 signal is_at_fullspeed #signal to send, if the player is moving at full speed
 signal is_not_at_fullspeed #signal to send if player is not at full speed
+signal FinishLineAnimationFinished
 
 var isLeaningLeft = false
 var isLeaningRight = false
@@ -191,3 +192,8 @@ func _on_GameStartTimer_GameStartTimerEnd():
 
 func _ready():
 	$AnimationPlayer.play("CharacterGameStartAnimation")
+
+
+func _on_FinishArea_finish_line_passed():
+	$AnimationPlayer.play("FinishLinePassedCharFreeze")
+	emit_signal("FinishLineAnimationFinished")

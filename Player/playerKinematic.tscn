@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/character_rendering_violet.png" type="Texture" id=2]
@@ -87,30 +87,6 @@ height = 51.5164
 length = 1.0
 loop = false
 step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:WALK_FORCE")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:GRAVITY")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=7]
 
@@ -123,37 +99,6 @@ step = 0.1
 length = 1.0
 loop = false
 step = 0.1
-
-[sub_resource type="Animation" id=20]
-
-resource_name = "GameStartTimerOver"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:WALK_FORCE")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1500 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:GRAVITY")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 3000.0 ]
-}
 
 [sub_resource type="Animation" id=9]
 
@@ -727,7 +672,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Animation", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( -1.66478, 7.61046 )
 scale = Vector2( 0.8, 0.8 )
@@ -786,6 +731,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 [node name="Particles2DPurpleZero" type="Particles2D" parent="." index="1"]
 
 pause_mode = 2
+visible = false
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
@@ -812,6 +758,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="Particles2DOrangeOne" type="Particles2D" parent="." index="2"]
 
 pause_mode = 2
+visible = false
 show_behind_parent = true
 position = Vector2( 3.33757, -8.7665 )
 rotation = -1.5708
@@ -880,7 +827,6 @@ playback_speed = 1.0
 anims/CharacterGameStartAnimation = SubResource( 6 )
 anims/CharacterLevelEndAnimation = SubResource( 7 )
 anims/DatastringCrossAnimation = SubResource( 8 )
-anims/GameStartTimerOver = SubResource( 20 )
 anims/IdleAnimation = SubResource( 9 )
 anims/JumpTakeoffAnimation = SubResource( 10 )
 anims/LeanLeft = SubResource( 11 )
@@ -955,6 +901,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 
 [node name="Particles2D" type="Particles2D" parent="." index="10"]
 
+visible = false
 modulate = Color( 0.988235, 0.345098, 0, 1 )
 position = Vector2( -78.343, 55.456 )
 rotation = 3.6466
@@ -980,6 +927,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 
 [node name="Particles2D2" type="Particles2D" parent="." index="11"]
 
+visible = false
 modulate = Color( 0.988281, 0.347443, 0, 1 )
 position = Vector2( -34.6053, 84.4768 )
 rotation = 3.41571

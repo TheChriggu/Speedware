@@ -1,17 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/Datastrings/LaserLight.png" type="Texture" id=2]
-[ext_resource path="res://Enviroment/Datastrings/LaserLightWeak.png" type="Texture" id=3]
-[ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=4]
-[ext_resource path="res://Enviroment/Datastrings/SpotWhite.png" type="Texture" id=5]
+[ext_resource path="res://Enviroment/Datastrings/LaserLightColor.png" type="Texture" id=3]
+[ext_resource path="res://Enviroment/Datastrings/LaserLightWeak.png" type="Texture" id=4]
+[ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=5]
+[ext_resource path="res://Enviroment/Datastrings/SpotWhite.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2.16841, 273.185 )
 
-[sub_resource type="CanvasItemMaterial" id=1]
+[sub_resource type="CanvasItemMaterial" id=2]
 
 render_priority = 0
 blend_mode = 1
@@ -30,7 +31,7 @@ editor_only = false
 texture = ExtResource( 2 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
+color = Color( 1, 0, 0.988235, 1 )
 energy = 1.0
 mode = 0
 range_height = 0.0
@@ -47,6 +48,12 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range" ]
+
+[node name="Sprite" type="Sprite" parent="StrongLight" index="0"]
+
+self_modulate = Color( 0.734375, 0, 1, 0.243137 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
 
@@ -65,7 +72,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 position = Vector2( 10.0699, -3.78753 )
 scale = Vector2( 3.55962, 0.468951 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
@@ -85,7 +92,7 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -0.433369, 1.48467 )
 scale = Vector2( 0.615081, 0.468951 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="WeakLight" type="Light2D" parent="." index="3"]
@@ -93,7 +100,7 @@ _sections_unfolded = [ "Transform" ]
 light_mask = 3
 enabled = true
 editor_only = false
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -119,7 +126,7 @@ _sections_unfolded = [ "Range", "Visibility" ]
 modulate = Color( 0.949371, 0.0742188, 1, 1 )
 self_modulate = Color( 0.117188, 0.117188, 0.117188, 1 )
 light_mask = 2
-material = SubResource( 1 )
+material = SubResource( 2 )
 position = Vector2( -0.0336337, -128.046 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.177489 )
@@ -136,8 +143,8 @@ fract_delta = true
 visibility_rect = Rect2( -1088, -665, 2176, 1336 )
 local_coords = true
 draw_order = 0
-process_material = ExtResource( 4 )
-texture = ExtResource( 5 )
+process_material = ExtResource( 5 )
+texture = ExtResource( 6 )
 normal_map = null
 h_frames = 1
 v_frames = 1

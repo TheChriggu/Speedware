@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Player_SwitchColorToOrange.wav-a4de3624b179db06eaeb9bf785a5cdfd.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/SFX_Player_SwitchColorToOrange.wav"
+dest_files=[ "res://.import/SFX_Player_SwitchColorToOrange.wav-a4de3624b179db06eaeb9bf785a5cdfd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

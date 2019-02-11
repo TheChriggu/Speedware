@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
@@ -23,8 +23,10 @@
 [ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=21]
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
+[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=24]
+[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=25]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -34,12 +36,12 @@ environment = ExtResource( 2 )
 
 [node name="Player" type="Node" parent="." index="1"]
 
-editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( -253.846, 1018.17 )
+FULSPEED_LEEWAY = 900
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 5 )]
 
@@ -75,6 +77,7 @@ script = ExtResource( 10 )
 
 [node name="Lasers" type="Node2D" parent="Level" index="0"]
 
+editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 11 )
 
@@ -659,7 +662,6 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 
 [node name="UI" type="Node" parent="." index="3"]
 
-editor/display_folded = true
 script = ExtResource( 18 )
 
 [node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 19 )]
@@ -673,6 +675,12 @@ script = ExtResource( 18 )
 COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [node name="Timer" parent="UI" index="4" instance=ExtResource( 23 )]
+
+[node name="Levelnumber" parent="UI/Timer" index="2" instance=ExtResource( 24 )]
+
+text = "08"
+
+[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 25 )]
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 
@@ -1137,5 +1145,9 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 [connection signal="speedboost_start" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_stop"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

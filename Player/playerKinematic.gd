@@ -37,10 +37,12 @@ func _physics_process(delta):
 	if not isInSpeedboost:
 		BoostTrailOff()
 		HorizontalMovement(delta)
-		VerticalMovement(delta)
+	
 	else:
 		SpeedboostMovement(delta)
 		BoostTrailOn()
+	
+	VerticalMovement(delta)
 	UIInteraction()
 
 		
@@ -121,6 +123,7 @@ func Jump():
 		#Player can jump, even after leaving the Edge for some time
 		$AnimationPlayer.play("JumpTakeoffAnimation")
 		$VFX.play("JumpAnimation")
+		$SFX.JumpOff()
 		velocity.y = -JUMP_SPEED
 		isJumping = true
 		
@@ -160,11 +163,11 @@ func SwitchColor():
 	IS_ORANGE = not IS_ORANGE
 	if IS_ORANGE:
 		$AnimationPlayer.play("SwitchPurpleToOrange")
-		$ColorswitchSound.playing = true
+		$SFX.SwitchColorToOrange()
 		emit_signal("switched_color_to_orange")
 	else:
 		$AnimationPlayer.play("SwitchOrangeToPurple")
-		$ColorswitchSound.playing = true
+		$SFX.SwitchColorToPurple()
 		emit_signal("switched_color_to_purple")
 
 func CheckFullspeed():
@@ -182,3 +185,9 @@ func BoostTrailOn():
 func BoostTrailOff():
 	$Sprite/ParticlesIfBoosted.emitting = false
 	
+
+func _on_GameStartTimer_GameStartTimerEnd():
+	$AnimationPlayer.play("GameStartTimerOver")
+
+func _ready():
+	$AnimationPlayer.play("CharacterGameStartAnimation")

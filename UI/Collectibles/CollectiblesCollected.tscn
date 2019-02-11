@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.gd" type="Script" id=1]
-[ext_resource path="res://UI/Collectibles/CollectiblesLabel.gd" type="Script" id=2]
-[ext_resource path="res://Enviroment/Collectibles/Collectible_Icon_Floppy_Disk.png" type="Texture" id=3]
+[ext_resource path="res://main_menu_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Collectibles/CollectiblesLabel.gd" type="Script" id=3]
+[ext_resource path="res://Enviroment/Collectibles/Collectible_Icon_Floppy_Disk.png" type="Texture" id=4]
+[ext_resource path="res://IngameSubtitle.tres" type="DynamicFont" id=5]
 
 [node name="CollectiblesCollected" type="CanvasLayer"]
 
@@ -16,30 +18,56 @@ COLLECTIBLES_IN_THIS_LEVEL = 3
 
 [node name="Label" type="Label" parent="." index="0"]
 
-anchor_left = 0.0
+anchor_left = 1.0
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = 1865.0
-margin_top = 21.0
-margin_right = 1905.0
-margin_bottom = 35.0
+margin_left = -165.0
+margin_top = 60.0
+margin_right = 38.0
+margin_bottom = 107.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "2/2"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 2 )
-maxCollectibles = 0
+script = ExtResource( 3 )
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+maxCollectibles = 1
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 1810.63, 36.632 )
-scale = Vector2( 0.0619001, 0.0619001 )
-texture = ExtResource( 3 )
+position = Vector2( 1715.77, 92.5966 )
+scale = Vector2( 0.0587474, 0.0552675 )
+texture = ExtResource( 4 )
+
+[node name="subtext" type="Label" parent="." index="2"]
+
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -205.0
+margin_top = 27.0
+margin_right = -17.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "Floppies:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
 
 

@@ -1,5 +1,8 @@
 extends Node
 
+func _ready():
+	$UI/GameStartTimer/AnimationPlayer.play("LevelStartTimer")
+
 func _on_player_switched_color_to_orange():
 #	$Level.SwitchColorToOrange()
 	$UI.SwitchColorToOrange()
@@ -18,10 +21,12 @@ func _on_Speedboost_speedboost_stop():
 
 func _on_player_is_at_fullspeed():
 	$UI.RunFullspeedMode()
+	$Player.PlayerIsAtFullspeed()
 
 
 func _on_player_is_not_at_fullspeed():
 	$UI.StopFullspeedMode()
+	$Player.PlayerIsNotAtFullspeed()
 
 
 func _on_Collectible_collected():

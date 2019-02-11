@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
@@ -23,10 +23,15 @@
 [ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=21]
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
+[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=24]
+[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=25]
 
-[node name="Level1_konstantin" type="Node"]
+[node name="Level1_konstantin" type="Node" index="0"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 
@@ -66,6 +71,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 position = Vector2( -443.37, -394.117 )
 WALK_MAX_SPEED = 1100
+FULSPEED_LEEWAY = 1000
 
 [node name="ParallaxBackground" parent="Player" index="2" instance=ExtResource( 8 )]
 
@@ -520,7 +526,18 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [node name="Timer" parent="UI" index="4" instance=ExtResource( 23 )]
 
+[node name="Levelnumber" parent="UI/Timer" index="2" instance=ExtResource( 24 )]
+
+margin_right = 97.0
+margin_bottom = 105.0
+
+[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 25 )]
+
+[connection signal="is_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_at_fullspeed"]
+
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
+
+[connection signal="is_not_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_not_at_fullspeed"]
 
 [connection signal="is_not_at_fullspeed" from="Player/player" to="." method="_on_player_is_not_at_fullspeed"]
 
@@ -559,5 +576,9 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 [connection signal="collected" from="Level/Collectibles/Collectible" to="." method="_on_Collectible_collected"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

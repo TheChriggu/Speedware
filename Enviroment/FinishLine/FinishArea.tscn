@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/FinishLine/Finishline_Image.png" type="Texture" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=14]
 [ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=15]
 [ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=16]
-[ext_resource path="res://Enviroment/FinishLine/ChatlogFinishPlaceholder.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -26,7 +25,7 @@ extents = Vector2( 963.52, 60.9621 )
 [sub_resource type="Animation" id=2]
 
 resource_name = "FinishLinePassed"
-length = 1.0
+length = 2.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -66,16 +65,16 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Label:visible")
+tracks/3/path = NodePath("CanvasLayer/Label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, false ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("ParticleGroup/ParticleGroup2:visible")
@@ -120,7 +119,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 1.8 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -132,11 +131,25 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 1.8 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "popupOpen"
+} ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "GrabButtonFocus"
 } ]
 }
 
@@ -364,7 +377,6 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 [node name="ParticleGroup2" type="Node2D" parent="ParticleGroup" index="2"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -1.47987, -504.314 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -421,7 +433,6 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 [node name="ParticleGroup3" type="Node2D" parent="ParticleGroup" index="3"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( -4.27769, -374.129 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -478,7 +489,6 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 [node name="ParticleGroup4" type="Node2D" parent="ParticleGroup" index="4"]
 
 editor/display_folded = true
-visible = false
 position = Vector2( 2.45705, -245.971 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -606,17 +616,17 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Label" type="Label" parent="." index="5"]
+[node name="Label" type="Label" parent="CanvasLayer" index="0"]
 
 visible = false
-anchor_left = 0.0
+anchor_left = 0.5
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = 76.0
-margin_top = -135.0
-margin_right = 3254.0
-margin_bottom = 139.0
+margin_left = -537.0
+margin_top = 407.0
+margin_right = 415.0
+margin_bottom = 525.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -633,7 +643,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="LinePassedMusic" type="AudioStreamPlayer" parent="." index="6"]
+[node name="LinePassedMusic" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = ExtResource( 6 )
 volume_db = 0.0
@@ -642,7 +652,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Popup" type="CanvasLayer" parent="." index="7"]
+[node name="Popup" type="CanvasLayer" parent="." index="6"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -784,12 +794,6 @@ script = ExtResource( 16 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 FinishTime = 0
 
-[node name="ChatlogPlaceholder" type="Sprite" parent="Popup/Control" index="1"]
-
-position = Vector2( 557.034, 12.4219 )
-scale = Vector2( 1.15124, 1.15124 )
-texture = ExtResource( 17 )
-
 [connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
 
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
@@ -798,9 +802,9 @@ texture = ExtResource( 17 )
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/BackToMenu" to="Popup/Control/PopupBackground/BackToMenu" method="_on_BackToMenu_pressed"]
 
-[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
-
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
+
+[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/ReplayLevel" to="Popup/Control/PopupBackground/ReplayLevel" method="_on_ReplayLevel_pressed"]
 

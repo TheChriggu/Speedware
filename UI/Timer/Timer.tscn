@@ -18,12 +18,14 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="Timer" type="CanvasLayer"]
 
+pause_mode = 1
 layer = 99
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="TimerLabel" type="Label" parent="." index="0"]
 

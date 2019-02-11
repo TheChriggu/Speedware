@@ -185,3 +185,9 @@ func BoostTrailOn():
 func BoostTrailOff():
 	$Sprite/ParticlesIfBoosted.emitting = false
 	
+
+func _on_GameStartTimer_GameStartTimerEnd():
+	$AnimationPlayer.play("GameStartTimerOver")
+
+func _ready():
+	$AnimationPlayer.play("CharacterGameStartAnimation")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
@@ -25,9 +25,10 @@
 [ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=23]
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=24]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=25]
-[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=26]
+[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=26]
+[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=27]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -1854,7 +1855,11 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [node name="Timer" parent="UI" index="4" instance=ExtResource( 25 )]
 
-[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 26 )]
+[node name="Levelnumber" parent="UI/Timer" index="2" instance=ExtResource( 26 )]
+
+text = "07"
+
+[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 27 )]
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 
@@ -3264,8 +3269,8 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [connection signal="speedboost_stop" from="Level/Speedboosters/Speedboost2" to="." method="_on_Speedboost_speedboost_stop"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
-
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

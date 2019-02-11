@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/LevelSelectionBackground.png" type="Texture" id=2]
@@ -11,10 +11,12 @@
 [ext_resource path="res://Levels/Level3.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Levels/Level4.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Level5.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/Level7.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=14]
-[ext_resource path="res://Scenes/BackToMenuInfo.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Levels/Level6.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/Level7.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Scenes/BackToMenuInfo.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Animation" id=1]
 
@@ -1006,7 +1008,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="LevelSelection" type="Node" index="0"]
+[node name="LevelSelection" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -1200,7 +1202,7 @@ anims/Mouse_Hover_Down = SubResource( 10 )
 
 editor/display_folded = true
 position = Vector2( 1274.86, 873.292 )
-scene_to_load = ExtResource( 11 )
+scene_to_load = ExtResource( 12 )
 
 [node name="Button" parent="LevelShortcut6" index="0"]
 
@@ -1240,7 +1242,7 @@ anims/Mouse_Hover_Down = SubResource( 12 )
 
 editor/display_folded = true
 position = Vector2( 1341.15, 174.18 )
-scene_to_load = ExtResource( 12 )
+scene_to_load = ExtResource( 13 )
 
 [node name="Button" parent="LevelShortcut7" index="0"]
 
@@ -1280,7 +1282,7 @@ anims/Mouse_Hover_Down = SubResource( 14 )
 
 editor/display_folded = true
 position = Vector2( 1793.74, 187.555 )
-scene_to_load = ExtResource( 12 )
+scene_to_load = ExtResource( 14 )
 
 [node name="Button" parent="LevelShortcut8" index="0"]
 
@@ -1320,7 +1322,7 @@ anims/Mouse_Hover_Down = SubResource( 16 )
 
 editor/display_folded = true
 position = Vector2( 1737.7, 535.214 )
-scene_to_load = ExtResource( 12 )
+scene_to_load = ExtResource( 14 )
 
 [node name="Button" parent="LevelShortcut9" index="0"]
 
@@ -1361,7 +1363,7 @@ anims/Mouse_Hover_Down = SubResource( 18 )
 editor/display_folded = true
 position = Vector2( 1782.58, 987.715 )
 _sections_unfolded = [ "Pause", "Visibility" ]
-scene_to_load = ExtResource( 12 )
+scene_to_load = ExtResource( 14 )
 
 [node name="Button" parent="LevelShortcut10" index="0"]
 
@@ -1372,7 +1374,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut8/Button")
 texture_normal = ExtResource( 5 )
 texture_focused = ExtResource( 6 )
 
-[node name="Return_to_Menu" parent="." index="11" instance=ExtResource( 13 )]
+[node name="Return_to_Menu" parent="." index="11" instance=ExtResource( 15 )]
 
 show_behind_parent = true
 anchor_left = 0.5
@@ -1386,14 +1388,14 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="12"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 16 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="BackToMenuInfo" parent="." index="13" instance=ExtResource( 15 )]
+[node name="BackToMenuInfo" parent="." index="13" instance=ExtResource( 17 )]
 
 margin_left = 1384.0
 margin_top = 1010.0

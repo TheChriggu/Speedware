@@ -86,5 +86,5 @@ speedboostOff=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_n
 
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.519104, 0.703125, 0.659995, 1 )
 environment/default_environment="res://default_env.tres"

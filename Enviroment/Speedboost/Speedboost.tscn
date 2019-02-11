@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Enviroment/Speedboost/Speedboost.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/Speedboost/speedboostarrowsprite.png" type="Texture" id=2]
@@ -76,17 +76,15 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread", "Trail" ]
 
-[sub_resource type="RectangleShape2D" id=7]
-
-custom_solver_bias = 0.0
-extents = Vector2( 112.534, 113.315 )
-
 [node name="Speedboost" type="Sprite"]
 
 position = Vector2( 776.714, 44.7581 )
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_vertical_guides_": [ 572.767 ]
+}
 SPEED = 1800
 LENGTH = 1.5
 
@@ -167,7 +165,6 @@ _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Tran
 
 [node name="Area2D" type="Area2D" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 246.204, 77.4997 )
 scale = Vector2( 12.1018, 0.816168 )
 input_pickable = true
@@ -181,11 +178,12 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" index="0"]
 
 position = Vector2( -1.45703, 8.23422 )
 scale = Vector2( 0.18561, 3.08041 )
-shape = SubResource( 7 )
+build_mode = 0
+polygon = PoolVector2Array( 151.446, -3.71802, 5.26038, -104.307, -131.678, -59.6296, -131.678, 61.4469, 4.6709, 100.557 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ring2" type="Sprite" parent="." index="4"]

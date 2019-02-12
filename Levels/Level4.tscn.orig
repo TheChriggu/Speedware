@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
@@ -28,8 +28,10 @@
 [ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=26]
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=27]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=28]
+[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=29]
+[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=30]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -39,7 +41,6 @@ environment = ExtResource( 2 )
 
 [node name="Player" type="Node" parent="." index="1"]
 
-editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 4 )]
@@ -47,6 +48,7 @@ script = ExtResource( 3 )
 position = Vector2( -234.614, 1065.2 )
 WALK_MAX_SPEED = 1500
 FULLSPEED_MAX_SPEED = 2000
+FULSPEED_LEEWAY = 1400
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 5 )]
 
@@ -78,7 +80,6 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Level" type="Node" parent="." index="2"]
 
-editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="0"]
@@ -863,13 +864,7 @@ rotation = -1.5708
 position = Vector2( 24784.8, 3491.17 )
 rotation = -1.5708
 
-[node name="LaserBlau36" parent="Level/Lasers" index="98" instance=ExtResource( 16 )]
-
-visible = false
-position = Vector2( 27024.2, 3506.29 )
-rotation = -1.5708
-
-[node name="LaserBlau37" parent="Level/Lasers" index="99" instance=ExtResource( 16 )]
+[node name="LaserBlau37" parent="Level/Lasers" index="98" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 26769.3, 3506.29 )
@@ -880,17 +875,17 @@ rotation = -1.5708
 position = Vector2( -0.1875, -112.046 )
 texture = ExtResource( 17 )
 
-[node name="LaserBlau38" parent="Level/Lasers" index="100" instance=ExtResource( 16 )]
+[node name="LaserBlau38" parent="Level/Lasers" index="99" instance=ExtResource( 16 )]
 
 position = Vector2( 27025.3, 3506.29 )
 rotation = -1.5708
 
-[node name="LaserBlau39" parent="Level/Lasers" index="101" instance=ExtResource( 16 )]
+[node name="LaserBlau39" parent="Level/Lasers" index="100" instance=ExtResource( 16 )]
 
 position = Vector2( 27281.3, 3506.29 )
 rotation = -1.5708
 
-[node name="LaserBlau40" parent="Level/Lasers" index="102" instance=ExtResource( 16 )]
+[node name="LaserBlau40" parent="Level/Lasers" index="101" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 27537.3, 3506.29 )
@@ -901,7 +896,7 @@ rotation = -1.5708
 position = Vector2( 0.294434, 123.943 )
 texture = ExtResource( 18 )
 
-[node name="LaserBlau41" parent="Level/Lasers" index="103" instance=ExtResource( 16 )]
+[node name="LaserBlau41" parent="Level/Lasers" index="102" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 32464.4, 3939.27 )
@@ -912,17 +907,17 @@ rotation = -1.5708
 position = Vector2( -0.1875, -112.046 )
 texture = ExtResource( 17 )
 
-[node name="LaserBlau44" parent="Level/Lasers" index="104" instance=ExtResource( 16 )]
+[node name="LaserBlau44" parent="Level/Lasers" index="103" instance=ExtResource( 16 )]
 
 position = Vector2( 32720.4, 3939.27 )
 rotation = -1.5708
 
-[node name="LaserBlau43" parent="Level/Lasers" index="105" instance=ExtResource( 16 )]
+[node name="LaserBlau43" parent="Level/Lasers" index="104" instance=ExtResource( 16 )]
 
 position = Vector2( 32976.4, 3939.27 )
 rotation = -1.5708
 
-[node name="LaserBlau42" parent="Level/Lasers" index="106" instance=ExtResource( 16 )]
+[node name="LaserBlau42" parent="Level/Lasers" index="105" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 33232.4, 3939.27 )
@@ -933,7 +928,7 @@ rotation = -1.5708
 position = Vector2( -0.0716553, 125.07 )
 texture = ExtResource( 18 )
 
-[node name="LaserBlau45" parent="Level/Lasers" index="107" instance=ExtResource( 16 )]
+[node name="LaserBlau45" parent="Level/Lasers" index="106" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 35089.2, 3683.12 )
@@ -944,12 +939,12 @@ rotation = -1.5708
 position = Vector2( -0.1875, -112.046 )
 texture = ExtResource( 17 )
 
-[node name="LaserBlau48" parent="Level/Lasers" index="108" instance=ExtResource( 16 )]
+[node name="LaserBlau48" parent="Level/Lasers" index="107" instance=ExtResource( 16 )]
 
 position = Vector2( 35345.2, 3683.12 )
 rotation = -1.5708
 
-[node name="LaserBlau46" parent="Level/Lasers" index="109" instance=ExtResource( 16 )]
+[node name="LaserBlau46" parent="Level/Lasers" index="108" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 35857.2, 3683.12 )
@@ -960,17 +955,17 @@ rotation = -1.5708
 position = Vector2( -0.0716553, 125.07 )
 texture = ExtResource( 18 )
 
-[node name="LaserBlau47" parent="Level/Lasers" index="110" instance=ExtResource( 16 )]
+[node name="LaserBlau47" parent="Level/Lasers" index="109" instance=ExtResource( 16 )]
 
 position = Vector2( 35601.2, 3683.12 )
 rotation = -1.5708
 
-[node name="LaserBlau56" parent="Level/Lasers" index="111" instance=ExtResource( 16 )]
+[node name="LaserBlau56" parent="Level/Lasers" index="110" instance=ExtResource( 16 )]
 
 position = Vector2( 37009.9, 3744.18 )
 rotation = -1.5708
 
-[node name="LaserBlau49" parent="Level/Lasers" index="112" instance=ExtResource( 16 )]
+[node name="LaserBlau49" parent="Level/Lasers" index="111" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 42064.2, 3442.77 )
@@ -981,17 +976,17 @@ rotation = -1.5708
 position = Vector2( -0.1875, -112.046 )
 texture = ExtResource( 17 )
 
-[node name="LaserBlau50" parent="Level/Lasers" index="113" instance=ExtResource( 16 )]
+[node name="LaserBlau50" parent="Level/Lasers" index="112" instance=ExtResource( 16 )]
 
 position = Vector2( 42320.2, 3442.77 )
 rotation = -1.5708
 
-[node name="LaserBlau52" parent="Level/Lasers" index="114" instance=ExtResource( 16 )]
+[node name="LaserBlau52" parent="Level/Lasers" index="113" instance=ExtResource( 16 )]
 
 position = Vector2( 42576.2, 3442.77 )
 rotation = -1.5708
 
-[node name="LaserBlau51" parent="Level/Lasers" index="115" instance=ExtResource( 16 )]
+[node name="LaserBlau51" parent="Level/Lasers" index="114" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 42832.2, 3442.77 )
@@ -1002,7 +997,7 @@ rotation = -1.5708
 position = Vector2( -0.0716553, 125.07 )
 texture = ExtResource( 18 )
 
-[node name="LaserBlau55" parent="Level/Lasers" index="116" instance=ExtResource( 16 )]
+[node name="LaserBlau55" parent="Level/Lasers" index="115" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 43472.8, 3503.83 )
@@ -1013,17 +1008,17 @@ rotation = -1.5708
 position = Vector2( -0.1875, -112.046 )
 texture = ExtResource( 17 )
 
-[node name="LaserBlau57" parent="Level/Lasers" index="117" instance=ExtResource( 16 )]
+[node name="LaserBlau57" parent="Level/Lasers" index="116" instance=ExtResource( 16 )]
 
 position = Vector2( 43728.8, 3503.83 )
 rotation = -1.5708
 
-[node name="LaserBlau53" parent="Level/Lasers" index="118" instance=ExtResource( 16 )]
+[node name="LaserBlau53" parent="Level/Lasers" index="117" instance=ExtResource( 16 )]
 
 position = Vector2( 43984.8, 3503.83 )
 rotation = -1.5708
 
-[node name="LaserBlau54" parent="Level/Lasers" index="119" instance=ExtResource( 16 )]
+[node name="LaserBlau54" parent="Level/Lasers" index="118" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 44240.8, 3503.83 )
@@ -1034,7 +1029,7 @@ rotation = -1.5708
 position = Vector2( -0.0716553, 125.07 )
 texture = ExtResource( 18 )
 
-[node name="LaserBlau59" parent="Level/Lasers" index="120" instance=ExtResource( 16 )]
+[node name="LaserBlau59" parent="Level/Lasers" index="119" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 44625, 3505.14 )
@@ -1045,17 +1040,17 @@ rotation = -1.5708
 position = Vector2( -0.1875, -112.046 )
 texture = ExtResource( 17 )
 
-[node name="LaserBlau58" parent="Level/Lasers" index="121" instance=ExtResource( 16 )]
+[node name="LaserBlau58" parent="Level/Lasers" index="120" instance=ExtResource( 16 )]
 
 position = Vector2( 44881, 3505.14 )
 rotation = -1.5708
 
-[node name="LaserBlau60" parent="Level/Lasers" index="122" instance=ExtResource( 16 )]
+[node name="LaserBlau60" parent="Level/Lasers" index="121" instance=ExtResource( 16 )]
 
 position = Vector2( 45137, 3505.14 )
 rotation = -1.5708
 
-[node name="LaserBlau61" parent="Level/Lasers" index="123" instance=ExtResource( 16 )]
+[node name="LaserBlau61" parent="Level/Lasers" index="122" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 45393, 3505.14 )
@@ -1066,7 +1061,7 @@ rotation = -1.5708
 position = Vector2( -0.0716553, 125.07 )
 texture = ExtResource( 18 )
 
-[node name="LaserBlau65" parent="Level/Lasers" index="124" instance=ExtResource( 16 )]
+[node name="LaserBlau65" parent="Level/Lasers" index="123" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 position = Vector2( 45264.4, 3762.23 )
@@ -1077,27 +1072,27 @@ rotation = -1.5708
 position = Vector2( -0.1875, -112.046 )
 texture = ExtResource( 17 )
 
-[node name="LaserBlau64" parent="Level/Lasers" index="125" instance=ExtResource( 16 )]
+[node name="LaserBlau64" parent="Level/Lasers" index="124" instance=ExtResource( 16 )]
 
 position = Vector2( 45520.4, 3762.23 )
 rotation = -1.5708
 
-[node name="LaserBlau62" parent="Level/Lasers" index="126" instance=ExtResource( 16 )]
+[node name="LaserBlau62" parent="Level/Lasers" index="125" instance=ExtResource( 16 )]
 
 position = Vector2( 45776.4, 3762.23 )
 rotation = -1.5708
 
-[node name="LaserBlau66" parent="Level/Lasers" index="127" instance=ExtResource( 16 )]
+[node name="LaserBlau66" parent="Level/Lasers" index="126" instance=ExtResource( 16 )]
 
 position = Vector2( 46032.4, 3762.23 )
 rotation = -1.5708
 
-[node name="LaserBlau67" parent="Level/Lasers" index="128" instance=ExtResource( 16 )]
+[node name="LaserBlau67" parent="Level/Lasers" index="127" instance=ExtResource( 16 )]
 
 position = Vector2( 46288.4, 3762.23 )
 rotation = -1.5708
 
-[node name="LaserBlau63" parent="Level/Lasers" index="129" instance=ExtResource( 16 )]
+[node name="LaserBlau63" parent="Level/Lasers" index="128" instance=ExtResource( 16 )]
 
 position = Vector2( 46544.4, 3762.23 )
 rotation = -1.5708
@@ -1151,7 +1146,6 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 
 [node name="UI" type="Node" parent="." index="3"]
 
-editor/display_folded = true
 script = ExtResource( 23 )
 
 [node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 24 )]
@@ -1162,9 +1156,17 @@ script = ExtResource( 23 )
 
 [node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 27 )]
 
-COLLECTIBLES_IN_THIS_LEVEL = 1
+COLLECTIBLES_IN_THIS_LEVEL = 2
 
 [node name="Timer" parent="UI" index="4" instance=ExtResource( 28 )]
+
+[node name="Levelnumber" parent="UI/Timer" index="2" instance=ExtResource( 29 )]
+
+text = "04"
+
+[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 30 )]
+
+[connection signal="FinishLineAnimationFinished" from="Player/player" to="Level/FinishArea" method="_on_player_FinishLineAnimationFinished"]
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 
@@ -1590,10 +1592,6 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 
 [connection signal="laser_exited" from="Level/Lasers/LaserBlau32" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserBlau36" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
-
-[connection signal="laser_exited" from="Level/Lasers/LaserBlau36" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
-
 [connection signal="laser_entered" from="Level/Lasers/LaserBlau37" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserBlau37" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
@@ -1723,5 +1721,11 @@ COLLECTIBLES_IN_THIS_LEVEL = 1
 [connection signal="collected" from="Level/Collectibles/Collectible2" to="." method="_on_Collectible_collected"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

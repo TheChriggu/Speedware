@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/ui-menu-wireframe.png" type="Texture" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Scenes/Level Selection/bar_button_focused.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Level Selection/bar_button.png" type="Texture" id=15]
+[ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=1]
 
@@ -1220,6 +1224,40 @@ tracks/4/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="StyleBoxTexture" id=20]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+margin_left = 0.0
+margin_right = 0.0
+margin_top = 0.0
+margin_bottom = 0.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=19]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+margin_left = 0.0
+margin_right = 0.0
+margin_top = 0.0
+margin_bottom = 0.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
+
 [node name="LevelSelection" type="Node" index="0"]
 
 script = ExtResource( 1 )
@@ -1239,6 +1277,7 @@ LevelNumber = "00"
 [node name="Button" parent="LevelShortcutTutorial" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcut9/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
 
 [node name="Sprite" parent="LevelShortcutTutorial" index="2"]
@@ -1285,6 +1324,7 @@ LevelNumber = "01"
 [node name="Button" parent="LevelShortcut" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcutTutorial/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut2/Button")
 
 [node name="Sprite" parent="LevelShortcut" index="2"]
@@ -1323,6 +1363,7 @@ LevelNumber = "02"
 [node name="Button" parent="LevelShortcut2" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcut/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut3/Button")
 
 [node name="Sprite" parent="LevelShortcut2" index="2"]
@@ -1366,6 +1407,7 @@ LevelNumber = "03"
 [node name="Button" parent="LevelShortcut3" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcut2/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut4/Button")
 
 [node name="Sprite" parent="LevelShortcut3" index="2"]
@@ -1409,6 +1451,7 @@ LevelNumber = "04"
 [node name="Button" parent="LevelShortcut4" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcut3/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut5/Button")
 
 [node name="Sprite" parent="LevelShortcut4" index="2"]
@@ -1452,6 +1495,7 @@ LevelNumber = "05"
 [node name="Button" parent="LevelShortcut5" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcut4/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut6/Button")
 
 [node name="Sprite" parent="LevelShortcut5" index="2"]
@@ -1495,6 +1539,7 @@ LevelNumber = "06"
 [node name="Button" parent="LevelShortcut6" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcut5/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut7/Button")
 
 [node name="Sprite" parent="LevelShortcut6" index="2"]
@@ -1538,6 +1583,7 @@ LevelNumber = "07"
 [node name="Button" parent="LevelShortcut7" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcut6/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut8/Button")
 
 [node name="Sprite" parent="LevelShortcut7" index="2"]
@@ -1581,6 +1627,7 @@ LevelNumber = "08"
 [node name="Button" parent="LevelShortcut8" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcut7/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut9/Button")
 
 [node name="Sprite" parent="LevelShortcut8" index="2"]
@@ -1624,6 +1671,7 @@ LevelNumber = "09"
 [node name="Button" parent="LevelShortcut9" index="1"]
 
 focus_neighbour_top = NodePath("../../LevelShortcut8/Button")
+focus_neighbour_right = NodePath("../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcutTutorial/Button")
 
 [node name="Sprite" parent="LevelShortcut9" index="2"]
@@ -1676,7 +1724,103 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Music"
+
+[node name="Musicslider" type="HSlider" parent="." index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1132.0
+margin_top = 591.0
+margin_right = 1662.0
+margin_bottom = 607.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../LevelShortcut/Button")
+focus_neighbour_bottom = NodePath("../SFXSlider")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_icons/tick = ExtResource( 14 )
+custom_icons/grabber_disabled = ExtResource( 14 )
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 14 )
+custom_styles/slider = SubResource( 20 )
+min_value = -80.0
+max_value = 24.0
+step = 20.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "custom_icons", "custom_styles" ]
+
+[node name="SFXSlider" type="HSlider" parent="." index="14"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1132.0
+margin_top = 696.0
+margin_right = 1661.0
+margin_bottom = 712.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../Musicslider")
+focus_neighbour_bottom = NodePath("../LevelShortcut/Button")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_icons/tick = ExtResource( 14 )
+custom_icons/grabber_disabled = ExtResource( 14 )
+custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber = ExtResource( 14 )
+custom_styles/slider = SubResource( 19 )
+min_value = -80.0
+max_value = 24.0
+step = 20.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "custom_icons" ]
+
+[node name="SFXExample" type="AudioStreamPlayer" parent="." index="15"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="MusicExample" type="AudioStreamPlayer" parent="." index="16"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Music"
+
+[connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]
+
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 
 
 [editable path="LevelShortcutTutorial"]

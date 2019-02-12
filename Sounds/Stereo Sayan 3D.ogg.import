@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Stereo Sayan 3D.ogg-9143973bb5cc9492308bb7e5746cdc64
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

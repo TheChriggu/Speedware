@@ -76,7 +76,7 @@ _sections_unfolded = [ "Pause", "Scroll" ]
 
 motion_scale = Vector2( 0.2, 0.2 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1920, 1080 )
+motion_mirroring = Vector2( 2880, 1620 )
 _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer" index="0"]

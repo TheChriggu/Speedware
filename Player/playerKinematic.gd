@@ -123,7 +123,7 @@ func Jump():
 	if Input.is_action_just_pressed("jump") and not isJumping and onAirTime < JUMP_MAX_AIRBORNE_TIME:
 		#Player can jump, even after leaving the Edge for some time
 		$AnimationPlayer.play("JumpTakeoffAnimation")
-		$VFX.play("JumpAnimation")
+		$VFX.PlayJumpAnimation()
 		$SFX.JumpOff()
 		velocity.y = -JUMP_SPEED
 		isJumping = true
@@ -133,7 +133,7 @@ func Jump():
 	
 	if isJumping and velocity.y > 0:
 		isJumping = false
-		$VFX.play("JumpAnimation")
+		$VFX.PlayJumpAnimation()
 
 #Cut the jump, when a certain speed is reached
 func JumpCut():
@@ -181,10 +181,10 @@ func CheckFullspeed():
 
 #ParcticlesIfBoosted
 func BoostTrailOn():
-	$Sprite/ParticlesIfBoosted.emitting = true
+	$VFX.TurnBoostParticlesOn()
 
 func BoostTrailOff():
-	$Sprite/ParticlesIfBoosted.emitting = false
+	$VFX.TurnBoostParticlesOff()
 	
 
 func _on_GameStartTimer_GameStartTimerEnd():

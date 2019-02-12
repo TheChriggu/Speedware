@@ -1234,7 +1234,7 @@ texture = ExtResource( 2 )
 editor/display_folded = true
 position = Vector2( 418.97, 226.961 )
 scene_to_load = ExtResource( 4 )
-LevelNumber = "01"
+LevelNumber = "00"
 
 [node name="Button" parent="LevelShortcutTutorial" index="1"]
 

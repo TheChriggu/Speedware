@@ -25,14 +25,14 @@ func FinishLinePassed():
 	
 	var time = SetFinishTime()
 	config.load("user://settings.cfg")
-	var previousTime = int(config.get_value(timeSection,$LevelNumber.text,0))
+	var previousTime = int(config.get_value(timeSection,$Levelnumber.text,999))
 	
 	if time < previousTime:
 		setTime(time)
 	config.save("user://settings.cfg")
 
 func setTime(value):
-	config.set_value(timeSection,$LevelNumber.text,value)
+	config.set_value(timeSection,$Levelnumber.text,value)
 
 func SetFinishTime():
 	var FinishTime = CurrentTimer

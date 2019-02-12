@@ -1077,6 +1077,7 @@ anims/Mouse_Hover_Down = SubResource( 4 )
 editor/display_folded = true
 position = Vector2( 725.376, 140.448 )
 scene_to_load = ExtResource( 9 )
+LevelNumber = "03"
 
 [node name="Button" parent="LevelShortcut3" index="0"]
 
@@ -1113,6 +1114,7 @@ anims/Mouse_Hover_Down = SubResource( 6 )
 editor/display_folded = true
 position = Vector2( 748.094, 487.355 )
 scene_to_load = ExtResource( 10 )
+LevelNumber = "04"
 
 [node name="Button" parent="LevelShortcut4" index="0"]
 
@@ -1149,6 +1151,7 @@ anims/Mouse_Hover_Down = SubResource( 8 )
 editor/display_folded = true
 position = Vector2( 811.69, 840.403 )
 scene_to_load = ExtResource( 11 )
+LevelNumber = "05"
 
 [node name="Button" parent="LevelShortcut5" index="0"]
 
@@ -1185,6 +1188,7 @@ anims/Mouse_Hover_Down = SubResource( 10 )
 editor/display_folded = true
 position = Vector2( 1274.86, 873.292 )
 scene_to_load = ExtResource( 12 )
+LevelNumber = "06"
 
 [node name="Button" parent="LevelShortcut6" index="0"]
 
@@ -1221,6 +1225,7 @@ anims/Mouse_Hover_Down = SubResource( 12 )
 editor/display_folded = true
 position = Vector2( 1341.15, 174.18 )
 scene_to_load = ExtResource( 13 )
+LevelNumber = "07"
 
 [node name="Button" parent="LevelShortcut7" index="0"]
 
@@ -1257,6 +1262,7 @@ anims/Mouse_Hover_Down = SubResource( 14 )
 editor/display_folded = true
 position = Vector2( 1793.74, 187.555 )
 scene_to_load = ExtResource( 14 )
+LevelNumber = "08"
 
 [node name="Button" parent="LevelShortcut8" index="0"]
 
@@ -1291,8 +1297,9 @@ anims/Mouse_Hover_Down = SubResource( 16 )
 [node name="LevelShortcut9" parent="." index="9" instance=ExtResource( 3 )]
 
 editor/display_folded = true
-position = Vector2( 1737.7, 535.214 )
+position = Vector2( 1736.03, 535.214 )
 scene_to_load = ExtResource( 14 )
+LevelNumber = "09"
 
 [node name="Button" parent="LevelShortcut9" index="0"]
 
@@ -1330,6 +1337,7 @@ editor/display_folded = true
 position = Vector2( 1782.58, 987.715 )
 _sections_unfolded = [ "Pause", "Visibility" ]
 scene_to_load = ExtResource( 14 )
+LevelNumber = "10"
 
 [node name="Button" parent="LevelShortcut10" index="0"]
 

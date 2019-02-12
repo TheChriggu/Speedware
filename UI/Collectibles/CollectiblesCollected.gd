@@ -5,8 +5,10 @@ export var COLLECTIBLES_IN_THIS_LEVEL = 3
 
 const collectiblesSection = "Collectibles"
 var config = ConfigFile.new()
-var Levelnumber = get_parent().get_node("UI/Timer/Levelnumber").text
+var Levelnumber = ""
 
+func _ready():
+	Levelnumber = get_parent().get_node("Timer/Levelnumber").get_text()
 func CollectibleCollected():
 	currentCollectibles = currentCollectibles + 1
 
@@ -27,4 +29,4 @@ func _on_FinishArea_finish_line_passed():
 	config.save("user://settings.cfg")
 
 func setCollectiblesScore(value):
-	config.set_value(collectiblesSection,get_parent().get_parent().get_node("UI/Timer/Levelnumber").text,value)
+	config.set_value(collectiblesSection,Levelnumber,value)

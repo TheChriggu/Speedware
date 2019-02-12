@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level01_ProggerArt_Button.png-e89b993fee3c6fafd66550a1ae00c62d.stex"
+path="res://.import/kostja_ball_hovered.png-a8a086f99d5d1617dccbad1ef4672be5.stex"
 
 [deps]
 
-source_file="res://Scenes/Level Selection/Level01_ProggerArt_Button.png"
-dest_files=[ "res://.import/Level01_ProggerArt_Button.png-e89b993fee3c6fafd66550a1ae00c62d.stex" ]
+source_file="res://Scenes/Level Selection/kostja_ball_hovered.png"
+dest_files=[ "res://.import/kostja_ball_hovered.png-a8a086f99d5d1617dccbad1ef4672be5.stex" ]
 
 [params]
 

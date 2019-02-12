@@ -7,7 +7,7 @@ var config = ConfigFile.new()
 
 func _ready():
 	config.load("user://settings.cfg")
-	
+	var Collectibles = config.get_value("Collectibles", LevelNumber,0)
 	var time = config.get_value("Time",LevelNumber,0)
 	$BestTime.text = str(time)
 

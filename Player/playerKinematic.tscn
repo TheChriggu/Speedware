@@ -82,7 +82,7 @@ custom_solver_bias = 0.0
 radius = 18.8167
 height = 51.5164
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 length = 1.0
 loop = false
@@ -112,6 +112,12 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="Animation" id=7]
+
+length = 1.0
+loop = false
+step = 0.1
+
 [sub_resource type="Animation" id=8]
 
 length = 1.0
@@ -119,12 +125,6 @@ loop = false
 step = 0.1
 
 [sub_resource type="Animation" id=9]
-
-length = 1.0
-loop = false
-step = 0.1
-
-[sub_resource type="Animation" id=22]
 
 resource_name = "FinishLinePassedCharFreeze"
 length = 2.0
@@ -884,10 +884,10 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/CharacterGameStartAnimation = SubResource( 7 )
-anims/CharacterLevelEndAnimation = SubResource( 8 )
-anims/DatastringCrossAnimation = SubResource( 9 )
-anims/FinishLinePassedCharFreeze = SubResource( 22 )
+anims/CharacterGameStartAnimation = SubResource( 6 )
+anims/CharacterLevelEndAnimation = SubResource( 7 )
+anims/DatastringCrossAnimation = SubResource( 8 )
+anims/FinishLinePassedCharFreeze = SubResource( 9 )
 anims/GameStartTimerOver = SubResource( 10 )
 anims/IdleAnimation = SubResource( 11 )
 anims/JumpTakeoffAnimation = SubResource( 12 )

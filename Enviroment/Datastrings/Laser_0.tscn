@@ -443,6 +443,7 @@ _sections_unfolded = [ "Range" ]
 
 [node name="LightWeak" type="Light2D" parent="." index="7"]
 
+editor/display_folded = true
 enabled = true
 editor_only = false
 texture = ExtResource( 6 )

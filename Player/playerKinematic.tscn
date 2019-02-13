@@ -1,22 +1,24 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
-[ext_resource path="res://Player/SFX.gd" type="Script" id=2]
-[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToOrange.wav" type="AudioStream" id=4]
-[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToPurple.wav" type="AudioStream" id=5]
-[ext_resource path="res://Sounds/SFX/SFX_Player_HitDatastring.wav" type="AudioStream" id=6]
-[ext_resource path="res://Sounds/SFX/SFX_Player_MoveThroughDataString.wav" type="AudioStream" id=7]
-[ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnFloor.wav" type="AudioStream" id=8]
-[ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnDataString.wav" type="AudioStream" id=9]
-[ext_resource path="res://Player/HitDetectors.gd" type="Script" id=10]
-[ext_resource path="res://Player/Particles/VFX.gd" type="Script" id=11]
-[ext_resource path="res://Player/SwitcheffectExplosion.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=13]
-[ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=14]
-[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=15]
+[ext_resource path="res://Backup/OrangeToPurpleAnimation.tres" type="Animation" id=2]
+[ext_resource path="res://Player/SFX.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToOrange.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToPurple.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/SFX/SFX_Player_HitDatastring.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/SFX/SFX_Player_MoveThroughDataString.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnFloor.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnDataString.wav" type="AudioStream" id=10]
+[ext_resource path="res://Player/HitDetectors.gd" type="Script" id=11]
+[ext_resource path="res://Backup/Particles2DOrangeOne2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Player/Particles/VFX.gd" type="Script" id=13]
+[ext_resource path="res://Player/SwitcheffectExplosion.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=15]
 [ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=16]
-[ext_resource path="res://Player/Player Animation/Run.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=17]
+[ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=18]
+[ext_resource path="res://Player/Player Animation/Run.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=1]
 
@@ -179,8 +181,8 @@ tracks/3/keys = {
 "method": "OrangeToPurple"
 } ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("VFX/Particles2DPurpleZero:emitting")
+tracks/4/type = "method"
+tracks/4/path = NodePath("AnimatedCaracter")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -188,11 +190,13 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ {
+"args": [  ],
+"method": "SwitchColorToPurple"
+} ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("VFX/Particles2DOrangeOne:emitting")
+tracks/5/path = NodePath("VFX/Particles2DPurpleZero:emitting")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -201,10 +205,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
-tracks/6/type = "method"
-tracks/6/path = NodePath("AnimatedCaracter")
+tracks/6/type = "value"
+tracks/6/path = NodePath("VFX/Particles2DPurpleZero2:emitting")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -212,10 +216,32 @@ tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "SwitchColorToPurple"
-} ]
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("VFX/Particles2DOrangeOne2:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("VFX/Particles2DOrangeOne:emitting")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -275,8 +301,8 @@ tracks/3/keys = {
 "method": "PurpleToOrange"
 } ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("VFX/Particles2DOrangeOne:emitting")
+tracks/4/type = "method"
+tracks/4/path = NodePath("AnimatedCaracter")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -284,11 +310,13 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ {
+"args": [  ],
+"method": "SwitchColorToOrange"
+} ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("VFX/Particles2DPurpleZero:emitting")
+tracks/5/path = NodePath("VFX/Particles2DOrangeOne:emitting")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -297,10 +325,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
-tracks/6/type = "method"
-tracks/6/path = NodePath("AnimatedCaracter")
+tracks/6/type = "value"
+tracks/6/path = NodePath("VFX/Particles2DOrangeOne2:emitting")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -308,10 +336,32 @@ tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "SwitchColorToOrange"
-} ]
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("VFX/Particles2DPurpleZero2:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("VFX/Particles2DPurpleZero:emitting")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -324,26 +374,20 @@ extents = Vector2( 44.4859, 49.4475 )
 custom_solver_bias = 0.0
 extents = Vector2( 19.3401, 3.74847 )
 
-[sub_resource type="Animation" id=14]
-
-length = 1.0
-loop = false
-step = 0.1
-
-[sub_resource type="Curve" id=15]
+[sub_resource type="Curve" id=14]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.942558, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=16]
+[sub_resource type="CurveTexture" id=15]
 
 flags = 4
 width = 2048
-curve = SubResource( 15 )
+curve = SubResource( 14 )
 
-[sub_resource type="ParticlesMaterial" id=17]
+[sub_resource type="ParticlesMaterial" id=16]
 
 render_priority = 0
 trail_divisor = 1
@@ -372,7 +416,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.4
 scale_random = 0.0
-scale_curve = SubResource( 16 )
+scale_curve = SubResource( 15 )
 color = Color( 1, 1, 1, 0.392157 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -383,7 +427,84 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Scale", "Spread", "Trail" ]
 
-[sub_resource type="CapsuleShape2D" id=18]
+[sub_resource type="Curve" id=17]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.942558, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=18]
+
+flags = 4
+width = 2048
+curve = SubResource( 17 )
+
+[sub_resource type="ParticlesMaterial" id=19]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.4
+scale_random = 0.0
+scale_curve = SubResource( 18 )
+color = Color( 1, 1, 1, 0.392157 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Gravity", "Scale", "Spread", "Trail" ]
+
+[sub_resource type="CanvasItemMaterial" id=20]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=21]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=22]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=23]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CapsuleShape2D" id=24]
 
 custom_solver_bias = 0.0
 radius = 19.0555
@@ -427,6 +548,7 @@ anims/IdleAnimation = SubResource( 6 )
 anims/JumpTakeoffAnimation = SubResource( 7 )
 anims/LeanLeft = SubResource( 8 )
 anims/LeanRight = SubResource( 9 )
+anims/OrangeToPurpleAnimation = ExtResource( 2 )
 anims/SwitchOrangeToPurple = SubResource( 10 )
 anims/SwitchPurpleToOrange = SubResource( 11 )
 blend_times = [  ]
@@ -434,18 +556,9 @@ blend_times = [  ]
 [node name="SFX" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="JumpOff" type="AudioStreamPlayer" parent="SFX" index="0"]
-
-stream = ExtResource( 3 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "SFX"
-
-[node name="SwitchColorToOrange" type="AudioStreamPlayer" parent="SFX" index="1"]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
@@ -454,7 +567,7 @@ autoplay = false
 mix_target = 0
 bus = "SFX"
 
-[node name="SwitchColorToPurple" type="AudioStreamPlayer" parent="SFX" index="2"]
+[node name="SwitchColorToOrange" type="AudioStreamPlayer" parent="SFX" index="1"]
 
 stream = ExtResource( 5 )
 volume_db = 0.0
@@ -463,7 +576,7 @@ autoplay = false
 mix_target = 0
 bus = "SFX"
 
-[node name="HitDatastring" type="AudioStreamPlayer" parent="SFX" index="3"]
+[node name="SwitchColorToPurple" type="AudioStreamPlayer" parent="SFX" index="2"]
 
 stream = ExtResource( 6 )
 volume_db = 0.0
@@ -472,7 +585,7 @@ autoplay = false
 mix_target = 0
 bus = "SFX"
 
-[node name="MoveThroughDatastring" type="AudioStreamPlayer" parent="SFX" index="4"]
+[node name="HitDatastring" type="AudioStreamPlayer" parent="SFX" index="3"]
 
 stream = ExtResource( 7 )
 volume_db = 0.0
@@ -481,9 +594,18 @@ autoplay = false
 mix_target = 0
 bus = "SFX"
 
-[node name="MoveOnFloor" type="AudioStreamPlayer" parent="SFX" index="5"]
+[node name="MoveThroughDatastring" type="AudioStreamPlayer" parent="SFX" index="4"]
 
 stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="MoveOnFloor" type="AudioStreamPlayer" parent="SFX" index="5"]
+
+stream = ExtResource( 9 )
 volume_db = 10.0
 pitch_scale = 1.0
 autoplay = false
@@ -492,7 +614,7 @@ bus = "SFX"
 
 [node name="MoveOnDatastring" type="AudioStreamPlayer" parent="SFX" index="6"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -501,7 +623,7 @@ bus = "SFX"
 
 [node name="HitDetectors" type="Node2D" parent="SFX" index="7"]
 
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="PurpleLaserSidesDetector" type="Area2D" parent="SFX/HitDetectors" index="0"]
 
@@ -596,27 +718,18 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( -7.27951, 80.479 )
 shape = SubResource( 13 )
 
-[node name="VFX" type="Node2D" parent="." index="2"]
+[node name="Particles2DOrangeOne2" parent="." index="2" instance=ExtResource( 12 )]
 
-editor/display_folded = true
-script = ExtResource( 11 )
+[node name="VFX" type="Node2D" parent="." index="3"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="VFX" index="0"]
+script = ExtResource( 13 )
 
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/JumpAnimation = SubResource( 14 )
-blend_times = [  ]
-
-[node name="SwitcheffectExplosion" parent="VFX" index="1" instance=ExtResource( 12 )]
+[node name="SwitcheffectExplosion" parent="VFX" index="0" instance=ExtResource( 14 )]
 
 show_behind_parent = true
 position = Vector2( 3.04739, 1.2499 )
 
-[node name="ParticlesIfBoosted" type="Particles2D" parent="VFX" index="2"]
+[node name="ParticlesIfBoosted" type="Particles2D" parent="VFX" index="1"]
 
 self_modulate = Color( 0, 0.1875, 0.13916, 0.745882 )
 show_behind_parent = true
@@ -636,75 +749,160 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 1
-process_material = SubResource( 17 )
-texture = ExtResource( 13 )
+process_material = SubResource( 16 )
+texture = ExtResource( 15 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="Particles2DOrangeOne" type="Particles2D" parent="VFX" index="3"]
+[node name="ParticlesIfBoosted2" type="Particles2D" parent="VFX" index="2"]
 
-pause_mode = 2
+self_modulate = Color( 0, 0.1875, 0.13916, 0.745882 )
 show_behind_parent = true
-position = Vector2( 3.33757, -8.7665 )
-rotation = -1.5708
-emitting = false
-amount = 200
-lifetime = 15.0
+position = Vector2( -0.0185776, -2.37721 )
+rotation = 2.98023e-008
+scale = Vector2( 1, 1 )
+emitting = true
+amount = 30
+lifetime = 2.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 10.0
+speed_scale = 3.0
 explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
-draw_order = 0
-process_material = ExtResource( 14 )
+draw_order = 1
+process_material = SubResource( 19 )
 texture = ExtResource( 15 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="Particles2DPurpleZero" type="Particles2D" parent="VFX" index="4"]
+[node name="Particles2DPurpleZero" type="Particles2D" parent="VFX" index="3"]
 
 pause_mode = 2
 show_behind_parent = true
-position = Vector2( 3.33757, -8.7665 )
+material = SubResource( 20 )
+position = Vector2( -60.6872, -13.208 )
 rotation = -1.5708
+scale = Vector2( 1.25, 1.25 )
 emitting = true
-amount = 200
-lifetime = 15.0
+amount = 150
+lifetime = 5.0
 one_shot = false
 preprocess = 0.0
 speed_scale = 10.0
 explosiveness = 0.0
-randomness = 0.0
+randomness = 0.5
 fixed_fps = 0
 fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
 process_material = ExtResource( 16 )
-texture = ExtResource( 15 )
+texture = ExtResource( 17 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="AnimatedCaracter" parent="." index="3" instance=ExtResource( 17 )]
+[node name="Particles2DPurpleZero2" type="Particles2D" parent="VFX" index="4"]
+
+pause_mode = 2
+show_behind_parent = true
+material = SubResource( 21 )
+position = Vector2( -71.632, -12.9938 )
+rotation = -1.5708
+scale = Vector2( 1, 1 )
+emitting = true
+amount = 150
+lifetime = 5.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 10.0
+explosiveness = 0.0
+randomness = 0.5
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = ExtResource( 16 )
+texture = ExtResource( 17 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="Particles2DOrangeOne2" type="Particles2D" parent="VFX" index="5"]
+
+pause_mode = 2
+show_behind_parent = true
+material = SubResource( 22 )
+position = Vector2( -62.5726, -11.877 )
+rotation = -1.5708
+emitting = false
+amount = 150
+lifetime = 5.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 10.0
+explosiveness = 0.0
+randomness = 0.5
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = ExtResource( 18 )
+texture = ExtResource( 17 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="Particles2DOrangeOne" type="Particles2D" parent="VFX" index="6"]
+
+pause_mode = 2
+show_behind_parent = true
+material = SubResource( 23 )
+position = Vector2( -73.496, -11.877 )
+rotation = -1.5708
+emitting = false
+amount = 150
+lifetime = 5.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 10.0
+explosiveness = 0.0
+randomness = 0.5
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = ExtResource( 18 )
+texture = ExtResource( 17 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="AnimatedCaracter" parent="." index="4" instance=ExtResource( 19 )]
 
 position = Vector2( 0, 0 )
 scale = Vector2( 0.12, 0.12 )
 _sections_unfolded = [ "Material", "Pause", "Transform" ]
 
-[node name="PhysicsCollider" type="CollisionShape2D" parent="." index="4"]
+[node name="PhysicsCollider" type="CollisionShape2D" parent="." index="5"]
 
 position = Vector2( -6.1861, -0.360727 )
-shape = SubResource( 18 )
+shape = SubResource( 24 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [connection signal="area_entered" from="SFX/HitDetectors/PurpleLaserSidesDetector" to="." method="_on_PurpleLaserSidesDetector_area_entered"]

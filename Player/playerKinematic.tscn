@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/character_rendering_violet.png" type="Texture" id=2]
@@ -67,19 +67,37 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Scale", "Spread", "Trail" ]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CanvasItemMaterial" id=4]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=5]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=6]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CapsuleShape2D" id=7]
 
 custom_solver_bias = 0.0
 radius = 14.4681
 height = 83.2394
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=8]
 
 custom_solver_bias = 0.0
 radius = 18.8167
 height = 51.5164
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=9]
 
 length = 1.0
 loop = false
@@ -109,28 +127,26 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=10]
 
 length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=11]
 
 length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=12]
 
-resource_name = "FinishLinePassedCharFreeze"
 length = 2.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=13]
 
-resource_name = "GameStartTimerOver"
 length = 1.0
 loop = false
 step = 0.1
@@ -159,19 +175,19 @@ tracks/1/keys = {
 "values": [ 3000.0 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=14]
 
 length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=15]
 
 length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=16]
 
 length = 0.8
 loop = false
@@ -189,7 +205,7 @@ tracks/0/keys = {
 "values": [ 0.0, -12.0, -19.0, -25.0 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=17]
 
 length = 1.0
 loop = false
@@ -207,7 +223,7 @@ tracks/0/keys = {
 "values": [ 0.0, 12.0, 19.0, 18.2281, 25.0 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=18]
 
 length = 1.0
 loop = false
@@ -325,7 +341,7 @@ tracks/8/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=19]
 
 length = 1.0
 loop = false
@@ -443,7 +459,7 @@ tracks/8/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=20]
 
 length = 1.0
 loop = false
@@ -505,10 +521,37 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
+[node name="ParticlesIfBoosted2" type="Particles2D" parent="Sprite" index="1"]
+
+self_modulate = Color( 0, 0.1875, 0.13916, 0.745882 )
+show_behind_parent = true
+position = Vector2( 47.3152, -18.7468 )
+rotation = 2.98023e-008
+emitting = true
+amount = 30
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 3.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 1
+process_material = SubResource( 3 )
+texture = ExtResource( 3 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
 [node name="Particles2DPurpleZero" type="Particles2D" parent="." index="1"]
 
 pause_mode = 2
 show_behind_parent = true
+material = SubResource( 4 )
 position = Vector2( 1.35149, 4.14298 )
 rotation = -1.5708
 emitting = true
@@ -535,6 +578,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
+material = SubResource( 5 )
 position = Vector2( 12.2749, 4.14298 )
 rotation = -1.5708
 emitting = true
@@ -561,6 +605,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
+material = SubResource( 6 )
 position = Vector2( 1.35149, 4.14298 )
 rotation = -1.5708
 emitting = false
@@ -587,9 +632,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
+material = SubResource( 6 )
 position = Vector2( 12.2749, 4.14298 )
 rotation = -1.5708
-scale = Vector2( 1, 1 )
 emitting = false
 amount = 150
 lifetime = 5.0
@@ -614,13 +659,12 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 show_behind_parent = true
 position = Vector2( 3.04739, 1.2499 )
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( -3.19009, -4.38425 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="7"]
@@ -638,7 +682,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 position = Vector2( -2.70406, -5.54631 )
-shape = SubResource( 5 )
+shape = SubResource( 8 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
@@ -648,17 +692,17 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/CharacterGameStartAnimation = SubResource( 6 )
-anims/CharacterLevelEndAnimation = SubResource( 7 )
-anims/DatastringCrossAnimation = SubResource( 8 )
-anims/FinishLinePassedCharFreeze = SubResource( 9 )
-anims/GameStartTimerOver = SubResource( 10 )
-anims/IdleAnimation = SubResource( 11 )
-anims/JumpTakeoffAnimation = SubResource( 12 )
-anims/LeanLeft = SubResource( 13 )
-anims/LeanRight = SubResource( 14 )
-anims/SwitchOrangeToPurple = SubResource( 15 )
-anims/SwitchPurpleToOrange = SubResource( 16 )
+anims/CharacterGameStartAnimation = SubResource( 9 )
+anims/CharacterLevelEndAnimation = SubResource( 10 )
+anims/DatastringCrossAnimation = SubResource( 11 )
+anims/FinishLinePassedCharFreeze = SubResource( 12 )
+anims/GameStartTimerOver = SubResource( 13 )
+anims/IdleAnimation = SubResource( 14 )
+anims/JumpTakeoffAnimation = SubResource( 15 )
+anims/LeanLeft = SubResource( 16 )
+anims/LeanRight = SubResource( 17 )
+anims/SwitchOrangeToPurple = SubResource( 18 )
+anims/SwitchPurpleToOrange = SubResource( 19 )
 blend_times = [  ]
 
 [node name="VFX" type="AnimationPlayer" parent="." index="9"]
@@ -668,7 +712,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/JumpAnimation = SubResource( 17 )
+anims/JumpAnimation = SubResource( 20 )
 blend_times = [  ]
 
 [node name="SFX" type="Node2D" parent="." index="10"]

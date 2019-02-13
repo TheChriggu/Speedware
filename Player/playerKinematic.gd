@@ -182,10 +182,10 @@ func CheckFullspeed():
 #ParcticlesIfBoosted
 func BoostTrailOn():
 	$Sprite/ParticlesIfBoosted.emitting = true
-
+	$Sprite/ParticlesIfBoosted2.emitting = true
 func BoostTrailOff():
 	$Sprite/ParticlesIfBoosted.emitting = false
-	
+	$Sprite/ParticlesIfBoosted2.emitting = false
 
 func _on_GameStartTimer_GameStartTimerEnd():
 	$AnimationPlayer.play("GameStartTimerOver")

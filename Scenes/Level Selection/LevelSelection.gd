@@ -7,7 +7,7 @@ var DefaultSettings = int(config.get_value("Options","Music",-24))
 
 func _ready():
 	$AudioStreamPlayer.playing = true
-	$LevelShortcut.get_node("Button").grab_focus()
+	$LevelShortcuts/Level1Shortcut.get_node("Button").grab_focus()
 	config.load("user://settings.cfg")
 	$SFXSlider.value = int(config.get_value("Options","SFX",-24))
 	$Musicslider.value = int(config.get_value("Options","Music",-24))

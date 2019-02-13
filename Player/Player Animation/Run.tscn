@@ -1,31 +1,108 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Player/Player Animation/Run.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player Animation/Base.gd" type="Script" id=2]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/complete.png" type="Texture" id=3]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/body.png" type="Texture" id=4]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/arm_r.png" type="Texture" id=5]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/forearm_r.png" type="Texture" id=6]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/arm_l.png" type="Texture" id=7]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/forearm_l.png" type="Texture" id=8]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/head.png" type="Texture" id=9]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/hip.png" type="Texture" id=10]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/leg_r.png" type="Texture" id=11]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/shin_r.png" type="Texture" id=12]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/foot_r.png" type="Texture" id=13]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/leg_l.png" type="Texture" id=14]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/shin_l.png" type="Texture" id=15]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/foot_l.png" type="Texture" id=16]
-[ext_resource path="res://Player/Player Animation/Run.tres" type="Animation" id=17]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/body.png" type="Texture" id=3]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/arm_r.png" type="Texture" id=4]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/forearm_r.png" type="Texture" id=5]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/arm_l.png" type="Texture" id=6]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/forearm_l.png" type="Texture" id=7]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/head.png" type="Texture" id=8]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/hip.png" type="Texture" id=9]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/leg_r.png" type="Texture" id=10]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/shin_r.png" type="Texture" id=11]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/foot_r.png" type="Texture" id=12]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/leg_l.png" type="Texture" id=13]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/shin_l.png" type="Texture" id=14]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/foot_l.png" type="Texture" id=15]
+[ext_resource path="res://Player/Player Animation/Run.tres" type="Animation" id=16]
+[ext_resource path="res://Player/Player Animation/BaseBackup.tres" type="Animation" id=17]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="StreamTexture" id=4]
 
-resource_name = "base"
+flags = 4
+load_path = "res://.import/complete.png-96d33e7b955c9d31f1e095e6dbc7920d.stex"
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Idle"
 length = 1.0
 loop = false
 step = 0.1
+
+[sub_resource type="StreamTexture" id=17]
+
+flags = 4
+load_path = "res://.import/foot_l.png-f4f2be6f5442c6db45f7f296a71776ba.stex"
+
+[sub_resource type="StreamTexture" id=16]
+
+flags = 4
+load_path = "res://.import/shin_l.png-08336dc8773465ed0122e7112b563ca8.stex"
+
+[sub_resource type="StreamTexture" id=7]
+
+flags = 4
+load_path = "res://.import/forearm_r.png-48246039f177dd16445bbfa54cf25fb1.stex"
+
+[sub_resource type="StreamTexture" id=6]
+
+flags = 4
+load_path = "res://.import/arm_r.png-ce26ea7802d8c7ce21942af336b016a7.stex"
+
+[sub_resource type="StreamTexture" id=5]
+
+flags = 4
+load_path = "res://.import/body.png-936670904b7419f1865c1de79dc18bb0.stex"
+
+[sub_resource type="StreamTexture" id=15]
+
+flags = 4
+load_path = "res://.import/leg_l.png-fa6c6ac4e126716c73e850a2369179b7.stex"
+
+[sub_resource type="StreamTexture" id=14]
+
+flags = 4
+load_path = "res://.import/foot_r.png-5b8c2d07f0c88c13225adf597948fe51.stex"
+
+[sub_resource type="StreamTexture" id=13]
+
+flags = 4
+load_path = "res://.import/shin_r.png-2f9e626d17172a9964b89e506ccc9a5c.stex"
+
+[sub_resource type="StreamTexture" id=12]
+
+flags = 4
+load_path = "res://.import/leg_r.png-0c469582f795c5a91ac5a05225ed0f93.stex"
+
+[sub_resource type="StreamTexture" id=11]
+
+flags = 4
+load_path = "res://.import/hip.png-ec6099d62a694361742cab04101767da.stex"
+
+[sub_resource type="StreamTexture" id=10]
+
+flags = 4
+load_path = "res://.import/head.png-ef4ae4df2eeb82d8d75f99374d53e4ca.stex"
+
+[sub_resource type="StreamTexture" id=9]
+
+flags = 4
+load_path = "res://.import/forearm_l.png-cbe619bdb8f4e785bab074e35fa3eb24.stex"
+
+[sub_resource type="StreamTexture" id=8]
+
+flags = 4
+load_path = "res://.import/arm_l.png-f5a5842af73f21df2298e859cd9154d0.stex"
+
+[sub_resource type="Animation" id=18]
+
+resource_name = "SwitchColorToOrange"
+length = 0.1
+loop = false
+step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body/arm_l/forearm_l:position")
+tracks/0/path = NodePath("Body/hip/leg_l/shin_l/foot_l:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -33,11 +110,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1.04541, 126.496 ) ]
+"update": 1,
+"values": [ SubResource( 17 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/arm_l/forearm_l:rotation_degrees")
+tracks/1/path = NodePath("Body/hip/leg_l/shin_l:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -45,11 +122,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ SubResource( 16 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/arm_l:position")
+tracks/2/path = NodePath("Body/hip/leg_l:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -57,11 +134,11 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -0.924377, 95.9818 ) ]
+"update": 1,
+"values": [ SubResource( 15 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/arm_l:rotation_degrees")
+tracks/3/path = NodePath("Body/hip/leg_r/shin_r/foot_r:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -69,11 +146,11 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ SubResource( 14 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/hip:position")
+tracks/4/path = NodePath("Body/hip/leg_r/shin_r:texture")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -81,11 +158,11 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -6.43921, 365.266 ) ]
+"update": 1,
+"values": [ SubResource( 13 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/hip:rotation_degrees")
+tracks/5/path = NodePath("Body/hip/leg_r:texture")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -93,11 +170,11 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ SubResource( 12 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body:position")
+tracks/6/path = NodePath("Body/hip:texture")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -105,11 +182,11 @@ tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -58.3149, -125.279 ) ]
+"update": 1,
+"values": [ SubResource( 11 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body:rotation_degrees")
+tracks/7/path = NodePath("Body/Head:texture")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -117,11 +194,11 @@ tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ SubResource( 10 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/hip/leg_r/shin_r/foot_r:position")
+tracks/8/path = NodePath("Body/arm_l/forearm_l:texture")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -129,11 +206,11 @@ tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 17.5913, 185.298 ) ]
+"update": 1,
+"values": [ SubResource( 9 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/hip/leg_r/shin_r/foot_r:rotation_degrees")
+tracks/9/path = NodePath("Body/arm_l:texture")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -141,11 +218,11 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ SubResource( 8 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/hip/leg_r/shin_r:position")
+tracks/10/path = NodePath("Body/arm_r/forearm_r:texture")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -153,11 +230,11 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 8.57758, 111.124 ) ]
+"update": 1,
+"values": [ SubResource( 7 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/hip/leg_r/shin_r:rotation_degrees")
+tracks/11/path = NodePath("Body/arm_r:texture")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -165,11 +242,11 @@ tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ SubResource( 6 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/hip/leg_r:position")
+tracks/12/path = NodePath("Body:texture")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -177,167 +254,174 @@ tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 33.922, 14.1356 ) ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("Body/hip/leg_r:rotation_degrees")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("Body/hip/leg_l/shin_l/foot_l:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 18.2172, 193.671 ) ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("Body/hip/leg_l/shin_l/foot_l:rotation_degrees")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("Body/hip/leg_l/shin_l:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 16.9869, 119.658 ) ]
-}
-tracks/17/type = "value"
-tracks/17/path = NodePath("Body/hip/leg_l/shin_l:rotation_degrees")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/18/type = "value"
-tracks/18/path = NodePath("Body/hip/leg_l:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -12.3968, 13.5097 ) ]
-}
-tracks/19/type = "value"
-tracks/19/path = NodePath("Body/hip/leg_l:rotation_degrees")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/20/type = "value"
-tracks/20/path = NodePath("Body/Head:position")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -10.4763, -15.7144 ) ]
-}
-tracks/21/type = "value"
-tracks/21/path = NodePath("Body/Head:rotation_degrees")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("Body/arm_r/forearm_r:position")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 34.9115, 121.764 ) ]
-}
-tracks/23/type = "value"
-tracks/23/path = NodePath("Body/arm_r/forearm_r:rotation_degrees")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/24/type = "value"
-tracks/24/path = NodePath("Body/arm_r:position")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 8.45813, 91.6621 ) ]
-}
-tracks/25/type = "value"
-tracks/25/path = NodePath("Body/arm_r:rotation_degrees")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ SubResource( 5 ) ]
 }
 
-[node name="Character Sprites" type="Node2D" index="0"]
+[sub_resource type="Animation" id=19]
+
+resource_name = "SwitchColorToPurple"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/arm_r:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/arm_r/forearm_r:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/arm_l:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/arm_l/forearm_l:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Head:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body/hip:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/hip/leg_r:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body/hip/leg_r/shin_r:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/hip/leg_r/shin_r/foot_r:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 12 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/hip/leg_l:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Body/hip/leg_l/shin_l:texture")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Body/hip/leg_l/shin_l/foot_l:texture")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+
+[node name="Character Sprites" type="Node2D"]
 
 position = Vector2( 19.2111, 59.5979 )
 script = ExtResource( 1 )
@@ -355,23 +439,23 @@ script = ExtResource( 2 )
 
 visible = false
 modulate = Color( 1, 1, 1, 0.834275 )
-texture = ExtResource( 3 )
+texture = SubResource( 4 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="Body" type="Sprite" parent="Base" index="1"]
 
-position = Vector2( -126.483, -148.132 )
-rotation = 0.0204356
-texture = ExtResource( 4 )
+position = Vector2( -58.3149, -125.279 )
+rotation = 0.15741
+texture = ExtResource( 3 )
 offset = Vector2( 88.307, 105.811 )
-_sections_unfolded = [ "Material", "Offset", "Region", "Transform", "Z Index" ]
+_sections_unfolded = [ "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="arm_r" type="Sprite" parent="Base/Body" index="0"]
 
-position = Vector2( -0.0134106, 80.3689 )
-rotation = -0.0740608
+position = Vector2( 8.45813, 91.6621 )
+rotation = 1.6542
 z_index = -2
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( 12.3395, 62.8695 )
 _sections_unfolded = [ "Z Index" ]
 __meta__ = {
@@ -380,10 +464,11 @@ __meta__ = {
 
 [node name="forearm_r" type="Sprite" parent="Base/Body/arm_r" index="0"]
 
-position = Vector2( 27.2869, 126.65 )
-rotation = -1.20265
-texture = ExtResource( 6 )
+position = Vector2( 34.9115, 121.764 )
+rotation = -0.782169
+texture = ExtResource( 5 )
 offset = Vector2( 12.2047, 109.027 )
+_sections_unfolded = [ "Offset", "Transform" ]
 __meta__ = {
 "_edit_bone_": true
 }
@@ -397,10 +482,10 @@ __meta__ = {
 
 [node name="arm_l" type="Sprite" parent="Base/Body" index="1"]
 
-position = Vector2( 3.61422, 72.3085 )
-rotation = 0.588557
+position = Vector2( -0.924377, 95.9818 )
+rotation = -1.09339
 z_index = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 offset = Vector2( 4.04419, 66.5498 )
 _sections_unfolded = [ "Z Index" ]
 __meta__ = {
@@ -409,11 +494,11 @@ __meta__ = {
 
 [node name="forearm_l" type="Sprite" parent="Base/Body/arm_l" index="0"]
 
-position = Vector2( -1.49526, 132.694 )
-rotation = -0.898247
-scale = Vector2( 0.999165, 1 )
-texture = ExtResource( 8 )
-offset = Vector2( 6.62473, 105.292 )
+position = Vector2( 1.04541, 126.496 )
+rotation = -0.956437
+texture = ExtResource( 7 )
+offset = Vector2( 0, 109.027 )
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 __meta__ = {
 "_edit_bone_": true
 }
@@ -427,11 +512,11 @@ __meta__ = {
 
 [node name="Head" type="Sprite" parent="Base/Body" index="2"]
 
-position = Vector2( 10.4048, -46.6657 )
-rotation = -0.0342955
-texture = ExtResource( 9 )
-offset = Vector2( 67.0621, -170.007 )
-_sections_unfolded = [ "Visibility" ]
+position = Vector2( -10.4763, -15.7144 )
+rotation = 0.100709
+texture = ExtResource( 8 )
+offset = Vector2( 67.0621, -260.007 )
+_sections_unfolded = [ "Offset", "Visibility" ]
 __meta__ = {
 "_edit_bone_": true
 }
@@ -446,7 +531,7 @@ __meta__ = {
 [node name="hip" type="Sprite" parent="Base/Body" index="3"]
 
 position = Vector2( -6.43921, 365.266 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_bone_": true
@@ -454,10 +539,10 @@ __meta__ = {
 
 [node name="leg_r" type="Sprite" parent="Base/Body/hip" index="0"]
 
-position = Vector2( -8.14348, 32.9126 )
-rotation = -0.867489
+position = Vector2( 33.922, 14.1356 )
+rotation = -1.97423
 z_index = -2
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 offset = Vector2( -2.89481, 58.8565 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 __meta__ = {
@@ -467,9 +552,9 @@ __meta__ = {
 
 [node name="shin_r" type="Sprite" parent="Base/Body/hip/leg_r" index="0"]
 
-position = Vector2( -2.81053, 130.669 )
-rotation = 1.871
-texture = ExtResource( 12 )
+position = Vector2( 8.57758, 111.124 )
+rotation = 1.32696
+texture = ExtResource( 11 )
 offset = Vector2( 3.15355, 90.6186 )
 _sections_unfolded = [ "Visibility" ]
 __meta__ = {
@@ -478,10 +563,10 @@ __meta__ = {
 
 [node name="foot_r" type="Sprite" parent="Base/Body/hip/leg_r/shin_r" index="0"]
 
-position = Vector2( 17.5916, 185.3 )
-rotation = 0.756504
+position = Vector2( 17.5913, 185.298 )
+rotation = -0.2045
 z_index = -1
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 offset = Vector2( 14.5622, 27.8117 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 __meta__ = {
@@ -497,13 +582,12 @@ __meta__ = {
 
 [node name="leg_l" type="Sprite" parent="Base/Body/hip" index="1"]
 
-editor/display_folded = true
-position = Vector2( -14.8563, 34.8801 )
-rotation = 0.105533
+position = Vector2( -12.3968, 13.5097 )
+rotation = 0.85241
 z_index = -1
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 offset = Vector2( 15.3968, 54.6082 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_bone_": true,
 "_edit_ik_": true
@@ -512,8 +596,8 @@ __meta__ = {
 [node name="shin_l" type="Sprite" parent="Base/Body/hip/leg_l" index="0"]
 
 position = Vector2( 16.9869, 119.658 )
-rotation = 0.0840913
-texture = ExtResource( 15 )
+rotation = 1.32654
+texture = ExtResource( 14 )
 offset = Vector2( 8.40984, 86.1597 )
 _sections_unfolded = [ "Visibility" ]
 __meta__ = {
@@ -522,12 +606,12 @@ __meta__ = {
 
 [node name="foot_l" type="Sprite" parent="Base/Body/hip/leg_l/shin_l" index="0"]
 
-position = Vector2( 19.8776, 191.869 )
-rotation = -0.222416
+position = Vector2( 18.2172, 193.671 )
+rotation = 0.142296
 z_index = -1
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 offset = Vector2( 21.1926, 14.563 )
-_sections_unfolded = [ "Pause", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_bone_": true
 }
@@ -539,15 +623,28 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Base" index="2"]
+[node name="MovementAnimations" type="AnimationPlayer" parent="Base" index="2"]
 
 root_node = NodePath("..")
 autoplay = "Run"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Run = ExtResource( 17 )
-anims/base = SubResource( 1 )
+anims/Idle = SubResource( 2 )
+anims/Run = ExtResource( 16 )
+anims/base = ExtResource( 17 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="ColorSwitchAnimation" type="AnimationPlayer" parent="Base" index="3"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/SwitchColorToOrange = SubResource( 18 )
+anims/SwitchColorToPurple = SubResource( 19 )
 blend_times = [  ]
 
 

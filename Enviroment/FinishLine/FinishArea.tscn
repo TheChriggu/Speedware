@@ -1,21 +1,23 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/FinishLine/Finishline_Image.png" type="Texture" id=2]
 [ext_resource path="res://Player/PlaceholderRob.png" type="Texture" id=3]
-[ext_resource path="res://Sounds/FinishingSound.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=6]
-[ext_resource path="res://Enviroment/FinishLine/FinishLinePassedPopup.png" type="Texture" id=7]
-[ext_resource path="res://Enviroment/FinishLine/MenuButtonUnhovered.png" type="Texture" id=8]
-[ext_resource path="res://Enviroment/FinishLine/MenuButtonHovered.png" type="Texture" id=9]
-[ext_resource path="res://Enviroment/FinishLine/BackToMenuButton.gd" type="Script" id=10]
-[ext_resource path="res://Enviroment/FinishLine/NextLevelUnhovered.png" type="Texture" id=11]
-[ext_resource path="res://Enviroment/FinishLine/NextLevelHovered.png" type="Texture" id=12]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelUnhovered.png" type="Texture" id=13]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=14]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=15]
-[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=16]
+[ext_resource path="res://Player/PlaceholderKostja.png" type="Texture" id=4]
+[ext_resource path="res://Player/PlaceholderMichelle.png" type="Texture" id=5]
+[ext_resource path="res://Sounds/FinishingSound.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=8]
+[ext_resource path="res://Enviroment/FinishLine/FinishLinePassedPopup.png" type="Texture" id=9]
+[ext_resource path="res://Enviroment/FinishLine/MenuButtonUnhovered.png" type="Texture" id=10]
+[ext_resource path="res://Enviroment/FinishLine/MenuButtonHovered.png" type="Texture" id=11]
+[ext_resource path="res://Enviroment/FinishLine/BackToMenuButton.gd" type="Script" id=12]
+[ext_resource path="res://Enviroment/FinishLine/NextLevelUnhovered.png" type="Texture" id=13]
+[ext_resource path="res://Enviroment/FinishLine/NextLevelHovered.png" type="Texture" id=14]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelUnhovered.png" type="Texture" id=15]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=16]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=17]
+[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -258,7 +260,7 @@ _sections_unfolded = [ "Angle", "Color", "Gravity", "Orbit Velocity", "Scale", "
 size = 150
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 5 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=10]
@@ -266,7 +268,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 25
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 5 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="FinishArea" type="Node2D"]
@@ -376,7 +378,6 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="ParticleGroup2" type="Node2D" parent="ParticleGroup" index="2"]
 
-editor/display_folded = true
 position = Vector2( -1.47987, -504.314 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -424,7 +425,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 8 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -432,7 +433,6 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="ParticleGroup3" type="Node2D" parent="ParticleGroup" index="3"]
 
-editor/display_folded = true
 position = Vector2( -4.27769, -374.129 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -455,7 +455,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -601,7 +601,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="LinePassedSoundEffect" type="AudioStreamPlayer" parent="." index="3"]
 
-stream = ExtResource( 4 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -645,7 +645,7 @@ _sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custo
 
 [node name="LinePassedMusic" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 8 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -683,7 +683,7 @@ _sections_unfolded = [ "Visibility" ]
 
 position = Vector2( -61.5314, 13.257 )
 scale = Vector2( 1.94104, 1.94104 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="BackToMenu" type="TextureButton" parent="Popup/Control/PopupBackground" index="0"]
 
@@ -708,9 +708,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-texture_focused = ExtResource( 9 )
-script = ExtResource( 10 )
+texture_normal = ExtResource( 10 )
+texture_focused = ExtResource( 11 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Focus", "Textures" ]
 
 [node name="NextLevel" type="TextureButton" parent="Popup/Control/PopupBackground" index="1"]
@@ -736,8 +736,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 11 )
-texture_focused = ExtResource( 12 )
+texture_normal = ExtResource( 13 )
+texture_focused = ExtResource( 14 )
 _sections_unfolded = [ "Focus", "Textures" ]
 
 [node name="ReplayLevel" type="TextureButton" parent="Popup/Control/PopupBackground" index="2"]
@@ -763,9 +763,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 13 )
-texture_focused = ExtResource( 14 )
-script = ExtResource( 15 )
+texture_normal = ExtResource( 15 )
+texture_focused = ExtResource( 16 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Focus", "Textures" ]
 
 [node name="Time" type="Label" parent="Popup/Control/PopupBackground" index="3"]
@@ -790,7 +790,7 @@ text = "Time"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 16 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 FinishTime = 0
 

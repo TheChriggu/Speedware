@@ -26,7 +26,7 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=24]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=25]
 
-[node name="Level1_konstantin" type="Node" index="0"]
+[node name="Level1_konstantin" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -536,13 +536,13 @@ margin_bottom = 105.0
 
 [connection signal="FinishLineAnimationFinished" from="Player/player" to="Level/FinishArea" method="_on_player_FinishLineAnimationFinished"]
 
-[connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
-
 [connection signal="is_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_at_fullspeed"]
 
-[connection signal="is_not_at_fullspeed" from="Player/player" to="." method="_on_player_is_not_at_fullspeed"]
+[connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 
 [connection signal="is_not_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_not_at_fullspeed"]
+
+[connection signal="is_not_at_fullspeed" from="Player/player" to="." method="_on_player_is_not_at_fullspeed"]
 
 [connection signal="switched_color_to_orange" from="Player/player" to="." method="_on_player_switched_color_to_orange"]
 

@@ -5,7 +5,7 @@
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 0.994141 ), 0.0, 1.46693, 0, 0, Vector2( 0.951823, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), 0.0, 1.46693, 0, 0, Vector2( 0.499268, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=4]
 
@@ -43,7 +43,7 @@ angle_random = 0.0
 scale = 0.5
 scale_random = 0.0
 scale_curve = SubResource( 4 )
-color = Color( 0.929688, 0.544739, 0, 1 )
+color = Color( 0.841583, 0, 0.988281, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -51,5 +51,5 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Radial Accel", "Scale" ]
+_sections_unfolded = [ "Color", "Initial Velocity", "Radial Accel", "Scale" ]
 

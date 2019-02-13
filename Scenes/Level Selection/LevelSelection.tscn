@@ -19,7 +19,7 @@
 [ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=17]
 [ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=18]
 
-[sub_resource type="StyleBoxTexture" id=19]
+[sub_resource type="StyleBoxTexture" id=1]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -36,7 +36,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=20]
+[sub_resource type="StyleBoxTexture" id=2]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -53,7 +53,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[node name="LevelSelection" type="Node"]
+[node name="LevelSelection" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -77,18 +77,6 @@ focus_neighbour_left = NodePath("../../../Musicslider")
 focus_neighbour_top = NodePath("../../LevelShortcut10/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
-
-[node name="Sprite" parent="LevelShortcuts/Level1Shortcut/CanvasLayer" index="0"]
-
-position = Vector2( 1096.26, 290.212 )
-
-[node name="Sprite2" parent="LevelShortcuts/Level1Shortcut/CanvasLayer" index="1"]
-
-position = Vector2( 1205.61, 259.831 )
-
-[node name="Sprite3" parent="LevelShortcuts/Level1Shortcut/CanvasLayer" index="2"]
-
-position = Vector2( 1310.49, 288.492 )
 
 [node name="LevelShortcut" parent="LevelShortcuts" index="1" instance=ExtResource( 5 )]
 
@@ -284,7 +272,7 @@ custom_icons/tick = ExtResource( 15 )
 custom_icons/grabber_disabled = ExtResource( 15 )
 custom_icons/grabber_highlight = ExtResource( 16 )
 custom_icons/grabber = ExtResource( 15 )
-custom_styles/slider = SubResource( 19 )
+custom_styles/slider = SubResource( 1 )
 min_value = -80.0
 max_value = 24.0
 step = 20.0
@@ -321,7 +309,7 @@ custom_icons/tick = ExtResource( 15 )
 custom_icons/grabber_disabled = ExtResource( 15 )
 custom_icons/grabber_highlight = ExtResource( 16 )
 custom_icons/grabber = ExtResource( 15 )
-custom_styles/slider = SubResource( 20 )
+custom_styles/slider = SubResource( 2 )
 min_value = -80.0
 max_value = 24.0
 step = 20.0

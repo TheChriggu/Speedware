@@ -1180,6 +1180,10 @@ scale = Vector2( 0.0348979, 0.0470226 )
 [node name="FinishArea" parent="Level" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 71838.2, 12461.3 )
+PossibleLevelBestTime = 0.0
+TwoStarRatingTolerance = 8
+OneStarRatingTolerance = 15
+ZeroStarRatingTolerance = 20
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 

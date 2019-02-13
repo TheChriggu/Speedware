@@ -128,7 +128,7 @@ func Jump():
 		velocity.y = -JUMP_SPEED
 		isJumping = true
 		
-	if Input.is_action_just_released("jump"):
+	if Input.is_action_just_released("jump") && isJumping:
 		JumpCut()
 	
 	if isJumping and velocity.y > 0:
@@ -137,8 +137,8 @@ func Jump():
 
 #Cut the jump, when a certain speed is reached
 func JumpCut():
-    if velocity.y < -jumpCutVelocity:
-        velocity.y = -jumpCutVelocity
+	if velocity.y < -jumpCutVelocity:
+		velocity.y = -jumpCutVelocity
 
 func LeanLeft():
 	if !isLeaningLeft:

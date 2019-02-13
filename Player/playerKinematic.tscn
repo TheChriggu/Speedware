@@ -1007,7 +1007,6 @@ position = Vector2( 3.04739, 1.2499 )
 
 [node name="SFX" type="Node2D" parent="." index="12"]
 
-editor/display_folded = true
 script = ExtResource( 11 )
 
 [node name="JumpOff" type="AudioStreamPlayer" parent="SFX" index="0"]

@@ -1,24 +1,22 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
-[ext_resource path="res://Backup/OrangeToPurpleAnimation.tres" type="Animation" id=2]
-[ext_resource path="res://Player/SFX.gd" type="Script" id=3]
-[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=4]
-[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToOrange.wav" type="AudioStream" id=5]
-[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToPurple.wav" type="AudioStream" id=6]
-[ext_resource path="res://Sounds/SFX/SFX_Player_HitDatastring.wav" type="AudioStream" id=7]
-[ext_resource path="res://Sounds/SFX/SFX_Player_MoveThroughDataString.wav" type="AudioStream" id=8]
-[ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnFloor.wav" type="AudioStream" id=9]
-[ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnDataString.wav" type="AudioStream" id=10]
-[ext_resource path="res://Player/HitDetectors.gd" type="Script" id=11]
-[ext_resource path="res://Backup/Particles2DOrangeOne2.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Player/Particles/VFX.gd" type="Script" id=13]
-[ext_resource path="res://Player/SwitcheffectExplosion.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=15]
-[ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=16]
-[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=17]
-[ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=18]
-[ext_resource path="res://Player/Player Animation/Run.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Player/SFX.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToOrange.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToPurple.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/SFX/SFX_Player_HitDatastring.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/SFX/SFX_Player_MoveThroughDataString.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnFloor.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnDataString.wav" type="AudioStream" id=9]
+[ext_resource path="res://Player/HitDetectors.gd" type="Script" id=10]
+[ext_resource path="res://Player/Particles/VFX.gd" type="Script" id=11]
+[ext_resource path="res://Player/SwitcheffectExplosion.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=13]
+[ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=14]
+[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=15]
+[ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=16]
+[ext_resource path="res://Player/Player Animation/Run.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Animation" id=1]
 
@@ -510,7 +508,7 @@ custom_solver_bias = 0.0
 radius = 19.0555
 height = 113.446
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 0.8, 0.8 )
 input_pickable = false
@@ -548,19 +546,17 @@ anims/IdleAnimation = SubResource( 6 )
 anims/JumpTakeoffAnimation = SubResource( 7 )
 anims/LeanLeft = SubResource( 8 )
 anims/LeanRight = SubResource( 9 )
-anims/OrangeToPurpleAnimation = ExtResource( 2 )
 anims/SwitchOrangeToPurple = SubResource( 10 )
 anims/SwitchPurpleToOrange = SubResource( 11 )
 blend_times = [  ]
 
 [node name="SFX" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="JumpOff" type="AudioStreamPlayer" parent="SFX" index="0"]
 
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -569,7 +565,7 @@ bus = "SFX"
 
 [node name="SwitchColorToOrange" type="AudioStreamPlayer" parent="SFX" index="1"]
 
-stream = ExtResource( 5 )
+stream = ExtResource( 4 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -578,7 +574,7 @@ bus = "SFX"
 
 [node name="SwitchColorToPurple" type="AudioStreamPlayer" parent="SFX" index="2"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -587,7 +583,7 @@ bus = "SFX"
 
 [node name="HitDatastring" type="AudioStreamPlayer" parent="SFX" index="3"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -596,7 +592,7 @@ bus = "SFX"
 
 [node name="MoveThroughDatastring" type="AudioStreamPlayer" parent="SFX" index="4"]
 
-stream = ExtResource( 8 )
+stream = ExtResource( 7 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -605,7 +601,7 @@ bus = "SFX"
 
 [node name="MoveOnFloor" type="AudioStreamPlayer" parent="SFX" index="5"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 8 )
 volume_db = 10.0
 pitch_scale = 1.0
 autoplay = false
@@ -614,7 +610,7 @@ bus = "SFX"
 
 [node name="MoveOnDatastring" type="AudioStreamPlayer" parent="SFX" index="6"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -623,7 +619,7 @@ bus = "SFX"
 
 [node name="HitDetectors" type="Node2D" parent="SFX" index="7"]
 
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="PurpleLaserSidesDetector" type="Area2D" parent="SFX/HitDetectors" index="0"]
 
@@ -718,13 +714,11 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( -7.27951, 80.479 )
 shape = SubResource( 13 )
 
-[node name="Particles2DOrangeOne2" parent="." index="2" instance=ExtResource( 12 )]
+[node name="VFX" type="Node2D" parent="." index="2"]
 
-[node name="VFX" type="Node2D" parent="." index="3"]
+script = ExtResource( 11 )
 
-script = ExtResource( 13 )
-
-[node name="SwitcheffectExplosion" parent="VFX" index="0" instance=ExtResource( 14 )]
+[node name="SwitcheffectExplosion" parent="VFX" index="0" instance=ExtResource( 12 )]
 
 show_behind_parent = true
 position = Vector2( 3.04739, 1.2499 )
@@ -750,7 +744,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 1
 process_material = SubResource( 16 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -777,7 +771,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 1
 process_material = SubResource( 19 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -804,8 +798,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 16 )
-texture = ExtResource( 17 )
+process_material = ExtResource( 14 )
+texture = ExtResource( 15 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -832,8 +826,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 16 )
-texture = ExtResource( 17 )
+process_material = ExtResource( 14 )
+texture = ExtResource( 15 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -859,8 +853,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 18 )
-texture = ExtResource( 17 )
+process_material = ExtResource( 16 )
+texture = ExtResource( 15 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -886,20 +880,20 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 18 )
-texture = ExtResource( 17 )
+process_material = ExtResource( 16 )
+texture = ExtResource( 15 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="AnimatedCaracter" parent="." index="4" instance=ExtResource( 19 )]
+[node name="AnimatedCaracter" parent="." index="3" instance=ExtResource( 17 )]
 
 position = Vector2( 0, 0 )
 scale = Vector2( 0.12, 0.12 )
 _sections_unfolded = [ "Material", "Pause", "Transform" ]
 
-[node name="PhysicsCollider" type="CollisionShape2D" parent="." index="5"]
+[node name="PhysicsCollider" type="CollisionShape2D" parent="." index="4"]
 
 position = Vector2( -6.1861, -0.360727 )
 shape = SubResource( 24 )

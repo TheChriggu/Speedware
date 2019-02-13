@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level01_ProggerArt_Button.png-e89b993fee3c6fafd66550a1ae00c62d.stex"
+path="res://.import/Level01_ProggerArt_Button - Copy.png-58c72e79e1e13a052afdcb52f65207f0.stex"
 
 [deps]
 
-source_file="res://Scenes/Level Selection/Level01_ProggerArt_Button.png"
-dest_files=[ "res://.import/Level01_ProggerArt_Button.png-e89b993fee3c6fafd66550a1ae00c62d.stex" ]
+source_file="res://Scenes/Level Selection/Level01_ProggerArt_Button - Copy.png"
+dest_files=[ "res://.import/Level01_ProggerArt_Button - Copy.png-58c72e79e1e13a052afdcb52f65207f0.stex" ]
 
 [params]
 

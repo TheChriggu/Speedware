@@ -192,8 +192,8 @@ func _on_GameStartTimer_GameStartTimerEnd():
 	$AnimationPlayer.play("GameStartTimerOver")
 
 func _ready():
-	$AnimationPlayer.play("CharacterGameStartAnimation")
-
+	#$AnimationPlayer.play("CharacterGameStartAnimation")
+	pass
 
 func _on_FinishArea_finish_line_passed():
 	$AnimationPlayer.play("FinishLinePassedCharFreeze")

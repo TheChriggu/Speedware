@@ -18,7 +18,7 @@
 [ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=16]
 [ext_resource path="res://Player/Player Animation/Run.tscn" type="PackedScene" id=17]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=7]
 
 length = 1.0
 loop = false
@@ -48,19 +48,19 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=8]
 
 length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=9]
 
 length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=22]
 
 resource_name = "FinishLinePassedCharFreeze"
 length = 2.0
@@ -529,6 +529,10 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -7.27951, 80.479 )
 shape = SubResource( 13 )
+anims/CharacterGameStartAnimation = SubResource( 7 )
+anims/CharacterLevelEndAnimation = SubResource( 8 )
+anims/DatastringCrossAnimation = SubResource( 9 )
+anims/FinishLinePassedCharFreeze = SubResource( 22 )
 
 [node name="FloorSides" type="Area2D" parent="SFX/HitDetectors" index="3"]
 

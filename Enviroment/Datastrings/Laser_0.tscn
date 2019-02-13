@@ -179,6 +179,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 pause_mode = 2
+visible = false
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Offset", "Pause", "Transform", "Visibility" ]
 

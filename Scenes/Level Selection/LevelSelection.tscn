@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/ui-menu-wireframe.png" type="Texture" id=2]
@@ -12,11 +12,12 @@
 [ext_resource path="res://Levels/Level6.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Level7.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=13]
-[ext_resource path="res://Scenes/Level Selection/bar_button_focused.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/Level Selection/bar_button.png" type="Texture" id=15]
-[ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=16]
-[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=17]
+[ext_resource path="res://Levels/Level9.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Scenes/Level Selection/bar_button_focused.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Level Selection/bar_button.png" type="Texture" id=16]
+[ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=18]
 
 [sub_resource type="StyleBoxTexture" id=19]
 
@@ -52,7 +53,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[node name="LevelSelection" type="Node" index="0"]
+[node name="LevelSelection" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -237,6 +238,7 @@ visible = true
 
 editor/display_folded = true
 position = Vector2( 370.779, 848.449 )
+scene_to_load = ExtResource( 13 )
 LevelNumber = "09"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut10" index="1"]
@@ -252,7 +254,7 @@ visible = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
-stream = ExtResource( 13 )
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -278,10 +280,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_icons/tick = ExtResource( 14 )
-custom_icons/grabber_disabled = ExtResource( 14 )
-custom_icons/grabber_highlight = ExtResource( 15 )
-custom_icons/grabber = ExtResource( 14 )
+custom_icons/tick = ExtResource( 15 )
+custom_icons/grabber_disabled = ExtResource( 15 )
+custom_icons/grabber_highlight = ExtResource( 16 )
+custom_icons/grabber = ExtResource( 15 )
 custom_styles/slider = SubResource( 19 )
 min_value = -80.0
 max_value = 24.0
@@ -315,10 +317,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_icons/tick = ExtResource( 14 )
-custom_icons/grabber_disabled = ExtResource( 14 )
-custom_icons/grabber_highlight = ExtResource( 15 )
-custom_icons/grabber = ExtResource( 14 )
+custom_icons/tick = ExtResource( 15 )
+custom_icons/grabber_disabled = ExtResource( 15 )
+custom_icons/grabber_highlight = ExtResource( 16 )
+custom_icons/grabber = ExtResource( 15 )
 custom_styles/slider = SubResource( 20 )
 min_value = -80.0
 max_value = 24.0
@@ -335,7 +337,7 @@ _sections_unfolded = [ "Focus", "custom_icons" ]
 
 [node name="SFXExample" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 16 )
+stream = ExtResource( 17 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -344,7 +346,7 @@ bus = "SFX"
 
 [node name="MusicExample" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 17 )
+stream = ExtResource( 18 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

@@ -12,7 +12,14 @@ func _ready():
 func _on_Area2D_area_entered(area):
 	$Timer.start()
 	emit_signal("speedboost_start", Vector2(SPEED, 0).rotated(rotation))
+	$SpeedExplosion.emitting = true
+
 	
-	
+
+
 func _on_Timer_timeout():
 	emit_signal("speedboost_stop")
+	$SpeedExplosion.emitting = false
+	
+
+	

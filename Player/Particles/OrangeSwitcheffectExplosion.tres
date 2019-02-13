@@ -5,9 +5,9 @@
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 0.994141 ), 0.0, 1.46693, 0, 0, Vector2( 0.951823, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.918945 ), 0.0, 0.0, 0, 0, Vector2( 0.249557, 0.478516 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
+[sub_resource type="CurveTexture" id=2]
 
 flags = 4
 width = 2048
@@ -32,7 +32,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 0.0
 linear_accel_random = 0.0
-radial_accel = -4.0
+radial_accel = -5.0
 radial_accel_random = 0.0
 tangential_accel = 0.0
 tangential_accel_random = 0.0
@@ -42,7 +42,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.5
 scale_random = 0.0
-scale_curve = SubResource( 4 )
+scale_curve = SubResource( 2 )
 color = Color( 0.929688, 0.544739, 0, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0

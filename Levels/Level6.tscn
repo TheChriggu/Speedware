@@ -25,7 +25,7 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=23]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=24]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 

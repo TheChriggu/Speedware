@@ -9,10 +9,16 @@ signal speedboost_stop
 func _ready():
 	$Timer.wait_time = LENGTH
 
-func _on_Area2D_area_entered(area):
-	$Timer.start()
-	emit_signal("speedboost_start", Vector2(SPEED, 0).rotated(rotation))
+#func _on_Area2D_area_entered(area):
+#	$Timer.start()
+#	emit_signal("speedboost_start", Vector2(SPEED, 0).rotated(rotation))
 	
 	
 func _on_Timer_timeout():
 	emit_signal("speedboost_stop")
+
+
+func _on_Area2D_body_entered(body):
+	$SpeedboostSound.play()
+	$Timer.start()
+	emit_signal("speedboost_start", Vector2(SPEED, 0).rotated(rotation))

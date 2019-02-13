@@ -119,6 +119,7 @@ func ApplyFriction(delta):
 	
 	velocity.x = vlen * vsign
 
+
 func Jump():
 	if Input.is_action_just_pressed("jump") and not isJumping and onAirTime < JUMP_MAX_AIRBORNE_TIME:
 		#Player can jump, even after leaving the Edge for some time
@@ -197,3 +198,15 @@ func _ready():
 func _on_FinishArea_finish_line_passed():
 	$AnimationPlayer.play("FinishLinePassedCharFreeze")
 	emit_signal("FinishLineAnimationFinished")
+
+func _on_PurpleLaserSidesDetector_area_entered(area):
+	if IS_ORANGE:
+		$SFX.HitDatastring()
+	else:
+		$SFX.MoveThroughDatastring()
+
+func _on_OrangeLaserSidesDetector_area_entered(area):
+	if !IS_ORANGE:
+		$SFX.HitDatastring()
+	else:
+		$SFX.MoveThroughDatastring()

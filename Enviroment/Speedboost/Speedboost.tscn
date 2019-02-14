@@ -148,7 +148,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[node name="Speedboost" type="Sprite"]
+[node name="Speedboost" type="Sprite" index="0"]
 
 position = Vector2( 776.714, 44.7581 )
 scale = Vector2( 0.3, 0.3 )
@@ -289,14 +289,14 @@ amount = 300
 lifetime = 20.0
 one_shot = true
 preprocess = 0.0
-speed_scale = 15.0
+speed_scale = 20.0
 explosiveness = 0.8
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
+visibility_rect = Rect2( -1000, -1000, 6000, 6000 )
 local_coords = true
-draw_order = 1
+draw_order = 0
 process_material = SubResource( 12 )
 texture = ExtResource( 5 )
 normal_map = null

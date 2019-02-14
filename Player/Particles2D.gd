@@ -19,7 +19,7 @@ func StartTimer():
 
 func OrangeToPurple():
 	if !emitting:
-		process_material = load("res://Player/Particles/PurpleSwitcheffectExplosion.tres")
+		process_material = load("res://Player/Particles/PurpleSwitcheffectExplosion2.tres")
 		mustSwitchColorToPurple = false
 	else:
 		mustSwitchColorToPurple = true

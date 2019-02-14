@@ -16,7 +16,7 @@
 [ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Main Menu/Options.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=18]
 [ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=19]
 [ext_resource path="res://UI/UI.gd" type="Script" id=20]
@@ -3261,9 +3261,9 @@ text = "07"
 
 [connection signal="collected" from="Level/Collectibles/Collectible" to="." method="_on_Collectible_collected"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="speedboost_start" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_start"]
 
@@ -3273,8 +3273,8 @@ text = "07"
 
 [connection signal="speedboost_stop" from="Level/Speedboosters/Speedboost2" to="." method="_on_Speedboost_speedboost_stop"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
-
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

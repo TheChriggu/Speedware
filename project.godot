@@ -78,10 +78,11 @@ speedboostOff=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_n
 
 [layer_names]
 
-2d_physics/layer_1="red"
-2d_physics/layer_2="green"
+2d_physics/layer_1="Purple"
+2d_physics/layer_2="Orange"
 2d_physics/layer_3="floor"
 2d_physics/layer_4="camera"
+2d_physics/layer_5="SpeedBooster"
 
 [rendering]
 

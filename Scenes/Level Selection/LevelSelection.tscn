@@ -1,1012 +1,57 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Level Selection/LevelSelectionBackground.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Level Selection/LevelShortcut.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Level Selection/ui-menu-wireframe.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Level Selection/Level1Shortcut.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Level Selection/Level01_ProggerArt_Button.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Level Selection/Level01_ProggerArt_Button_Hovered.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/Level Selection/Star_Empty.png" type="Texture" id=7]
-[ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Levels/Level3.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Levels/Level4.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Levels/Level5.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/Level6.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Levels/Level7.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Return_to_Menu.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=16]
-[ext_resource path="res://Scenes/BackToMenuInfo.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Level Selection/LevelShortcut.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Level3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Level4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Level5.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Level6.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/Level7.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/Level9.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Scenes/Level Selection/bar_button_focused.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Level Selection/bar_button.png" type="Texture" id=16]
+[ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=18]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="StyleBoxTexture" id=1]
 
-resource_name = "Mouse_Hover"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+margin_left = 0.0
+margin_right = 0.0
+margin_top = 0.0
+margin_bottom = 0.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="StyleBoxTexture" id=2]
 
-resource_name = "Mouse_Hover_Down"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=3]
-
-resource_name = "Mouse_Hover"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=4]
-
-resource_name = "Mouse_Hover_Down"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=5]
-
-resource_name = "Mouse_Hover"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=6]
-
-resource_name = "Mouse_Hover_Down"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=7]
-
-resource_name = "Mouse_Hover"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=8]
-
-resource_name = "Mouse_Hover_Down"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=9]
-
-resource_name = "Mouse_Hover"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=10]
-
-resource_name = "Mouse_Hover_Down"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=11]
-
-resource_name = "Mouse_Hover"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=12]
-
-resource_name = "Mouse_Hover_Down"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=13]
-
-resource_name = "Mouse_Hover"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=14]
-
-resource_name = "Mouse_Hover_Down"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=15]
-
-resource_name = "Mouse_Hover"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=16]
-
-resource_name = "Mouse_Hover_Down"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=17]
-
-resource_name = "Mouse_Hover"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=18]
-
-resource_name = "Mouse_Hover_Down"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+margin_left = 0.0
+margin_right = 0.0
+margin_top = 0.0
+margin_bottom = 0.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
 
 [node name="LevelSelection" type="Node" index="0"]
 
@@ -1014,368 +59,300 @@ script = ExtResource( 1 )
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
-position = Vector2( 967.606, 527.727 )
-scale = Vector2( 1.7261, 1.90533 )
+position = Vector2( 954.141, 535.987 )
 texture = ExtResource( 2 )
 
-[node name="LevelShortcut" parent="." index="1" instance=ExtResource( 3 )]
+[node name="LevelShortcuts" type="Node2D" parent="." index="1"]
+
+[node name="Level1Shortcut" parent="LevelShortcuts" index="0" instance=ExtResource( 3 )]
 
 editor/display_folded = true
-position = Vector2( 186.404, 812.294 )
+position = Vector2( 419.791, 229.701 )
+scene_to_load = ExtResource( 4 )
+LevelNumber = "00"
+
+[node name="Button" parent="LevelShortcuts/Level1Shortcut" index="1"]
+
+focus_neighbour_left = NodePath("../../../Musicslider")
+focus_neighbour_top = NodePath("../../LevelShortcut10/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
+focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
+
+[node name="LevelShortcut" parent="LevelShortcuts" index="1" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( 494.476, 295.436 )
 scene_to_load = ExtResource( 4 )
 LevelNumber = "01"
 
-[node name="Button" parent="LevelShortcut" index="0"]
+[node name="Button" parent="LevelShortcuts/LevelShortcut" index="1"]
 
-focus_neighbour_left = NodePath("../../LevelShortcut10/Button")
-focus_neighbour_top = NodePath("../../LevelShortcut2/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut5/Button")
-focus_neighbour_bottom = NodePath("../../LevelShortcut2/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
+focus_neighbour_left = NodePath("../../../Musicslider")
+focus_neighbour_top = NodePath("../../Level1Shortcut/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
+focus_neighbour_bottom = NodePath("../../LevelShortcut3/Button")
 
-[node name="Sprite3" parent="LevelShortcut" index="3"]
+[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut" index="4"]
 
-texture = ExtResource( 7 )
+visible = true
 
-[node name="AnimationPlayer" parent="LevelShortcut" index="5"]
-
-anims/Mouse_Hover = SubResource( 1 )
-anims/Mouse_Hover_Down = SubResource( 2 )
-
-[node name="LevelShortcut2" parent="." index="2" instance=ExtResource( 3 )]
+[node name="LevelShortcut3" parent="LevelShortcuts" index="2" instance=ExtResource( 5 )]
 
 editor/display_folded = true
-position = Vector2( 214.374, 142.583 )
-scene_to_load = ExtResource( 8 )
+position = Vector2( 420.884, 364.098 )
+scene_to_load = ExtResource( 6 )
 LevelNumber = "02"
 
-[node name="Button" parent="LevelShortcut2" index="0"]
+[node name="Button" parent="LevelShortcuts/LevelShortcut3" index="1"]
 
-focus_neighbour_left = NodePath("../../LevelShortcut8/Button")
+focus_neighbour_left = NodePath("../../../Musicslider")
 focus_neighbour_top = NodePath("../../LevelShortcut/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut3/Button")
-focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
-
-[node name="Sprite2" parent="LevelShortcut2" index="2"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite3" parent="LevelShortcut2" index="3"]
-
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" parent="LevelShortcut2" index="5"]
-
-anims/Mouse_Hover = SubResource( 3 )
-anims/Mouse_Hover_Down = SubResource( 4 )
-
-[node name="LevelShortcut3" parent="." index="3" instance=ExtResource( 3 )]
-
-editor/display_folded = true
-position = Vector2( 725.376, 140.448 )
-scene_to_load = ExtResource( 9 )
-
-[node name="Button" parent="LevelShortcut3" index="0"]
-
-margin_left = -55.0
-margin_top = -44.0
-margin_right = 57.0
-margin_bottom = 53.0
-focus_neighbour_left = NodePath("../../LevelShortcut2/Button")
-focus_neighbour_top = NodePath("../../LevelShortcut5/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut7/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut4/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
 
-[node name="Sprite" parent="LevelShortcut3" index="1"]
+[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut3" index="4"]
 
-texture = ExtResource( 7 )
+visible = true
 
-[node name="Sprite2" parent="LevelShortcut3" index="2"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite3" parent="LevelShortcut3" index="3"]
-
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" parent="LevelShortcut3" index="5"]
-
-anims/Mouse_Hover = SubResource( 5 )
-anims/Mouse_Hover_Down = SubResource( 6 )
-
-[node name="LevelShortcut4" parent="." index="4" instance=ExtResource( 3 )]
+[node name="LevelShortcut4" parent="LevelShortcuts" index="3" instance=ExtResource( 5 )]
 
 editor/display_folded = true
-position = Vector2( 748.094, 487.355 )
-scene_to_load = ExtResource( 10 )
+position = Vector2( 305.642, 432.576 )
+scene_to_load = ExtResource( 7 )
+LevelNumber = "03"
 
-[node name="Button" parent="LevelShortcut4" index="0"]
+[node name="Button" parent="LevelShortcuts/LevelShortcut4" index="1"]
 
-margin_left = -55.0
-margin_top = -44.0
-margin_right = 57.0
-margin_bottom = 53.0
-focus_neighbour_left = NodePath("../../LevelShortcut2/Button")
+focus_neighbour_left = NodePath("../../../Musicslider")
 focus_neighbour_top = NodePath("../../LevelShortcut3/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut7/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut5/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
 
-[node name="Sprite" parent="LevelShortcut4" index="1"]
+[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut4" index="4"]
 
-texture = ExtResource( 7 )
+visible = true
 
-[node name="Sprite2" parent="LevelShortcut4" index="2"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite3" parent="LevelShortcut4" index="3"]
-
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" parent="LevelShortcut4" index="5"]
-
-anims/Mouse_Hover = SubResource( 7 )
-anims/Mouse_Hover_Down = SubResource( 8 )
-
-[node name="LevelShortcut5" parent="." index="5" instance=ExtResource( 3 )]
+[node name="LevelShortcut5" parent="LevelShortcuts" index="4" instance=ExtResource( 5 )]
 
 editor/display_folded = true
-position = Vector2( 811.69, 840.403 )
-scene_to_load = ExtResource( 11 )
+position = Vector2( 369.109, 502.723 )
+scene_to_load = ExtResource( 8 )
+LevelNumber = "04"
 
-[node name="Button" parent="LevelShortcut5" index="0"]
+[node name="Button" parent="LevelShortcuts/LevelShortcut5" index="1"]
 
-margin_left = -55.0
-margin_top = -44.0
-margin_right = 57.0
-margin_bottom = 53.0
-focus_neighbour_left = NodePath("../../LevelShortcut/Button")
+focus_neighbour_left = NodePath("../../../Musicslider")
 focus_neighbour_top = NodePath("../../LevelShortcut4/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut6/Button")
-focus_neighbour_bottom = NodePath("../../LevelShortcut3/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
-
-[node name="Sprite" parent="LevelShortcut5" index="1"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite2" parent="LevelShortcut5" index="2"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite3" parent="LevelShortcut5" index="3"]
-
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" parent="LevelShortcut5" index="5"]
-
-anims/Mouse_Hover = SubResource( 9 )
-anims/Mouse_Hover_Down = SubResource( 10 )
-
-[node name="LevelShortcut6" parent="." index="6" instance=ExtResource( 3 )]
-
-editor/display_folded = true
-position = Vector2( 1274.86, 873.292 )
-scene_to_load = ExtResource( 12 )
-
-[node name="Button" parent="LevelShortcut6" index="0"]
-
-margin_left = -55.0
-margin_top = -44.0
-margin_right = 57.0
-margin_bottom = 53.0
-focus_neighbour_left = NodePath("../../LevelShortcut5/Button")
-focus_neighbour_top = NodePath("../../LevelShortcut7/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut10/Button")
-focus_neighbour_bottom = NodePath("../../LevelShortcut7/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
-
-[node name="Sprite" parent="LevelShortcut6" index="1"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite2" parent="LevelShortcut6" index="2"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite3" parent="LevelShortcut6" index="3"]
-
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" parent="LevelShortcut6" index="5"]
-
-anims/Mouse_Hover = SubResource( 11 )
-anims/Mouse_Hover_Down = SubResource( 12 )
-
-[node name="LevelShortcut7" parent="." index="7" instance=ExtResource( 3 )]
-
-editor/display_folded = true
-position = Vector2( 1341.15, 174.18 )
-scene_to_load = ExtResource( 13 )
-
-[node name="Button" parent="LevelShortcut7" index="0"]
-
-margin_left = -55.0
-margin_top = -44.0
-margin_right = 57.0
-margin_bottom = 53.0
-focus_neighbour_left = NodePath("../../LevelShortcut3/Button")
-focus_neighbour_top = NodePath("../../LevelShortcut6/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut8/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut6/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
 
-[node name="Sprite" parent="LevelShortcut7" index="1"]
+[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut5" index="4"]
 
-texture = ExtResource( 7 )
+visible = true
 
-[node name="Sprite2" parent="LevelShortcut7" index="2"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite3" parent="LevelShortcut7" index="3"]
-
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" parent="LevelShortcut7" index="5"]
-
-anims/Mouse_Hover = SubResource( 13 )
-anims/Mouse_Hover_Down = SubResource( 14 )
-
-[node name="LevelShortcut8" parent="." index="8" instance=ExtResource( 3 )]
+[node name="LevelShortcut6" parent="LevelShortcuts" index="5" instance=ExtResource( 5 )]
 
 editor/display_folded = true
-position = Vector2( 1793.74, 187.555 )
-scene_to_load = ExtResource( 14 )
+position = Vector2( 420.884, 572.87 )
+scene_to_load = ExtResource( 9 )
+LevelNumber = "05"
 
-[node name="Button" parent="LevelShortcut8" index="0"]
+[node name="Button" parent="LevelShortcuts/LevelShortcut6" index="1"]
 
-margin_left = -55.0
-margin_top = -44.0
-margin_right = 57.0
-margin_bottom = 53.0
-focus_neighbour_left = NodePath("../../LevelShortcut7/Button")
-focus_neighbour_top = NodePath("../../LevelShortcut10/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut2/Button")
-focus_neighbour_bottom = NodePath("../../LevelShortcut9/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
+focus_neighbour_left = NodePath("../../../Musicslider")
+focus_neighbour_top = NodePath("../../LevelShortcut5/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
+focus_neighbour_bottom = NodePath("../../LevelShortcut7/Button")
 
-[node name="Sprite" parent="LevelShortcut8" index="1"]
+[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut6" index="4"]
 
-texture = ExtResource( 7 )
+visible = true
 
-[node name="Sprite2" parent="LevelShortcut8" index="2"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite3" parent="LevelShortcut8" index="3"]
-
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" parent="LevelShortcut8" index="5"]
-
-anims/Mouse_Hover = SubResource( 15 )
-anims/Mouse_Hover_Down = SubResource( 16 )
-
-[node name="LevelShortcut9" parent="." index="9" instance=ExtResource( 3 )]
+[node name="LevelShortcut7" parent="LevelShortcuts" index="6" instance=ExtResource( 5 )]
 
 editor/display_folded = true
-position = Vector2( 1737.7, 535.214 )
-scene_to_load = ExtResource( 14 )
+position = Vector2( 370.779, 641.347 )
+scene_to_load = ExtResource( 10 )
+LevelNumber = "06"
 
-[node name="Button" parent="LevelShortcut9" index="0"]
+[node name="Button" parent="LevelShortcuts/LevelShortcut7" index="1"]
 
-margin_left = -55.0
-margin_top = -44.0
-margin_right = 57.0
-margin_bottom = 53.0
-focus_neighbour_left = NodePath("../../LevelShortcut7/Button")
-focus_neighbour_top = NodePath("../../LevelShortcut8/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut2/Button")
-focus_neighbour_bottom = NodePath("../../LevelShortcut10/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
-
-[node name="Sprite" parent="LevelShortcut9" index="1"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite2" parent="LevelShortcut9" index="2"]
-
-texture = ExtResource( 7 )
-
-[node name="Sprite3" parent="LevelShortcut9" index="3"]
-
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" parent="LevelShortcut9" index="5"]
-
-anims/Mouse_Hover = SubResource( 17 )
-anims/Mouse_Hover_Down = SubResource( 18 )
-
-[node name="LevelShortcut10" parent="." index="10" instance=ExtResource( 3 )]
-
-editor/display_folded = true
-position = Vector2( 1782.58, 987.715 )
-_sections_unfolded = [ "Pause", "Visibility" ]
-scene_to_load = ExtResource( 14 )
-
-[node name="Button" parent="LevelShortcut10" index="0"]
-
-focus_neighbour_left = NodePath("../../LevelShortcut6/Button")
-focus_neighbour_top = NodePath("../../LevelShortcut9/Button")
-focus_neighbour_right = NodePath("../../LevelShortcut/Button")
+focus_neighbour_left = NodePath("../../../Musicslider")
+focus_neighbour_top = NodePath("../../LevelShortcut6/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut8/Button")
-texture_normal = ExtResource( 5 )
-texture_focused = ExtResource( 6 )
 
-[node name="Return_to_Menu" parent="." index="11" instance=ExtResource( 15 )]
+[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut7" index="4"]
 
-show_behind_parent = true
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-margin_left = -47.0
-margin_top = 1010.0
-margin_right = 1873.0
-margin_bottom = 2090.0
-_sections_unfolded = [ "Visibility" ]
+visible = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="12"]
+[node name="LevelShortcut8" parent="LevelShortcuts" index="7" instance=ExtResource( 5 )]
 
-stream = ExtResource( 16 )
+editor/display_folded = true
+position = Vector2( 492.702, 711.495 )
+scene_to_load = ExtResource( 11 )
+LevelNumber = "07"
+
+[node name="Button" parent="LevelShortcuts/LevelShortcut8" index="1"]
+
+focus_neighbour_left = NodePath("../../../Musicslider")
+focus_neighbour_top = NodePath("../../LevelShortcut7/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
+focus_neighbour_bottom = NodePath("../../LevelShortcut9/Button")
+
+[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut8" index="4"]
+
+visible = true
+
+[node name="LevelShortcut9" parent="LevelShortcuts" index="8" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( 419.214, 779.972 )
+scene_to_load = ExtResource( 12 )
+LevelNumber = "08"
+
+[node name="Button" parent="LevelShortcuts/LevelShortcut9" index="1"]
+
+focus_neighbour_left = NodePath("../../../Musicslider")
+focus_neighbour_top = NodePath("../../LevelShortcut8/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
+focus_neighbour_bottom = NodePath("../../LevelShortcut10/Button")
+
+[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut9" index="4"]
+
+visible = true
+
+[node name="LevelShortcut10" parent="LevelShortcuts" index="9" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( 370.779, 848.449 )
+scene_to_load = ExtResource( 13 )
+LevelNumber = "09"
+
+[node name="Button" parent="LevelShortcuts/LevelShortcut10" index="1"]
+
+focus_neighbour_left = NodePath("../../../Musicslider")
+focus_neighbour_top = NodePath("../../LevelShortcut9/Button")
+focus_neighbour_right = NodePath("../../../Musicslider")
+focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
+
+[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut10" index="4"]
+
+visible = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
-[node name="BackToMenuInfo" parent="." index="13" instance=ExtResource( 17 )]
+[node name="Musicslider" type="HSlider" parent="." index="3"]
 
-margin_left = 1384.0
-margin_top = 1010.0
-margin_right = 1789.0
-margin_bottom = 1096.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1132.0
+margin_top = 591.0
+margin_right = 1662.0
+margin_bottom = 607.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../LevelShortcuts/Level1Shortcut/Button")
+focus_neighbour_bottom = NodePath("../SFXSlider")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_icons/tick = ExtResource( 15 )
+custom_icons/grabber_disabled = ExtResource( 15 )
+custom_icons/grabber_highlight = ExtResource( 16 )
+custom_icons/grabber = ExtResource( 15 )
+custom_styles/slider = SubResource( 1 )
+min_value = -80.0
+max_value = 24.0
+step = 20.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Focus", "custom_icons", "custom_styles" ]
+
+[node name="SFXSlider" type="HSlider" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1132.0
+margin_top = 696.0
+margin_right = 1661.0
+margin_bottom = 712.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../Musicslider")
+focus_neighbour_bottom = NodePath("../LevelShortcuts/Level1Shortcut/Button")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_icons/tick = ExtResource( 15 )
+custom_icons/grabber_disabled = ExtResource( 15 )
+custom_icons/grabber_highlight = ExtResource( 16 )
+custom_icons/grabber = ExtResource( 15 )
+custom_styles/slider = SubResource( 2 )
+min_value = -80.0
+max_value = 24.0
+step = 20.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Focus", "custom_icons" ]
+
+[node name="SFXExample" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="MusicExample" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 18 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Music"
+
+[connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]
+
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 
 
-[editable path="LevelShortcut"]
-[editable path="LevelShortcut2"]
-[editable path="LevelShortcut3"]
-[editable path="LevelShortcut4"]
-[editable path="LevelShortcut5"]
-[editable path="LevelShortcut6"]
-[editable path="LevelShortcut7"]
-[editable path="LevelShortcut8"]
-[editable path="LevelShortcut9"]
-[editable path="LevelShortcut10"]
+[editable path="LevelShortcuts/Level1Shortcut"]
+[editable path="LevelShortcuts/LevelShortcut"]
+[editable path="LevelShortcuts/LevelShortcut3"]
+[editable path="LevelShortcuts/LevelShortcut4"]
+[editable path="LevelShortcuts/LevelShortcut5"]
+[editable path="LevelShortcuts/LevelShortcut6"]
+[editable path="LevelShortcuts/LevelShortcut7"]
+[editable path="LevelShortcuts/LevelShortcut8"]
+[editable path="LevelShortcuts/LevelShortcut9"]
+[editable path="LevelShortcuts/LevelShortcut10"]

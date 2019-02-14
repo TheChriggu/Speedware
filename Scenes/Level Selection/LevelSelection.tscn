@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Level Selection/ui-menu-wireframe.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Level Selection/background_levelselection_michelle.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Level Selection/Level1Shortcut.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Level Selection/LevelShortcut.tscn" type="PackedScene" id=5]

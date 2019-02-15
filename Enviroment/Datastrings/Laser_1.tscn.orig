@@ -188,10 +188,8 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+[node name="PhysicsCollision" type="StaticBody2D" parent="." index="2"]
 
-editor/display_folded = true
-visible = false
 position = Vector2( -10.0298, 3.81154 )
 input_pickable = false
 collision_layer = 1
@@ -202,36 +200,14 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicsCollision" index="0"]
 
 position = Vector2( 10.0699, -3.78753 )
 scale = Vector2( 3.55962, 0.468951 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="3"]
-
-editor/display_folded = true
-visible = false
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 16
-collision_mask = 16
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
-
-position = Vector2( -0.433369, 1.48467 )
-scale = Vector2( 0.615081, 0.468951 )
-shape = SubResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Path2D" type="Path2D" parent="." index="4"]
+[node name="Path2D" type="Path2D" parent="." index="3"]
 
 editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
@@ -380,7 +356,7 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Visibility" ]
 
-[node name="LightStrong" type="Light2D" parent="." index="5"]
+[node name="LightStrong" type="Light2D" parent="." index="4"]
 
 enabled = true
 editor_only = false
@@ -405,8 +381,9 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range" ]
 
-[node name="LightWeak" type="Light2D" parent="." index="6"]
+[node name="LightWeak" type="Light2D" parent="." index="5"]
 
+editor/display_folded = true
 enabled = true
 editor_only = false
 texture = ExtResource( 5 )
@@ -435,8 +412,22 @@ self_modulate = Color( 0.828125, 0, 1, 0.243137 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Visibility" ]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[node name="HitDetection" type="Area2D" parent="." index="6"]
 
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetection" index="0"]
+
+position = Vector2( 0.0400991, 0.0240099 )
+scale = Vector2( 3.55962, 0.468951 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 

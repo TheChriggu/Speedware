@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level01_ProggerArt_Button_Hovered.png-e8c526e3b44df7421bff5cdbc107bf7a.stex"
+path="res://.import/foot_l.png-47c222f5bce488f51fe739b26fbb3eb8.stex"
 
 [deps]
 
-source_file="res://Scenes/Level Selection/Level01_ProggerArt_Button_Hovered.png"
-dest_files=[ "res://.import/Level01_ProggerArt_Button_Hovered.png-e8c526e3b44df7421bff5cdbc107bf7a.stex" ]
+source_file="res://Player/Player Animation/FUC_Resources/Char_Orange/foot_l.png"
+dest_files=[ "res://.import/foot_l.png-47c222f5bce488f51fe739b26fbb3eb8.stex" ]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Particles/OrangeSwitcheffectExplosion.tres" type="Material" id=1]
-[ext_resource path="res://Enviroment/Collectibles/roundparticle.png" type="Texture" id=2]
+[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=2]
 [ext_resource path="res://Player/Particles2D.gd" type="Script" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
@@ -16,18 +16,19 @@ pause_mode = 2
 show_behind_parent = true
 light_mask = 4
 material = SubResource( 1 )
+scale = Vector2( 0.35, 0.35 )
 emitting = false
-amount = 400
-lifetime = 9.0
+amount = 300
+lifetime = 20.0
 one_shot = true
 preprocess = 0.0
-speed_scale = 25.0
-explosiveness = 1.0
+speed_scale = 30.0
+explosiveness = 0.8
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
+local_coords = false
 draw_order = 0
 process_material = ExtResource( 1 )
 texture = ExtResource( 2 )
@@ -35,7 +36,7 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
 
 [node name="Timer" type="Timer" parent="." index="0"]
 

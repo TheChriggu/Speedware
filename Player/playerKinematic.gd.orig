@@ -23,6 +23,7 @@ signal switched_color_to_purple #signal to send if the player has switched his c
 signal switched_color_to_orange #signal to send if the player has switched his color to purple
 signal is_at_fullspeed #signal to send, if the player is moving at full speed
 signal is_not_at_fullspeed #signal to send if player is not at full speed
+signal FinishLineAnimationFinished
 
 var isLeaningLeft = false
 var isLeaningRight = false
@@ -35,12 +36,17 @@ var isSwitchColorEnabled = true
 func _physics_process(delta):
 	#during speedboost controls are disabled and friction is not applied
 	if not isInSpeedboost:
+		BoostTrailOff()
 		HorizontalMovement(delta)
-		VerticalMovement(delta)
+	
 	else:
 		SpeedboostMovement(delta)
+		BoostTrailOn()
+	
+	VerticalMovement(delta)
 	UIInteraction()
 
+		
 func HorizontalMovement(delta):
 	var force = Vector2(0, GRAVITY) #Vector containing the forces which get applied to the player every frame
 	force.x = LeftForce() + RightForce() #calculate horizontal forces
@@ -64,7 +70,6 @@ func HorizontalMovement(delta):
 func VerticalMovement(delta):
 	if is_on_floor():
 		onAirTime = 0
-		
 	else:
 		onAirTime += delta
 	
@@ -77,7 +82,6 @@ func SpeedboostMovement(delta):
 		LeanLeft()
 	else:
 		isInSpeedboost = false
-	
 	
 	var force = Vector2(0, GRAVITY)
 	# Integrate forces to velocity
@@ -115,22 +119,27 @@ func ApplyFriction(delta):
 	
 	velocity.x = vlen * vsign
 
+
 func Jump():
 	if Input.is_action_just_pressed("jump") and not isJumping and onAirTime < JUMP_MAX_AIRBORNE_TIME:
 		#Player can jump, even after leaving the Edge for some time
+		$AnimationPlayer.play("JumpTakeoffAnimation")
+		$VFX.PlayJumpAnimation()
+		$SFX.JumpOff()
 		velocity.y = -JUMP_SPEED
 		isJumping = true
 		
-	if Input.is_action_just_released("jump"):
+	if Input.is_action_just_released("jump") && isJumping:
 		JumpCut()
 	
 	if isJumping and velocity.y > 0:
 		isJumping = false
+		$VFX.PlayJumpAnimation()
 
 #Cut the jump, when a certain speed is reached
 func JumpCut():
-    if velocity.y < -jumpCutVelocity:
-        velocity.y = -jumpCutVelocity
+	if velocity.y < -jumpCutVelocity:
+		velocity.y = -jumpCutVelocity
 
 func LeanLeft():
 	if !isLeaningLeft:
@@ -156,11 +165,11 @@ func SwitchColor():
 	IS_ORANGE = not IS_ORANGE
 	if IS_ORANGE:
 		$AnimationPlayer.play("SwitchPurpleToOrange")
-		$ColorswitchSound.playing = true
+		$SFX.SwitchColorToOrange()
 		emit_signal("switched_color_to_orange")
 	else:
 		$AnimationPlayer.play("SwitchOrangeToPurple")
-		$ColorswitchSound.playing = true
+		$SFX.SwitchColorToPurple()
 		emit_signal("switched_color_to_purple")
 
 func CheckFullspeed():
@@ -170,3 +179,34 @@ func CheckFullspeed():
 	else:
 		isAtFullspeed = false
 		emit_signal("is_not_at_fullspeed")
+
+#ParcticlesIfBoosted
+func BoostTrailOn():
+	$VFX.TurnBoostParticlesOn()
+
+func BoostTrailOff():
+	$VFX.TurnBoostParticlesOff()
+	
+
+func _on_GameStartTimer_GameStartTimerEnd():
+	$AnimationPlayer.play("GameStartTimerOver")
+
+func _ready():
+	#$AnimationPlayer.play("CharacterGameStartAnimation")
+	pass
+
+func _on_FinishArea_finish_line_passed():
+	$AnimationPlayer.play("FinishLinePassedCharFreeze")
+	emit_signal("FinishLineAnimationFinished")
+
+func _on_PurpleLaserSidesDetector_area_entered(area):
+	if IS_ORANGE:
+		$SFX.HitDatastring()
+	else:
+		$SFX.MoveThroughDatastring()
+
+func _on_OrangeLaserSidesDetector_area_entered(area):
+	if !IS_ORANGE:
+		$SFX.HitDatastring()
+	else:
+		$SFX.MoveThroughDatastring()

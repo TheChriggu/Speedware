@@ -525,13 +525,13 @@ margin_bottom = 105.0
 
 [connection signal="FinishLineAnimationFinished" from="Player/player" to="Level/FinishArea" method="_on_player_FinishLineAnimationFinished"]
 
-[connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
-
 [connection signal="is_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_at_fullspeed"]
 
-[connection signal="is_not_at_fullspeed" from="Player/player" to="." method="_on_player_is_not_at_fullspeed"]
+[connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 
 [connection signal="is_not_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_not_at_fullspeed"]
+
+[connection signal="is_not_at_fullspeed" from="Player/player" to="." method="_on_player_is_not_at_fullspeed"]
 
 [connection signal="switched_color_to_orange" from="Player/player" to="." method="_on_player_switched_color_to_orange"]
 
@@ -567,12 +567,12 @@ margin_bottom = 105.0
 
 [connection signal="collected" from="Level/Collectibles/Collectible" to="." method="_on_Collectible_collected"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

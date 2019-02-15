@@ -66,14 +66,18 @@ func HorizontalMovement(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	CheckFullspeed()
+	#Animations for horizontal movement get called after an on air check in VerticalMovement()
 
 func VerticalMovement(delta):
 	if is_on_floor():
 		onAirTime = 0
+		OnFloorAnimation()
 	else:
 		onAirTime += delta
+		OnAirAnimation()
 	
 	Jump()
+
 
 func SpeedboostMovement(delta):
 	if velocity.x > 0:
@@ -126,6 +130,7 @@ func Jump():
 		$AnimationPlayer.play("JumpTakeoffAnimation")
 		$VFX.PlayJumpAnimation()
 		$SFX.JumpOff()
+		
 		velocity.y = -JUMP_SPEED
 		isJumping = true
 		
@@ -210,3 +215,15 @@ func _on_OrangeLaserSidesDetector_area_entered(area):
 		$SFX.HitDatastring()
 	else:
 		$SFX.MoveThroughDatastring()
+
+func OnAirAnimation():
+	if velocity.y < 0:
+		$AnimatedCharacter.JumpUp()
+	else:
+		$AnimatedCharacter.JumpDown()
+
+func OnFloorAnimation():
+	if velocity.x != 0:
+		$AnimatedCharacter.Run(abs(velocity.x) / WALK_MAX_SPEED)
+	else:
+		$AnimatedCharacter.Idle()

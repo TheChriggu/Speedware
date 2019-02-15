@@ -13,33 +13,33 @@ func SetAllVariablesToFalse():
 	
 func Run(speed):
 	if !isRunning:
-		$Base.Run(ClampRunningSpeed(speed))
+		$MovementAnimations.play("Run", 0.1)
 		SetAllVariablesToFalse()
 		isRunning = true
 	else:
-		$Base.SetAnimationSpeed(ClampRunningSpeed(speed))
+		$MovementAnimations.playback_speed = ClampRunningSpeed(speed)
 
 func SwitchColorToOrange():
-	$Base.SwitchColorToOrange()
+	$ColorSwitchAnimation.play("SwitchColorToOrange")
 
 func SwitchColorToPurple():
-	$Base.SwitchColorToPurple()
+	$ColorSwitchAnimation.play("SwitchColorToPurple")
 
 func JumpUp():
 	if !isJumpingUp:
-		$Base.JumpUp()
+		$MovementAnimations.play("jump_up", 0.3, 1)
 		SetAllVariablesToFalse()
 		isJumpingUp = true
 
 func JumpDown():
 	if !isJumpingDown:
-		$Base.JumpDown()
+		$MovementAnimations.play("jump-down", 0.1, 1.5)
 		SetAllVariablesToFalse()
 		isJumpingDown = true
 
 func Idle():
 	if !isIdle:
-		$Base.Idle()
+		$MovementAnimations.play("Idle", 0.3, 1)
 		SetAllVariablesToFalse()
 		isIdle = true
 

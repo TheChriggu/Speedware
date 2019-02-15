@@ -2,13 +2,13 @@
 
 [ext_resource path="res://Scenes/Level Selection/LevelShortcut.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/ui-menu-wireframe.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Level Selection/kostja_ball_unhovered.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Level Selection/kostja_ball_disabled.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Level Selection/kostja_ball_hovered.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_level_michelle.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_closed_level_michelle.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_level_michelle.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=6]
 [ext_resource path="res://main_menu_font.tres" type="DynamicFont" id=7]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 
 resource_name = "ButtonDisabled"
 length = 1.0
@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 
 resource_name = "ButtonEnabled"
 length = 1.0
@@ -46,9 +46,8 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=3]
 
-resource_name = "Mouse_Hover"
 length = 1.0
 loop = false
 step = 0.1
@@ -113,9 +112,8 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource_name = "Mouse_Hover_Down"
 length = 1.0
 loop = false
 step = 0.1
@@ -199,10 +197,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -20.0
-margin_top = -23.0
-margin_right = 29.0
-margin_bottom = 26.0
+margin_left = -50.0
+margin_top = -47.0
+margin_right = 50.0
+margin_bottom = 53.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -229,10 +227,10 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/ButtonDisabled = SubResource( 3 )
-anims/ButtonEnabled = SubResource( 4 )
-anims/Mouse_Hover = SubResource( 1 )
-anims/Mouse_Hover_Down = SubResource( 2 )
+anims/ButtonDisabled = SubResource( 1 )
+anims/ButtonEnabled = SubResource( 2 )
+anims/Mouse_Hover = SubResource( 3 )
+anims/Mouse_Hover_Down = SubResource( 4 )
 blend_times = [  ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
@@ -314,25 +312,26 @@ _sections_unfolded = [ "Visibility", "custom_fonts" ]
 
 [node name="Levelnumber" type="Label" parent="." index="4"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -5.0
-margin_top = -6.0
-margin_right = 35.0
-margin_bottom = 8.0
+margin_left = -8.0
+margin_top = -5.0
+margin_right = 32.0
+margin_bottom = 9.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "01"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
 
 [connection signal="focus_entered" from="Button" to="." method="_on_Button_focus_entered"]
 

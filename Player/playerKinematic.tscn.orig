@@ -552,6 +552,7 @@ blend_times = [  ]
 
 [node name="SFX" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="JumpOff" type="AudioStreamPlayer" parent="SFX" index="0"]
@@ -781,7 +782,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 pause_mode = 2
 show_behind_parent = true
 material = SubResource( 20 )
-position = Vector2( -60.6872, -13.208 )
+position = Vector2( -0.833429, 1.35102 )
 rotation = -1.5708
 scale = Vector2( 1.25, 1.25 )
 emitting = true
@@ -809,7 +810,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 pause_mode = 2
 show_behind_parent = true
 material = SubResource( 21 )
-position = Vector2( -71.632, -12.9938 )
+position = Vector2( -11.7782, 1.56522 )
 rotation = -1.5708
 emitting = true
 amount = 150
@@ -836,7 +837,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 pause_mode = 2
 show_behind_parent = true
 material = SubResource( 22 )
-position = Vector2( -62.5726, -11.877 )
+position = Vector2( -2.71884, 2.68202 )
 rotation = -1.5708
 emitting = false
 amount = 150
@@ -863,7 +864,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 pause_mode = 2
 show_behind_parent = true
 material = SubResource( 23 )
-position = Vector2( -73.496, -11.877 )
+position = Vector2( -13.6422, 2.68202 )
 rotation = -1.5708
 emitting = false
 amount = 150

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Level Selection/ui-menu-wireframe.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Level Selection/background_levelselection_michelle.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Level Selection/Level1Shortcut.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Level Selection/LevelShortcut.tscn" type="PackedScene" id=5]
@@ -14,8 +14,8 @@
 [ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Levels/Level9.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=14]
-[ext_resource path="res://Scenes/Level Selection/bar_button_focused.png" type="Texture" id=15]
-[ext_resource path="res://Scenes/Level Selection/bar_button.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_music_michelle.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=16]
 [ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=17]
 [ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=18]
 
@@ -78,6 +78,13 @@ focus_neighbour_top = NodePath("../../LevelShortcut10/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
 
+[node name="Levelnumber" parent="LevelShortcuts/Level1Shortcut" index="4"]
+
+margin_left = -5.0
+margin_top = -6.0
+margin_right = 35.0
+margin_bottom = 8.0
+
 [node name="LevelShortcut" parent="LevelShortcuts" index="1" instance=ExtResource( 5 )]
 
 editor/display_folded = true
@@ -92,13 +99,8 @@ focus_neighbour_top = NodePath("../../Level1Shortcut/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut3/Button")
 
-[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut" index="4"]
-
-visible = true
-
 [node name="LevelShortcut3" parent="LevelShortcuts" index="2" instance=ExtResource( 5 )]
 
-editor/display_folded = true
 position = Vector2( 420.884, 364.098 )
 scene_to_load = ExtResource( 6 )
 LevelNumber = "02"
@@ -109,10 +111,6 @@ focus_neighbour_left = NodePath("../../../Musicslider")
 focus_neighbour_top = NodePath("../../LevelShortcut/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut4/Button")
-
-[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut3" index="4"]
-
-visible = true
 
 [node name="LevelShortcut4" parent="LevelShortcuts" index="3" instance=ExtResource( 5 )]
 
@@ -128,10 +126,6 @@ focus_neighbour_top = NodePath("../../LevelShortcut3/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut5/Button")
 
-[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut4" index="4"]
-
-visible = true
-
 [node name="LevelShortcut5" parent="LevelShortcuts" index="4" instance=ExtResource( 5 )]
 
 editor/display_folded = true
@@ -145,10 +139,6 @@ focus_neighbour_left = NodePath("../../../Musicslider")
 focus_neighbour_top = NodePath("../../LevelShortcut4/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut6/Button")
-
-[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut5" index="4"]
-
-visible = true
 
 [node name="LevelShortcut6" parent="LevelShortcuts" index="5" instance=ExtResource( 5 )]
 
@@ -164,10 +154,6 @@ focus_neighbour_top = NodePath("../../LevelShortcut5/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut7/Button")
 
-[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut6" index="4"]
-
-visible = true
-
 [node name="LevelShortcut7" parent="LevelShortcuts" index="6" instance=ExtResource( 5 )]
 
 editor/display_folded = true
@@ -181,10 +167,6 @@ focus_neighbour_left = NodePath("../../../Musicslider")
 focus_neighbour_top = NodePath("../../LevelShortcut6/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut8/Button")
-
-[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut7" index="4"]
-
-visible = true
 
 [node name="LevelShortcut8" parent="LevelShortcuts" index="7" instance=ExtResource( 5 )]
 
@@ -200,10 +182,6 @@ focus_neighbour_top = NodePath("../../LevelShortcut7/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut9/Button")
 
-[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut8" index="4"]
-
-visible = true
-
 [node name="LevelShortcut9" parent="LevelShortcuts" index="8" instance=ExtResource( 5 )]
 
 editor/display_folded = true
@@ -218,10 +196,6 @@ focus_neighbour_top = NodePath("../../LevelShortcut8/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut10/Button")
 
-[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut9" index="4"]
-
-visible = true
-
 [node name="LevelShortcut10" parent="LevelShortcuts" index="9" instance=ExtResource( 5 )]
 
 editor/display_folded = true
@@ -235,10 +209,6 @@ focus_neighbour_left = NodePath("../../../Musicslider")
 focus_neighbour_top = NodePath("../../LevelShortcut9/Button")
 focus_neighbour_right = NodePath("../../../Musicslider")
 focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
-
-[node name="Levelnumber" parent="LevelShortcuts/LevelShortcut10" index="4"]
-
-visible = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 

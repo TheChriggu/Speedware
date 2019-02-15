@@ -32,8 +32,12 @@ var isInSpeedboost = false
 var isAtFullspeed = false
 
 var isSwitchColorEnabled = true
+var isMovingOnFloor = false
+var isMovingOnDatastring = false
 
 func _physics_process(delta):
+	CheckFloor()
+	
 	#during speedboost controls are disabled and friction is not applied
 	if not isInSpeedboost:
 		BoostTrailOff()
@@ -227,3 +231,9 @@ func OnFloorAnimation():
 		$AnimatedCharacter.Run(abs(velocity.x) / WALK_MAX_SPEED)
 	else:
 		$AnimatedCharacter.Idle()
+
+func CheckFloor():
+	isMovingOnFloor = $HitDetectors.isMovingOnFloor
+	isMovingOnDatastring = $HitDetectors.isMovingOnLaser
+	$SFX.isMovingOnFloor = isMovingOnFloor
+	$SFX.isMovingOnDatastring = isMovingOnDatastring

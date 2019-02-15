@@ -17,9 +17,7 @@ func _physics_process(delta):
 	#if timer has gone for too long (delta too large), don't emit signal, restart the timer
 	if currentTime < -wiggle:
 		currentTime += length
-		print("Music timer timeout missed")
 		
 	elif currentTime < wiggle && currentTime > -wiggle:
 		emit_signal("timeout")
-		print("Music timer timeout reached")
 		currentTime += length

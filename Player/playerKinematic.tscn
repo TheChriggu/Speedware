@@ -362,20 +362,20 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Curve" id=14]
+[sub_resource type="Curve" id=12]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.942558, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=15]
+[sub_resource type="CurveTexture" id=13]
 
 flags = 4
 width = 2048
-curve = SubResource( 14 )
+curve = SubResource( 12 )
 
-[sub_resource type="ParticlesMaterial" id=16]
+[sub_resource type="ParticlesMaterial" id=14]
 
 render_priority = 0
 trail_divisor = 1
@@ -404,7 +404,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.4
 scale_random = 0.0
-scale_curve = SubResource( 15 )
+scale_curve = SubResource( 13 )
 color = Color( 1, 1, 1, 0.392157 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -415,20 +415,20 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Scale", "Spread", "Trail" ]
 
-[sub_resource type="Curve" id=17]
+[sub_resource type="Curve" id=15]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.942558, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=18]
+[sub_resource type="CurveTexture" id=16]
 
 flags = 4
 width = 2048
-curve = SubResource( 17 )
+curve = SubResource( 15 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=17]
 
 render_priority = 0
 trail_divisor = 1
@@ -457,7 +457,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.4
 scale_random = 0.0
-scale_curve = SubResource( 18 )
+scale_curve = SubResource( 16 )
 color = Color( 1, 1, 1, 0.392157 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -467,6 +467,18 @@ anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Scale", "Spread", "Trail" ]
+
+[sub_resource type="CanvasItemMaterial" id=18]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=19]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
 
 [sub_resource type="CanvasItemMaterial" id=20]
 
@@ -480,33 +492,21 @@ render_priority = 0
 blend_mode = 1
 light_mode = 2
 
-[sub_resource type="CanvasItemMaterial" id=22]
-
-render_priority = 0
-blend_mode = 1
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=23]
-
-render_priority = 0
-blend_mode = 1
-light_mode = 2
-
-[sub_resource type="CapsuleShape2D" id=24]
+[sub_resource type="CapsuleShape2D" id=22]
 
 custom_solver_bias = 0.0
 radius = 19.0555
 height = 113.446
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=23]
 
 custom_solver_bias = 0.0
 extents = Vector2( 44.4859, 49.4475 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=24]
 
 custom_solver_bias = 0.0
-extents = Vector2( 19.3401, 3.74847 )
+extents = Vector2( 26.3545, 2.42988 )
 
 [node name="player" type="KinematicBody2D"]
 
@@ -647,7 +647,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 1
-process_material = SubResource( 16 )
+process_material = SubResource( 14 )
 texture = ExtResource( 12 )
 normal_map = null
 h_frames = 1
@@ -673,7 +673,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 1
-process_material = SubResource( 19 )
+process_material = SubResource( 17 )
 texture = ExtResource( 12 )
 normal_map = null
 h_frames = 1
@@ -684,7 +684,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 20 )
+material = SubResource( 18 )
 position = Vector2( -0.833429, 1.35102 )
 rotation = -1.5708
 scale = Vector2( 1.25, 1.25 )
@@ -712,7 +712,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 21 )
+material = SubResource( 19 )
 position = Vector2( -11.7782, 1.56522 )
 rotation = -1.5708
 emitting = true
@@ -739,7 +739,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 22 )
+material = SubResource( 20 )
 position = Vector2( -2.71884, 2.68202 )
 rotation = -1.5708
 emitting = false
@@ -766,7 +766,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 23 )
+material = SubResource( 21 )
 position = Vector2( -13.6422, 2.68202 )
 rotation = -1.5708
 emitting = false
@@ -798,12 +798,11 @@ _sections_unfolded = [ "Material", "Pause", "Transform" ]
 [node name="PhysicsCollider" type="CollisionShape2D" parent="." index="4"]
 
 position = Vector2( -6.1861, -0.360727 )
-shape = SubResource( 24 )
+shape = SubResource( 22 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="HitDetectors" type="Node2D" parent="." index="5"]
 
-scale = Vector2( 1, 1 )
 script = ExtResource( 17 )
 
 [node name="PurpleLaserSidesDetector" type="Area2D" parent="HitDetectors" index="0"]
@@ -821,7 +820,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/PurpleLaserSidesDetector" index="0"]
 
 position = Vector2( -5.25743, -27.0959 )
-shape = SubResource( 12 )
+shape = SubResource( 23 )
 
 [node name="OrangeLaserSidesDetector" type="Area2D" parent="HitDetectors" index="1"]
 
@@ -840,11 +839,10 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/OrangeLaserSidesDetector" index="0"]
 
 position = Vector2( -5.25743, -27.0959 )
-shape = SubResource( 12 )
+shape = SubResource( 23 )
 
 [node name="LaserBottom" type="Area2D" parent="HitDetectors" index="2"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -858,12 +856,12 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/LaserBottom" index="0"]
 
+visible = false
 position = Vector2( -7.27951, 80.479 )
-shape = SubResource( 13 )
+shape = SubResource( 24 )
 
 [node name="FloorSides" type="Area2D" parent="HitDetectors" index="3"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -878,11 +876,10 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/FloorSides" index="0"]
 
 position = Vector2( -5.25743, -27.0959 )
-shape = SubResource( 12 )
+shape = SubResource( 23 )
 
 [node name="FloorBottom" type="Area2D" parent="HitDetectors" index="4"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -896,8 +893,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/FloorBottom" index="0"]
 
-position = Vector2( -7.27951, 80.479 )
-shape = SubResource( 13 )
+position = Vector2( -5.62904, 79.9288 )
+shape = SubResource( 24 )
 
 [connection signal="area_entered" from="HitDetectors/PurpleLaserSidesDetector" to="." method="_on_PurpleLaserSidesDetector_area_entered"]
 
@@ -907,8 +904,8 @@ shape = SubResource( 13 )
 
 [connection signal="area_exited" from="HitDetectors/LaserBottom" to="HitDetectors" method="_on_LaserBottom_area_exited"]
 
-[connection signal="area_entered" from="HitDetectors/FloorBottom" to="HitDetectors" method="_on_FloorBottom_area_entered"]
+[connection signal="body_entered" from="HitDetectors/FloorBottom" to="HitDetectors" method="_on_FloorBottom_body_entered"]
 
-[connection signal="area_exited" from="HitDetectors/FloorBottom" to="HitDetectors" method="_on_FloorBottom_area_exited"]
+[connection signal="body_exited" from="HitDetectors/FloorBottom" to="HitDetectors" method="_on_FloorBottom_body_exited"]
 
 

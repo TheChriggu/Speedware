@@ -507,7 +507,7 @@ extents = Vector2( 44.4859, 49.4475 )
 [sub_resource type="RectangleShape2D" id=24]
 
 custom_solver_bias = 0.0
-extents = Vector2( 26.3545, 2.42988 )
+extents = Vector2( 26.3545, 0.469437 )
 
 [node name="player" type="KinematicBody2D"]
 
@@ -903,7 +903,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/FloorBottom" index="0"]
 
-position = Vector2( -5.62904, 79.9288 )
+position = Vector2( -6.2097, 76.4919 )
 shape = SubResource( 24 )
 
 [connection signal="area_entered" from="HitDetectors/PurpleLaserSidesDetector" to="." method="_on_PurpleLaserSidesDetector_area_entered"]

@@ -75,7 +75,7 @@ func HorizontalMovement(delta):
 	
 
 func VerticalMovement(delta):
-	if is_on_floor():
+	if isMovingOnFloor || isMovingOnDatastring:
 		onAirTime = 0
 		OnFloorAnimation()
 	else:

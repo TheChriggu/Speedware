@@ -10,17 +10,17 @@ func _process(delta):
 	if isPlayingMovingOnDatastringSound && !isMovingOnDatastring:
 		isPlayingMovingOnDatastringSound = false
 		$MoveOnDatastring.stop()
-	if isPlayingMovingOnFloorSound && !isMovingOnFloor:
-		isPlayingMovingOnFloorSound = false
-		$MoveOnFloor.stop()
+	#if isPlayingMovingOnFloorSound && !isMovingOnFloor:
+	#	isPlayingMovingOnFloorSound = false
+	#	$MoveOnFloor.stop()
 	
 	#Start all proper sounds, if not yet started
 	if isMovingOnDatastring && !isPlayingMovingOnDatastringSound:
 		isPlayingMovingOnDatastringSound = true
 		$MoveOnDatastring.play()
-	if isMovingOnFloor && !isPlayingMovingOnFloorSound:
-		isPlayingMovingOnFloorSound = true
-		$MoveOnFloor.play()
+	#if isMovingOnFloor && !isPlayingMovingOnFloorSound:
+	#	isPlayingMovingOnFloorSound = true
+	#	$MoveOnFloor.play()
 	
 	
 
@@ -38,3 +38,11 @@ func HitDatastring():
 
 func MoveThroughDatastring():
 	$MoveThroughDatastring.play()
+
+func IncreaseMovementSoundPitch():
+	if $MoveOnFloor.pitch_scale < 3.5:
+		$MoveOnFloor.pitch_scale += 0.01
+
+func DecreaseMovementSoundPitch():
+	if $MoveOnFloor.pitch_scale > 1:
+		$MoveOnFloor.pitch_scale -= 0.01

@@ -50,7 +50,6 @@ func _physics_process(delta):
 	VerticalMovement(delta)
 	UIInteraction()
 
-		
 func HorizontalMovement(delta):
 	var force = Vector2(0, GRAVITY) #Vector containing the forces which get applied to the player every frame
 	force.x = LeftForce() + RightForce() #calculate horizontal forces
@@ -58,6 +57,7 @@ func HorizontalMovement(delta):
 	#if forces are applying, play their animtaions, otherwise apply friction
 	if force.x > 0:
 		LeanRight()
+		$SFX.IncreaseMovementSoundPitch()
 	elif force.x < 0:
 		LeanLeft()
 	else:
@@ -70,7 +70,9 @@ func HorizontalMovement(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	CheckFullspeed()
+	MovementSound()
 	#Animations for horizontal movement get called after an on air check in VerticalMovement()
+	
 
 func VerticalMovement(delta):
 	if is_on_floor():
@@ -185,9 +187,12 @@ func CheckFullspeed():
 	if velocity.x >= WALK_MAX_SPEED - FULSPEED_LEEWAY:
 		isAtFullspeed = true
 		emit_signal("is_at_fullspeed")
+		if velocity.x >= WALK_MAX_SPEED -100:
+			$SFX.IncreaseMovementSoundPitch()
 	else:
 		isAtFullspeed = false
 		emit_signal("is_not_at_fullspeed")
+	
 
 #ParcticlesIfBoosted
 func BoostTrailOn():
@@ -237,3 +242,12 @@ func CheckFloor():
 	isMovingOnDatastring = $HitDetectors.isMovingOnLaser
 	$SFX.isMovingOnFloor = isMovingOnFloor
 	$SFX.isMovingOnDatastring = isMovingOnDatastring
+
+var previousSpeed = 0
+func MovementSound():
+	if abs(velocity.x) > previousSpeed:
+		$SFX.IncreaseMovementSoundPitch()
+	elif abs(velocity.x) < previousSpeed || abs(velocity.x) < WALK_MIN_SPEED:
+		$SFX.DecreaseMovementSoundPitch()
+	
+	previousSpeed = velocity.x

@@ -13,7 +13,7 @@ func SetAllVariablesToFalse():
 	
 func Run(speed):
 	if !isRunning:
-		$MovementAnimations.play("Run", 0.1)
+		$MovementAnimations.play("Run2", 0.1)
 		SetAllVariablesToFalse()
 		isRunning = true
 	else:
@@ -43,8 +43,8 @@ func Idle():
 		SetAllVariablesToFalse()
 		isIdle = true
 
-var minSpeed = 0.8
-var maxSpeed = 2
+var minSpeed = 1.8
+var maxSpeed = 3
 func ClampRunningSpeed(speed):
 	if speed < minSpeed:
 		return minSpeed

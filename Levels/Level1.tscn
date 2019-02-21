@@ -26,7 +26,7 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=24]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=25]
 
-[node name="Level1_konstantin" type="Node"]
+[node name="Level1_konstantin" type="Node" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -43,33 +43,83 @@ script = ExtResource( 3 )
 
 [node name="ForwardLookingCamera" parent="Player" index="0" instance=ExtResource( 4 )]
 
-editor/display_folded = true
 position = Vector2( -8.36853, -3.05176e-005 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="HeadCamCollider" type="Node2D" parent="Player/ForwardLookingCamera" index="2"]
 
-editor/display_folded = true
 position = Vector2( 1034.91, -549.533 )
 script = ExtResource( 5 )
 FIXED_CAMERA = false
 CURRENT_ANCHOR = 0
 
-[node name="CamCollider" parent="Player/ForwardLookingCamera/HeadCamCollider" index="0" instance=ExtResource( 6 )]
+[node name="CamCollider3" parent="Player/ForwardLookingCamera/HeadCamCollider" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( 1338.48, -186.5 )
+position = Vector2( -530.952, 167.583 )
 collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
-[node name="CamCollider2" parent="Player/ForwardLookingCamera/HeadCamCollider" index="1" instance=ExtResource( 6 )]
+[node name="CamCollider" parent="Player/ForwardLookingCamera/HeadCamCollider" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( 1203.92, -201.41 )
+position = Vector2( -501.793, 162.917 )
 collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+ZOOM_OUT = true
+
+[node name="CamCollider2" parent="Player/ForwardLookingCamera/HeadCamCollider" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 1547.21, 1788.45 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="CamCollider4" parent="Player/ForwardLookingCamera/HeadCamCollider" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 13509.1, 1788.45 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="CamCollider5" parent="Player/ForwardLookingCamera/HeadCamCollider" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 13588, 1802.8 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+ZOOM_OUT = true
+
+[node name="CamCollider6" parent="Player/ForwardLookingCamera/HeadCamCollider" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 15593.7, 3006.21 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="CamCollider7" parent="Player/ForwardLookingCamera/HeadCamCollider" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 15951.6, 4385.71 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="CamCollider9" parent="Player/ForwardLookingCamera/HeadCamCollider" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 34190.7, 4006.18 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
+ZOOM_OUT = true
+
+[node name="CamCollider11" parent="Player/ForwardLookingCamera/HeadCamCollider" index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 34119.2, 4068 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
+
+[node name="CamCollider10" parent="Player/ForwardLookingCamera/HeadCamCollider" index="9" instance=ExtResource( 6 )]
+
+position = Vector2( 36276.3, 2464.05 )
+collision_layer = 0
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
 
 [node name="player" parent="Player" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( -443.37, -394.117 )
+collision_mask = 30
 WALK_MAX_SPEED = 1100
 FULSPEED_LEEWAY = 1000
 
@@ -526,6 +576,26 @@ margin_right = 97.0
 margin_bottom = 105.0
 
 [node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 25 )]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider3" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider2" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider4" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider5" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider6" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider7" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider9" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider11" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
+
+[connection signal="new_camera" from="Player/ForwardLookingCamera/HeadCamCollider/CamCollider10" to="Player/ForwardLookingCamera/HeadCamCollider" method="_on_CamCollider_new_camera"]
 
 [connection signal="FinishLineAnimationFinished" from="Player/player" to="Level/FinishArea" method="_on_player_FinishLineAnimationFinished"]
 

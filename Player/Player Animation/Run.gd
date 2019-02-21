@@ -4,12 +4,14 @@ var isRunning =  false
 var isJumpingUp = false
 var isJumpingDown = false
 var isIdle = false
+var isVictory = false
 
 func SetAllVariablesToFalse():
 	isRunning = false
 	isJumpingUp = false
 	isJumpingDown = false
 	isIdle = false
+	isVictory = false
 	
 func Run(speed):
 	if !isRunning:
@@ -39,9 +41,13 @@ func JumpDown():
 
 func Idle():
 	if !isIdle:
-		$MovementAnimations.play("Idle", 0.3, 1)
+		$MovementAnimations.play("Idle_3", 0.3, 1)
 		SetAllVariablesToFalse()
 		isIdle = true
+
+func Victory():
+	if !isVictory:
+		$MovementAnimations.play("Victory", 0.3, 1)
 
 var minSpeed = 1.8
 var maxSpeed = 3

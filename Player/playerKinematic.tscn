@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/SFX.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=16]
 [ext_resource path="res://Player/Player Animation/Run.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Player/HitDetectors.gd" type="Script" id=18]
+[ext_resource path="res://Player/Player Animation/Run2.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=1]
 
@@ -180,8 +181,8 @@ tracks/3/keys = {
 "method": "OrangeToPurple"
 } ]
 }
-tracks/4/type = "method"
-tracks/4/path = NodePath("AnimatedCharacter")
+tracks/4/type = "value"
+tracks/4/path = NodePath("VFX/Particles2DPurpleZero:emitting")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -189,13 +190,11 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "SwitchColorToPurple"
-} ]
+"update": 1,
+"values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("VFX/Particles2DPurpleZero:emitting")
+tracks/5/path = NodePath("VFX/Particles2DPurpleZero2:emitting")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -207,7 +206,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("VFX/Particles2DPurpleZero2:emitting")
+tracks/6/path = NodePath("VFX/Particles2DOrangeOne2:emitting")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -216,10 +215,10 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("VFX/Particles2DOrangeOne2:emitting")
+tracks/7/path = NodePath("VFX/Particles2DOrangeOne:emitting")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -230,8 +229,8 @@ tracks/7/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("VFX/Particles2DOrangeOne:emitting")
+tracks/8/type = "method"
+tracks/8/path = NodePath("AnimatedCharacter")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -239,8 +238,10 @@ tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"values": [ {
+"args": [  ],
+"method": "SwitchColorToPurple"
+} ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -509,7 +510,7 @@ extents = Vector2( 44.4859, 49.4475 )
 custom_solver_bias = 0.0
 extents = Vector2( 26.3545, 2.42988 )
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 0.8, 0.8 )
 input_pickable = false
@@ -553,6 +554,7 @@ blend_times = [  ]
 
 [node name="SFX" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="JumpOff" type="AudioStreamPlayer" parent="SFX" index="0"]
@@ -799,8 +801,9 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="AnimatedCharacter" parent="." index="3" instance=ExtResource( 17 )]
+[node name="AnimatedCharacterBackup" parent="." index="3" instance=ExtResource( 17 )]
 
+visible = false
 position = Vector2( 0, 0 )
 scale = Vector2( 0.12, 0.12 )
 _sections_unfolded = [ "Material", "Pause", "Transform" ]
@@ -813,6 +816,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 
 [node name="HitDetectors" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 script = ExtResource( 18 )
 
 [node name="PurpleLaserSidesDetector" type="Area2D" parent="HitDetectors" index="0"]
@@ -905,6 +909,11 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -5.62904, 79.9288 )
 shape = SubResource( 24 )
+
+[node name="AnimatedCharacter" parent="." index="6" instance=ExtResource( 19 )]
+
+position = Vector2( 0, 0 )
+scale = Vector2( 0.12, 0.12 )
 
 [connection signal="area_entered" from="HitDetectors/PurpleLaserSidesDetector" to="." method="_on_PurpleLaserSidesDetector_area_entered"]
 

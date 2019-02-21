@@ -497,12 +497,12 @@ light_mode = 2
 
 custom_solver_bias = 0.0
 radius = 19.0555
-height = 113.446
+height = 102.374
 
 [sub_resource type="RectangleShape2D" id=23]
 
 custom_solver_bias = 0.0
-extents = Vector2( 44.4859, 49.4475 )
+extents = Vector2( 36.3838, 47.2636 )
 
 [sub_resource type="RectangleShape2D" id=24]
 
@@ -812,7 +812,6 @@ script = ExtResource( 17 )
 
 [node name="PurpleLaserSidesDetector" type="Area2D" parent="HitDetectors" index="0"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -898,13 +897,13 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/FloorBottom" index="0"]
 
-position = Vector2( -6.10462, 75.4893 )
+position = Vector2( -5.0314, 69.855 )
 shape = SubResource( 24 )
 
 [node name="AnimatedCharacter" parent="." index="5" instance=ExtResource( 18 )]
 
 position = Vector2( 0, 0 )
-scale = Vector2( 0.12, 0.12 )
+scale = Vector2( 0.11, 0.11 )
 
 [connection signal="area_entered" from="HitDetectors/PurpleLaserSidesDetector" to="." method="_on_PurpleLaserSidesDetector_area_entered"]
 

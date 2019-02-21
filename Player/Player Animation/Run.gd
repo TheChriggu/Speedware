@@ -29,13 +29,13 @@ func SwitchColorToPurple():
 
 func JumpUp():
 	if !isJumpingUp:
-		$MovementAnimations.play("jump_up", 0.1, 1)
+		$MovementAnimations.play("jump_up", 0.3, 1)
 		SetAllVariablesToFalse()
 		isJumpingUp = true
 
 func JumpDown():
 	if !isJumpingDown:
-		$MovementAnimations.play("jump-down", 0.1, 1.5)
+		$MovementAnimations.play("jump-down", 0.3, 1.5)
 		SetAllVariablesToFalse()
 		isJumpingDown = true
 
@@ -52,8 +52,8 @@ func Victory():
 var minSpeed = 1.8
 var maxSpeed = 3
 func ClampRunningSpeed(speed):
-	if 2.5*speed < minSpeed:
+	if speed < minSpeed:
 		return minSpeed
-	elif 2.5*speed > maxSpeed:
+	elif speed > maxSpeed:
 		return maxSpeed
 	return speed

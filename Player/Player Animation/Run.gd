@@ -35,7 +35,7 @@ func JumpUp():
 
 func JumpDown():
 	if !isJumpingDown:
-		$MovementAnimations.play("jump-down", 0.1, 1.5)
+		$MovementAnimations.play("jump-down", 0.3, 1.5)
 		SetAllVariablesToFalse()
 		isJumpingDown = true
 

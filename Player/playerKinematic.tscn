@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/SFX.gd" type="Script" id=2]
@@ -16,9 +16,8 @@
 [ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=14]
 [ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=15]
 [ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=16]
-[ext_resource path="res://Player/Player Animation/Run.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Player/HitDetectors.gd" type="Script" id=18]
-[ext_resource path="res://Player/Player Animation/Run2.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Player/HitDetectors.gd" type="Script" id=17]
+[ext_resource path="res://Player/Player Animation/Run2.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=1]
 
@@ -498,19 +497,19 @@ light_mode = 2
 
 custom_solver_bias = 0.0
 radius = 19.0555
-height = 113.446
+height = 102.374
 
 [sub_resource type="RectangleShape2D" id=23]
 
 custom_solver_bias = 0.0
-extents = Vector2( 44.4859, 49.4475 )
+extents = Vector2( 36.3838, 47.2636 )
 
 [sub_resource type="RectangleShape2D" id=24]
 
 custom_solver_bias = 0.0
-extents = Vector2( 26.3545, 2.42988 )
+extents = Vector2( 16.1691, 1.04485 )
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 scale = Vector2( 0.8, 0.8 )
 input_pickable = false
@@ -801,27 +800,18 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="AnimatedCharacterBackup" parent="." index="3" instance=ExtResource( 17 )]
-
-visible = false
-position = Vector2( 0, 0 )
-scale = Vector2( 0.12, 0.12 )
-_sections_unfolded = [ "Material", "Pause", "Transform" ]
-
-[node name="PhysicsCollider" type="CollisionShape2D" parent="." index="4"]
+[node name="PhysicsCollider" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( -6.1861, -0.360727 )
 shape = SubResource( 22 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
-[node name="HitDetectors" type="Node2D" parent="." index="5"]
+[node name="HitDetectors" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 
 [node name="PurpleLaserSidesDetector" type="Area2D" parent="HitDetectors" index="0"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -899,21 +889,21 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 4
-collision_mask = 4
+collision_layer = 32
+collision_mask = 32
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/FloorBottom" index="0"]
 
-position = Vector2( -5.62904, 79.9288 )
+position = Vector2( -5.0314, 69.855 )
 shape = SubResource( 24 )
 
-[node name="AnimatedCharacter" parent="." index="6" instance=ExtResource( 19 )]
+[node name="AnimatedCharacter" parent="." index="5" instance=ExtResource( 18 )]
 
 position = Vector2( 0, 0 )
-scale = Vector2( 0.12, 0.12 )
+scale = Vector2( 0.11, 0.11 )
 
 [connection signal="area_entered" from="HitDetectors/PurpleLaserSidesDetector" to="." method="_on_PurpleLaserSidesDetector_area_entered"]
 

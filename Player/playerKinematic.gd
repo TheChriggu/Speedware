@@ -75,7 +75,7 @@ func HorizontalMovement(delta):
 	
 
 func VerticalMovement(delta):
-	if is_on_floor():
+	if isMovingOnFloor || isMovingOnDatastring:
 		onAirTime = 0
 		OnFloorAnimation()
 	else:
@@ -140,7 +140,7 @@ func Jump():
 		velocity.y = -JUMP_SPEED
 		isJumping = true
 		
-	if Input.is_action_just_released("jump") && isJumping:
+	if Input.is_action_just_released("jump") && isJumping && !isInSpeedboost:
 		JumpCut()
 	
 	if isJumping and velocity.y > 0:

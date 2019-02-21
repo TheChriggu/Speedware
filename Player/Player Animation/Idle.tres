@@ -136,7 +136,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.924377, 95.9818 ), Vector2( -0.924381, 65.9818 ) ]
+"values": [ Vector2( -0.924377, 58.1391 ), Vector2( 6.81903, 53.076 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Base/Body/arm_l:rotation_degrees")
@@ -148,7 +148,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -0.388599 ]
+"values": [ 0.0, 4.98566 ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Base/Body/hip/leg_l/shin_l/foot_l:position")
@@ -256,7 +256,7 @@ tracks/20/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 8.45813, 91.6621 ), Vector2( 8.45813, 71.6621 ) ]
+"values": [ Vector2( 8.45813, 47.5123 ), Vector2( 8.45813, 43.2693 ) ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Base/Body/arm_r:rotation_degrees")
@@ -268,7 +268,7 @@ tracks/21/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 0.0, 5.67005 ]
 }
 tracks/22/type = "value"
 tracks/22/path = NodePath("Base/Body/hip:position")
@@ -304,7 +304,7 @@ tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -10.4763, -15.7144 ) ]
+"values": [ Vector2( 18.9569, -49.3523 ) ]
 }
 tracks/25/type = "value"
 tracks/25/path = NodePath("Base/Body/Head:rotation_degrees")

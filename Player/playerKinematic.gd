@@ -66,14 +66,18 @@ func HorizontalMovement(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 	CheckFullspeed()
+	#Animations for horizontal movement get called after an on air check in VerticalMovement()
 
 func VerticalMovement(delta):
 	if is_on_floor():
 		onAirTime = 0
+		OnFloorAnimation()
 	else:
 		onAirTime += delta
+		OnAirAnimation()
 	
 	Jump()
+
 
 func SpeedboostMovement(delta):
 	if velocity.x > 0:
@@ -119,12 +123,14 @@ func ApplyFriction(delta):
 	
 	velocity.x = vlen * vsign
 
+
 func Jump():
 	if Input.is_action_just_pressed("jump") and not isJumping and onAirTime < JUMP_MAX_AIRBORNE_TIME:
 		#Player can jump, even after leaving the Edge for some time
 		$AnimationPlayer.play("JumpTakeoffAnimation")
-		$VFX.play("JumpAnimation")
+		$VFX.PlayJumpAnimation()
 		$SFX.JumpOff()
+		
 		velocity.y = -JUMP_SPEED
 		isJumping = true
 		
@@ -133,7 +139,7 @@ func Jump():
 	
 	if isJumping and velocity.y > 0:
 		isJumping = false
-		$VFX.play("JumpAnimation")
+		$VFX.PlayJumpAnimation()
 
 #Cut the jump, when a certain speed is reached
 func JumpCut():
@@ -181,19 +187,43 @@ func CheckFullspeed():
 
 #ParcticlesIfBoosted
 func BoostTrailOn():
-	$Sprite/ParticlesIfBoosted.emitting = true
+	$VFX.TurnBoostParticlesOn()
 
 func BoostTrailOff():
-	$Sprite/ParticlesIfBoosted.emitting = false
+	$VFX.TurnBoostParticlesOff()
 	
 
 func _on_GameStartTimer_GameStartTimerEnd():
 	$AnimationPlayer.play("GameStartTimerOver")
 
 func _ready():
-	$AnimationPlayer.play("CharacterGameStartAnimation")
-
+	#$AnimationPlayer.play("CharacterGameStartAnimation")
+	pass
 
 func _on_FinishArea_finish_line_passed():
 	$AnimationPlayer.play("FinishLinePassedCharFreeze")
 	emit_signal("FinishLineAnimationFinished")
+
+func _on_PurpleLaserSidesDetector_area_entered(area):
+	if IS_ORANGE:
+		$SFX.HitDatastring()
+	else:
+		$SFX.MoveThroughDatastring()
+
+func _on_OrangeLaserSidesDetector_area_entered(area):
+	if !IS_ORANGE:
+		$SFX.HitDatastring()
+	else:
+		$SFX.MoveThroughDatastring()
+
+func OnAirAnimation():
+	if velocity.y < 0:
+		$AnimatedCharacter.JumpUp()
+	else:
+		$AnimatedCharacter.JumpDown()
+
+func OnFloorAnimation():
+	if velocity.x != 0:
+		$AnimatedCharacter.Run(abs(velocity.x) / WALK_MAX_SPEED)
+	else:
+		$AnimatedCharacter.Idle()

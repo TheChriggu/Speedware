@@ -1,24 +1,11 @@
-[gd_resource type="ParticlesMaterial" load_steps=5 format=2]
-
-[sub_resource type="Curve" id=1]
-
-min_value = -200.0
-max_value = 200.0
-bake_resolution = 100
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.680753, -34.375 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=2]
-
-flags = 4
-width = 2048
-curve = SubResource( 1 )
+[gd_resource type="ParticlesMaterial" load_steps=3 format=2]
 
 [sub_resource type="Curve" id=3]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.88908, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.994141 ), 0.0, 1.46693, 0, 0, Vector2( 0.951823, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=4]
 
@@ -37,27 +24,26 @@ flag_disable_z = true
 spread = 180.0
 flatness = 0.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
-initial_velocity_random = 1.0
+initial_velocity = 150.0
+initial_velocity_random = 0.0
 angular_velocity = 0.0
 angular_velocity_random = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 0.0
 linear_accel_random = 0.0
-radial_accel = 0.0
+radial_accel = -4.0
 radial_accel_random = 0.0
-radial_accel_curve = SubResource( 2 )
 tangential_accel = 0.0
 tangential_accel_random = 0.0
 damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 0.08
+scale = 0.5
 scale_random = 0.0
 scale_curve = SubResource( 4 )
-color = Color( 0.988281, 0.671723, 0, 1 )
+color = Color( 0.929688, 0.544739, 0, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -65,5 +51,5 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Color", "Scale" ]
+_sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Radial Accel", "Scale" ]
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Parallax Background/backgroundalpha_rob.png" type="Texture" id=1]
-[ext_resource path="res://Player/Particles/TrailEffect/zero_white.png" type="Texture" id=2]
 
 [sub_resource type="Curve" id=1]
 
@@ -44,7 +43,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 1.0
+scale = 15.0
 scale_random = 0.0
 scale_curve = SubResource( 2 )
 color = Color( 1, 1, 1, 1 )
@@ -81,6 +80,7 @@ _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer" index="0"]
 
+self_modulate = Color( 0.233154, 0.746094, 0.421499, 1 )
 show_behind_parent = true
 texture = ExtResource( 1 )
 centered = false
@@ -95,6 +95,7 @@ _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Particles2D" type="Particles2D" parent="ParallaxLayer2" index="0"]
 
+pause_mode = 2
 modulate = Color( 0, 0, 0, 0.613255 )
 self_modulate = Color( 1, 1, 1, 0.381216 )
 emitting = true
@@ -111,10 +112,10 @@ visibility_rect = Rect2( -100, -100, 1000, 1000 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 3 )
-texture = ExtResource( 2 )
+texture = null
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 

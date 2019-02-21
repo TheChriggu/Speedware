@@ -1,17 +1,22 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/Datastrings/sprite_laser_yellow_mandy.png" type="Texture" id=2]
-[ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=3]
-[ext_resource path="res://Enviroment/Datastrings/SpotWhite.png" type="Texture" id=4]
-[ext_resource path="res://Enviroment/Datastrings/LaserLight.png" type="Texture" id=5]
-[ext_resource path="res://Enviroment/Datastrings/LaserLightWeak.png" type="Texture" id=6]
-[ext_resource path="res://Enviroment/Datastrings/LaserLightColor.png" type="Texture" id=7]
+[ext_resource path="res://Enviroment/Datastrings/LaserLight.png" type="Texture" id=3]
+[ext_resource path="res://Enviroment/Datastrings/LaserLightWeak.png" type="Texture" id=4]
+[ext_resource path="res://Enviroment/Datastrings/LaserLightColor.png" type="Texture" id=5]
+[ext_resource path="res://Enviroment/Datastrings/ParticlesDatastringMat.tres" type="Material" id=6]
+[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=7]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.6388, 127.839 )
+
+[sub_resource type="Animation" id=2]
 
 resource_name = "ParticlesCurved"
-length = 0.5
+length = 0.3
 loop = true
 step = 0.01
 tracks/0/type = "value"
@@ -21,7 +26,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.25 ]
@@ -33,7 +38,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.5, 0.75 ]
@@ -45,7 +50,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.25, 0.5 ]
@@ -57,67 +62,56 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.75, 0.9999 ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Path2D/PathFollow2D5:unit_offset")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=3]
 
 render_priority = 0
 blend_mode = 1
 light_mode = 2
 
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 20.5513, 261.082 )
-
 [sub_resource type="Curve2D" id=4]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 1.25073, 14.6467, 13.3081, -131.649, 2.50119, -28.4111, 9.10385, 32.72, -18.2853, -96.1497, -6.25059, -31.0629, -3.90548, 19.6709, 13.8331, -54.9798, 4.91584, -37.8399, 9.90857, 27.3473, -17.4093, -7.67809, -6.65888, -30.5277, -5.48789, 26.4661, 10.9133, 37.8717, 3.13081, -29.6759, 5.60975, 32.7331, -17.1173, 80.2096, -0.579052, -24.3189, 0, 0, 9.45339, 122.839 )
+"points": PoolVector2Array( 0, 0, 1.25073, 14.6467, 7.45959, -131.886, 2.50119, -28.4111, 9.10385, 32.72, -14.2103, -98.5728, -6.25059, -31.0629, -3.90548, 19.6709, 8.75333, -55.233, 4.91584, -37.8399, 9.90857, 27.3473, -13.8869, -7.68858, -6.65888, -30.5277, -5.48789, 26.4661, 8.04764, 35.6512, 3.13081, -29.6759, 5.60975, 32.7331, -14.5926, 79.9613, -0.579052, -24.3189, 0, 0, 7.72421, 122.331 )
 }
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="CanvasItemMaterial" id=5]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="Gradient" id=6]
 
 offsets = PoolRealArray( 0.0373563, 0.149425 )
-colors = PoolColorArray( 1, 0.963715, 0.839844, 0.629843, 1, 0.727631, 0.00390625, 0.392157 )
+colors = PoolColorArray( 1, 0.963715, 0.839844, 0.629843, 1, 0.726563, 0, 0.392157 )
 
-[sub_resource type="GradientTexture" id=6]
+[sub_resource type="GradientTexture" id=7]
 
 flags = 4
-gradient = SubResource( 5 )
+gradient = SubResource( 6 )
 width = 2048
 
-[sub_resource type="Curve" id=7]
+[sub_resource type="Curve" id=8]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.451794, 0.983398 ), -1.60165, -1.60165, 0, 0, Vector2( 1, 0 ), -0.390554, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.571032, 0.768555 ), -1.60165, -1.60165, 0, 0, Vector2( 1, 0 ), -0.390554, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=8]
+[sub_resource type="CurveTexture" id=9]
 
 flags = 4
 width = 2048
-curve = SubResource( 7 )
+curve = SubResource( 8 )
 
-[sub_resource type="ParticlesMaterial" id=9]
+[sub_resource type="ParticlesMaterial" id=10]
 
 render_priority = 0
 trail_divisor = 1
@@ -144,10 +138,10 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 0.08
+scale = 0.3
 scale_random = 0.0
-scale_curve = SubResource( 8 )
-color_ramp = SubResource( 6 )
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 7 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -157,270 +151,43 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Scale" ]
 
+[sub_resource type="CanvasItemMaterial" id=11]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=12]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=13]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
 [node name="LaserOrange" type="Sprite"]
 
 modulate = Color( 1, 1, 1, 0.933686 )
-position = Vector2( 6.37469, 1.599 )
+position = Vector2( 39.2943, 25.9973 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
-
-root_node = NodePath("..")
-autoplay = "ParticlesCurved"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/ParticlesCurved = SubResource( 1 )
-blend_times = [  ]
-
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 pause_mode = 2
 visible = false
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Material", "Offset", "Pause", "Transform", "Visibility" ]
 
-[node name="PartikelOrange" type="Particles2D" parent="." index="2"]
-
-modulate = Color( 1, 0.624022, 0.140625, 1 )
-self_modulate = Color( 0.109375, 0.109375, 0.109375, 1 )
-material = SubResource( 2 )
-position = Vector2( -0.571694, -131.893 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.177489 )
-emitting = true
-amount = 200
-lifetime = 5.13
-one_shot = false
-preprocess = 6.0
-speed_scale = 8.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -1088, -668, 2176, 1336 )
-local_coords = true
-draw_order = 0
-process_material = ExtResource( 3 )
-texture = ExtResource( 4 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
-
-editor/display_folded = true
-visible = false
-input_pickable = false
-collision_layer = 2
-collision_mask = 2
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
-
-position = Vector2( -0.0633063, -0.115953 )
-scale = Vector2( 0.377114, 0.490001 )
-shape = SubResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Area2D" type="Area2D" parent="." index="4"]
-
-editor/display_folded = true
-visible = false
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 16
-collision_mask = 16
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
-
-position = Vector2( -0.064731, -0.115953 )
-scale = Vector2( 0.0546227, 0.490001 )
-shape = SubResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Path2D" type="Path2D" parent="." index="5"]
-
-editor/display_folded = true
-self_modulate = Color( 0.5, 0.6, 1, 0.7 )
-position = Vector2( 2.62103, 3.70177 )
-curve = SubResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
-
-position = Vector2( -4.23151, -117.537 )
-rotation = 2.6004
-offset = 24.0124
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="ParticlesCurved" type="Particles2D" parent="Path2D/PathFollow2D" index="0"]
-
-show_behind_parent = true
-position = Vector2( 0.77916, 0.278669 )
-emitting = true
-amount = 30
-lifetime = 2.5
-one_shot = false
-preprocess = 3.0
-speed_scale = 6.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = false
-draw_order = 0
-process_material = SubResource( 9 )
-texture = ExtResource( 4 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Visibility" ]
-
-[node name="PathFollow2D3" type="PathFollow2D" parent="Path2D" index="1"]
-
-position = Vector2( 11.2758, -63.7843 )
-rotation = 1.22866
-offset = 96.6831
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="ParticlesCurved" type="Particles2D" parent="Path2D/PathFollow2D3" index="0"]
-
-show_behind_parent = true
-position = Vector2( 0.77916, 0.278669 )
-emitting = true
-amount = 30
-lifetime = 2.5
-one_shot = false
-preprocess = 3.0
-speed_scale = 6.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = false
-draw_order = 0
-process_material = SubResource( 9 )
-texture = ExtResource( 4 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Visibility" ]
-
-[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" index="2"]
-
-position = Vector2( -15.7645, -3.48045 )
-rotation = 1.12183
-offset = 169.354
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="ParticlesCurved" type="Particles2D" parent="Path2D/PathFollow2D2" index="0"]
-
-show_behind_parent = true
-position = Vector2( 0.77916, 0.278669 )
-emitting = true
-amount = 20
-lifetime = 2.5
-one_shot = false
-preprocess = 0.0
-speed_scale = 6.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = false
-draw_order = 0
-process_material = SubResource( 9 )
-texture = ExtResource( 4 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Visibility" ]
-
-[node name="PathFollow2D4" type="PathFollow2D" parent="Path2D" index="3"]
-
-position = Vector2( -1.00491, 56.0346 )
-rotation = 2.59385
-offset = 242.015
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="ParticlesCurved" type="Particles2D" parent="Path2D/PathFollow2D4" index="0"]
-
-show_behind_parent = true
-position = Vector2( 0.77916, 0.278669 )
-emitting = true
-amount = 30
-lifetime = 2.5
-one_shot = false
-preprocess = 3.0
-speed_scale = 6.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = false
-draw_order = 0
-process_material = SubResource( 9 )
-texture = ExtResource( 4 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Visibility" ]
-
-[node name="PathFollow2D5" type="PathFollow2D" parent="Path2D" index="4"]
-
-visible = false
-position = Vector2( 11.0245, -64.3662 )
-rotation = 1.2157
-offset = 96.0494
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = true
-lookahead = 4.0
-
-[node name="LightStrong" type="Light2D" parent="." index="6"]
+[node name="LightStrong" type="Light2D" parent="." index="1"]
 
 enabled = true
 editor_only = false
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -441,11 +208,11 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range" ]
 
-[node name="LightWeak" type="Light2D" parent="." index="7"]
+[node name="LightWeak" type="Light2D" parent="." index="2"]
 
 enabled = true
 editor_only = false
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -468,11 +235,239 @@ shadow_item_cull_mask = 1
 [node name="ColoredGlow" type="Sprite" parent="LightWeak" index="0"]
 
 self_modulate = Color( 1, 0.984375, 0, 0.243137 )
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Visibility" ]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[node name="HitDetection" type="Area2D" parent="." index="3"]
 
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetection" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="PhysicsCollision" type="StaticBody2D" parent="." index="4"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicsCollision" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+
+root_node = NodePath("..")
+autoplay = "ParticlesCurved"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/ParticlesCurved = SubResource( 2 )
+blend_times = [  ]
+
+[node name="PartikelOrange" type="Particles2D" parent="." index="6"]
+
+modulate = Color( 1, 0.560669, 0.046875, 1 )
+self_modulate = Color( 0.113281, 0.112839, 0.112839, 1 )
+material = SubResource( 3 )
+position = Vector2( -0.571694, -131.893 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.177489 )
+emitting = true
+amount = 200
+lifetime = 5.13
+one_shot = false
+preprocess = 6.0
+speed_scale = 8.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -1088, -668, 2176, 1336 )
+local_coords = true
+draw_order = 0
+process_material = ExtResource( 6 )
+texture = ExtResource( 7 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
+
+[node name="Path2D" type="Path2D" parent="." index="7"]
+
+editor/display_folded = true
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+position = Vector2( 2.62661, 3.66429 )
+rotation = -2.27304e-013
+scale = Vector2( 1.00031, 1.00031 )
+curve = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+
+position = Vector2( 3.21657, -123.2 )
+rotation = 2.64655
+offset = 10.1675
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="ParticlesCurved" type="Particles2D" parent="Path2D/PathFollow2D" index="0"]
+
+pause_mode = 2
+show_behind_parent = true
+material = SubResource( 5 )
+position = Vector2( 0.77916, 0.278669 )
+emitting = true
+amount = 30
+lifetime = 2.5
+one_shot = false
+preprocess = 3.0
+speed_scale = 6.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 10 )
+texture = ExtResource( 7 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Visibility" ]
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Path2D" index="1"]
+
+position = Vector2( 6.8168, -63.1716 )
+rotation = 1.28717
+offset = 84.2104
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="ParticlesCurved" type="Particles2D" parent="Path2D/PathFollow2D3" index="0"]
+
+pause_mode = 2
+show_behind_parent = true
+material = SubResource( 11 )
+position = Vector2( 0.77916, 0.278669 )
+emitting = true
+amount = 30
+lifetime = 2.5
+one_shot = false
+preprocess = 3.0
+speed_scale = 6.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 10 )
+texture = ExtResource( 7 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Visibility" ]
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" index="2"]
+
+position = Vector2( -8.98731, 3.44419 )
+rotation = 1.00849
+offset = 158.253
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="ParticlesCurved" type="Particles2D" parent="Path2D/PathFollow2D2" index="0"]
+
+pause_mode = 2
+show_behind_parent = true
+material = SubResource( 12 )
+position = Vector2( 0.77916, 0.278669 )
+emitting = true
+amount = 20
+lifetime = 2.5
+one_shot = false
+preprocess = 0.0
+speed_scale = 6.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 10 )
+texture = ExtResource( 7 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Visibility" ]
+
+[node name="PathFollow2D4" type="PathFollow2D" parent="Path2D" index="3"]
+
+position = Vector2( -11.4516, 66.2352 )
+rotation = 1.90947
+offset = 232.292
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="ParticlesCurved" type="Particles2D" parent="Path2D/PathFollow2D4" index="0"]
+
+pause_mode = 2
+show_behind_parent = true
+material = SubResource( 13 )
+position = Vector2( 0.77916, 0.278669 )
+emitting = true
+amount = 30
+lifetime = 2.5
+one_shot = false
+preprocess = 3.0
+speed_scale = 6.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 10 )
+texture = ExtResource( 7 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Visibility" ]
 
 

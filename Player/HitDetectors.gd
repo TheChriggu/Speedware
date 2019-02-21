@@ -18,10 +18,12 @@ func _on_LaserBottom_area_exited(area):
 
 func _on_FloorBottom_body_entered(body):
 	floorCounter += 1
+	print("New Floor Entered: ", floorCounter, body)
 	if floorCounter == 1:
 		isMovingOnFloor = true
 
 func _on_FloorBottom_body_exited(body):
 	floorCounter -= 1
+	print("New Floor Exited: ", floorCounter)
 	if floorCounter == 0:
 		isMovingOnFloor = false

@@ -3,7 +3,7 @@
 [resource]
 
 resource_name = "jump_up"
-length = 1.0
+length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -64,7 +64,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -10.4763, -15.7144 ) ]
+"values": [ Vector2( 72.2104, -57.3947 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Base/Body/Head:rotation_degrees")

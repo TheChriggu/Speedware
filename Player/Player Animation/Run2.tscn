@@ -35,6 +35,8 @@
 [ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/forearm_l.png" type="Texture" id=33]
 [ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/arm_l.png" type="Texture" id=34]
 
+
+
 [sub_resource type="StreamTexture" id=1]
 
 flags = 4

@@ -14,10 +14,4 @@ disabled = false
 texture_normal = ExtResource( 2 )
 texture_focused = ExtResource( 3 )
 
-[node name="Levelnumber" parent="." index="4"]
-
-visible = true
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-_sections_unfolded = [ "custom_colors" ]
-
 

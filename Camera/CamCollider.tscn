@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 514.977 )
 
-[node name="CamCollider" type="Area2D"]
+[node name="CamCollider" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -21,7 +21,8 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-FIXED_CAMERA = true
+FIXED_CAMERA = false
+ZOOM_OUT = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -30,6 +31,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Crosshair" type="Sprite" parent="." index="1"]
 
+visible = false
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Region", "Z Index" ]

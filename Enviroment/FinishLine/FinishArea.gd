@@ -17,8 +17,7 @@ func getFinishTime():
 	return stepify(FinishTime, 0.01)
 
 func _on_NextLevel_pressed():
-	get_tree().change_scene_to(scene_to_load)
-	get_tree().paused =false
+	get_node("Popup/Control/PopupBackground/NextLevel/ClickSound").playing = true
 
 func _on_player_FinishLineAnimationFinished():
 	$AnimationPlayer.play("FinishLinePassed")
@@ -36,3 +35,7 @@ func _on_player_FinishLineAnimationFinished():
 
 func GrabButtonFocus():
 	$Popup/Control/PopupBackground/NextLevel.grab_focus()
+
+func _on_ClickSound_finished():
+	get_tree().change_scene_to(scene_to_load)
+	get_tree().paused =false

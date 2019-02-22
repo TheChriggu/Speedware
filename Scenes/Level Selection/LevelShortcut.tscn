@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelShortcut.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/ui-menu-wireframe.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_level_michelle.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=6]
 [ext_resource path="res://main_menu_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Sounds/SFX/SFX_Button_Hover.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/SFX/SFX_Button_Click.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -333,6 +335,24 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors" ]
 
+[node name="HoverSound" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
+
 [connection signal="focus_entered" from="Button" to="." method="_on_Button_focus_entered"]
 
 [connection signal="focus_exited" from="Button" to="." method="_on_Button_focus_exited"]
@@ -342,5 +362,7 @@ _sections_unfolded = [ "custom_colors" ]
 [connection signal="mouse_exited" from="Button" to="." method="_on_Button_mouse_exited"]
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[connection signal="finished" from="ClickSound" to="." method="_on_ClickSound_finished"]
 
 

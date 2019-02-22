@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/background_levelselection_michelle.png" type="Texture" id=2]
@@ -18,6 +18,10 @@
 [ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=16]
 [ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=17]
 [ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=18]
+[ext_resource path="res://Scenes/Level Selection/dpad example.png" type="Texture" id=19]
+[ext_resource path="res://IngameSubtitle.tres" type="DynamicFont" id=20]
+[ext_resource path="res://Scenes/Level Selection/Xbox_button_A.svg.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/Buttons/Xbox_button_B.png" type="Texture" id=22]
 
 [sub_resource type="Animation" id=1]
 
@@ -101,6 +105,8 @@ position = Vector2( 954.141, 535.987 )
 texture = ExtResource( 2 )
 
 [node name="LevelShortcuts" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="Level1Shortcut" parent="LevelShortcuts" index="0" instance=ExtResource( 3 )]
 
@@ -367,6 +373,93 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="Sprite" type="Sprite" parent="." index="7"]
+
+position = Vector2( 1136.03, 944.397 )
+scale = Vector2( 1, 1.22304 )
+texture = ExtResource( 19 )
+
+[node name="Label" type="Label" parent="Sprite" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 61.0
+margin_top = -15.0
+margin_right = 349.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 20 )
+text = "Controll"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label" type="Label" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1422.0
+margin_top = 901.0
+margin_right = 1534.0
+margin_bottom = 921.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 20 )
+text = "Confirm"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Sprite2" type="Sprite" parent="Label" index="0"]
+
+position = Vector2( -41.7885, 3.28473 )
+scale = Vector2( 0.0276041, 0.0276041 )
+texture = ExtResource( 21 )
+
+[node name="Label2" type="Label" parent="." index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1428.0
+margin_top = 971.0
+margin_right = 1636.0
+margin_bottom = 991.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 20 )
+text = "Back to Title"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Sprite3" type="Sprite" parent="Label2" index="0"]
+
+position = Vector2( -46.1332, 8.50934 )
+scale = Vector2( 0.0276041, 0.0276041 )
+texture = ExtResource( 22 )
 
 [connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]
 

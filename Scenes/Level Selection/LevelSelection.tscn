@@ -53,7 +53,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[node name="LevelSelection" type="Node" index="0"]
+[node name="LevelSelection" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -101,6 +101,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut3/Button")
 
 [node name="LevelShortcut3" parent="LevelShortcuts" index="2" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 position = Vector2( 420.884, 364.098 )
 scene_to_load = ExtResource( 6 )
 LevelNumber = "02"
@@ -309,7 +310,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Music"
+bus = "Master"
 
 [connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]
 

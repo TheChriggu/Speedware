@@ -26,11 +26,16 @@ func _on_Button_mouse_exited():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene_to(scene_to_load)
+	$ClickSound.playing = true
+	#get_tree().change_scene_to(scene_to_load)
 
 func _on_Button_focus_entered():
-	
+	$HoverSound.playing = true
 	$AnimationPlayer.play("Mouse_Hover")
 
 func _on_Button_focus_exited():
 	$AnimationPlayer.play("Mouse_Hover_Down")
+
+
+func _on_ClickSound_finished():
+	get_tree().change_scene_to(scene_to_load)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Layer_2_Tonal.ogg-66c5ed49a308550eea5ba1590b059609.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Background Music/Layer_2_Tonal.ogg"
+dest_files=[ "res://.import/Layer_2_Tonal.ogg-66c5ed49a308550eea5ba1590b059609.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

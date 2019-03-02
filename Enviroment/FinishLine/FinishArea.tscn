@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/FinishLine/Finishline_Image.png" type="Texture" id=2]
-[ext_resource path="res://Sounds/FinishingSound.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/SFX/Music_Level_Finished.wav" type="AudioStream" id=3]
 [ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=5]
 [ext_resource path="res://Enviroment/FinishLine/Popup.gd" type="Script" id=6]
@@ -813,9 +813,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [connection signal="focus_entered" from="Popup/Control/PopupBackground/NextLevel" to="Popup" method="_on_NextLevel_focus_entered"]
 
-[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
-
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
+
+[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
 
 [connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound" to="." method="_on_ClickSound_finished"]
 

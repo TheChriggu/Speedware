@@ -1814,7 +1814,7 @@ cell_clip_uv = false
 collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
-collision_layer = 4
+collision_layer = 36
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
@@ -3262,9 +3262,11 @@ text = "07"
 
 [connection signal="collected" from="Level/Collectibles/Collectible" to="." method="_on_Collectible_collected"]
 
+[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
+
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
+[connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="speedboost_start" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_start"]
 

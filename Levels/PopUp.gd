@@ -9,11 +9,11 @@ func _on_PopUp_body_entered(body):
 
 func _on_Timer_timeout():
 	if isInsideArea:
-		$CanvasLayer/Label.visible = true
+		$CanvasLayer/Tutorial_Icon.visible = true
 		isDisplayingMessage = true
 
 func _on_PopUp_body_exited(body):
 	isInsideArea = false
 	if isDisplayingMessage:
-		$CanvasLayer/Label.visible = false
+		$CanvasLayer/Tutorial_Icon.visible = false
 		isDisplayingMessage = false

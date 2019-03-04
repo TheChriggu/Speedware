@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
@@ -18,13 +18,16 @@
 [ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=16]
 [ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Levels/PopUp.gd" type="Script" id=18]
-[ext_resource path="res://UI/UI.gd" type="Script" id=19]
-[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=20]
-[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=21]
-[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=22]
-[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=23]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=24]
-[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Level Selection/DPAD_right.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/Level Selection/shadedLight36.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/Level Selection/buttonL.png" type="Texture" id=21]
+[ext_resource path="res://UI/UI.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=23]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=24]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=25]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=26]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=27]
+[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -224,7 +227,6 @@ editor/display_folded = true
 
 [node name="PopUp0" type="Area2D" parent="Level/PopUps" index="0"]
 
-editor/display_folded = true
 position = Vector2( -35.022, 673.579 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -246,47 +248,29 @@ shape = SubResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Level/PopUps/PopUp0" index="1"]
 
-editor/display_folded = true
 layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Label" type="Label" parent="Level/PopUps/PopUp0/CanvasLayer" index="0"]
+[node name="Tutorial_Icon" type="Sprite" parent="Level/PopUps/PopUp0/CanvasLayer" index="0"]
 
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 852.0
-margin_top = 488.0
-margin_right = 1067.0
-margin_bottom = 502.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Dies Ist Keine Wichtige Nachricht. Bitte Nicht Lesen!"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+position = Vector2( 620.045, 571.289 )
+scale = Vector2( 1.79452, 1.79452 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="Timer" type="Timer" parent="Level/PopUps/PopUp0" index="2"]
 
 process_mode = 1
-wait_time = 5.0
+wait_time = 8.0
 one_shot = true
 autostart = false
 
 [node name="PopUp1" type="Area2D" parent="Level/PopUps" index="1"]
 
-editor/display_folded = true
 position = Vector2( 1487.86, 616.794 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -307,35 +291,17 @@ shape = SubResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Level/PopUps/PopUp1" index="1"]
 
-editor/display_folded = true
 layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Label" type="Label" parent="Level/PopUps/PopUp1/CanvasLayer" index="0"]
+[node name="Tutorial_Icon" type="Sprite" parent="Level/PopUps/PopUp1/CanvasLayer" index="0"]
 
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 852.0
-margin_top = 488.0
-margin_right = 1067.0
-margin_bottom = 502.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Hier Könnte Ihre Werbung Stehen"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+position = Vector2( 623.709, 572.44 )
+texture = ExtResource( 20 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="Timer" type="Timer" parent="Level/PopUps/PopUp1" index="2"]
@@ -373,113 +339,12 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Label" type="Label" parent="Level/PopUps/PopUp2/CanvasLayer" index="0"]
+[node name="Tutorial_Icon" type="Sprite" parent="Level/PopUps/PopUp2/CanvasLayer" index="0"]
 
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 406.0
-margin_top = 19.0
-margin_right = 957.0
-margin_bottom = 1495.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "Gäuit, wemer da grad eso schön binanger
-sitze, hani däicht, chönntech vilicht es
-bärndütsches Gschichtli erzelle. Es isch zwar es
-bsungers uganteligs Gschichtli, wo aber no gar
-nid eso lang im Mittlere Schättegibeleggtäli
-passiert isch.
-Der Schöppelimunggi u der Houderebäseler si
-einischt schpät am Abe, wo scho der Schibützu
-durs Gochlimoos pfoderet het, über s
-Batzmättere Heigisch im Erpfetli zueglüffe u hei
-nang na gschtigelet u gschigöggelet, das me z
-Gotts Bäri hätt chönne meine, si sige nanger
-scheich.
-«Na ei so schlöözige Blotzbänggu am Fläre, u
-i verminggle der s Bätzi, dass d Oschterpföteler
-ghörsch zawanggle!»
-«Drby wärsch froh, hättsch en einzige nuesige
-Schiggeler uf em Lugipfupf!»
-U so isch das hin u härgange wie nes
-Färegschäderli amene Milchgröözi, da seit
-plötzlech Houderebäseler zu Schöppelimunggi:
-«Schtill! Was ziberlet dert näbem Tobelöhli z
-grachtige n uuf u aab?»
-Schöppelirnunggi het gschläfzet wie ne
-Gitzeler u hets du o gseh. Es Totemügerli! U nid
-numen eis, nei, zwöi, drü, vier, füüf, es ganzes
-Schoossinjong voll si da desumegschläberlet u
-hei zängpinggerlet u globofzgerlet u
-gschanghangizigerlifisionööggelet, das es eim
-richtig agschnäggelet het.
-Schöppelimunggi u Houderebäseler hei nang
-nume zuegmutzet u hei ganz hingerbyggelig
-wöllen abschöberle. Aber chuum hei si der
-Awang ytröölet, gröözet es Totemügerli:
-« Heee, dir zweee! »
-U denen ischs i d Chnöde glöötet wie
-bschüttigs Chrüzimääl dure Chätschäbertrog.
-Düpfelig u gnütelig si si blybe schtah wie zwöi
-gripseti Mischtschwibeli, u scho isch das
-Totemügerli was tschigerlisch was pfigerlisch
-binene zueche gsi. Äs het se zersch es Rüngli
-chyblig u gschiferlig aagnöttelet u het se de
-möögglige gfraget:
-«Chöit dir is hälfe, ds Blindeli der
-Schtotzgrotzen ueche z graagge?»
-Wo der Schöppelimunggi das Wort «Blindeli»
-ghört het, het em fasch wölle ds Härzgätterli zum
-Hosegschingg uspföderle, aber der
-Houderebäseler het em zueggaschplet:
-«Du weisch doch, das men imene Totemügerli
-nid darf nei säge!»
-U du si si halt mitgschnarpflet.
-«Sooo, dir zweee!» het ds Totemügerli gseit,
-wo si zum Blindeli cho si, u die angere
-Totemügerli si ganz rüeiig daaggalzlet u hei
-numen ugschynig ychegschwärzelet.
-Da hei die beide gwüsst, was es Scheieli
-Gschlychets ds Gloubige choschtet u hei das
-Blindeli aagroupet, der eint am Schörpfu, der
-anger a de Gängeretalpli.
-Uuuh, isch das e botterepfloorigi Schtrüpfete
-gsi! Die zwee hei gschwouderet u ghetzpacheret,
-das si z näbis meh gwüsst hei, wo se der Gürchu
-zwurglet.
-Daa, z eis Dapf, wo si scho halber der
-Schtotzgrotzen uecheghaschpaaperet si, faht sech
-das Blindeli afah ziirgge u bäärgglet mit
-schychem Schtimmli:
-« Ooh, wie buuchet mi der Glutz! »
-Jetz hets aber im Schöppelimunggi böös im
-Schyssächerli gguugget. Är het das Blindeli la
-glootsche u isch der Schtotzgrotz abdotzeret, wie
-wenn em der Hurligwaagg mit ein Flarzyse der
-Schtirps vermöcklet hätt.
-«Häb dure, Münggu!» het ein der
-Houderebäseler na naagräätschet, u de het er nüt
-meh gwüsst.
-Am angere Morge het ne ds Schtötzgrötzeler
-Eisi gfunge, chäfu u tunggig wien en Öiu, u es
-isch meh weder e Monet gange, bis er wider het
-chönne s Gräppli im Hotschmägeli bleike.
-Totemügerli u Blindeli het er keis meh gseh
-sis Läbe lang, aber o der Schöppelimunggi isch
-vo da a verschwunde gsi.
-S git Lüt, wo säge, dass sider am
-Schtotzgrotzen es Totemügerli meh
-desumeschirggelet. "
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+position = Vector2( 624.963, 577.128 )
+scale = Vector2( 1.83622, 1.83622 )
+texture = ExtResource( 21 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="Timer" type="Timer" parent="Level/PopUps/PopUp2" index="2"]
@@ -492,21 +357,21 @@ autostart = false
 [node name="UI" type="Node" parent="." index="3"]
 
 editor/display_folded = true
-script = ExtResource( 19 )
+script = ExtResource( 22 )
 
-[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 20 )]
+[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 23 )]
 
 layer = 3
 
-[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 21 )]
+[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 24 )]
 
-[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 22 )]
+[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 25 )]
 
-[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 23 )]
+[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 26 )]
 
 COLLECTIBLES_IN_THIS_LEVEL = 1
 
-[node name="Timer" parent="UI" index="4" instance=ExtResource( 24 )]
+[node name="Timer" parent="UI" index="4" instance=ExtResource( 27 )]
 
 editor/display_folded = true
 
@@ -529,7 +394,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 25 )]
+[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 28 )]
 
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
 

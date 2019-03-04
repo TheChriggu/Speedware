@@ -36,7 +36,7 @@ func setTime(value):
 
 func SetFinishTime():
 	var FinishTime = CurrentTimer
-	return FinishTime
+	return stepify(FinishTime,0.01)
 
 func _on_GameStartTimer_GameStartTimerEnd():
 	CurrentTimer = 0

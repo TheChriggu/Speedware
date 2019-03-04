@@ -101,3 +101,9 @@ func DecreaseVolume(audioPlayer, finalVolume, stepSize):
 	
 	audioPlayer.volume_db -= abs(stepSize) #only decrease the volume. Expect stupid people to input negative values here
 	return false
+
+func Stop():
+	$Speedware_Layer1.stop()
+	$Speedware_Layer2.stop()
+	$Speedware_Layer3.stop()
+	$Speedware_Layer2and3_Percussion.stop()

@@ -540,7 +540,6 @@ bus = "Master"
 
 [node name="Popup" type="CanvasLayer" parent="." index="5"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -637,7 +636,7 @@ texture_normal = ExtResource( 12 )
 texture_focused = ExtResource( 13 )
 _sections_unfolded = [ "Focus", "Textures" ]
 
-[node name="ClickSound2" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/NextLevel" index="0"]
+[node name="ClickSound" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/NextLevel" index="0"]
 
 stream = ExtResource( 11 )
 volume_db = 0.0
@@ -957,11 +956,11 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [connection signal="focus_entered" from="Popup/Control/PopupBackground/NextLevel" to="Popup" method="_on_NextLevel_focus_entered"]
 
-[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
-
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
 
-[connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound2" to="Popup/Control/PopupBackground/BackToMenu" method="_on_ClickSound_finished"]
+[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
+
+[connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound" to="Popup/Control/PopupBackground/BackToMenu" method="_on_ClickSound_finished"]
 
 [connection signal="focus_entered" from="Popup/Control/PopupBackground/ReplayLevel" to="Popup" method="_on_ReplayLevel_focus_entered"]
 

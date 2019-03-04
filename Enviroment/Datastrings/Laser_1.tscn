@@ -188,7 +188,7 @@ _sections_unfolded = [ "Range" ]
 
 [node name="LightWeak" type="Light2D" parent="." index="5"]
 
-editor/display_folded = true
+light_mask = 2
 enabled = true
 editor_only = false
 texture = ExtResource( 5 )
@@ -202,7 +202,7 @@ range_z_min = -1024
 range_z_max = 1024
 range_layer_min = 0
 range_layer_max = 0
-range_item_cull_mask = 1
+range_item_cull_mask = 2
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 0 )
 shadow_buffer_size = 2048
@@ -210,10 +210,12 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+_sections_unfolded = [ "Range", "Shadow", "Visibility" ]
 
 [node name="ColoredGlow" type="Sprite" parent="LightWeak" index="0"]
 
 self_modulate = Color( 0.828125, 0, 1, 0.243137 )
+light_mask = 2
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Visibility" ]
 

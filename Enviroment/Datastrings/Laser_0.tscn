@@ -169,7 +169,7 @@ render_priority = 0
 blend_mode = 1
 light_mode = 2
 
-[node name="LaserOrange" type="Sprite"]
+[node name="LaserOrange" type="Sprite" index="0"]
 
 modulate = Color( 1, 1, 1, 0.933686 )
 position = Vector2( 39.2943, 25.9973 )
@@ -185,6 +185,7 @@ _sections_unfolded = [ "Material", "Offset", "Pause", "Transform", "Visibility" 
 
 [node name="LightStrong" type="Light2D" parent="." index="1"]
 
+visible = false
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
@@ -210,34 +211,36 @@ _sections_unfolded = [ "Range" ]
 
 [node name="LightWeak" type="Light2D" parent="." index="2"]
 
-editor/display_folded = true
+light_mask = 3
 enabled = true
 editor_only = false
 texture = ExtResource( 4 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 0.6
+color = Color( 1, 1, 1, 0.239216 )
+energy = 1.0
 mode = 0
 range_height = 0.0
 range_z_min = -1024
 range_z_max = 1024
 range_layer_min = 0
 range_layer_max = 0
-range_item_cull_mask = 1
+range_item_cull_mask = 2
 shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
+shadow_color = Color( 0, 0, 0, 1 )
 shadow_buffer_size = 2048
 shadow_gradient_length = 0.0
 shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 2
+_sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
 
 [node name="ColoredGlow" type="Sprite" parent="LightWeak" index="0"]
 
-self_modulate = Color( 1, 0.984375, 0, 0.243137 )
+self_modulate = Color( 1, 0.984314, 0, 0.239216 )
+light_mask = 2
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="HitDetection" type="Area2D" parent="." index="3"]
 
@@ -314,6 +317,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="Path2D" type="Path2D" parent="." index="7"]
 
+editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( 2.62661, 3.66429 )
 rotation = -2.27304e-013
@@ -361,8 +365,8 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Path2D" index="1"]
 
-position = Vector2( -5.73667, -33.9518 )
-rotation = 2.1074
+position = Vector2( -5.73688, -33.9515 )
+rotation = 2.10739
 offset = 118.469
 h_offset = 0.0
 v_offset = 0.0
@@ -399,8 +403,8 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" index="2"]
 
-position = Vector2( 7.55994, 32.9242 )
-rotation = 1.49883
+position = Vector2( 7.56007, 32.9246 )
+rotation = 1.49889
 offset = 192.512
 h_offset = 0.0
 v_offset = 0.0
@@ -437,8 +441,8 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D4" type="PathFollow2D" parent="Path2D" index="3"]
 
-position = Vector2( -7.60894, 98.6766 )
-rotation = 0.830542
+position = Vector2( -7.60873, 98.6769 )
+rotation = 0.830529
 offset = 266.537
 h_offset = 0.0
 v_offset = 0.0

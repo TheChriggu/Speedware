@@ -28,7 +28,9 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=26]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=27]
 
-[node name="Level" type="Node" index="0"]
+
+
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -78,7 +80,6 @@ CURRENT_ANCHOR = 0
 position = Vector2( 1338.48, -186.5 )
 collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
-FIXED_CAMERA = false
 
 [node name="CamCollider2" parent="Player/ForwardLookingCamera/HeadCamCollider" index="1" instance=ExtResource( 7 )]
 
@@ -1813,7 +1814,7 @@ cell_clip_uv = false
 collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
-collision_layer = 4
+collision_layer = 36
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
@@ -3261,9 +3262,11 @@ text = "07"
 
 [connection signal="collected" from="Level/Collectibles/Collectible" to="." method="_on_Collectible_collected"]
 
+[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
+
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
+[connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="speedboost_start" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_start"]
 
@@ -3273,8 +3276,8 @@ text = "07"
 
 [connection signal="speedboost_stop" from="Level/Speedboosters/Speedboost2" to="." method="_on_Speedboost_speedboost_stop"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
-
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

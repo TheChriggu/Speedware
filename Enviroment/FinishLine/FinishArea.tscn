@@ -1,25 +1,28 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/FinishLine/Finishline_Image.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/FinishingSound.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=5]
-[ext_resource path="res://Enviroment/FinishLine/FinishLinePassedPopup.png" type="Texture" id=6]
-[ext_resource path="res://Enviroment/FinishLine/MenuButtonUnhovered.png" type="Texture" id=7]
-[ext_resource path="res://Enviroment/FinishLine/MenuButtonHovered.png" type="Texture" id=8]
-[ext_resource path="res://Enviroment/FinishLine/BackToMenuButton.gd" type="Script" id=9]
-[ext_resource path="res://Enviroment/FinishLine/NextLevelUnhovered.png" type="Texture" id=10]
-[ext_resource path="res://Enviroment/FinishLine/NextLevelHovered.png" type="Texture" id=11]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelUnhovered.png" type="Texture" id=12]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=13]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=14]
-[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=15]
-[ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=16]
-[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesGreen.tres" type="Material" id=17]
-[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=18]
-[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesRed.tres" type="Material" id=19]
-[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesBlue.tres" type="Material" id=20]
+[ext_resource path="res://Enviroment/FinishLine/Popup.gd" type="Script" id=6]
+[ext_resource path="res://Enviroment/FinishLine/FinishLinePassedPopup.png" type="Texture" id=7]
+[ext_resource path="res://Enviroment/FinishLine/MenuButtonUnhovered.png" type="Texture" id=8]
+[ext_resource path="res://Enviroment/FinishLine/MenuButtonHovered.png" type="Texture" id=9]
+[ext_resource path="res://Enviroment/FinishLine/BackToMenuButton.gd" type="Script" id=10]
+[ext_resource path="res://Sounds/SFX/SFX_Button_Click.wav" type="AudioStream" id=11]
+[ext_resource path="res://Enviroment/FinishLine/NextLevelUnhovered.png" type="Texture" id=12]
+[ext_resource path="res://Enviroment/FinishLine/NextLevelHovered.png" type="Texture" id=13]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelUnhovered.png" type="Texture" id=14]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=15]
+[ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=16]
+[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=18]
+[ext_resource path="res://Sounds/SFX/SFX_Button_Hover.wav" type="AudioStream" id=19]
+[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesGreen.tres" type="Material" id=20]
+[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=21]
+[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesRed.tres" type="Material" id=22]
+[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesBlue.tres" type="Material" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -315,7 +318,7 @@ render_priority = 0
 blend_mode = 1
 light_mode = 2
 
-[node name="FinishArea" type="Node2D" index="0"]
+[node name="FinishArea" type="Node2D"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -427,6 +430,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 6 )
 
 [node name="Control" type="Control" parent="Popup" index="0"]
 
@@ -451,7 +455,7 @@ _sections_unfolded = [ "Visibility" ]
 
 position = Vector2( -61.5314, 13.257 )
 scale = Vector2( 1.94104, 1.94104 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="BackToMenu" type="TextureButton" parent="Popup/Control/PopupBackground" index="0"]
 
@@ -476,10 +480,19 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
-texture_focused = ExtResource( 8 )
-script = ExtResource( 9 )
+texture_normal = ExtResource( 8 )
+texture_focused = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Focus", "Textures" ]
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/BackToMenu" index="0"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
 
 [node name="NextLevel" type="TextureButton" parent="Popup/Control/PopupBackground" index="1"]
 
@@ -504,9 +517,18 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_focused = ExtResource( 11 )
+texture_normal = ExtResource( 12 )
+texture_focused = ExtResource( 13 )
 _sections_unfolded = [ "Focus", "Textures" ]
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/NextLevel" index="0"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
 
 [node name="ReplayLevel" type="TextureButton" parent="Popup/Control/PopupBackground" index="2"]
 
@@ -531,10 +553,19 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 12 )
-texture_focused = ExtResource( 13 )
-script = ExtResource( 14 )
+texture_normal = ExtResource( 14 )
+texture_focused = ExtResource( 15 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Focus", "Textures" ]
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/ReplayLevel" index="0"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
 
 [node name="Time" type="Label" parent="Popup/Control/PopupBackground" index="3"]
 
@@ -558,7 +589,7 @@ text = "Time"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 15 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 FinishTime = 0
 
@@ -566,14 +597,14 @@ FinishTime = 0
 
 visible = false
 position = Vector2( -94.8768, -119.593 )
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="2Stars" type="Sprite" parent="Popup/Control/PopupBackground" index="5"]
 
 visible = false
 position = Vector2( -22.7226, -137.531 )
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="3Stars" type="Sprite" parent="Popup/Control/PopupBackground" index="6"]
@@ -581,7 +612,7 @@ _sections_unfolded = [ "Visibility" ]
 visible = false
 position = Vector2( 44.9238, -114.53 )
 scale = Vector2( 1.03558, 0.948521 )
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Popup/Control/PopupBackground" index="7"]
@@ -596,6 +627,15 @@ anims/1StarRating = SubResource( 6 )
 anims/2StarRating = SubResource( 7 )
 anims/3StarRating = SubResource( 8 )
 blend_times = [  ]
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="Popup" index="1"]
+
+stream = ExtResource( 19 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
 
 [node name="ParticleGroup" type="Node2D" parent="." index="6"]
 
@@ -622,8 +662,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 17 )
-texture = ExtResource( 18 )
+process_material = ExtResource( 20 )
+texture = ExtResource( 21 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -648,8 +688,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 17 )
-texture = ExtResource( 18 )
+process_material = ExtResource( 20 )
+texture = ExtResource( 21 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -674,8 +714,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 19 )
-texture = ExtResource( 18 )
+process_material = ExtResource( 22 )
+texture = ExtResource( 21 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -700,8 +740,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 19 )
-texture = ExtResource( 18 )
+process_material = ExtResource( 22 )
+texture = ExtResource( 21 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -726,8 +766,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 20 )
-texture = ExtResource( 18 )
+process_material = ExtResource( 23 )
+texture = ExtResource( 21 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -752,8 +792,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 20 )
-texture = ExtResource( 18 )
+process_material = ExtResource( 23 )
+texture = ExtResource( 21 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -765,12 +805,24 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [connection signal="finished" from="LinePassedSoundEffect" to="." method="_on_LinePassedSoundEffect_finished"]
 
+[connection signal="focus_entered" from="Popup/Control/PopupBackground/BackToMenu" to="Popup" method="_on_BackToMenu_focus_entered"]
+
 [connection signal="pressed" from="Popup/Control/PopupBackground/BackToMenu" to="Popup/Control/PopupBackground/BackToMenu" method="_on_BackToMenu_pressed"]
+
+[connection signal="finished" from="Popup/Control/PopupBackground/BackToMenu/ClickSound" to="Popup/Control/PopupBackground/BackToMenu" method="_on_ClickSound_finished"]
+
+[connection signal="focus_entered" from="Popup/Control/PopupBackground/NextLevel" to="Popup" method="_on_NextLevel_focus_entered"]
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
 
+[connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound" to="." method="_on_ClickSound_finished"]
+
+[connection signal="focus_entered" from="Popup/Control/PopupBackground/ReplayLevel" to="Popup" method="_on_ReplayLevel_focus_entered"]
+
 [connection signal="pressed" from="Popup/Control/PopupBackground/ReplayLevel" to="Popup/Control/PopupBackground/ReplayLevel" method="_on_ReplayLevel_pressed"]
+
+[connection signal="finished" from="Popup/Control/PopupBackground/ReplayLevel/ClickSound" to="Popup/Control/PopupBackground/ReplayLevel" method="_on_ClickSound_finished"]
 
 

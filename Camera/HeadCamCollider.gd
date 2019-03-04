@@ -8,4 +8,3 @@ func _on_CamCollider_new_camera(anchor, fixed, zoom):
 	CURRENT_ANCHOR = anchor
 	FIXED_CAMERA = fixed
 	isZoomedOut = zoom
-

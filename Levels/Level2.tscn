@@ -268,7 +268,6 @@ position = Vector2( 42629.3, 4231.28 )
 
 [node name="Collectibles" type="Node2D" parent="Level" index="2"]
 
-editor/display_folded = true
 position = Vector2( 660.131, -1882.08 )
 
 [node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 14 )]
@@ -322,7 +321,7 @@ script = ExtResource( 18 )
 
 [node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 22 )]
 
-COLLECTIBLES_IN_THIS_LEVEL = 1
+COLLECTIBLES_IN_THIS_LEVEL = 2
 
 [node name="Timer" parent="UI" index="4" instance=ExtResource( 23 )]
 
@@ -534,15 +533,15 @@ text = "02"
 
 [connection signal="collected" from="Level/Collectibles/Collectible2" to="." method="_on_Collectible_collected"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="." method="_on_GameStartTimer_GameStartTimerEnd"]
-
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="." method="_on_GameStartTimer_GameStartTimerEnd"]
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
 

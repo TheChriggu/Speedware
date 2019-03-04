@@ -5,11 +5,11 @@ func _ready():
 	get_node("Player/player/AnimationPlayer").play("CharacterGameStartAnimation")
 
 func _on_player_switched_color_to_orange():
-#	$Level.SwitchColorToOrange()
+	$Level.SwitchColorToOrange()
 	$UI.SwitchColorToOrange()
 
 func _on_player_switched_color_to_purple():
-#	$Level.SwitchColorToPurple()
+	$Level.SwitchColorToPurple()
 	$UI.SwitchColorToPurple()
 
 func _on_Speedboost_speedboost_start(speed):

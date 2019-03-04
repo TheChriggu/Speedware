@@ -18,10 +18,10 @@
 [ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=16]
 [ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=17]
 [ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=18]
-[ext_resource path="res://Scenes/Level Selection/dpad example.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/Level Selection/flatDark03.png" type="Texture" id=19]
 [ext_resource path="res://IngameSubtitle.tres" type="DynamicFont" id=20]
-[ext_resource path="res://Scenes/Level Selection/Xbox_button_A.svg.png" type="Texture" id=21]
-[ext_resource path="res://Scenes/Buttons/Xbox_button_B.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Level Selection/flatDark35.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/Level Selection/flatDark36.png" type="Texture" id=22]
 
 [sub_resource type="Animation" id=1]
 
@@ -95,7 +95,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[node name="LevelSelection" type="Node" index="0"]
+[node name="LevelSelection" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -305,9 +305,9 @@ custom_icons/grabber_disabled = ExtResource( 15 )
 custom_icons/grabber_highlight = ExtResource( 16 )
 custom_icons/grabber = ExtResource( 15 )
 custom_styles/slider = SubResource( 3 )
-min_value = -80.0
-max_value = 24.0
-step = 20.0
+min_value = -40.0
+max_value = 20.0
+step = 10.0
 page = 0.0
 value = 0.0
 exp_edit = false
@@ -342,9 +342,9 @@ custom_icons/grabber_disabled = ExtResource( 15 )
 custom_icons/grabber_highlight = ExtResource( 16 )
 custom_icons/grabber = ExtResource( 15 )
 custom_styles/slider = SubResource( 4 )
-min_value = -80.0
-max_value = 24.0
-step = 20.0
+min_value = -40.0
+max_value = 20.0
+step = 10.0
 page = 0.0
 value = 0.0
 exp_edit = false
@@ -375,8 +375,8 @@ bus = "Music"
 
 [node name="UIButtons" type="Sprite" parent="." index="7"]
 
-position = Vector2( 1136.03, 944.397 )
-scale = Vector2( 1, 1.22304 )
+position = Vector2( 1139.8, 952.808 )
+scale = Vector2( 1, 1.09312 )
 texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="UIButtons" index="0"]
@@ -385,10 +385,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 61.0
-margin_top = -15.0
-margin_right = 349.0
-margin_bottom = 30.0
+margin_left = 79.0
+margin_top = -19.0
+margin_right = 367.0
+margin_bottom = 26.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -427,9 +427,10 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Sprite2" type="Sprite" parent="UIConfirm" index="0"]
 
-position = Vector2( -46.1113, 14.0919 )
-scale = Vector2( 0.0276041, 0.0276041 )
+position = Vector2( -39.002, 13.7867 )
+scale = Vector2( 0.67454, 0.694394 )
 texture = ExtResource( 21 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="UIBackToTitle" type="Label" parent="." index="9"]
 
@@ -456,8 +457,8 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Sprite3" type="Sprite" parent="UIBackToTitle" index="0"]
 
-position = Vector2( -46.1332, 8.50934 )
-scale = Vector2( 0.0276041, 0.0276041 )
+position = Vector2( -39.2394, 14.9888 )
+scale = Vector2( 0.67454, 0.694394 )
 texture = ExtResource( 22 )
 
 [connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]

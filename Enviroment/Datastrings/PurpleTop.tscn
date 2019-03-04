@@ -5,7 +5,7 @@
 [ext_resource path="res://Enviroment/Datastrings/LaserLightColorEnd.png" type="Texture" id=3]
 [ext_resource path="res://Enviroment/Datastrings/Black.png" type="Texture" id=4]
 
-[node name="PurpleTop" type="Node2D" index="0"]
+[node name="PurpleTop" type="Node2D"]
 
 rotation = 3.14159
 _sections_unfolded = [ "Transform" ]

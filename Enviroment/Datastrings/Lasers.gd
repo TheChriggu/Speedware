@@ -5,13 +5,13 @@ signal laser_exited
 
 var lasersEntered = 0
 
-#func SwitchToPurple():
-#	for laser in get_children():
-#		laser.SwitchToPurple()
+func SwitchToPurple():
+	for laser in get_children():
+		laser.SwitchToPurple()
 
-#func SwitchToOrange():
-#		for laser in get_children():
-#			laser.SwitchToOrange()
+func SwitchToOrange():
+		for laser in get_children():
+			laser.SwitchToOrange()
 
 func _on_LaserOrange_laser_entered():
 	lasersEntered += 1

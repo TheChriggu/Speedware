@@ -952,15 +952,15 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/BackToMenu" to="Popup/Control/PopupBackground/BackToMenu" method="_on_BackToMenu_pressed"]
 
-[connection signal="finished" from="Popup/Control/PopupBackground/BackToMenu/ClickSound" to="." method="_on_ClickSound_finished"]
+[connection signal="finished" from="Popup/Control/PopupBackground/BackToMenu/ClickSound" to="Popup/Control/PopupBackground/BackToMenu" method="_on_ClickSound_finished"]
 
 [connection signal="focus_entered" from="Popup/Control/PopupBackground/NextLevel" to="Popup" method="_on_NextLevel_focus_entered"]
 
-[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
-
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
 
-[connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound" to="Popup/Control/PopupBackground/BackToMenu" method="_on_ClickSound_finished"]
+[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
+
+[connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound" to="." method="_on_ClickSound_finished"]
 
 [connection signal="focus_entered" from="Popup/Control/PopupBackground/ReplayLevel" to="Popup" method="_on_ReplayLevel_focus_entered"]
 

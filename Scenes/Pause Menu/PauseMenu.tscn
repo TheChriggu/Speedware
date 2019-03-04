@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Pause Menu/PauseMenu_return_to_Title.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pause Menu/Pause.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Pause Menu/01_ui_pause.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_music_michelle.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Pause Menu/SFXSliderIcon.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Pause Menu/musicsliderIcon.png" type="Texture" id=7]
 
-[node name="PauseMenu" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 2
@@ -58,12 +62,14 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 853.0
-margin_top = 690.0
-margin_right = 1113.0
-margin_bottom = 782.0
+margin_left = 863.0
+margin_top = 883.0
+margin_right = 1123.0
+margin_bottom = 975.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_neighbour_top = NodePath("../SFXslider")
+focus_neighbour_bottom = NodePath("../Musicslider")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -76,10 +82,98 @@ group = null
 text = "Exit to Main Menu"
 flat = false
 align = 1
-_sections_unfolded = [ "Pause" ]
+_sections_unfolded = [ "Focus", "Pause" ]
+
+[node name="SFXslider" type="HSlider" parent="Pause" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 766.0
+margin_top = 826.0
+margin_right = 1296.0
+margin_bottom = 842.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../Musicslider")
+focus_neighbour_bottom = NodePath("../Button")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_icons/tick = ExtResource( 4 )
+custom_icons/grabber_disabled = ExtResource( 4 )
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 4 )
+min_value = -40.0
+max_value = 20.0
+step = 10.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Focus" ]
+
+[node name="Sprite" type="Sprite" parent="Pause/SFXslider" index="0"]
+
+position = Vector2( -33.1747, 14.1246 )
+scale = Vector2( 0.161534, 0.236995 )
+texture = ExtResource( 6 )
+
+[node name="Musicslider" type="HSlider" parent="Pause" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 765.0
+margin_top = 771.0
+margin_right = 1295.0
+margin_bottom = 787.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_top = NodePath("../Button")
+focus_neighbour_bottom = NodePath("../SFXslider")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_icons/tick = ExtResource( 4 )
+custom_icons/grabber_disabled = ExtResource( 4 )
+custom_icons/grabber_highlight = ExtResource( 5 )
+custom_icons/grabber = ExtResource( 4 )
+min_value = -40.0
+max_value = 20.0
+step = 10.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Focus", "custom_styles" ]
+
+[node name="Sprite" type="Sprite" parent="Pause/Musicslider" index="0"]
+
+position = Vector2( -35.8354, 4.62738 )
+scale = Vector2( 0.235876, 0.247137 )
+texture = ExtResource( 7 )
 
 [connection signal="tree_exited" from="." to="." method="_on_PauseMenu_tree_exited"]
 
 [connection signal="pressed" from="Pause/Button" to="." method="_on_Button_pressed"]
+
+[connection signal="value_changed" from="Pause/SFXslider" to="Pause" method="_on_SFXslider_value_changed"]
+
+[connection signal="value_changed" from="Pause/Musicslider" to="Pause" method="_on_Musicslider_value_changed"]
 
 

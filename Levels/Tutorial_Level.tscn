@@ -34,7 +34,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 381.167, 280.367 )
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -223,8 +223,6 @@ LENGTH = 10.0
 
 [node name="PopUps" type="Node2D" parent="Level" index="5"]
 
-editor/display_folded = true
-
 [node name="PopUp0" type="Area2D" parent="Level/PopUps" index="0"]
 
 position = Vector2( -35.022, 673.579 )
@@ -257,7 +255,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="Tutorial_Icon" type="Sprite" parent="Level/PopUps/PopUp0/CanvasLayer" index="0"]
 
 visible = false
-position = Vector2( 620.045, 571.289 )
+position = Vector2( 670.585, 536.091 )
 scale = Vector2( 1.79452, 1.79452 )
 texture = ExtResource( 19 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
@@ -300,7 +298,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="Tutorial_Icon" type="Sprite" parent="Level/PopUps/PopUp1/CanvasLayer" index="0"]
 
 visible = false
-position = Vector2( 623.709, 572.44 )
+position = Vector2( 667.029, 541.755 )
 texture = ExtResource( 20 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
@@ -313,7 +311,7 @@ autostart = false
 
 [node name="PopUp2" type="Area2D" parent="Level/PopUps" index="2"]
 
-position = Vector2( 6449.28, 616.794 )
+position = Vector2( 23026.9, 3333.89 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -342,7 +340,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="Tutorial_Icon" type="Sprite" parent="Level/PopUps/PopUp2/CanvasLayer" index="0"]
 
 visible = false
-position = Vector2( 624.963, 577.128 )
+position = Vector2( 584.213, 540.125 )
 scale = Vector2( 1.83622, 1.83622 )
 texture = ExtResource( 21 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
@@ -414,9 +412,9 @@ max_lines_visible = -1
 
 [connection signal="laser_exited" from="Level/Lasers" to="." method="_on_Lasers_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
-
 [connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 

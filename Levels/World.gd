@@ -34,6 +34,7 @@ func _on_Collectible_collected():
 	$UI.CollectibleCollected()
 
 func _on_FinishArea_finish_line_passed():
+	$Player.FinishLinePassed()
 	get_tree().paused = true
 	$UI.FinishLinePassed()
 

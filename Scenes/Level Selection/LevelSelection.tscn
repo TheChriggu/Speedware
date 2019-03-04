@@ -106,8 +106,6 @@ texture = ExtResource( 2 )
 
 [node name="LevelShortcuts" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Level1Shortcut" parent="LevelShortcuts" index="0" instance=ExtResource( 3 )]
 
 editor/display_folded = true
@@ -149,6 +147,7 @@ margin_bottom = 8.0
 
 [node name="LevelShortcut" parent="LevelShortcuts" index="1" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 position = Vector2( 494.476, 295.436 )
 scene_to_load = ExtResource( 4 )
 LevelNumber = "01"
@@ -372,15 +371,15 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
-[node name="Sprite" type="Sprite" parent="." index="7"]
+[node name="UIButtons" type="Sprite" parent="." index="7"]
 
 position = Vector2( 1136.03, 944.397 )
 scale = Vector2( 1, 1.22304 )
 texture = ExtResource( 19 )
 
-[node name="Label" type="Label" parent="Sprite" index="0"]
+[node name="Label" type="Label" parent="UIButtons" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -397,22 +396,22 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 20 )
-text = "Controll"
+text = "Control"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label" type="Label" parent="." index="8"]
+[node name="UIConfirm" type="Label" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1422.0
-margin_top = 901.0
-margin_right = 1534.0
-margin_bottom = 921.0
+margin_left = 1427.0
+margin_top = 898.0
+margin_right = 1539.0
+margin_bottom = 918.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -426,13 +425,13 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Sprite2" type="Sprite" parent="Label" index="0"]
+[node name="Sprite2" type="Sprite" parent="UIConfirm" index="0"]
 
-position = Vector2( -41.7885, 3.28473 )
+position = Vector2( -46.1113, 14.0919 )
 scale = Vector2( 0.0276041, 0.0276041 )
 texture = ExtResource( 21 )
 
-[node name="Label2" type="Label" parent="." index="9"]
+[node name="UIBackToTitle" type="Label" parent="." index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -455,7 +454,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Sprite3" type="Sprite" parent="Label2" index="0"]
+[node name="Sprite3" type="Sprite" parent="UIBackToTitle" index="0"]
 
 position = Vector2( -46.1332, 8.50934 )
 scale = Vector2( 0.0276041, 0.0276041 )

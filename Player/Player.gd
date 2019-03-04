@@ -36,3 +36,6 @@ func PlayerIsAtFullspeed():
 
 func PlayerIsNotAtFullspeed():
 	$BackgroundMusic.isAtFullspeed = false
+
+func FinishLinePassed():
+	$BackgroundMusic.Stop()

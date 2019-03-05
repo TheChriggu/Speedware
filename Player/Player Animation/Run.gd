@@ -47,7 +47,9 @@ func Idle():
 
 func Victory():
 	if !isVictory:
-		$MovementAnimations.play("Victory", 0.3, 1)
+		$MovementAnimations.play("VictoryAnimation", 0.3, 1)
+		SetAllVariablesToFalse()
+		isVictory = true
 
 var minSpeed = 1.8
 var maxSpeed = 3

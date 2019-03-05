@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LaserLightWeak.png-3c0fd512d8bf0ca7442781b4d4568170.stex"
+path="res://.import/PurpleCapsAndLight.png-9df0149372cc0007ab9be49714ad2a6b.stex"
 
 [deps]
 
-source_file="res://Enviroment/Datastrings/LaserLightWeak.png"
-dest_files=[ "res://.import/LaserLightWeak.png-3c0fd512d8bf0ca7442781b4d4568170.stex" ]
+source_file="res://Enviroment/Datastrings/PurpleCapsAndLight.png"
+dest_files=[ "res://.import/PurpleCapsAndLight.png-9df0149372cc0007ab9be49714ad2a6b.stex" ]
 
 [params]
 

@@ -389,26 +389,26 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=26]
+[sub_resource type="CanvasItemMaterial" id=12]
 
 render_priority = 0
 blend_mode = 1
 light_mode = 2
 
-[sub_resource type="Curve" id=12]
+[sub_resource type="Curve" id=13]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.942558, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=13]
+[sub_resource type="CurveTexture" id=14]
 
 flags = 4
 width = 2048
-curve = SubResource( 12 )
+curve = SubResource( 13 )
 
-[sub_resource type="ParticlesMaterial" id=14]
+[sub_resource type="ParticlesMaterial" id=15]
 
 render_priority = 0
 trail_divisor = 1
@@ -438,7 +438,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.1
 scale_random = 0.0
-scale_curve = SubResource( 13 )
+scale_curve = SubResource( 14 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -448,6 +448,18 @@ anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
+
+[sub_resource type="CanvasItemMaterial" id=16]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=17]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
 
 [sub_resource type="CanvasItemMaterial" id=18]
 
@@ -461,35 +473,23 @@ render_priority = 0
 blend_mode = 1
 light_mode = 2
 
-[sub_resource type="CanvasItemMaterial" id=20]
-
-render_priority = 0
-blend_mode = 1
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=21]
-
-render_priority = 0
-blend_mode = 1
-light_mode = 2
-
-[sub_resource type="CapsuleShape2D" id=22]
+[sub_resource type="CapsuleShape2D" id=20]
 
 custom_solver_bias = 0.0
 radius = 19.0555
 height = 102.374
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=21]
 
 custom_solver_bias = 0.0
 extents = Vector2( 36.3838, 47.2636 )
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=22]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16.1691, 1.04485 )
 
-[sub_resource type="SpriteFrames" id=25]
+[sub_resource type="SpriteFrames" id=23]
 
 animations = [ {
 "frames": [ ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ) ],
@@ -498,7 +498,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 position = Vector2( 3.55887, 0 )
 scale = Vector2( 0.8, 0.8 )
@@ -630,7 +630,7 @@ position = Vector2( 3.04739, 1.2499 )
 
 self_modulate = Color( 0, 0.605469, 0.449371, 1 )
 show_behind_parent = true
-material = SubResource( 26 )
+material = SubResource( 12 )
 position = Vector2( -1.85245, -4.69421 )
 rotation = 0.00734518
 emitting = true
@@ -646,7 +646,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 1
-process_material = SubResource( 14 )
+process_material = SubResource( 15 )
 texture = ExtResource( 13 )
 normal_map = null
 h_frames = 1
@@ -657,7 +657,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 18 )
+material = SubResource( 16 )
 position = Vector2( -0.833429, 1.35102 )
 rotation = -1.5708
 scale = Vector2( 1.25, 1.25 )
@@ -685,7 +685,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 19 )
+material = SubResource( 17 )
 position = Vector2( -11.7782, 1.56522 )
 rotation = -1.5708
 emitting = true
@@ -712,7 +712,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 20 )
+material = SubResource( 18 )
 position = Vector2( -2.71884, 2.68202 )
 rotation = -1.5708
 emitting = false
@@ -739,7 +739,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 21 )
+material = SubResource( 19 )
 position = Vector2( -13.6422, 2.68202 )
 rotation = -1.5708
 emitting = false
@@ -765,7 +765,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="PhysicsCollider" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( -6.1861, -0.360727 )
-shape = SubResource( 22 )
+shape = SubResource( 20 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="HitDetectors" type="Node2D" parent="." index="4"]
@@ -788,7 +788,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/PurpleLaserSidesDetector" index="0"]
 
 position = Vector2( -5.25743, -27.0959 )
-shape = SubResource( 23 )
+shape = SubResource( 21 )
 
 [node name="OrangeLaserSidesDetector" type="Area2D" parent="HitDetectors" index="1"]
 
@@ -807,7 +807,7 @@ _sections_unfolded = [ "Audio Bus", "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/OrangeLaserSidesDetector" index="0"]
 
 position = Vector2( -5.25743, -27.0959 )
-shape = SubResource( 23 )
+shape = SubResource( 21 )
 
 [node name="LaserBottom" type="Area2D" parent="HitDetectors" index="2"]
 
@@ -827,7 +827,7 @@ _sections_unfolded = [ "Collision" ]
 
 visible = false
 position = Vector2( -7.27951, 80.479 )
-shape = SubResource( 24 )
+shape = SubResource( 22 )
 
 [node name="FloorSides" type="Area2D" parent="HitDetectors" index="3"]
 
@@ -846,7 +846,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/FloorSides" index="0"]
 
 position = Vector2( -5.25743, -27.0959 )
-shape = SubResource( 23 )
+shape = SubResource( 21 )
 
 [node name="FloorBottom" type="Area2D" parent="HitDetectors" index="4"]
 
@@ -865,7 +865,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/FloorBottom" index="0"]
 
 position = Vector2( -5.0314, 69.855 )
-shape = SubResource( 24 )
+shape = SubResource( 22 )
 
 [node name="AnimatedCharacter" parent="." index="5" instance=ExtResource( 18 )]
 
@@ -878,7 +878,7 @@ visible = false
 position = Vector2( -5.9118, -39.64 )
 rotation = 0.00734518
 scale = Vector2( 0.453219, 0.453219 )
-frames = SubResource( 25 )
+frames = SubResource( 23 )
 animation = "default"
 frame = 1
 playing = true

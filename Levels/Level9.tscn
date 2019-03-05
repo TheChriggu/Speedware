@@ -26,7 +26,7 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=24]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=25]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -119,6 +119,7 @@ script = ExtResource( 10 )
 
 [node name="Lasers" type="Node2D" parent="Level" index="0"]
 
+editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 11 )
 
@@ -1246,6 +1247,7 @@ scale = Vector2( 0.0348979, 0.0470226 )
 [node name="FinishArea" parent="Level" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 71838.2, 12461.3 )
+scene_to_load = "res://Scenes/Level Selection/LevelSelection.tscn"
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 

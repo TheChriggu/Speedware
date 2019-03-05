@@ -210,7 +210,7 @@ func _ready():
 	pass
 
 func _on_FinishArea_finish_line_passed():
-	$AnimatedCharacter.Victory()
+	$AnimationPlayer.play("FinishLinePassedCharFreeze")
 	emit_signal("FinishLineAnimationFinished")
 
 func _on_PurpleLaserSidesDetector_area_entered(area):

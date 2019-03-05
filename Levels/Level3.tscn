@@ -335,7 +335,6 @@ LENGTH = 3.0
 
 [node name="Lasers" type="Node2D" parent="Level" index="1"]
 
-editor/display_folded = true
 position = Vector2( -690.146, -2966.67 )
 script = ExtResource( 12 )
 

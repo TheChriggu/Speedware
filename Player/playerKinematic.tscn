@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/SFX.gd" type="Script" id=2]
@@ -12,12 +12,14 @@
 [ext_resource path="res://Sounds/SFX/SFX_Background_Ambience_Level.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Player/Particles/VFX.gd" type="Script" id=11]
 [ext_resource path="res://Player/SwitcheffectExplosion.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=13]
+[ext_resource path="res://Enviroment/Datastrings/SpotWhite.png" type="Texture" id=13]
 [ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=14]
 [ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=15]
 [ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=16]
 [ext_resource path="res://Player/HitDetectors.gd" type="Script" id=17]
 [ext_resource path="res://Player/Player Animation/Run2.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Player/Parallax Background/JacksonSide.png" type="Texture" id=19]
+[ext_resource path="res://Player/Parallax Background/JacksonFront.png" type="Texture" id=20]
 
 [sub_resource type="Animation" id=1]
 
@@ -363,6 +365,12 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="CanvasItemMaterial" id=26]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
 [sub_resource type="Curve" id=12]
 
 min_value = 0.0
@@ -380,14 +388,15 @@ curve = SubResource( 12 )
 
 render_priority = 0
 trail_divisor = 1
-emission_shape = 0
+emission_shape = 2
+emission_box_extents = Vector3( 30, 70, 0 )
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
 spread = 0.0
 flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 1.0
+gravity = Vector3( -100, 0, 0 )
+initial_velocity = 0.0
 initial_velocity_random = 0.0
 angular_velocity = 0.0
 angular_velocity_random = 0.0
@@ -397,16 +406,16 @@ linear_accel = 0.0
 linear_accel_random = 0.0
 radial_accel = 0.0
 radial_accel_random = 0.0
-tangential_accel = 0.0
+tangential_accel = 100.0
 tangential_accel_random = 0.0
 damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 0.4
+scale = 0.1
 scale_random = 0.0
 scale_curve = SubResource( 13 )
-color = Color( 1, 1, 1, 0.392157 )
+color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -414,60 +423,7 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Color", "Gravity", "Scale", "Spread", "Trail" ]
-
-[sub_resource type="Curve" id=15]
-
-min_value = 0.0
-max_value = 1.0
-bake_resolution = 100
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.942558, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=16]
-
-flags = 4
-width = 2048
-curve = SubResource( 15 )
-
-[sub_resource type="ParticlesMaterial" id=17]
-
-render_priority = 0
-trail_divisor = 1
-emission_shape = 0
-flag_align_y = false
-flag_rotate_y = false
-flag_disable_z = true
-spread = 0.0
-flatness = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 1.0
-initial_velocity_random = 0.0
-angular_velocity = 0.0
-angular_velocity_random = 0.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 0.0
-linear_accel_random = 0.0
-radial_accel = 0.0
-radial_accel_random = 0.0
-tangential_accel = 0.0
-tangential_accel_random = 0.0
-damping = 0.0
-damping_random = 0.0
-angle = 0.0
-angle_random = 0.0
-scale = 0.4
-scale_random = 0.0
-scale_curve = SubResource( 16 )
-color = Color( 1, 1, 1, 0.392157 )
-hue_variation = 0.0
-hue_variation_random = 0.0
-anim_speed = 0.0
-anim_speed_random = 0.0
-anim_offset = 0.0
-anim_offset_random = 0.0
-anim_loop = false
-_sections_unfolded = [ "Color", "Gravity", "Scale", "Spread", "Trail" ]
+_sections_unfolded = [ "Angle", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
 
 [sub_resource type="CanvasItemMaterial" id=18]
 
@@ -509,8 +465,18 @@ extents = Vector2( 36.3838, 47.2636 )
 custom_solver_bias = 0.0
 extents = Vector2( 16.1691, 1.04485 )
 
-[node name="player" type="KinematicBody2D"]
+[sub_resource type="SpriteFrames" id=25]
 
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="player" type="KinematicBody2D" index="0"]
+
+position = Vector2( 3.55887, 0 )
 scale = Vector2( 0.8, 0.8 )
 input_pickable = false
 collision_layer = 30
@@ -630,7 +596,6 @@ bus = "Master"
 
 [node name="VFX" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 script = ExtResource( 11 )
 
 [node name="SwitcheffectExplosion" parent="VFX" index="0" instance=ExtResource( 12 )]
@@ -640,17 +605,17 @@ position = Vector2( 3.04739, 1.2499 )
 
 [node name="ParticlesIfBoosted" type="Particles2D" parent="VFX" index="1"]
 
-self_modulate = Color( 0, 0.1875, 0.13916, 0.745882 )
+self_modulate = Color( 0, 0.605469, 0.449371, 1 )
 show_behind_parent = true
-position = Vector2( 3.82557, -1.63696 )
-rotation = 0.377236
-scale = Vector2( 0.126828, 0.126828 )
+material = SubResource( 26 )
+position = Vector2( -1.85245, -4.69421 )
+rotation = 0.00734518
 emitting = true
-amount = 30
+amount = 300
 lifetime = 2.0
 one_shot = false
 preprocess = 0.0
-speed_scale = 3.0
+speed_scale = 2.0
 explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
@@ -665,33 +630,7 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="ParticlesIfBoosted2" type="Particles2D" parent="VFX" index="2"]
-
-self_modulate = Color( 0, 0.1875, 0.13916, 0.745882 )
-show_behind_parent = true
-position = Vector2( -0.0185776, -2.37721 )
-rotation = 2.98023e-008
-emitting = true
-amount = 30
-lifetime = 2.0
-one_shot = false
-preprocess = 0.0
-speed_scale = 3.0
-explosiveness = 0.0
-randomness = 0.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = false
-draw_order = 1
-process_material = SubResource( 17 )
-texture = ExtResource( 13 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
-
-[node name="Particles2DPurpleZero" type="Particles2D" parent="VFX" index="3"]
+[node name="Particles2DPurpleZero" type="Particles2D" parent="VFX" index="2"]
 
 pause_mode = 2
 show_behind_parent = true
@@ -719,7 +658,7 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="Particles2DPurpleZero2" type="Particles2D" parent="VFX" index="4"]
+[node name="Particles2DPurpleZero2" type="Particles2D" parent="VFX" index="3"]
 
 pause_mode = 2
 show_behind_parent = true
@@ -746,7 +685,7 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="Particles2DOrangeOne2" type="Particles2D" parent="VFX" index="5"]
+[node name="Particles2DOrangeOne2" type="Particles2D" parent="VFX" index="4"]
 
 pause_mode = 2
 show_behind_parent = true
@@ -773,7 +712,7 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="Particles2DOrangeOne" type="Particles2D" parent="VFX" index="6"]
+[node name="Particles2DOrangeOne" type="Particles2D" parent="VFX" index="5"]
 
 pause_mode = 2
 show_behind_parent = true
@@ -812,6 +751,7 @@ script = ExtResource( 17 )
 
 [node name="PurpleLaserSidesDetector" type="Area2D" parent="HitDetectors" index="0"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -847,6 +787,7 @@ shape = SubResource( 23 )
 
 [node name="LaserBottom" type="Area2D" parent="HitDetectors" index="2"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -866,6 +807,7 @@ shape = SubResource( 24 )
 
 [node name="FloorSides" type="Area2D" parent="HitDetectors" index="3"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -884,6 +826,7 @@ shape = SubResource( 23 )
 
 [node name="FloorBottom" type="Area2D" parent="HitDetectors" index="4"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -904,6 +847,19 @@ shape = SubResource( 24 )
 
 position = Vector2( 0, 0 )
 scale = Vector2( 0.11, 0.11 )
+
+[node name="Moonwalk" type="AnimatedSprite" parent="." index="6"]
+
+visible = false
+position = Vector2( -5.9118, -39.64 )
+rotation = 0.00734518
+scale = Vector2( 0.453219, 0.453219 )
+frames = SubResource( 25 )
+animation = "default"
+frame = 1
+playing = true
+flip_h = true
+_sections_unfolded = [ "Material", "Visibility" ]
 
 [connection signal="area_entered" from="HitDetectors/PurpleLaserSidesDetector" to="." method="_on_PurpleLaserSidesDetector_area_entered"]
 

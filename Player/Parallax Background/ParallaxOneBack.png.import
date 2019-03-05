@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ParallaxOne.png-4bb983ac09d5392df75734b31c1fe377.stex"
+path="res://.import/ParallaxOneBack.png-9d2f4d1bec3b7aa55494dac03ca5ed56.stex"
 
 [deps]
 
-source_file="res://Player/Parallax Background/ParallaxOne.png"
-dest_files=[ "res://.import/ParallaxOne.png-4bb983ac09d5392df75734b31c1fe377.stex" ]
+source_file="res://Player/Parallax Background/ParallaxOneBack.png"
+dest_files=[ "res://.import/ParallaxOneBack.png-9d2f4d1bec3b7aa55494dac03ca5ed56.stex" ]
 
 [params]
 

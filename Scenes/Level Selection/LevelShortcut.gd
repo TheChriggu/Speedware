@@ -30,11 +30,15 @@ func _on_Button_mouse_entered():
 	$AnimationPlayer.play("Mouse_Hover")
 	
 func EnabledCheck():
-	if config.has_section_key("Time",LevelNumber):
-		$Button.disabled = false
-		print("enabled ", LevelNumber)
-	if not config.has_section_key("Time",LevelNumber):
-		print("disabled ", LevelNumber)
+	var PreLevelNumber = int(LevelNumber)-1
+	var PreLevelNumberConv = str(PreLevelNumber).pad_zeros(2)
+	if int(LevelNumber) > 0:
+		if config.has_section_key("Time",PreLevelNumberConv):
+			$Button.disabled = false
+			print("enabled ", LevelNumber)
+		if not config.has_section_key("Time",PreLevelNumberConv):
+			print("disabled ", LevelNumber)
+	else: $Button.disabled = false
 		
 func _on_Button_mouse_exited():
 	$AnimationPlayer.play("Mouse_Hover_Down")

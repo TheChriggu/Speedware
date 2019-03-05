@@ -146,7 +146,7 @@ tracks/10/keys = {
 "values": [ true ]
 }
 
-[node name="Panel" type="Panel" index="0"]
+[node name="Panel" type="Panel"]
 
 modulate = Color( 1, 1, 1, 0.0331373 )
 self_modulate = Color( 1, 1, 1, 0 )

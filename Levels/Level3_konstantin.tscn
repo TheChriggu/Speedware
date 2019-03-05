@@ -24,7 +24,11 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
 
+<<<<<<< working copy
 [node name="Level" type="Node" index="0"]
+=======
+[node name="Level" type="Node"]
+>>>>>>> merge rev
 
 script = ExtResource( 1 )
 __meta__ = {

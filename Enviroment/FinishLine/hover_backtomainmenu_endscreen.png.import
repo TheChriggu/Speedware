@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LaserLight.png-e3a9bf63d8d01bfe189d212bc3e52265.stex"
+path="res://.import/hover_backtomainmenu_endscreen.png-23a0a06b60c063f1da26f07d5d43c181.stex"
 
 [deps]
 
-source_file="res://Enviroment/Datastrings/LaserLight.png"
-dest_files=[ "res://.import/LaserLight.png-e3a9bf63d8d01bfe189d212bc3e52265.stex" ]
+source_file="res://Enviroment/FinishLine/hover_backtomainmenu_endscreen.png"
+dest_files=[ "res://.import/hover_backtomainmenu_endscreen.png-23a0a06b60c063f1da26f07d5d43c181.stex" ]
 
 [params]
 

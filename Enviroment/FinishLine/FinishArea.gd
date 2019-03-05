@@ -23,6 +23,8 @@ func getFinishTime():
 
 func _on_NextLevel_pressed():
 	get_node("Popup/Control/PopupBackground/NextLevel/ClickSound").playing = true
+	get_tree().change_scene_to(scene_to_load)
+	get_tree().paused =false
 
 func _on_player_FinishLineAnimationFinished():
 	$AnimationPlayer.play("FinishLinePassed")
@@ -40,6 +42,7 @@ func StarRating():
 		if PreviousStarRating < StarRating:
 			setStarRating(StarRating)
 		config.save("user://settings.cfg")
+		GrabButtonFocus()
 		
 	elif getFinishTime() > (PossibleLevelBestTime+TwoStarRatingTolerance) && getFinishTime() < (PossibleLevelBestTime+OneStarRatingTolerance):
 		$Popup/Control/PopupBackground/AnimationPlayer.play("1StarRating")
@@ -47,6 +50,7 @@ func StarRating():
 		if PreviousStarRating < StarRating:
 			setStarRating(StarRating)
 		config.save("user://settings.cfg")
+		GrabButtonFocus()
 		
 	elif getFinishTime() > (PossibleLevelBestTime+OneStarRatingTolerance) && getFinishTime() > (PossibleLevelBestTime+ZeroStarRatingTolerance):
 		$Popup/Control/PopupBackground/AnimationPlayer.play("0StarRating")
@@ -54,6 +58,7 @@ func StarRating():
 		if PreviousStarRating < StarRating:
 			setStarRating(StarRating)
 		config.save("user://settings.cfg")
+		GrabButtonFocus()
 		
 	else:
 		$Popup/Control/PopupBackground/AnimationPlayer.play("3StarRating")
@@ -61,13 +66,11 @@ func StarRating():
 		if PreviousStarRating < StarRating:
 			setStarRating(StarRating)
 		config.save("user://settings.cfg")
+		GrabButtonFocus()
 
 func GrabButtonFocus():
 	$Popup/Control/PopupBackground/NextLevel.grab_focus()
 
-func _on_ClickSound_finished():
-	get_tree().change_scene_to(scene_to_load)
-	get_tree().paused =false
 
 func setStarRating(StarRating):
 	config.set_value("StarRating",Levelnumber,StarRating)

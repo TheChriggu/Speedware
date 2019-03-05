@@ -142,7 +142,6 @@ modulate = Color( 1, 1, 1, 1 )
 
 [node name="Levelnumber" parent="LevelShortcuts/Level1Shortcut" index="4"]
 
-visible = true
 margin_left = -5.0
 margin_top = -6.0
 margin_right = 35.0

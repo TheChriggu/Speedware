@@ -6,8 +6,8 @@ func PlayJumpAnimation():
 
 func TurnBoostParticlesOn():
 	$ParticlesIfBoosted.emitting = true
-	$ParticlesIfBoosted2.emitting = true
+	
 
 func TurnBoostParticlesOff():
 	$ParticlesIfBoosted.emitting = false
-	$ParticlesIfBoosted2.emitting = false
+	

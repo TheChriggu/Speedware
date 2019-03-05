@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LaserLightColor.png-5be77b193960a8a9fb8260398e1d0f9a.stex"
+path="res://.import/YellowCapsAndLight.png-b8fb7306389d5e2598ab237b0edff067.stex"
 
 [deps]
 
-source_file="res://Enviroment/Datastrings/LaserLightColor.png"
-dest_files=[ "res://.import/LaserLightColor.png-5be77b193960a8a9fb8260398e1d0f9a.stex" ]
+source_file="res://Enviroment/Datastrings/YellowCapsAndLight.png"
+dest_files=[ "res://.import/YellowCapsAndLight.png-b8fb7306389d5e2598ab237b0edff067.stex" ]
 
 [params]
 

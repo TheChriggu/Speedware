@@ -1,12 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Enviroment/Datastrings/Laser_0.gd" type="Script" id=1]
 [ext_resource path="res://DatastringPurpleParticlesmaterial.tres" type="Material" id=2]
 [ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=3]
-[ext_resource path="res://Enviroment/Datastrings/LaserLight.png" type="Texture" id=4]
-[ext_resource path="res://Enviroment/Datastrings/LaserLightWeak.png" type="Texture" id=5]
-[ext_resource path="res://Enviroment/Datastrings/LaserLightColor.png" type="Texture" id=6]
-[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteLine2.png" type="Texture" id=7]
+[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteLine2.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -123,18 +120,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("LightStrong:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="Animation" id=10]
 
@@ -167,7 +152,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
-[node name="LaserBlau" type="Sprite"]
+[node name="LaserBlau" type="Sprite" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
@@ -238,66 +223,7 @@ editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 4 )
 
-[node name="LightStrong" type="Light2D" parent="." index="4"]
-
-light_mask = 2
-enabled = true
-editor_only = false
-texture = ExtResource( 4 )
-offset = Vector2( 0, 0 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 2
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-_sections_unfolded = [ "Range", "Visibility" ]
-
-[node name="LightWeak" type="Light2D" parent="." index="5"]
-
-light_mask = 2
-enabled = true
-editor_only = false
-texture = ExtResource( 5 )
-offset = Vector2( 0, 0 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 2
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 2
-_sections_unfolded = [ "Range", "Shadow", "Visibility" ]
-
-[node name="ColoredGlow" type="Sprite" parent="LightWeak" index="0"]
-
-self_modulate = Color( 0.828125, 0, 1, 0.243137 )
-light_mask = 2
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="HitDetection" type="Area2D" parent="." index="6"]
+[node name="HitDetection" type="Area2D" parent="." index="4"]
 
 visible = false
 input_pickable = true
@@ -316,7 +242,7 @@ scale = Vector2( 3.55962, 0.468951 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PaticlesEdgy2" type="Particles2D" parent="." index="7"]
+[node name="PaticlesEdgy2" type="Particles2D" parent="." index="5"]
 
 pause_mode = 2
 show_behind_parent = true
@@ -337,13 +263,13 @@ visibility_rect = Rect2( -1216, -1216, 2668, 2668 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 8 )
-texture = ExtResource( 7 )
+texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility", "Z Index" ]
 
-[node name="ColorSwitch" type="AnimationPlayer" parent="." index="8"]
+[node name="ColorSwitch" type="AnimationPlayer" parent="." index="6"]
 
 root_node = NodePath("..")
 autoplay = ""

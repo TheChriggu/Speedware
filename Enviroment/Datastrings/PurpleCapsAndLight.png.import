@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LaserLightEnd.png-8a82cd63da769da4c58b673b5c6fe419.stex"
+path="res://.import/PurpleCapsAndLight.png-9df0149372cc0007ab9be49714ad2a6b.stex"
 
 [deps]
 
-source_file="res://Enviroment/Datastrings/LaserLightEnd.png"
-dest_files=[ "res://.import/LaserLightEnd.png-8a82cd63da769da4c58b673b5c6fe419.stex" ]
+source_file="res://Enviroment/Datastrings/PurpleCapsAndLight.png"
+dest_files=[ "res://.import/PurpleCapsAndLight.png-9df0149372cc0007ab9be49714ad2a6b.stex" ]
 
 [params]
 

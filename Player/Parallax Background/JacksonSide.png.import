@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/zero_white.png-24ad55c9ef1720b99347a8e4accc979d.stex"
+path="res://.import/JacksonSide.png-0c4f643ebdd6c130385afaffa19fd13a.stex"
 
 [deps]
 
-source_file="res://Player/Particles/TrailEffect/zero_white.png"
-dest_files=[ "res://.import/zero_white.png-24ad55c9ef1720b99347a8e4accc979d.stex" ]
+source_file="res://Player/Parallax Background/JacksonSide.png"
+dest_files=[ "res://.import/JacksonSide.png-0c4f643ebdd6c130385afaffa19fd13a.stex" ]
 
 [params]
 

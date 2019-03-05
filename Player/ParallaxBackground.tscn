@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Player/Parallax Background/ParallaxOneBack.png" type="Texture" id=1]
-[ext_resource path="res://Player/Parallax Background/ParallaxTwo.png" type="Texture" id=2]
-
+[ext_resource path="res://Player/Parallax Background/BackgroundOne.png" type="Texture" id=1]
+[ext_resource path="res://Player/Parallax Background/ParallaxOneBack.png" type="Texture" id=2]
+[ext_resource path="res://Player/Parallax Background/ParallaxTwo.png" type="Texture" id=3]
 
 [sub_resource type="Curve" id=1]
 
@@ -70,42 +70,60 @@ scroll_base_offset = Vector2( 0, 0 )
 scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
-scroll_ignore_camera_zoom = true
+scroll_ignore_camera_zoom = false
 _sections_unfolded = [ "Pause", "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="." index="0"]
 
 motion_scale = Vector2( 0.2, 0.2 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1920, 1080 )
+motion_mirroring = Vector2( 3840, 2160 )
 _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
-[node name="Sprite" type="Sprite" parent="ParallaxLayer" index="0"]
+[node name="Background" type="Sprite" parent="ParallaxLayer" index="0"]
 
-self_modulate = Color( 0, 0.484375, 0.314087, 1 )
-show_behind_parent = true
+self_modulate = Color( 0, 0.0783691, 0.09375, 1 )
 texture = ExtResource( 1 )
 centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 3840, 2160 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="." index="1"]
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="." index="1"]
+
+motion_scale = Vector2( 0.2, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 3840, 2160 )
+_sections_unfolded = [ "Motion", "Transform", "Visibility" ]
+
+[node name="Chips" type="Sprite" parent="ParallaxLayer4" index="0"]
+
+self_modulate = Color( 0, 0.484375, 0.314087, 1 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 3840, 2160 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="." index="2"]
 
 motion_scale = Vector2( 0.3, 0.3 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 1920, 1080 )
+motion_mirroring = Vector2( 3840, 2160 )
 _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
-[node name="Sprite" type="Sprite" parent="ParallaxLayer3" index="0"]
+[node name="Conducters" type="Sprite" parent="ParallaxLayer3" index="0"]
 
 self_modulate = Color( 0, 0.304688, 0.276123, 0.313726 )
-show_behind_parent = true
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 3840, 2160 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="." index="2"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="." index="3"]
 
-motion_scale = Vector2( 0.2, 0.2 )
+motion_scale = Vector2( 0.4, 0.4 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1920, 1080 )
 _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
@@ -113,8 +131,7 @@ _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 [node name="Particles2D" type="Particles2D" parent="ParallaxLayer2" index="0"]
 
 pause_mode = 2
-modulate = Color( 0, 0, 0, 0.613255 )
-self_modulate = Color( 1, 1, 1, 0.381216 )
+self_modulate = Color( 0.016861, 0.226128, 0.253906, 1 )
 emitting = true
 amount = 30
 lifetime = 5.0
@@ -133,6 +150,6 @@ texture = null
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LaserLight.png-e3a9bf63d8d01bfe189d212bc3e52265.stex"
+path="res://.import/ParallaxTwo.png-f1df650d937e7f87956909e0a507415b.stex"
 
 [deps]
 
-source_file="res://Enviroment/Datastrings/LaserLight.png"
-dest_files=[ "res://.import/LaserLight.png-e3a9bf63d8d01bfe189d212bc3e52265.stex" ]
+source_file="res://Player/Parallax Background/ParallaxTwo.png"
+dest_files=[ "res://.import/ParallaxTwo.png-f1df650d937e7f87956909e0a507415b.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

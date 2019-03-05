@@ -27,11 +27,7 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=25]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=26]
 
-<<<<<<< working copy
 [node name="Level" type="Node" index="0"]
-=======
-[node name="Level" type="Node"]
->>>>>>> merge rev
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -56,12 +52,10 @@ FULSPEED_LEEWAY = 900
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 5 )]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="HeadCamCollider" type="Node2D" parent="Player/ForwardLookingCamera" index="2"]
 
-editor/display_folded = true
 script = ExtResource( 6 )
 FIXED_CAMERA = false
 CURRENT_ANCHOR = 0
@@ -330,7 +324,6 @@ LENGTH = 3.0
 
 [node name="Lasers" type="Node2D" parent="Level" index="1"]
 
-editor/display_folded = true
 position = Vector2( -690.146, -2966.67 )
 script = ExtResource( 12 )
 
@@ -916,12 +909,12 @@ text = "03"
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+[connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

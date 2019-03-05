@@ -433,7 +433,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
-scene_to_load = null
+scene_to_load = "res://Levels/Level1.tscn"
 PossibleLevelBestTime = 0.0
 TwoStarRatingTolerance = 8
 OneStarRatingTolerance = 15
@@ -450,7 +450,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="Sprite" index="0"]
 
-editor/display_folded = true
 position = Vector2( 28.4302, 88.1328 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -945,9 +944,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [connection signal="focus_entered" from="Popup/Control/PopupBackground/NextLevel" to="Popup" method="_on_NextLevel_focus_entered"]
 
-[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
-
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
+
+[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
 
 [connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound" to="Popup/Control/PopupBackground/BackToMenu" method="_on_ClickSound_finished"]
 

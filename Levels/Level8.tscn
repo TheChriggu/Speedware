@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
@@ -15,17 +15,16 @@
 [ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Levels/Level9.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=18]
-[ext_resource path="res://UI/UI.gd" type="Script" id=19]
-[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=20]
-[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=21]
-[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=22]
-[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=23]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=24]
-[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=25]
-[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Enviroment/Speedboost/Speedboost.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=17]
+[ext_resource path="res://UI/UI.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=20]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=21]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
+[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=24]
+[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=25]
 
 [node name="Level" type="Node"]
 
@@ -625,7 +624,7 @@ scale = Vector2( 0.0348979, 0.0470226 )
 [node name="FinishArea" parent="Level" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 45342.4, 2319.33 )
-scene_to_load = ExtResource( 16 )
+scene_to_load = "res://Levels/Level9.tscn"
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="3"]
 
@@ -633,7 +632,7 @@ editor/display_folded = true
 visible = false
 position = Vector2( -803.782, 886.093 )
 
-[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 17 )]
+[node name="Speedboost" parent="Level/Speedboosters" index="0" instance=ExtResource( 16 )]
 
 position = Vector2( 3045.72, 551.626 )
 SPEED = 4000
@@ -643,7 +642,7 @@ LENGTH = 10.0
 
 position = Vector2( -884.856, 952.646 )
 mode = 0
-tile_set = ExtResource( 18 )
+tile_set = ExtResource( 17 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -664,25 +663,25 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 [node name="UI" type="Node" parent="." index="3"]
 
 editor/display_folded = true
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 
-[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 20 )]
+[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 19 )]
 
-[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 21 )]
+[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 20 )]
 
-[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 22 )]
+[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 21 )]
 
-[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 23 )]
+[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 22 )]
 
 COLLECTIBLES_IN_THIS_LEVEL = 1
 
-[node name="Timer" parent="UI" index="4" instance=ExtResource( 24 )]
+[node name="Timer" parent="UI" index="4" instance=ExtResource( 23 )]
 
-[node name="Levelnumber" parent="UI/Timer" index="2" instance=ExtResource( 25 )]
+[node name="Levelnumber" parent="UI/Timer" index="2" instance=ExtResource( 24 )]
 
 text = "08"
 
-[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 26 )]
+[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 25 )]
 
 [connection signal="FinishLineAnimationFinished" from="Player/player" to="Level/FinishArea" method="_on_player_FinishLineAnimationFinished"]
 
@@ -1144,9 +1143,9 @@ text = "08"
 
 [connection signal="collected" from="Level/Collectibles/Collectible" to="." method="_on_Collectible_collected"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 

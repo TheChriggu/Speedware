@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Pause Menu/PauseMenu_return_to_Title.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pause Menu/Pause.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Pause Menu/SFXSliderIcon.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Pause Menu/musicsliderIcon.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/xboxone-controller (1).png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -34,7 +35,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[node name="PauseMenu" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 2
@@ -196,6 +197,12 @@ visible = false
 position = Vector2( -35.8354, 4.62738 )
 scale = Vector2( 0.235876, 0.247137 )
 texture = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="Pause" index="5"]
+
+position = Vector2( 737.527, 348.652 )
+scale = Vector2( 0.435586, 0.454935 )
+texture = ExtResource( 10 )
 
 [connection signal="tree_exited" from="." to="." method="_on_PauseMenu_tree_exited"]
 

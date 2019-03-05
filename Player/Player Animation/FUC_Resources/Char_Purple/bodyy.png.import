@@ -1,0 +1,29 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/bodyy.png-982049ffb2b1d7762415eaf63388c22c.stex"
+
+[deps]
+
+source_file="res://Player/Player Animation/FUC_Resources/Char_Purple/bodyy.png"
+dest_files=[ "res://.import/bodyy.png-982049ffb2b1d7762415eaf63388c22c.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Player/Parallax Background/backgroundalpha_rob.png" type="Texture" id=1]
+[ext_resource path="res://Player/Parallax Background/ParallaxOneBack.png" type="Texture" id=1]
+[ext_resource path="res://Player/Parallax Background/ParallaxTwo.png" type="Texture" id=2]
+
 
 [sub_resource type="Curve" id=1]
 
@@ -75,18 +77,33 @@ _sections_unfolded = [ "Pause", "Scroll" ]
 
 motion_scale = Vector2( 0.2, 0.2 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 2880, 1620 )
+motion_mirroring = Vector2( 1920, 1080 )
 _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer" index="0"]
 
-self_modulate = Color( 0.525192, 0.902344, 0.663677, 1 )
+self_modulate = Color( 0, 0.484375, 0.314087, 1 )
 show_behind_parent = true
 texture = ExtResource( 1 )
 centered = false
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="." index="1"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="." index="1"]
+
+motion_scale = Vector2( 0.3, 0.3 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1920, 1080 )
+_sections_unfolded = [ "Motion", "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer3" index="0"]
+
+self_modulate = Color( 0, 0.304688, 0.276123, 0.313726 )
+show_behind_parent = true
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="." index="2"]
 
 motion_scale = Vector2( 0.2, 0.2 )
 motion_offset = Vector2( 0, 0 )

@@ -28,7 +28,7 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=26]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=27]
 
-[node name="Level1_konstantin" type="Node" index="0"]
+[node name="Level1_konstantin" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -320,6 +320,7 @@ rotation = 1.5708
 
 [node name="Lasers" type="Node2D" parent="Level" index="4"]
 
+editor/display_folded = true
 script = ExtResource( 13 )
 
 [node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 11 )]

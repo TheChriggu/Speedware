@@ -59,7 +59,7 @@ script = ExtResource( 3 )
 
 [node name="player" parent="Player" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( -180.375, 1160.96 )
+position = Vector2( -172.024, 1125.89 )
 FULSPEED_LEEWAY = 900
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 5 )]
@@ -3260,11 +3260,11 @@ text = "07"
 
 [connection signal="collected" from="Level/Collectibles/Collectible" to="." method="_on_Collectible_collected"]
 
+[connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
+
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
-
-[connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="speedboost_start" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_start"]
 
@@ -3274,8 +3274,8 @@ text = "07"
 
 [connection signal="speedboost_stop" from="Level/Speedboosters/Speedboost2" to="." method="_on_Speedboost_speedboost_stop"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
-
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

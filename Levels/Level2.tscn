@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
@@ -12,21 +12,22 @@
 [ext_resource path="res://Levels/Level.gd" type="Script" id=10]
 [ext_resource path="res://Enviroment/Datastrings/Lasers.gd" type="Script" id=11]
 [ext_resource path="res://Enviroment/Datastrings/Laser_0.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Levels/Level3.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=17]
-[ext_resource path="res://UI/UI.gd" type="Script" id=18]
-[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=19]
-[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=20]
-[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=21]
-[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
-[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=24]
-[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Enviroment/Datastrings/YellowCapsAndLight.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Enviroment/Datastrings/Laser_1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Enviroment/Collectibles/Collectible.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Enviroment/FinishLine/FinishArea.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Levels/Level3.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Tileset/Tileset_up_to_date.tres" type="TileSet" id=18]
+[ext_resource path="res://UI/UI.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=20]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=21]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=22]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=23]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=24]
+[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=25]
+[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=26]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -45,6 +46,7 @@ FULSPEED_LEEWAY = 900
 
 [node name="ForwardLookingCamera" parent="Player" index="1" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="HeadCamCollider" type="Node2D" parent="Player/ForwardLookingCamera" index="2"]
@@ -86,17 +88,23 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 
 [node name="Lasers" type="Node2D" parent="Level" index="1"]
 
-editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 11 )
 
 [node name="LaserOrange" parent="Level/Lasers" index="0" instance=ExtResource( 12 )]
 
-position = Vector2( 740.654, 3020.8 )
+position = Vector2( 740.654, 3012.8 )
 
 [node name="LaserOrange2" parent="Level/Lasers" index="1" instance=ExtResource( 12 )]
 
-position = Vector2( 740.654, 2764.8 )
+position = Vector2( 740.654, 2756.8 )
+
+[node name="YellowLight" parent="Level/Lasers/LaserOrange2" index="6" instance=ExtResource( 13 )]
+
+margin_left = -256.0
+margin_top = -188.0
+margin_right = 256.0
+margin_bottom = 454.0
 
 [node name="LaserOrange3" parent="Level/Lasers" index="2" instance=ExtResource( 12 )]
 
@@ -105,6 +113,13 @@ position = Vector2( 28156.2, 4621.09 )
 [node name="LaserOrange16" parent="Level/Lasers" index="3" instance=ExtResource( 12 )]
 
 position = Vector2( 28156.2, 4365.09 )
+
+[node name="YellowLight2" parent="Level/Lasers/LaserOrange16" index="6" instance=ExtResource( 13 )]
+
+margin_left = -256.0
+margin_top = -196.0
+margin_right = 256.0
+margin_bottom = 446.0
 
 [node name="LaserOrange4" parent="Level/Lasers" index="4" instance=ExtResource( 12 )]
 
@@ -186,83 +201,83 @@ position = Vector2( 39906.8, 4738.72 )
 
 position = Vector2( 39906.8, 4482.72 )
 
-[node name="LaserBlau" parent="Level/Lasers" index="24" instance=ExtResource( 13 )]
+[node name="LaserBlau" parent="Level/Lasers" index="24" instance=ExtResource( 14 )]
 
 position = Vector2( -1391.11, 3042.76 )
 
-[node name="LaserBlau2" parent="Level/Lasers" index="25" instance=ExtResource( 13 )]
+[node name="LaserBlau2" parent="Level/Lasers" index="25" instance=ExtResource( 14 )]
 
 position = Vector2( 2388.16, 3016.36 )
 
-[node name="LaserBlau20" parent="Level/Lasers" index="26" instance=ExtResource( 13 )]
+[node name="LaserBlau20" parent="Level/Lasers" index="26" instance=ExtResource( 14 )]
 
 position = Vector2( 2388.16, 2760.36 )
 
-[node name="LaserBlau3" parent="Level/Lasers" index="27" instance=ExtResource( 13 )]
+[node name="LaserBlau3" parent="Level/Lasers" index="27" instance=ExtResource( 14 )]
 
 position = Vector2( 27545.3, 4621.08 )
 
-[node name="LaserBlau16" parent="Level/Lasers" index="28" instance=ExtResource( 13 )]
+[node name="LaserBlau16" parent="Level/Lasers" index="28" instance=ExtResource( 14 )]
 
 position = Vector2( 27545.3, 4364.08 )
 
-[node name="LaserBlau4" parent="Level/Lasers" index="29" instance=ExtResource( 13 )]
+[node name="LaserBlau4" parent="Level/Lasers" index="29" instance=ExtResource( 14 )]
 
 position = Vector2( 28703.7, 4621.08 )
 
-[node name="LaserBlau15" parent="Level/Lasers" index="30" instance=ExtResource( 13 )]
+[node name="LaserBlau15" parent="Level/Lasers" index="30" instance=ExtResource( 14 )]
 
 position = Vector2( 28703.7, 4365.08 )
 
-[node name="LaserBlau9" parent="Level/Lasers" index="31" instance=ExtResource( 13 )]
+[node name="LaserBlau9" parent="Level/Lasers" index="31" instance=ExtResource( 14 )]
 
 position = Vector2( 30864, 4621.08 )
 
-[node name="LaserBlau14" parent="Level/Lasers" index="32" instance=ExtResource( 13 )]
+[node name="LaserBlau14" parent="Level/Lasers" index="32" instance=ExtResource( 14 )]
 
 position = Vector2( 30864, 4365.08 )
 
-[node name="LaserBlau5" parent="Level/Lasers" index="33" instance=ExtResource( 13 )]
+[node name="LaserBlau5" parent="Level/Lasers" index="33" instance=ExtResource( 14 )]
 
 position = Vector2( 34295, 4816.7 )
 
-[node name="LaserBlau6" parent="Level/Lasers" index="34" instance=ExtResource( 13 )]
+[node name="LaserBlau6" parent="Level/Lasers" index="34" instance=ExtResource( 14 )]
 
 position = Vector2( 34295, 4560.7 )
 
-[node name="LaserBlau17" parent="Level/Lasers" index="35" instance=ExtResource( 13 )]
+[node name="LaserBlau17" parent="Level/Lasers" index="35" instance=ExtResource( 14 )]
 
 position = Vector2( 34295, 4304.7 )
 
-[node name="LaserBlau8" parent="Level/Lasers" index="36" instance=ExtResource( 13 )]
+[node name="LaserBlau8" parent="Level/Lasers" index="36" instance=ExtResource( 14 )]
 
 position = Vector2( 36729.1, 4816.7 )
 
-[node name="LaserBlau7" parent="Level/Lasers" index="37" instance=ExtResource( 13 )]
+[node name="LaserBlau7" parent="Level/Lasers" index="37" instance=ExtResource( 14 )]
 
 position = Vector2( 36729.1, 4560.7 )
 
-[node name="LaserBlau18" parent="Level/Lasers" index="38" instance=ExtResource( 13 )]
+[node name="LaserBlau18" parent="Level/Lasers" index="38" instance=ExtResource( 14 )]
 
 position = Vector2( 36729.1, 4304.7 )
 
-[node name="LaserBlau11" parent="Level/Lasers" index="39" instance=ExtResource( 13 )]
+[node name="LaserBlau11" parent="Level/Lasers" index="39" instance=ExtResource( 14 )]
 
 position = Vector2( 44311.8, 5287.81 )
 
-[node name="LaserBlau10" parent="Level/Lasers" index="40" instance=ExtResource( 13 )]
+[node name="LaserBlau10" parent="Level/Lasers" index="40" instance=ExtResource( 14 )]
 
 position = Vector2( 44311.8, 5031.81 )
 
-[node name="LaserBlau19" parent="Level/Lasers" index="41" instance=ExtResource( 13 )]
+[node name="LaserBlau19" parent="Level/Lasers" index="41" instance=ExtResource( 14 )]
 
 position = Vector2( 44311.8, 4775.81 )
 
-[node name="LaserBlau12" parent="Level/Lasers" index="42" instance=ExtResource( 13 )]
+[node name="LaserBlau12" parent="Level/Lasers" index="42" instance=ExtResource( 14 )]
 
 position = Vector2( 42629.3, 4488.28 )
 
-[node name="LaserBlau13" parent="Level/Lasers" index="43" instance=ExtResource( 13 )]
+[node name="LaserBlau13" parent="Level/Lasers" index="43" instance=ExtResource( 14 )]
 
 position = Vector2( 42629.3, 4231.28 )
 
@@ -270,28 +285,28 @@ position = Vector2( 42629.3, 4231.28 )
 
 position = Vector2( 660.131, -1882.08 )
 
-[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 14 )]
+[node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 15 )]
 
 position = Vector2( 44927.7, 4401.05 )
 scale = Vector2( 0.0482742, 0.0499158 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
 
-[node name="Collectible2" parent="Level/Collectibles" index="1" instance=ExtResource( 14 )]
+[node name="Collectible2" parent="Level/Collectibles" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 25637.9, 4415.06 )
 scale = Vector2( 0.0482742, 0.0499158 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
 
-[node name="FinishArea" parent="Level" index="3" instance=ExtResource( 15 )]
+[node name="FinishArea" parent="Level" index="3" instance=ExtResource( 16 )]
 
 position = Vector2( 54776.5, 8556.76 )
-scene_to_load = ExtResource( 16 )
+scene_to_load = ExtResource( 17 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="4"]
 
 position = Vector2( -884.856, 952.646 )
 mode = 0
-tile_set = ExtResource( 17 )
+tile_set = ExtResource( 18 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -311,25 +326,25 @@ _sections_unfolded = [ "Cell", "Collision", "Material", "Pause", "Transform", "V
 
 [node name="UI" type="Node" parent="." index="3"]
 
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
-[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 19 )]
+[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 20 )]
 
-[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 20 )]
+[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 21 )]
 
-[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 21 )]
+[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 22 )]
 
-[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 22 )]
+[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 23 )]
 
 COLLECTIBLES_IN_THIS_LEVEL = 2
 
-[node name="Timer" parent="UI" index="4" instance=ExtResource( 23 )]
+[node name="Timer" parent="UI" index="4" instance=ExtResource( 24 )]
 
-[node name="Levelnumber" parent="UI/Timer" index="2" instance=ExtResource( 24 )]
+[node name="Levelnumber" parent="UI/Timer" index="2" instance=ExtResource( 25 )]
 
 text = "02"
 
-[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 25 )]
+[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 26 )]
 
 [connection signal="FinishLineAnimationFinished" from="Player/player" to="Level/FinishArea" method="_on_player_FinishLineAnimationFinished"]
 
@@ -533,16 +548,16 @@ text = "02"
 
 [connection signal="collected" from="Level/Collectibles/Collectible2" to="." method="_on_Collectible_collected"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
+[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="." method="_on_GameStartTimer_GameStartTimerEnd"]
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

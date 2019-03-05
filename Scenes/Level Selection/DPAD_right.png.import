@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LaserLight.png-e3a9bf63d8d01bfe189d212bc3e52265.stex"
+path="res://.import/DPAD_right.png-48382e420c63187c11b3785c4c1b9be1.stex"
 
 [deps]
 
-source_file="res://Enviroment/Datastrings/LaserLight.png"
-dest_files=[ "res://.import/LaserLight.png-e3a9bf63d8d01bfe189d212bc3e52265.stex" ]
+source_file="res://Scenes/Level Selection/DPAD_right.png"
+dest_files=[ "res://.import/DPAD_right.png-48382e420c63187c11b3785c4c1b9be1.stex" ]
 
 [params]
 

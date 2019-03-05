@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/zero_white.png-24ad55c9ef1720b99347a8e4accc979d.stex"
+path="res://.import/pause_michelle.png-d3f22b2f28b3212690f22559102573d9.stex"
 
 [deps]
 
-source_file="res://Player/Particles/TrailEffect/zero_white.png"
-dest_files=[ "res://.import/zero_white.png-24ad55c9ef1720b99347a8e4accc979d.stex" ]
+source_file="res://Scenes/Pause Menu/pause_michelle.png"
+dest_files=[ "res://.import/pause_michelle.png-d3f22b2f28b3212690f22559102573d9.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/one_white.png-94238ad96046ce8d14bb654ba00d0658.stex"
+path="res://.import/ParallaxTwo.png-f1df650d937e7f87956909e0a507415b.stex"
 
 [deps]
 
-source_file="res://Player/Particles/TrailEffect/one_white.png"
-dest_files=[ "res://.import/one_white.png-94238ad96046ce8d14bb654ba00d0658.stex" ]
+source_file="res://Player/Parallax Background/ParallaxTwo.png"
+dest_files=[ "res://.import/ParallaxTwo.png-f1df650d937e7f87956909e0a507415b.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

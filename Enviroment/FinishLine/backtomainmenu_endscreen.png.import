@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/one_white.png-94238ad96046ce8d14bb654ba00d0658.stex"
+path="res://.import/backtomainmenu_endscreen.png-48e3c3083267629de29030f5a2e379c4.stex"
 
 [deps]
 
-source_file="res://Player/Particles/TrailEffect/one_white.png"
-dest_files=[ "res://.import/one_white.png-94238ad96046ce8d14bb654ba00d0658.stex" ]
+source_file="res://Enviroment/FinishLine/backtomainmenu_endscreen.png"
+dest_files=[ "res://.import/backtomainmenu_endscreen.png-48e3c3083267629de29030f5a2e379c4.stex" ]
 
 [params]
 

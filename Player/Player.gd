@@ -6,9 +6,6 @@ func _ready():
 	$ForwardLookingCamera.WALK_MAX_SPEED = $player.WALK_MAX_SPEED
 
 func _physics_process(delta):
-	if isInSpeedboost:
-		$ForwardLookingCamera.UpdateCameraSpeedBoost($player.position, $player.velocity)
-	else:
 		$ForwardLookingCamera.UpdateCamera($player.position, $player.velocity)
 
 func SwitchColorToOrange():
@@ -20,10 +17,12 @@ func SwitchColorToPurple():
 func SpeedboostStart(speed):
 	$player.velocity = speed
 	$player.isInSpeedboost = true
+	$ForwardLookingCamera.isInSpeedBoost = true
 	isInSpeedboost = true
 
 func SpeedboostStop():
 	$player.isInSpeedboost = false
+	$ForwardLookingCamera.isInSpeedBoost = false
 	isInSpeedboost = false
 
 func LaserEntered():
@@ -37,3 +36,6 @@ func PlayerIsAtFullspeed():
 
 func PlayerIsNotAtFullspeed():
 	$BackgroundMusic.isAtFullspeed = false
+
+func FinishLinePassed():
+	$BackgroundMusic.Stop()

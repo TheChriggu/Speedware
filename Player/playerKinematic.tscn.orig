@@ -1,22 +1,23 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Player/playerKinematic.gd" type="Script" id=1]
 [ext_resource path="res://Player/SFX.gd" type="Script" id=2]
-[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToOrange.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff_v2.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToOrange_v2.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sounds/SFX/SFX_Player_SwitchColorToPurple.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sounds/SFX/SFX_Player_HitDatastring.wav" type="AudioStream" id=6]
 [ext_resource path="res://Sounds/SFX/SFX_Player_MoveThroughDataString.wav" type="AudioStream" id=7]
 [ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnFloor.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sounds/SFX/SFX_Player_MoveOnDataString.wav" type="AudioStream" id=9]
-[ext_resource path="res://Player/HitDetectors.gd" type="Script" id=10]
+[ext_resource path="res://Sounds/SFX/SFX_Background_Ambience_Level.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Player/Particles/VFX.gd" type="Script" id=11]
 [ext_resource path="res://Player/SwitcheffectExplosion.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Player/charakter_pink_sprite.png" type="Texture" id=13]
 [ext_resource path="res://Player/Particles/playerKinematic1.tres" type="Material" id=14]
 [ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=15]
 [ext_resource path="res://Player/Particles/playerKinematic2.tres" type="Material" id=16]
-[ext_resource path="res://Player/Player Animation/Run.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Player/HitDetectors.gd" type="Script" id=17]
+[ext_resource path="res://Player/Player Animation/Run2.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=1]
 
@@ -115,12 +116,36 @@ step = 0.1
 length = 0.8
 loop = false
 step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedCharacter:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.11, 0.11 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 
 length = 1.0
 loop = false
 step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedCharacter:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.11, 0.11 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 
@@ -179,8 +204,8 @@ tracks/3/keys = {
 "method": "OrangeToPurple"
 } ]
 }
-tracks/4/type = "method"
-tracks/4/path = NodePath("AnimatedCharacter")
+tracks/4/type = "value"
+tracks/4/path = NodePath("VFX/Particles2DPurpleZero:emitting")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -188,13 +213,11 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "SwitchColorToPurple"
-} ]
+"update": 1,
+"values": [ true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("VFX/Particles2DPurpleZero:emitting")
+tracks/5/path = NodePath("VFX/Particles2DPurpleZero2:emitting")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -206,7 +229,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("VFX/Particles2DPurpleZero2:emitting")
+tracks/6/path = NodePath("VFX/Particles2DOrangeOne2:emitting")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -215,10 +238,10 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("VFX/Particles2DOrangeOne2:emitting")
+tracks/7/path = NodePath("VFX/Particles2DOrangeOne:emitting")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -229,8 +252,8 @@ tracks/7/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("VFX/Particles2DOrangeOne:emitting")
+tracks/8/type = "method"
+tracks/8/path = NodePath("AnimatedCharacter")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -238,8 +261,10 @@ tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"values": [ {
+"args": [  ],
+"method": "SwitchColorToPurple"
+} ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -362,30 +387,20 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=12]
-
-custom_solver_bias = 0.0
-extents = Vector2( 44.4859, 49.4475 )
-
-[sub_resource type="RectangleShape2D" id=13]
-
-custom_solver_bias = 0.0
-extents = Vector2( 19.3401, 3.74847 )
-
-[sub_resource type="Curve" id=14]
+[sub_resource type="Curve" id=12]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.942558, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=15]
+[sub_resource type="CurveTexture" id=13]
 
 flags = 4
 width = 2048
-curve = SubResource( 14 )
+curve = SubResource( 12 )
 
-[sub_resource type="ParticlesMaterial" id=16]
+[sub_resource type="ParticlesMaterial" id=14]
 
 render_priority = 0
 trail_divisor = 1
@@ -414,7 +429,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.4
 scale_random = 0.0
-scale_curve = SubResource( 15 )
+scale_curve = SubResource( 13 )
 color = Color( 1, 1, 1, 0.392157 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -425,20 +440,20 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Scale", "Spread", "Trail" ]
 
-[sub_resource type="Curve" id=17]
+[sub_resource type="Curve" id=15]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.942558, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=18]
+[sub_resource type="CurveTexture" id=16]
 
 flags = 4
 width = 2048
-curve = SubResource( 17 )
+curve = SubResource( 15 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=17]
 
 render_priority = 0
 trail_divisor = 1
@@ -467,7 +482,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.4
 scale_random = 0.0
-scale_curve = SubResource( 18 )
+scale_curve = SubResource( 16 )
 color = Color( 1, 1, 1, 0.392157 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -477,6 +492,18 @@ anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Scale", "Spread", "Trail" ]
+
+[sub_resource type="CanvasItemMaterial" id=18]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id=19]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 2
 
 [sub_resource type="CanvasItemMaterial" id=20]
 
@@ -490,23 +517,21 @@ render_priority = 0
 blend_mode = 1
 light_mode = 2
 
-[sub_resource type="CanvasItemMaterial" id=22]
-
-render_priority = 0
-blend_mode = 1
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=23]
-
-render_priority = 0
-blend_mode = 1
-light_mode = 2
-
-[sub_resource type="CapsuleShape2D" id=24]
+[sub_resource type="CapsuleShape2D" id=22]
 
 custom_solver_bias = 0.0
 radius = 19.0555
-height = 113.446
+height = 102.374
+
+[sub_resource type="RectangleShape2D" id=23]
+
+custom_solver_bias = 0.0
+extents = Vector2( 36.3838, 47.2636 )
+
+[sub_resource type="RectangleShape2D" id=24]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16.1691, 1.04485 )
 
 [node name="player" type="KinematicBody2D"]
 
@@ -516,7 +541,6 @@ collision_layer = 30
 collision_mask = 22
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "collision" ]
 GRAVITY = 0.0
 WALK_FORCE = 0
 WALK_MIN_SPEED = 300
@@ -603,9 +627,9 @@ bus = "SFX"
 [node name="MoveOnFloor" type="AudioStreamPlayer" parent="SFX" index="5"]
 
 stream = ExtResource( 8 )
-volume_db = 10.0
+volume_db = -15.0
 pitch_scale = 1.0
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "SFX"
 
@@ -618,105 +642,18 @@ autoplay = false
 mix_target = 0
 bus = "SFX"
 
-[node name="HitDetectors" type="Node2D" parent="SFX" index="7"]
+[node name="BackgroundAmbience" type="AudioStreamPlayer" parent="SFX" index="7"]
 
-script = ExtResource( 10 )
-
-[node name="PurpleLaserSidesDetector" type="Area2D" parent="SFX/HitDetectors" index="0"]
-
-editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Audio Bus", "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/HitDetectors/PurpleLaserSidesDetector" index="0"]
-
-position = Vector2( -5.25743, -27.0959 )
-shape = SubResource( 12 )
-
-[node name="OrangeLaserSidesDetector" type="Area2D" parent="SFX/HitDetectors" index="1"]
-
-editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 2
-collision_mask = 2
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Audio Bus", "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/HitDetectors/OrangeLaserSidesDetector" index="0"]
-
-position = Vector2( -5.25743, -27.0959 )
-shape = SubResource( 12 )
-
-[node name="LaserBottom" type="Area2D" parent="SFX/HitDetectors" index="2"]
-
-editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 3
-collision_mask = 3
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/HitDetectors/LaserBottom" index="0"]
-
-position = Vector2( -7.27951, 80.479 )
-shape = SubResource( 13 )
-
-[node name="FloorSides" type="Area2D" parent="SFX/HitDetectors" index="3"]
-
-editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 0
-collision_mask = 4
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/HitDetectors/FloorSides" index="0"]
-
-position = Vector2( -5.25743, -27.0959 )
-shape = SubResource( 12 )
-
-[node name="FloorBottom" type="Area2D" parent="SFX/HitDetectors" index="4"]
-
-editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 4
-collision_mask = 4
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SFX/HitDetectors/FloorBottom" index="0"]
-
-position = Vector2( -7.27951, 80.479 )
-shape = SubResource( 13 )
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [node name="VFX" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 11 )
 
 [node name="SwitcheffectExplosion" parent="VFX" index="0" instance=ExtResource( 12 )]
@@ -744,7 +681,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 1
-process_material = SubResource( 16 )
+process_material = SubResource( 14 )
 texture = ExtResource( 13 )
 normal_map = null
 h_frames = 1
@@ -770,7 +707,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 1
-process_material = SubResource( 19 )
+process_material = SubResource( 17 )
 texture = ExtResource( 13 )
 normal_map = null
 h_frames = 1
@@ -781,7 +718,7 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 20 )
+material = SubResource( 18 )
 position = Vector2( -0.833429, 1.35102 )
 rotation = -1.5708
 scale = Vector2( 1.25, 1.25 )
@@ -809,7 +746,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 21 )
+material = SubResource( 19 )
 position = Vector2( -11.7782, 1.56522 )
 rotation = -1.5708
 emitting = true
@@ -836,7 +773,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 22 )
+material = SubResource( 20 )
 position = Vector2( -2.71884, 2.68202 )
 rotation = -1.5708
 emitting = false
@@ -863,7 +800,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 pause_mode = 2
 show_behind_parent = true
-material = SubResource( 23 )
+material = SubResource( 21 )
 position = Vector2( -13.6422, 2.68202 )
 rotation = -1.5708
 emitting = false
@@ -886,28 +823,122 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="AnimatedCharacter" parent="." index="3" instance=ExtResource( 17 )]
-
-position = Vector2( 0, 0 )
-scale = Vector2( 0.12, 0.12 )
-_sections_unfolded = [ "Material", "Pause", "Transform" ]
-
-[node name="PhysicsCollider" type="CollisionShape2D" parent="." index="4"]
+[node name="PhysicsCollider" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( -6.1861, -0.360727 )
-shape = SubResource( 24 )
+shape = SubResource( 22 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
-[connection signal="area_entered" from="SFX/HitDetectors/PurpleLaserSidesDetector" to="." method="_on_PurpleLaserSidesDetector_area_entered"]
+[node name="HitDetectors" type="Node2D" parent="." index="4"]
 
-[connection signal="area_entered" from="SFX/HitDetectors/OrangeLaserSidesDetector" to="." method="_on_OrangeLaserSidesDetector_area_entered"]
+editor/display_folded = true
+script = ExtResource( 17 )
 
-[connection signal="area_entered" from="SFX/HitDetectors/LaserBottom" to="SFX/HitDetectors" method="_on_LaserBottom_area_entered"]
+[node name="PurpleLaserSidesDetector" type="Area2D" parent="HitDetectors" index="0"]
 
-[connection signal="area_exited" from="SFX/HitDetectors/LaserBottom" to="SFX/HitDetectors" method="_on_LaserBottom_area_exited"]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
 
-[connection signal="area_entered" from="SFX/HitDetectors/FloorBottom" to="SFX/HitDetectors" method="_on_FloorBottom_area_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/PurpleLaserSidesDetector" index="0"]
 
-[connection signal="area_exited" from="SFX/HitDetectors/FloorBottom" to="SFX/HitDetectors" method="_on_FloorBottom_area_exited"]
+position = Vector2( -5.25743, -27.0959 )
+shape = SubResource( 23 )
+
+[node name="OrangeLaserSidesDetector" type="Area2D" parent="HitDetectors" index="1"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/OrangeLaserSidesDetector" index="0"]
+
+position = Vector2( -5.25743, -27.0959 )
+shape = SubResource( 23 )
+
+[node name="LaserBottom" type="Area2D" parent="HitDetectors" index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 3
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/LaserBottom" index="0"]
+
+visible = false
+position = Vector2( -7.27951, 80.479 )
+shape = SubResource( 24 )
+
+[node name="FloorSides" type="Area2D" parent="HitDetectors" index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 4
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/FloorSides" index="0"]
+
+position = Vector2( -5.25743, -27.0959 )
+shape = SubResource( 23 )
+
+[node name="FloorBottom" type="Area2D" parent="HitDetectors" index="4"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32
+collision_mask = 32
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetectors/FloorBottom" index="0"]
+
+position = Vector2( -5.0314, 69.855 )
+shape = SubResource( 24 )
+
+[node name="AnimatedCharacter" parent="." index="5" instance=ExtResource( 18 )]
+
+position = Vector2( 0, 0 )
+scale = Vector2( 0.11, 0.11 )
+
+[connection signal="area_entered" from="HitDetectors/PurpleLaserSidesDetector" to="." method="_on_PurpleLaserSidesDetector_area_entered"]
+
+[connection signal="area_entered" from="HitDetectors/OrangeLaserSidesDetector" to="." method="_on_OrangeLaserSidesDetector_area_entered"]
+
+[connection signal="area_entered" from="HitDetectors/LaserBottom" to="HitDetectors" method="_on_LaserBottom_area_entered"]
+
+[connection signal="area_exited" from="HitDetectors/LaserBottom" to="HitDetectors" method="_on_LaserBottom_area_exited"]
+
+[connection signal="body_entered" from="HitDetectors/FloorBottom" to="HitDetectors" method="_on_FloorBottom_body_entered"]
+
+[connection signal="body_exited" from="HitDetectors/FloorBottom" to="HitDetectors" method="_on_FloorBottom_body_exited"]
 
 

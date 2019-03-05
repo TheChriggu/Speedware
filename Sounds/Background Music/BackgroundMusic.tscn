@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sounds/Background Music/BackgroundMusic.gd" type="Script" id=1]
-[ext_resource path="res://Sounds/Background Music/Speedware_Basic_Layer_Bass.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Sounds/Background Music/Speedware_Layer_2.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Sounds/Background Music/Speedware_Layer_3.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Sounds/Background Music/Speedware_Basic_Layer_Drums.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/Background Music/Basic_Layer.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/Background Music/Layer_2-3_Percussion.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Background Music/Layer_2_Tonal.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Background Music/Layer_3_Tonal.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Sounds/Background Music/Timer.gd" type="Script" id=6]
 [ext_resource path="res://Sounds/Background Music/FullspeedTracker.gd" type="Script" id=7]
 
@@ -67,25 +67,25 @@ playback_speed = 1.0
 anims/OnBeat = SubResource( 1 )
 blend_times = [  ]
 
-[node name="Speedware_Basic_Layer_Bass" type="AudioStreamPlayer" parent="." index="1"]
+[node name="Speedware_Layer1" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 2 )
 volume_db = 0.0
 pitch_scale = 1.0
-autoplay = false
+autoplay = true
 mix_target = 0
-bus = "Bass"
+bus = "Layer1"
 
-[node name="Speedware_Layer_2" type="AudioStreamPlayer" parent="." index="2"]
+[node name="Speedware_Layer2and3_Percussion" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Layer2"
+bus = "Drums"
 
-[node name="Speedware_Layer_3" type="AudioStreamPlayer" parent="." index="3"]
+[node name="Speedware_Layer2" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
@@ -94,7 +94,7 @@ autoplay = false
 mix_target = 0
 bus = "Layer3"
 
-[node name="Speedware_Basic_Layer_Drums" type="AudioStreamPlayer" parent="." index="4"]
+[node name="Speedware_Layer3" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = ExtResource( 5 )
 volume_db = 0.0

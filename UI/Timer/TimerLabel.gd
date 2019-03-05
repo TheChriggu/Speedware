@@ -7,4 +7,4 @@ func _ready():
 
 func _process(delta):
 	var CurrentTimer = get_parent().PrintCurrentTime()
-	text = str(CurrentTimer)
+	text = str(CurrentTimer).pad_zeros(2)

@@ -10,3 +10,6 @@ func SetHorizontal(offset):
 #set the vertical camera position
 func SetVertical(offset):
 	global_position.y  = offset - VERTICAL_OFFSET
+
+func SetZoomLevel(level):
+	$Camera2D.zoom = Vector2(level, level)

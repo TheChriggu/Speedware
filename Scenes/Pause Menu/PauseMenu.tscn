@@ -1,12 +1,38 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Pause Menu/PauseMenu_return_to_Title.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pause Menu/Pause.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Pause Menu/01_ui_pause.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Level Selection/button_levelselction_music_michelle.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Pause Menu/SFXSliderIcon.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/Pause Menu/musicsliderIcon.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Pause Menu/pause_michelle.png" type="Texture" id=3]
+[ext_resource path="res://Enviroment/FinishLine/backtomainmenu_endscreen.png" type="Texture" id=4]
+[ext_resource path="res://Enviroment/FinishLine/hover_backtomainmenu_endscreen.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_music_michelle.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Pause Menu/SFXSliderIcon.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Pause Menu/musicsliderIcon.png" type="Texture" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+margin_left = 0.0
+margin_right = 0.0
+margin_top = 0.0
+margin_bottom = 0.0
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+modulate_color = Color( 1, 1, 1, 1 )
+draw_center = true
 
 [node name="PauseMenu" type="CanvasLayer"]
 
@@ -52,20 +78,20 @@ color = Color( 0, 0, 0, 0.651922 )
 
 [node name="Sprite" type="Sprite" parent="Pause" index="1"]
 
-position = Vector2( 1038.86, 793.693 )
+position = Vector2( 1027.7, 464.531 )
 texture = ExtResource( 3 )
 
-[node name="Button" type="Button" parent="Pause" index="2"]
+[node name="Button" type="TextureButton" parent="Pause" index="2"]
 
 pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 863.0
-margin_top = 883.0
-margin_right = 1123.0
-margin_bottom = 975.0
+margin_left = 855.0
+margin_top = 582.0
+margin_right = 1255.0
+margin_bottom = 782.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_top = NodePath("../SFXslider")
@@ -79,10 +105,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Exit to Main Menu"
-flat = false
-align = 1
-_sections_unfolded = [ "Focus", "Pause" ]
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+_sections_unfolded = [ "Focus", "Pause", "Textures" ]
 
 [node name="SFXslider" type="HSlider" parent="Pause" index="3"]
 
@@ -90,10 +115,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 766.0
-margin_top = 826.0
-margin_right = 1296.0
-margin_bottom = 842.0
+margin_left = 779.0
+margin_top = 597.0
+margin_right = 1309.0
+margin_bottom = 613.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_top = NodePath("../Musicslider")
@@ -103,10 +128,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_icons/tick = ExtResource( 4 )
-custom_icons/grabber_disabled = ExtResource( 4 )
-custom_icons/grabber_highlight = ExtResource( 5 )
-custom_icons/grabber = ExtResource( 4 )
+custom_icons/tick = ExtResource( 6 )
+custom_icons/grabber_disabled = ExtResource( 6 )
+custom_icons/grabber_highlight = ExtResource( 7 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 1 )
 min_value = -40.0
 max_value = 20.0
 step = 10.0
@@ -118,13 +144,14 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-_sections_unfolded = [ "Focus" ]
+_sections_unfolded = [ "Focus", "custom_styles" ]
 
 [node name="Sprite" type="Sprite" parent="Pause/SFXslider" index="0"]
 
+visible = false
 position = Vector2( -33.1747, 14.1246 )
 scale = Vector2( 0.161534, 0.236995 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="Musicslider" type="HSlider" parent="Pause" index="4"]
 
@@ -132,10 +159,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 765.0
-margin_top = 771.0
-margin_right = 1295.0
-margin_bottom = 787.0
+margin_left = 777.0
+margin_top = 491.0
+margin_right = 1307.0
+margin_bottom = 507.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_top = NodePath("../Button")
@@ -145,10 +172,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_icons/tick = ExtResource( 4 )
-custom_icons/grabber_disabled = ExtResource( 4 )
-custom_icons/grabber_highlight = ExtResource( 5 )
-custom_icons/grabber = ExtResource( 4 )
+custom_icons/tick = ExtResource( 6 )
+custom_icons/grabber_disabled = ExtResource( 6 )
+custom_icons/grabber_highlight = ExtResource( 7 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 2 )
 min_value = -40.0
 max_value = 20.0
 step = 10.0
@@ -164,9 +192,10 @@ _sections_unfolded = [ "Focus", "custom_styles" ]
 
 [node name="Sprite" type="Sprite" parent="Pause/Musicslider" index="0"]
 
+visible = false
 position = Vector2( -35.8354, 4.62738 )
 scale = Vector2( 0.235876, 0.247137 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [connection signal="tree_exited" from="." to="." method="_on_PauseMenu_tree_exited"]
 

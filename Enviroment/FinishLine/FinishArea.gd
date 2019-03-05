@@ -42,6 +42,7 @@ func StarRating():
 		if PreviousStarRating < StarRating:
 			setStarRating(StarRating)
 		config.save("user://settings.cfg")
+		GrabButtonFocus()
 		
 	elif getFinishTime() > (PossibleLevelBestTime+TwoStarRatingTolerance) && getFinishTime() < (PossibleLevelBestTime+OneStarRatingTolerance):
 		$Popup/Control/PopupBackground/AnimationPlayer.play("1StarRating")
@@ -49,6 +50,7 @@ func StarRating():
 		if PreviousStarRating < StarRating:
 			setStarRating(StarRating)
 		config.save("user://settings.cfg")
+		GrabButtonFocus()
 		
 	elif getFinishTime() > (PossibleLevelBestTime+OneStarRatingTolerance) && getFinishTime() > (PossibleLevelBestTime+ZeroStarRatingTolerance):
 		$Popup/Control/PopupBackground/AnimationPlayer.play("0StarRating")
@@ -56,6 +58,7 @@ func StarRating():
 		if PreviousStarRating < StarRating:
 			setStarRating(StarRating)
 		config.save("user://settings.cfg")
+		GrabButtonFocus()
 		
 	else:
 		$Popup/Control/PopupBackground/AnimationPlayer.play("3StarRating")
@@ -63,6 +66,7 @@ func StarRating():
 		if PreviousStarRating < StarRating:
 			setStarRating(StarRating)
 		config.save("user://settings.cfg")
+		GrabButtonFocus()
 
 func GrabButtonFocus():
 	$Popup/Control/PopupBackground/NextLevel.grab_focus()

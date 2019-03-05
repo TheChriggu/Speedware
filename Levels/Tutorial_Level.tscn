@@ -187,7 +187,7 @@ scale = Vector2( 0.0348979, 0.0470226 )
 
 [node name="FinishArea" parent="Level" index="2" instance=ExtResource( 15 )]
 
-position = Vector2( 36753.4, 7389.5 )
+position = Vector2( 481.587, 1161.33 )
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 
@@ -223,6 +223,8 @@ SPEED = 4000
 LENGTH = 10.0
 
 [node name="PopUps" type="Node2D" parent="Level" index="5"]
+
+editor/display_folded = true
 
 [node name="PopUp0" type="Area2D" parent="Level/PopUps" index="0"]
 
@@ -438,9 +440,9 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="laser_exited" from="Level/Lasers" to="." method="_on_Lasers_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
-
 [connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
@@ -518,6 +520,10 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
+[connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
+
 [connection signal="speedboost_start" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_start"]
 
 [connection signal="speedboost_stop" from="Level/Speedboosters/Speedboost" to="." method="_on_Speedboost_speedboost_stop"]
@@ -540,8 +546,8 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="timeout" from="Level/PopUps/PopUp2/Timer" to="Level/PopUps/PopUp2" method="_on_Timer_timeout"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
-
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

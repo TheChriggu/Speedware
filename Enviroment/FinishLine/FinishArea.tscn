@@ -6,26 +6,27 @@
 [ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=5]
 [ext_resource path="res://Enviroment/FinishLine/Popup.gd" type="Script" id=6]
-[ext_resource path="res://Enviroment/FinishLine/FinishLinePassedPopup.png" type="Texture" id=7]
-[ext_resource path="res://Enviroment/FinishLine/MenuButtonUnhovered.png" type="Texture" id=8]
-[ext_resource path="res://Enviroment/FinishLine/MenuButtonHovered.png" type="Texture" id=9]
+[ext_resource path="res://Enviroment/FinishLine/endscreen_michelle.png" type="Texture" id=7]
+[ext_resource path="res://Enviroment/FinishLine/backtomainmenu_endscreen.png" type="Texture" id=8]
+[ext_resource path="res://Enviroment/FinishLine/hover_backtomainmenu_endscreen.png" type="Texture" id=9]
 [ext_resource path="res://Enviroment/FinishLine/BackToMenuButton.gd" type="Script" id=10]
 [ext_resource path="res://Sounds/SFX/SFX_Button_Click.wav" type="AudioStream" id=11]
-[ext_resource path="res://Enviroment/FinishLine/NextLevelUnhovered.png" type="Texture" id=12]
-[ext_resource path="res://Enviroment/FinishLine/NextLevelHovered.png" type="Texture" id=13]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelUnhovered.png" type="Texture" id=14]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=15]
+[ext_resource path="res://Enviroment/FinishLine/play_button_endscreen_michelle.png" type="Texture" id=12]
+[ext_resource path="res://Enviroment/FinishLine/play_hover_button_endscreen_michelle.png" type="Texture" id=13]
+[ext_resource path="res://Enviroment/FinishLine/return_button_endscreen_michelle.png" type="Texture" id=14]
+[ext_resource path="res://Enviroment/FinishLine/return_hover_button_endscreen_michelle.png" type="Texture" id=15]
 [ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=16]
-[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=17]
-[ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=18]
-[ext_resource path="res://Sounds/SFX/SFX_Rating_FirstStar.wav" type="AudioStream" id=19]
-[ext_resource path="res://Sounds/SFX/SFX_Rating_SecondStar.wav" type="AudioStream" id=20]
-[ext_resource path="res://Sounds/SFX/SFX_Rating_ThirdStar.wav" type="AudioStream" id=21]
-[ext_resource path="res://Sounds/SFX/SFX_Button_Hover.wav" type="AudioStream" id=22]
-[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesGreen.tres" type="Material" id=23]
-[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=24]
-[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesRed.tres" type="Material" id=25]
-[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesBlue.tres" type="Material" id=26]
+[ext_resource path="res://main_menu_font.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=19]
+[ext_resource path="res://Sounds/SFX/SFX_Rating_FirstStar.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sounds/SFX/SFX_Rating_SecondStar.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sounds/SFX/SFX_Rating_ThirdStar.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sounds/SFX/SFX_Button_Hover.wav" type="AudioStream" id=23]
+[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesGreen.tres" type="Material" id=24]
+[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=25]
+[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesRed.tres" type="Material" id=26]
+[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesBlue.tres" type="Material" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -137,14 +138,6 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=4]
-
-size = 25
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 4 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="Animation" id=5]
 
@@ -550,14 +543,10 @@ script = ExtResource( 6 )
 [node name="Control" type="Control" parent="Popup" index="0"]
 
 visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -568,8 +557,8 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="PopupBackground" type="Sprite" parent="Popup/Control" index="0"]
 
-position = Vector2( -61.5314, 13.257 )
-scale = Vector2( 1.94104, 1.94104 )
+position = Vector2( 968.499, 531.195 )
+scale = Vector2( 1.00217, 1.00217 )
 texture = ExtResource( 7 )
 
 [node name="BackToMenu" type="TextureButton" parent="Popup/Control/PopupBackground" index="0"]
@@ -578,10 +567,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -44.0
-margin_top = 43.0
-margin_right = 31.0
-margin_bottom = 122.0
+margin_left = -177.0
+margin_top = 34.0
+margin_right = 223.0
+margin_bottom = 234.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../ReplayLevel")
@@ -615,10 +604,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 111.0
-margin_top = 33.0
-margin_right = 186.0
-margin_bottom = 112.0
+margin_left = 192.0
+margin_top = 27.0
+margin_right = 392.0
+margin_bottom = 227.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../BackToMenu")
@@ -651,10 +640,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -189.0
-margin_top = 38.0
-margin_right = -114.0
-margin_bottom = 117.0
+margin_left = -377.0
+margin_top = 30.0
+margin_right = -177.0
+margin_bottom = 230.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../NextLevel")
@@ -688,36 +677,36 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -91.0
-margin_top = -66.0
-margin_right = 61.0
-margin_bottom = -17.0
+margin_left = -87.0
+margin_top = 14.0
+margin_right = 99.0
+margin_bottom = 81.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Time"
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "00:00"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 FinishTime = 0
 
 [node name="1Star" type="Sprite" parent="Popup/Control/PopupBackground" index="4"]
 
 visible = false
-position = Vector2( -94.8768, -119.593 )
-texture = ExtResource( 18 )
+position = Vector2( -113.783, -104.888 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StarSound" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/1Star" index="0"]
 
-stream = ExtResource( 19 )
+stream = ExtResource( 20 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -727,13 +716,13 @@ bus = "Master"
 [node name="2Stars" type="Sprite" parent="Popup/Control/PopupBackground" index="5"]
 
 visible = false
-position = Vector2( -22.7226, -137.531 )
-texture = ExtResource( 18 )
+position = Vector2( 2.48578, -160.639 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StarSound2" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/2Stars" index="0"]
 
-stream = ExtResource( 20 )
+stream = ExtResource( 21 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -743,14 +732,14 @@ bus = "Master"
 [node name="3Stars" type="Sprite" parent="Popup/Control/PopupBackground" index="6"]
 
 visible = false
-position = Vector2( 44.9238, -114.53 )
+position = Vector2( 117.398, -105.077 )
 scale = Vector2( 1.03558, 0.948521 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StarSound3" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/3Stars" index="0"]
 
-stream = ExtResource( 21 )
+stream = ExtResource( 22 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -772,7 +761,7 @@ blend_times = [  ]
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="Popup" index="1"]
 
-stream = ExtResource( 22 )
+stream = ExtResource( 23 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -805,8 +794,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 23 )
-texture = ExtResource( 24 )
+process_material = ExtResource( 24 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -831,8 +820,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 23 )
-texture = ExtResource( 24 )
+process_material = ExtResource( 24 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -857,8 +846,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 25 )
-texture = ExtResource( 24 )
+process_material = ExtResource( 26 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -883,8 +872,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 25 )
-texture = ExtResource( 24 )
+process_material = ExtResource( 26 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -909,8 +898,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 26 )
-texture = ExtResource( 24 )
+process_material = ExtResource( 27 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -935,8 +924,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 26 )
-texture = ExtResource( 24 )
+process_material = ExtResource( 27 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -956,9 +945,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [connection signal="focus_entered" from="Popup/Control/PopupBackground/NextLevel" to="Popup" method="_on_NextLevel_focus_entered"]
 
-[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
-
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
+
+[connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="Popup/Control/PopupBackground/NextLevel" method="_on_NextLevel_pressed"]
 
 [connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound" to="Popup/Control/PopupBackground/BackToMenu" method="_on_ClickSound_finished"]
 

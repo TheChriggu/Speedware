@@ -1,27 +1,29 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Level Selection/background_levelselection_michelle.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Level Selection/levelsection_michelle.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Level Selection/Level1Shortcut.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Tutorial_Level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Level Selection/LevelShortcut.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Levels/Level3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Levels/Level4.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Levels/Level5.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Levels/Level6.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Levels/Level7.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Levels/Level9.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=14]
-[ext_resource path="res://Scenes/Level Selection/button_levelselction_music_michelle.png" type="Texture" id=15]
-[ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=16]
-[ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=17]
-[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=18]
-[ext_resource path="res://Scenes/Level Selection/dpad example.png" type="Texture" id=19]
-[ext_resource path="res://IngameSubtitle.tres" type="DynamicFont" id=20]
-[ext_resource path="res://Scenes/Level Selection/Xbox_button_A.svg.png" type="Texture" id=21]
-[ext_resource path="res://Scenes/Buttons/Xbox_button_B.png" type="Texture" id=22]
+[ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Level2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Level3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Level4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/Level5.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/Level6.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Levels/Level7.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Levels/Level9.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_music_michelle.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=17]
+[ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=19]
+[ext_resource path="res://Scenes/Level Selection/flatDark03.png" type="Texture" id=20]
+[ext_resource path="res://IngameSubtitle.tres" type="DynamicFont" id=21]
+[ext_resource path="res://Scenes/Level Selection/flatDark36.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Level Selection/flatDark35.png" type="Texture" id=23]
+[ext_resource path="res://Enviroment/Collectibles/Collectible_Icon_Floppy_Disk.png" type="Texture" id=24]
 
 [sub_resource type="Animation" id=1]
 
@@ -95,7 +97,7 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 
-[node name="LevelSelection" type="Node" index="0"]
+[node name="LevelSelection" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -105,8 +107,6 @@ position = Vector2( 954.141, 535.987 )
 texture = ExtResource( 2 )
 
 [node name="LevelShortcuts" type="Node2D" parent="." index="1"]
-
-editor/display_folded = true
 
 [node name="Level1Shortcut" parent="LevelShortcuts" index="0" instance=ExtResource( 3 )]
 
@@ -142,6 +142,7 @@ modulate = Color( 1, 1, 1, 1 )
 
 [node name="Levelnumber" parent="LevelShortcuts/Level1Shortcut" index="4"]
 
+visible = true
 margin_left = -5.0
 margin_top = -6.0
 margin_right = 35.0
@@ -149,8 +150,9 @@ margin_bottom = 8.0
 
 [node name="LevelShortcut" parent="LevelShortcuts" index="1" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 position = Vector2( 494.476, 295.436 )
-scene_to_load = ExtResource( 4 )
+scene_to_load = ExtResource( 6 )
 LevelNumber = "01"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut" index="1"]
@@ -165,7 +167,7 @@ disabled = false
 
 editor/display_folded = true
 position = Vector2( 420.884, 364.098 )
-scene_to_load = ExtResource( 6 )
+scene_to_load = ExtResource( 7 )
 LevelNumber = "02"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut3" index="1"]
@@ -179,7 +181,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut4/Button")
 
 editor/display_folded = true
 position = Vector2( 305.642, 432.576 )
-scene_to_load = ExtResource( 7 )
+scene_to_load = ExtResource( 8 )
 LevelNumber = "03"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut4" index="1"]
@@ -193,7 +195,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut5/Button")
 
 editor/display_folded = true
 position = Vector2( 369.109, 502.723 )
-scene_to_load = ExtResource( 8 )
+scene_to_load = ExtResource( 9 )
 LevelNumber = "04"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut5" index="1"]
@@ -207,7 +209,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut6/Button")
 
 editor/display_folded = true
 position = Vector2( 420.884, 572.87 )
-scene_to_load = ExtResource( 9 )
+scene_to_load = ExtResource( 10 )
 LevelNumber = "05"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut6" index="1"]
@@ -221,7 +223,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut7/Button")
 
 editor/display_folded = true
 position = Vector2( 370.779, 641.347 )
-scene_to_load = ExtResource( 10 )
+scene_to_load = ExtResource( 11 )
 LevelNumber = "06"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut7" index="1"]
@@ -235,7 +237,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut8/Button")
 
 editor/display_folded = true
 position = Vector2( 492.702, 711.495 )
-scene_to_load = ExtResource( 11 )
+scene_to_load = ExtResource( 12 )
 LevelNumber = "07"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut8" index="1"]
@@ -249,7 +251,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut9/Button")
 
 editor/display_folded = true
 position = Vector2( 419.214, 779.972 )
-scene_to_load = ExtResource( 12 )
+scene_to_load = ExtResource( 13 )
 LevelNumber = "08"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut9" index="1"]
@@ -263,7 +265,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut10/Button")
 
 editor/display_folded = true
 position = Vector2( 370.779, 848.449 )
-scene_to_load = ExtResource( 13 )
+scene_to_load = ExtResource( 14 )
 LevelNumber = "09"
 
 [node name="Button" parent="LevelShortcuts/LevelShortcut10" index="1"]
@@ -275,7 +277,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 15 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -288,10 +290,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1132.0
-margin_top = 591.0
-margin_right = 1662.0
-margin_bottom = 607.0
+margin_left = 1165.0
+margin_top = 684.0
+margin_right = 1695.0
+margin_bottom = 700.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_top = NodePath("../LevelShortcuts/Level1Shortcut/Button")
@@ -301,14 +303,14 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_icons/tick = ExtResource( 15 )
-custom_icons/grabber_disabled = ExtResource( 15 )
-custom_icons/grabber_highlight = ExtResource( 16 )
-custom_icons/grabber = ExtResource( 15 )
+custom_icons/tick = ExtResource( 16 )
+custom_icons/grabber_disabled = ExtResource( 16 )
+custom_icons/grabber_highlight = ExtResource( 17 )
+custom_icons/grabber = ExtResource( 16 )
 custom_styles/slider = SubResource( 3 )
-min_value = -80.0
-max_value = 24.0
-step = 20.0
+min_value = -40.0
+max_value = 20.0
+step = 10.0
 page = 0.0
 value = 0.0
 exp_edit = false
@@ -325,10 +327,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1132.0
-margin_top = 696.0
-margin_right = 1661.0
-margin_bottom = 712.0
+margin_left = 1169.0
+margin_top = 791.0
+margin_right = 1698.0
+margin_bottom = 807.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_top = NodePath("../Musicslider")
@@ -338,14 +340,14 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_icons/tick = ExtResource( 15 )
-custom_icons/grabber_disabled = ExtResource( 15 )
-custom_icons/grabber_highlight = ExtResource( 16 )
-custom_icons/grabber = ExtResource( 15 )
+custom_icons/tick = ExtResource( 16 )
+custom_icons/grabber_disabled = ExtResource( 16 )
+custom_icons/grabber_highlight = ExtResource( 17 )
+custom_icons/grabber = ExtResource( 16 )
 custom_styles/slider = SubResource( 4 )
-min_value = -80.0
-max_value = 24.0
-step = 20.0
+min_value = -40.0
+max_value = 20.0
+step = 10.0
 page = 0.0
 value = 0.0
 exp_edit = false
@@ -358,7 +360,7 @@ _sections_unfolded = [ "Focus", "custom_icons" ]
 
 [node name="SFXExample" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 17 )
+stream = ExtResource( 18 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -367,73 +369,45 @@ bus = "SFX"
 
 [node name="MusicExample" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 18 )
+stream = ExtResource( 19 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
-[node name="Sprite" type="Sprite" parent="." index="7"]
+[node name="UIButtons" type="Sprite" parent="." index="7"]
 
-position = Vector2( 1136.03, 944.397 )
-scale = Vector2( 1, 1.22304 )
-texture = ExtResource( 19 )
+position = Vector2( 1209.9, 1001.09 )
+scale = Vector2( 0.777404, 0.849796 )
+texture = ExtResource( 20 )
 
-[node name="Label" type="Label" parent="Sprite" index="0"]
+[node name="Label" type="Label" parent="UIButtons" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 61.0
-margin_top = -15.0
-margin_right = 349.0
-margin_bottom = 30.0
+margin_left = 79.0
+margin_top = -19.0
+margin_right = 367.0
+margin_bottom = 26.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 20 )
-text = "Controll"
+custom_fonts/font = ExtResource( 21 )
+text = "Control"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label" type="Label" parent="." index="8"]
+[node name="UIBackToTitle" type="Label" parent="." index="8"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 1422.0
-margin_top = 901.0
-margin_right = 1534.0
-margin_bottom = 921.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 20 )
-text = "Confirm"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="Sprite2" type="Sprite" parent="Label" index="0"]
-
-position = Vector2( -41.7885, 3.28473 )
-scale = Vector2( 0.0276041, 0.0276041 )
-texture = ExtResource( 21 )
-
-[node name="Label2" type="Label" parent="." index="9"]
-
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -448,18 +422,54 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 20 )
+custom_fonts/font = ExtResource( 21 )
 text = "Back to Title"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Sprite3" type="Sprite" parent="Label2" index="0"]
+[node name="Sprite3" type="Sprite" parent="UIBackToTitle" index="0"]
 
-position = Vector2( -46.1332, 8.50934 )
-scale = Vector2( 0.0276041, 0.0276041 )
+position = Vector2( -39.2394, 14.9888 )
+scale = Vector2( 0.67454, 0.694394 )
 texture = ExtResource( 22 )
+
+[node name="Sprite2" type="Sprite" parent="." index="9"]
+
+position = Vector2( 1466.74, 999.608 )
+scale = Vector2( 0.807305, 0.831067 )
+texture = ExtResource( 23 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="UIConfirm" type="Label" parent="Sprite2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 57.8201
+margin_top = -19.8542
+margin_right = 169.82
+margin_bottom = 0.145752
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 21 )
+text = "Confirm"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Collectible" type="Sprite" parent="." index="10"]
+
+position = Vector2( 1495.9, 387.899 )
+scale = Vector2( 0.0521961, 0.0521961 )
+texture = ExtResource( 24 )
 
 [connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]
 

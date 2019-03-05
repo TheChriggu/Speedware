@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Enviroment/Datastrings/PurpleCapsAndLight.png" type="Texture" id=1]
+
+[node name="PurpleLight" type="NinePatchRect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 512.0
+margin_bottom = 753.0
+rect_min_size = Vector2( 512, 256 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 1 )
+patch_margin_top = 96
+patch_margin_bottom = 72
+_sections_unfolded = [ "Axis Stretch", "Patch Margin", "Rect", "Visibility" ]
+
+

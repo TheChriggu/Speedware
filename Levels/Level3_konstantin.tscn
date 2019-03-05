@@ -24,8 +24,6 @@
 [ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=22]
 [ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=23]
 
-
-
 [node name="Level" type="Node"]
 
 script = ExtResource( 1 )
@@ -62,7 +60,6 @@ CURRENT_ANCHOR = 0
 position = Vector2( 1338.48, -186.5 )
 collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
-FIXED_CAMERA = false
 
 [node name="CamCollider2" parent="Player/ForwardLookingCamera/HeadCamCollider" index="1" instance=ExtResource( 7 )]
 

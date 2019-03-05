@@ -1,28 +1,32 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Enviroment/FinishLine/FinishArea.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/FinishLine/Finishline_Image.png" type="Texture" id=2]
-[ext_resource path="res://Sounds/FinishingSound.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/SFX/Music_Level_Finished.wav" type="AudioStream" id=3]
 [ext_resource path="res://Fonts/digital-7 (mono).ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Enviroment/FinishLine/Queen - We are the champions (Chorus only).ogg" type="AudioStream" id=5]
 [ext_resource path="res://Enviroment/FinishLine/Popup.gd" type="Script" id=6]
-[ext_resource path="res://Enviroment/FinishLine/FinishLinePassedPopup.png" type="Texture" id=7]
-[ext_resource path="res://Enviroment/FinishLine/MenuButtonUnhovered.png" type="Texture" id=8]
-[ext_resource path="res://Enviroment/FinishLine/MenuButtonHovered.png" type="Texture" id=9]
+[ext_resource path="res://Enviroment/FinishLine/endscreen_michelle.png" type="Texture" id=7]
+[ext_resource path="res://Enviroment/FinishLine/backtomainmenu_endscreen.png" type="Texture" id=8]
+[ext_resource path="res://Enviroment/FinishLine/hover_backtomainmenu_endscreen.png" type="Texture" id=9]
 [ext_resource path="res://Enviroment/FinishLine/BackToMenuButton.gd" type="Script" id=10]
 [ext_resource path="res://Sounds/SFX/SFX_Button_Click.wav" type="AudioStream" id=11]
-[ext_resource path="res://Enviroment/FinishLine/NextLevelUnhovered.png" type="Texture" id=12]
-[ext_resource path="res://Enviroment/FinishLine/NextLevelHovered.png" type="Texture" id=13]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelUnhovered.png" type="Texture" id=14]
-[ext_resource path="res://Enviroment/FinishLine/ReplayLevelHovered.png" type="Texture" id=15]
+[ext_resource path="res://Enviroment/FinishLine/play_button_endscreen_michelle.png" type="Texture" id=12]
+[ext_resource path="res://Enviroment/FinishLine/play_hover_button_endscreen_michelle.png" type="Texture" id=13]
+[ext_resource path="res://Enviroment/FinishLine/return_button_endscreen_michelle.png" type="Texture" id=14]
+[ext_resource path="res://Enviroment/FinishLine/return_hover_button_endscreen_michelle.png" type="Texture" id=15]
 [ext_resource path="res://Enviroment/FinishLine/ReplayLevelButton.gd" type="Script" id=16]
-[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=17]
-[ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=18]
-[ext_resource path="res://Sounds/SFX/SFX_Button_Hover.wav" type="AudioStream" id=19]
-[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesGreen.tres" type="Material" id=20]
-[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=21]
-[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesRed.tres" type="Material" id=22]
-[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesBlue.tres" type="Material" id=23]
+[ext_resource path="res://main_menu_font.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Enviroment/FinishLine/FinishTime.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Level Selection/Star_Filled.png" type="Texture" id=19]
+[ext_resource path="res://Sounds/SFX/SFX_Rating_FirstStar.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sounds/SFX/SFX_Rating_SecondStar.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sounds/SFX/SFX_Rating_ThirdStar.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sounds/SFX/SFX_Button_Hover.wav" type="AudioStream" id=23]
+[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesGreen.tres" type="Material" id=24]
+[ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=25]
+[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesRed.tres" type="Material" id=26]
+[ext_resource path="res://Enviroment/FinishLine/FinishlineParticlesBlue.tres" type="Material" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -32,7 +36,7 @@ extents = Vector2( 963.52, 60.9621 )
 [sub_resource type="Animation" id=2]
 
 resource_name = "FinishLinePassed"
-length = 2.0
+length = 5.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -66,7 +70,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.8 ),
+"times": PoolRealArray( 0, 4.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -78,7 +82,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1.8 ),
+"times": PoolRealArray( 4.5 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -90,7 +94,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1.8 ),
+"times": PoolRealArray( 4.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -104,11 +108,14 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 2 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 4.5, 4.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
-"method": "GrabButtonFocus"
+"method": "StarRating"
+}, {
+"args": [  ],
+"method": "GrabButton"
 } ]
 }
 tracks/6/type = "value"
@@ -132,15 +139,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=4]
-
-size = 25
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 4 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
-
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 resource_name = "0StarRating"
 length = 1.0
@@ -182,11 +181,47 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("1Star/StarSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("2Stars/StarSound2:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("3Stars/StarSound3:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 resource_name = "1StarRating"
-length = 1.0
+length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -225,8 +260,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("1Star/StarSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 resource_name = "2StarRating"
 length = 1.0
@@ -239,7 +286,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -268,11 +315,35 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("1Star/StarSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("2Stars/StarSound2:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 resource_name = "3StarRating"
-length = 1.0
+length = 2.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -282,7 +353,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -294,7 +365,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -311,8 +382,44 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("1Star/StarSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("3Stars/StarSound3:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("2Stars/StarSound2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="CanvasItemMaterial" id=9]
+[sub_resource type="CanvasItemMaterial" id=8]
 
 render_priority = 0
 blend_mode = 1
@@ -343,14 +450,15 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="Sprite" index="0"]
 
+editor/display_folded = true
 position = Vector2( 28.4302, 88.1328 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 7
-collision_mask = 7
+collision_layer = 12
+collision_mask = 12
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -435,14 +543,10 @@ script = ExtResource( 6 )
 [node name="Control" type="Control" parent="Popup" index="0"]
 
 visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -453,8 +557,8 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="PopupBackground" type="Sprite" parent="Popup/Control" index="0"]
 
-position = Vector2( -61.5314, 13.257 )
-scale = Vector2( 1.94104, 1.94104 )
+position = Vector2( 968.499, 531.195 )
+scale = Vector2( 1.00217, 1.00217 )
 texture = ExtResource( 7 )
 
 [node name="BackToMenu" type="TextureButton" parent="Popup/Control/PopupBackground" index="0"]
@@ -463,10 +567,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -44.0
-margin_top = 43.0
-margin_right = 31.0
-margin_bottom = 122.0
+margin_left = -177.0
+margin_top = 34.0
+margin_right = 223.0
+margin_bottom = 234.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../ReplayLevel")
@@ -500,10 +604,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 111.0
-margin_top = 33.0
-margin_right = 186.0
-margin_bottom = 112.0
+margin_left = 192.0
+margin_top = 27.0
+margin_right = 392.0
+margin_bottom = 227.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../BackToMenu")
@@ -536,10 +640,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -189.0
-margin_top = 38.0
-margin_right = -114.0
-margin_bottom = 117.0
+margin_left = -377.0
+margin_top = 30.0
+margin_right = -177.0
+margin_bottom = 230.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../NextLevel")
@@ -573,47 +677,74 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -91.0
-margin_top = -66.0
-margin_right = 61.0
-margin_bottom = -17.0
+margin_left = -87.0
+margin_top = 14.0
+margin_right = 99.0
+margin_bottom = 81.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Time"
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "00:00"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 FinishTime = 0
 
 [node name="1Star" type="Sprite" parent="Popup/Control/PopupBackground" index="4"]
 
 visible = false
-position = Vector2( -94.8768, -119.593 )
-texture = ExtResource( 18 )
+position = Vector2( -113.783, -104.888 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Visibility" ]
+
+[node name="StarSound" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/1Star" index="0"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [node name="2Stars" type="Sprite" parent="Popup/Control/PopupBackground" index="5"]
 
 visible = false
-position = Vector2( -22.7226, -137.531 )
-texture = ExtResource( 18 )
+position = Vector2( 2.48578, -160.639 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Visibility" ]
+
+[node name="StarSound2" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/2Stars" index="0"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [node name="3Stars" type="Sprite" parent="Popup/Control/PopupBackground" index="6"]
 
 visible = false
-position = Vector2( 44.9238, -114.53 )
+position = Vector2( 117.398, -105.077 )
 scale = Vector2( 1.03558, 0.948521 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Visibility" ]
+
+[node name="StarSound3" type="AudioStreamPlayer" parent="Popup/Control/PopupBackground/3Stars" index="0"]
+
+stream = ExtResource( 22 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Popup/Control/PopupBackground" index="7"]
 
@@ -622,15 +753,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/0StarRating = SubResource( 5 )
-anims/1StarRating = SubResource( 6 )
-anims/2StarRating = SubResource( 7 )
-anims/3StarRating = SubResource( 8 )
+anims/0StarRating = SubResource( 4 )
+anims/1StarRating = SubResource( 5 )
+anims/2StarRating = SubResource( 6 )
+anims/3StarRating = SubResource( 7 )
 blend_times = [  ]
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="Popup" index="1"]
 
-stream = ExtResource( 19 )
+stream = ExtResource( 23 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -639,6 +770,7 @@ bus = "SFX"
 
 [node name="ParticleGroup" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
 visible = false
 position = Vector2( -1.36035, -69.3789 )
 _sections_unfolded = [ "Visibility" ]
@@ -646,7 +778,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="Particles2Green1" type="Particles2D" parent="ParticleGroup" index="0"]
 
 pause_mode = 2
-material = SubResource( 9 )
+material = SubResource( 8 )
 position = Vector2( 8.53433, -100.845 )
 scale = Vector2( 0.5, 0.5 )
 emitting = true
@@ -662,8 +794,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 20 )
-texture = ExtResource( 21 )
+process_material = ExtResource( 24 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -672,7 +804,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="Particles2Green2" type="Particles2D" parent="ParticleGroup" index="1"]
 
 pause_mode = 2
-material = SubResource( 9 )
+material = SubResource( 8 )
 position = Vector2( 8.53433, -100.845 )
 scale = Vector2( 0.5, 0.5 )
 emitting = true
@@ -688,8 +820,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 20 )
-texture = ExtResource( 21 )
+process_material = ExtResource( 24 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -698,7 +830,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="Particles2Pink1" type="Particles2D" parent="ParticleGroup" index="2"]
 
 pause_mode = 2
-material = SubResource( 9 )
+material = SubResource( 8 )
 position = Vector2( 92.5056, -397.23 )
 scale = Vector2( 0.5, 0.5 )
 emitting = true
@@ -714,8 +846,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 22 )
-texture = ExtResource( 21 )
+process_material = ExtResource( 26 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -724,7 +856,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="Particles2Pink2" type="Particles2D" parent="ParticleGroup" index="3"]
 
 pause_mode = 2
-material = SubResource( 9 )
+material = SubResource( 8 )
 position = Vector2( 92.5056, -397.23 )
 scale = Vector2( 0.5, 0.5 )
 emitting = true
@@ -740,8 +872,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 22 )
-texture = ExtResource( 21 )
+process_material = ExtResource( 26 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -750,7 +882,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="Particles2Blue1" type="Particles2D" parent="ParticleGroup" index="4"]
 
 pause_mode = 2
-material = SubResource( 9 )
+material = SubResource( 8 )
 position = Vector2( -188.085, -295.348 )
 scale = Vector2( 0.5, 0.5 )
 emitting = true
@@ -766,8 +898,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 23 )
-texture = ExtResource( 21 )
+process_material = ExtResource( 27 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -776,7 +908,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="Particles2Blue2" type="Particles2D" parent="ParticleGroup" index="5"]
 
 pause_mode = 2
-material = SubResource( 9 )
+material = SubResource( 8 )
 position = Vector2( -188.085, -295.348 )
 scale = Vector2( 0.5, 0.5 )
 emitting = true
@@ -792,8 +924,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = ExtResource( 23 )
-texture = ExtResource( 21 )
+process_material = ExtResource( 27 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -817,7 +949,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [connection signal="pressed" from="Popup/Control/PopupBackground/NextLevel" to="." method="_on_NextLevel_pressed"]
 
-[connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound" to="." method="_on_ClickSound_finished"]
+[connection signal="finished" from="Popup/Control/PopupBackground/NextLevel/ClickSound" to="Popup/Control/PopupBackground/BackToMenu" method="_on_ClickSound_finished"]
 
 [connection signal="focus_entered" from="Popup/Control/PopupBackground/ReplayLevel" to="Popup" method="_on_ReplayLevel_focus_entered"]
 

@@ -152,7 +152,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
-[node name="LaserBlau" type="Sprite"]
+[node name="LaserBlau" type="Sprite" index="0"]
 
 rotation = -3.14159
 script = ExtResource( 1 )
@@ -170,6 +170,7 @@ blend_times = [  ]
 
 [node name="PartikelPurple" type="Particles2D" parent="." index="1"]
 
+visible = false
 modulate = Color( 0.949371, 0.0742188, 1, 1 )
 self_modulate = Color( 0.117188, 0.117188, 0.117188, 1 )
 show_behind_parent = true

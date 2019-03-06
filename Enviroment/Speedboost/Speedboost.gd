@@ -23,3 +23,8 @@ func _on_Timer_timeout():
 	
 
 	
+
+func _on_Area2D_body_entered(body):
+	$Timer.start()
+	emit_signal("speedboost_start", Vector2(SPEED, 0).rotated(rotation))
+	$SpeedExplosion.emitting = true

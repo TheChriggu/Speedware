@@ -9,3 +9,10 @@ func _on_Area2D_area_entered(area):
 		$AnimationPlayer.play("CollectibleCollected")
 		emit_signal("collected")
 		isCollected = true
+
+func _on_Area2D_body_entered(body):
+	if !isCollected:
+		$AudioStreamPlayer.play()
+		$AnimationPlayer.play("CollectibleCollected")
+		emit_signal("collected")
+		isCollected = true

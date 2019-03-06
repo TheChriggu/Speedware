@@ -53,7 +53,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[node name="Collectible" type="Sprite" index="0"]
+[node name="Collectible" type="Sprite"]
 
 position = Vector2( 27.53, 19.282 )
 scale = Vector2( 0.37298, 0.37298 )
@@ -111,5 +111,7 @@ scale = Vector2( 4.95789, 4.95789 )
 texture = ExtResource( 4 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 

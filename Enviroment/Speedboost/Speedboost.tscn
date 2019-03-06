@@ -148,7 +148,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[node name="Speedboost" type="Sprite" index="0"]
+[node name="Speedboost" type="Sprite"]
 
 position = Vector2( 776.714, 44.7581 )
 scale = Vector2( 0.3, 0.3 )
@@ -244,8 +244,8 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 3
-collision_mask = 3
+collision_layer = 16
+collision_mask = 16
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -305,6 +305,8 @@ v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

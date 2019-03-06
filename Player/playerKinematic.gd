@@ -35,7 +35,7 @@ var isSwitchColorEnabled = true
 var isMovingOnFloor = false
 var isMovingOnDatastring = false
 
-var isControlsEnabled = true
+var isControlsEnabled = false
 var isFinished = false
 
 func _physics_process(delta):
@@ -211,7 +211,8 @@ func BoostTrailOff():
 	
 
 func _on_GameStartTimer_GameStartTimerEnd():
-	$AnimationPlayer.play("GameStartTimerOver")
+	isControlsEnabled = true
+	#$AnimationPlayer.play("GameStartTimerOver")
 
 func _ready():
 	#$AnimationPlayer.play("CharacterGameStartAnimation")
@@ -224,7 +225,7 @@ func _on_FinishArea_finish_line_passed():
 func _on_PurpleLaserSidesDetector_area_entered(area):
 	if IS_ORANGE:
 		$SFX.HitDatastring()
-		
+		$AnimatedCharacter.Collision()
 	else:
 		$SFX.MoveThroughDatastring()
 
@@ -232,19 +233,28 @@ func _on_OrangeLaserSidesDetector_area_entered(area):
 	if !IS_ORANGE:
 		$SFX.HitDatastring()
 		$CollisionEffect/Particles2D.visible = true
+		$AnimatedCharacter.Collision()
 	else:
 		$SFX.MoveThroughDatastring()
 		$CollisionEffect/Particles2D.visible = false
 
 func OnAirAnimation():
 	if velocity.y < 0:
-		$AnimatedCharacter.JumpUp()
+		if isInSpeedboost:
+			$AnimatedCharacter.SpeedBoostJumpUp()
+		else:
+			$AnimatedCharacter.JumpUp()
 	else:
 		$AnimatedCharacter.JumpDown()
 
 func OnFloorAnimation():
 	if velocity.x != 0:
-		$AnimatedCharacter.Run(abs(velocity.x) / WALK_MAX_SPEED)
+		if velocity.y > 0:
+			$AnimatedCharacter.Slide()
+		elif isInSpeedboost:
+			$AnimatedCharacter.SpeedBoostRun()
+		else:
+			$AnimatedCharacter.Run(abs(velocity.x) / WALK_MAX_SPEED)
 	else:
 		$AnimatedCharacter.Idle()
 

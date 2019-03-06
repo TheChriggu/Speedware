@@ -35,6 +35,9 @@ var isSwitchColorEnabled = true
 var isMovingOnFloor = false
 var isMovingOnDatastring = false
 
+var isControlsEnabled = true
+var isFinished = false
+
 func _physics_process(delta):
 	CheckFloor()
 	
@@ -53,7 +56,8 @@ func _physics_process(delta):
 
 func HorizontalMovement(delta):
 	var force = Vector2(0, GRAVITY) #Vector containing the forces which get applied to the player every frame
-	force.x = LeftForce() + RightForce() #calculate horizontal forces
+	if isControlsEnabled:
+		force.x = LeftForce() + RightForce() #calculate horizontal forces
 	
 	#if forces are applying, play their animtaions, otherwise apply friction
 	if force.x > 0:
@@ -78,12 +82,15 @@ func HorizontalMovement(delta):
 func VerticalMovement(delta):
 	if isMovingOnFloor || isMovingOnDatastring:
 		onAirTime = 0
-		OnFloorAnimation()
+		if !isFinished:
+			OnFloorAnimation()
+		else:
+			$AnimatedCharacter.Victory()
 	else:
 		onAirTime += delta
 		OnAirAnimation()
-	
-	Jump()
+	if isControlsEnabled:
+		Jump()
 
 
 func SpeedboostMovement(delta):
@@ -211,7 +218,8 @@ func _ready():
 	pass
 
 func _on_FinishArea_finish_line_passed():
-	$AnimationPlayer.play("FinishLinePassedCharFreeze")
+	isControlsEnabled = false
+	isFinished = true 
 	emit_signal("FinishLineAnimationFinished")
 
 func _on_PurpleLaserSidesDetector_area_entered(area):

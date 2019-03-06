@@ -74,7 +74,7 @@ light_mode = 2
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 1.25073, 14.6467, 7.45959, -131.886, 2.50119, -28.4111, 9.10385, 32.72, -14.2103, -98.5728, -6.25059, -31.0629, -3.90548, 19.6709, 8.75333, -55.233, 4.91584, -37.8399, 9.90857, 27.3473, -13.8869, -7.68858, -6.65888, -30.5277, -5.48789, 26.4661, 8.04764, 35.6512, 3.13081, -29.6759, 5.60975, 32.7331, -14.5926, 79.9613, -0.579052, -24.3189, 0, 0, 7.72421, 122.331 )
+"points": PoolVector2Array( 0, 0, 0.901189, 17.443, 7.45959, -131.886, 1.45257, -15.8276, -0.635653, 24.8356, -14.2103, -98.5728, -1.97404, -27.8075, -3.17426, 32.5078, 8.05794, -56.6179, -0.296645, -25.2513, 0.672696, 21.6236, -13.7413, -7.99588, 1.68885, -24.9475, -1.83462, 29.7558, 6.6423, 34.8772, 1.15251, -29.0244, 1.64461, 31.8226, -14.1291, 79.5658, -2.57958, -28.701, 0, 0, 7.72421, 122.331 )
 }
 
 [sub_resource type="CanvasItemMaterial" id=5]
@@ -85,8 +85,8 @@ light_mode = 2
 
 [sub_resource type="Gradient" id=6]
 
-offsets = PoolRealArray( 0.0373563, 0.149425 )
-colors = PoolColorArray( 1, 0.963715, 0.839844, 0.629843, 1, 0.726563, 0, 0.392157 )
+offsets = PoolRealArray( 0.349558, 0.50885, 0.668142 )
+colors = PoolColorArray( 0.734375, 0.53357, 0, 1, 1, 0.83716, 0.28125, 1, 0.757813, 0.552035, 0, 1 )
 
 [sub_resource type="GradientTexture" id=7]
 
@@ -99,7 +99,7 @@ width = 2048
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.571032, 0.768555 ), -1.60165, -1.60165, 0, 0, Vector2( 1, 0 ), -0.390554, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), -0.390554, 0.0, 0, 0, Vector2( 0, 0.102539 ), 0.0, 0.0, 0, 0, Vector2( 0.36346, 1 ), -0.175067, -0.540558, 0, 0, Vector2( 0.50038, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.649471, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=9]
 
@@ -281,6 +281,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="PartikelOrange" type="Particles2D" parent="." index="3"]
 
+visible = false
 modulate = Color( 1, 0.560669, 0.046875, 1 )
 self_modulate = Color( 0.113281, 0.112839, 0.112839, 1 )
 light_mask = 3
@@ -310,7 +311,6 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="Path2D" type="Path2D" parent="." index="4"]
 
-editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( 2.62661, 3.66429 )
 rotation = -2.27304e-013
@@ -320,9 +320,9 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
 
-position = Vector2( -13.5348, -96.4008 )
-rotation = 1.28159
-offset = 44.4257
+position = Vector2( -12.2842, -87.2863 )
+rotation = 1.0006
+offset = 52.9015
 h_offset = 0.0
 v_offset = 0.0
 rotate = true
@@ -360,9 +360,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Path2D" index="1"]
 
-position = Vector2( -5.73688, -33.9515 )
-rotation = 2.10739
-offset = 118.469
+position = Vector2( -8.08857, -25.5756 )
+rotation = 2.21298
+offset = 127.212
 h_offset = 0.0
 v_offset = 0.0
 rotate = true
@@ -376,7 +376,7 @@ pause_mode = 2
 show_behind_parent = true
 light_mask = 3
 material = SubResource( 11 )
-position = Vector2( 0.77916, 0.278669 )
+position = Vector2( 0.875362, -0.423719 )
 emitting = true
 amount = 30
 lifetime = 2.5
@@ -399,9 +399,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" index="2"]
 
-position = Vector2( 7.56007, 32.9246 )
-rotation = 1.49889
-offset = 192.512
+position = Vector2( 5.97851, 40.8333 )
+rotation = 1.79089
+offset = 201.522
 h_offset = 0.0
 v_offset = 0.0
 rotate = true
@@ -417,10 +417,10 @@ light_mask = 3
 material = SubResource( 12 )
 position = Vector2( 0.77916, 0.278669 )
 emitting = true
-amount = 20
+amount = 30
 lifetime = 2.5
 one_shot = false
-preprocess = 0.0
+preprocess = 3.0
 speed_scale = 6.0
 explosiveness = 0.0
 randomness = 0.0
@@ -438,9 +438,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D4" type="PathFollow2D" parent="Path2D" index="3"]
 
-position = Vector2( -7.60873, 98.6769 )
-rotation = 0.830529
-offset = 266.537
+position = Vector2( -1.15809, 103.697 )
+rotation = 0.680156
+offset = 275.811
 h_offset = 0.0
 v_offset = 0.0
 rotate = true

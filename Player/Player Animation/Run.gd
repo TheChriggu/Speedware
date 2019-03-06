@@ -5,6 +5,10 @@ var isJumpingUp = false
 var isJumpingDown = false
 var isIdle = false
 var isVictory = false
+var isSpeedBoostRunning = false
+var isSpeedBoostJumping = false
+var isColliding = false
+var isSliding = false
 
 signal VictoryAnimationFinished()
 
@@ -14,14 +18,18 @@ func SetAllVariablesToFalse():
 	isJumpingDown = false
 	isIdle = false
 	isVictory = false
-	
+	isSpeedBoostRunning = false
+	isSpeedBoostJumping = false
+	isColliding = false
+	isSliding = false
+
 func Run(speed):
 	if !isRunning:
-		$MovementAnimations.play("Run2", 0.1)
+		$MovementAnimations.play("Run2", 0.1, 1.8)
 		SetAllVariablesToFalse()
 		isRunning = true
 	else:
-		$MovementAnimations.playback_speed = ClampRunningSpeed(speed)
+		$MovementAnimationsBackup.playback_speed = ClampRunningSpeed(speed)
 
 func SwitchColorToOrange():
 	$ColorSwitchAnimation.play("SwitchColorToOrange")
@@ -31,7 +39,7 @@ func SwitchColorToPurple():
 
 func JumpUp():
 	if !isJumpingUp:
-		$MovementAnimations.play("jump_up", 0.3, 1)
+		$MovementAnimations.play("JumpUp", 0.3, 1)
 		SetAllVariablesToFalse()
 		isJumpingUp = true
 
@@ -43,15 +51,40 @@ func JumpDown():
 
 func Idle():
 	if !isIdle:
-		$MovementAnimations.play("Idle_3", 0.3, 1)
+		$MovementAnimations.play("Idle_2", 0.3, 1)
 		SetAllVariablesToFalse()
 		isIdle = true
 
 func Victory():
 	if !isVictory:
-		$MovementAnimations.play("VictoryAnimation", 0.3, 1)
+		$MovementAnimations.play("Victory", 0.3, 1)
 		SetAllVariablesToFalse()
 		isVictory = true
+
+func SpeedBoostRun():
+	if !isSpeedBoostRunning:
+		$MovementAnimations.play("SpeedBoostRun", 0.3, 1)
+		SetAllVariablesToFalse()
+		isSpeedBoostRunning = true
+
+func SpeedBoostJumpUp():
+	if !isSpeedBoostJumping:
+		$MovementAnimations.play("SpeedBoostJumpUp", 0.3, 1)
+		SetAllVariablesToFalse()
+		isSpeedBoostJumping = true
+
+func Collision():
+	if !isColliding:
+		$MovementAnimations.play("Collision", 0, 1)
+		SetAllVariablesToFalse()
+		isColliding = true
+		isIdle = true
+
+func Slide():
+	if !isSliding:
+		$MovementAnimations.play("Slide", 0.3, 1)
+		SetAllVariablesToFalse()
+		isSliding = true
 
 var minSpeed = 1.8
 var maxSpeed = 3
@@ -64,3 +97,4 @@ func ClampRunningSpeed(speed):
 
 func AnimationFinished():
 	emit_signal("VictoryAnimationFinished")
+

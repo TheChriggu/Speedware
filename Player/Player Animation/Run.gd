@@ -6,6 +6,8 @@ var isJumpingDown = false
 var isIdle = false
 var isVictory = false
 
+signal VictoryAnimationFinished()
+
 func SetAllVariablesToFalse():
 	isRunning = false
 	isJumpingUp = false
@@ -47,7 +49,9 @@ func Idle():
 
 func Victory():
 	if !isVictory:
-		$MovementAnimations.play("Victory", 0.3, 1)
+		$MovementAnimations.play("VictoryAnimation", 0.3, 1)
+		SetAllVariablesToFalse()
+		isVictory = true
 
 var minSpeed = 1.8
 var maxSpeed = 3
@@ -57,3 +61,6 @@ func ClampRunningSpeed(speed):
 	elif speed > maxSpeed:
 		return maxSpeed
 	return speed
+
+func AnimationFinished():
+	emit_signal("VictoryAnimationFinished")

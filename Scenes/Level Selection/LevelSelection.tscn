@@ -14,7 +14,7 @@
 [ext_resource path="res://Levels/Level7.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Levels/Level8.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Levels/Level9.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Sounds/Elevator Music #1 - Full Version _ No Copyright Sound Effect.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Sounds/Background Music/Speedware_Music_Theme_Menu.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Scenes/Level Selection/button_levelselction_music_michelle.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Level Selection/button_levelselction_hover_music_michelle.png" type="Texture" id=17]
 [ext_resource path="res://Sounds/SFX/SFX_Collectible_PickUp.wav" type="AudioStream" id=18]
@@ -279,7 +279,7 @@ focus_neighbour_bottom = NodePath("../../LevelShortcut/Button")
 stream = ExtResource( 15 )
 volume_db = 0.0
 pitch_scale = 1.0
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Music"
 

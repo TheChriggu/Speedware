@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Player/Player Animation/Run.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Purple/body.png" type="Texture" id=2]
@@ -19,23 +19,22 @@
 [ext_resource path="res://Idle_3.tres" type="Animation" id=17]
 [ext_resource path="res://Player/Player Animation/Run.tres" type="Animation" id=18]
 [ext_resource path="res://Run2.tres" type="Animation" id=19]
-[ext_resource path="res://base.tres" type="Animation" id=20]
-[ext_resource path="res://Player/Player Animation/jump-down2.tres" type="Animation" id=21]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/foot_l.png" type="Texture" id=22]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/shin_l.png" type="Texture" id=23]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/forearm_r.png" type="Texture" id=24]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/arm_r.png" type="Texture" id=25]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/body.png" type="Texture" id=26]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/leg_l.png" type="Texture" id=27]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/foot_r.png" type="Texture" id=28]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/shin_r.png" type="Texture" id=29]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/leg_r.png" type="Texture" id=30]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/hip.png" type="Texture" id=31]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/head.png" type="Texture" id=32]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/forearm_l.png" type="Texture" id=33]
-[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/arm_l.png" type="Texture" id=34]
-
-
+[ext_resource path="res://Player/Player Animation/VictoryAnimation.tres" type="Animation" id=20]
+[ext_resource path="res://base.tres" type="Animation" id=21]
+[ext_resource path="res://Player/Player Animation/jump-down2.tres" type="Animation" id=22]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/foot_l.png" type="Texture" id=23]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/shin_l.png" type="Texture" id=24]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/forearm_r.png" type="Texture" id=25]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/arm_r.png" type="Texture" id=26]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/body.png" type="Texture" id=27]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/leg_l.png" type="Texture" id=28]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/foot_r.png" type="Texture" id=29]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/shin_r.png" type="Texture" id=30]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/leg_r.png" type="Texture" id=31]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/hip.png" type="Texture" id=32]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/head.png" type="Texture" id=33]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/forearm_l.png" type="Texture" id=34]
+[ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/arm_l.png" type="Texture" id=35]
 
 [sub_resource type="StreamTexture" id=1]
 
@@ -838,7 +837,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 22 ) ]
+"values": [ ExtResource( 23 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Base/Body/hip/leg_l/shin_l:texture")
@@ -850,7 +849,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 23 ) ]
+"values": [ ExtResource( 24 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Base/Body/hip/leg_l:texture")
@@ -862,7 +861,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 28 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Base/Body/hip/leg_r/shin_r/foot_r:texture")
@@ -874,7 +873,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 28 ) ]
+"values": [ ExtResource( 29 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Base/Body/hip/leg_r/shin_r:texture")
@@ -886,7 +885,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 29 ) ]
+"values": [ ExtResource( 30 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Base/Body/hip/leg_r:texture")
@@ -898,7 +897,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 30 ) ]
+"values": [ ExtResource( 31 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Base/Body/hip:texture")
@@ -910,7 +909,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 31 ) ]
+"values": [ ExtResource( 32 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Base/Body/Head:texture")
@@ -922,7 +921,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 32 ) ]
+"values": [ ExtResource( 33 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Base/Body/arm_l/forearm_l:texture")
@@ -934,7 +933,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 33 ) ]
+"values": [ ExtResource( 34 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Base/Body/arm_l:texture")
@@ -946,7 +945,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 34 ) ]
+"values": [ ExtResource( 35 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Base/Body/arm_r/forearm_r:texture")
@@ -958,7 +957,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 24 ) ]
+"values": [ ExtResource( 25 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Base/Body/arm_r:texture")
@@ -970,7 +969,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 25 ) ]
+"values": [ ExtResource( 26 ) ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Base/Body:texture")
@@ -982,7 +981,7 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 26 ) ]
+"values": [ ExtResource( 27 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -1168,14 +1167,16 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility
 
 [node name="Body" type="Sprite" parent="Base" index="1"]
 
-position = Vector2( -58.3149, -125.279 )
+position = Vector2( -24.2826, -109.562 )
+rotation = -6.23926
 texture = ExtResource( 2 )
 offset = Vector2( 88.307, 105.811 )
 _sections_unfolded = [ "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="arm_r" type="Sprite" parent="Base/Body" index="0"]
 
-position = Vector2( 8.45813, 47.5123 )
+position = Vector2( 89.8237, 47.3114 )
+rotation = -2.04954
 z_index = -2
 texture = ExtResource( 3 )
 offset = Vector2( 12.3395, 62.8695 )
@@ -1186,7 +1187,8 @@ __meta__ = {
 
 [node name="forearm_r" type="Sprite" parent="Base/Body/arm_r" index="0"]
 
-position = Vector2( 34.9115, 121.764 )
+position = Vector2( 34.9116, 121.764 )
+rotation = -0.354326
 scale = Vector2( 0.999999, 0.999999 )
 texture = ExtResource( 4 )
 offset = Vector2( 12.2047, 109.027 )
@@ -1206,6 +1208,7 @@ __meta__ = {
 
 modulate = Color( 0.917969, 0.917969, 0.917969, 1 )
 position = Vector2( -0.924377, 58.1391 )
+rotation = 0.897387
 z_index = 3
 texture = ExtResource( 5 )
 offset = Vector2( 4.04419, 66.5498 )
@@ -1216,7 +1219,8 @@ __meta__ = {
 
 [node name="forearm_l" type="Sprite" parent="Base/Body/arm_l" index="0"]
 
-position = Vector2( -10.9546, 126.496 )
+position = Vector2( -10.9545, 126.496 )
+rotation = -1.25405
 texture = ExtResource( 6 )
 offset = Vector2( 0, 109.027 )
 _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility" ]
@@ -1235,6 +1239,7 @@ __meta__ = {
 [node name="Head" type="Sprite" parent="Base/Body" index="2"]
 
 position = Vector2( 18.9569, -49.3523 )
+rotation = -0.392111
 texture = ExtResource( 7 )
 offset = Vector2( -8.00359, -235.832 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
@@ -1252,6 +1257,7 @@ __meta__ = {
 [node name="hip" type="Sprite" parent="Base/Body" index="3"]
 
 position = Vector2( -6.43921, 365.266 )
+rotation = 0.383842
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 __meta__ = {
@@ -1261,6 +1267,7 @@ __meta__ = {
 [node name="leg_r" type="Sprite" parent="Base/Body/hip" index="0"]
 
 position = Vector2( 33.922, 14.1356 )
+rotation = -0.726141
 z_index = -2
 texture = ExtResource( 9 )
 offset = Vector2( -2.89481, 58.8565 )
@@ -1272,7 +1279,8 @@ __meta__ = {
 
 [node name="shin_r" type="Sprite" parent="Base/Body/hip/leg_r" index="0"]
 
-position = Vector2( 8.57758, 111.124 )
+position = Vector2( 9.38507, 111.261 )
+rotation = 0.202242
 scale = Vector2( 0.999999, 0.999999 )
 texture = ExtResource( 10 )
 offset = Vector2( 3.15355, 90.6186 )
@@ -1283,7 +1291,8 @@ __meta__ = {
 
 [node name="foot_r" type="Sprite" parent="Base/Body/hip/leg_r/shin_r" index="0"]
 
-position = Vector2( 17.5913, 185.298 )
+position = Vector2( 17.9166, 187.306 )
+rotation = 0.108918
 scale = Vector2( 0.999999, 0.999999 )
 z_index = -1
 texture = ExtResource( 11 )
@@ -1303,6 +1312,7 @@ __meta__ = {
 [node name="leg_l" type="Sprite" parent="Base/Body/hip" index="1"]
 
 position = Vector2( -12.3968, 13.5097 )
+rotation = -0.246819
 z_index = 2
 texture = ExtResource( 12 )
 offset = Vector2( 15.3968, 54.6082 )
@@ -1315,6 +1325,7 @@ __meta__ = {
 [node name="shin_l" type="Sprite" parent="Base/Body/hip/leg_l" index="0"]
 
 position = Vector2( 16.9869, 119.658 )
+rotation = -0.016013
 texture = ExtResource( 13 )
 offset = Vector2( 8.40984, 86.1597 )
 _sections_unfolded = [ "Visibility" ]
@@ -1324,7 +1335,8 @@ __meta__ = {
 
 [node name="foot_l" type="Sprite" parent="Base/Body/hip/leg_l/shin_l" index="0"]
 
-position = Vector2( 18.2172, 193.671 )
+position = Vector2( 18.2177, 193.673 )
+rotation = -0.125675
 z_index = -1
 texture = ExtResource( 14 )
 offset = Vector2( 21.1926, 14.563 )
@@ -1346,15 +1358,16 @@ root_node = NodePath("..")
 autoplay = "Run"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-playback_speed = 1.0
+playback_speed = 1.8
 anims/Idle = ExtResource( 15 )
 anims/Idle_2 = ExtResource( 16 )
 anims/Idle_3 = ExtResource( 17 )
 anims/Run = ExtResource( 18 )
 anims/Run2 = ExtResource( 19 )
 anims/Victory = SubResource( 2 )
-anims/base = ExtResource( 20 )
-anims/jump-down = ExtResource( 21 )
+anims/VictoryAnimation = ExtResource( 20 )
+anims/base = ExtResource( 21 )
+anims/jump-down = ExtResource( 22 )
 anims/jump_up = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]

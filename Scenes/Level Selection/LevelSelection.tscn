@@ -466,8 +466,8 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Collectible" type="Sprite" parent="." index="10"]
 
-position = Vector2( 1495.9, 387.899 )
-scale = Vector2( 0.0521961, 0.0521961 )
+position = Vector2( 1489.59, 402.727 )
+scale = Vector2( 0.404995, 0.404995 )
 texture = ExtResource( 24 )
 
 [connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]

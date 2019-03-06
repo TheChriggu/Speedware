@@ -1,16 +1,52 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/SwitcheffectExplosion.gd" type="Script" id=1]
-[ext_resource path="res://Player/Particles/ExplosionParticles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/ParticleFirerer.gd" type="Script" id=2]
+[ext_resource path="res://Player/Particles/ExplosionParticles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Particles/PurpleSwitcheffectExplosion2.tres" type="Material" id=4]
 
 [node name="SwitcheffectExplosion" type="Node2D"]
 
 pause_mode = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility" ]
-TIMER_TIME = 0.1
-MAX_OVERLAYING_PARTICLES = 10
 
-[node name="Particles2D" parent="." index="0" instance=ExtResource( 2 )]
+[node name="OrangeParticles" type="Node2D" parent="." index="0"]
+
+script = ExtResource( 2 )
+
+[node name="Particles2DOrange" parent="OrangeParticles" index="0" instance=ExtResource( 3 )]
+
+[node name="Particles2DOrange2" parent="OrangeParticles" index="1" instance=ExtResource( 3 )]
+
+[node name="Particles2DOrange3" parent="OrangeParticles" index="2" instance=ExtResource( 3 )]
+
+[node name="Particles2DOrange4" parent="OrangeParticles" index="3" instance=ExtResource( 3 )]
+
+[node name="Particles2DOrange5" parent="OrangeParticles" index="4" instance=ExtResource( 3 )]
+
+[node name="PurpleParticles" type="Node2D" parent="." index="1"]
+
+script = ExtResource( 2 )
+
+[node name="Particles2D2Purple" parent="PurpleParticles" index="0" instance=ExtResource( 3 )]
+
+process_material = ExtResource( 4 )
+
+[node name="Particles2D2Purple2" parent="PurpleParticles" index="1" instance=ExtResource( 3 )]
+
+process_material = ExtResource( 4 )
+
+[node name="Particles2D2Purple3" parent="PurpleParticles" index="2" instance=ExtResource( 3 )]
+
+process_material = ExtResource( 4 )
+
+[node name="Particles2D2Purple4" parent="PurpleParticles" index="3" instance=ExtResource( 3 )]
+
+process_material = ExtResource( 4 )
+
+[node name="Particles2D2Purple5" parent="PurpleParticles" index="4" instance=ExtResource( 3 )]
+
+process_material = ExtResource( 4 )
 
 

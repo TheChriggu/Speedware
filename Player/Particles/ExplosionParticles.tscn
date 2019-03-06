@@ -4,8 +4,6 @@
 [ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=2]
 [ext_resource path="res://Player/Particles2D.gd" type="Script" id=3]
 
-
-
 [sub_resource type="CanvasItemMaterial" id=1]
 
 render_priority = 0

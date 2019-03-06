@@ -874,12 +874,13 @@ scale = Vector2( 0.11, 0.11 )
 
 [node name="Moonwalk" type="AnimatedSprite" parent="." index="6"]
 
+visible = false
 position = Vector2( -5.9118, -39.64 )
 rotation = 0.00734518
 scale = Vector2( 0.453219, 0.453219 )
 frames = SubResource( 23 )
 animation = "default"
-frame = 5
+frame = 9
 playing = true
 flip_h = true
 _sections_unfolded = [ "Material", "Visibility" ]
@@ -895,5 +896,7 @@ _sections_unfolded = [ "Material", "Visibility" ]
 [connection signal="body_entered" from="HitDetectors/FloorBottom" to="HitDetectors" method="_on_FloorBottom_body_entered"]
 
 [connection signal="body_exited" from="HitDetectors/FloorBottom" to="HitDetectors" method="_on_FloorBottom_body_exited"]
+
+[connection signal="VictoryAnimationFinished" from="AnimatedCharacter" to="." method="_on_AnimatedCharacter_VictoryAnimationFinished"]
 
 

@@ -450,4 +450,18 @@ tracks/36/keys = {
 "update": 0,
 "values": [ 1.8 ]
 }
+tracks/37/type = "method"
+tracks/37/path = NodePath(".")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "AnimationFinished"
+} ]
+}
 

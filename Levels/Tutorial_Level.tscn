@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Levels/World.gd" type="Script" id=1]
 [ext_resource path="res://WorldEnvironment.tres" type="Environment" id=2]
@@ -22,22 +22,21 @@
 [ext_resource path="res://Scenes/Level Selection/shadedLight36.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/Level Selection/buttonL.png" type="Texture" id=21]
 [ext_resource path="res://UI/UI.gd" type="Script" id=22]
-[ext_resource path="res://Scenes/Pause Menu/PauseMenu.tscn" type="PackedScene" id=23]
-[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=24]
-[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=25]
-[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=26]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=27]
-[ext_resource path="res://IngameSubtitle.tres" type="DynamicFont" id=28]
-[ext_resource path="res://main_menu_font.tres" type="DynamicFont" id=29]
-[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=30]
-[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=31]
+[ext_resource path="res://UI/color indicator/ColorIndicator.tscn" type="PackedScene" id=23]
+[ext_resource path="res://UI/Fullspeed Mode/FullspeedMode.tscn" type="PackedScene" id=24]
+[ext_resource path="res://UI/Collectibles/CollectiblesCollected.tscn" type="PackedScene" id=25]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=26]
+[ext_resource path="res://IngameSubtitle.tres" type="DynamicFont" id=27]
+[ext_resource path="res://main_menu_font.tres" type="DynamicFont" id=28]
+[ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=29]
+[ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 381.167, 280.367 )
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -404,19 +403,15 @@ autostart = false
 
 script = ExtResource( 22 )
 
-[node name="PauseMenu" parent="UI" index="0" instance=ExtResource( 23 )]
+[node name="ColorIndicator" parent="UI" index="0" instance=ExtResource( 23 )]
 
-layer = 3
+[node name="FullspeedMode" parent="UI" index="1" instance=ExtResource( 24 )]
 
-[node name="ColorIndicator" parent="UI" index="1" instance=ExtResource( 24 )]
-
-[node name="FullspeedMode" parent="UI" index="2" instance=ExtResource( 25 )]
-
-[node name="CollectiblesCollected" parent="UI" index="3" instance=ExtResource( 26 )]
+[node name="CollectiblesCollected" parent="UI" index="2" instance=ExtResource( 25 )]
 
 COLLECTIBLES_IN_THIS_LEVEL = 1
 
-[node name="Timer" parent="UI" index="4" instance=ExtResource( 27 )]
+[node name="Timer" parent="UI" index="3" instance=ExtResource( 26 )]
 
 editor/display_folded = true
 
@@ -436,7 +431,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 28 )
+custom_fonts/font = ExtResource( 27 )
 text = "Level:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -459,21 +454,21 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 29 )
+custom_fonts/font = ExtResource( 28 )
 text = "Tutorial"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Levelnumber" parent="UI/Timer" index="4" instance=ExtResource( 30 )]
+[node name="Levelnumber" parent="UI/Timer" index="4" instance=ExtResource( 29 )]
 
 visible = false
 margin_right = 97.0
 margin_bottom = 105.0
 text = "00"
 
-[node name="GameStartTimer" parent="UI" index="5" instance=ExtResource( 31 )]
+[node name="GameStartTimer" parent="UI" index="4" instance=ExtResource( 30 )]
 
 [connection signal="FinishLineAnimationFinished" from="Player/player" to="Level/FinishArea" method="_on_player_FinishLineAnimationFinished"]
 
@@ -495,9 +490,9 @@ text = "00"
 
 [connection signal="laser_exited" from="Level/Lasers" to="." method="_on_Lasers_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
-
 [connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
@@ -573,9 +568,9 @@ text = "00"
 
 [connection signal="collected" from="Level/Collectibles/Collectible2" to="." method="_on_Collectible_collected"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 

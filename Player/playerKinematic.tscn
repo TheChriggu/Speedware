@@ -498,7 +498,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 3.55887, 0 )
 scale = Vector2( 0.8, 0.8 )
@@ -880,7 +880,7 @@ rotation = 0.00734518
 scale = Vector2( 0.453219, 0.453219 )
 frames = SubResource( 23 )
 animation = "default"
-frame = 3
+frame = 8
 playing = true
 flip_h = true
 _sections_unfolded = [ "Material", "Visibility" ]

@@ -2,6 +2,7 @@ extends Particles2D
 
 var mustSwitchColorToPurple = false
 var mustSwitchColorToOrange = false
+var isMoving = false
 
 #Stop emitting when time runs out, then check, which color needs to be changed
 func _on_Timer_timeout():

@@ -225,24 +225,34 @@ func _on_FinishArea_finish_line_passed():
 func _on_PurpleLaserSidesDetector_area_entered(area):
 	if IS_ORANGE:
 		$SFX.HitDatastring()
+		$AnimatedCharacter.Collision()
 	else:
 		$SFX.MoveThroughDatastring()
 
 func _on_OrangeLaserSidesDetector_area_entered(area):
 	if !IS_ORANGE:
 		$SFX.HitDatastring()
+		$AnimatedCharacter.Collision()
 	else:
 		$SFX.MoveThroughDatastring()
 
 func OnAirAnimation():
 	if velocity.y < 0:
-		$AnimatedCharacter.JumpUp()
+		if isInSpeedboost:
+			$AnimatedCharacter.SpeedBoostJumpUp()
+		else:
+			$AnimatedCharacter.JumpUp()
 	else:
 		$AnimatedCharacter.JumpDown()
 
 func OnFloorAnimation():
 	if velocity.x != 0:
-		$AnimatedCharacter.Run(abs(velocity.x) / WALK_MAX_SPEED)
+		if velocity.y > 0:
+			$AnimatedCharacter.Slide()
+		elif isInSpeedboost:
+			$AnimatedCharacter.SpeedBoostRun()
+		else:
+			$AnimatedCharacter.Run(abs(velocity.x) / WALK_MAX_SPEED)
 	else:
 		$AnimatedCharacter.Idle()
 

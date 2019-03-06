@@ -874,7 +874,6 @@ scale = Vector2( 0.11, 0.11 )
 
 [node name="Moonwalk" type="AnimatedSprite" parent="." index="6"]
 
-visible = false
 position = Vector2( -5.9118, -39.64 )
 rotation = 0.00734518
 scale = Vector2( 0.453219, 0.453219 )

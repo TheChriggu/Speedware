@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Intro/LaserLabsIntro.gd" type="Script" id=1]
 [ext_resource path="res://main_menu_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/Intro/02_logo_laserlab_mittig.png" type="Texture" id=3]
-[ext_resource path="res://Sounds/SFX/SFX_Titles_Lazerlabs_feat_Bryan.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/FinishedLazerLabs.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Scenes/Intro/speedware_final Logo-nadim.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Intro/S4G_logo.png" type="Texture" id=6]
 

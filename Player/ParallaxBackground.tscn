@@ -82,7 +82,7 @@ _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Background" type="Sprite" parent="ParallaxLayer" index="0"]
 
-self_modulate = Color( 0, 0.0783691, 0.09375, 1 )
+self_modulate = Color( 0.0386047, 0.449219, 0.32411, 1 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true

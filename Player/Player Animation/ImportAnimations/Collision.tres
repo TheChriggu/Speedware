@@ -3,7 +3,7 @@
 [resource]
 
 resource_name = "Collision"
-length = 0.5
+length = 0.6
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -503,7 +503,7 @@ tracks/41/path = NodePath("Base/Collision_Shockwave:modulate")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/imported = false
-tracks/41/enabled = false
+tracks/41/enabled = true
 tracks/41/keys = {
 "times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -515,11 +515,11 @@ tracks/42/path = NodePath("Base/Collision_Shockwave:visible")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/imported = false
-tracks/42/enabled = false
+tracks/42/enabled = true
 tracks/42/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, false ]
+"values": [ true, false ]
 }
 

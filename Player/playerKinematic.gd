@@ -226,7 +226,7 @@ func _on_PurpleLaserSidesDetector_area_entered(area):
 	if IS_ORANGE:
 		$SFX.HitDatastring()
 		$AnimatedCharacter.Collision()
-		$CollisionEffect/Particles2D.visible = true
+		#$CollisionEffect/Particles2D.visible = true
 	else:
 		$SFX.MoveThroughDatastring()
 
@@ -234,17 +234,19 @@ func _on_OrangeLaserSidesDetector_area_entered(area):
 	if !IS_ORANGE:
 		$SFX.HitDatastring()
 		$AnimatedCharacter.Collision()
-		$CollisionEffect/Particles2D.visible = true
+		#$CollisionEffect/Particles2D.visible = true
 	else:
 		$SFX.MoveThroughDatastring()
 		
 
 func _on_PurpleLaserSidesDetector_area_exited(area):
-	$CollisionEffect/Particles2D.visible = false
+	#$CollisionEffect/Particles2D.visible = false
+	pass
 
 
 func _on_OrangeLaserSidesDetector_area_exited(area):
-	$CollisionEffect/Particles2D.visible = false
+	#$CollisionEffect/Particles2D.visible = false
+	pass
 
 
 func OnAirAnimation():

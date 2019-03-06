@@ -44,7 +44,7 @@ func JumpUp():
 		isJumpingUp = true
 
 func JumpDown():
-	if !isJumpingDown:
+	if !isJumpingDown && !isColliding:
 		$MovementAnimations.play("jump-down", 0.3, 1.5)
 		SetAllVariablesToFalse()
 		isJumpingDown = true

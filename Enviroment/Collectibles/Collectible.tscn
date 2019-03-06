@@ -53,7 +53,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[node name="Collectible" type="Sprite" index="0"]
+[node name="Collectible" type="Sprite"]
 
 position = Vector2( 27.53, 19.282 )
 scale = Vector2( 0.37298, 0.37298 )
@@ -102,7 +102,7 @@ volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="Sprite" type="Sprite" parent="." index="4"]
 

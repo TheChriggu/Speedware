@@ -328,7 +328,7 @@ tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 19.2111, 71.5979 ) ]
+"values": [ Vector2( -181, 300 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("Base:rotation_degrees")
@@ -340,7 +340,7 @@ tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ -22.0 ]
 }
 tracks/28/type = "value"
 tracks/28/path = NodePath("Base/Body/hip/leg_r/shin_r/foot_r/display:position")

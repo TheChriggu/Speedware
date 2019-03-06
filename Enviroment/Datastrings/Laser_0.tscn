@@ -307,7 +307,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
 
-position = Vector2( -6.78869, -44.5655 )
+position = Vector2( -6.78868, -44.5655 )
 rotation = 0.970924
 offset = 93.4211
 h_offset = 0.0
@@ -347,7 +347,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" index="1"]
 
-position = Vector2( -7.75126, 83.0904 )
+position = Vector2( -7.75112, 83.0907 )
 rotation = 1.16725
 offset = 230.248
 h_offset = 0.0
@@ -387,7 +387,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 [node name="Path2D2" type="Path2D" parent="." index="5"]
 
 self_modulate = Color( 0.124512, 0.193359, 0.46875, 0.7 )
-position = Vector2( -1.7624, 2.68896 )
+position = Vector2( -1.7624, 3.6643 )
 rotation = -2.27304e-013
 scale = Vector2( -1, 1 )
 curve = SubResource( 4 )
@@ -395,7 +395,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" index="0"]
 
-position = Vector2( -6.78679, -44.5626 )
+position = Vector2( -6.78678, -44.5626 )
 rotation = 0.970905
 offset = 93.4245
 h_offset = 0.0
@@ -435,7 +435,7 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D2" index="1"]
 
-position = Vector2( -7.75126, 83.0904 )
+position = Vector2( -7.75112, 83.0907 )
 rotation = 1.16725
 offset = 230.248
 h_offset = 0.0

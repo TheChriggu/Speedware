@@ -22,3 +22,5 @@ func TurnTrailOff():
 	$Particles2DOrangeOne2.visible = false
 	$Particles2DPurpleZero.visible = false
 	$Particles2DPurpleZero2.visible = false
+	
+	

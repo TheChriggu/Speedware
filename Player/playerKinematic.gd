@@ -224,14 +224,17 @@ func _on_FinishArea_finish_line_passed():
 func _on_PurpleLaserSidesDetector_area_entered(area):
 	if IS_ORANGE:
 		$SFX.HitDatastring()
+		
 	else:
 		$SFX.MoveThroughDatastring()
 
 func _on_OrangeLaserSidesDetector_area_entered(area):
 	if !IS_ORANGE:
 		$SFX.HitDatastring()
+		$CollisionEffect/Particles2D.visible = true
 	else:
 		$SFX.MoveThroughDatastring()
+		$CollisionEffect/Particles2D.visible = false
 
 func OnAirAnimation():
 	if velocity.y < 0:

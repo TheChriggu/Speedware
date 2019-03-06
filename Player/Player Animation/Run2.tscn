@@ -19,7 +19,7 @@
 [ext_resource path="res://Idle_3.tres" type="Animation" id=17]
 [ext_resource path="res://Player/Player Animation/Run.tres" type="Animation" id=18]
 [ext_resource path="res://Run2.tres" type="Animation" id=19]
-[ext_resource path="res://Player/Player Animation/VictoryAnimation.tres" type="Animation" id=20]
+[ext_resource path="res://Player/Player Animation/Run.tres" type="Animation" id=20]
 [ext_resource path="res://base.tres" type="Animation" id=21]
 [ext_resource path="res://Player/Player Animation/jump-down2.tres" type="Animation" id=22]
 [ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/foot_l.png" type="Texture" id=23]
@@ -35,6 +35,7 @@
 [ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/head.png" type="Texture" id=33]
 [ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/forearm_l.png" type="Texture" id=34]
 [ext_resource path="res://Player/Player Animation/FUC_Resources/Char_Orange/arm_l.png" type="Texture" id=35]
+
 
 [sub_resource type="StreamTexture" id=1]
 

@@ -64,8 +64,6 @@ CURRENT_ANCHOR = 0
 position = Vector2( 1338.48, -186.5 )
 collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
-FIXED_CAMERA = false
-ZOOM_OUT = false
 
 [node name="CamCollider2" parent="Player/ForwardLookingCamera/HeadCamCollider" index="1" instance=ExtResource( 7 )]
 
@@ -73,8 +71,6 @@ position = Vector2( 1622.46, 330.647 )
 scale = Vector2( 1.29804, 1 )
 collision_layer = 0
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
-FIXED_CAMERA = false
-ZOOM_OUT = false
 
 [node name="ParallaxBackground" parent="Player" index="2" instance=ExtResource( 8 )]
 
@@ -750,8 +746,8 @@ text = "03"
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
-
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

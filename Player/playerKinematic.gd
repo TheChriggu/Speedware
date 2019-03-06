@@ -49,6 +49,7 @@ func _physics_process(delta):
 	
 	VerticalMovement(delta)
 	UIInteraction()
+	MovementTrail()
 
 func HorizontalMovement(delta):
 	var force = Vector2(0, GRAVITY) #Vector containing the forces which get applied to the player every frame
@@ -251,3 +252,9 @@ func MovementSound():
 		$SFX.DecreaseMovementSoundPitch()
 	
 	previousSpeed = velocity.x
+
+func MovementTrail():
+	if velocity.x != 0 || velocity.y != 0:
+		$VFX.TurnTrailOn()
+	else:
+		$VFX.TurnTrailOff()

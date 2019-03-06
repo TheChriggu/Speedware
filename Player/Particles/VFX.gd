@@ -1,7 +1,7 @@
 extends Node2D
 
 var isPurple = true
-var isEmitting = false
+var isEmitting = true
 
 func PlayJumpAnimation():
 	#$AnimationPlayer.play("JumpAnimation")

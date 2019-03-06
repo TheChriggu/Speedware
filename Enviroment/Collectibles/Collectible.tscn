@@ -53,7 +53,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[node name="Collectible" type="Sprite"]
+[node name="Collectible" type="Sprite" index="0"]
 
 position = Vector2( 27.53, 19.282 )
 scale = Vector2( 0.37298, 0.37298 )
@@ -68,8 +68,8 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 7
-collision_mask = 7
+collision_layer = 4
+collision_mask = 4
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]

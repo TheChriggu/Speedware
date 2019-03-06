@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/levelsection_michelle.png" type="Texture" id=2]
@@ -21,13 +21,19 @@
 [ext_resource path="res://Sounds/SFX/SFX_Player_JumpOff.wav" type="AudioStream" id=19]
 [ext_resource path="res://Scenes/Level Selection/flatDark03.png" type="Texture" id=20]
 [ext_resource path="res://IngameSubtitle.tres" type="DynamicFont" id=21]
-[ext_resource path="res://Scenes/Level Selection/flatDark36.png" type="Texture" id=22]
-[ext_resource path="res://Scenes/Level Selection/flatDark35.png" type="Texture" id=23]
-[ext_resource path="res://Enviroment/Collectibles/Collectible_Icon_Floppy_Disk.png" type="Texture" id=24]
-[ext_resource path="res://Scenes/Level Selection/credits_questionmark.png" type="Texture" id=25]
-[ext_resource path="res://Scenes/Level Selection/credits_hover_questionmark.png" type="Texture" id=26]
-[ext_resource path="res://Scenes/Credits/CreditsButton.gd" type="Script" id=27]
-[ext_resource path="res://Scenes/Credits/Credits.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Level Selection/UIBackToTitle.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Level Selection/flatDark36.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Level Selection/quitscreen.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/Level Selection/no_quit.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/Level Selection/no_hover_quit.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/Level Selection/yes_quit.png" type="Texture" id=27]
+[ext_resource path="res://Scenes/Level Selection/yes_hover_quit.png" type="Texture" id=28]
+[ext_resource path="res://Scenes/Level Selection/flatDark35.png" type="Texture" id=29]
+[ext_resource path="res://Enviroment/Collectibles/Collectible_Icon_Floppy_Disk.png" type="Texture" id=30]
+[ext_resource path="res://Scenes/Level Selection/credits_questionmark.png" type="Texture" id=31]
+[ext_resource path="res://Scenes/Level Selection/credits_hover_questionmark.png" type="Texture" id=32]
+[ext_resource path="res://Scenes/Credits/CreditsButton.gd" type="Script" id=33]
+[ext_resource path="res://Scenes/Credits/Credits.tscn" type="PackedScene" id=34]
 
 [sub_resource type="Animation" id=1]
 
@@ -429,19 +435,79 @@ text = "Exit"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = ExtResource( 22 )
 _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Sprite3" type="Sprite" parent="UIBackToTitle" index="0"]
 
 position = Vector2( -41.2081, 16.0408 )
 scale = Vector2( 0.818852, 0.842954 )
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
+
+[node name="QuitScreen" type="Node2D" parent="UIBackToTitle" index="1"]
+
+visible = false
+
+[node name="Sprite" type="Sprite" parent="UIBackToTitle/QuitScreen" index="0"]
+
+position = Vector2( -666.314, -381.504 )
+texture = ExtResource( 24 )
+
+[node name="NoButton" type="TextureButton" parent="UIBackToTitle/QuitScreen" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -638.0
+margin_top = -355.0
+margin_right = -422.0
+margin_bottom = -267.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 25 )
+texture_focused = ExtResource( 26 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="YesButton" type="TextureButton" parent="UIBackToTitle/QuitScreen" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -925.0
+margin_top = -352.0
+margin_right = -709.0
+margin_bottom = -264.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 27 )
+texture_focused = ExtResource( 28 )
+_sections_unfolded = [ "Textures" ]
 
 [node name="Sprite2" type="Sprite" parent="." index="9"]
 
 position = Vector2( 1568.21, 867.811 )
 scale = Vector2( 0.807305, 0.831067 )
-texture = ExtResource( 23 )
+texture = ExtResource( 29 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="UIConfirm" type="Label" parent="Sprite2" index="0"]
@@ -471,10 +537,11 @@ _sections_unfolded = [ "custom_fonts" ]
 
 position = Vector2( 1516.93, 387.836 )
 scale = Vector2( 0.611812, 0.611812 )
-texture = ExtResource( 24 )
+texture = ExtResource( 30 )
 
 [node name="Credits" type="TextureButton" parent="." index="11"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -497,12 +564,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 25 )
-texture_focused = ExtResource( 26 )
-script = ExtResource( 27 )
+texture_normal = ExtResource( 31 )
+texture_focused = ExtResource( 32 )
+script = ExtResource( 33 )
 _sections_unfolded = [ "Focus", "Textures" ]
 
-[node name="CreditsWindow" parent="Credits" index="0" instance=ExtResource( 28 )]
+[node name="CreditsWindow" parent="Credits" index="0" instance=ExtResource( 34 )]
 
 visible = false
 position = Vector2( -923.766, -749.326 )
@@ -511,6 +578,10 @@ scale = Vector2( 0.776459, 0.776459 )
 [connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]
 
 [connection signal="value_changed" from="SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+
+[connection signal="pressed" from="UIBackToTitle/QuitScreen/NoButton" to="UIBackToTitle" method="_on_NoButton_pressed"]
+
+[connection signal="pressed" from="UIBackToTitle/QuitScreen/YesButton" to="UIBackToTitle" method="_on_YesButton_pressed"]
 
 [connection signal="pressed" from="Credits" to="Credits" method="_on_Credits_pressed"]
 

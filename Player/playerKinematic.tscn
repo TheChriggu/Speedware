@@ -628,6 +628,7 @@ position = Vector2( 3.04739, 1.2499 )
 
 [node name="ParticlesIfBoosted" type="Particles2D" parent="VFX" index="1"]
 
+visible = false
 self_modulate = Color( 0, 0.605469, 0.449371, 1 )
 show_behind_parent = true
 material = SubResource( 12 )
@@ -880,7 +881,7 @@ rotation = 0.00734518
 scale = Vector2( 0.453219, 0.453219 )
 frames = SubResource( 23 )
 animation = "default"
-frame = 8
+frame = 11
 playing = true
 flip_h = true
 _sections_unfolded = [ "Material", "Visibility" ]

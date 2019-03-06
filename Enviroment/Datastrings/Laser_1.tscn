@@ -41,7 +41,7 @@ light_mode = 2
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.190028, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.505858, 0 ), 0.205165, 0.205165, 0, 0, Vector2( 0.815617, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.125799, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.505858, 0 ), 0.205165, 0.205165, 0, 0, Vector2( 0.815617, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=7]
 
@@ -101,7 +101,7 @@ tracks/0/path = NodePath("PartikelPurple:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -132,7 +132,7 @@ tracks/0/path = NodePath("PartikelPurple:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -169,7 +169,6 @@ blend_times = [  ]
 
 [node name="PartikelPurple" type="Particles2D" parent="." index="1"]
 
-visible = false
 modulate = Color( 0.949371, 0.0742188, 1, 1 )
 self_modulate = Color( 0.117188, 0.117188, 0.117188, 1 )
 show_behind_parent = true
@@ -177,7 +176,7 @@ material = SubResource( 2 )
 position = Vector2( 0.033634, 128.046 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.177489 )
-emitting = false
+emitting = true
 amount = 200
 lifetime = 5.13
 one_shot = false

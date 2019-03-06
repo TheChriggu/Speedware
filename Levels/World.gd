@@ -2,7 +2,8 @@ extends Node
 
 func _ready():
 	#$UI/GameStartTimer/AnimationPlayer.play("LevelStartTimer")
-	get_node("Player/player/AnimationPlayer").play("CharacterGameStartAnimation")
+	#get_node("Player/player/AnimationPlayer").play("CharacterGameStartAnimation")
+	pass
 
 func _on_player_switched_color_to_orange():
 	$Level.SwitchColorToOrange()

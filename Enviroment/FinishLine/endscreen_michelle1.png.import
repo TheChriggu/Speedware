@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/star_filled.png-9513959fe2ee99fb09da821e199d7753.stex"
+path="res://.import/endscreen_michelle1.png-9b662d0cbd45da4bf8a243c0d7316a13.stex"
 
 [deps]
 
-source_file="res://Scenes/Level Selection/star_filled.png"
-dest_files=[ "res://.import/star_filled.png-9513959fe2ee99fb09da821e199d7753.stex" ]
+source_file="res://Enviroment/FinishLine/endscreen_michelle1.png"
+dest_files=[ "res://.import/endscreen_michelle1.png-9b662d0cbd45da4bf8a243c0d7316a13.stex" ]
 
 [params]
 

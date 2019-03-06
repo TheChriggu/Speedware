@@ -435,6 +435,7 @@ __meta__ = {
 }
 scene_to_load = "res://Levels/Level1.tscn"
 PossibleLevelBestTime = 0.0
+LevelNumber = 0
 TwoStarRatingTolerance = 8
 OneStarRatingTolerance = 15
 ZeroStarRatingTolerance = 20
@@ -562,6 +563,7 @@ texture = ExtResource( 7 )
 
 [node name="BackToMenu" type="TextureButton" parent="Popup/Control/PopupBackground" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -599,6 +601,7 @@ bus = "SFX"
 
 [node name="NextLevel" type="TextureButton" parent="Popup/Control/PopupBackground" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -635,6 +638,7 @@ bus = "SFX"
 
 [node name="ReplayLevel" type="TextureButton" parent="Popup/Control/PopupBackground" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -694,7 +698,6 @@ lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 18 )
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
-FinishTime = 0
 
 [node name="1Star" type="Sprite" parent="Popup/Control/PopupBackground" index="4"]
 

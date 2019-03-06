@@ -3,6 +3,7 @@ extends Node2D
 export var scene_to_load = "res://Levels/Level1.tscn"
 signal finish_line_passed
 export var PossibleLevelBestTime = 00.00
+export var LevelNumber = 00
 export var TwoStarRatingTolerance = 8
 export var OneStarRatingTolerance = 15
 export var ZeroStarRatingTolerance = 20
@@ -80,3 +81,7 @@ func setStarRating(StarRating):
 func _on_LinePassedSoundEffect_finished():
 	#$AnimationPlayer.play("FinishLinePassed")
 	pass
+
+func getLevelnumber():
+	var LevelNumberConv = str(LevelNumber).pad_zeros(2)
+	return LevelNumberConv

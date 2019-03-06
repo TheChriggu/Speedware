@@ -35,7 +35,7 @@ func _on_Collectible_collected():
 
 func _on_FinishArea_finish_line_passed():
 	$Player.FinishLinePassed()
-	get_tree().paused = true
+	#get_tree().paused = true
 	$UI.FinishLinePassed()
 
 func _on_BackgroundMusic_drum_beat():

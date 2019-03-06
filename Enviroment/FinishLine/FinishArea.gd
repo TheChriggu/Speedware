@@ -1,5 +1,6 @@
 extends Node2D
-export(PackedScene) var scene_to_load
+#export(PackedScene) var scene_to_load
+export var scene_to_load = "res://Levels/Level1.tscn"
 signal finish_line_passed
 export var PossibleLevelBestTime = 00.00
 export var TwoStarRatingTolerance = 8
@@ -11,6 +12,7 @@ var Levelnumber
 func _ready():
 	Levelnumber = get_parent().get_parent().get_node("UI/Timer/Levelnumber").text
 	print(Levelnumber)
+
 func _on_Area2D_area_entered(area):
 	emit_signal("finish_line_passed")
 	$LinePassedSoundEffect.playing = true
@@ -23,7 +25,7 @@ func getFinishTime():
 
 func _on_NextLevel_pressed():
 	get_node("Popup/Control/PopupBackground/NextLevel/ClickSound").playing = true
-	get_tree().change_scene_to(scene_to_load)
+	get_tree().change_scene(scene_to_load)
 	get_tree().paused =false
 
 func _on_player_FinishLineAnimationFinished():

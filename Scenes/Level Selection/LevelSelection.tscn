@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scenes/Level Selection/LevelSelection.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level Selection/levelsection_michelle.png" type="Texture" id=2]
@@ -24,6 +24,10 @@
 [ext_resource path="res://Scenes/Level Selection/flatDark36.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Level Selection/flatDark35.png" type="Texture" id=23]
 [ext_resource path="res://Enviroment/Collectibles/Collectible_Icon_Floppy_Disk.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/Level Selection/credits_questionmark.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/Level Selection/credits_hover_questionmark.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/Credits/CreditsButton.gd" type="Script" id=27]
+[ext_resource path="res://Scenes/Credits/Credits.tscn" type="PackedScene" id=28]
 
 [sub_resource type="Animation" id=1]
 
@@ -333,7 +337,7 @@ margin_bottom = 807.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_top = NodePath("../Musicslider")
-focus_neighbour_bottom = NodePath("../LevelShortcuts/Level1Shortcut/Button")
+focus_neighbour_bottom = NodePath("../Credits")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -377,7 +381,7 @@ bus = "Music"
 
 [node name="UIButtons" type="Sprite" parent="." index="7"]
 
-position = Vector2( 1209.9, 1001.09 )
+position = Vector2( 1379.33, 912.042 )
 scale = Vector2( 0.777404, 0.849796 )
 texture = ExtResource( 20 )
 
@@ -406,15 +410,14 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="UIBackToTitle" type="Label" parent="." index="8"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1428.0
-margin_top = 971.0
-margin_right = 1636.0
-margin_bottom = 991.0
+margin_left = 1615.0
+margin_top = 926.0
+margin_right = 1823.0
+margin_bottom = 946.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -430,13 +433,13 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Sprite3" type="Sprite" parent="UIBackToTitle" index="0"]
 
-position = Vector2( -39.2394, 14.9888 )
-scale = Vector2( 0.67454, 0.694394 )
+position = Vector2( -41.2081, 16.0408 )
+scale = Vector2( 0.818852, 0.842954 )
 texture = ExtResource( 22 )
 
 [node name="Sprite2" type="Sprite" parent="." index="9"]
 
-position = Vector2( 1466.74, 999.608 )
+position = Vector2( 1568.21, 867.811 )
 scale = Vector2( 0.807305, 0.831067 )
 texture = ExtResource( 23 )
 _sections_unfolded = [ "Visibility" ]
@@ -466,9 +469,43 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Collectible" type="Sprite" parent="." index="10"]
 
-position = Vector2( 1495.9, 387.899 )
-scale = Vector2( 0.0521961, 0.0521961 )
+position = Vector2( 1489.59, 402.727 )
+scale = Vector2( 0.404995, 0.404995 )
 texture = ExtResource( 24 )
+
+[node name="Credits" type="TextureButton" parent="." index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1207.0
+margin_top = 885.0
+margin_right = 1252.0
+margin_bottom = 950.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_neighbour_left = NodePath("../LevelShortcuts/LevelShortcut/Button")
+focus_neighbour_top = NodePath("../SFXSlider")
+focus_neighbour_bottom = NodePath("../Musicslider")
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 25 )
+texture_focused = ExtResource( 26 )
+script = ExtResource( 27 )
+_sections_unfolded = [ "Focus", "Textures" ]
+
+[node name="Credits2" parent="Credits" index="0" instance=ExtResource( 28 )]
+
+position = Vector2( -923.766, -749.326 )
+scale = Vector2( 0.776459, 0.776459 )
 
 [connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]
 

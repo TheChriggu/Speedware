@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Intro/lOGO.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Intro/TEXT.png" type="Texture" id=8]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource_name = "PressAnyButton"
 length = 1.0
@@ -28,9 +28,8 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.607765 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource_name = "StartupAnimation"
 length = 12.5
 loop = false
 step = 0.1
@@ -205,7 +204,6 @@ tracks/13/keys = {
 
 [node name="Panel" type="Panel" index="0"]
 
-modulate = Color( 1, 1, 1, 0.0331373 )
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -226,6 +224,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Text" type="Label" parent="." index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -249,8 +248,9 @@ _sections_unfolded = [ "Visibility", "custom_fonts" ]
 
 [node name="LaserLabsLogo" type="Sprite" parent="." index="1"]
 
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 61.9131, 27.8951 )
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -261,8 +261,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/PressAnyButton = SubResource( 2 )
-anims/StartupAnimation = SubResource( 1 )
+anims/PressAnyButton = SubResource( 1 )
+anims/StartupAnimation = SubResource( 2 )
 next/StartupAnimation = "PressAnyButton"
 blend_times = [  ]
 
@@ -277,14 +277,13 @@ bus = "Master"
 
 [node name="S4G" type="Sprite" parent="." index="4"]
 
-visible = false
-self_modulate = Color( 1, 1, 1, 0.252745 )
+self_modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Label" type="Label" parent="S4G" index="0"]
 
-self_modulate = Color( 1, 1, 1, 0.173241 )
+self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -308,26 +307,21 @@ _sections_unfolded = [ "Visibility", "custom_fonts" ]
 
 [node name="Background" type="Sprite" parent="." index="5"]
 
-visible = false
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 66.0595, -69.6611 )
-scale = Vector2( 0.474667, 0.419296 )
+position = Vector2( 21.716, 22.3512 )
+scale = Vector2( 1.00829, 1.01926 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="SpeedwareFont" type="Sprite" parent="." index="6"]
 
-visible = false
-self_modulate = Color( 1, 1, 1, 0.113255 )
-position = Vector2( 221.097, -415.668 )
+position = Vector2( 73.4576, -380.809 )
 scale = Vector2( 0.364216, 0.364216 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="PressAnyButton" type="Sprite" parent="." index="7"]
 
-visible = false
-position = Vector2( 195.884, 411.099 )
+position = Vector2( 44.1333, 412.95 )
 scale = Vector2( 0.500237, 0.500237 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Visibility" ]

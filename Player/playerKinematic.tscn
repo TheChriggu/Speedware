@@ -254,8 +254,8 @@ tracks/3/keys = {
 "method": "OrangeToPurple"
 } ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("VFX/Particles2DPurpleZero:emitting")
+tracks/4/type = "method"
+tracks/4/path = NodePath("AnimatedCharacter")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -263,11 +263,13 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ {
+"args": [  ],
+"method": "SwitchColorToPurple"
+} ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("VFX/Particles2DPurpleZero2:emitting")
+tracks/5/type = "method"
+tracks/5/path = NodePath("VFX")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -275,45 +277,9 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("VFX/Particles2DOrangeOne2:emitting")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("VFX/Particles2DOrangeOne:emitting")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "method"
-tracks/8/path = NodePath("AnimatedCharacter")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "SwitchColorToPurple"
+"method": "SwitchToPurple"
 } ]
 }
 
@@ -388,8 +354,8 @@ tracks/4/keys = {
 "method": "SwitchColorToOrange"
 } ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("VFX/Particles2DOrangeOne:emitting")
+tracks/5/type = "method"
+tracks/5/path = NodePath("VFX")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -397,44 +363,10 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("VFX/Particles2DOrangeOne2:emitting")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("VFX/Particles2DPurpleZero2:emitting")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("VFX/Particles2DPurpleZero:emitting")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"values": [ {
+"args": [  ],
+"method": "SwitchToOrange"
+} ]
 }
 
 [sub_resource type="CanvasItemMaterial" id=12]
@@ -591,6 +523,7 @@ blend_times = [  ]
 
 [node name="SFX" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -930,6 +863,7 @@ rotation = 0.00734518
 scale = Vector2( 0.453219, 0.453219 )
 frames = SubResource( 23 )
 animation = "default"
+frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Material", "Visibility" ]

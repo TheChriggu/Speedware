@@ -1,5 +1,8 @@
 extends Node2D
 
+var isPurple = true
+var isEmitting = false
+
 func PlayJumpAnimation():
 	#$AnimationPlayer.play("JumpAnimation")
 	pass
@@ -12,15 +15,35 @@ func TurnBoostParticlesOff():
 	$ParticlesIfBoosted.emitting = false
 
 func TurnTrailOn():
-	$Particles2DOrangeOne.visible = true
-	$Particles2DOrangeOne2.visible = true
-	$Particles2DPurpleZero.visible = true
-	$Particles2DPurpleZero2.visible = true
+	isEmitting = true
+	Emit()
 
 func TurnTrailOff():
-	$Particles2DOrangeOne.visible = false
-	$Particles2DOrangeOne2.visible = false
-	$Particles2DPurpleZero.visible = false
-	$Particles2DPurpleZero2.visible = false
-	
-	
+	isEmitting = false
+	Emit()
+
+func SwitchToOrange():
+	isPurple = false
+	Emit()
+
+func SwitchToPurple():
+	isPurple = true
+	Emit()
+
+func Emit():
+	if isEmitting:
+		if isPurple:
+			$Particles2DPurpleZero.emitting = true
+			$Particles2DPurpleZero2.emitting = true
+			$Particles2DOrangeOne.emitting = false
+			$Particles2DOrangeOne2.emitting = false
+		else:
+			$Particles2DPurpleZero.emitting = false
+			$Particles2DPurpleZero2.emitting = false
+			$Particles2DOrangeOne.emitting = true
+			$Particles2DOrangeOne2.emitting = true
+	else:
+		$Particles2DPurpleZero.emitting = false
+		$Particles2DPurpleZero2.emitting = false
+		$Particles2DOrangeOne.emitting = false
+		$Particles2DOrangeOne2.emitting = false

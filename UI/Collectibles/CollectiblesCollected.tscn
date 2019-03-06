@@ -43,8 +43,8 @@ maxCollectibles = 1
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 1715.77, 92.5966 )
-scale = Vector2( 0.0587474, 0.0552675 )
+position = Vector2( 1715.58, 93.6342 )
+scale = Vector2( 0.462218, 0.434838 )
 texture = ExtResource( 4 )
 
 [node name="subtext" type="Label" parent="." index="2"]

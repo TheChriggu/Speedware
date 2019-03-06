@@ -479,7 +479,7 @@ tracks/39/path = NodePath("Base/Collision_Shockwave:position")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/imported = false
-tracks/39/enabled = true
+tracks/39/enabled = false
 tracks/39/keys = {
 "times": PoolRealArray( 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -491,7 +491,7 @@ tracks/40/path = NodePath("Base/Collision_Shockwave:rotation_degrees")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/imported = false
-tracks/40/enabled = true
+tracks/40/enabled = false
 tracks/40/keys = {
 "times": PoolRealArray( 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -503,7 +503,7 @@ tracks/41/path = NodePath("Base/Collision_Shockwave:modulate")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/imported = false
-tracks/41/enabled = true
+tracks/41/enabled = false
 tracks/41/keys = {
 "times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -515,11 +515,11 @@ tracks/42/path = NodePath("Base/Collision_Shockwave:visible")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/imported = false
-tracks/42/enabled = true
+tracks/42/enabled = false
 tracks/42/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ false, false ]
 }
 

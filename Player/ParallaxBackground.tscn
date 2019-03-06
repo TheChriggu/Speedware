@@ -82,7 +82,7 @@ _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Background" type="Sprite" parent="ParallaxLayer" index="0"]
 
-self_modulate = Color( 0.0386047, 0.449219, 0.32411, 1 )
+self_modulate = Color( 0, 0.167969, 0.144348, 1 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -98,7 +98,7 @@ _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Chips" type="Sprite" parent="ParallaxLayer4" index="0"]
 
-self_modulate = Color( 0, 0.484375, 0.314087, 1 )
+self_modulate = Color( 0, 0.5, 0.417969, 1 )
 texture = ExtResource( 2 )
 centered = false
 region_enabled = true
@@ -114,7 +114,7 @@ _sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="Conducters" type="Sprite" parent="ParallaxLayer3" index="0"]
 
-self_modulate = Color( 0, 0.304688, 0.276123, 0.313726 )
+self_modulate = Color( 0.292969, 0.219727, 0, 0.313726 )
 texture = ExtResource( 3 )
 centered = false
 region_enabled = true

@@ -1,17 +1,17 @@
 [gd_resource type="ParticlesMaterial" load_steps=3 format=2]
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=1]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0 ), 0.0, 1.46693, 0, 0, Vector2( 0.499268, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
+[sub_resource type="CurveTexture" id=2]
 
 flags = 4
 width = 2048
-curve = SubResource( 3 )
+curve = SubResource( 1 )
 
 [resource]
 
@@ -42,7 +42,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.5
 scale_random = 0.0
-scale_curve = SubResource( 4 )
+scale_curve = SubResource( 2 )
 color = Color( 0.841583, 0, 0.988281, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0

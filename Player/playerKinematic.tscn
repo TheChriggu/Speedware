@@ -478,7 +478,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 3.55887, 0 )
 scale = Vector2( 0.8, 0.8 )
@@ -616,7 +616,7 @@ show_behind_parent = true
 material = SubResource( 12 )
 position = Vector2( -1.85245, -4.69421 )
 rotation = 0.00734518
-emitting = true
+emitting = false
 amount = 300
 lifetime = 2.0
 one_shot = false
@@ -644,7 +644,7 @@ material = SubResource( 16 )
 position = Vector2( -0.833429, 1.35102 )
 rotation = -1.5708
 scale = Vector2( 1.25, 1.25 )
-emitting = true
+emitting = false
 amount = 150
 lifetime = 5.0
 one_shot = false
@@ -671,7 +671,7 @@ show_behind_parent = true
 material = SubResource( 17 )
 position = Vector2( -11.7782, 1.56522 )
 rotation = -1.5708
-emitting = true
+emitting = false
 amount = 150
 lifetime = 5.0
 one_shot = false
@@ -863,6 +863,7 @@ rotation = 0.00734518
 scale = Vector2( 0.453219, 0.453219 )
 frames = SubResource( 23 )
 animation = "default"
+frame = 5
 playing = true
 flip_h = true
 _sections_unfolded = [ "Material", "Visibility" ]

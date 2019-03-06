@@ -218,8 +218,6 @@ position = Vector2( 723.668, -837.835 )
 
 [node name="PopUps" type="Node2D" parent="Level" index="5"]
 
-editor/display_folded = true
-
 [node name="PopUp0" type="Area2D" parent="Level/PopUps" index="0"]
 
 position = Vector2( -35.022, 673.579 )
@@ -234,6 +232,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 17 )
 _sections_unfolded = [ "Collision" ]
+isFirstPopUp = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/PopUps/PopUp0" index="0"]
 
@@ -260,7 +259,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 [node name="Timer" type="Timer" parent="Level/PopUps/PopUp0" index="2"]
 
 process_mode = 1
-wait_time = 8.0
+wait_time = 2.0
 one_shot = true
 autostart = false
 
@@ -278,6 +277,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 17 )
 _sections_unfolded = [ "Collision" ]
+isFirstPopUp = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/PopUps/PopUp1" index="0"]
 
@@ -320,6 +320,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 17 )
 _sections_unfolded = [ "Collision" ]
+isFirstPopUp = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/PopUps/PopUp2" index="0"]
 
@@ -362,6 +363,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 17 )
 _sections_unfolded = [ "Collision" ]
+isFirstPopUp = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/PopUps/PopUp3" index="0"]
 
@@ -482,9 +484,9 @@ text = "00"
 
 [connection signal="laser_exited" from="Level/Lasers" to="." method="_on_Lasers_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
-
 [connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
@@ -560,11 +562,11 @@ text = "00"
 
 [connection signal="collected" from="Level/Collectibles/Collectible2" to="." method="_on_Collectible_collected"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="body_entered" from="Level/PopUps/PopUp0" to="Level/PopUps/PopUp0" method="_on_PopUp_body_entered"]
 
@@ -593,5 +595,7 @@ text = "00"
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Level/PopUps/PopUp0" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

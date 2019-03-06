@@ -188,7 +188,7 @@ tracks/1/path = NodePath("PartikelOrange:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -219,7 +219,7 @@ tracks/1/path = NodePath("PartikelOrange:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -310,7 +310,6 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="Path2D" type="Path2D" parent="." index="4"]
 
-editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( 2.62661, 3.66429 )
 rotation = -2.27304e-013
@@ -320,9 +319,9 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
 
-position = Vector2( -13.5348, -96.4008 )
-rotation = 1.28159
-offset = 44.4257
+position = Vector2( 2.552, -72.34 )
+rotation = 1.02028
+offset = 74.0429
 h_offset = 0.0
 v_offset = 0.0
 rotate = true
@@ -360,9 +359,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Path2D" index="1"]
 
-position = Vector2( -5.73688, -33.9515 )
-rotation = 2.10739
-offset = 118.469
+position = Vector2( -13.113, -5.86517 )
+rotation = 1.21851
+offset = 148.086
 h_offset = 0.0
 v_offset = 0.0
 rotate = true
@@ -376,7 +375,7 @@ pause_mode = 2
 show_behind_parent = true
 light_mask = 3
 material = SubResource( 11 )
-position = Vector2( 0.77916, 0.278669 )
+position = Vector2( 0.875362, -0.423719 )
 emitting = true
 amount = 30
 lifetime = 2.5
@@ -399,9 +398,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" index="2"]
 
-position = Vector2( 7.56007, 32.9246 )
-rotation = 1.49889
-offset = 192.512
+position = Vector2( -5.64464, 57.9866 )
+rotation = 2.31503
+offset = 222.129
 h_offset = 0.0
 v_offset = 0.0
 rotate = true
@@ -417,10 +416,10 @@ light_mask = 3
 material = SubResource( 12 )
 position = Vector2( 0.77916, 0.278669 )
 emitting = true
-amount = 20
+amount = 30
 lifetime = 2.5
 one_shot = false
-preprocess = 0.0
+preprocess = 3.0
 speed_scale = 6.0
 explosiveness = 0.0
 randomness = 0.0
@@ -438,9 +437,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D4" type="PathFollow2D" parent="Path2D" index="3"]
 
-position = Vector2( -7.60873, 98.6769 )
-rotation = 0.830529
-offset = 266.537
+position = Vector2( 7.72382, 122.317 )
+rotation = 1.54397
+offset = 296.142
 h_offset = 0.0
 v_offset = 0.0
 rotate = true

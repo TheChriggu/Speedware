@@ -35,6 +35,9 @@ var isSwitchColorEnabled = true
 var isMovingOnFloor = false
 var isMovingOnDatastring = false
 
+var isControlsEnabled = false
+var isFinished = false
+
 func _physics_process(delta):
 	CheckFloor()
 	
@@ -49,10 +52,12 @@ func _physics_process(delta):
 	
 	VerticalMovement(delta)
 	UIInteraction()
+	MovementTrail()
 
 func HorizontalMovement(delta):
 	var force = Vector2(0, GRAVITY) #Vector containing the forces which get applied to the player every frame
-	force.x = LeftForce() + RightForce() #calculate horizontal forces
+	if isControlsEnabled:
+		force.x = LeftForce() + RightForce() #calculate horizontal forces
 	
 	#if forces are applying, play their animtaions, otherwise apply friction
 	if force.x > 0:
@@ -77,12 +82,15 @@ func HorizontalMovement(delta):
 func VerticalMovement(delta):
 	if isMovingOnFloor || isMovingOnDatastring:
 		onAirTime = 0
-		OnFloorAnimation()
+		if !isFinished:
+			OnFloorAnimation()
+		else:
+			$AnimatedCharacter.Victory()
 	else:
 		onAirTime += delta
 		OnAirAnimation()
-	
-	Jump()
+	if isControlsEnabled:
+		Jump()
 
 
 func SpeedboostMovement(delta):
@@ -203,15 +211,16 @@ func BoostTrailOff():
 	
 
 func _on_GameStartTimer_GameStartTimerEnd():
-	$AnimationPlayer.play("GameStartTimerOver")
+	isControlsEnabled = true
+	#$AnimationPlayer.play("GameStartTimerOver")
 
 func _ready():
 	#$AnimationPlayer.play("CharacterGameStartAnimation")
 	pass
 
 func _on_FinishArea_finish_line_passed():
-	$AnimationPlayer.play("FinishLinePassedCharFreeze")
-	emit_signal("FinishLineAnimationFinished")
+	isControlsEnabled = false
+	isFinished = true 
 
 func _on_PurpleLaserSidesDetector_area_entered(area):
 	if IS_ORANGE:
@@ -251,3 +260,12 @@ func MovementSound():
 		$SFX.DecreaseMovementSoundPitch()
 	
 	previousSpeed = velocity.x
+
+func MovementTrail():
+	if velocity.x != 0 || velocity.y != 0:
+		$VFX.TurnTrailOn()
+	else:
+		$VFX.TurnTrailOff()
+
+func _on_AnimatedCharacter_VictoryAnimationFinished():
+	emit_signal("FinishLineAnimationFinished")

@@ -469,8 +469,8 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Collectible" type="Sprite" parent="." index="10"]
 
-position = Vector2( 1489.59, 402.727 )
-scale = Vector2( 0.404995, 0.404995 )
+position = Vector2( 1516.93, 387.836 )
+scale = Vector2( 0.611812, 0.611812 )
 texture = ExtResource( 24 )
 
 [node name="Credits" type="TextureButton" parent="." index="11"]
@@ -502,14 +502,19 @@ texture_focused = ExtResource( 26 )
 script = ExtResource( 27 )
 _sections_unfolded = [ "Focus", "Textures" ]
 
-[node name="Credits2" parent="Credits" index="0" instance=ExtResource( 28 )]
+[node name="CreditsWindow" parent="Credits" index="0" instance=ExtResource( 28 )]
 
+visible = false
 position = Vector2( -923.766, -749.326 )
 scale = Vector2( 0.776459, 0.776459 )
 
 [connection signal="value_changed" from="Musicslider" to="." method="_on_Musicslider_value_changed"]
 
 [connection signal="value_changed" from="SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+
+[connection signal="pressed" from="Credits" to="Credits" method="_on_Credits_pressed"]
+
+[connection signal="pressed" from="Credits/CreditsWindow/TextureButton" to="Credits" method="_on_TextureButton_pressed"]
 
 
 [editable path="LevelShortcuts/Level1Shortcut"]
@@ -522,3 +527,4 @@ scale = Vector2( 0.776459, 0.776459 )
 [editable path="LevelShortcuts/LevelShortcut8"]
 [editable path="LevelShortcuts/LevelShortcut9"]
 [editable path="LevelShortcuts/LevelShortcut10"]
+[editable path="Credits/CreditsWindow"]

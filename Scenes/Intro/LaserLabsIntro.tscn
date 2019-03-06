@@ -202,7 +202,7 @@ tracks/13/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.154706 ), Color( 1, 1, 1, 0.558 ), Color( 1, 1, 1, 0.845294 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Panel" type="Panel" index="0"]
+[node name="Panel" type="Panel"]
 
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5

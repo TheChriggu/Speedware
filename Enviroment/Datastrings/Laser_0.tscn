@@ -94,18 +94,18 @@ flags = 4
 gradient = SubResource( 6 )
 width = 2048
 
-[sub_resource type="Curve" id=14]
+[sub_resource type="Curve" id=8]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0 ), 0.0, 0.524304, 0, 0, Vector2( 0.641222, 0.619792 ), 2.32153, 2.32153, 0, 0, Vector2( 0.76273, 0.619792 ), -3.25806, -3.25806, 0, 0, Vector2( 1, 0 ), -0.750153, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=15]
+[sub_resource type="CurveTexture" id=9]
 
 flags = 4
 width = 2048
-curve = SubResource( 14 )
+curve = SubResource( 8 )
 
 [sub_resource type="ParticlesMaterial" id=10]
 
@@ -136,7 +136,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.5
 scale_random = 0.0
-scale_curve = SubResource( 15 )
+scale_curve = SubResource( 9 )
 color_ramp = SubResource( 7 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -219,13 +219,13 @@ tracks/1/keys = {
 
 modulate = Color( 1, 1, 1, 0.933686 )
 position = Vector2( 39.2943, 25.9973 )
+rotation = -3.14159
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="HitDetection" type="Area2D" parent="." index="0"]
 
 editor/display_folded = true
-visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -244,7 +244,6 @@ shape = SubResource( 1 )
 [node name="PhysicsCollision" type="StaticBody2D" parent="." index="1"]
 
 editor/display_folded = true
-visible = false
 input_pickable = false
 collision_layer = 2
 collision_mask = 2
@@ -308,9 +307,9 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
 
-position = Vector2( -9.17184, -48.4068 )
-rotation = 1.0199
-offset = 88.9006
+position = Vector2( -6.78869, -44.5655 )
+rotation = 0.970924
+offset = 93.4211
 h_offset = 0.0
 v_offset = 0.0
 rotate = true
@@ -348,9 +347,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" index="1"]
 
-position = Vector2( -9.31569, 78.844 )
-rotation = 1.22085
-offset = 225.728
+position = Vector2( -7.75126, 83.0904 )
+rotation = 1.16725
+offset = 230.248
 h_offset = 0.0
 v_offset = 0.0
 rotate = true
@@ -396,9 +395,9 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" index="0"]
 
-position = Vector2( -9.17031, -48.4041 )
-rotation = 1.01984
-offset = 88.9037
+position = Vector2( -6.78679, -44.5626 )
+rotation = 0.970905
+offset = 93.4245
 h_offset = 0.0
 v_offset = 0.0
 rotate = true
@@ -436,9 +435,9 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D2" index="1"]
 
-position = Vector2( -9.31569, 78.844 )
-rotation = 1.22085
-offset = 225.728
+position = Vector2( -7.75126, 83.0904 )
+rotation = 1.16725
+offset = 230.248
 h_offset = 0.0
 v_offset = 0.0
 rotate = true

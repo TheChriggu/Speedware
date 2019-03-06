@@ -154,6 +154,7 @@ tracks/1/keys = {
 
 [node name="LaserBlau" type="Sprite"]
 
+rotation = -3.14159
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
@@ -169,7 +170,6 @@ blend_times = [  ]
 
 [node name="PartikelPurple" type="Particles2D" parent="." index="1"]
 
-visible = false
 modulate = Color( 0.949371, 0.0742188, 1, 1 )
 self_modulate = Color( 0.117188, 0.117188, 0.117188, 1 )
 show_behind_parent = true
@@ -199,7 +199,6 @@ _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "T
 
 [node name="PhysicsCollision" type="StaticBody2D" parent="." index="2"]
 
-visible = false
 position = Vector2( -10.0298, 3.81154 )
 input_pickable = false
 collision_layer = 1
@@ -225,7 +224,6 @@ curve = SubResource( 4 )
 
 [node name="HitDetection" type="Area2D" parent="." index="4"]
 
-visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

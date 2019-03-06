@@ -260,7 +260,7 @@ func OnAirAnimation():
 
 func OnFloorAnimation():
 	if velocity.x != 0:
-		if velocity.y > 0:
+		if velocity.y > 5:
 			$AnimatedCharacter.Slide()
 		elif isInSpeedboost:
 			$AnimatedCharacter.SpeedBoostRun()

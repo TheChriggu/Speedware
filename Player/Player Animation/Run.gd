@@ -44,7 +44,6 @@ func JumpUp():
 		isJumpingUp = true
 
 func JumpDown():
-	if !isJumpingDown && !isColliding:
 		$MovementAnimations.play("jump-down", 0.3, 1.5)
 		SetAllVariablesToFalse()
 		isJumpingDown = true
@@ -76,6 +75,7 @@ func SpeedBoostJumpUp():
 func Collision():
 	if !isColliding:
 		$MovementAnimations.play("Collision", 0, 1)
+		$Effects.play("ShockAnimation", 0, 1)
 		SetAllVariablesToFalse()
 		isColliding = true
 		isIdle = true

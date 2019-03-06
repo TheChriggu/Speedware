@@ -285,7 +285,7 @@ func MovementSound():
 	previousSpeed = velocity.x
 
 func MovementTrail():
-	if velocity.x != 0 || velocity.y != 0:
+	if isControlsEnabled && (velocity.x != 0 || velocity.y != 0):
 		$VFX.TurnTrailOn()
 	else:
 		$VFX.TurnTrailOff()

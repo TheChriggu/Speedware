@@ -35,7 +35,7 @@ var isSwitchColorEnabled = true
 var isMovingOnFloor = false
 var isMovingOnDatastring = false
 
-var isControlsEnabled = true
+var isControlsEnabled = false
 var isFinished = false
 
 func _physics_process(delta):
@@ -211,7 +211,8 @@ func BoostTrailOff():
 	
 
 func _on_GameStartTimer_GameStartTimerEnd():
-	$AnimationPlayer.play("GameStartTimerOver")
+	isControlsEnabled = true
+	#$AnimationPlayer.play("GameStartTimerOver")
 
 func _ready():
 	#$AnimationPlayer.play("CharacterGameStartAnimation")

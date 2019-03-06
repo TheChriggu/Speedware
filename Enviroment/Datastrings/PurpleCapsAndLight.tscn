@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Enviroment/Datastrings/PurpleCapsAndLight.png" type="Texture" id=1]
 
-[node name="PurpleLight" type="NinePatchRect" index="0"]
+[node name="PurpleLight" type="NinePatchRect"]
 
 anchor_left = 0.0
 anchor_top = 0.0

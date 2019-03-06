@@ -152,9 +152,8 @@ tracks/1/keys = {
 "values": [ false ]
 }
 
-[node name="LaserBlau" type="Sprite" index="0"]
+[node name="LaserBlau" type="Sprite"]
 
-rotation = -3.14159
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
@@ -175,8 +174,8 @@ modulate = Color( 0.949371, 0.0742188, 1, 1 )
 self_modulate = Color( 0.117188, 0.117188, 0.117188, 1 )
 show_behind_parent = true
 material = SubResource( 2 )
-position = Vector2( 0.033634, 128.046 )
-rotation = -1.5708
+position = Vector2( 0.033634, -128.046 )
+rotation = 1.5708
 scale = Vector2( 0.5, 0.177489 )
 emitting = false
 amount = 200
@@ -246,8 +245,8 @@ _sections_unfolded = [ "Transform" ]
 pause_mode = 2
 show_behind_parent = true
 material = SubResource( 5 )
-position = Vector2( -0.0228319, 145.666 )
-rotation = -1.5708
+position = Vector2( -0.022832, -145.666 )
+rotation = 1.5708
 emitting = true
 amount = 20
 lifetime = 6.0

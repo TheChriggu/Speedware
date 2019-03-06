@@ -219,7 +219,6 @@ tracks/1/keys = {
 
 modulate = Color( 1, 1, 1, 0.933686 )
 position = Vector2( 39.2943, 25.9973 )
-rotation = -3.14159
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
@@ -274,8 +273,8 @@ modulate = Color( 0.875, 0.307617, 0, 1 )
 self_modulate = Color( 0.113281, 0.112839, 0.112839, 1 )
 light_mask = 3
 material = SubResource( 3 )
-position = Vector2( -0.452036, -131.893 )
-rotation = 1.5708
+position = Vector2( -0.452036, 131.893 )
+rotation = -1.5708
 scale = Vector2( 0.5, 0.236215 )
 emitting = true
 amount = 200
@@ -299,9 +298,10 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="Path2D" type="Path2D" parent="." index="4"]
 
+editor/display_folded = true
 self_modulate = Color( 0.124512, 0.193359, 0.46875, 0.7 )
-position = Vector2( 2.62661, 3.66429 )
-rotation = -2.27304e-013
+position = Vector2( -2.62661, -3.66429 )
+rotation = 3.14159
 curve = SubResource( 4 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
@@ -386,9 +386,10 @@ _sections_unfolded = [ "Drawing", "Material", "Pause", "Process Material", "Text
 
 [node name="Path2D2" type="Path2D" parent="." index="5"]
 
+editor/display_folded = true
 self_modulate = Color( 0.124512, 0.193359, 0.46875, 0.7 )
-position = Vector2( -1.7624, 3.6643 )
-rotation = -2.27304e-013
+position = Vector2( 1.7624, -3.6643 )
+rotation = 3.14159
 scale = Vector2( -1, 1 )
 curve = SubResource( 4 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]

@@ -220,7 +220,6 @@ func _ready():
 func _on_FinishArea_finish_line_passed():
 	isControlsEnabled = false
 	isFinished = true 
-	emit_signal("FinishLineAnimationFinished")
 
 func _on_PurpleLaserSidesDetector_area_entered(area):
 	if IS_ORANGE:
@@ -266,3 +265,6 @@ func MovementTrail():
 		$VFX.TurnTrailOn()
 	else:
 		$VFX.TurnTrailOff()
+
+func _on_AnimatedCharacter_VictoryAnimationFinished():
+	emit_signal("FinishLineAnimationFinished")

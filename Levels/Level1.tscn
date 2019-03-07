@@ -706,11 +706,7 @@ margin_bottom = 105.0
 
 [connection signal="FinishLineAnimationFinished" from="Player/player" to="Level/FinishArea" method="_on_player_FinishLineAnimationFinished"]
 
-[connection signal="is_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_at_fullspeed"]
-
 [connection signal="is_at_fullspeed" from="Player/player" to="." method="_on_player_is_at_fullspeed"]
-
-[connection signal="is_not_at_fullspeed" from="Player/player" to="Player" method="_on_player_is_not_at_fullspeed"]
 
 [connection signal="is_not_at_fullspeed" from="Player/player" to="." method="_on_player_is_not_at_fullspeed"]
 

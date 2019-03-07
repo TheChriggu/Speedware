@@ -781,7 +781,7 @@ scale = Vector2( 0.0348979, 0.0470226 )
 
 position = Vector2( 75243.2, 5553.49 )
 scene_to_load = "res://Levels/Level7.tscn"
-PossibleLevelBestTime = 56.0
+PossibleLevelBestTime = 66.0
 LevelNumber = 6
 OneStarRatingTolerance = 16
 ZeroStarRatingTolerance = 24

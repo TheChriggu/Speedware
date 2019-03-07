@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Enviroment/Speedboost/Speedboost.gd" type="Script" id=1]
 [ext_resource path="res://Enviroment/Speedboost/speedboostarrowsprite.png" type="Texture" id=2]
 [ext_resource path="res://Enviroment/Speedboost/2. Ring.png" type="Texture" id=3]
 [ext_resource path="res://Enviroment/Speedboost/1. Ring.png" type="Texture" id=4]
 [ext_resource path="res://Enviroment/Datastrings/DatastringImages/32x32WhiteDot.png" type="Texture" id=5]
+[ext_resource path="res://Sounds/SFX/SFX_Speedboost_Activated.wav" type="AudioStream" id=6]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -303,6 +304,15 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="SFX_Speedbooster" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "SFX"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 

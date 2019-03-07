@@ -5,3 +5,6 @@ func SwitchColorToOrange():
 
 func SwitchColorToPurple():
 	$Lasers.SwitchToPurple()
+
+func Reload():
+	$Collectibles.Reload()

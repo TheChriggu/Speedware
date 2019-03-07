@@ -16,3 +16,7 @@ func _on_Area2D_body_entered(body):
 		$AnimationPlayer.play("CollectibleCollected")
 		emit_signal("collected")
 		isCollected = true
+
+func Reload():
+	isCollected = false
+	$AnimationPlayer.play("CollectibleReset")

@@ -47,3 +47,12 @@ func _on_Lasers_laser_entered():
 
 func _on_Lasers_laser_exited():
 	$Player.LaserExited()
+
+
+func _on_player_QuickReload():
+	$Player/ForwardLookingCamera.position = $Player/player.playerStartPosiotion
+	$Player/ForwardLookingCamera.lastOffset = $Player/player.playerStartPosiotion
+	$Player/ForwardLookingCamera.isInSpeedBoost = false
+	$Player/ForwardLookingCamera/HeadCamCollider.isZoomedOut = false
+	$UI.Reload()
+	$Level.Reload()

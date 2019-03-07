@@ -26,3 +26,7 @@ func FinishLinePassed():
 
 func MusicBeat():
 	$FullspeedMode.MusicBeat()
+
+func Reload():
+	$Timer.CurrentTimer = 0
+	$CollectiblesCollected.currentCollectibles = 0

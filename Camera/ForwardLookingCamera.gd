@@ -53,6 +53,7 @@ func SpeedboostFactor():
 func _process(delta):
 	Zoom(delta)
 
+
 var zoomSpeed = 1
 var maxZoomDistance = 1.5
 var minZoomDistance = 1

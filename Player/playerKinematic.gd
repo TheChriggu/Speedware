@@ -38,6 +38,9 @@ var isMovingOnDatastring = false
 var isControlsEnabled = false
 var isFinished = false
 
+signal QuickReload
+var playerStartPosiotion = Vector2 (0,0)
+
 func _physics_process(delta):
 	CheckFloor()
 	
@@ -173,8 +176,9 @@ func LeanRight():
 		isLeaningLeft = false
 
 func UIInteraction():
-	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("restart") && !isFinished:
+		QuickReload()
+		#get_tree().reload_current_scene()
 	
 	if Input.is_action_just_pressed("switchColor") && isSwitchColorEnabled:
 			SwitchColor()
@@ -215,7 +219,7 @@ func _on_GameStartTimer_GameStartTimerEnd():
 	#$AnimationPlayer.play("GameStartTimerOver")
 
 func _ready():
-	#$AnimationPlayer.play("CharacterGameStartAnimation")
+	playerStartPosiotion = position
 	pass
 
 func _on_FinishArea_finish_line_passed():
@@ -245,7 +249,6 @@ func _on_PurpleLaserSidesDetector_area_exited(area):
 
 
 func _on_OrangeLaserSidesDetector_area_exited(area):
-	#$CollisionEffect/Particles2D.visible = false
 	pass
 
 
@@ -294,3 +297,7 @@ func _on_AnimatedCharacter_VictoryAnimationFinished():
 	emit_signal("FinishLineAnimationFinished")
 
 
+func QuickReload():
+	velocity = Vector2(0,0)
+	position = playerStartPosiotion
+	emit_signal("QuickReload")

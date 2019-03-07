@@ -12,7 +12,7 @@ var Levelnumber
 
 func _ready():
 	Levelnumber = get_parent().get_parent().get_node("UI/Timer/Levelnumber").text
-	print(Levelnumber)
+	#print(Levelnumber)
 
 func _on_Area2D_area_entered(area):
 	emit_signal("finish_line_passed")

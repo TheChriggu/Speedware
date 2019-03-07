@@ -481,7 +481,7 @@ _sections_unfolded = [ "Playback Options" ]
 [node name="LinePassedSoundEffect" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 3 )
-volume_db = -10.0
+volume_db = 5.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
@@ -713,7 +713,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="2Stars" type="Sprite" parent="Popup/Control/PopupBackground" index="5"]
 
@@ -729,7 +729,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="3Stars" type="Sprite" parent="Popup/Control/PopupBackground" index="6"]
 
@@ -746,7 +746,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Popup/Control/PopupBackground" index="7"]
 

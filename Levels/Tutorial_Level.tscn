@@ -35,7 +35,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 381.167, 280.367 )
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -189,6 +189,10 @@ scale = Vector2( 0.0348979, 0.0470226 )
 
 position = Vector2( 36665.5, 7292.74 )
 scene_to_load = "res://Scenes/Level Selection/LevelSelection.tscn"
+PossibleLevelBestTime = 999.0
+TwoStarRatingTolerance = 99
+OneStarRatingTolerance = 99
+ZeroStarRatingTolerance = 99
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 
@@ -484,9 +488,9 @@ text = "00"
 
 [connection signal="laser_exited" from="Level/Lasers" to="." method="_on_Lasers_laser_exited"]
 
-[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
-
 [connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="." method="_on_LaserOrange_laser_entered"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserOrange" to="Level/Lasers" method="_on_LaserOrange_laser_exited"]
 
@@ -562,11 +566,11 @@ text = "00"
 
 [connection signal="collected" from="Level/Collectibles/Collectible2" to="." method="_on_Collectible_collected"]
 
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
+
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
-
-[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="body_entered" from="Level/PopUps/PopUp0" to="Level/PopUps/PopUp0" method="_on_PopUp_body_entered"]
 
@@ -594,8 +598,8 @@ text = "00"
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
-
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Level/PopUps/PopUp0" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

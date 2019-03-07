@@ -29,7 +29,7 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=27]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=28]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -641,7 +641,10 @@ scale = Vector2( 0.0483256, 0.0545598 )
 
 position = Vector2( 37678, 2366.47 )
 scene_to_load = "res://Levels/Level2.tscn"
+PossibleLevelBestTime = 32.0
 LevelNumber = 1
+OneStarRatingTolerance = 16
+ZeroStarRatingTolerance = 24
 
 [node name="TileMap" type="TileMap" parent="Level" index="4"]
 
@@ -755,12 +758,12 @@ margin_bottom = 105.0
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
 
-[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
+[connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="UI/Timer" method="_on_GameStartTimer_GameStartTimerEnd"]
+
+[connection signal="GameStartTimerEnd" from="UI/GameStartTimer" to="Player/player" method="_on_GameStartTimer_GameStartTimerEnd"]
 
 

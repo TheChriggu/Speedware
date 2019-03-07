@@ -955,7 +955,10 @@ scale = Vector2( 0.0348979, 0.0470226 )
 
 position = Vector2( 45342.4, 2319.33 )
 scene_to_load = "res://Levels/Level9.tscn"
+PossibleLevelBestTime = 41.0
 LevelNumber = 8
+OneStarRatingTolerance = 16
+ZeroStarRatingTolerance = 24
 
 [node name="Speedboosters" type="Node2D" parent="Level" index="3"]
 

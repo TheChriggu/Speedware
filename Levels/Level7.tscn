@@ -28,7 +28,7 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=26]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=27]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -1995,7 +1995,10 @@ scale = Vector2( 0.0348979, 0.0470226 )
 
 position = Vector2( 39324.4, 1251.73 )
 scene_to_load = "res://Levels/Level8.tscn"
+PossibleLevelBestTime = 36.0
 LevelNumber = 7
+OneStarRatingTolerance = 16
+ZeroStarRatingTolerance = 24
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 

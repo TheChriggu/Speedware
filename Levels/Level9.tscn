@@ -1939,7 +1939,10 @@ scale = Vector2( 0.0348979, 0.0470226 )
 
 position = Vector2( 71838.2, 12461.3 )
 scene_to_load = "res://Scene/Intro/LaserLabsIntro.tscn"
+PossibleLevelBestTime = 59.0
 LevelNumber = 9
+OneStarRatingTolerance = 16
+ZeroStarRatingTolerance = 24
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 

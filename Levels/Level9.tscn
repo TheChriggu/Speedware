@@ -121,6 +121,7 @@ script = ExtResource( 10 )
 
 [node name="Lasers" type="Node2D" parent="Level" index="0"]
 
+editor/display_folded = true
 position = Vector2( 1457.38, -2001.32 )
 script = ExtResource( 11 )
 
@@ -1173,23 +1174,38 @@ margin_top = -195.0
 margin_right = 255.0
 margin_bottom = 1472.0
 
-[node name="LaserBlau43" parent="Level/Lasers" index="164" instance=ExtResource( 14 )]
+[node name="LaserBlau158" parent="Level/Lasers" index="164" instance=ExtResource( 14 )]
+
+position = Vector2( 16756, 5074.94 )
+
+[node name="PurpleLight11" parent="Level/Lasers/LaserBlau158" index="7" instance=ExtResource( 15 )]
+
+margin_left = -256.0
+margin_top = -141.0
+margin_right = 256.0
+margin_bottom = 313.0
+
+[node name="LaserBlau157" parent="Level/Lasers" index="165" instance=ExtResource( 14 )]
+
+position = Vector2( 16756, 5330.94 )
+
+[node name="LaserBlau43" parent="Level/Lasers" index="166" instance=ExtResource( 14 )]
 
 position = Vector2( 14481.6, 5390.46 )
 
-[node name="LaserBlau44" parent="Level/Lasers" index="165" instance=ExtResource( 14 )]
+[node name="LaserBlau44" parent="Level/Lasers" index="167" instance=ExtResource( 14 )]
 
 position = Vector2( 14481.6, 5134.46 )
 
-[node name="LaserBlau54" parent="Level/Lasers" index="166" instance=ExtResource( 14 )]
+[node name="LaserBlau54" parent="Level/Lasers" index="168" instance=ExtResource( 14 )]
 
 position = Vector2( 14481.6, 4878.43 )
 
-[node name="LaserBlau55" parent="Level/Lasers" index="167" instance=ExtResource( 14 )]
+[node name="LaserBlau55" parent="Level/Lasers" index="169" instance=ExtResource( 14 )]
 
 position = Vector2( 14481.6, 4622.43 )
 
-[node name="LaserBlau56" parent="Level/Lasers" index="168" instance=ExtResource( 14 )]
+[node name="LaserBlau56" parent="Level/Lasers" index="170" instance=ExtResource( 14 )]
 
 position = Vector2( 14481.6, 4366.3 )
 
@@ -1200,7 +1216,7 @@ margin_top = -197.0
 margin_right = 255.0
 margin_bottom = 1212.0
 
-[node name="LaserBlau57" parent="Level/Lasers" index="169" instance=ExtResource( 14 )]
+[node name="LaserBlau57" parent="Level/Lasers" index="171" instance=ExtResource( 14 )]
 
 position = Vector2( 16247, 4444.77 )
 
@@ -1211,7 +1227,7 @@ margin_top = -148.0
 margin_right = 255.0
 margin_bottom = 174.0
 
-[node name="LaserBlau58" parent="Level/Lasers" index="170" instance=ExtResource( 14 )]
+[node name="LaserBlau58" parent="Level/Lasers" index="172" instance=ExtResource( 14 )]
 
 position = Vector2( 19738.1, 4353.17 )
 
@@ -1222,11 +1238,11 @@ margin_top = -184.0
 margin_right = 255.0
 margin_bottom = 138.0
 
-[node name="LaserBlau75" parent="Level/Lasers" index="171" instance=ExtResource( 14 )]
+[node name="LaserBlau75" parent="Level/Lasers" index="173" instance=ExtResource( 14 )]
 
 position = Vector2( 21912.5, 2763.75 )
 
-[node name="LaserBlau74" parent="Level/Lasers" index="172" instance=ExtResource( 14 )]
+[node name="LaserBlau74" parent="Level/Lasers" index="174" instance=ExtResource( 14 )]
 
 position = Vector2( 21912.5, 3019.76 )
 
@@ -1237,11 +1253,11 @@ margin_top = -322.0
 margin_right = 255.0
 margin_bottom = 191.0
 
-[node name="LaserBlau80" parent="Level/Lasers" index="173" instance=ExtResource( 14 )]
+[node name="LaserBlau80" parent="Level/Lasers" index="175" instance=ExtResource( 14 )]
 
 position = Vector2( 22550.2, 2763.75 )
 
-[node name="LaserBlau81" parent="Level/Lasers" index="174" instance=ExtResource( 14 )]
+[node name="LaserBlau81" parent="Level/Lasers" index="176" instance=ExtResource( 14 )]
 
 position = Vector2( 22550.2, 3019.76 )
 
@@ -1252,11 +1268,11 @@ margin_top = -322.0
 margin_right = 255.0
 margin_bottom = 191.0
 
-[node name="LaserBlau77" parent="Level/Lasers" index="175" instance=ExtResource( 14 )]
+[node name="LaserBlau77" parent="Level/Lasers" index="177" instance=ExtResource( 14 )]
 
 position = Vector2( 22218.4, 3019.76 )
 
-[node name="LaserBlau76" parent="Level/Lasers" index="176" instance=ExtResource( 14 )]
+[node name="LaserBlau76" parent="Level/Lasers" index="178" instance=ExtResource( 14 )]
 
 position = Vector2( 22218.4, 2763.75 )
 
@@ -1267,11 +1283,11 @@ margin_top = -66.0
 margin_right = 255.0
 margin_bottom = 447.0
 
-[node name="LaserBlau78" parent="Level/Lasers" index="177" instance=ExtResource( 14 )]
+[node name="LaserBlau78" parent="Level/Lasers" index="179" instance=ExtResource( 14 )]
 
 position = Vector2( 22856.1, 3019.76 )
 
-[node name="LaserBlau79" parent="Level/Lasers" index="178" instance=ExtResource( 14 )]
+[node name="LaserBlau79" parent="Level/Lasers" index="180" instance=ExtResource( 14 )]
 
 position = Vector2( 22856.1, 2763.75 )
 
@@ -1282,15 +1298,15 @@ margin_top = -68.0
 margin_right = 255.0
 margin_bottom = 447.0
 
-[node name="LaserBlau60" parent="Level/Lasers" index="179" instance=ExtResource( 14 )]
+[node name="LaserBlau60" parent="Level/Lasers" index="181" instance=ExtResource( 14 )]
 
 position = Vector2( 22075.1, 4514.57 )
 
-[node name="LaserBlau61" parent="Level/Lasers" index="180" instance=ExtResource( 14 )]
+[node name="LaserBlau61" parent="Level/Lasers" index="182" instance=ExtResource( 14 )]
 
 position = Vector2( 22075.1, 4258.57 )
 
-[node name="LaserBlau59" parent="Level/Lasers" index="181" instance=ExtResource( 14 )]
+[node name="LaserBlau59" parent="Level/Lasers" index="183" instance=ExtResource( 14 )]
 
 position = Vector2( 22075.1, 4770.63 )
 
@@ -1301,15 +1317,15 @@ margin_top = -538.0
 margin_right = 255.0
 margin_bottom = 246.0
 
-[node name="LaserBlau62" parent="Level/Lasers" index="182" instance=ExtResource( 14 )]
+[node name="LaserBlau62" parent="Level/Lasers" index="184" instance=ExtResource( 14 )]
 
 position = Vector2( 22458.7, 5212 )
 
-[node name="LaserBlau64" parent="Level/Lasers" index="183" instance=ExtResource( 14 )]
+[node name="LaserBlau64" parent="Level/Lasers" index="185" instance=ExtResource( 14 )]
 
 position = Vector2( 22458.7, 4955.95 )
 
-[node name="LaserBlau63" parent="Level/Lasers" index="184" instance=ExtResource( 14 )]
+[node name="LaserBlau63" parent="Level/Lasers" index="186" instance=ExtResource( 14 )]
 
 position = Vector2( 22458.7, 4699.95 )
 
@@ -1320,15 +1336,15 @@ margin_top = -83.0
 margin_right = 255.0
 margin_bottom = 694.0
 
-[node name="LaserBlau65" parent="Level/Lasers" index="185" instance=ExtResource( 14 )]
+[node name="LaserBlau65" parent="Level/Lasers" index="187" instance=ExtResource( 14 )]
 
 position = Vector2( 22846.5, 5594.53 )
 
-[node name="LaserBlau67" parent="Level/Lasers" index="186" instance=ExtResource( 14 )]
+[node name="LaserBlau67" parent="Level/Lasers" index="188" instance=ExtResource( 14 )]
 
 position = Vector2( 22846.5, 5338.48 )
 
-[node name="LaserBlau66" parent="Level/Lasers" index="187" instance=ExtResource( 14 )]
+[node name="LaserBlau66" parent="Level/Lasers" index="189" instance=ExtResource( 14 )]
 
 position = Vector2( 22846.5, 5082.48 )
 
@@ -1339,15 +1355,15 @@ margin_top = -81.0
 margin_right = 255.0
 margin_bottom = 696.0
 
-[node name="LaserBlau68" parent="Level/Lasers" index="188" instance=ExtResource( 14 )]
+[node name="LaserBlau68" parent="Level/Lasers" index="190" instance=ExtResource( 14 )]
 
 position = Vector2( 23738.5, 6479.63 )
 
-[node name="LaserBlau69" parent="Level/Lasers" index="189" instance=ExtResource( 14 )]
+[node name="LaserBlau69" parent="Level/Lasers" index="191" instance=ExtResource( 14 )]
 
 position = Vector2( 23738.5, 6223.58 )
 
-[node name="LaserBlau70" parent="Level/Lasers" index="190" instance=ExtResource( 14 )]
+[node name="LaserBlau70" parent="Level/Lasers" index="192" instance=ExtResource( 14 )]
 
 position = Vector2( 23738.5, 5967.58 )
 
@@ -1358,15 +1374,15 @@ margin_top = -70.0
 margin_right = 255.0
 margin_bottom = 707.0
 
-[node name="LaserBlau71" parent="Level/Lasers" index="191" instance=ExtResource( 14 )]
+[node name="LaserBlau71" parent="Level/Lasers" index="193" instance=ExtResource( 14 )]
 
 position = Vector2( 24123.8, 6895.08 )
 
-[node name="LaserBlau73" parent="Level/Lasers" index="192" instance=ExtResource( 14 )]
+[node name="LaserBlau73" parent="Level/Lasers" index="194" instance=ExtResource( 14 )]
 
 position = Vector2( 24123.8, 6639.03 )
 
-[node name="LaserBlau72" parent="Level/Lasers" index="193" instance=ExtResource( 14 )]
+[node name="LaserBlau72" parent="Level/Lasers" index="195" instance=ExtResource( 14 )]
 
 position = Vector2( 24123.8, 6383.03 )
 
@@ -1377,7 +1393,7 @@ margin_top = -102.0
 margin_right = 255.0
 margin_bottom = 675.0
 
-[node name="LaserBlau82" parent="Level/Lasers" index="194" instance=ExtResource( 14 )]
+[node name="LaserBlau82" parent="Level/Lasers" index="196" instance=ExtResource( 14 )]
 
 position = Vector2( 21018.7, 2961.33 )
 
@@ -1388,15 +1404,15 @@ margin_top = -200.0
 margin_right = 255.0
 margin_bottom = 185.0
 
-[node name="LaserBlau83" parent="Level/Lasers" index="195" instance=ExtResource( 14 )]
+[node name="LaserBlau83" parent="Level/Lasers" index="197" instance=ExtResource( 14 )]
 
 position = Vector2( 25082.6, 3859.57 )
 
-[node name="LaserBlau148" parent="Level/Lasers" index="196" instance=ExtResource( 14 )]
+[node name="LaserBlau148" parent="Level/Lasers" index="198" instance=ExtResource( 14 )]
 
 position = Vector2( 25082.6, 4109.57 )
 
-[node name="LaserBlau84" parent="Level/Lasers" index="197" instance=ExtResource( 14 )]
+[node name="LaserBlau84" parent="Level/Lasers" index="199" instance=ExtResource( 14 )]
 
 position = Vector2( 25082.6, 3603.59 )
 
@@ -1407,15 +1423,15 @@ margin_top = -202.0
 margin_right = 255.0
 margin_bottom = 494.0
 
-[node name="LaserBlau85" parent="Level/Lasers" index="198" instance=ExtResource( 14 )]
+[node name="LaserBlau85" parent="Level/Lasers" index="200" instance=ExtResource( 14 )]
 
 position = Vector2( 25591.9, 4112.84 )
 
-[node name="LaserBlau86" parent="Level/Lasers" index="199" instance=ExtResource( 14 )]
+[node name="LaserBlau86" parent="Level/Lasers" index="201" instance=ExtResource( 14 )]
 
 position = Vector2( 25591.9, 4368.82 )
 
-[node name="LaserBlau149" parent="Level/Lasers" index="200" instance=ExtResource( 14 )]
+[node name="LaserBlau149" parent="Level/Lasers" index="202" instance=ExtResource( 14 )]
 
 position = Vector2( 25591.9, 4628.82 )
 
@@ -1426,15 +1442,15 @@ margin_top = -716.0
 margin_right = 255.0
 margin_bottom = -20.0
 
-[node name="LaserBlau89" parent="Level/Lasers" index="201" instance=ExtResource( 14 )]
+[node name="LaserBlau89" parent="Level/Lasers" index="203" instance=ExtResource( 14 )]
 
 position = Vector2( 25853.7, 4352.96 )
 
-[node name="LaserBlau90" parent="Level/Lasers" index="202" instance=ExtResource( 14 )]
+[node name="LaserBlau90" parent="Level/Lasers" index="204" instance=ExtResource( 14 )]
 
 position = Vector2( 25853.7, 4608.94 )
 
-[node name="LaserBlau150" parent="Level/Lasers" index="203" instance=ExtResource( 14 )]
+[node name="LaserBlau150" parent="Level/Lasers" index="205" instance=ExtResource( 14 )]
 
 position = Vector2( 25853.7, 4858.94 )
 
@@ -1445,15 +1461,15 @@ margin_top = -690.0
 margin_right = 255.0
 margin_bottom = 6.0
 
-[node name="LaserBlau87" parent="Level/Lasers" index="204" instance=ExtResource( 14 )]
+[node name="LaserBlau87" parent="Level/Lasers" index="206" instance=ExtResource( 14 )]
 
 position = Vector2( 26045.1, 4559.04 )
 
-[node name="LaserBlau88" parent="Level/Lasers" index="205" instance=ExtResource( 14 )]
+[node name="LaserBlau88" parent="Level/Lasers" index="207" instance=ExtResource( 14 )]
 
 position = Vector2( 26045.1, 4815.02 )
 
-[node name="LaserBlau151" parent="Level/Lasers" index="206" instance=ExtResource( 14 )]
+[node name="LaserBlau151" parent="Level/Lasers" index="208" instance=ExtResource( 14 )]
 
 position = Vector2( 26045.1, 5065.02 )
 
@@ -1464,15 +1480,15 @@ margin_top = -704.0
 margin_right = 255.0
 margin_bottom = -8.0
 
-[node name="LaserBlau91" parent="Level/Lasers" index="207" instance=ExtResource( 14 )]
+[node name="LaserBlau91" parent="Level/Lasers" index="209" instance=ExtResource( 14 )]
 
 position = Vector2( 26300.5, 4810.89 )
 
-[node name="LaserBlau92" parent="Level/Lasers" index="208" instance=ExtResource( 14 )]
+[node name="LaserBlau92" parent="Level/Lasers" index="210" instance=ExtResource( 14 )]
 
 position = Vector2( 26300.5, 5068.87 )
 
-[node name="LaserBlau152" parent="Level/Lasers" index="209" instance=ExtResource( 14 )]
+[node name="LaserBlau152" parent="Level/Lasers" index="211" instance=ExtResource( 14 )]
 
 position = Vector2( 26300.5, 5328.87 )
 
@@ -1483,15 +1499,15 @@ margin_top = -712.0
 margin_right = 255.0
 margin_bottom = -16.0
 
-[node name="LaserBlau93" parent="Level/Lasers" index="210" instance=ExtResource( 14 )]
+[node name="LaserBlau93" parent="Level/Lasers" index="212" instance=ExtResource( 14 )]
 
 position = Vector2( 26558.2, 5066.53 )
 
-[node name="LaserBlau94" parent="Level/Lasers" index="211" instance=ExtResource( 14 )]
+[node name="LaserBlau94" parent="Level/Lasers" index="213" instance=ExtResource( 14 )]
 
 position = Vector2( 26558.2, 5322.51 )
 
-[node name="LaserBlau153" parent="Level/Lasers" index="212" instance=ExtResource( 14 )]
+[node name="LaserBlau153" parent="Level/Lasers" index="214" instance=ExtResource( 14 )]
 
 position = Vector2( 26558.2, 5582.51 )
 
@@ -1502,15 +1518,15 @@ margin_top = -709.0
 margin_right = 255.0
 margin_bottom = -13.0
 
-[node name="LaserBlau95" parent="Level/Lasers" index="213" instance=ExtResource( 14 )]
+[node name="LaserBlau95" parent="Level/Lasers" index="215" instance=ExtResource( 14 )]
 
 position = Vector2( 27254.6, 5772.93 )
 
-[node name="LaserBlau96" parent="Level/Lasers" index="214" instance=ExtResource( 14 )]
+[node name="LaserBlau96" parent="Level/Lasers" index="216" instance=ExtResource( 14 )]
 
 position = Vector2( 27254.6, 6028.91 )
 
-[node name="LaserBlau154" parent="Level/Lasers" index="215" instance=ExtResource( 14 )]
+[node name="LaserBlau154" parent="Level/Lasers" index="217" instance=ExtResource( 14 )]
 
 position = Vector2( 27254.6, 6288.91 )
 
@@ -1521,15 +1537,15 @@ margin_top = -712.0
 margin_right = 255.0
 margin_bottom = -16.0
 
-[node name="LaserBlau97" parent="Level/Lasers" index="216" instance=ExtResource( 14 )]
+[node name="LaserBlau97" parent="Level/Lasers" index="218" instance=ExtResource( 14 )]
 
 position = Vector2( 27521.2, 6031.31 )
 
-[node name="LaserBlau98" parent="Level/Lasers" index="217" instance=ExtResource( 14 )]
+[node name="LaserBlau98" parent="Level/Lasers" index="219" instance=ExtResource( 14 )]
 
 position = Vector2( 27521.2, 6287.29 )
 
-[node name="LaserBlau155" parent="Level/Lasers" index="218" instance=ExtResource( 14 )]
+[node name="LaserBlau155" parent="Level/Lasers" index="220" instance=ExtResource( 14 )]
 
 position = Vector2( 27521.2, 6537.29 )
 
@@ -1540,15 +1556,15 @@ margin_top = -704.0
 margin_right = 255.0
 margin_bottom = -8.0
 
-[node name="LaserBlau99" parent="Level/Lasers" index="219" instance=ExtResource( 14 )]
+[node name="LaserBlau99" parent="Level/Lasers" index="221" instance=ExtResource( 14 )]
 
 position = Vector2( 27834.8, 6346.13 )
 
-[node name="LaserBlau100" parent="Level/Lasers" index="220" instance=ExtResource( 14 )]
+[node name="LaserBlau100" parent="Level/Lasers" index="222" instance=ExtResource( 14 )]
 
 position = Vector2( 27834.8, 6602.11 )
 
-[node name="LaserBlau156" parent="Level/Lasers" index="221" instance=ExtResource( 14 )]
+[node name="LaserBlau156" parent="Level/Lasers" index="223" instance=ExtResource( 14 )]
 
 position = Vector2( 27834.8, 6851.11 )
 
@@ -1559,7 +1575,7 @@ margin_top = -698.0
 margin_right = 255.0
 margin_bottom = -2.0
 
-[node name="LaserBlau101" parent="Level/Lasers" index="222" instance=ExtResource( 14 )]
+[node name="LaserBlau101" parent="Level/Lasers" index="224" instance=ExtResource( 14 )]
 
 position = Vector2( 24026.2, 7307.52 )
 
@@ -1570,11 +1586,11 @@ margin_top = -194.0
 margin_right = 255.0
 margin_bottom = 128.0
 
-[node name="LaserBlau102" parent="Level/Lasers" index="223" instance=ExtResource( 14 )]
+[node name="LaserBlau102" parent="Level/Lasers" index="225" instance=ExtResource( 14 )]
 
 position = Vector2( 25206, 7442.68 )
 
-[node name="LaserBlau103" parent="Level/Lasers" index="224" instance=ExtResource( 14 )]
+[node name="LaserBlau103" parent="Level/Lasers" index="226" instance=ExtResource( 14 )]
 
 position = Vector2( 25206, 7186.68 )
 
@@ -1585,11 +1601,11 @@ margin_top = -74.0
 margin_right = 255.0
 margin_bottom = 440.0
 
-[node name="LaserBlau104" parent="Level/Lasers" index="225" instance=ExtResource( 14 )]
+[node name="LaserBlau104" parent="Level/Lasers" index="227" instance=ExtResource( 14 )]
 
 position = Vector2( 25553.7, 7442.68 )
 
-[node name="LaserBlau105" parent="Level/Lasers" index="226" instance=ExtResource( 14 )]
+[node name="LaserBlau105" parent="Level/Lasers" index="228" instance=ExtResource( 14 )]
 
 position = Vector2( 25553.7, 7186.68 )
 
@@ -1600,11 +1616,11 @@ margin_top = -74.0
 margin_right = 255.0
 margin_bottom = 440.0
 
-[node name="LaserBlau106" parent="Level/Lasers" index="227" instance=ExtResource( 14 )]
+[node name="LaserBlau106" parent="Level/Lasers" index="229" instance=ExtResource( 14 )]
 
 position = Vector2( 26401.4, 7442.68 )
 
-[node name="LaserBlau107" parent="Level/Lasers" index="228" instance=ExtResource( 14 )]
+[node name="LaserBlau107" parent="Level/Lasers" index="230" instance=ExtResource( 14 )]
 
 position = Vector2( 26401.4, 7186.68 )
 
@@ -1615,11 +1631,11 @@ margin_top = -74.0
 margin_right = 255.0
 margin_bottom = 440.0
 
-[node name="LaserBlau110" parent="Level/Lasers" index="229" instance=ExtResource( 14 )]
+[node name="LaserBlau110" parent="Level/Lasers" index="231" instance=ExtResource( 14 )]
 
 position = Vector2( 25968.8, 7442.68 )
 
-[node name="LaserBlau111" parent="Level/Lasers" index="230" instance=ExtResource( 14 )]
+[node name="LaserBlau111" parent="Level/Lasers" index="232" instance=ExtResource( 14 )]
 
 position = Vector2( 25968.8, 7186.68 )
 
@@ -1630,11 +1646,11 @@ margin_top = -74.0
 margin_right = 255.0
 margin_bottom = 440.0
 
-[node name="LaserBlau108" parent="Level/Lasers" index="231" instance=ExtResource( 14 )]
+[node name="LaserBlau108" parent="Level/Lasers" index="233" instance=ExtResource( 14 )]
 
 position = Vector2( 27325.2, 7442.68 )
 
-[node name="LaserBlau109" parent="Level/Lasers" index="232" instance=ExtResource( 14 )]
+[node name="LaserBlau109" parent="Level/Lasers" index="234" instance=ExtResource( 14 )]
 
 position = Vector2( 27325.2, 7186.68 )
 
@@ -1645,7 +1661,7 @@ margin_top = -74.0
 margin_right = 255.0
 margin_bottom = 440.0
 
-[node name="LaserBlau112" parent="Level/Lasers" index="233" instance=ExtResource( 14 )]
+[node name="LaserBlau112" parent="Level/Lasers" index="235" instance=ExtResource( 14 )]
 
 position = Vector2( 29722.2, 7372.88 )
 
@@ -1656,7 +1672,7 @@ margin_top = -199.0
 margin_right = 255.0
 margin_bottom = 190.0
 
-[node name="LaserBlau113" parent="Level/Lasers" index="234" instance=ExtResource( 14 )]
+[node name="LaserBlau113" parent="Level/Lasers" index="236" instance=ExtResource( 14 )]
 
 position = Vector2( 31641.6, 7294.28 )
 
@@ -1667,7 +1683,7 @@ margin_top = -182.0
 margin_right = 255.0
 margin_bottom = 140.0
 
-[node name="LaserBlau114" parent="Level/Lasers" index="235" instance=ExtResource( 14 )]
+[node name="LaserBlau114" parent="Level/Lasers" index="237" instance=ExtResource( 14 )]
 
 position = Vector2( 33754.2, 7237.11 )
 
@@ -1678,7 +1694,7 @@ margin_top = -188.0
 margin_right = 255.0
 margin_bottom = 134.0
 
-[node name="LaserBlau115" parent="Level/Lasers" index="236" instance=ExtResource( 14 )]
+[node name="LaserBlau115" parent="Level/Lasers" index="238" instance=ExtResource( 14 )]
 
 position = Vector2( 37276.5, 6987.15 )
 
@@ -1689,7 +1705,7 @@ margin_top = -194.0
 margin_right = 255.0
 margin_bottom = 192.0
 
-[node name="LaserBlau116" parent="Level/Lasers" index="237" instance=ExtResource( 14 )]
+[node name="LaserBlau116" parent="Level/Lasers" index="239" instance=ExtResource( 14 )]
 
 position = Vector2( 38731.5, 7307.3 )
 
@@ -1700,22 +1716,22 @@ margin_top = -194.0
 margin_right = 255.0
 margin_bottom = 192.0
 
-[node name="LaserBlau117" parent="Level/Lasers" index="238" instance=ExtResource( 14 )]
+[node name="LaserBlau117" parent="Level/Lasers" index="240" instance=ExtResource( 14 )]
 
 position = Vector2( 42329.7, 7258.81 )
 rotation = 1.5708
 
-[node name="LaserBlau118" parent="Level/Lasers" index="239" instance=ExtResource( 14 )]
+[node name="LaserBlau118" parent="Level/Lasers" index="241" instance=ExtResource( 14 )]
 
 position = Vector2( 42585.7, 7258.81 )
 rotation = 1.5708
 
-[node name="LaserBlau119" parent="Level/Lasers" index="240" instance=ExtResource( 14 )]
+[node name="LaserBlau119" parent="Level/Lasers" index="242" instance=ExtResource( 14 )]
 
 position = Vector2( 42841.7, 7258.81 )
 rotation = 1.5708
 
-[node name="LaserBlau120" parent="Level/Lasers" index="241" instance=ExtResource( 14 )]
+[node name="LaserBlau120" parent="Level/Lasers" index="243" instance=ExtResource( 14 )]
 
 position = Vector2( 43097.7, 7258.81 )
 rotation = 1.5708
@@ -1727,22 +1743,22 @@ margin_top = -193.0
 margin_right = 255.0
 margin_bottom = 961.0
 
-[node name="LaserBlau122" parent="Level/Lasers" index="242" instance=ExtResource( 14 )]
+[node name="LaserBlau122" parent="Level/Lasers" index="244" instance=ExtResource( 14 )]
 
 position = Vector2( 43737.7, 7258.81 )
 rotation = 1.5708
 
-[node name="LaserBlau123" parent="Level/Lasers" index="243" instance=ExtResource( 14 )]
+[node name="LaserBlau123" parent="Level/Lasers" index="245" instance=ExtResource( 14 )]
 
 position = Vector2( 43993.7, 7258.81 )
 rotation = 1.5708
 
-[node name="LaserBlau124" parent="Level/Lasers" index="244" instance=ExtResource( 14 )]
+[node name="LaserBlau124" parent="Level/Lasers" index="246" instance=ExtResource( 14 )]
 
 position = Vector2( 44249.7, 7258.81 )
 rotation = 1.5708
 
-[node name="LaserBlau125" parent="Level/Lasers" index="245" instance=ExtResource( 14 )]
+[node name="LaserBlau125" parent="Level/Lasers" index="247" instance=ExtResource( 14 )]
 
 position = Vector2( 44505.7, 7258.81 )
 rotation = 1.5708
@@ -1754,7 +1770,7 @@ margin_top = -193.0
 margin_right = 255.0
 margin_bottom = 961.0
 
-[node name="LaserBlau121" parent="Level/Lasers" index="246" instance=ExtResource( 14 )]
+[node name="LaserBlau121" parent="Level/Lasers" index="248" instance=ExtResource( 14 )]
 
 position = Vector2( 43421.4, 7116.12 )
 
@@ -1765,11 +1781,11 @@ margin_top = -195.0
 margin_right = 255.0
 margin_bottom = 191.0
 
-[node name="LaserBlau126" parent="Level/Lasers" index="247" instance=ExtResource( 14 )]
+[node name="LaserBlau126" parent="Level/Lasers" index="249" instance=ExtResource( 14 )]
 
 position = Vector2( 44143.1, 7309.49 )
 
-[node name="LaserBlau127" parent="Level/Lasers" index="248" instance=ExtResource( 14 )]
+[node name="LaserBlau127" parent="Level/Lasers" index="250" instance=ExtResource( 14 )]
 
 position = Vector2( 44143.1, 7053.49 )
 
@@ -1780,11 +1796,11 @@ margin_top = -196.0
 margin_right = 255.0
 margin_bottom = 445.0
 
-[node name="LaserBlau130" parent="Level/Lasers" index="249" instance=ExtResource( 14 )]
+[node name="LaserBlau130" parent="Level/Lasers" index="251" instance=ExtResource( 14 )]
 
 position = Vector2( 45581.7, 7309.49 )
 
-[node name="LaserBlau129" parent="Level/Lasers" index="250" instance=ExtResource( 14 )]
+[node name="LaserBlau129" parent="Level/Lasers" index="252" instance=ExtResource( 14 )]
 
 position = Vector2( 45581.7, 7053.49 )
 
@@ -1795,7 +1811,7 @@ margin_top = -197.0
 margin_right = 255.0
 margin_bottom = 444.0
 
-[node name="LaserBlau128" parent="Level/Lasers" index="251" instance=ExtResource( 14 )]
+[node name="LaserBlau128" parent="Level/Lasers" index="253" instance=ExtResource( 14 )]
 
 position = Vector2( 44820.4, 7116.5 )
 
@@ -1806,12 +1822,12 @@ margin_top = -195.0
 margin_right = 255.0
 margin_bottom = 190.0
 
-[node name="LaserBlau131" parent="Level/Lasers" index="252" instance=ExtResource( 14 )]
+[node name="LaserBlau131" parent="Level/Lasers" index="254" instance=ExtResource( 14 )]
 
 position = Vector2( 50905.7, 8091.13 )
 rotation = 1.5708
 
-[node name="LaserBlau132" parent="Level/Lasers" index="253" instance=ExtResource( 14 )]
+[node name="LaserBlau132" parent="Level/Lasers" index="255" instance=ExtResource( 14 )]
 
 position = Vector2( 51161.7, 8091.13 )
 rotation = 1.5708
@@ -1823,17 +1839,17 @@ margin_top = -193.0
 margin_right = 255.0
 margin_bottom = 449.0
 
-[node name="LaserBlau134" parent="Level/Lasers" index="254" instance=ExtResource( 14 )]
+[node name="LaserBlau134" parent="Level/Lasers" index="256" instance=ExtResource( 14 )]
 
 position = Vector2( 52633.8, 7834.96 )
 rotation = 1.5708
 
-[node name="LaserBlau133" parent="Level/Lasers" index="255" instance=ExtResource( 14 )]
+[node name="LaserBlau133" parent="Level/Lasers" index="257" instance=ExtResource( 14 )]
 
 position = Vector2( 52889.8, 7834.96 )
 rotation = 1.5708
 
-[node name="LaserBlau135" parent="Level/Lasers" index="256" instance=ExtResource( 14 )]
+[node name="LaserBlau135" parent="Level/Lasers" index="258" instance=ExtResource( 14 )]
 
 position = Vector2( 53145.8, 7834.96 )
 rotation = 1.5708
@@ -1845,17 +1861,17 @@ margin_top = -193.0
 margin_right = 255.0
 margin_bottom = 705.0
 
-[node name="LaserBlau138" parent="Level/Lasers" index="257" instance=ExtResource( 14 )]
+[node name="LaserBlau138" parent="Level/Lasers" index="259" instance=ExtResource( 14 )]
 
 position = Vector2( 54553.8, 7770.96 )
 rotation = 1.5708
 
-[node name="LaserBlau137" parent="Level/Lasers" index="258" instance=ExtResource( 14 )]
+[node name="LaserBlau137" parent="Level/Lasers" index="260" instance=ExtResource( 14 )]
 
 position = Vector2( 54809.8, 7770.96 )
 rotation = 1.5708
 
-[node name="LaserBlau136" parent="Level/Lasers" index="259" instance=ExtResource( 14 )]
+[node name="LaserBlau136" parent="Level/Lasers" index="261" instance=ExtResource( 14 )]
 
 position = Vector2( 55065.8, 7770.96 )
 rotation = 1.5708
@@ -1867,32 +1883,32 @@ margin_top = -193.0
 margin_right = 255.0
 margin_bottom = 705.0
 
-[node name="LaserBlau141" parent="Level/Lasers" index="260" instance=ExtResource( 14 )]
+[node name="LaserBlau141" parent="Level/Lasers" index="262" instance=ExtResource( 14 )]
 
 position = Vector2( 56217.8, 8282.96 )
 rotation = 1.5708
 
-[node name="LaserBlau140" parent="Level/Lasers" index="261" instance=ExtResource( 14 )]
+[node name="LaserBlau140" parent="Level/Lasers" index="263" instance=ExtResource( 14 )]
 
 position = Vector2( 56473.8, 8282.96 )
 rotation = 1.5708
 
-[node name="LaserBlau139" parent="Level/Lasers" index="262" instance=ExtResource( 14 )]
+[node name="LaserBlau139" parent="Level/Lasers" index="264" instance=ExtResource( 14 )]
 
 position = Vector2( 56729.8, 8282.96 )
 rotation = 1.5708
 
-[node name="LaserBlau143" parent="Level/Lasers" index="263" instance=ExtResource( 14 )]
+[node name="LaserBlau143" parent="Level/Lasers" index="265" instance=ExtResource( 14 )]
 
 position = Vector2( 56985.8, 8282.96 )
 rotation = 1.5708
 
-[node name="LaserBlau142" parent="Level/Lasers" index="264" instance=ExtResource( 14 )]
+[node name="LaserBlau142" parent="Level/Lasers" index="266" instance=ExtResource( 14 )]
 
 position = Vector2( 57241.8, 8282.96 )
 rotation = 1.5708
 
-[node name="LaserBlau144" parent="Level/Lasers" index="265" instance=ExtResource( 14 )]
+[node name="LaserBlau144" parent="Level/Lasers" index="267" instance=ExtResource( 14 )]
 
 position = Vector2( 57497.8, 8282.96 )
 rotation = 1.5708
@@ -1906,6 +1922,7 @@ margin_bottom = 1474.0
 
 [node name="Collectibles" type="Node2D" parent="Level" index="1"]
 
+editor/display_folded = true
 position = Vector2( 660.131, -1882.08 )
 
 [node name="Collectible" parent="Level/Collectibles" index="0" instance=ExtResource( 16 )]
@@ -1922,6 +1939,7 @@ scale = Vector2( 0.0348979, 0.0470226 )
 
 position = Vector2( 71838.2, 12461.3 )
 scene_to_load = "res://Scene/Intro/LaserLabsIntro.tscn"
+LevelNumber = 9
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 
@@ -2722,6 +2740,14 @@ text = "09"
 [connection signal="laser_entered" from="Level/Lasers/LaserBlau41" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
 
 [connection signal="laser_exited" from="Level/Lasers/LaserBlau41" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau158" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau158" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
+
+[connection signal="laser_entered" from="Level/Lasers/LaserBlau157" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
+
+[connection signal="laser_exited" from="Level/Lasers/LaserBlau157" to="Level/Lasers" method="_on_LaserBlau_laser_exited"]
 
 [connection signal="laser_entered" from="Level/Lasers/LaserBlau43" to="Level/Lasers" method="_on_LaserBlau_laser_entered"]
 

@@ -28,7 +28,7 @@
 [ext_resource path="res://UI/Levelnumber.tscn" type="PackedScene" id=26]
 [ext_resource path="res://UI/GameStartTimer/GameStartTimer.tscn" type="PackedScene" id=27]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -1995,6 +1995,7 @@ scale = Vector2( 0.0348979, 0.0470226 )
 
 position = Vector2( 39324.4, 1251.73 )
 scene_to_load = "res://Levels/Level8.tscn"
+LevelNumber = 7
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 
@@ -2026,8 +2027,8 @@ position = Vector2( -803.782, 886.093 )
 
 position = Vector2( 38700.4, 558.668 )
 rotation = 25.1327
-SPEED = 2000
-LENGTH = 10.0
+SPEED = 2800
+LENGTH = 0.5
 
 [node name="UI" type="Node" parent="." index="4"]
 
@@ -3453,9 +3454,9 @@ text = "07"
 
 [connection signal="collected" from="Level/Collectibles/Collectible2" to="." method="_on_Collectible_collected"]
 
-[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
-
 [connection signal="finish_line_passed" from="Level/FinishArea" to="UI/CollectiblesCollected" method="_on_FinishArea_finish_line_passed"]
+
+[connection signal="finish_line_passed" from="Level/FinishArea" to="." method="_on_FinishArea_finish_line_passed"]
 
 [connection signal="finish_line_passed" from="Level/FinishArea" to="Player/player" method="_on_FinishArea_finish_line_passed"]
 

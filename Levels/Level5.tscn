@@ -612,8 +612,9 @@ scale = Vector2( 0.0536591, 0.0561768 )
 
 [node name="FinishArea" parent="Level" index="2" instance=ExtResource( 17 )]
 
-position = Vector2( 59287, 19250.2 )
+position = Vector2( 59095.2, 19243.3 )
 scene_to_load = "res://Levels/Level6.tscn"
+LevelNumber = 5
 
 [node name="TileMap" type="TileMap" parent="Level" index="3"]
 

@@ -478,7 +478,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 position = Vector2( 3.55887, 0 )
 scale = Vector2( 0.8, 0.8 )
@@ -523,14 +523,13 @@ blend_times = [  ]
 
 [node name="SFX" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="JumpOff" type="AudioStreamPlayer" parent="SFX" index="0"]
 
 stream = ExtResource( 3 )
-volume_db = 0.0
+volume_db = -6.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
@@ -863,7 +862,7 @@ rotation = 0.00734518
 scale = Vector2( 0.453219, 0.453219 )
 frames = SubResource( 23 )
 animation = "default"
-frame = 5
+frame = 1
 playing = true
 flip_h = true
 _sections_unfolded = [ "Material", "Visibility" ]

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/star_filled.png-9513959fe2ee99fb09da821e199d7753.stex"
+path="res://.import/Star_Filled.png-001becb659179b6e729056960068a1f4.stex"
 
 [deps]
 
-source_file="res://Scenes/Level Selection/star_filled.png"
-dest_files=[ "res://.import/star_filled.png-9513959fe2ee99fb09da821e199d7753.stex" ]
+source_file="res://Scenes/Level Selection/Star_Filled.png"
+dest_files=[ "res://.import/Star_Filled.png-001becb659179b6e729056960068a1f4.stex" ]
 
 [params]
 
